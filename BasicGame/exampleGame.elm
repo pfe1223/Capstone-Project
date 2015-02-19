@@ -47,16 +47,11 @@ type alias Player =
 type alias Game =
   { state:State, badGuy:BadGuy, player1:Player }
 
-
-player : Float -> Player
-player x =
-  { x = x, y = 0, vx = 0, vy = 0, lives = 3 }
-
 defaultGame : Game
 defaultGame =
   { state   = Pause
   , badGuy  = { x=0, y=0, vx=300, vy=300 }
-  , player1 = player (15-halfWidth)
+  , player1 = { x = 15-halfWidth, y = 0, vx = 0, vy = 0, lives = 3 }
   }
 
 
