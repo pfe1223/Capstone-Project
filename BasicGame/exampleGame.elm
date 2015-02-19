@@ -72,40 +72,55 @@ type alias Input =
 
 update : Input -> Game -> Game
 update {space,dir1,dir2,delta} ({state,badGuy,player1} as game) =
-  let newState =
-        if  | space            -> Play
-            | otherwise        -> state
+  let lives = if (badGuy `within` player1) then 1 else 0
+
+      newState =
+        if  | space              -> Play
+            | player1.lives == 0 -> Pause
+            | otherwise          -> state
 
       newBadGuy =
         if state == Pause
             then badGuy
-            else updateBadGuy delta badGuy
+            else updateBadGuy delta badGuy player1
 
   in
       { game |
           state   <- newState,
           badGuy  <- newBadGuy,
-          player1 <- updatePlayer delta dir1 dir2 player1
+          player1 <- updatePlayer delta dir1 dir2 lives player1
       }
 
 
-updateBadGuy : Time -> BadGuy -> BadGuy
-updateBadGuy t ({x,y,vx,vy} as badGuy) =
-  physicsUpdate t
-    { badGuy |
-        vx <- stepV vx (x < 7-halfWidth) (x > halfWidth-7),
-        vy <- stepV vy (y < 7-halfHeight) (y > halfHeight-7)
-    }
+updateBadGuy : Time -> BadGuy -> Player -> BadGuy
+updateBadGuy t ({x,y,vx,vy} as badGuy) ({x,y,vx,vy,lives} as player1) =
+  if | (player1.lives == 0) -> { badGuy | x <- 0, y <- 0}
+     | (badGuy `within` player1) -> physicsUpdate t
+          { badGuy |
+            vx <- stepV vx (badGuy `within` player1) (badGuy `within` player1),
+            vy <- stepV vy (badGuy `within` player1) (badGuy `within` player1)
+          }
+     | otherwise -> physicsUpdate t
+          { badGuy |
+              vx <- stepV vx (x < 20-halfWidth) (x > halfWidth-20),
+              vy <- stepV vy (y < 20-halfHeight) (y > halfHeight-20)
+          }
 
 
-updatePlayer : Time -> Int -> Int -> Player -> Player
-updatePlayer t dir1 dir2 player =
+updatePlayer : Time -> Int -> Int -> Int -> Player -> Player
+updatePlayer t dir1 dir2 lives player =
   let player1 = physicsUpdate  t { player | vx <- toFloat dir1 * 200,
                                             vy <- toFloat dir2 * 200}
+
+      alive = if (player.lives - lives < 0)
+        then 0
+        else (player.lives - lives)
+
   in
       { player1 |
-          y <- clamp (15-halfHeight) (halfHeight-15) player1.y,
-          x <- clamp (15-halfWidth) (halfWidth-15) player1.x
+          y <- clamp (35-halfHeight) (halfHeight-35) player1.y,
+          x <- clamp (35-halfWidth) (halfWidth-35) player1.x,
+          lives <- alive
       }
 
 
@@ -120,7 +135,7 @@ near k c n =
     n >= k-c && n <= k+c
 
 within badGuy player1 =
-    near player1.x 8 badGuy.x && near player1.y 20 badGuy.y
+    near player1.x 25 badGuy.x && near player1.y 25 badGuy.y
 
 
 stepV v lowerCollision upperCollision =
@@ -140,9 +155,9 @@ view (w,h) {state,badGuy,player1} =
       collage gameWidth gameHeight
         [ rect gameWidth gameHeight
             |> filled pongGreen
-        , ngon 3 15
+        , ngon 3 25
             |> make badGuy
-        , ngon 5 15
+        , ngon 5 35
             |> make player1
         , toForm lives
             |> move (0, gameHeight/2 - 40)
