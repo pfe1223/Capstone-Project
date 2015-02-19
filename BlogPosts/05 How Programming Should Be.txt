@@ -1,0 +1,26 @@
+Bret Victor has a wonderful post on his website called Learnable Programming. Even though the article was written in 2012, what he has to say is still relevant. This is mostly because the programming community trudges along more or less in the same fashion; that is, everything is mostly text based. In fact, Hacker News has a plethora of articles and comments on Vim and Emacs. These two programs have a large following of devoted users. The “features” of these programs seem to be arcane key bindings and extensibility. However, despite all of the customization one can do, they remain a really fancy text editor. More recent endeavors like Sublime Text and Atom do away with the key bindings, but remain feature-rich text editors.
+
+In his article, Victor recommends several ideas for how a programming tools and languages should be structured. He breaks down the suggestions thusly:
+
+The environment
+
+Read the vocabulary - meaning should be transparent
+Follow the flow - live coding with changes becoming immediately apparent
+See the state - show the data, e.g. the value of variables over time
+Create by reacting - autocomplete with default variables, see all functions
+Create by abstracting - develop trust in lower level ideas, then make abstractions out of them
+The Language
+
+Identity and metaphor - have something the programmer can identify with
+Decomposition - language should have modularity
+Recomposition - be able to remix the modules
+Readability - have syntax that is easily understood
+The short explanations above do not do justice to Victor’s work. He made some videos to show what the above ideas would look like in practice. Because of this, his ideas become quite concrete. If you are at all interested in this topic, read Victor’s article. 
+
+There is a video of Victor giving a talk at the 2012 Canadian University Software Engineering Conference entitled “Inventing on Principle.” In this video, Victor shows a working prototype of an idea that implements the values stated above. When people talking about having their mind blown it is pretty hyperbolic, but when Victor showed off his time traveling debugger, he blew everybody’s mind. Apple did it again when they integrated something similar (interactive playgrounds) in Swift. Elm followed suit with their debugger. The impact of Victor’s ideas on how programming languages should be constructed goes beyond the time traveling debugger. Many of the example videos in Learnable Programming have been implemented into Khan Academy’s CS program. The ideas above, which run counter to text editors mentioned at the beginning of this article, are starting to take hold with mainstream institutions.
+
+When _why left the Internet, fans and believers in his work cloned his GitHub repository, and volunteers took over his projects. Hackety Hack is a labor of love, worked on by volunteers. One of the main people behind the renewed interest in Hackety Hack, Steve Klabnik, took a position Rust team. As such, other people wanted to spirit of Hackety Hack to live on; thus, KidsRuby was born. There are a lot of similarities between KidsRuby and Hackety Hack. KidsRuby makes no secret of _why's influence on their work. There is an interpreter on the left and documentation on the right. Some of the tutorials were taken directly from Hackety Hack. KidsRuby, even uses the same colors from Hackety Hack for turtle art.
+
+There are some shortcomings though. I cannot get it to install on my Mac. The laptop on which I am currently writing this is not new, nor is it terribly old. It is running Yosemite, but it is in desperate need of some more memory. I find it hard that KidsRuby will not install given that all Macs come with Ruby installed. My personal gripe aside, KidsRuby uses the local file system to open and save files. You have to use the ".rb" extension in the file name for KidsRuby to be able to run the program. Overall, KidsRuby seems to be nothing more than a slightly updated clone of Hackety Hack. Perhaps my opinion is harsh and unfair. I wish KidsRuby had put in the time and effort to not only keep the work of _why alive, but to evolve and extend it.
+
+Lest you think I dislike KidsRuby, I have been installing it on all of the computers in my lab, as Hackety Hack has a propensity to suddenly crash. I will be having my students evaluate KidsRuby as it compares to the Khan Academy version of JavaScript. I look forward to their thoughts.
