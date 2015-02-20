@@ -149,19 +149,47 @@ The function stepV determines if badGuy needs to bounce. Take a look closely at 
           }
 This snippet is calling the function physicsUpdate (this is what actually makes the objects move, and will be discussed in a bit). The function physicsUpdate takes the characteristics of badGuy, *but* the vx and vy characteristics are determined by the stepV function which also wants to know if badGuy is touching player1 (this is pretty complicated). So stepV wants to know if the vx and vy of badGuy are greater than or less than zero. 
 
-	stepV v lowerCollision upperCollision =
-  		if  | lowerCollision -> abs v
-     		| upperCollision -> 0 - abs v
-     		| otherwise      -> v
+	stepV v condition1 condition2 =
+  		if  | condition1 -> abs v
+     		| condition2 -> 0 - abs v
+     		| otherwise  -> v
     
-
+The characteristics vx and vy are the directions in which badGuy is moving in the x and y directions. When a collision happens, the program checks to see if vx is negative (condition1 for stepV) or if vx is positive (condition2 for stepV). If vx is positive then it becomes negative, it is negative then it becomes positive, and in all other cases it does not change. The program does the same thing for vy of badGuy.
 
 Now contrast the above code with the following code:
 
 	physicsUpdate t
           { badGuy |
-              vx <- stepV vx (x < 25-halfWidth) (x > halfWidth-20),
-              vy <- stepV vy (y < 20-halfHeight) (y > halfHeight-20)
+              vx <- stepV vx (x < 25-halfWidth) (x > halfWidth-25),
+              vy <- stepV vy (y < 25-halfHeight) (y > halfHeight-25)
           }
-Again we are moving badGuy with the function physicsUpdate. Only this time we are not interested if badGuy should bounce off of player1; instead we want to know if it should bounce off the edges of the playing area. The within function is replaces by 
+Again we are moving badGuy with the function physicsUpdate. Only this time we are not interested if badGuy should bounce off of player1; instead we want to know if it should bounce off the edges of the playing area. The program checks to see if badGuy is touching the left side (x < 25-halfwidth), touching the right side (x > halfwidth-25), touching the bottom (y < halfHeight), or touching the top (y > halfHeight-25). Again, 25 is used because that is the radius of badGuy.
+
+	physicsUpdate t ({x,y,vx,vy} as obj) =
+  		{ obj |
+      	  x <- x + vx * t,
+      	  y <- y + vy * t
+  		}
+The function physicsUpdate does the actual moving of badGuy and player1. In either case, the x and y positions are set to the value of the velocity multiplied by time added to the current value.
 ###[View Section](id:viewSection)
+The view section outputs the game to the screen. In Elm, the basic visual building block are elements. Elements are rectangles with a fixed width and heigth. You can put all sorts of things in elements, and you can stack elements next to (above, below, to the right, to the left) other elements. Elm also has something forms. Forms are arbitrary shapes. They can be rotated, scaled, and modified in other ways. If you want to have a collection of forms (like this game here) then you use a special kind of element called a collage, which is a collection of forms. The code below also uses something called a container, which holds an element. Containers can easily be positioned in the window.
+
+	view : (Int,Int) -> Game -> Element
+	view (w,h) {state,badGuy,player1} =
+  		let lives : Element
+      		lives = txt(Text.height 50) (toString player1.lives)
+ 	 	in
+      		container w h middle <|
+      		collage gameWidth gameHeight
+        		[ rect gameWidth gameHeight
+            		|> filled pongGreen
+        		, ngon 6 25
+            		|> make badGuy
+        		, circle 20
+          			|> make player1
+       			, toForm lives
+       		    	|> move (0, gameHeight/2 - 40)
+      		  	, toForm (if state == Play then spacer 1 1 else txt identity msg)
+            		|> move (0, 40 - gameHeight/2)
+        		]
+The view function creates a container that resides in the middle of the window. The container holds a collage with the width of gameWidth (600) and a height of gameHeight (400). The collage has the following shapes. There is a rectangle of the same width and heidth as the collage. The rectangle is filled with a color called pongGreen (this will be explained below). There is a polygon with six sides and a radius of twenty-five. This polygon is modified with the make function which takes the argument badGuy. There is a circle with radius twenty. The circle is modified by the make function which takes the argument player1. In this container, there is an element called lives. Lives is text with the size fifty, and has the value of the number found in player1.lives. Since a collage can only have forms and not elements, the lives element is transformed into a form. The form is moved to the location (0, gameHeight/2 - 40). This location can also be read as (0,160).
