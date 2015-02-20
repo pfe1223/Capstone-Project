@@ -1,5 +1,4 @@
--- See this document for more information on making Pong:
--- http://elm-lang.org/blog/Pong.elm
+
 import Color (..)
 import Graphics.Collage (..)
 import Graphics.Element (..)
