@@ -83,5 +83,85 @@ The code is creating a data type called defaultGame. This differs from the data 
 		}
 This code creates a data type called Input. It has four characteristics. Space is boolean (true or false), and it tells us if the space bar is being pressed. Dir1 has a value of -1 if the left arrow is pressed, or a value of 1 if the right arrow is pressed. Dir2 has a value of -1 if the down arrow is pressed, or a value of 1 if the up arrow is pressed.
 ###[Update Section](id:updateSection)
+This part of the program updates the state, the player, and the bad guy.
 
+	update : Input -> Game -> Game
+	update {space,dir1,dir2,delta} ({state,badGuy,player1} as game) =
+  		let lives = if (badGuy `within` player1) then 1 else 0
+
+      		newState =
+        		if  | space              -> Play
+            	   	| player1.lives == 0 -> Pause
+            		| otherwise          -> state
+
+      		newBadGuy =
+        		if state == Pause
+            		then badGuy
+            		else updateBadGuy delta badGuy player1
+
+  		in
+      		{ game |
+          	state   <- newState,
+          	badGuy  <- newBadGuy,
+         	player1 <- updatePlayer delta dir1 dir2 lives player1
+      		}
+To better understand this portion of the code, it is better to start at the bottom. For the data type game, we see that the state characteristic takes the value of the function called newState, the characteristic badGuy takes the value of the function newBadGuy, and the player1 characteristic takes the value of the function updatePlayer. The functions newState and newBadGuy are defined above. The function updatePlayer is a separate function outside of the update function. 
+
+When updating the state of the game, the program checks to see if the space bar is pressed. If yes, then the state changes to Play (by default, the state is Pause when the game starts). If the number of lives for the player (represented by player1.lives) is zero, then the state is changed to Pause. In all other cases, the state remains the same.
+
+To update the bad guy, the function newBadGuy is invoked. This checks to see if the state of the game is Pause. If yes, then the badGuy function is called. This places the bad guy in the center of the playing area. If the state of the game is Play, then the program calls the function updateBadGuy (like updatePlayer, this function is defined below). This function takes the arguments delta (the time), the characteristics of the current badGuy, and the characteristics of the current player1.
+
+	updateBadGuy : Time -> BadGuy -> Player -> BadGuy
+	updateBadGuy t ({x,y,vx,vy} as badGuy) ({x,y,vx,vy,lives} as 	player1) =
+  		 if | (player1.lives == 0) -> { badGuy | x <- 0, y <- 0}
+   			| (badGuy `within` player1) -> physicsUpdate t
+          		{ badGuy |
+            	  vx <- stepV vx (badGuy `within` player1) (badGuy `within` player1),
+            	vy <- stepV vy (badGuy `within` player1) (badGuy `within` player1)
+          		}
+     		| otherwise -> physicsUpdate t
+          		{ badGuy |
+              	  vx <- stepV vx (x < 20-halfWidth) (x > halfWidth-20),
+              	  vy <- stepV vy (y < 20-halfHeight) (y > halfHeight-20)
+          		}
+When updating the bad guy in the game, the function updateBadGuy needs the time, the characteristics of the bad guy, and the characteristics of the player. If the lives of the player are zero, then the badGuy is given the x and y coordinates of zero. If this is not true, then the program calls the function within and passes it the badGuy and player1. The function within will be discussed below. Basically it checks to see if the badGuy is touching player1. If they are touching, then the function physicsUpdate (defined below) is called. However, the badGuy should bounce off of player1. To do this, we need to pause and take a look at some other functions.
+
+	near k c n =
+    	n >= k-c && n <= k+c
+
+	within badGuy player1 =
+    	near player1.x 25 badGuy.x && near player1.y 25 badGuy.y
+
+	stepV v lowerCollision upperCollision =
+  		if  | lowerCollision -> abs v
+     		| upperCollision -> 0 - abs v
+     		| otherwise      -> v
+The three functions make up the logic behind bouncing the badGuy off of player1 or the sides of the playing area. This section of the code is highly compartmentalized. That is, the function within could easily calculate the function near, but everything is kept separate. This is a characteristic of functional programming. Everything should be its own function. This allows you to more easily debug the code, and it also allows you to easily reuse code in other projects. The downside to this is that following the code becomes a little harder, as you are bouncing around different functions.
+
+Let's start with the within function. It wants to know if the badGuy and player1 are touching. To do this, it uses the function near, and passes the function the x position of player1, the x position of badGuy, and the number 25. The number 25 happens to be the length of each of the sides of the badGuy. The function near returns either true or false depending on if badGuy is touching player1.
+
+The function stepV determines if badGuy needs to bounce. Take a look closely at the following code.
+
+	physicsUpdate t
+          { badGuy |
+            vx <- stepV vx (badGuy.vx < 0) (badGuy.vx > 0),
+            vy <- stepV vy (badGuy.vy < 0) (badGuy.vy > 0)
+          }
+This snippet is calling the function physicsUpdate (this is what actually makes the objects move, and will be discussed in a bit). The function physicsUpdate takes the characteristics of badGuy, *but* the vx and vy characteristics are determined by the stepV function which also wants to know if badGuy is touching player1 (this is pretty complicated). So stepV wants to know if the vx and vy of badGuy are greater than or less than zero. 
+
+	stepV v lowerCollision upperCollision =
+  		if  | lowerCollision -> abs v
+     		| upperCollision -> 0 - abs v
+     		| otherwise      -> v
+    
+
+
+Now contrast the above code with the following code:
+
+	physicsUpdate t
+          { badGuy |
+              vx <- stepV vx (x < 25-halfWidth) (x > halfWidth-20),
+              vy <- stepV vy (y < 20-halfHeight) (y > halfHeight-20)
+          }
+Again we are moving badGuy with the function physicsUpdate. Only this time we are not interested if badGuy should bounce off of player1; instead we want to know if it should bounce off the edges of the playing area. The within function is replaces by 
 ###[View Section](id:viewSection)
