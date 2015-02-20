@@ -47,6 +47,7 @@ type alias Player =
 type alias Game =
   { state:State, badGuy:BadGuy, player1:Player }
 
+
 defaultGame : Game
 defaultGame =
   { state   = Pause
@@ -92,13 +93,13 @@ updateBadGuy t ({x,y,vx,vy} as badGuy) ({x,y,vx,vy,lives} as player1) =
   if | (player1.lives == 0) -> { badGuy | x <- 0, y <- 0}
      | (badGuy `within` player1) -> physicsUpdate t
           { badGuy |
-            vx <- stepV vx (badGuy `within` player1) (badGuy `within` player1),
-            vy <- stepV vy (badGuy `within` player1) (badGuy `within` player1)
+            vx <- stepV vx (badGuy.vx < 0) (badGuy.vx > 0),
+            vy <- stepV vy (badGuy.vy < 0 ) (badGuy.vy > 0)
           }
      | otherwise -> physicsUpdate t
           { badGuy |
-              vx <- stepV vx (x < 20-halfWidth) (x > halfWidth-20),
-              vy <- stepV vy (y < 20-halfHeight) (y > halfHeight-20)
+              vx <- stepV vx (x < 25-halfWidth) (x > halfWidth-25),
+              vy <- stepV vy (y < 25-halfHeight) (y > halfHeight-25)
           }
 
 
@@ -133,10 +134,10 @@ within badGuy player1 =
     near player1.x 25 badGuy.x && near player1.y 25 badGuy.y
 
 
-stepV v lowerCollision upperCollision =
-  if | lowerCollision -> abs v
-     | upperCollision -> 0 - abs v
-     | otherwise      -> v
+stepV v condition1 condition2 =
+  if | condition1 -> abs v
+     | condition2 -> 0 - abs v
+     | otherwise  -> v
 
 
 -- VIEW
@@ -150,9 +151,9 @@ view (w,h) {state,badGuy,player1} =
       collage gameWidth gameHeight
         [ rect gameWidth gameHeight
             |> filled pongGreen
-        , ngon 3 25
+        , ngon 6 25
             |> make badGuy
-        , ngon 5 35
+        , circle 20
             |> make player1
         , toForm lives
             |> move (0, gameHeight/2 - 40)
