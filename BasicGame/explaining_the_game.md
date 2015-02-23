@@ -178,18 +178,26 @@ The view section outputs the game to the screen. In Elm, the basic visual buildi
 	view (w,h) {state,badGuy,player1} =
   		let lives : Element
       		lives = txt(Text.height 50) (toString player1.lives)
- 	 	in
-      		container w h middle <|
+  		in
+     		container w h middle <|
       		collage gameWidth gameHeight
         		[ rect gameWidth gameHeight
-            		|> filled pongGreen
-        		, ngon 6 25
-            		|> make badGuy
-        		, circle 20
-          			|> make player1
-       			, toForm lives
-       		    	|> move (0, gameHeight/2 - 40)
-      		  	, toForm (if state == Play then spacer 1 1 else txt identity msg)
+            		|> filled backgroundColor
+        		, ngon 6 25 -- This is badGuy
+            		|> filled lightOrange
+           			|> move(badGuy.x, badGuy.y)
+        		, circle 20 -- This is player1
+            		|> filled lightPurple
+            		|> move (player1.x, player1.y)
+        		, toForm lives
+            		|> move (0, gameHeight/2 - 40)
+        		, toForm (if state == Play then spacer 1 1 else txt identity msg)
             		|> move (0, 40 - gameHeight/2)
         		]
-The view function creates a container that resides in the middle of the window. The container holds a collage with the width of gameWidth (600) and a height of gameHeight (400). The collage has the following shapes. There is a rectangle of the same width and heidth as the collage. The rectangle is filled with a color called pongGreen (this will be explained below). There is a polygon with six sides and a radius of twenty-five. This polygon is modified with the make function which takes the argument badGuy. There is a circle with radius twenty. The circle is modified by the make function which takes the argument player1. In this container, there is an element called lives. Lives is text with the size fifty, and has the value of the number found in player1.lives. Since a collage can only have forms and not elements, the lives element is transformed into a form. The form is moved to the location (0, gameHeight/2 - 40). This location can also be read as (0,160).
+The view function creates a container that resides in the middle of the window. The container holds a collage with the width of gameWidth (600) and a height of gameHeight (400). The collage has the following shapes. There is a rectangle of the same width and heidth as the collage. The rectangle is filled with a color called backgroundColor (this will be explained below). There is a polygon with six sides and a radius of twenty-five. This polygon is filled with the color lightOrange, and is placed at the x,y coordinates of badGuy. There is a circle with radius twenty. The circle is filled with the color lightPurple and is placed at the x,y coordinates of player1. In this container, there is an element called lives. Lives is text with the size fifty, and has the value of the number found in player1.lives. Since a collage can only have forms and not elements, the lives element is transformed into a form. The form is moved to the location (0, gameHeight/2 - 40). This location can also be read as (0,160). Lastly, there is an if-then-else statement that shows or hides text on the bottom of the screen. If the state is Play, then a spacer (a blank box) is placed at the bottom of the game area. If the state is not Play, then the text in msg is placed at the bottom of the game area. 
+
+	backgroundColor = rgb 178 8 1
+	textColor = white
+	txt f = Text.fromString >> Text.color textColor >> Text.monospace >> f >> Text.leftAligned
+	msg = "SPACE to start, &larr;&uarr;&darr;&rarr; to move"
+This last little bit of code finishes up the game. The first line defines the color backgroundColor interms of red, green, and blue because backgroundColor is not predefined. The next color, textColor, is defined not in terms of red, green, and blue because white is predefined. The function txt provides several characteristics (color, font, alignment, etc.) of how text will be rendered. Finally, msg is a string that is the message which appears on the screen. "&larr" means left arrow, etc.
