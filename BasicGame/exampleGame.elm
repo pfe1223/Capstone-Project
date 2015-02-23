@@ -1,4 +1,3 @@
-
 import Color (..)
 import Graphics.Collage (..)
 import Graphics.Element (..)
