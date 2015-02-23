@@ -149,12 +149,12 @@ view (w,h) {state,badGuy,player1} =
       container w h middle <|
       collage gameWidth gameHeight
         [ rect gameWidth gameHeight
-            |> filled pongGreen
+            |> filled backgroundColor
         , ngon 6 25 -- This is badGuy
-            |> filled yellow
+            |> filled lightOrange
             |> move(badGuy.x, badGuy.y)
         , circle 20 -- This is player1
-            |> filled lightRed
+            |> filled lightPurple
             |> move (player1.x, player1.y)
         , toForm lives
             |> move (0, gameHeight/2 - 40)
@@ -162,7 +162,7 @@ view (w,h) {state,badGuy,player1} =
             |> move (0, 40 - gameHeight/2)
         ]
 
-pongGreen = rgb 60 100 60
-textGreen = rgb 160 200 160
-txt f = Text.fromString >> Text.color textGreen >> Text.monospace >> f >> Text.leftAligned
+backgroundColor = rgb 178 8 1
+textColor = white
+txt f = Text.fromString >> Text.color textColor >> Text.monospace >> f >> Text.leftAligned
 msg = "SPACE to start, &larr;&uarr;&darr;&rarr; to move"
