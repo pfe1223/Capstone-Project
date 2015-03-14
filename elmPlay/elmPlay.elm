@@ -554,7 +554,7 @@ updateWelcomeContainer (width, height) =
 updateWelcomeMsg : String
 updateWelcomeMsg =
   "Update Section\n"
-  ++ "The Update Section changes the values for each object if the user has provided input."
+  ++ "The Update Section changes the values for each object\n if the user has provided input."
 
 -- Update Message 1
 displayUpdate1 : (Int, Int) -> Int -> String -> Element
@@ -864,7 +864,7 @@ updatePlayer3Msg = "An object player1 is created. Its attributes of vx and vy ar
                               ++ "an integer into a float."
 updatePlayer3 : Element
 updatePlayer3 =
-  leftAligned(fromString " let player1 = physicsUpdate  t { player | vx <- toFloat dir1 * 200,")
+  leftAligned(fromString (padLeft 73 ' ' " let player1 = physicsUpdate  t { player | vx <- toFloat dir1 * 200,"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer3Msg) else (Signal.send hoveredOn ""))
 
 updatePlayer4Msg = "The updated vy attribute takes the value of dir2 multiplied by 200. However, dir2\n"
@@ -872,40 +872,40 @@ updatePlayer4Msg = "The updated vy attribute takes the value of dir2 multiplied 
                               ++ "an integer into a float."
 updatePlayer4 : Element
 updatePlayer4 =
-  leftAligned(fromString " vy <- toFloat dir2 * 200}")
+  leftAligned(fromString (padLeft 93 ' ' " vy <- toFloat dir2 * 200}"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer4Msg) else (Signal.send hoveredOn ""))
 
 updatePlayer5Msg = "This is a conditional statement tha wants to know if player.lives minus lives is\n"
                                ++ "is greater than 0. Conditinals return true or false."
 updatePlayer5 : Element
 updatePlayer5 =
-  leftAligned(fromString " alive = if (player.lives - lives < 0)")
+  leftAligned(fromString (padLeft 48 ' ' " alive = if (player.lives - lives < 0)"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer5Msg) else (Signal.send hoveredOn ""))
 
 updatePlayer6Msg = "If the previous conditional statement is true, then alives takes the value of 0."
 updatePlayer6 : Element
 updatePlayer6 =
-  leftAligned(fromString " then 0")
+  leftAligned(fromString (padLeft 22 ' ' " then 0"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer6Msg) else (Signal.send hoveredOn ""))
 
 updatePlayer7Msg = "If the previous conditional statement is not true, then alive will equal player.lives\n"
                               ++ "minus the value of lives."
 updatePlayer7 : Element
 updatePlayer7 =
-  leftAligned(fromString " else (player.lives - lives)")
+  leftAligned(fromString (padLeft 43 ' ' " else (player.lives - lives)"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer7Msg) else (Signal.send hoveredOn ""))
 
 updatePlayer8Msg = "This is the second part of the let statement. The newly introduced alive will be\n"
                                ++ "used below."
 updatePlayer8 : Element
 updatePlayer8 =
-  leftAligned(fromString " in")
+  leftAligned(fromString (padLeft 8 ' ' " in"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer8Msg) else (Signal.send hoveredOn ""))
 
 updatePlayer9Msg = "This says that within player1, the following attributes will be updated."
 updatePlayer9 : Element
 updatePlayer9 =
-  leftAligned(fromString " { player1 |")
+  leftAligned(fromString (padLeft 22 ' ' " { player1 |"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer9Msg) else (Signal.send hoveredOn ""))
 
 updatePlayer10Msg = "The updated attribute y takes the value of player1.y. However, the value is\n"
@@ -913,7 +913,7 @@ updatePlayer10Msg = "The updated attribute y takes the value of player1.y. Howev
                                 ++ "halfHeight - 35 (165)."
 updatePlayer10 : Element
 updatePlayer10 =
-  leftAligned(fromString " y <- clamp (35-halfHeight) (halfHeight-35) player1.y,")
+  leftAligned(fromString (padLeft 69 ' ' " y <- clamp (35-halfHeight) (halfHeight-35) player1.y,"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer10Msg) else (Signal.send hoveredOn ""))
 
 updatePlayer11Msg = "The updated attribute x takes the value of player1.x. However, the value is\n"
@@ -921,19 +921,19 @@ updatePlayer11Msg = "The updated attribute x takes the value of player1.x. Howev
                                 ++ "halfWidth-35 (265)."
 updatePlayer11 : Element
 updatePlayer11 =
-  leftAligned(fromString " x <- clamp (35-halfWidth) (halfWidth-35) player1.x,")
+  leftAligned(fromString (padLeft 67 ' ' " x <- clamp (35-halfWidth) (halfWidth-35) player1.x,"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer11Msg) else (Signal.send hoveredOn ""))
 
 updatePlayer12Msg = "The updated attribute lives takes the value of alive."
 updatePlayer12 : Element
 updatePlayer12 =
-  leftAligned(fromString " lives <- alive")
+  leftAligned(fromString (padLeft 30 ' ' " lives <- alive"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer12Msg) else (Signal.send hoveredOn ""))
 
 updatePlayer13Msg = "This bracket the update for player1."
 updatePlayer13 : Element
 updatePlayer13 =
-  leftAligned(fromString " }")
+  leftAligned(fromString (padLeft 12 ' ' " }"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer3Msg) else (Signal.send hoveredOn ""))
 
 -- Update Message 4
