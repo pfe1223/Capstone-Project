@@ -573,14 +573,17 @@ updateContainer1 (width, height) =
     [ container (width - containerWidth) containerHeight midLeft (updateFunc1)
     , container (width - containerWidth) containerHeight midLeft (updateFunc2)
     , container (width - containerWidth) containerHeight midLeft (updateFunc3)
+    , spacer 1 extraLine
     , container (width - containerWidth) containerHeight midLeft (updateFunc4)
     , container (width - containerWidth) containerHeight midLeft (updateFunc5)
     , container (width - containerWidth) containerHeight midLeft (updateFunc6)
     , container (width - containerWidth) containerHeight midLeft (updateFunc7)
+    , spacer 1 extraLine
     , container (width - containerWidth) containerHeight midLeft (updateFunc8)
     , container (width - containerWidth) containerHeight midLeft (updateFunc9)
     , container (width - containerWidth) containerHeight midLeft (updateFunc10)
     , container (width - containerWidth) containerHeight midLeft (updateFunc11)
+    , spacer 1 extraLine
     , container (width - containerWidth) containerHeight midLeft (updateFunc12)
     , container (width - containerWidth) containerHeight midLeft (updateFunc13)
     , container (width - containerWidth) containerHeight midLeft (updateFunc14)
@@ -607,38 +610,38 @@ updateFunc3Msg = "The let expression assigns the value of 1 to lives if badGuy i
                           ++ "If not, the value of 0 is assigned to lives. The function within is defined below."
 updateFunc3 : Element
 updateFunc3 =
-  leftAligned(fromString " let lives = if (badGuy `within` player1) then 1 else 0")
+  leftAligned(fromString (padLeft 60 ' ' " let lives = if (badGuy `within` player1) then 1 else 0"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc3Msg) else (Signal.send hoveredOn ""))
 
 updateFunc4Msg = "The function newState assumes a value dependent upon the cases below:\n"
 updateFunc4 : Element
 updateFunc4 =
-  leftAligned(fromString " newState =")
+  leftAligned(fromString (padLeft 21 ' ' " newState ="))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc4Msg) else (Signal.send hoveredOn ""))
 
 updateFunc5Msg = "If the space bar is pressed, then newState takes the value Play."
 updateFunc5 : Element
 updateFunc5 =
-  leftAligned(fromString " if  | space              -> Play")
+  leftAligned(fromString (padLeft 53 ' ' " if | space                    -> Play"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc5Msg) else (Signal.send hoveredOn ""))
 
 updateFunc6Msg = "NewState assumes the value of Pause if player1.lives is 0. That is, the game\n"
                           ++ "stops when the player runs out of lives."
 updateFunc6 : Element
 updateFunc6 =
-  leftAligned(fromString " | player1.lives == 0 -> Pause")
+  leftAligned(fromString (padLeft 48 ' ' " | player1.lives == 0 -> Pause"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc6Msg) else (Signal.send hoveredOn ""))
 
 updateFunc7Msg = "In all other cases, newState assumes the value of state. That is, nothing changes."
 updateFunc7 : Element
 updateFunc7 =
-  leftAligned(fromString " | otherwise          -> state")
+  leftAligned(fromString (padLeft 52 ' ' " | otherwise              -> state"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc7Msg) else (Signal.send hoveredOn ""))
 
 updateFunc8Msg = "The function newBadGuy assumes the value dependent upong the following cases:"
 updateFunc8 : Element
 updateFunc8 =
-  leftAligned(fromString " newBadGuy =")
+  leftAligned(fromString (padLeft 22 ' ' " newBadGuy ="))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc8Msg) else (Signal.send hoveredOn ""))
 
 updateFunc9Msg = "If the value of state is equal to Pause, the do the following thing.\n"
@@ -646,38 +649,38 @@ updateFunc9Msg = "If the value of state is equal to Pause, the do the following 
                           ++ "An integer is a number without a decimal."
 updateFunc9 : Element
 updateFunc9 =
-  leftAligned(fromString " if state == Pause")
+  leftAligned(fromString (padLeft 33 ' ' " if state == Pause"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc9Msg) else (Signal.send hoveredOn ""))
 
 updateFunc10Msg = "The function newBadGuy takes the value badGuy. That is, nothing changes."
 updateFunc10 : Element
 updateFunc10 =
-  leftAligned(fromString " then badGuy")
+  leftAligned(fromString (padLeft 32 ' ' " then badGuy"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc10Msg) else (Signal.send hoveredOn ""))
 
 updateFunc11Msg = "When state equals Play, then call the function updateBadGuy, which defined below.\n"
                               ++ "updateBadGuy takes delta, badGuy, and player1."
 updateFunc11 : Element
 updateFunc11 =
-  leftAligned(fromString " else updateBadGuy delta badGuy player1")
+  leftAligned(fromString (padLeft 59 ' ' " else updateBadGuy delta badGuy player1"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc11Msg) else (Signal.send hoveredOn ""))
 
 updateFunc12Msg = "The in part of the let expression tells us how the above information will be used."
 updateFunc12 : Element
 updateFunc12 =
-  leftAligned(fromString " in")
+  leftAligned(fromString (padLeft 8 ' ' " in"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc12Msg) else (Signal.send hoveredOn ""))
 
 updateFunc13Msg = "Game will have its attributes updated."
 updateFunc13 : Element
 updateFunc13 =
-  leftAligned(fromString " { game |")
+  leftAligned(fromString (padLeft 19 ' ' " { game |"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc13Msg) else (Signal.send hoveredOn ""))
 
 updateFunc14Msg = "State will assume the value of newState."
 updateFunc14 : Element
 updateFunc14 =
-  leftAligned(fromString " state   <- newState,")
+  leftAligned(fromString (padLeft 38 ' ' " state   <- newState,"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc14Msg) else (Signal.send hoveredOn ""))
 
 updateFunc15Msg = "BadGuy assumes the value of newBadGuy."
@@ -696,7 +699,7 @@ updateFunc16 =
 updateFunc17Msg = "This bracket closes the update function."
 updateFunc17 : Element
 updateFunc17 =
-  leftAligned(fromString " }")
+  leftAligned(fromString (padLeft 12 ' ' " }"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc17Msg) else (Signal.send hoveredOn ""))
 
 -- Update Message 2
