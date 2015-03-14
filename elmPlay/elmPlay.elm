@@ -955,10 +955,13 @@ updateContainer4 (width, height) =
     , container (width - containerWidth) containerHeight midLeft (updatePhysics3)
     , container (width - containerWidth) containerHeight midLeft (updatePhysics4)
     , container (width - containerWidth) containerHeight midLeft (updatePhysics5)
+    , spacer 1 extraLine
     , container (width - containerWidth) containerHeight midLeft (updateNear1)
     , container (width - containerWidth) containerHeight midLeft (updateNear2)
+    , spacer 1 extraLine
     , container (width - containerWidth) containerHeight midLeft (updateWithin1)
     , container (width - containerWidth) containerHeight midLeft (updateWithin2)
+    , spacer 1 extraLine
     , container (width - containerWidth) containerHeight midLeft (updateStepV1)
     , container (width - containerWidth) containerHeight midLeft (updateStepV2)
     , container (width - containerWidth) containerHeight midLeft (updateStepV3)
@@ -975,25 +978,25 @@ updatePhysics1 =
 updatePhysics2Msg = "This line of code means that the object will have its attribures modified."
 updatePhysics2 : Element
 updatePhysics2 =
-  leftAligned(fromString " { obj |")
+  leftAligned(fromString (padLeft 13 ' ' " { obj |"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePhysics2Msg) else (Signal.send hoveredOn ""))
 
 updatePhysics3Msg = "The x attribute becomes x plus vx multiplied by t."
 updatePhysics3 : Element
 updatePhysics3 =
-  leftAligned(fromString " x <- x + vx * t,")
+  leftAligned(fromString (padLeft 24 ' ' " x <- x + vx * t,"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePhysics3Msg) else (Signal.send hoveredOn ""))
 
 updatePhysics4Msg = "The y attribute becomes y plus vy multiplied by t."
 updatePhysics4 : Element
 updatePhysics4 =
-  leftAligned(fromString " y <- y + vy * t")
+  leftAligned(fromString (padLeft 23 ' ' " y <- y + vy * t"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePhysics4Msg) else (Signal.send hoveredOn ""))
 
 updatePhysics5Msg = "This brakcet closes the updatePhysics function."
 updatePhysics5 : Element
 updatePhysics5 =
-  leftAligned(fromString " }")
+  leftAligned(fromString (padLeft 7 ' ' " }"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePhysics5Msg) else (Signal.send hoveredOn ""))
 
 updateNear1Msg = "The function near takes three arguments: k, c, and n. It determines if two objects\n"
@@ -1006,7 +1009,7 @@ updateNear1 =
 updateNear2Msg = "This is the logic equation to determine if two objects are touching."
 updateNear2 : Element
 updateNear2 =
-  leftAligned(fromString " n >= k-c && n <= k+c")
+  leftAligned(fromString (padLeft 26 ' ' " n >= k-c && n <= k+c"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateNear2Msg) else (Signal.send hoveredOn ""))
 
 updateWithin1Msg = "The function within takes badGuy and player1 and determines if they are touching."
@@ -1020,7 +1023,7 @@ updateWithin2Msg = "The function within calls the function near, and passes it t
                                 ++ "badGuy. This also checks to see if the y positions are touching as well."
 updateWithin2 : Element
 updateWithin2 =
-  leftAligned(fromString " near player1.x 25 badGuy.x && near player1.y 25 badGuy.y")
+  leftAligned(fromString (padLeft 61 ' ' " near player1.x 25 badGuy.x && near player1.y 25 badGuy.y"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateWithin2Msg) else (Signal.send hoveredOn ""))
 
 updateStepV1Msg = "The defines what the function stepV does. It takes two conditions (true of false)\n"
@@ -1035,21 +1038,21 @@ updateStepV2Msg = "If condition1 is true, then stepV returns the absolute value 
                               ++ "badGuy off of the left and bottom edges of the game area."
 updateStepV2 : Element
 updateStepV2 =
-  leftAligned(fromString " if | condition1 -> abs v")
+  leftAligned(fromString (padLeft 30 ' ' " if | condition1 -> abs v"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateStepV2Msg) else (Signal.send hoveredOn ""))
 
 updateStepV3Msg = "If condition2 is true, then stepV returns 0 - the absolute value of v. This bounces\n"
                               ++ "badGuy off of the right and top edges of the game area."
 updateStepV3 : Element
 updateStepV3 =
-  leftAligned(fromString " | condition2 -> 0 - abs v")
+  leftAligned(fromString (padLeft 34 ' ' " | condition2 -> 0 - abs v"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateStepV3Msg) else (Signal.send hoveredOn ""))
 
 updateStepV4Msg = "In all other cases, stepV returns the value of v. If badGuy is not touching any\n"
                               ++ "edges, then do not change the direction; keep going in the same direction."
 updateStepV4 : Element
 updateStepV4 =
-  leftAligned(fromString " | otherwise  -> v")
+  leftAligned(fromString(padLeft 26 ' '  " | otherwise  -> v"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateStepV4Msg) else (Signal.send hoveredOn ""))
 
 {-- 
