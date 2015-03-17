@@ -680,20 +680,20 @@ updateFunc13 =
 updateFunc14Msg = "State will assume the value of newState."
 updateFunc14 : Element
 updateFunc14 =
-  leftAligned(fromString (padLeft 38 ' ' " state   <- newState,"))
+  leftAligned(fromString (padLeft 36 ' ' " state   <- newState,"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc14Msg) else (Signal.send hoveredOn ""))
 
 updateFunc15Msg = "BadGuy assumes the value of newBadGuy."
 updateFunc15 : Element
 updateFunc15 =
-  leftAligned(fromString " badGuy  <- newBadGuy,")
+  leftAligned(fromString (padLeft 37 ' ' " badGuy  <- newBadGuy,"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc15Msg) else (Signal.send hoveredOn ""))
 
 updateFunc16Msg = "Player1 assumes the value of updatePlayer which needs delta, dir1, dir2,\n"
                                 ++ "lives, and player1. The function updatePlayer is defined below."
 updateFunc16 : Element
 updateFunc16 =
-  leftAligned(fromString " player1 <- updatePlayer delta dir1 dir2 lives player1")
+  leftAligned(fromString (padLeft 69 ' ' " player1 <- updatePlayer delta dir1 dir2 lives player1"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc16Msg) else (Signal.send hoveredOn ""))
 
 updateFunc17Msg = "This bracket closes the update function."
@@ -748,52 +748,52 @@ updateBadGuy2 =
 updateBadGuy3Msg = "If player1 has no more lives, then the x and y values of badGuy are set to 0."
 updateBadGuy3 : Element
 updateBadGuy3 =
-  leftAligned(fromString " if | (player1.lives == 0) -> { badGuy | x <- 0, y <- 0}")
+  leftAligned(fromString (padLeft 60 ' ' " if | (player1.lives == 0) -> { badGuy | x <- 0, y <- 0}"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy3Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy4Msg = "If badGuy is touching player1, then the function physicsUpdate is called\n"
                           ++ "with t (time)."
 updateBadGuy4 : Element
 updateBadGuy4 =
-  leftAligned(fromString " | (badGuy `within` player1) -> physicsUpdate t")
+  leftAligned(fromString (padLeft 54 ' ' " | (badGuy `within` player1) -> physicsUpdate t"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy4Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy5Msg = "This bit of code is setting forth attributes of badGuy that will be modified."
 updateBadGuy5 : Element
 updateBadGuy5 =
-  leftAligned(fromString " { badGuy |")
+  leftAligned(fromString (padLeft 25 ' ' " { badGuy |"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy5Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy6Msg = "The vx value of badGuy takes the result of the stepV funtion which takes the\n"
                                   ++ "the true or false value for the conditional statements."
 updateBadGuy6 : Element
 updateBadGuy6 =
-  leftAligned(fromString " vx <- stepV vx (badGuy.vx < 0) (badGuy.vx > 0),")
+  leftAligned(fromString (padLeft 65 ' ' " vx <- stepV vx (badGuy.vx < 0) (badGuy.vx > 0),"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy6Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy7Msg = "The vx value of badGuy takes the result of the stepV funtion which takes the\n"
                                   ++ "the true or false value for the conditional statements."
 updateBadGuy7 : Element
 updateBadGuy7 =
-  leftAligned(fromString " vy <- stepV vy (badGuy.vy < 0 ) (badGuy.vy > 0)")
+  leftAligned(fromString (padLeft 65 ' ' " vy <- stepV vy (badGuy.vy < 0 ) (badGuy.vy > 0)"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy7Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy8Msg = "The bracket ends the attributes of badGuy which are modified."
 updateBadGuy8 : Element
 updateBadGuy8 =
-  leftAligned(fromString " }")
+  leftAligned(fromString (padLeft 16 ' ' " }"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy8Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy9Msg = "In all other cases, the function physicsUpdate will be called with different arguments."
 updateBadGuy9 : Element
 updateBadGuy9 =
-  leftAligned(fromString " | otherwise -> physicsUpdate t")
+  leftAligned(fromString (padLeft 38 ' ' " | otherwise -> physicsUpdate t"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy9Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy10Msg = "Once again, some of the attributes of badGuy will be modified."
 updateBadGuy10 : Element
 updateBadGuy10 =
-  leftAligned(fromString " { badGuy |")
+  leftAligned(fromString (padLeft 25 ' ' " { badGuy |"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy10Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy11Msg = "The value vx takes the result of the function stepV. This is checking to see if\n"
@@ -801,7 +801,7 @@ updateBadGuy11Msg = "The value vx takes the result of the function stepV. This i
                                     ++ "that is the radius of badGuy. This will keep it in the game area."
 updateBadGuy11 : Element
 updateBadGuy11 =
-  leftAligned(fromString " vx <- stepV vx (x < 25-halfWidth) (x > halfWidth-25),")
+  leftAligned(fromString (padLeft 71 ' ' " vx <- stepV vx (x < 25-halfWidth) (x > halfWidth-25),"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy11Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy12Msg = "The value vx takes the result of the function stepV. This is checking to see if\n"
@@ -809,13 +809,13 @@ updateBadGuy12Msg = "The value vx takes the result of the function stepV. This i
                                     ++ "that is the radius of badGuy. This will keep it in the game area."
 updateBadGuy12 : Element
 updateBadGuy12 =
-  leftAligned(fromString " vy <- stepV vy (y < 25-halfHeight) (y > halfHeight-25)")
+  leftAligned(fromString (padLeft 72 ' ' " vy <- stepV vy (y < 25-halfHeight) (y > halfHeight-25)"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy12Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy13Msg = "The bracket ends the attributes of badGuy which are modified."
 updateBadGuy13 : Element
 updateBadGuy13 =
-  leftAligned(fromString " }")
+  leftAligned(fromString (padLeft 16 ' ' " }"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy3Msg) else (Signal.send hoveredOn ""))
 
 -- Update Message 3
