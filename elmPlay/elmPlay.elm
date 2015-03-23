@@ -79,6 +79,7 @@ welcomeContainer : (Int, Int) -> Element
 welcomeContainer (width, height) =
   color grey (container (width - containerWidth) (height - topHeight) middle (flow down
     [ title welcomeMsg1
+    , spacer 1 50
     , body welcomeMsg2
     ]))
 
@@ -112,12 +113,19 @@ importsWelcome (width, height) countClick =
 
 importsWelcomeContainer : (Int, Int) -> Element
 importsWelcomeContainer (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) middle (body importsWelcomeMsg))
+  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
+  [ title importsWelcomeMsg1
+  , spacer 1 50
+  , body importsWelcomeMsg2
+  ]))
   
-importsWelcomeMsg : String
-importsWelcomeMsg =
-  "Imports Section\n"
-  ++ "The Imports Section loads all of the packages needed for the game."
+importsWelcomeMsg1 : String
+importsWelcomeMsg1 =
+  "Imports Section"
+
+importsWelcomeMsg2 : String
+importsWelcomeMsg2 =
+  "The Imports Section loads all of the packages needed for the game."
 
 -- Imports Message
 displayImports : (Int, Int) -> Int -> String -> Element
@@ -196,12 +204,19 @@ signalsWelcome (width, height) countClick =
 
 signalsWelcomeContainer : (Int, Int) -> Element
 signalsWelcomeContainer (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) middle (body signalsWelcomeMsg))
+  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
+  [ title signalsWelcomeMsg1
+  , spacer 1 50
+  , body signalsWelcomeMsg2
+  ]))
   
-signalsWelcomeMsg : String
-signalsWelcomeMsg =
+signalsWelcomeMsg1 : String
+signalsWelcomeMsg1 =
   "Signals Section\n"
-  ++ "Signals are values that change over time."
+
+signalsWelcomeMsg2 : String
+signalsWelcomeMsg2 =
+  "Signals are values that change over time."
 
 -- Signals Message
 displaySignals : (Int, Int) -> Int -> String -> Element
@@ -346,12 +361,19 @@ modelWelcome (width, height) countClick =
 
 modelWelcomeContainer : (Int, Int) -> Element
 modelWelcomeContainer (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) middle (body modelWelcomeMsg))
+  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
+  [ title modelWelcomeMsg1
+  , spacer 1 50
+  , body modelWelcomeMsg2
+  ]))
   
-modelWelcomeMsg : String
-modelWelcomeMsg =
-  "Model Section\n"
-  ++ "The Model Section sets up the characteristics for each object used in the game."
+modelWelcomeMsg1 : String
+modelWelcomeMsg1 =
+  "Model Section"
+
+modelWelcomeMsg2 : String
+modelWelcomeMsg2 =
+  "The Model Section sets up the characteristics for each object used in the game."
 
 -- Model Message 1
 displayModel1 : (Int, Int) -> Int -> String -> Element
@@ -568,12 +590,19 @@ updateWelcome (width, height) countClick =
 
 updateWelcomeContainer : (Int, Int) -> Element
 updateWelcomeContainer (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) middle (body updateWelcomeMsg))
+  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
+  [ title updateWelcomeMsg1
+  , spacer 1 50
+  , body updateWelcomeMsg2
+  ]))
   
-updateWelcomeMsg : String
-updateWelcomeMsg =
+updateWelcomeMsg1 : String
+updateWelcomeMsg1 =
   "Update Section\n"
-  ++ "The Update Section changes the values for each object\n if the user has provided input."
+
+updateWelcomeMsg2 : String
+updateWelcomeMsg2 =
+  "The Update Section changes the values for each object\n if the user has provided input."
 
 -- Update Message 1
 displayUpdate1 : (Int, Int) -> Int -> String -> Element
@@ -1096,12 +1125,19 @@ viewWelcome (width, height) countClick =
 
 viewWelcomeContainer : (Int, Int) -> Element
 viewWelcomeContainer (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) middle (body viewWelcomeMsg))
+  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
+  [ title viewWelcomeMsg1
+  , spacer 1 50
+  , body viewWelcomeMsg2
+  ]))
   
-viewWelcomeMsg : String
-viewWelcomeMsg =
+viewWelcomeMsg1 : String
+viewWelcomeMsg1 =
   "View Section\n"
-  ++ "The View Section displays the game to the computer screen."
+
+viewWelcomeMsg2 : String
+viewWelcomeMsg2 =
+  "The View Section displays the game to the computer screen."
 
 -- View Message 1
 displayView1 : (Int, Int) -> Int -> String -> Element
