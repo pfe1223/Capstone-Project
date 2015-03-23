@@ -45,26 +45,30 @@ view (width, height) countClick hoveredOn =
 
 -- These numbers are used to create the containers that hold the code examples and explinations
 indent = 5
-containerWidth = 200
+containerWidth = 100
 containerHeight = 30
 extraLine = 15
 topHeight = 290
 bottomHeight = 720
+elmGrey = rgb 71 80 102
+elmOrange = rgb 237 149 0
+elmBlue = rgb 76 166 195
+elmGreen = rgb 127 209 17
 
 -- Welcome Message
 displayWelcome : (Int, Int) -> Int -> Element
 displayWelcome (width, height) countClick =
-  color grey (container width height middle (flow down
+  color elmGrey (container width height middle (flow down
     [ welcomeContainer (width, height)
     , spacer 1 1
     , container (width - containerWidth) 20 middle (asText countClick)
     , spacer 1 1
-    , color red (container (width - containerWidth) (height - bottomHeight) middle (plainText ""))
+    , color grey (container (width - containerWidth) (height - bottomHeight) middle (plainText ""))
     ]))
 
 welcomeContainer : (Int, Int) -> Element
 welcomeContainer (width, height) =
-  color lightBlue (container (width - containerWidth) (height - topHeight) middle (leftAligned (fromString welcomeMsg)))
+  color grey (container (width - containerWidth) (height - topHeight) middle (leftAligned (fromString welcomeMsg)))
   
 welcomeMsg : String
 welcomeMsg =
@@ -83,17 +87,17 @@ This section has all of the code for explaining the IMPORT section of the game
 -- Imports Welcome
 importsWelcome : (Int, Int) -> Int -> Element
 importsWelcome (width, height) countClick =
-  color grey (container width height middle (flow down
+  color elmGrey (container width height middle (flow down
     [ importsWelcomeContainer (width, height)
     , spacer 1 1
     , container (width - containerWidth) 20 middle (asText countClick)
     , spacer 1 1
-    , color red (container (width - containerWidth) (height - bottomHeight) middle (plainText ""))
+    , color grey (container (width - containerWidth) (height - bottomHeight) middle (plainText ""))
     ]))
 
 importsWelcomeContainer : (Int, Int) -> Element
 importsWelcomeContainer (width, height) =
-  color lightBlue (container (width - containerWidth) (height - topHeight) middle (centered (fromString importsWelcomeMsg)))
+  color grey (container (width - containerWidth) (height - topHeight) middle (centered (fromString importsWelcomeMsg)))
   
 importsWelcomeMsg : String
 importsWelcomeMsg =
@@ -103,17 +107,17 @@ importsWelcomeMsg =
 -- Imports Message
 displayImports : (Int, Int) -> Int -> String -> Element
 displayImports (width, height) countClick hoveredOn =
-  color grey (container width height middle (flow down
+  color elmGrey (container width height middle (flow down
     [ importsContainer (width, height)
     , spacer 1 1
     , container (width - containerWidth) 20 middle (asText countClick)
     , spacer 1 1
-    , color red (container (width - containerWidth) (height - bottomHeight) middle ((leftAligned(fromString hoveredOn))))
+    , color grey (container (width - containerWidth) (height - bottomHeight) middle ((leftAligned(fromString hoveredOn))))
     ]))
     
 importsContainer : (Int, Int) -> Element
 importsContainer (width, height) =
-  color lightBlue (container (width - containerWidth) (height - topHeight) middle (flow down
+  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
     [ container (width - containerWidth) containerHeight midLeft (importGraphicsInput)
     , container (width - containerWidth) containerHeight midLeft (importGraphicsElement)
     , container (width - containerWidth) containerHeight midLeft (importGraphicsCollage)
@@ -167,17 +171,17 @@ This section has all of the code for explaining the SIGNALS section of the game
 -- Signals Welcome
 signalsWelcome : (Int, Int) -> Int -> Element
 signalsWelcome (width, height) countClick =
-  color grey (container width height middle (flow down
+  color elmGrey (container width height middle (flow down
     [ signalsWelcomeContainer (width, height)
     , spacer 1 1
     , container (width - containerWidth) 20 middle (asText countClick)
     , spacer 1 1
-    , color red (container (width - containerWidth) (height - bottomHeight) middle (plainText ""))
+    , color grey (container (width - containerWidth) (height - bottomHeight) middle (plainText ""))
     ]))
 
 signalsWelcomeContainer : (Int, Int) -> Element
 signalsWelcomeContainer (width, height) =
-  color lightBlue (container (width - containerWidth) (height - topHeight) middle (centered (fromString signalsWelcomeMsg)))
+  color grey (container (width - containerWidth) (height - topHeight) middle (centered (fromString signalsWelcomeMsg)))
   
 signalsWelcomeMsg : String
 signalsWelcomeMsg =
@@ -187,17 +191,17 @@ signalsWelcomeMsg =
 -- Signals Message
 displaySignals : (Int, Int) -> Int -> String -> Element
 displaySignals (width, height) countClick hoveredOn =
-  color grey (container width height middle (flow down
+  color elmGrey (container width height middle (flow down
     [ signalsContainer (width, height)
     , spacer 1 1
     , container (width - containerWidth) 20 middle (asText countClick)
     , spacer 1 1
-    , color red (container (width - containerWidth) (height - bottomHeight) middle ((leftAligned(fromString hoveredOn))))
+    , color grey (container (width - containerWidth) (height - bottomHeight) middle ((leftAligned(fromString hoveredOn))))
     ]))
     
 signalsContainer : (Int, Int) -> Element
 signalsContainer (width, height) =
-  color lightBlue (container (width - containerWidth) (height - topHeight) middle (flow down
+  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
     [ container (width - containerWidth) containerHeight midLeft (signalMain1)
     , container (width - containerWidth) containerHeight midLeft (signalMain2)
     , spacer 1 extraLine
@@ -317,17 +321,17 @@ This section has all of the code for explaining the MODEL section of the game
 -- Model Welcome
 modelWelcome : (Int, Int) -> Int -> Element
 modelWelcome (width, height) countClick =
-  color grey (container width height middle (flow down
+  color elmGrey (container width height middle (flow down
     [ modelWelcomeContainer (width, height)
     , spacer 1 1
     , container (width - containerWidth) 20 middle (asText countClick)
     , spacer 1 1
-    , color red (container (width - containerWidth) (height - bottomHeight) middle (plainText ""))
+    , color grey (container (width - containerWidth) (height - bottomHeight) middle (plainText ""))
     ]))
 
 modelWelcomeContainer : (Int, Int) -> Element
 modelWelcomeContainer (width, height) =
-  color lightBlue (container (width - containerWidth) (height - topHeight) middle (centered (fromString modelWelcomeMsg)))
+  color grey (container (width - containerWidth) (height - topHeight) middle (centered (fromString modelWelcomeMsg)))
   
 modelWelcomeMsg : String
 modelWelcomeMsg =
@@ -337,17 +341,17 @@ modelWelcomeMsg =
 -- Model Message 1
 displayModel1 : (Int, Int) -> Int -> String -> Element
 displayModel1 (width, height) countClick hoveredOn =
-  color grey (container width height middle (flow down
+  color elmGrey (container width height middle (flow down
     [ modelContainer1 (width, height)
     , spacer 1 1
     , container (width - containerWidth) 20 middle (asText countClick)
     , spacer 1 1
-    , color red (container (width - containerWidth) (height - bottomHeight) middle ((leftAligned(fromString hoveredOn))))
+    , color grey (container (width - containerWidth) (height - bottomHeight) middle ((leftAligned(fromString hoveredOn))))
     ]))
     
 modelContainer1 : (Int, Int) -> Element
 modelContainer1 (width, height) =
-  color lightBlue (container (width - containerWidth) (height - topHeight) middle (flow down
+  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
     [ container (width - containerWidth) containerHeight midLeft (gameSize)
     , container (width - containerWidth) containerHeight midLeft (playingSize)
     , spacer 1 extraLine
@@ -425,17 +429,17 @@ aliasGame2 =
 -- Model Message 2
 displayModel2 : (Int, Int) -> Int -> String -> Element
 displayModel2 (width, height) countClick hoveredOn =
-  color grey (container width height middle (flow down
+  color elmGrey (container width height middle (flow down
     [ modelContainer2 (width, height)
     , spacer 1 1
     , container (width - containerWidth) 20 middle (asText countClick)
     , spacer 1 1
-    , color red (container (width - containerWidth) (height - bottomHeight) middle ((leftAligned(fromString hoveredOn))))
+    , color grey (container (width - containerWidth) (height - bottomHeight) middle ((leftAligned(fromString hoveredOn))))
     ]))
     
 modelContainer2 : (Int, Int) -> Element
 modelContainer2 (width, height) =
-  color lightBlue (container (width - containerWidth) (height - topHeight) middle (flow down
+  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
     [ container (width - containerWidth) containerHeight midLeft (defaultGame1)
     , container (width - containerWidth) containerHeight midLeft (defaultGame2)
     , container (width - containerWidth) containerHeight midLeft (defaultGame3)
@@ -539,17 +543,17 @@ This section has all of the code for explaining the UPDATE section of the game
 -- Update Welcome
 updateWelcome : (Int, Int) -> Int -> Element
 updateWelcome (width, height) countClick =
-  color grey (container width height middle (flow down
+  color elmGrey (container width height middle (flow down
     [ updateWelcomeContainer (width, height)
     , spacer 1 1
     , container (width - containerWidth) 20 middle (asText countClick)
     , spacer 1 1
-    , color red (container (width - containerWidth) (height - bottomHeight) middle (plainText""))
+    , color grey (container (width - containerWidth) (height - bottomHeight) middle (plainText""))
     ]))
 
 updateWelcomeContainer : (Int, Int) -> Element
 updateWelcomeContainer (width, height) =
-  color lightBlue (container (width - containerWidth) (height - topHeight) middle (centered (fromString updateWelcomeMsg)))
+  color grey (container (width - containerWidth) (height - topHeight) middle (centered (fromString updateWelcomeMsg)))
   
 updateWelcomeMsg : String
 updateWelcomeMsg =
@@ -559,17 +563,17 @@ updateWelcomeMsg =
 -- Update Message 1
 displayUpdate1 : (Int, Int) -> Int -> String -> Element
 displayUpdate1 (width, height) countClick hoveredOn =
-  color grey (container width height middle (flow down
+  color elmGrey (container width height middle (flow down
     [ updateContainer1 (width, height)
     , spacer 1 1
     , container (width - containerWidth) 20 middle (asText countClick)
     , spacer 1 1
-    , color red (container (width - containerWidth) (height - bottomHeight) middle ((leftAligned(fromString hoveredOn))))
+    , color grey (container (width - containerWidth) (height - bottomHeight) middle ((leftAligned(fromString hoveredOn))))
     ]))
     
 updateContainer1 : (Int, Int) -> Element
 updateContainer1 (width, height) =
-  color lightBlue (container (width - containerWidth) (height - topHeight) middle (flow down
+  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
     [ container (width - containerWidth) containerHeight midLeft (updateFunc1)
     , container (width - containerWidth) containerHeight midLeft (updateFunc2)
     , container (width - containerWidth) containerHeight midLeft (updateFunc3)
@@ -705,17 +709,17 @@ updateFunc17 =
 -- Update Message 2
 displayUpdate2 : (Int, Int) -> Int -> String -> Element
 displayUpdate2 (width, height) countClick hoveredOn =
-  color grey (container width height middle (flow down
+  color elmGrey (container width height middle (flow down
     [ updateContainer2 (width, height)
     , spacer 1 1
     , container (width - containerWidth) 20 middle (asText countClick)
     , spacer 1 1
-    , color red (container (width - containerWidth) (height - bottomHeight) middle ((leftAligned(fromString hoveredOn))))
+    , color grey (container (width - containerWidth) (height - bottomHeight) middle ((leftAligned(fromString hoveredOn))))
     ]))
     
 updateContainer2 : (Int, Int) -> Element
 updateContainer2 (width, height) =
-  color lightBlue (container (width - containerWidth) (height - topHeight) middle (flow down
+  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
     [ container (width - containerWidth) containerHeight midLeft (updateBadGuy1)
     , container (width - containerWidth) containerHeight midLeft (updateBadGuy2)
     , container (width - containerWidth) containerHeight midLeft (updateBadGuy3)
@@ -821,17 +825,17 @@ updateBadGuy13 =
 -- Update Message 3
 displayUpdate3 : (Int, Int) -> Int -> String -> Element
 displayUpdate3 (width, height) countClick hoveredOn =
-  color grey (container width height middle (flow down
+  color elmGrey (container width height middle (flow down
     [ updateContainer3 (width, height)
     , spacer 1 1
     , container (width - containerWidth) 20 middle (asText countClick)
     , spacer 1 1
-    , color red (container (width - containerWidth) (height - bottomHeight) middle ((leftAligned(fromString hoveredOn))))
+    , color grey (container (width - containerWidth) (height - bottomHeight) middle ((leftAligned(fromString hoveredOn))))
     ]))
     
 updateContainer3 : (Int, Int) -> Element
 updateContainer3 (width, height) =
-  color lightBlue (container (width - containerWidth) (height - topHeight) middle (flow down
+  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
     [ container (width - containerWidth) containerHeight midLeft (updatePlayer1)
     , container (width - containerWidth) containerHeight midLeft (updatePlayer2)
     , container (width - containerWidth) containerHeight midLeft (updatePlayer3)
@@ -942,17 +946,17 @@ updatePlayer13 =
 -- Update Message 4
 displayUpdate4 : (Int, Int) -> Int -> String -> Element
 displayUpdate4 (width, height) countClick hoveredOn=
-  color grey (container width height middle (flow down
+  color elmGrey (container width height middle (flow down
     [ updateContainer4 (width, height)
     , spacer 1 1
     , container (width - containerWidth) 20 middle (asText countClick)
     , spacer 1 1
-    , color red (container (width - containerWidth) (height - bottomHeight) middle ((leftAligned(fromString hoveredOn))))
+    , color grey (container (width - containerWidth) (height - bottomHeight) middle ((leftAligned(fromString hoveredOn))))
     ]))
     
 updateContainer4 : (Int, Int) -> Element
 updateContainer4 (width, height) =
-  color lightBlue (container (width - containerWidth) (height - topHeight) middle (flow down
+  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
     [ container (width - containerWidth) containerHeight midLeft (updatePhysics1)
     , container (width - containerWidth) containerHeight midLeft (updatePhysics2)
     , container (width - containerWidth) containerHeight midLeft (updatePhysics3)
@@ -1067,17 +1071,17 @@ This section has all of the code for explaining the VIEW section of the game
 -- View Welcome
 viewWelcome : (Int, Int) -> Int -> Element
 viewWelcome (width, height) countClick =
-  color grey (container width height middle (flow down
+  color elmGrey (container width height middle (flow down
     [ viewWelcomeContainer (width, height)
     , spacer 1 1
     , container (width - containerWidth) 20 middle (asText countClick)
     , spacer 1 1
-    , color red (container (width - containerWidth) (height - bottomHeight) middle (plainText ""))
+    , color grey (container (width - containerWidth) (height - bottomHeight) middle (plainText ""))
     ]))
 
 viewWelcomeContainer : (Int, Int) -> Element
 viewWelcomeContainer (width, height) =
-  color lightBlue (container (width - containerWidth) (height - topHeight) middle (centered (fromString viewWelcomeMsg)))
+  color grey (container (width - containerWidth) (height - topHeight) middle (centered (fromString viewWelcomeMsg)))
   
 viewWelcomeMsg : String
 viewWelcomeMsg =
@@ -1087,17 +1091,17 @@ viewWelcomeMsg =
 -- View Message 1
 displayView1 : (Int, Int) -> Int -> String -> Element
 displayView1 (width, height) countClick hoveredOn =
-  color grey (container width height middle (flow down
+  color elmGrey (container width height middle (flow down
     [ viewContainer1 (width, height)
     , spacer 1 1
     , container (width - containerWidth) 20 middle (asText countClick)
     , spacer 1 1
-    , color red (container (width - containerWidth) (height - bottomHeight) middle ((leftAligned(fromString hoveredOn))))
+    , color grey (container (width - containerWidth) (height - bottomHeight) middle ((leftAligned(fromString hoveredOn))))
     ]))
     
 viewContainer1 : (Int, Int) -> Element
 viewContainer1 (width, height) =
-  color lightBlue (container (width - containerWidth) (height - topHeight) middle (flow down
+  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
     [ container (width - containerWidth) containerHeight midLeft (viewFunc1)
     , container (width - containerWidth) containerHeight midLeft (viewFunc2)
     , container (width - containerWidth) containerHeight midLeft (viewFunc3)
@@ -1221,17 +1225,17 @@ viewFunc15 =
 -- View Message 2
 displayView2 : (Int, Int) -> Int -> String -> Element
 displayView2 (width, height) countClick hoveredOn =
-  color grey (container width height middle (flow down
+  color elmGrey (container width height middle (flow down
     [ viewContainer2 (width, height)
     , spacer 1 1
     , container (width - containerWidth) 20 middle (asText countClick)
     , spacer 1 1
-    , color red (container (width - containerWidth) (height - bottomHeight) middle ((leftAligned(fromString hoveredOn))))
+    , color grey (container (width - containerWidth) (height - bottomHeight) middle ((leftAligned(fromString hoveredOn))))
     ]))
     
 viewContainer2 : (Int, Int) -> Element
 viewContainer2 (width, height) =
-  color lightBlue (container (width - containerWidth) (height - topHeight) middle (flow down
+  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
     [ container (width - containerWidth) containerHeight midLeft (viewFunc16)
     , container (width - containerWidth) containerHeight midLeft (viewFunc17)
     , container (width - containerWidth) containerHeight midLeft (viewFunc18)
@@ -1280,7 +1284,7 @@ viewFunc20 =
   leftAligned(fromString (padLeft 16 ' ' " ]"))
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc20Msg) else (Signal.send hoveredOn ""))
 
-backgroundColorMsg = "The variable backgroundColor is set to color with the red value of 178,\n"
+backgroundColorMsg = "The variable backgroundColor is set to color with the grey value of 178,\n"
                                   ++ "the green value of 8, and the blue value of 1."
 backgroundColor : Element
 backgroundColor =
