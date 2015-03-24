@@ -45,7 +45,7 @@ view (width, height) countClick hoveredOn =
 
 -- These numbers are used to create the containers that hold the code examples and explinations
 indent = 5
-containerWidth = 100
+containerWidth = 90
 containerHeight = 30
 extraLine = 15
 topHeight = 290
@@ -61,8 +61,12 @@ title f = Text.fromString(f)
             |> Text.height 50
             |> Text.centered
 
+subTitle f = Text.fromString(f)
+                  |> Text.height 20
+                  |> Text.centered
+
 body f = Text.fromString(f)
-              |> Text.leftAligned
+             |> Text.leftAligned
 
 -- Welcome Message
 displayWelcome : (Int, Int) -> Int -> Element
@@ -77,10 +81,10 @@ displayWelcome (width, height) countClick =
 
 welcomeContainer : (Int, Int) -> Element
 welcomeContainer (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
-    [ title welcomeMsg1
-    , spacer 1 50
-    , body welcomeMsg2
+  color grey (container (width - containerWidth) (height - topHeight) midLeft (flow down
+    [ container (width - containerWidth) 100 middle <| title welcomeMsg1
+    , spacer 1 20
+    , container (width - containerWidth) 300 middle <| subTitle welcomeMsg2
     ]))
 
 welcomeMsg1 : String
@@ -88,11 +92,13 @@ welcomeMsg1 = "Elm Play"
 
 welcomeMsg2 : String
 welcomeMsg2 =
-  "Welcome to Elm Play. This tutorial will walk you through creating a video game\n"
-  ++ "using the Elm language. Use the arrows to navigate through the help. \n \n"
-  ++ "Hover over the lines of code in this window to see an explination of what \n"
-  ++ "this particular code does. \n \n"
-  ++ "Copy the code in the top window into the editor to start creating your game."
+  " Welcome to Elm Play. This tutorial will walk you through creating\n"
+  ++ " a video game using the Elm language. Use the arrows to navigate\n"
+  ++ " through the help. \n\n"
+  ++ " Hover over the lines of code in this window to see an explination\n"
+  ++ " of what this particular code does. \n \n"
+  ++ " Copy the code in the top window into the editor to start creating\n"
+  ++ " your game." 
 
 {-- 
 *************************************************************
@@ -114,9 +120,9 @@ importsWelcome (width, height) countClick =
 importsWelcomeContainer : (Int, Int) -> Element
 importsWelcomeContainer (width, height) =
   color grey (container (width - containerWidth) (height - topHeight) middle (flow down
-  [ title importsWelcomeMsg1
-  , spacer 1 50
-  , body importsWelcomeMsg2
+  [ container (width - containerWidth) 100 middle <| title importsWelcomeMsg1
+  , spacer 1 20
+  , container (width - containerWidth) 50 middle <| subTitle importsWelcomeMsg2
   ]))
   
 importsWelcomeMsg1 : String
@@ -204,10 +210,10 @@ signalsWelcome (width, height) countClick =
 
 signalsWelcomeContainer : (Int, Int) -> Element
 signalsWelcomeContainer (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
-  [ title signalsWelcomeMsg1
-  , spacer 1 50
-  , body signalsWelcomeMsg2
+  color grey (container (width - containerWidth) (height - topHeight) midLeft (flow down
+  [ container (width - containerWidth) 100 middle <| title signalsWelcomeMsg1
+  , spacer 1 20
+  , container (width - containerWidth) 50 middle <| subTitle signalsWelcomeMsg2
   ]))
   
 signalsWelcomeMsg1 : String
@@ -361,10 +367,10 @@ modelWelcome (width, height) countClick =
 
 modelWelcomeContainer : (Int, Int) -> Element
 modelWelcomeContainer (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
-  [ title modelWelcomeMsg1
-  , spacer 1 50
-  , body modelWelcomeMsg2
+  color grey (container (width - containerWidth) (height - topHeight) midLeft (flow down
+  [ container (width - containerWidth) 100 middle <| title modelWelcomeMsg1
+  , spacer 1 20
+  , container (width - containerWidth) 50 middle <| subTitle modelWelcomeMsg2
   ]))
   
 modelWelcomeMsg1 : String
@@ -373,7 +379,8 @@ modelWelcomeMsg1 =
 
 modelWelcomeMsg2 : String
 modelWelcomeMsg2 =
-  "The Model Section sets up the characteristics for each object used in the game."
+  "The Model Section sets up the characteristics for each\n"
+  ++ "object used in the game."
 
 -- Model Message 1
 displayModel1 : (Int, Int) -> Int -> String -> Element
@@ -590,10 +597,10 @@ updateWelcome (width, height) countClick =
 
 updateWelcomeContainer : (Int, Int) -> Element
 updateWelcomeContainer (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
-  [ title updateWelcomeMsg1
-  , spacer 1 50
-  , body updateWelcomeMsg2
+  color grey (container (width - containerWidth) (height - topHeight) midLeft (flow down
+  [ container (width - containerWidth) 100 middle <| title updateWelcomeMsg1
+  , spacer 1 20
+  , container (width - containerWidth) 50 middle <| subTitle updateWelcomeMsg2
   ]))
   
 updateWelcomeMsg1 : String
@@ -602,7 +609,7 @@ updateWelcomeMsg1 =
 
 updateWelcomeMsg2 : String
 updateWelcomeMsg2 =
-  "The Update Section changes the values for each object\n if the user has provided input."
+  "The Update Section changes the values for each object if the \nuser has provided input."
 
 -- Update Message 1
 displayUpdate1 : (Int, Int) -> Int -> String -> Element
@@ -1125,10 +1132,10 @@ viewWelcome (width, height) countClick =
 
 viewWelcomeContainer : (Int, Int) -> Element
 viewWelcomeContainer (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
-  [ title viewWelcomeMsg1
-  , spacer 1 50
-  , body viewWelcomeMsg2
+  color grey (container (width - containerWidth) (height - topHeight) midLeft (flow down
+  [ container (width - containerWidth) 50 middle <| title viewWelcomeMsg1
+  , spacer 1 20
+  , container (width - containerWidth) 50 middle <| subTitle viewWelcomeMsg2
   ]))
   
 viewWelcomeMsg1 : String
