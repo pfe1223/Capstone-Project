@@ -79,7 +79,7 @@ displayWelcome (width, height) sig =
     , flow right
       [ spacer 150 1
       , color grey <| button (send chan (sig - 1)) "&larr;"
-      , container 150 30 middle (Text.asText sig)
+      , spacer 150 1
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
@@ -122,7 +122,7 @@ importsWelcome (width, height) sig =
     , flow right
       [ spacer 150 1
       , color grey <| button (send chan (sig - 1)) "&larr;"
-      , container 150 30 middle (Text.asText sig)
+      , spacer 150 1
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
@@ -154,7 +154,7 @@ displayImports (width, height) sig hoveredOn =
     , flow right
       [ spacer 150 1
       , color grey <| button (send chan (sig - 1)) "&larr;"
-      , container 150 30 middle (Text.asText sig)
+      , spacer 150 1
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
@@ -223,7 +223,7 @@ signalsWelcome (width, height) sig =
     , flow right
       [ spacer 150 1
       , color grey <| button (send chan (sig - 1)) "&larr;"
-      , container 150 30 middle (Text.asText sig)
+      , spacer 150 1
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
@@ -255,7 +255,7 @@ displaySignals (width, height) sig hoveredOn =
     , flow right
       [ spacer 150 1
       , color grey <| button (send chan (sig - 1)) "&larr;"
-      , container 150 30 middle (Text.asText sig)
+      , spacer 150 1
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
@@ -390,7 +390,7 @@ modelWelcome (width, height) sig =
     , flow right
       [ spacer 150 1
       , color grey <| button (send chan (sig - 1)) "&larr;"
-      , container 150 30 middle (Text.asText sig)
+      , spacer 150 1
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
@@ -423,7 +423,7 @@ displayModel1 (width, height) sig hoveredOn =
     , flow right
       [ spacer 150 1
       , color grey <| button (send chan (sig - 1)) "&larr;"
-      , container 150 30 middle (Text.asText sig)
+      , spacer 150 1
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
@@ -516,7 +516,7 @@ displayModel2 (width, height) sig hoveredOn =
     , flow right
       [ spacer 150 1
       , color grey <| button (send chan (sig - 1)) "&larr;"
-      , container 150 30 middle (Text.asText sig)
+      , spacer 150 1
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
@@ -635,7 +635,7 @@ updateWelcome (width, height) sig =
     , flow right
       [ spacer 150 1
       , color grey <| button (send chan (sig - 1)) "&larr;"
-      , container 150 30 middle (Text.asText sig)
+      , spacer 150 1
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
@@ -667,7 +667,7 @@ displayUpdate1 (width, height) sig hoveredOn =
     , flow right
       [ spacer 150 1
       , color grey <| button (send chan (sig - 1)) "&larr;"
-      , container 150 30 middle (Text.asText sig)
+      , spacer 150 1
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
@@ -818,7 +818,7 @@ displayUpdate2 (width, height) sig hoveredOn =
     , flow right
       [ spacer 150 1
       , color grey <| button (send chan (sig - 1)) "&larr;"
-      , container 150 30 middle (Text.asText sig)
+      , spacer 150 1
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
@@ -939,7 +939,7 @@ displayUpdate3 (width, height) sig hoveredOn =
     , flow right
       [ spacer 150 1
       , color grey <| button (send chan (sig - 1)) "&larr;"
-      , container 150 30 middle (Text.asText sig)
+      , spacer 150 1
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
@@ -1065,7 +1065,7 @@ displayUpdate4 (width, height) sig hoveredOn=
     , flow right
       [ spacer 150 1
       , color grey <| button (send chan (sig - 1)) "&larr;"
-      , container 150 30 middle (Text.asText sig)
+      , spacer 150 1
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
@@ -1195,7 +1195,7 @@ viewWelcome (width, height) sig =
     , flow right
       [ spacer 150 1
       , color grey <| button (send chan (sig - 1)) "&larr;"
-      , container 150 30 middle (Text.asText sig)
+      , spacer 150 1
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
@@ -1227,7 +1227,7 @@ displayView1 (width, height) sig hoveredOn =
     , flow right
       [ spacer 150 1
       , color grey <| button (send chan (sig - 1)) "&larr;"
-      , container 150 30 middle (Text.asText sig)
+      , spacer 150 1
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
@@ -1366,7 +1366,7 @@ displayView2 (width, height) sig hoveredOn =
     , flow right
       [ spacer 150 1
       , color grey <| button (send chan (sig - 1)) "&larr;"
-      , container 150 30 middle (Text.asText sig)
+      , spacer 150 1
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
