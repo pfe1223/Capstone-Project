@@ -472,7 +472,7 @@ aliasBadGuy1 =
   body " type alias BadGuy ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasBadGuy1Msg) else (Signal.send hoveredOn ""))
     
-aliasBadGuy2Msg = "Objects of type BadGuy have an x value of type float, a y value of type float,\n"
+aliasBadGuy2Msg = "Objects of type BadGuy have an x value of type float, a y value of \ntype float,"
                               ++ "a vx value of type Float, and a vy value of type float.\n"
                               ++ "Floats are numbers with a decimal."
 aliasBadGuy2 : Element
@@ -486,9 +486,9 @@ aliasPlayer1 =
   body " type alias Player ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasPlayer1Msg) else (Signal.send hoveredOn ""))
 
-aliasPlayer2Msg = "Objects of type Player have an x value of type float, a y value of type float,\n"
-                              ++ "a vx value of type Float, a vy value of type float, and a lives value of type integer.\n"
-                              ++ "Floats are numbers with a decimal, and integers are number without decimals."
+aliasPlayer2Msg = "Objects of type Player have an x value of type float, a y value of type \nfloat,"
+                              ++ "a vx value of type Float, a vy value of type float, and a lives value \nof type integer."
+                              ++ "Floats are numbers with a decimal, and integers are \nnumber without decimals."
 aliasPlayer2 : Element
 aliasPlayer2 =
   body (padLeft 56 ' ' " { x:Float, y:Float, vx:Float, vy:Float, lives:Int }")
@@ -500,8 +500,8 @@ aliasGame1 =
   body " type alias Game ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasGame1Msg) else (Signal.send hoveredOn ""))
 
-aliasGame2Msg = "Objects of type Game have a value state of type State,\n"
-                           ++ "a value badGuy of type BadGuy, and a value of player1 of type Player."
+aliasGame2Msg = "Objects of type Game have a value state of type State,"
+                           ++ "a value \nbadGuy of type BadGuy, and a value of player1 of type Player."
 aliasGame2 : Element
 aliasGame2 =
   body (padLeft 51 ' ' " { state:State, badGuy:BadGuy, player1:Player }")
@@ -559,17 +559,17 @@ defaultGame3 =
   body (padLeft 20 ' ' " { state = Pause")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame3Msg) else (Signal.send hoveredOn ""))
 
-defaultGame4Msg = " The badGuy attributes have an x value of 0, a y value of 0, a vx value of 300,\n"
-                              ++ "and a vy value of 300. The x and y values are used for the badGuy's postion,\n"
-                              ++ "and the vx and vy values are the velocity (think speed) of the badGuy."
+defaultGame4Msg = "The badGuy attributes have an x value of 0, a y value of 0, a vx value \nof 300,"
+                              ++ "and a vy value of 300. The x and y values are used for the \nbadGuy's postion,"
+                              ++ "and the vx and vy values are the velocity (think speed) \nof the badGuy."
 defaultGame4 : Element
 defaultGame4 =
   body (padLeft 44 ' ' " , badGuy = { x=0, y=0, vx=300, vy=300 }")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame4Msg) else (Signal.send hoveredOn ""))
 
-defaultGame5Msg = " The player1 attributes have an x value of 15-halfWidth (or -285), a y value of 0,\n"
-                              ++ " a vx value of 300, and a vy value of 300. The x and y values are used for the player1's postion,\n"
-                              ++ "and the vx and vy values are the velocity (think speed) of the player1. player1 also has 3 lives."
+defaultGame5Msg = "The player1 attributes have an x value of 15-halfWidth (or -285), a \ny value of 0,"
+                              ++ " a vx value of 300, and a vy value of 300. The x and y values \nare used for the player1's postion,"
+                              ++ "and the vx and vy values are the velocity \n(think speed) of the player1. player1 also has 3 lives."
 defaultGame5 : Element
 defaultGame5 =
   body (padLeft 71 ' ' " , player1 = { x = 15-halfWidth, y = 0, vx = 0, vy = 0, lives = 3 }")
@@ -587,34 +587,34 @@ aliasInput1 =
   body " type alias Input ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasInput1Msg) else (Signal.send hoveredOn ""))
 
-aliasInput2Msg = " Objects of type Input has an attribute called space with a boolean value.\n"
+aliasInput2Msg = "Objects of type Input has an attribute called space with a boolean value.\n"
                           ++ "Boolean means either true or false."
 aliasInput2 : Element
 aliasInput2 =
   body (padLeft 19 ' ' " { space : Bool")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasInput2Msg) else (Signal.send hoveredOn ""))
 
-aliasInput3Msg = " Objects of type Input has an attribute called dir2 with a integer value.\n"
+aliasInput3Msg = "Objects of type Input has an attribute called dir2 with a integer value.\n"
                           ++ "Integer means a number without a decimal."
 aliasInput3 : Element
 aliasInput3 =
   body (padLeft 17 ' ' " , dir1 : Int")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasInput3Msg) else (Signal.send hoveredOn ""))
 
-aliasInput4Msg = " Objects of type Input has an attribute called dir2 with a integer value.\n"
+aliasInput4Msg = "Objects of type Input has an attribute called dir2 with a integer value.\n"
                           ++ "Integer means a number without a decimal."
 aliasInput4 : Element
 aliasInput4 =
   body (padLeft 17 ' ' " , dir2 : Int")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasInput4Msg) else (Signal.send hoveredOn ""))
 
-aliasInput5Msg = " Objects fo type Input have an attribute called delta with a Time value."
+aliasInput5Msg = "Objects fo type Input have an attribute called delta with a Time value."
 aliasInput5 : Element
 aliasInput5 =
   body (padLeft 19 ' ' " , delta : Time")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasInput5Msg) else (Signal.send hoveredOn ""))
 
-aliasInput6Msg = " End the list of attributes for Input."
+aliasInput6Msg = "End the list of attributes for Input."
 aliasInput6 : Element
 aliasInput6 =
   body (padLeft 6 ' ' " }")
@@ -656,7 +656,7 @@ updateWelcomeMsg1 =
 
 updateWelcomeMsg2 : String
 updateWelcomeMsg2 =
-  "The Update Section changes the values for each object if the \nuser has provided input."
+  "The Update Section changes the values for each object \nif the user has provided input."
 
 -- Update Message 1
 displayUpdate1 : (Int, Int) -> Int -> String -> Element
@@ -706,21 +706,21 @@ updateFunc1 =
   body " update : Input -> Game -> Game"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc1Msg) else (Signal.send hoveredOn ""))
 
-updateFunc2Msg = "Specifically, update takes Input in the form of space, dir1, dir2, and delta\n"
+updateFunc2Msg = "Specifically, update takes Input in the form of space, dir1, dir2, and delta.\n"
                           ++ "The Game is defined as state, badGuy, and player1."
 updateFunc2 : Element
 updateFunc2 =
   body " update {space,dir1,dir2,delta} ({state,badGuy,player1} as game) ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc2Msg) else (Signal.send hoveredOn ""))
 
-updateFunc3Msg = "The let expression assigns the value of 1 to lives if badGuy is within player1.\n"
-                          ++ "If not, the value of 0 is assigned to lives. The function within is defined below."
+updateFunc3Msg = "The let expression assigns the value of 1 to lives if badGuy is within \nplayer1."
+                          ++ "If not, the value of 0 is assigned to lives. The function within is \ndefined below."
 updateFunc3 : Element
 updateFunc3 =
   body (padLeft 60 ' ' " let lives = if (badGuy `within` player1) then 1 else 0")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc3Msg) else (Signal.send hoveredOn ""))
 
-updateFunc4Msg = "The function newState assumes a value dependent upon the cases below:\n"
+updateFunc4Msg = "The function newState assumes a value dependent upon the cases below:"
 updateFunc4 : Element
 updateFunc4 =
   body (padLeft 21 ' ' " newState =")
@@ -739,13 +739,13 @@ updateFunc6 =
   body (padLeft 48 ' ' " | player1.lives == 0 -> Pause")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc6Msg) else (Signal.send hoveredOn ""))
 
-updateFunc7Msg = "In all other cases, newState assumes the value of state. That is, nothing changes."
+updateFunc7Msg = "In all other cases, newState assumes the value of state. \nThat is, nothing changes."
 updateFunc7 : Element
 updateFunc7 =
   body (padLeft 52 ' ' " | otherwise              -> state")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc7Msg) else (Signal.send hoveredOn ""))
 
-updateFunc8Msg = "The function newBadGuy assumes the value dependent upong the following cases:"
+updateFunc8Msg = "The function newBadGuy assumes the value dependent \nupon the following cases:"
 updateFunc8 : Element
 updateFunc8 =
   body (padLeft 22 ' ' " newBadGuy =")
@@ -765,14 +765,14 @@ updateFunc10 =
   body (padLeft 32 ' ' " then badGuy")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc10Msg) else (Signal.send hoveredOn ""))
 
-updateFunc11Msg = "When state equals Play, then call the function updateBadGuy, which defined below.\n"
+updateFunc11Msg = "When state equals Play, then call the function updateBadGuy, which is \ndefined below."
                               ++ "updateBadGuy takes delta, badGuy, and player1."
 updateFunc11 : Element
 updateFunc11 =
   body (padLeft 59 ' ' " else updateBadGuy delta badGuy player1")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc11Msg) else (Signal.send hoveredOn ""))
 
-updateFunc12Msg = "The in part of the let expression tells us how the above information will be used."
+updateFunc12Msg = "The in part of the let expression tells us how the \nabove information will be used."
 updateFunc12 : Element
 updateFunc12 =
   body (padLeft 8 ' ' " in")
@@ -896,7 +896,7 @@ updateBadGuy8 =
   body (padLeft 16 ' ' " }")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy8Msg) else (Signal.send hoveredOn ""))
 
-updateBadGuy9Msg = "In all other cases, the function physicsUpdate will be called with different arguments."
+updateBadGuy9Msg = "In all other cases, the function physicsUpdate will be \ncalled with different arguments."
 updateBadGuy9 : Element
 updateBadGuy9 =
   body (padLeft 38 ' ' " | otherwise -> physicsUpdate t")
@@ -908,7 +908,7 @@ updateBadGuy10 =
   body (padLeft 25 ' ' " { badGuy |")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy10Msg) else (Signal.send hoveredOn ""))
 
-updateBadGuy11Msg = "The value vx takes the result of the function stepV. This is checking to see if\n"
+updateBadGuy11Msg = "The value vx takes the result of the function stepV. This is checking to \nsee if "
                                     ++ "the badGuy is going outside the game area. The number 25 is used\n"
                                     ++ "that is the radius of badGuy. This will keep it in the game area."
 updateBadGuy11 : Element
@@ -916,7 +916,7 @@ updateBadGuy11 =
   body (padLeft 71 ' ' " vx <- stepV vx (x < 25-halfWidth) (x > halfWidth-25),")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy11Msg) else (Signal.send hoveredOn ""))
 
-updateBadGuy12Msg = "The value vx takes the result of the function stepV. This is checking to see if\n"
+updateBadGuy12Msg = "The value vx takes the result of the function stepV. This is checking to \nsee if "
                                     ++ "the badGuy is going outside the game area. The number 25 is used\n"
                                     ++ "that is the radius of badGuy. This will keep it in the game area."
 updateBadGuy12 : Element
@@ -964,7 +964,7 @@ updateContainer3 (width, height) =
     , container containerWidth codeHeight midLeft (updatePlayer13)
     ]))
   
-updatePlayer1Msg = "This defines the function updatePlayer, which takes a time, an integer, another\n"
+updatePlayer1Msg = "This defines the function updatePlayer, which takes a time, an integer, \nanother "
                           ++ "integer, another integer, a player, and returns a player."
 updatePlayer1 : Element
 updatePlayer1 =
@@ -977,18 +977,18 @@ updatePlayer2 =
   body " updatePlayer t dir1 dir2 lives player ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer2Msg) else (Signal.send hoveredOn ""))
 
-updatePlayer3Msg = "An object player1 is created. Its attributes of vx and vy are set to the values created\n"
+updatePlayer3Msg = "An object player1 is created. Its attributes of vx and vy are set to the values \ncreated "
                               ++ "by the function physicsUpdate, which takes time t. and player.\n"
-                              ++ "The updated vy attribute takes the value of dir2 multiplied by 200. However, dir2\n"
-                              ++ "multiplied by 200 is an integer. The value vy is a float. The toFloat function converts\n"
+                              ++ "The updated vy attribute takes the value of dir2 multiplied by 200. However,\ndir2 "
+                              ++ "multiplied by 200 is an integer. The value vy is a float. The toFloat \nfunction converts "
                               ++ "an integer into a float."
 updatePlayer3 : Element
 updatePlayer3 =
   body (padLeft 73 ' ' " let player1 = physicsUpdate  t { player | vx <- toFloat dir1 * 200,")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer3Msg) else (Signal.send hoveredOn ""))
 
-updatePlayer4Msg = "The updated vy attribute takes the value of dir2 multiplied by 200. However, dir2\n"
-                              ++ "multiplied by 200 is an integer. The value vy is a float. The toFloat function converts\n"
+updatePlayer4Msg = "The updated vy attribute takes the value of dir2 multiplied by 200. \nHowever, dir2 "
+                              ++ "multiplied by 200 is an integer. The value vy is a float. \nThe toFloat function converts "
                               ++ "an integer into a float."
 updatePlayer4 : Element
 updatePlayer4 =
