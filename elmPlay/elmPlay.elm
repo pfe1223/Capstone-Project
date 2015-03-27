@@ -27,7 +27,7 @@ state = One
 
 view : (Int, Int) -> Int -> String -> Element
 view (width, height) sig hoveredOn =
-  if | sig == 0 -> displayWelcome (width, height) sig
+  if | sig <= 0 -> displayWelcome (width, height) sig
      | sig == 1 -> importsWelcome(width, height) sig
      | sig == 2 -> displayImports (width, height) sig hoveredOn
      | sig == 3 -> signalsWelcome (width, height) sig
@@ -65,7 +65,7 @@ title f = Text.fromString(f)
 
 subTitle f = Text.fromString(f)
                   |> Text.height 20
-                  |> Text.centered
+                  |> Text.leftAligned
 
 body f = Text.fromString(f)
              |> Text.leftAligned
@@ -99,13 +99,13 @@ welcomeMsg1 = "Elm Play"
 
 welcomeMsg2 : String
 welcomeMsg2 =
-  " Welcome to Elm Play. This tutorial will walk you through creating\n"
-  ++ " a video game using the Elm language. Use the arrows to navigate\n"
-  ++ " through the help. \n\n"
-  ++ " Hover over the lines of code in this window to see an explination\n"
-  ++ " of what this particular code does. \n \n"
-  ++ " Copy the code in the top window into the editor to start creating\n"
-  ++ " your game." 
+  "Welcome to Elm Play. This tutorial will walk you through \ncreating"
+  ++ "a video game using the Elm language. Use the \narrows to navigate"
+  ++ "through the help. \n\n"
+  ++ "Hover over the lines of code in this window to see an \nexplination"
+  ++ "of what this particular code does. \n \n"
+  ++ "Copy the code in the top window into the editor to start \ncreating"
+  ++ "your game." 
 
 {-- 
 *************************************************************
@@ -143,7 +143,7 @@ importsWelcomeMsg1 =
 
 importsWelcomeMsg2 : String
 importsWelcomeMsg2 =
-  "The Imports Section loads all of the packages needed for the game."
+  "The Imports Section loads all of the packages needed \nfor the game."
 
 -- Imports Message
 displayImports : (Int, Int) -> Int -> String -> Element
