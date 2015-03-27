@@ -161,9 +161,7 @@ view (w,h) {state,badGuy,player1} =
             |> move (0, 40 - gameHeight/2)
         ]
 
-backgroundColor = rgb 178 8 1
 elmGrey = rgb 71 80 102
-elmOrange = rgb 237 149 0
 elmBlue = rgb 76 166 195
 elmGreen = rgb 127 209 17
 textColor = white
