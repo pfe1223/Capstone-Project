@@ -47,11 +47,11 @@ view (width, height) sig hoveredOn =
 
 -- These numbers are used to create the containers that hold the code examples and explinations
 indent = 5
-containerWidth = 90
-containerHeight = 30
+containerWidth = 600
+topHeight = 550
 extraLine = 15
-topHeight = 290
-bottomHeight = 720
+codeHeight = 30
+bottomHeight = 150
 
 -- Custom colors based on the Elm logo
 elmGrey = rgb 71 80 102
@@ -83,15 +83,15 @@ displayWelcome (width, height) sig =
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
-    , color grey (container (width - containerWidth) (height - bottomHeight) middle (Text.plainText ""))
+    , color grey (container containerWidth bottomHeight middle (Text.plainText ""))
     ]))
 
 welcomeContainer : (Int, Int) -> Element
 welcomeContainer (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) midLeft (flow down
-    [ container (width - containerWidth) 100 middle <| title welcomeMsg1
+  color grey (container containerWidth topHeight midLeft (flow down
+    [ container containerWidth 100 middle <| title welcomeMsg1
     , spacer 1 20
-    , container (width - containerWidth) 300 middle <| subTitle welcomeMsg2
+    , container containerWidth 300 middle <| subTitle welcomeMsg2
     ]))
 
 welcomeMsg1 : String
@@ -126,15 +126,15 @@ importsWelcome (width, height) sig =
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
-    , color grey (container (width - containerWidth) (height - bottomHeight) middle (Text.plainText ""))
+    , color grey (container containerWidth bottomHeight middle (Text.plainText ""))
     ]))
 
 importsWelcomeContainer : (Int, Int) -> Element
 importsWelcomeContainer (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
-  [ container (width - containerWidth) 100 middle <| title importsWelcomeMsg1
+  color grey (container containerWidth topHeight middle (flow down
+  [ container containerWidth 100 middle <| title importsWelcomeMsg1
   , spacer 1 20
-  , container (width - containerWidth) 50 middle <| subTitle importsWelcomeMsg2
+  , container containerWidth 50 middle <| subTitle importsWelcomeMsg2
   ]))
   
 importsWelcomeMsg1 : String
@@ -158,18 +158,18 @@ displayImports (width, height) sig hoveredOn =
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
-    , color grey (container (width - containerWidth) (height - bottomHeight) middle (body hoveredOn))
+    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
     
 importsContainer : (Int, Int) -> Element
 importsContainer (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
-    [ container (width - containerWidth) containerHeight midLeft (importGraphicsInput)
-    , container (width - containerWidth) containerHeight midLeft (importGraphicsElement)
-    , container (width - containerWidth) containerHeight midLeft (importGraphicsCollage)
-    , container (width - containerWidth) containerHeight midLeft (importText)
-    , container (width - containerWidth) containerHeight midLeft (importSignal)
-    , container (width - containerWidth) containerHeight midLeft (importMouse)
+  color grey (container containerWidth topHeight middle (flow down
+    [ container containerWidth codeHeight midLeft (importGraphicsInput)
+    , container containerWidth codeHeight midLeft (importGraphicsElement)
+    , container containerWidth codeHeight midLeft (importGraphicsCollage)
+    , container containerWidth codeHeight midLeft (importText)
+    , container containerWidth codeHeight midLeft (importSignal)
+    , container containerWidth codeHeight midLeft (importMouse)
     ]))
   
 graphicsInputMsg = " Import everything from the Graphics.Input library."
@@ -227,15 +227,15 @@ signalsWelcome (width, height) sig =
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
-    , color grey (container (width - containerWidth) (height - bottomHeight) middle (Text.plainText ""))
+    , color grey (container containerWidth bottomHeight middle (Text.plainText ""))
     ]))
 
 signalsWelcomeContainer : (Int, Int) -> Element
 signalsWelcomeContainer (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) midLeft (flow down
-  [ container (width - containerWidth) 100 middle <| title signalsWelcomeMsg1
+  color grey (container containerWidth topHeight midLeft (flow down
+  [ container containerWidth 100 middle <| title signalsWelcomeMsg1
   , spacer 1 20
-  , container (width - containerWidth) 50 middle <| subTitle signalsWelcomeMsg2
+  , container containerWidth 50 middle <| subTitle signalsWelcomeMsg2
   ]))
   
 signalsWelcomeMsg1 : String
@@ -259,30 +259,30 @@ displaySignals (width, height) sig hoveredOn =
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
-    , color grey (container (width - containerWidth) (height - bottomHeight) middle (body hoveredOn))
+    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
     
 signalsContainer : (Int, Int) -> Element
 signalsContainer (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
-    [ container (width - containerWidth) containerHeight midLeft (signalMain1)
-    , container (width - containerWidth) containerHeight midLeft (signalMain2)
+  color grey (container containerWidth topHeight middle (flow down
+    [ container containerWidth codeHeight midLeft (signalMain1)
+    , container containerWidth codeHeight midLeft (signalMain2)
     , spacer 1 extraLine
-    , container (width - containerWidth) containerHeight midLeft (signalGameState1)
-    , container (width - containerWidth) containerHeight midLeft (signalGameState2)
-    , container (width - containerWidth) containerHeight midLeft (signalGameState3)
+    , container containerWidth codeHeight midLeft (signalGameState1)
+    , container containerWidth codeHeight midLeft (signalGameState2)
+    , container containerWidth codeHeight midLeft (signalGameState3)
     , spacer 1 extraLine
-    , container (width - containerWidth) containerHeight midLeft (signalDelta1)
-    , container (width - containerWidth) containerHeight midLeft (signalDelta2)
+    , container containerWidth codeHeight midLeft (signalDelta1)
+    , container containerWidth codeHeight midLeft (signalDelta2)
     , spacer 1 extraLine
-    , container (width - containerWidth) containerHeight midLeft (signalInput1)
-    , container (width - containerWidth) containerHeight midLeft (signalInput2)
-    , container (width - containerWidth) containerHeight midLeft (signalInput3)
-    , container (width - containerWidth) containerHeight midLeft (signalInput4)
-    , container (width - containerWidth) containerHeight midLeft (signalInput5)
-    , container (width - containerWidth) containerHeight midLeft (signalInput6)
-    , container (width - containerWidth) containerHeight midLeft (signalInput7)
-    , container (width - containerWidth) containerHeight midLeft (signalInput8)
+    , container containerWidth codeHeight midLeft (signalInput1)
+    , container containerWidth codeHeight midLeft (signalInput2)
+    , container containerWidth codeHeight midLeft (signalInput3)
+    , container containerWidth codeHeight midLeft (signalInput4)
+    , container containerWidth codeHeight midLeft (signalInput5)
+    , container containerWidth codeHeight midLeft (signalInput6)
+    , container containerWidth codeHeight midLeft (signalInput7)
+    , container containerWidth codeHeight midLeft (signalInput8)
     ]))
   
 signalMain1Msg = "Define the main function Every Elm program must have a main."
@@ -394,15 +394,15 @@ modelWelcome (width, height) sig =
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
-    , color grey (container (width - containerWidth) (height - bottomHeight) middle (Text.plainText ""))
+    , color grey (container containerWidth bottomHeight middle (Text.plainText ""))
     ]))
 
 modelWelcomeContainer : (Int, Int) -> Element
 modelWelcomeContainer (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) midLeft (flow down
-  [ container (width - containerWidth) 100 middle <| title modelWelcomeMsg1
+  color grey (container containerWidth topHeight midLeft (flow down
+  [ container containerWidth 100 middle <| title modelWelcomeMsg1
   , spacer 1 20
-  , container (width - containerWidth) 50 middle <| subTitle modelWelcomeMsg2
+  , container containerWidth 50 middle <| subTitle modelWelcomeMsg2
   ]))
   
 modelWelcomeMsg1 : String
@@ -427,25 +427,25 @@ displayModel1 (width, height) sig hoveredOn =
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
-    , color grey (container (width - containerWidth) (height - bottomHeight) middle (body hoveredOn))
+    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
     
 modelContainer1 : (Int, Int) -> Element
 modelContainer1 (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
-    [ container (width - containerWidth) containerHeight midLeft (gameSize)
-    , container (width - containerWidth) containerHeight midLeft (playingSize)
+  color grey (container containerWidth topHeight middle (flow down
+    [ container containerWidth codeHeight midLeft (gameSize)
+    , container containerWidth codeHeight midLeft (playingSize)
     , spacer 1 extraLine
-    , container (width - containerWidth) containerHeight midLeft (typeState)
+    , container containerWidth codeHeight midLeft (typeState)
     , spacer 1 extraLine
-    , container (width - containerWidth) containerHeight midLeft (aliasBadGuy1)
-    , container (width - containerWidth) containerHeight midLeft (aliasBadGuy2)
+    , container containerWidth codeHeight midLeft (aliasBadGuy1)
+    , container containerWidth codeHeight midLeft (aliasBadGuy2)
     , spacer 1 extraLine
-    , container (width - containerWidth) containerHeight midLeft (aliasPlayer1)
-    , container (width - containerWidth) containerHeight midLeft (aliasPlayer2)
+    , container containerWidth codeHeight midLeft (aliasPlayer1)
+    , container containerWidth codeHeight midLeft (aliasPlayer2)
     , spacer 1 extraLine
-    , container (width - containerWidth) containerHeight midLeft (aliasGame1)
-    , container (width - containerWidth) containerHeight midLeft (aliasGame2)
+    , container containerWidth codeHeight midLeft (aliasGame1)
+    , container containerWidth codeHeight midLeft (aliasGame2)
     ]))
   
 gameSizeMsg = "Set the variable gameWidth to 600 and variable gameHeight to 400."
@@ -520,25 +520,25 @@ displayModel2 (width, height) sig hoveredOn =
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
-    , color grey (container (width - containerWidth) (height - bottomHeight) middle (body hoveredOn))
+    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
     
 modelContainer2 : (Int, Int) -> Element
 modelContainer2 (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
-    [ container (width - containerWidth) containerHeight midLeft (defaultGame1)
-    , container (width - containerWidth) containerHeight midLeft (defaultGame2)
-    , container (width - containerWidth) containerHeight midLeft (defaultGame3)
-    , container (width - containerWidth) containerHeight midLeft (defaultGame4)
-    , container (width - containerWidth) containerHeight midLeft (defaultGame5)
-    , container (width - containerWidth) containerHeight midLeft (defaultGame6)
+  color grey (container containerWidth topHeight middle (flow down
+    [ container containerWidth codeHeight midLeft (defaultGame1)
+    , container containerWidth codeHeight midLeft (defaultGame2)
+    , container containerWidth codeHeight midLeft (defaultGame3)
+    , container containerWidth codeHeight midLeft (defaultGame4)
+    , container containerWidth codeHeight midLeft (defaultGame5)
+    , container containerWidth codeHeight midLeft (defaultGame6)
     , spacer 1 extraLine
-    , container (width - containerWidth) containerHeight midLeft (aliasInput1)
-    , container (width - containerWidth) containerHeight midLeft (aliasInput2)
-    , container (width - containerWidth) containerHeight midLeft (aliasInput3)
-    , container (width - containerWidth) containerHeight midLeft (aliasInput4)
-    , container (width - containerWidth) containerHeight midLeft (aliasInput5)
-    , container (width - containerWidth) containerHeight midLeft (aliasInput6)
+    , container containerWidth codeHeight midLeft (aliasInput1)
+    , container containerWidth codeHeight midLeft (aliasInput2)
+    , container containerWidth codeHeight midLeft (aliasInput3)
+    , container containerWidth codeHeight midLeft (aliasInput4)
+    , container containerWidth codeHeight midLeft (aliasInput5)
+    , container containerWidth codeHeight midLeft (aliasInput6)
     ]))
 
 defaultGame1Msg = " Create an object defaultGame of type Game."
@@ -639,15 +639,15 @@ updateWelcome (width, height) sig =
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
-    , color grey (container (width - containerWidth) (height - bottomHeight) middle (Text.plainText""))
+    , color grey (container containerWidth bottomHeight middle (Text.plainText""))
     ]))
 
 updateWelcomeContainer : (Int, Int) -> Element
 updateWelcomeContainer (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) midLeft (flow down
-  [ container (width - containerWidth) 100 middle <| title updateWelcomeMsg1
+  color grey (container containerWidth topHeight midLeft (flow down
+  [ container containerWidth 100 middle <| title updateWelcomeMsg1
   , spacer 1 20
-  , container (width - containerWidth) 50 middle <| subTitle updateWelcomeMsg2
+  , container containerWidth 50 middle <| subTitle updateWelcomeMsg2
   ]))
   
 updateWelcomeMsg1 : String
@@ -671,32 +671,32 @@ displayUpdate1 (width, height) sig hoveredOn =
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
-    , color grey (container (width - containerWidth) (height - bottomHeight) middle (body hoveredOn))
+    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
     
 updateContainer1 : (Int, Int) -> Element
 updateContainer1 (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
-    [ container (width - containerWidth) containerHeight midLeft (updateFunc1)
-    , container (width - containerWidth) containerHeight midLeft (updateFunc2)
-    , container (width - containerWidth) containerHeight midLeft (updateFunc3)
+  color grey (container containerWidth topHeight middle (flow down
+    [ container containerWidth codeHeight midLeft (updateFunc1)
+    , container containerWidth codeHeight midLeft (updateFunc2)
+    , container containerWidth codeHeight midLeft (updateFunc3)
     , spacer 1 extraLine
-    , container (width - containerWidth) containerHeight midLeft (updateFunc4)
-    , container (width - containerWidth) containerHeight midLeft (updateFunc5)
-    , container (width - containerWidth) containerHeight midLeft (updateFunc6)
-    , container (width - containerWidth) containerHeight midLeft (updateFunc7)
+    , container containerWidth codeHeight midLeft (updateFunc4)
+    , container containerWidth codeHeight midLeft (updateFunc5)
+    , container containerWidth codeHeight midLeft (updateFunc6)
+    , container containerWidth codeHeight midLeft (updateFunc7)
     , spacer 1 extraLine
-    , container (width - containerWidth) containerHeight midLeft (updateFunc8)
-    , container (width - containerWidth) containerHeight midLeft (updateFunc9)
-    , container (width - containerWidth) containerHeight midLeft (updateFunc10)
-    , container (width - containerWidth) containerHeight midLeft (updateFunc11)
+    , container containerWidth codeHeight midLeft (updateFunc8)
+    , container containerWidth codeHeight midLeft (updateFunc9)
+    , container containerWidth codeHeight midLeft (updateFunc10)
+    , container containerWidth codeHeight midLeft (updateFunc11)
     , spacer 1 extraLine
-    , container (width - containerWidth) containerHeight midLeft (updateFunc12)
-    , container (width - containerWidth) containerHeight midLeft (updateFunc13)
-    , container (width - containerWidth) containerHeight midLeft (updateFunc14)
-    , container (width - containerWidth) containerHeight midLeft (updateFunc15)
-    , container (width - containerWidth) containerHeight midLeft (updateFunc16)
-    , container (width - containerWidth) containerHeight midLeft (updateFunc17)
+    , container containerWidth codeHeight midLeft (updateFunc12)
+    , container containerWidth codeHeight midLeft (updateFunc13)
+    , container containerWidth codeHeight midLeft (updateFunc14)
+    , container containerWidth codeHeight midLeft (updateFunc15)
+    , container containerWidth codeHeight midLeft (updateFunc16)
+    , container containerWidth codeHeight midLeft (updateFunc17)
     ]))
   
 updateFunc1Msg = "Update is a function that takes an object of type Input, an object of type\n"
@@ -822,25 +822,25 @@ displayUpdate2 (width, height) sig hoveredOn =
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
-    , color grey (container (width - containerWidth) (height - bottomHeight) middle (body hoveredOn))
+    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
     
 updateContainer2 : (Int, Int) -> Element
 updateContainer2 (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
-    [ container (width - containerWidth) containerHeight midLeft (updateBadGuy1)
-    , container (width - containerWidth) containerHeight midLeft (updateBadGuy2)
-    , container (width - containerWidth) containerHeight midLeft (updateBadGuy3)
-    , container (width - containerWidth) containerHeight midLeft (updateBadGuy4)
-    , container (width - containerWidth) containerHeight midLeft (updateBadGuy5)
-    , container (width - containerWidth) containerHeight midLeft (updateBadGuy6)
-    , container (width - containerWidth) containerHeight midLeft (updateBadGuy7)
-    , container (width - containerWidth) containerHeight midLeft (updateBadGuy8)
-    , container (width - containerWidth) containerHeight midLeft (updateBadGuy9)
-    , container (width - containerWidth) containerHeight midLeft (updateBadGuy10)
-    , container (width - containerWidth) containerHeight midLeft (updateBadGuy11)
-    , container (width - containerWidth) containerHeight midLeft (updateBadGuy12)
-    , container (width - containerWidth) containerHeight midLeft (updateBadGuy13)
+  color grey (container containerWidth topHeight middle (flow down
+    [ container containerWidth codeHeight midLeft (updateBadGuy1)
+    , container containerWidth codeHeight midLeft (updateBadGuy2)
+    , container containerWidth codeHeight midLeft (updateBadGuy3)
+    , container containerWidth codeHeight midLeft (updateBadGuy4)
+    , container containerWidth codeHeight midLeft (updateBadGuy5)
+    , container containerWidth codeHeight midLeft (updateBadGuy6)
+    , container containerWidth codeHeight midLeft (updateBadGuy7)
+    , container containerWidth codeHeight midLeft (updateBadGuy8)
+    , container containerWidth codeHeight midLeft (updateBadGuy9)
+    , container containerWidth codeHeight midLeft (updateBadGuy10)
+    , container containerWidth codeHeight midLeft (updateBadGuy11)
+    , container containerWidth codeHeight midLeft (updateBadGuy12)
+    , container containerWidth codeHeight midLeft (updateBadGuy13)
     ]))
   
 updateBadGuy1Msg = "The function updateBadGuy takes a Time, a BadGuy, and a Player.\n"
@@ -943,25 +943,25 @@ displayUpdate3 (width, height) sig hoveredOn =
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
-    , color grey (container (width - containerWidth) (height - bottomHeight) middle (body hoveredOn))
+    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
     
 updateContainer3 : (Int, Int) -> Element
 updateContainer3 (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
-    [ container (width - containerWidth) containerHeight midLeft (updatePlayer1)
-    , container (width - containerWidth) containerHeight midLeft (updatePlayer2)
-    , container (width - containerWidth) containerHeight midLeft (updatePlayer3)
-    , container (width - containerWidth) containerHeight midLeft (updatePlayer4)
-    , container (width - containerWidth) containerHeight midLeft (updatePlayer5)
-    , container (width - containerWidth) containerHeight midLeft (updatePlayer6)
-    , container (width - containerWidth) containerHeight midLeft (updatePlayer7)
-    , container (width - containerWidth) containerHeight midLeft (updatePlayer8)
-    , container (width - containerWidth) containerHeight midLeft (updatePlayer9)
-    , container (width - containerWidth) containerHeight midLeft (updatePlayer10)
-    , container (width - containerWidth) containerHeight midLeft (updatePlayer11)
-    , container (width - containerWidth) containerHeight midLeft (updatePlayer12)
-    , container (width - containerWidth) containerHeight midLeft (updatePlayer13)
+  color grey (container containerWidth topHeight middle (flow down
+    [ container containerWidth codeHeight midLeft (updatePlayer1)
+    , container containerWidth codeHeight midLeft (updatePlayer2)
+    , container containerWidth codeHeight midLeft (updatePlayer3)
+    , container containerWidth codeHeight midLeft (updatePlayer4)
+    , container containerWidth codeHeight midLeft (updatePlayer5)
+    , container containerWidth codeHeight midLeft (updatePlayer6)
+    , container containerWidth codeHeight midLeft (updatePlayer7)
+    , container containerWidth codeHeight midLeft (updatePlayer8)
+    , container containerWidth codeHeight midLeft (updatePlayer9)
+    , container containerWidth codeHeight midLeft (updatePlayer10)
+    , container containerWidth codeHeight midLeft (updatePlayer11)
+    , container containerWidth codeHeight midLeft (updatePlayer12)
+    , container containerWidth codeHeight midLeft (updatePlayer13)
     ]))
   
 updatePlayer1Msg = "This defines the function updatePlayer, which takes a time, an integer, another\n"
@@ -1069,28 +1069,28 @@ displayUpdate4 (width, height) sig hoveredOn=
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
-    , color grey (container (width - containerWidth) (height - bottomHeight) middle (body hoveredOn))
+    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
     
 updateContainer4 : (Int, Int) -> Element
 updateContainer4 (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
-    [ container (width - containerWidth) containerHeight midLeft (updatePhysics1)
-    , container (width - containerWidth) containerHeight midLeft (updatePhysics2)
-    , container (width - containerWidth) containerHeight midLeft (updatePhysics3)
-    , container (width - containerWidth) containerHeight midLeft (updatePhysics4)
-    , container (width - containerWidth) containerHeight midLeft (updatePhysics5)
+  color grey (container containerWidth topHeight middle (flow down
+    [ container containerWidth codeHeight midLeft (updatePhysics1)
+    , container containerWidth codeHeight midLeft (updatePhysics2)
+    , container containerWidth codeHeight midLeft (updatePhysics3)
+    , container containerWidth codeHeight midLeft (updatePhysics4)
+    , container containerWidth codeHeight midLeft (updatePhysics5)
     , spacer 1 extraLine
-    , container (width - containerWidth) containerHeight midLeft (updateNear1)
-    , container (width - containerWidth) containerHeight midLeft (updateNear2)
+    , container containerWidth codeHeight midLeft (updateNear1)
+    , container containerWidth codeHeight midLeft (updateNear2)
     , spacer 1 extraLine
-    , container (width - containerWidth) containerHeight midLeft (updateWithin1)
-    , container (width - containerWidth) containerHeight midLeft (updateWithin2)
+    , container containerWidth codeHeight midLeft (updateWithin1)
+    , container containerWidth codeHeight midLeft (updateWithin2)
     , spacer 1 extraLine
-    , container (width - containerWidth) containerHeight midLeft (updateStepV1)
-    , container (width - containerWidth) containerHeight midLeft (updateStepV2)
-    , container (width - containerWidth) containerHeight midLeft (updateStepV3)
-    , container (width - containerWidth) containerHeight midLeft (updateStepV4)
+    , container containerWidth codeHeight midLeft (updateStepV1)
+    , container containerWidth codeHeight midLeft (updateStepV2)
+    , container containerWidth codeHeight midLeft (updateStepV3)
+    , container containerWidth codeHeight midLeft (updateStepV4)
     ]))
   
 updatePhysics1Msg = "The function updatePhysics takes t (time) and the values of x, y, vx, and vy\n"
@@ -1199,15 +1199,15 @@ viewWelcome (width, height) sig =
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
-    , color grey (container (width - containerWidth) (height - bottomHeight) middle (Text.plainText ""))
+    , color grey (container containerWidth bottomHeight middle (Text.plainText ""))
     ]))
 
 viewWelcomeContainer : (Int, Int) -> Element
 viewWelcomeContainer (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) midLeft (flow down
-  [ container (width - containerWidth) 50 middle <| title viewWelcomeMsg1
+  color grey (container containerWidth topHeight midLeft (flow down
+  [ container containerWidth 50 middle <| title viewWelcomeMsg1
   , spacer 1 20
-  , container (width - containerWidth) 50 middle <| subTitle viewWelcomeMsg2
+  , container containerWidth 50 middle <| subTitle viewWelcomeMsg2
   ]))
   
 viewWelcomeMsg1 : String
@@ -1231,27 +1231,27 @@ displayView1 (width, height) sig hoveredOn =
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
-    , color grey (container (width - containerWidth) (height - bottomHeight) middle (body hoveredOn))
+    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
     
 viewContainer1 : (Int, Int) -> Element
 viewContainer1 (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
-    [ container (width - containerWidth) containerHeight midLeft (viewFunc1)
-    , container (width - containerWidth) containerHeight midLeft (viewFunc2)
-    , container (width - containerWidth) containerHeight midLeft (viewFunc3)
-    , container (width - containerWidth) containerHeight midLeft (viewFunc4)
-    , container (width - containerWidth) containerHeight midLeft (viewFunc5)
-    , container (width - containerWidth) containerHeight midLeft (viewFunc6)
-    , container (width - containerWidth) containerHeight midLeft (viewFunc7)
-    , container (width - containerWidth) containerHeight midLeft (viewFunc8)
-    , container (width - containerWidth) containerHeight midLeft (viewFunc9)
-    , container (width - containerWidth) containerHeight midLeft (viewFunc10)
-    , container (width - containerWidth) containerHeight midLeft (viewFunc11)
-    , container (width - containerWidth) containerHeight midLeft (viewFunc12)
-    , container (width - containerWidth) containerHeight midLeft (viewFunc13)
-    , container (width - containerWidth) containerHeight midLeft (viewFunc14)
-    , container (width - containerWidth) containerHeight midLeft (viewFunc15)
+  color grey (container containerWidth topHeight middle (flow down
+    [ container containerWidth codeHeight midLeft (viewFunc1)
+    , container containerWidth codeHeight midLeft (viewFunc2)
+    , container containerWidth codeHeight midLeft (viewFunc3)
+    , container containerWidth codeHeight midLeft (viewFunc4)
+    , container containerWidth codeHeight midLeft (viewFunc5)
+    , container containerWidth codeHeight midLeft (viewFunc6)
+    , container containerWidth codeHeight midLeft (viewFunc7)
+    , container containerWidth codeHeight midLeft (viewFunc8)
+    , container containerWidth codeHeight midLeft (viewFunc9)
+    , container containerWidth codeHeight midLeft (viewFunc10)
+    , container containerWidth codeHeight midLeft (viewFunc11)
+    , container containerWidth codeHeight midLeft (viewFunc12)
+    , container containerWidth codeHeight midLeft (viewFunc13)
+    , container containerWidth codeHeight midLeft (viewFunc14)
+    , container containerWidth codeHeight midLeft (viewFunc15)
     ]))
   
 viewFunc1Msg = "The function view takes a tupple of integers and a game, and the function returns\n"
@@ -1370,22 +1370,22 @@ displayView2 (width, height) sig hoveredOn =
       , color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 5
-    , color grey (container (width - containerWidth) (height - bottomHeight) middle (body hoveredOn))
+    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
     
 viewContainer2 : (Int, Int) -> Element
 viewContainer2 (width, height) =
-  color grey (container (width - containerWidth) (height - topHeight) middle (flow down
-    [ container (width - containerWidth) containerHeight midLeft (viewFunc16)
-    , container (width - containerWidth) containerHeight midLeft (viewFunc17)
-    , container (width - containerWidth) containerHeight midLeft (viewFunc18)
-    , container (width - containerWidth) containerHeight midLeft (viewFunc19)
-    , container (width - containerWidth) containerHeight midLeft (viewFunc20)
+  color grey (container containerWidth topHeight middle (flow down
+    [ container containerWidth codeHeight midLeft (viewFunc16)
+    , container containerWidth codeHeight midLeft (viewFunc17)
+    , container containerWidth codeHeight midLeft (viewFunc18)
+    , container containerWidth codeHeight midLeft (viewFunc19)
+    , container containerWidth codeHeight midLeft (viewFunc20)
     , spacer 1 extraLine
-    , container (width - containerWidth) containerHeight midLeft (backgroundColor)
-    , container (width - containerWidth) containerHeight midLeft (textColor)
-    , container (width - containerWidth) containerHeight midLeft (txtFunc)
-    , container (width - containerWidth) containerHeight midLeft (msgFunc)
+    , container containerWidth codeHeight midLeft (backgroundColor)
+    , container containerWidth codeHeight midLeft (textColor)
+    , container containerWidth codeHeight midLeft (txtFunc)
+    , container containerWidth codeHeight midLeft (msgFunc)
     ]))  
 
 viewFunc16Msg = "The lives is also in the collage. Since only forms can exist in a\n"
