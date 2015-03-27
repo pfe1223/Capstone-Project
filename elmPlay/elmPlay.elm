@@ -321,55 +321,55 @@ signalDelta1 =
   body " delta ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalDelta1Msg) else (Signal.send hoveredOn ""))
     
-signalDelta2Msg = " Notes the change in time 35 times a second, and then converts this to seconds."
+signalDelta2Msg = "Notes the change in time 35 times a second, \nand then converts this to seconds."
 signalDelta2 : Element
 signalDelta2 =
   body (padLeft 34 ' ' " Signal.map inSeconds (fps 35)")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalDelta2Msg) else (Signal.send hoveredOn ""))
 
-signalInput1Msg = " Defines input as a signal of type Input."
+signalInput1Msg = "Defines input as a signal of type Input."
 signalInput1 : Element
 signalInput1 =
   body " input : Signal Input"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput1Msg) else (Signal.send hoveredOn ""))
 
-signalInput2Msg = " Defines the specifics of input."
+signalInput2Msg = "Defines the specifics of input."
 signalInput2 : Element
 signalInput2 =
   body " input ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput2Msg) else (Signal.send hoveredOn ""))
     
-signalInput3Msg = " For every delta, the specific attributes of input are updated."
+signalInput3Msg = "For every delta, the specific attributes of input are updated."
 signalInput3 : Element
 signalInput3 =
   body (padLeft 29 ' ' " Signal.sampleOn delta <|")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput3Msg) else (Signal.send hoveredOn ""))
     
-signalInput4Msg = " Maps all four attributes of Input to the update that happens every delta."
+signalInput4Msg = "Maps all four attributes of Input to the update that happens every delta."
 signalInput4 : Element
 signalInput4 =
   body (padLeft 27 ' ' " Signal.map4 Input")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput4Msg) else (Signal.send hoveredOn ""))
 
-signalInput5Msg = " Gives a true or false based upon the space bar being pressed."
+signalInput5Msg = "Gives a true or false based upon the space bar being pressed."
 signalInput5 : Element
 signalInput5 =
   body (padLeft 29 ' ' " Keyboard.space")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput5Msg) else (Signal.send hoveredOn ""))
 
-signalInput6Msg = " Updates the x attribute based upon left/right arrow being pressed."
+signalInput6Msg = "Updates the x attribute based upon left/right arrow being pressed."
 signalInput6 : Element
 signalInput6 =
   body (padLeft 46 ' ' " (Signal.map .x Keyboard.arrows)")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput6Msg) else (Signal.send hoveredOn ""))
 
-signalInput7Msg = " Updates the y attribute based upon up/down arrow being pressed."
+signalInput7Msg = "Updates the y attribute based upon up/down arrow being pressed."
 signalInput7 : Element
 signalInput7 =
   body (padLeft 46 ' ' " (Signal.map .y Keyboard.arrows)")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput7Msg) else (Signal.send hoveredOn ""))
 
-signalInput8Msg = " Updates delta with the new time."
+signalInput8Msg = "Updates delta with the new time."
 signalInput8 : Element
 signalInput8 =
   body (padLeft 20 ' ' " delta")
@@ -1124,7 +1124,7 @@ updatePhysics5 =
   body (padLeft 7 ' ' " }")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePhysics5Msg) else (Signal.send hoveredOn ""))
 
-updateNear1Msg = "The function near takes three arguments: k, c, and n. It determines if two objects\n"
+updateNear1Msg = "The function near takes three arguments: k, c, and n. It determines if two \nobjects "
                             ++ "(k and n) are near one another based upon a third number (c)."
 updateNear1 : Element
 updateNear1 =
@@ -1137,44 +1137,44 @@ updateNear2 =
   body (padLeft 26 ' ' " n >= k-c && n <= k+c")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateNear2Msg) else (Signal.send hoveredOn ""))
 
-updateWithin1Msg = "The function within takes badGuy and player1 and determines if they are touching."
+updateWithin1Msg = "The function within takes badGuy and player1 and determines if they \nare touching."
 updateWithin1 : Element
 updateWithin1 =
   body " within badGuy player1 ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateWithin1Msg) else (Signal.send hoveredOn ""))
 
-updateWithin2Msg = "The function within calls the function near, and passes it the x positions of player1\n"
-                                ++ "and badGuy, as well as the number 25. 25 is used because that is the radius of\n"
-                                ++ "badGuy. This also checks to see if the y positions are touching as well."
+updateWithin2Msg = "The function within calls the function near, and passes it the x positions \nof player1 "
+                                ++ "and badGuy, as well as the number 25. 25 is used because that \nis the radius of "
+                                ++ "badGuy. This also checks to see if the y positions are \ntouching as well."
 updateWithin2 : Element
 updateWithin2 =
   body (padLeft 61 ' ' " near player1.x 25 badGuy.x && near player1.y 25 badGuy.y")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateWithin2Msg) else (Signal.send hoveredOn ""))
 
-updateStepV1Msg = "The defines what the function stepV does. It takes two conditions (true of false)\n"
-                              ++ "and a third term, v. StepV is used to bounce badGuy off of the edges of the\n"
+updateStepV1Msg = "The defines what the function stepV does. It takes two conditions (true \nor false) "
+                              ++ "and a third term, v. StepV is used to bounce badGuy off of the \nedges of the "
                               ++ "game area."
 updateStepV1 : Element
 updateStepV1 =
   body " stepV v condition1 condition2 ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateStepV1Msg) else (Signal.send hoveredOn ""))
 
-updateStepV2Msg = "If condition1 is true, then stepV returns the absolute value of v. This bounces\n"
+updateStepV2Msg = "If condition1 is true, then stepV returns the absolute value of v. This \nbounces "
                               ++ "badGuy off of the left and bottom edges of the game area."
 updateStepV2 : Element
 updateStepV2 =
   body (padLeft 30 ' ' " if | condition1 -> abs v")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateStepV2Msg) else (Signal.send hoveredOn ""))
 
-updateStepV3Msg = "If condition2 is true, then stepV returns 0 - the absolute value of v. This bounces\n"
+updateStepV3Msg = "If condition2 is true, then stepV returns 0 - the absolute value of v. This \nbounces "
                               ++ "badGuy off of the right and top edges of the game area."
 updateStepV3 : Element
 updateStepV3 =
   body (padLeft 34 ' ' " | condition2 -> 0 - abs v")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateStepV3Msg) else (Signal.send hoveredOn ""))
 
-updateStepV4Msg = "In all other cases, stepV returns the value of v. If badGuy is not touching any\n"
-                              ++ "edges, then do not change the direction; keep going in the same direction."
+updateStepV4Msg = "In all other cases, stepV returns the value of v. If badGuy is not touching \nany "
+                              ++ "edges, then do not change the direction; keep going in the same \ndirection."
 updateStepV4 : Element
 updateStepV4 =
   body(padLeft 26 ' '  " | otherwise  -> v")
@@ -1254,17 +1254,17 @@ viewContainer1 (width, height) =
     , container containerWidth codeHeight midLeft (viewFunc15)
     ]))
   
-viewFunc1Msg = "The function view takes a tupple of integers and a game, and the function returns\n"
-                          ++ "an element. A tupple is two numbers grouped together by parentheses. An\n"
+viewFunc1Msg = "The function view takes a tupple of integers and a game, and the function \nreturns "
+                          ++ "an element. A tupple is two numbers grouped together by \nparentheses. An "
                           ++ "integer is a number without a decimal."
 viewFunc1 : Element
 viewFunc1 =
   body " view : (Int, Int) -> Game -> Element"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc1Msg) else (Signal.send hoveredOn ""))
 
-viewFunc2Msg = "The function view is passed the width and height of the window, as well as\n."
-                          ++ "the attributes state, badGuy, and player1 all of which are a part of\n"
-                          ++ "the data type Game."
+viewFunc2Msg = "The function view is passed the width and height of the window, as well as\n"
+                          ++ "the attributes state, badGuy, and player1 all of which are a part of "
+                          ++ "the \ndata type Game."
 viewFunc2 : Element
 viewFunc2 =
   body " view (w, h) {state, badGuy, player1} ="
@@ -1313,10 +1313,10 @@ viewFunc8 =
   body (padLeft 42 ' ' " [ rect gameWidth gameHeight")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc8Msg) else (Signal.send hoveredOn ""))
 
-viewFunc9Msg = "The rectangle is filled with the color specified by the variable backgroudColor."
+viewFunc9Msg = "The rectangle is filled with the purple/grey from the Elm logo."
 viewFunc9 : Element
 viewFunc9 =
-  body (padLeft 45 ' ' " |> filled backgroundColor")
+  body (padLeft 37 ' ' " |> filled elmGrey")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc9Msg) else (Signal.send hoveredOn ""))
 
 viewFunc10Msg = "Also in the collage is a six-sided shape with a radius fo 25."
@@ -1325,10 +1325,10 @@ viewFunc10 =
   body (padLeft 26 ' ' " , ngon 6 25 ")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc10Msg) else (Signal.send hoveredOn ""))
 
-viewFunc11Msg = "The hexagon is filled with the color light orange."
+viewFunc11Msg = "The hexagon is filled with the orange from the Elm logo."
 viewFunc11 : Element
 viewFunc11 =
-  body (padLeft 41 ' ' " |> filled lightOrange")
+  body (padLeft 39 ' ' " |> filled elmOrange")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc11Msg) else (Signal.send hoveredOn ""))
 
 viewFunc12Msg = "The hexagon is moved to the x and y coordinates of badGuy.\n"
@@ -1344,11 +1344,11 @@ viewFunc13 =
   body (padLeft 26 ' ' " , circle 20")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc13Msg) else (Signal.send hoveredOn ""))
 
-viewFunc14Msg = "The circle is filled with the color light purple."
+viewFunc14Msg = "The circle is filled with the blue from the Elm logo."
 viewFunc14 : Element
 viewFunc14 =
-  body (padLeft 41 ' ' " |> filled lightPurple")
-    |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc13Msg) else (Signal.send hoveredOn ""))
+  body (padLeft 37 ' ' " |> filled elmBlue")
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc14Msg) else (Signal.send hoveredOn ""))
 
 viewFunc15Msg = "The circle is moved to the x and y coordinates of player1.\n"
                             ++ "Thus the circle represents the proagonist in the game."
@@ -1424,11 +1424,11 @@ viewFunc20 =
   body (padLeft 16 ' ' " ]")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc20Msg) else (Signal.send hoveredOn ""))
 
-backgroundColorMsg = "The variable backgroundColor is set to color with the grey value of 178,\n"
-                                  ++ "the green value of 8, and the blue value of 1."
+backgroundColorMsg = "The variable elmGrey is set to color with the red value of 71,\n"
+                                  ++ "the green value of 80, and the blue value of 102."
 backgroundColor : Element
 backgroundColor =
-  body " backgroundColor = rgb 178 8 1"
+  body " elmGrey = rgb 71 80 102"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn backgroundColorMsg) else (Signal.send hoveredOn ""))
 
 textColorMsg = "The variable textColor is set to the value of white. This will be the color\n"
@@ -1438,8 +1438,8 @@ textColor =
   body " textColor = white"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn textColorMsg) else (Signal.send hoveredOn ""))
     
-txtFuncMsg = "This function sets up the characteristics for the text used in the game. The text\n"
-                    ++ "is converted from a string, has the color textColor (or white), has the font\n"
+txtFuncMsg = "This function sets up the characteristics for the text used in the game. The \ntext "
+                    ++ "is converted from a string, has the color textColor (or white), has the \nfont "
                     ++ "monospace, and is left aligned."
 txtFunc : Element
 txtFunc =
@@ -1448,7 +1448,7 @@ txtFunc =
     
 msgFuncMsg = "This string is converted to text and placed at the bottom of the game when\n"
                       ++ "the state is Pause. These are the instructions on how to play the game. &larr\n"
-                      ++ "inserts a left arrow symbol. Remove the space before the semi-colon so the symbol\n"
+                      ++ "inserts a left arrow symbol. Remove the space before the semi-colon so the \nsymbol "
                       ++ "will appear. With a space &larr ;. Without a space &larr;."
 msgFunc : Element
 msgFunc =
