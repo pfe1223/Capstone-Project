@@ -1382,9 +1382,12 @@ viewContainer2 (width, height) =
     , container containerWidth codeHeight midLeft (viewFunc19)
     , container containerWidth codeHeight midLeft (viewFunc20)
     , spacer 1 extraLine
-    , container containerWidth codeHeight midLeft (backgroundColor)
+    , container containerWidth codeHeight midLeft (elmGreyColor)
+    , container containerWidth codeHeight midLeft (elmBlueColor)
+    , container containerWidth codeHeight midLeft (elmGreenColor)
     , container containerWidth codeHeight midLeft (textColor)
-    , container containerWidth codeHeight midLeft (txtFunc)
+    , container containerWidth codeHeight midLeft (txtFunc1)
+    , container containerWidth codeHeight midLeft (txtFunc2)
     , container containerWidth codeHeight midLeft (msgFunc)
     ]))  
 
@@ -1424,12 +1427,26 @@ viewFunc20 =
   body (padLeft 16 ' ' " ]")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc20Msg) else (Signal.send hoveredOn ""))
 
-backgroundColorMsg = "The variable elmGrey is set to color with the red value of 71,\n"
+elmGreyColorMsg = "The variable elmGrey is set to color with the red value of 71,\n"
                                   ++ "the green value of 80, and the blue value of 102."
-backgroundColor : Element
-backgroundColor =
+elmGreyColor : Element
+elmGreyColor =
   body " elmGrey = rgb 71 80 102"
-    |> hoverable (\ r -> if r then (Signal.send hoveredOn backgroundColorMsg) else (Signal.send hoveredOn ""))
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn elmGreyColorMsg) else (Signal.send hoveredOn ""))
+
+elmBlueColorMsg = "The variable elmBlue is set to color with the red value of 76,\n"
+                                  ++ "the green value of 166, and the blue value of 195."
+elmBlueColor : Element
+elmBlueColor =
+  body " elmBlue = rgb 71 80 102"
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn elmBlueColorMsg) else (Signal.send hoveredOn ""))
+
+elmGreenColorMsg = "The variable elmGreen is set to color with the red value of 127,\n"
+                                  ++ "the green value of 209, and the blue value of 17."
+elmGreenColor : Element
+elmGreenColor =
+  body " elmGreen = rgb 71 80 102"
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn elmGreenColorMsg) else (Signal.send hoveredOn ""))
 
 textColorMsg = "The variable textColor is set to the value of white. This will be the color\n"
                         ++ "used for any text prefaced with txt."
@@ -1438,14 +1455,20 @@ textColor =
   body " textColor = white"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn textColorMsg) else (Signal.send hoveredOn ""))
     
-txtFuncMsg = "This function sets up the characteristics for the text used in the game. The \ntext "
-                    ++ "is converted from a string, has the color textColor (or white), has the \nfont "
-                    ++ "monospace, and is left aligned."
-txtFunc : Element
-txtFunc =
-  body " txt f = Text.fromString >> Text.color textColor >> Text.monospace >> f >> Text.leftAligned"
-    |> hoverable (\ r -> if r then (Signal.send hoveredOn txtFuncMsg) else (Signal.send hoveredOn ""))
-    
+txtFunc1Msg = "This function sets up the characteristics for the text used in the game. The \ntext "
+                    ++ "is converted from a string, has the color textColor (or white)."
+txtFunc1 : Element
+txtFunc1 =
+  body " txt f = Text.fromString >> Text.color textColor >> "
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn txtFunc1Msg) else (Signal.send hoveredOn ""))
+
+txtFunc2Msg = "The text also has the font monospace, and is left aligned."
+                    
+txtFunc2 : Element
+txtFunc2 =
+  body (padLeft 51 ' ' " Text.monospace >> f >> Text.leftAligned")
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn txtFunc2Msg) else (Signal.send hoveredOn ""))
+
 msgFuncMsg = "This string is converted to text and placed at the bottom of the game when\n"
                       ++ "the state is Pause. These are the instructions on how to play the game. &larr\n"
                       ++ "inserts a left arrow symbol. Remove the space before the semi-colon so the \nsymbol "
