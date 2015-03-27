@@ -1,8 +1,8 @@
-import Signal (Signal, map3, foldp, subscribe, channel, send)
+import Signal (Signal, map3, foldp, subscribe, channel, Channel, send)
 import Signal
 import Color (..)
 import Graphics.Element (..)
-import Graphics.Input (hoverable)
+import Graphics.Input (hoverable, button)
 import Text
 import Window
 import Mouse
@@ -10,11 +10,13 @@ import String (padLeft)
 
 main : Signal Element
 main =
-  map3 view Window.dimensions countClick (Signal.subscribe hoveredOn)
+  map3 view Window.dimensions sig (Signal.subscribe hoveredOn)
 
-countClick : Signal Int
-countClick =
-  foldp (\clk count -> count + 1) 0 Mouse.clicks
+chan : Channel Int
+chan = channel 0
+
+sig : Signal Int
+sig = subscribe chan
   
 hoveredOn : Signal.Channel String
 hoveredOn = Signal.channel ""
@@ -24,24 +26,24 @@ state : State
 state = One
 
 view : (Int, Int) -> Int -> String -> Element
-view (width, height) countClick hoveredOn =
-  if | countClick == 0 -> displayWelcome (width, height) countClick
-     | countClick == 1 -> importsWelcome(width, height) countClick
-     | countClick == 2 -> displayImports (width, height) countClick hoveredOn
-     | countClick == 3 -> signalsWelcome (width, height) countClick
-     | countClick == 4 -> displaySignals (width, height) countClick hoveredOn
-     | countClick == 5 -> modelWelcome (width, height) countClick
-     | countClick == 6 -> displayModel1 (width, height) countClick hoveredOn
-     | countClick == 7 -> displayModel2 (width, height) countClick hoveredOn
-     | countClick == 8 -> updateWelcome (width, height) countClick
-     | countClick == 9 -> displayUpdate1 (width, height) countClick hoveredOn
-     | countClick == 10 -> displayUpdate2 (width, height) countClick hoveredOn
-     | countClick == 11 -> displayUpdate3 (width, height) countClick hoveredOn
-     | countClick == 12 -> displayUpdate4 (width, height) countClick hoveredOn
-     | countClick == 13 -> viewWelcome (width, height) countClick
-     | countClick == 14 -> displayView1 (width, height) countClick hoveredOn
-     | countClick == 15 -> displayView2 (width, height) countClick hoveredOn
-     | otherwise -> displayWelcome (width, height) countClick
+view (width, height) sig hoveredOn =
+  if | sig == 0 -> displayWelcome (width, height) sig
+     | sig == 1 -> importsWelcome(width, height) sig
+     | sig == 2 -> displayImports (width, height) sig hoveredOn
+     | sig == 3 -> signalsWelcome (width, height) sig
+     | sig == 4 -> displaySignals (width, height) sig hoveredOn
+     | sig == 5 -> modelWelcome (width, height) sig
+     | sig == 6 -> displayModel1 (width, height) sig hoveredOn
+     | sig == 7 -> displayModel2 (width, height) sig hoveredOn
+     | sig == 8 -> updateWelcome (width, height) sig
+     | sig == 9 -> displayUpdate1 (width, height) sig hoveredOn
+     | sig == 10 -> displayUpdate2 (width, height) sig hoveredOn
+     | sig == 11 -> displayUpdate3 (width, height) sig hoveredOn
+     | sig == 12 -> displayUpdate4 (width, height) sig hoveredOn
+     | sig == 13 -> viewWelcome (width, height) sig
+     | sig == 14 -> displayView1 (width, height) sig hoveredOn
+     | sig == 15 -> displayView2 (width, height) sig hoveredOn
+     | otherwise -> displayWelcome (width, height) sig
 
 -- These numbers are used to create the containers that hold the code examples and explinations
 indent = 5
@@ -70,12 +72,17 @@ body f = Text.fromString(f)
 
 -- Welcome Message
 displayWelcome : (Int, Int) -> Int -> Element
-displayWelcome (width, height) countClick =
+displayWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
     [ welcomeContainer (width, height)
-    , spacer 1 1
-    , container (width - containerWidth) 20 middle (Text.asText countClick)
-    , spacer 1 1
+    , spacer 1 5
+    , flow right
+      [ spacer 150 1
+      , color grey <| button (send chan (sig - 1)) "&larr;"
+      , container 150 30 middle (Text.asText sig)
+      , color grey <| button (send chan (sig + 1)) "&rarr;"
+      ]
+    , spacer 1 5
     , color grey (container (width - containerWidth) (height - bottomHeight) middle (Text.plainText ""))
     ]))
 
@@ -108,12 +115,17 @@ This section has all of the code for explaining the IMPORT section of the game
 
 -- Imports Welcome
 importsWelcome : (Int, Int) -> Int -> Element
-importsWelcome (width, height) countClick =
+importsWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
     [ importsWelcomeContainer (width, height)
-    , spacer 1 1
-    , container (width - containerWidth) 20 middle (Text.asText countClick)
-    , spacer 1 1
+    , spacer 1 5
+    , flow right
+      [ spacer 150 1
+      , color grey <| button (send chan (sig - 1)) "&larr;"
+      , container 150 30 middle (Text.asText sig)
+      , color grey <| button (send chan (sig + 1)) "&rarr;"
+      ]
+    , spacer 1 5
     , color grey (container (width - containerWidth) (height - bottomHeight) middle (Text.plainText ""))
     ]))
 
@@ -135,12 +147,17 @@ importsWelcomeMsg2 =
 
 -- Imports Message
 displayImports : (Int, Int) -> Int -> String -> Element
-displayImports (width, height) countClick hoveredOn =
+displayImports (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ importsContainer (width, height)
-    , spacer 1 1
-    , container (width - containerWidth) 20 middle (Text.asText countClick)
-    , spacer 1 1
+    , spacer 1 5
+    , flow right
+      [ spacer 150 1
+      , color grey <| button (send chan (sig - 1)) "&larr;"
+      , container 150 30 middle (Text.asText sig)
+      , color grey <| button (send chan (sig + 1)) "&rarr;"
+      ]
+    , spacer 1 5
     , color grey (container (width - containerWidth) (height - bottomHeight) middle (body hoveredOn))
     ]))
     
@@ -199,12 +216,17 @@ This section has all of the code for explaining the SIGNALS section of the game
 
 -- Signals Welcome
 signalsWelcome : (Int, Int) -> Int -> Element
-signalsWelcome (width, height) countClick =
+signalsWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
     [ signalsWelcomeContainer (width, height)
-    , spacer 1 1
-    , container (width - containerWidth) 20 middle (Text.asText countClick)
-    , spacer 1 1
+    , spacer 1 5
+    , flow right
+      [ spacer 150 1
+      , color grey <| button (send chan (sig - 1)) "&larr;"
+      , container 150 30 middle (Text.asText sig)
+      , color grey <| button (send chan (sig + 1)) "&rarr;"
+      ]
+    , spacer 1 5
     , color grey (container (width - containerWidth) (height - bottomHeight) middle (Text.plainText ""))
     ]))
 
@@ -226,12 +248,17 @@ signalsWelcomeMsg2 =
 
 -- Signals Message
 displaySignals : (Int, Int) -> Int -> String -> Element
-displaySignals (width, height) countClick hoveredOn =
+displaySignals (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ signalsContainer (width, height)
-    , spacer 1 1
-    , container (width - containerWidth) 20 middle (Text.asText countClick)
-    , spacer 1 1
+    , spacer 1 5
+    , flow right
+      [ spacer 150 1
+      , color grey <| button (send chan (sig - 1)) "&larr;"
+      , container 150 30 middle (Text.asText sig)
+      , color grey <| button (send chan (sig + 1)) "&rarr;"
+      ]
+    , spacer 1 5
     , color grey (container (width - containerWidth) (height - bottomHeight) middle (body hoveredOn))
     ]))
     
@@ -356,12 +383,17 @@ This section has all of the code for explaining the MODEL section of the game
 
 -- Model Welcome
 modelWelcome : (Int, Int) -> Int -> Element
-modelWelcome (width, height) countClick =
+modelWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
     [ modelWelcomeContainer (width, height)
-    , spacer 1 1
-    , container (width - containerWidth) 20 middle (Text.asText countClick)
-    , spacer 1 1
+    , spacer 1 5
+    , flow right
+      [ spacer 150 1
+      , color grey <| button (send chan (sig - 1)) "&larr;"
+      , container 150 30 middle (Text.asText sig)
+      , color grey <| button (send chan (sig + 1)) "&rarr;"
+      ]
+    , spacer 1 5
     , color grey (container (width - containerWidth) (height - bottomHeight) middle (Text.plainText ""))
     ]))
 
@@ -384,12 +416,17 @@ modelWelcomeMsg2 =
 
 -- Model Message 1
 displayModel1 : (Int, Int) -> Int -> String -> Element
-displayModel1 (width, height) countClick hoveredOn =
+displayModel1 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ modelContainer1 (width, height)
-    , spacer 1 1
-    , container (width - containerWidth) 20 middle (Text.asText countClick)
-    , spacer 1 1
+    , spacer 1 5
+    , flow right
+      [ spacer 150 1
+      , color grey <| button (send chan (sig - 1)) "&larr;"
+      , container 150 30 middle (Text.asText sig)
+      , color grey <| button (send chan (sig + 1)) "&rarr;"
+      ]
+    , spacer 1 5
     , color grey (container (width - containerWidth) (height - bottomHeight) middle (body hoveredOn))
     ]))
     
@@ -472,12 +509,17 @@ aliasGame2 =
 
 -- Model Message 2
 displayModel2 : (Int, Int) -> Int -> String -> Element
-displayModel2 (width, height) countClick hoveredOn =
+displayModel2 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ modelContainer2 (width, height)
-    , spacer 1 1
-    , container (width - containerWidth) 20 middle (Text.asText countClick)
-    , spacer 1 1
+    , spacer 1 5
+    , flow right
+      [ spacer 150 1
+      , color grey <| button (send chan (sig - 1)) "&larr;"
+      , container 150 30 middle (Text.asText sig)
+      , color grey <| button (send chan (sig + 1)) "&rarr;"
+      ]
+    , spacer 1 5
     , color grey (container (width - containerWidth) (height - bottomHeight) middle (body hoveredOn))
     ]))
     
@@ -586,12 +628,17 @@ This section has all of the code for explaining the UPDATE section of the game
 
 -- Update Welcome
 updateWelcome : (Int, Int) -> Int -> Element
-updateWelcome (width, height) countClick =
+updateWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
     [ updateWelcomeContainer (width, height)
-    , spacer 1 1
-    , container (width - containerWidth) 20 middle (Text.asText countClick)
-    , spacer 1 1
+    , spacer 1 5
+    , flow right
+      [ spacer 150 1
+      , color grey <| button (send chan (sig - 1)) "&larr;"
+      , container 150 30 middle (Text.asText sig)
+      , color grey <| button (send chan (sig + 1)) "&rarr;"
+      ]
+    , spacer 1 5
     , color grey (container (width - containerWidth) (height - bottomHeight) middle (Text.plainText""))
     ]))
 
@@ -613,12 +660,17 @@ updateWelcomeMsg2 =
 
 -- Update Message 1
 displayUpdate1 : (Int, Int) -> Int -> String -> Element
-displayUpdate1 (width, height) countClick hoveredOn =
+displayUpdate1 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ updateContainer1 (width, height)
-    , spacer 1 1
-    , container (width - containerWidth) 20 middle (Text.asText countClick)
-    , spacer 1 1
+    , spacer 1 5
+    , flow right
+      [ spacer 150 1
+      , color grey <| button (send chan (sig - 1)) "&larr;"
+      , container 150 30 middle (Text.asText sig)
+      , color grey <| button (send chan (sig + 1)) "&rarr;"
+      ]
+    , spacer 1 5
     , color grey (container (width - containerWidth) (height - bottomHeight) middle (body hoveredOn))
     ]))
     
@@ -759,12 +811,17 @@ updateFunc17 =
 
 -- Update Message 2
 displayUpdate2 : (Int, Int) -> Int -> String -> Element
-displayUpdate2 (width, height) countClick hoveredOn =
+displayUpdate2 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ updateContainer2 (width, height)
-    , spacer 1 1
-    , container (width - containerWidth) 20 middle (Text.asText countClick)
-    , spacer 1 1
+    , spacer 1 5
+    , flow right
+      [ spacer 150 1
+      , color grey <| button (send chan (sig - 1)) "&larr;"
+      , container 150 30 middle (Text.asText sig)
+      , color grey <| button (send chan (sig + 1)) "&rarr;"
+      ]
+    , spacer 1 5
     , color grey (container (width - containerWidth) (height - bottomHeight) middle (body hoveredOn))
     ]))
     
@@ -875,12 +932,17 @@ updateBadGuy13 =
 
 -- Update Message 3
 displayUpdate3 : (Int, Int) -> Int -> String -> Element
-displayUpdate3 (width, height) countClick hoveredOn =
+displayUpdate3 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ updateContainer3 (width, height)
-    , spacer 1 1
-    , container (width - containerWidth) 20 middle (Text.asText countClick)
-    , spacer 1 1
+    , spacer 1 5
+    , flow right
+      [ spacer 150 1
+      , color grey <| button (send chan (sig - 1)) "&larr;"
+      , container 150 30 middle (Text.asText sig)
+      , color grey <| button (send chan (sig + 1)) "&rarr;"
+      ]
+    , spacer 1 5
     , color grey (container (width - containerWidth) (height - bottomHeight) middle (body hoveredOn))
     ]))
     
@@ -996,12 +1058,17 @@ updatePlayer13 =
 
 -- Update Message 4
 displayUpdate4 : (Int, Int) -> Int -> String -> Element
-displayUpdate4 (width, height) countClick hoveredOn=
+displayUpdate4 (width, height) sig hoveredOn=
   color elmGrey (container width height middle (flow down
     [ updateContainer4 (width, height)
-    , spacer 1 1
-    , container (width - containerWidth) 20 middle (Text.asText countClick)
-    , spacer 1 1
+    , spacer 1 5
+    , flow right
+      [ spacer 150 1
+      , color grey <| button (send chan (sig - 1)) "&larr;"
+      , container 150 30 middle (Text.asText sig)
+      , color grey <| button (send chan (sig + 1)) "&rarr;"
+      ]
+    , spacer 1 5
     , color grey (container (width - containerWidth) (height - bottomHeight) middle (body hoveredOn))
     ]))
     
@@ -1121,12 +1188,17 @@ This section has all of the code for explaining the VIEW section of the game
 
 -- View Welcome
 viewWelcome : (Int, Int) -> Int -> Element
-viewWelcome (width, height) countClick =
+viewWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
     [ viewWelcomeContainer (width, height)
-    , spacer 1 1
-    , container (width - containerWidth) 20 middle (Text.asText countClick)
-    , spacer 1 1
+    , spacer 1 5
+    , flow right
+      [ spacer 150 1
+      , color grey <| button (send chan (sig - 1)) "&larr;"
+      , container 150 30 middle (Text.asText sig)
+      , color grey <| button (send chan (sig + 1)) "&rarr;"
+      ]
+    , spacer 1 5
     , color grey (container (width - containerWidth) (height - bottomHeight) middle (Text.plainText ""))
     ]))
 
@@ -1148,12 +1220,17 @@ viewWelcomeMsg2 =
 
 -- View Message 1
 displayView1 : (Int, Int) -> Int -> String -> Element
-displayView1 (width, height) countClick hoveredOn =
+displayView1 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ viewContainer1 (width, height)
-    , spacer 1 1
-    , container (width - containerWidth) 20 middle (Text.asText countClick)
-    , spacer 1 1
+    , spacer 1 5
+    , flow right
+      [ spacer 150 1
+      , color grey <| button (send chan (sig - 1)) "&larr;"
+      , container 150 30 middle (Text.asText sig)
+      , color grey <| button (send chan (sig + 1)) "&rarr;"
+      ]
+    , spacer 1 5
     , color grey (container (width - containerWidth) (height - bottomHeight) middle (body hoveredOn))
     ]))
     
@@ -1282,12 +1359,17 @@ viewFunc15 =
 
 -- View Message 2
 displayView2 : (Int, Int) -> Int -> String -> Element
-displayView2 (width, height) countClick hoveredOn =
+displayView2 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ viewContainer2 (width, height)
-    , spacer 1 1
-    , container (width - containerWidth) 20 middle (Text.asText countClick)
-    , spacer 1 1
+    , spacer 1 5
+    , flow right
+      [ spacer 150 1
+      , color grey <| button (send chan (sig - 1)) "&larr;"
+      , container 150 30 middle (Text.asText sig)
+      , color grey <| button (send chan (sig + 1)) "&rarr;"
+      ]
+    , spacer 1 5
     , color grey (container (width - containerWidth) (height - bottomHeight) middle (body hoveredOn))
     ]))
     
