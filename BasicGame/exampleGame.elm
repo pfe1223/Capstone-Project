@@ -165,6 +165,7 @@ elmGrey = rgb 71 80 102
 elmBlue = rgb 76 166 195
 elmGreen = rgb 127 209 17
 textColor = white
-txt f = Text.fromString >> Text.color textColor >> Text.monospace >> f >> Text.leftAligned
+txt f = Text.fromString >> Text.color textColor >> 
+		Text.monospace >> f >> Text.leftAligned
 msg = "SPACE to start, &larr;&uarr;&darr;&rarr; to move"
  
