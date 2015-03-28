@@ -1519,7 +1519,7 @@ viewIdea1 (width, height) =
   color grey (container containerWidth (topHeight + bottomHeight) midLeft (flow down
   [ container containerWidth 60 middle <| title viewIdea1Msg1
   , spacer 1 20
-  , container containerWidth 100 middle <| subTitle viewIdea1Msg2
+  , container containerWidth 350 middle <| subTitle viewIdea1Msg2
   ]))
   
 viewIdea1Msg1 : String
@@ -1528,9 +1528,12 @@ viewIdea1Msg1 =
 
 viewIdea1Msg2 : String
 viewIdea1Msg2 =
-  "You have made the basis for a game. Now it is time\n" 
-  ++ "to make it better. Advance through the next few\n"
-  ++ "pages for some ideas on what you can do."
+  "Add a way to advance to the next level. Possible ways\n" 
+  ++ "to beat a level could include:\n\n"
+  ++ " * Have a timer. When it gets to 0, you advance.\n"
+  ++ " * Have the player collect a certain number of shapes\n"
+  ++ "   before advancing. Each shape randomly appears one at\n"
+  ++ "   a time."
   
 -- Idea 2
 idea2 : (Int, Int) -> Int -> Element
@@ -1555,13 +1558,13 @@ viewIdea2 (width, height) =
   
 viewIdea2Msg1 : String
 viewIdea2Msg1 =
-  "Add Another Badguy"
+  "Add Another Enemy"
 
 viewIdea2Msg2 : String
 viewIdea2Msg2 =
-  "You have made the basis for a game. Now it is time\n" 
-  ++ "to make it better. Advance through the next few\n"
-  ++ "pages for some ideas on what you can do."
+  "To increase the difficulty, add another enemy to the game.\n" 
+  ++ "Have them move at different speeds, and use a different\n"
+  ++ "shape."
 
 -- Idea 3
 idea3 : (Int, Int) -> Int -> Element
@@ -1590,6 +1593,6 @@ viewIdea3Msg1 =
 
 viewIdea3Msg2 : String
 viewIdea3Msg2 =
-  "You have made the basis for a game. Now it is time\n" 
-  ++ "to make it better. Advance through the next few\n"
-  ++ "pages for some ideas on what you can do."
+  "When you change levels, have the background change.\n" 
+  ++ "Use different colors to designate areas that will remove\n"
+  ++ "a life if the circle touches it."
