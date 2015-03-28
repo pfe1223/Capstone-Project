@@ -23,7 +23,9 @@ hoveredOn = Signal.channel ""
 
 view : (Int, Int) -> Int -> String -> Element
 view (width, height) sig hoveredOn =
-  if | sig <= 0 -> displayWelcome (width, height) sig
+  if | sig < -1 -> displayWelcome (width, height) sig
+     | sig == -1 -> congrats (width, height) sig
+     | sig == 0 -> displayWelcome (width, height) sig
      | sig == 1 -> importsWelcome(width, height) sig
      | sig == 2 -> displayImports (width, height) sig hoveredOn
      | sig == 3 -> signalsWelcome (width, height) sig
@@ -39,6 +41,7 @@ view (width, height) sig hoveredOn =
      | sig == 13 -> viewWelcome (width, height) sig
      | sig == 14 -> displayView1 (width, height) sig hoveredOn
      | sig == 15 -> displayView2 (width, height) sig hoveredOn
+     | sig == 16 -> congrats (width, height) sig
      | otherwise -> displayWelcome (width, height) sig
 
 -- These numbers are used to create the containers that hold the code examples and explinations
@@ -1457,3 +1460,40 @@ msgFunc : Element
 msgFunc =
   body " msg = 'SPACE to start, &larr ;&uarr ;&darr ;&rarr ; to move'"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn msgFuncMsg) else (Signal.send hoveredOn ""))
+
+{-- 
+*************************************************************
+This section encourages the user to expand the game and make it better
+*************************************************************
+--}
+
+-- Congrats
+congrats : (Int, Int) -> Int -> Element
+congrats (width, height) sig =
+  color elmGrey (container width height middle (flow down
+    [ viewCongrats (width, height)
+    , spacer 1 6
+    , flow right
+      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      , spacer 6 1
+      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      ]
+    ]))
+
+viewCongrats : (Int, Int) -> Element
+viewCongrats (width, height) =
+  color grey (container containerWidth (topHeight + bottomHeight) midLeft (flow down
+  [ container containerWidth 60 middle <| title viewCongratsMsg1
+  , spacer 1 20
+  , container containerWidth 100 middle <| subTitle viewCongratsMsg2
+  ]))
+  
+viewCongratsMsg1 : String
+viewCongratsMsg1 =
+  "Congratulations"
+
+viewCongratsMsg2 : String
+viewCongratsMsg2 =
+  "You have made the basis for a game. Now it is time\n" 
+  ++ "to make it better. Advance through the next few\n"
+  ++ "pages for some ideas on what you can do."
