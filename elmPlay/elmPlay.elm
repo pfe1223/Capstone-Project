@@ -42,6 +42,9 @@ view (width, height) sig hoveredOn =
      | sig == 14 -> displayView1 (width, height) sig hoveredOn
      | sig == 15 -> displayView2 (width, height) sig hoveredOn
      | sig == 16 -> congrats (width, height) sig
+     | sig == 17 -> idea1 (width, height) sig
+     | sig == 18 -> idea2 (width, height) sig
+     | sig == 19 -> idea3 (width, height) sig
      | otherwise -> displayWelcome (width, height) sig
 
 -- These numbers are used to create the containers that hold the code examples and explinations
@@ -1494,6 +1497,99 @@ viewCongratsMsg1 =
 
 viewCongratsMsg2 : String
 viewCongratsMsg2 =
+  "You have made the basis for a game. Now it is time\n" 
+  ++ "to make it better. Advance through the next few\n"
+  ++ "pages for some ideas on what you can do."
+
+-- Idea 1
+idea1 : (Int, Int) -> Int -> Element
+idea1 (width, height) sig =
+  color elmGrey (container width height middle (flow down
+    [ viewIdea1 (width, height)
+    , spacer 1 6
+    , flow right
+      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      , spacer 6 1
+      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      ]
+    ]))
+
+viewIdea1 : (Int, Int) -> Element
+viewIdea1 (width, height) =
+  color grey (container containerWidth (topHeight + bottomHeight) midLeft (flow down
+  [ container containerWidth 60 middle <| title viewIdea1Msg1
+  , spacer 1 20
+  , container containerWidth 100 middle <| subTitle viewIdea1Msg2
+  ]))
+  
+viewIdea1Msg1 : String
+viewIdea1Msg1 =
+  "Advance to Next Level"
+
+viewIdea1Msg2 : String
+viewIdea1Msg2 =
+  "You have made the basis for a game. Now it is time\n" 
+  ++ "to make it better. Advance through the next few\n"
+  ++ "pages for some ideas on what you can do."
+  
+-- Idea 2
+idea2 : (Int, Int) -> Int -> Element
+idea2 (width, height) sig =
+  color elmGrey (container width height middle (flow down
+    [ viewIdea2 (width, height)
+    , spacer 1 6
+    , flow right
+      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      , spacer 6 1
+      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      ]
+    ]))
+
+viewIdea2 : (Int, Int) -> Element
+viewIdea2 (width, height) =
+  color grey (container containerWidth (topHeight + bottomHeight) midLeft (flow down
+  [ container containerWidth 60 middle <| title viewIdea2Msg1
+  , spacer 1 20
+  , container containerWidth 100 middle <| subTitle viewIdea2Msg2
+  ]))
+  
+viewIdea2Msg1 : String
+viewIdea2Msg1 =
+  "Add Another Badguy"
+
+viewIdea2Msg2 : String
+viewIdea2Msg2 =
+  "You have made the basis for a game. Now it is time\n" 
+  ++ "to make it better. Advance through the next few\n"
+  ++ "pages for some ideas on what you can do."
+
+-- Idea 3
+idea3 : (Int, Int) -> Int -> Element
+idea3 (width, height) sig =
+  color elmGrey (container width height middle (flow down
+    [ viewIdea3 (width, height)
+    , spacer 1 6
+    , flow right
+      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      , spacer 6 1
+      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      ]
+    ]))
+
+viewIdea3 : (Int, Int) -> Element
+viewIdea3 (width, height) =
+  color grey (container containerWidth (topHeight + bottomHeight) midLeft (flow down
+  [ container containerWidth 60 middle <| title viewIdea3Msg1
+  , spacer 1 20
+  , container containerWidth 100 middle <| subTitle viewIdea3Msg2
+  ]))
+  
+viewIdea3Msg1 : String
+viewIdea3Msg1 =
+  "Change the Layout"
+
+viewIdea3Msg2 : String
+viewIdea3Msg2 =
   "You have made the basis for a game. Now it is time\n" 
   ++ "to make it better. Advance through the next few\n"
   ++ "pages for some ideas on what you can do."
