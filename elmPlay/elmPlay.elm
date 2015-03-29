@@ -1530,8 +1530,8 @@ viewIdea1Msg2 : String
 viewIdea1Msg2 =
   "Add a way to advance to the next level. Possible ways\n" 
   ++ "to beat a level could include:\n\n"
-  ++ " * Have a timer. When it gets to 0, you advance.\n"
-  ++ " * Have the player collect a certain number of shapes\n"
+  ++ " &diams; Have a timer. When it gets to 0, you advance.\n"
+  ++ " &diams; Have the player collect a certain number of shapes\n"
   ++ "   before advancing. Each shape randomly appears one at\n"
   ++ "   a time."
   
