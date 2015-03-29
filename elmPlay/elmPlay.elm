@@ -1532,8 +1532,8 @@ viewIdea1Msg2 =
   ++ "to beat a level could include:\n\n"
   ++ " &diams; Have a timer. When it gets to 0, you advance.\n"
   ++ " &diams; Have the player collect a certain number of shapes\n"
-  ++ "   before advancing. Each shape randomly appears one at\n"
-  ++ "   a time."
+  ++ "    before advancing. Each shape randomly appears one at\n"
+  ++ "    a time."
   
 -- Idea 2
 idea2 : (Int, Int) -> Int -> Element
@@ -1553,7 +1553,7 @@ viewIdea2 (width, height) =
   color grey (container containerWidth (topHeight + bottomHeight) midLeft (flow down
   [ container containerWidth 60 middle <| title viewIdea2Msg1
   , spacer 1 20
-  , container containerWidth 100 middle <| subTitle viewIdea2Msg2
+  , container containerWidth 150 middle <| subTitle viewIdea2Msg2
   ]))
   
 viewIdea2Msg1 : String
@@ -1562,9 +1562,11 @@ viewIdea2Msg1 =
 
 viewIdea2Msg2 : String
 viewIdea2Msg2 =
-  "To increase the difficulty, add another enemy to the game.\n" 
-  ++ "Have them move at different speeds, and use a different\n"
-  ++ "shape."
+  "To increase the difficulty, add another enemy to the game.\n\n" 
+  ++ " &diams; Have them move at different speeds.\n" 
+  ++ " &diams; Use a different size and shape.\n"
+  ++ " &diams; Use a different color. Try the orange from\n"
+  ++ "    the Elm logo - rgb 237 149 0."
 
 -- Idea 3
 idea3 : (Int, Int) -> Int -> Element
@@ -1584,7 +1586,7 @@ viewIdea3 (width, height) =
   color grey (container containerWidth (topHeight + bottomHeight) midLeft (flow down
   [ container containerWidth 60 middle <| title viewIdea3Msg1
   , spacer 1 20
-  , container containerWidth 100 middle <| subTitle viewIdea3Msg2
+  , container containerWidth 150 middle <| subTitle viewIdea3Msg2
   ]))
   
 viewIdea3Msg1 : String
@@ -1593,6 +1595,7 @@ viewIdea3Msg1 =
 
 viewIdea3Msg2 : String
 viewIdea3Msg2 =
-  "When you change levels, have the background change.\n" 
-  ++ "Use different colors to designate areas that will remove\n"
-  ++ "a life if the circle touches it."
+  "When the change levels, have the background change.\n\n" 
+  ++ " &diams; Use different colors to designate areas that will take\n"
+  ++ "    a life if the circle touches it.\n"
+  ++ " &diams; Create obstacles that they player cannot go through."
