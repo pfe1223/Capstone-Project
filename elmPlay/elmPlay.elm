@@ -60,25 +60,25 @@ bottomHeight = 150
 -- Wayfinding tools
 wayfinderPast =
   circle 15
-    |> filled elmOrange
+    |> filled elmBlue
     |> alpha 0.5
 
 wayfinderPresent =
   circle 15
-    |> filled elmOrange
+    |> filled elmBlue
 
 wayfinderFuture =
   circle 15
-    |> outlined ( solid elmOrange)
+    |> outlined ( solid elmBlue)
 
 dashPast =
   rect 20 5
-    |> filled elmOrange
+    |> filled elmBlue
     |> alpha 0.5
 
 dashPresent =
   rect 20 5
-    |> filled elmOrange
+    |> filled elmBlue
 
 -- Custom colors based on the Elm logo
 elmGrey = rgb 71 80 102
@@ -781,8 +781,6 @@ updateWelcome (width, height) sig =
       , spacer 6 1
       , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
-    , spacer 1 6
-    , color grey (container containerWidth bottomHeight middle (Text.plainText""))
     ]))
 
 wayfindingUpdate : Element
@@ -818,7 +816,7 @@ wayfindingUpdate =
 
 updateWelcomeContainer : (Int, Int) -> Element
 updateWelcomeContainer (width, height) =
-  color grey (container containerWidth topHeight midLeft (flow down
+  color grey (container containerWidth containerHeight midLeft (flow down
   [ container containerWidth 100 middle <| title updateWelcomeMsg1
   , spacer 1 20
   , container containerWidth 50 middle <| subTitle updateWelcomeMsg2
@@ -837,20 +835,19 @@ displayUpdate1 : (Int, Int) -> Int -> String -> Element
 displayUpdate1 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingUpdate
-    , updateContainer1 (width, height)
+    , updateContainer1 (width, height) sig hoveredOn
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
       , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
-    , spacer 1 6
-    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
+   
     ]))
     
-updateContainer1 : (Int, Int) -> Element
-updateContainer1 (width, height) =
-  color grey (container containerWidth topHeight middle (flow down
+updateContainer1 : (Int, Int) -> Int -> String -> Element
+updateContainer1 (width, height) sig hoveredOn =
+  color grey (container containerWidth containerHeight middle (flow down
     [ container containerWidth codeHeight midLeft (updateFunc1)
     , container containerWidth codeHeight midLeft (updateFunc2)
     , container containerWidth codeHeight midLeft (updateFunc3)
@@ -871,6 +868,8 @@ updateContainer1 (width, height) =
     , container containerWidth codeHeight midLeft (updateFunc15)
     , container containerWidth codeHeight midLeft (updateFunc16)
     , container containerWidth codeHeight midLeft (updateFunc17)
+    , spacer 1 6
+    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
   
 updateFunc1Msg = "Update is a function that takes an object of type Input, an object of type\n"
@@ -988,20 +987,18 @@ displayUpdate2 : (Int, Int) -> Int -> String -> Element
 displayUpdate2 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingUpdate
-    , updateContainer2 (width, height)
+    , updateContainer2 (width, height) sig hoveredOn
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
       , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
-    , spacer 1 6
-    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
     
-updateContainer2 : (Int, Int) -> Element
-updateContainer2 (width, height) =
-  color grey (container containerWidth topHeight middle (flow down
+updateContainer2 : (Int, Int) -> Int -> String -> Element
+updateContainer2 (width, height) sig hoveredOn=
+  color grey (container containerWidth containerHeight middle (flow down
     [ container containerWidth codeHeight midLeft (updateBadGuy1)
     , container containerWidth codeHeight midLeft (updateBadGuy2)
     , container containerWidth codeHeight midLeft (updateBadGuy3)
@@ -1015,6 +1012,8 @@ updateContainer2 (width, height) =
     , container containerWidth codeHeight midLeft (updateBadGuy11)
     , container containerWidth codeHeight midLeft (updateBadGuy12)
     , container containerWidth codeHeight midLeft (updateBadGuy13)
+    , spacer 1 6
+    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
   
 updateBadGuy1Msg = "The function updateBadGuy takes a Time, a BadGuy, and a Player.\n"
@@ -1109,20 +1108,18 @@ displayUpdate3 : (Int, Int) -> Int -> String -> Element
 displayUpdate3 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingUpdate
-    , updateContainer3 (width, height)
+    , updateContainer3 (width, height) sig hoveredOn
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
       , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
-    , spacer 1 6
-    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
     
-updateContainer3 : (Int, Int) -> Element
-updateContainer3 (width, height) =
-  color grey (container containerWidth topHeight middle (flow down
+updateContainer3 : (Int, Int) -> Int -> String -> Element
+updateContainer3 (width, height) sig hoveredOn=
+  color grey (container containerWidth containerHeight middle (flow down
     [ container containerWidth codeHeight midLeft (updatePlayer1)
     , container containerWidth codeHeight midLeft (updatePlayer2)
     , container containerWidth codeHeight midLeft (updatePlayer3)
@@ -1136,6 +1133,8 @@ updateContainer3 (width, height) =
     , container containerWidth codeHeight midLeft (updatePlayer11)
     , container containerWidth codeHeight midLeft (updatePlayer12)
     , container containerWidth codeHeight midLeft (updatePlayer13)
+    , spacer 1 6
+    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
   
 updatePlayer1Msg = "This defines the function updatePlayer, which takes a time, an integer, \nanother "
@@ -1235,20 +1234,18 @@ displayUpdate4 : (Int, Int) -> Int -> String -> Element
 displayUpdate4 (width, height) sig hoveredOn=
   color elmGrey (container width height middle (flow down
     [ wayfindingUpdate
-    , updateContainer4 (width, height)
+    , updateContainer4 (width, height) sig hoveredOn
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
       , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
-    , spacer 1 6
-    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
     
-updateContainer4 : (Int, Int) -> Element
-updateContainer4 (width, height) =
-  color grey (container containerWidth topHeight middle (flow down
+updateContainer4 : (Int, Int) -> Int -> String -> Element
+updateContainer4 (width, height) sig hoveredOn =
+  color grey (container containerWidth containerHeight middle (flow down
     [ container containerWidth codeHeight midLeft (updatePhysics1)
     , container containerWidth codeHeight midLeft (updatePhysics2)
     , container containerWidth codeHeight midLeft (updatePhysics3)
@@ -1265,6 +1262,8 @@ updateContainer4 (width, height) =
     , container containerWidth codeHeight midLeft (updateStepV2)
     , container containerWidth codeHeight midLeft (updateStepV3)
     , container containerWidth codeHeight midLeft (updateStepV4)
+    , spacer 1 6
+    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
   
 updatePhysics1Msg = "The function updatePhysics takes t (time) and the values of x, y, vx, and vy\n"
@@ -1372,8 +1371,6 @@ viewWelcome (width, height) sig =
       , spacer 6 1
       , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
-    , spacer 1 6
-    , color grey (container containerWidth bottomHeight middle (Text.plainText ""))
     ]))
 
 wayfindingView : Element
@@ -1409,7 +1406,7 @@ wayfindingView =
 
 viewWelcomeContainer : (Int, Int) -> Element
 viewWelcomeContainer (width, height) =
-  color grey (container containerWidth topHeight midLeft (flow down
+  color grey (container containerWidth containerHeight midLeft (flow down
   [ container containerWidth 50 middle <| title viewWelcomeMsg1
   , spacer 1 20
   , container containerWidth 50 middle <| subTitle viewWelcomeMsg2
@@ -1428,20 +1425,18 @@ displayView1 : (Int, Int) -> Int -> String -> Element
 displayView1 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingView
-    , viewContainer1 (width, height)
+    , viewContainer1 (width, height) sig hoveredOn
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
       , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
-    , spacer 1 6
-    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
     
-viewContainer1 : (Int, Int) -> Element
-viewContainer1 (width, height) =
-  color grey (container containerWidth topHeight middle (flow down
+viewContainer1 : (Int, Int) -> Int -> String -> Element
+viewContainer1 (width, height) sig hoveredOn =
+  color grey (container containerWidth containerHeight middle (flow down
     [ container containerWidth codeHeight midLeft (viewFunc1)
     , container containerWidth codeHeight midLeft (viewFunc2)
     , container containerWidth codeHeight midLeft (viewFunc3)
@@ -1457,6 +1452,8 @@ viewContainer1 (width, height) =
     , container containerWidth codeHeight midLeft (viewFunc13)
     , container containerWidth codeHeight midLeft (viewFunc14)
     , container containerWidth codeHeight midLeft (viewFunc15)
+    , spacer 1 6
+    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
   
 viewFunc1Msg = "The function view takes a tupple of integers and a game, and the function \nreturns "
@@ -1567,20 +1564,18 @@ displayView2 : (Int, Int) -> Int -> String -> Element
 displayView2 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingView
-    , viewContainer2 (width, height)
+    , viewContainer2 (width, height) sig hoveredOn
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
       , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
-    , spacer 1 6
-    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
     
-viewContainer2 : (Int, Int) -> Element
-viewContainer2 (width, height) =
-  color grey (container containerWidth topHeight middle (flow down
+viewContainer2 : (Int, Int) -> Int -> String -> Element
+viewContainer2 (width, height) sig hoveredOn =
+  color grey (container containerWidth containerHeight middle (flow down
     [ container containerWidth codeHeight midLeft (viewFunc16)
     , container containerWidth codeHeight midLeft (viewFunc17)
     , container containerWidth codeHeight midLeft (viewFunc18)
@@ -1594,6 +1589,8 @@ viewContainer2 (width, height) =
     , container containerWidth codeHeight midLeft (txtFunc1)
     , container containerWidth codeHeight midLeft (txtFunc2)
     , container containerWidth codeHeight midLeft (msgFunc)
+    , spacer 1 6
+    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))  
 
 viewFunc16Msg = "The lives is also in the collage. Since only forms can exist in a\n"
@@ -1756,7 +1753,8 @@ viewCongratsMsg2 =
 idea1 : (Int, Int) -> Int -> Element
 idea1 (width, height) sig =
   color elmGrey (container width height middle (flow down
-    [ viewIdea1 (width, height)
+    [ wayfindingCongrats
+    , viewIdea1 (width, height)
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
@@ -1790,7 +1788,8 @@ viewIdea1Msg2 =
 idea2 : (Int, Int) -> Int -> Element
 idea2 (width, height) sig =
   color elmGrey (container width height middle (flow down
-    [ viewIdea2 (width, height)
+    [ wayfindingCongrats
+    , viewIdea2 (width, height)
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
@@ -1823,7 +1822,8 @@ viewIdea2Msg2 =
 idea3 : (Int, Int) -> Int -> Element
 idea3 (width, height) sig =
   color elmGrey (container width height middle (flow down
-    [ viewIdea3 (width, height)
+    [ wayfindingCongrats
+    , viewIdea3 (width, height)
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
