@@ -115,28 +115,32 @@ displayWelcome (width, height) sig =
 wayfindingWelcome : Element
 wayfindingWelcome =
   color grey <| container 400 50 middle <| (flow right
-    [ collage 33 50
-        [ wayfinderPresent ]
-    , collage 33 50
+    [ collage 30 50
+        [ wayfinderPresent ] --Intro page
+    , collage 30 50
         [ dashPresent ]
-    , collage 33 50
-        [ wayfinderFuture ]
-    , collage 33 50
+    , collage 30 50
+        [ wayfinderFuture ] --Imports section
+    , collage 30 50
         [ dashPresent ]
-    , collage 33 50
-        [ wayfinderFuture ]
-    , collage 33 50
+    , collage 30 50
+        [ wayfinderFuture ] --Signals section
+    , collage 30 50
         [ dashPresent ]
-    , collage 33 50
-        [ wayfinderFuture ]
-    , collage 33 50
+    , collage 30 50
+        [ wayfinderFuture ] --Model section
+    , collage 30 50
         [ dashPresent ]
-    , collage 33 50
-        [ wayfinderFuture ]
-    , collage 33 50
+    , collage 30 50
+        [ wayfinderFuture ] --Updae section
+    , collage 30 50
         [ dashPresent ]
-    , collage 33 50
-        [ wayfinderFuture ]
+    , collage 30 50
+        [ wayfinderFuture ] --View section
+    , collage 30 50
+        [ dashPresent ]
+    , collage 30 50
+        [ wayfinderFuture ] --Congrats section
     ])
 
 welcomeContainer : Element
@@ -181,28 +185,32 @@ importsWelcome (width, height) sig =
 wayfindingImports : Element
 wayfindingImports =
   color grey <| container 400 50 middle <| (flow right
-    [ collage 33 50
-        [ wayfinderPast ]
-    , collage 33 50
+    [ collage 30 50
+        [ wayfinderPast ] --Intro page
+    , collage 30 50
         [ dashPast ]
-    , collage 33 50
-        [ wayfinderPresent ]
-    , collage 33 50
+    , collage 30 50
+        [ wayfinderPresent ] --Imports section
+    , collage 30 50
         [ dashPresent ]
-    , collage 33 50
-        [ wayfinderFuture ]
-    , collage 33 50
+    , collage 30 50
+        [ wayfinderFuture ] --Signals section
+    , collage 30 50
         [ dashPresent ]
-    , collage 33 50
-        [ wayfinderFuture ]
-    , collage 33 50
+    , collage 30 50
+        [ wayfinderFuture ] --Model section
+    , collage 30 50
         [ dashPresent ]
-    , collage 33 50
-        [ wayfinderFuture ]
-    , collage 33 50
+    , collage 30 50
+        [ wayfinderFuture ] --Updae section
+    , collage 30 50
         [ dashPresent ]
-    , collage 33 50
-        [ wayfinderFuture ]
+    , collage 30 50
+        [ wayfinderFuture ] --View section
+    , collage 30 50
+        [ dashPresent ]
+    , collage 30 50
+        [ wayfinderFuture ] --Congrats section
     ])
 
 importsWelcomeContainer : (Int, Int) -> Element
@@ -233,8 +241,7 @@ displayImports (width, height) sig hoveredOn =
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
       , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
-      ]
-    
+      ]  
     ]))
     
 importsContainer : (Int, Int) -> Int -> String -> Element
@@ -296,7 +303,8 @@ This section has all of the code for explaining the SIGNALS section of the game
 signalsWelcome : (Int, Int) -> Int -> Element
 signalsWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
-    [ signalsWelcomeContainer (width, height)
+    [ wayfindingSignals
+    , signalsWelcomeContainer (width, height)
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
@@ -304,6 +312,37 @@ signalsWelcome (width, height) sig =
       , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     ]))
+
+wayfindingSignals : Element
+wayfindingSignals =
+  color grey <| container 400 50 middle <| (flow right
+    [ collage 30 50
+        [ wayfinderPast ] --Intro page
+    , collage 30 50
+        [ dashPast ]
+    , collage 30 50
+        [ wayfinderPast ] --Imports section
+    , collage 30 50
+        [ dashPast ]
+    , collage 30 50
+        [ wayfinderPresent ] --Signals section
+    , collage 30 50
+        [ dashPresent ]
+    , collage 30 50
+        [ wayfinderFuture ] --Model section
+    , collage 30 50
+        [ dashPresent ]
+    , collage 30 50
+        [ wayfinderFuture ] --Updae section
+    , collage 30 50
+        [ dashPresent ]
+    , collage 30 50
+        [ wayfinderFuture ] --View section
+    , collage 30 50
+        [ dashPresent ]
+    , collage 30 50
+        [ wayfinderFuture ] --Congrats section
+    ])
 
 signalsWelcomeContainer : (Int, Int) -> Element
 signalsWelcomeContainer (width, height) =
@@ -325,20 +364,19 @@ signalsWelcomeMsg2 =
 displaySignals : (Int, Int) -> Int -> String -> Element
 displaySignals (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
-    [ signalsContainer (width, height)
+    [ wayfindingSignals
+    , signalsContainer (width, height) sig hoveredOn
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
       , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
-    , spacer 1 6
-    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
     
-signalsContainer : (Int, Int) -> Element
-signalsContainer (width, height) =
-  color grey (container containerWidth topHeight middle (flow down
+signalsContainer : (Int, Int) -> Int -> String -> Element
+signalsContainer (width, height) sig hoveredOn =
+  color grey (container containerWidth containerHeight middle (flow down
     [ container containerWidth codeHeight midLeft (signalMain1)
     , container containerWidth codeHeight midLeft (signalMain2)
     , spacer 1 extraLine
@@ -357,6 +395,8 @@ signalsContainer (width, height) =
     , container containerWidth codeHeight midLeft (signalInput6)
     , container containerWidth codeHeight midLeft (signalInput7)
     , container containerWidth codeHeight midLeft (signalInput8)
+    , spacer 1 6
+    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
   
 signalMain1Msg = "Define the main function Every Elm program must have a main."
@@ -459,20 +499,50 @@ This section has all of the code for explaining the MODEL section of the game
 modelWelcome : (Int, Int) -> Int -> Element
 modelWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
-    [ modelWelcomeContainer (width, height)
+    [ wayfindingModel
+    , modelWelcomeContainer (width, height)
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
       , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
-    , spacer 1 6
-    , color grey (container containerWidth bottomHeight middle (Text.plainText ""))
     ]))
+
+wayfindingModel : Element
+wayfindingModel =
+  color grey <| container 400 50 middle <| (flow right
+    [ collage 30 50
+        [ wayfinderPast ] --Intro page
+    , collage 30 50
+        [ dashPast ]
+    , collage 30 50
+        [ wayfinderPast ] --Imports section
+    , collage 30 50
+        [ dashPast ]
+    , collage 30 50
+        [ wayfinderPast ] --Signals section
+    , collage 30 50
+        [ dashPast ]
+    , collage 30 50
+        [ wayfinderPresent ] --Model section
+    , collage 30 50
+        [ dashPresent ]
+    , collage 30 50
+        [ wayfinderFuture ] --Updae section
+    , collage 30 50
+        [ dashPresent ]
+    , collage 30 50
+        [ wayfinderFuture ] --View section
+    , collage 30 50
+        [ dashPresent ]
+    , collage 30 50
+        [ wayfinderFuture ] --Congrats section
+    ])
 
 modelWelcomeContainer : (Int, Int) -> Element
 modelWelcomeContainer (width, height) =
-  color grey (container containerWidth topHeight midLeft (flow down
+  color grey (container containerWidth containerHeight midLeft (flow down
   [ container containerWidth 100 middle <| title modelWelcomeMsg1
   , spacer 1 20
   , container containerWidth 50 middle <| subTitle modelWelcomeMsg2
@@ -491,20 +561,19 @@ modelWelcomeMsg2 =
 displayModel1 : (Int, Int) -> Int -> String -> Element
 displayModel1 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
-    [ modelContainer1 (width, height)
+    [ wayfindingModel
+    , modelContainer1 (width, height) sig hoveredOn
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
       , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
-    , spacer 1 6
-    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
     
-modelContainer1 : (Int, Int) -> Element
-modelContainer1 (width, height) =
-  color grey (container containerWidth topHeight middle (flow down
+modelContainer1 : (Int, Int) -> Int -> String -> Element
+modelContainer1 (width, height) sig hoveredOn =
+  color grey (container containerWidth containerHeight middle (flow down
     [ container containerWidth codeHeight midLeft (gameSize)
     , container containerWidth codeHeight midLeft (playingSize)
     , spacer 1 extraLine
@@ -518,6 +587,8 @@ modelContainer1 (width, height) =
     , spacer 1 extraLine
     , container containerWidth codeHeight midLeft (aliasGame1)
     , container containerWidth codeHeight midLeft (aliasGame2)
+    , spacer 1 6
+    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
   
 gameSizeMsg = "Set the variable gameWidth to 600 and variable gameHeight to 400."
@@ -583,20 +654,19 @@ aliasGame2 =
 displayModel2 : (Int, Int) -> Int -> String -> Element
 displayModel2 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
-    [ modelContainer2 (width, height)
+    [ wayfindingModel
+    , modelContainer2 (width, height) sig hoveredOn
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
       , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
-    , spacer 1 6
-    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
-    
-modelContainer2 : (Int, Int) -> Element
-modelContainer2 (width, height) =
-  color grey (container containerWidth topHeight middle (flow down
+
+modelContainer2 : (Int, Int) -> Int -> String -> Element
+modelContainer2 (width, height) sig hoveredOn =
+  color grey (container containerWidth containerHeight middle (flow down
     [ container containerWidth codeHeight midLeft (defaultGame1)
     , container containerWidth codeHeight midLeft (defaultGame2)
     , container containerWidth codeHeight midLeft (defaultGame3)
@@ -610,6 +680,8 @@ modelContainer2 (width, height) =
     , container containerWidth codeHeight midLeft (aliasInput4)
     , container containerWidth codeHeight midLeft (aliasInput5)
     , container containerWidth codeHeight midLeft (aliasInput6)
+    , spacer 1 6
+    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
 
 defaultGame1Msg = " Create an object defaultGame of type Game."
@@ -701,7 +773,8 @@ This section has all of the code for explaining the UPDATE section of the game
 updateWelcome : (Int, Int) -> Int -> Element
 updateWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
-    [ updateWelcomeContainer (width, height)
+    [ wayfindingUpdate
+    , updateWelcomeContainer (width, height)
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
@@ -711,6 +784,37 @@ updateWelcome (width, height) sig =
     , spacer 1 6
     , color grey (container containerWidth bottomHeight middle (Text.plainText""))
     ]))
+
+wayfindingUpdate : Element
+wayfindingUpdate =
+  color grey <| container 400 50 middle <| (flow right
+    [ collage 30 50
+        [ wayfinderPast ] --Intro page
+    , collage 30 50
+        [ dashPast ]
+    , collage 30 50
+        [ wayfinderPast ] --Imports section
+    , collage 30 50
+        [ dashPast ]
+    , collage 30 50
+        [ wayfinderPast ] --Signals section
+    , collage 30 50
+        [ dashPast ]
+    , collage 30 50
+        [ wayfinderPast ] --Model section
+    , collage 30 50
+        [ dashPast ]
+    , collage 30 50
+        [ wayfinderPresent ] --Updae section
+    , collage 30 50
+        [ dashPresent ]
+    , collage 30 50
+        [ wayfinderFuture ] --View section
+    , collage 30 50
+        [ dashPresent ]
+    , collage 30 50
+        [ wayfinderFuture ] --Congrats section
+    ])
 
 updateWelcomeContainer : (Int, Int) -> Element
 updateWelcomeContainer (width, height) =
@@ -732,7 +836,8 @@ updateWelcomeMsg2 =
 displayUpdate1 : (Int, Int) -> Int -> String -> Element
 displayUpdate1 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
-    [ updateContainer1 (width, height)
+    [ wayfindingUpdate
+    , updateContainer1 (width, height)
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
@@ -882,7 +987,8 @@ updateFunc17 =
 displayUpdate2 : (Int, Int) -> Int -> String -> Element
 displayUpdate2 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
-    [ updateContainer2 (width, height)
+    [ wayfindingUpdate
+    , updateContainer2 (width, height)
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
@@ -1002,7 +1108,8 @@ updateBadGuy13 =
 displayUpdate3 : (Int, Int) -> Int -> String -> Element
 displayUpdate3 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
-    [ updateContainer3 (width, height)
+    [ wayfindingUpdate
+    , updateContainer3 (width, height)
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
@@ -1127,7 +1234,8 @@ updatePlayer13 =
 displayUpdate4 : (Int, Int) -> Int -> String -> Element
 displayUpdate4 (width, height) sig hoveredOn=
   color elmGrey (container width height middle (flow down
-    [ updateContainer4 (width, height)
+    [ wayfindingUpdate
+    , updateContainer4 (width, height)
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
@@ -1256,7 +1364,8 @@ This section has all of the code for explaining the VIEW section of the game
 viewWelcome : (Int, Int) -> Int -> Element
 viewWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
-    [ viewWelcomeContainer (width, height)
+    [ wayfindingView
+    , viewWelcomeContainer (width, height)
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
@@ -1266,6 +1375,37 @@ viewWelcome (width, height) sig =
     , spacer 1 6
     , color grey (container containerWidth bottomHeight middle (Text.plainText ""))
     ]))
+
+wayfindingView : Element
+wayfindingView =
+  color grey <| container 400 50 middle <| (flow right
+    [ collage 30 50
+        [ wayfinderPast ] --Intro page
+    , collage 30 50
+        [ dashPast ]
+    , collage 30 50
+        [ wayfinderPast ] --Imports section
+    , collage 30 50
+        [ dashPast ]
+    , collage 30 50
+        [ wayfinderPast ] --Signals section
+    , collage 30 50
+        [ dashPast ]
+    , collage 30 50
+        [ wayfinderPast ] --Model section
+    , collage 30 50
+        [ dashPast ]
+    , collage 30 50
+        [ wayfinderPast ] --Updae section
+    , collage 30 50
+        [ dashPast ]
+    , collage 30 50
+        [ wayfinderPresent ] --View section
+    , collage 30 50
+        [ dashPresent ]
+    , collage 30 50
+        [ wayfinderFuture ] --Congrats section
+    ])
 
 viewWelcomeContainer : (Int, Int) -> Element
 viewWelcomeContainer (width, height) =
@@ -1287,7 +1427,8 @@ viewWelcomeMsg2 =
 displayView1 : (Int, Int) -> Int -> String -> Element
 displayView1 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
-    [ viewContainer1 (width, height)
+    [ wayfindingView
+    , viewContainer1 (width, height)
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
@@ -1425,7 +1566,8 @@ viewFunc15 =
 displayView2 : (Int, Int) -> Int -> String -> Element
 displayView2 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
-    [ viewContainer2 (width, height)
+    [ wayfindingView
+    , viewContainer2 (width, height)
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
@@ -1551,7 +1693,8 @@ This section encourages the user to expand the game and make it better
 congrats : (Int, Int) -> Int -> Element
 congrats (width, height) sig =
   color elmGrey (container width height middle (flow down
-    [ viewCongrats (width, height)
+    [ wayfindingCongrats
+    , viewCongrats (width, height)
     , spacer 1 6
     , flow right
       [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
@@ -1559,6 +1702,37 @@ congrats (width, height) sig =
       , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     ]))
+
+wayfindingCongrats : Element
+wayfindingCongrats =
+  color grey <| container 400 50 middle <| (flow right
+    [ collage 30 50
+        [ wayfinderPast ] --Intro page
+    , collage 30 50
+        [ dashPast ]
+    , collage 30 50
+        [ wayfinderPast ] --Imports section
+    , collage 30 50
+        [ dashPast ]
+    , collage 30 50
+        [ wayfinderPast ] --Signals section
+    , collage 30 50
+        [ dashPast ]
+    , collage 30 50
+        [ wayfinderPast ] --Model section
+    , collage 30 50
+        [ dashPast ]
+    , collage 30 50
+        [ wayfinderPast ] --Updae section
+    , collage 30 50
+        [ dashPast ]
+    , collage 30 50
+        [ wayfinderPast ] --View section
+    , collage 30 50
+        [ dashPast ]
+    , collage 30 50
+        [ wayfinderPresent ] --Congrats section
+    ])
 
 viewCongrats : (Int, Int) -> Element
 viewCongrats (width, height) =
