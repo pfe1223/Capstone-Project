@@ -7,6 +7,7 @@ import Text
 import Window
 import Mouse
 import String (padLeft)
+import Graphics.Collage (..)
 
 main : Signal Element
 main =
@@ -49,11 +50,35 @@ view (width, height) sig hoveredOn =
 
 -- These numbers are used to create the containers that hold the code examples and explinations
 indent = 5
-containerWidth = 600
+containerWidth = 400
+containerHeight = 700
 topHeight = 550
 extraLine = 15
 codeHeight = 30
 bottomHeight = 150
+
+-- Wayfinding tools
+wayfinderPast =
+  circle 15
+    |> filled elmOrange
+    |> alpha 0.5
+
+wayfinderPresent =
+  circle 15
+    |> filled elmOrange
+
+wayfinderFuture =
+  circle 15
+    |> outlined ( solid elmOrange)
+
+dashpast =
+  rect 20 5
+    |> filled elmOrange
+    |> alpha 0.5
+
+dashPresent =
+  rect 20 5
+    |> filled elmOrange
 
 -- Custom colors based on the Elm logo
 elmGrey = rgb 71 80 102
@@ -61,6 +86,7 @@ elmOrange = rgb 237 149 0
 elmBlue = rgb 76 166 195
 elmGreen = rgb 127 209 17
 
+-- Text formatting
 title f = Text.fromString(f)
             |> Text.height 50
             |> Text.centered
@@ -76,22 +102,48 @@ body f = Text.fromString(f)
 displayWelcome : (Int, Int) -> Int -> Element
 displayWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
-    [ welcomeContainer (width, height)
+    [ wayfindingWelcome
+    , welcomeContainer
     , spacer 1 6
     , flow right
-      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "<"
       , spacer 6 1
-      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      , size 197 40 <| color grey <| button (send chan (sig + 1)) ">"
       ]
-    , spacer 1 6
-    , color grey (container containerWidth bottomHeight middle (Text.plainText ""))
     ]))
 
-welcomeContainer : (Int, Int) -> Element
-welcomeContainer (width, height) =
-  color grey (container containerWidth topHeight midLeft (flow down
+wayfindingWelcome : Element
+wayfindingWelcome =
+  color grey <| container 400 50 middle <| (flow right
+    [ collage 33 50
+        [ wayfinderPresent ]
+    , collage 33 50
+        [ dashPresent ]
+    , collage 33 50
+        [ wayfinderFuture ]
+    , collage 33 50
+        [ dashPresent ]
+    , collage 33 50
+        [ wayfinderFuture ]
+    , collage 33 50
+        [ dashPresent ]
+    , collage 33 50
+        [ wayfinderFuture ]
+    , collage 33 50
+        [ dashPresent ]
+    , collage 33 50
+        [ wayfinderFuture ]
+    , collage 33 50
+        [ dashPresent ]
+    , collage 33 50
+        [ wayfinderFuture ]
+    ])
+
+welcomeContainer : Element
+welcomeContainer =
+  color grey (container containerWidth containerHeight midLeft (flow down
     [ container containerWidth 100 middle <| title welcomeMsg1
-    , spacer 1 20
+    , spacer 1 20 -- video game animation will go here
     , container containerWidth 300 middle <| subTitle welcomeMsg2
     ]))
 
@@ -100,13 +152,11 @@ welcomeMsg1 = "Elm Play"
 
 welcomeMsg2 : String
 welcomeMsg2 =
-  "Welcome to Elm Play. This tutorial will walk you through \ncreating"
-  ++ "a video game using the Elm language. Use the \narrows to navigate"
-  ++ "through the help. \n\n"
-  ++ "Hover over the lines of code in this window to see an \nexplination"
-  ++ "of what this particular code does. \n \n"
-  ++ "Copy the code in the top window into the editor to start \ncreating"
-  ++ "your game." 
+  "Welcome to Elm Play. This tutorial will\n" ++
+  "walk you through creatinga video game\n" ++
+  "with line-by-line help explaining how\n" ++
+  "the game is made."
+   
 
 {-- 
 *************************************************************
