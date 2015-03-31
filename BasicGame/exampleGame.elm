@@ -1,3 +1,4 @@
+-- IMPORT
 import Color (..)
 import Graphics.Collage (..)
 import Graphics.Element (..)
@@ -8,7 +9,6 @@ import Time (..)
 import Window
 
 -- SIGNALS
-
 main =
   Signal.map2 view Window.dimensions gameState
 
@@ -28,9 +28,7 @@ input =
       (Signal.map .y Keyboard.arrows)
       delta
 
-
 -- MODEL
-
 (gameWidth,gameHeight) = (600,400)
 (halfWidth,halfHeight) = (300,200)
 
@@ -45,14 +43,12 @@ type alias Player =
 type alias Game =
   { state:State, badGuy:BadGuy, player1:Player }
 
-
 defaultGame : Game
 defaultGame =
   { state   = Pause
   , badGuy  = { x=0, y=0, vx=300, vy=300 }
   , player1 = { x = 15-halfWidth, y = 0, vx = 0, vy = 0, lives = 3 }
   }
-
 
 type alias Input =
     { space : Bool
@@ -61,9 +57,7 @@ type alias Input =
     , delta : Time
     }
 
-
 -- UPDATE
-
 update : Input -> Game -> Game
 update {space,dir1,dir2,delta} ({state,badGuy,player1} as game) =
   let lives = if (badGuy `within` player1) then 1 else 0
@@ -85,7 +79,6 @@ update {space,dir1,dir2,delta} ({state,badGuy,player1} as game) =
           player1 <- updatePlayer delta dir1 dir2 lives player1
       }
 
-
 updateBadGuy : Time -> BadGuy -> Player -> BadGuy
 updateBadGuy t ({x,y,vx,vy} as badGuy) ({x,y,vx,vy,lives} as player1) =
   if | (player1.lives == 0) -> { badGuy | x <- 0, y <- 0}
@@ -99,7 +92,6 @@ updateBadGuy t ({x,y,vx,vy} as badGuy) ({x,y,vx,vy,lives} as player1) =
               vx <- stepV vx (x < 25-halfWidth) (x > halfWidth-25),
               vy <- stepV vy (y < 25-halfHeight) (y > halfHeight-25)
           }
-
 
 updatePlayer : Time -> Int -> Int -> Int -> Player -> Player
 updatePlayer t dir1 dir2 lives player =
@@ -117,13 +109,11 @@ updatePlayer t dir1 dir2 lives player =
           lives <- alive
       }
 
-
 physicsUpdate t ({x,y,vx,vy} as obj) =
   { obj |
       x <- x + vx * t,
       y <- y + vy * t
   }
-
 
 near k c n =
     n >= k-c && n <= k+c
@@ -131,15 +121,12 @@ near k c n =
 within badGuy player1 =
     near player1.x 25 badGuy.x && near player1.y 25 badGuy.y
 
-
 stepV v condition1 condition2 =
   if | condition1 -> abs v
      | condition2 -> 0 - abs v
      | otherwise  -> v
 
-
 -- VIEW
-
 view : (Int,Int) -> Game -> Element
 view (w,h) {state,badGuy,player1} =
   let lives : Element
@@ -161,11 +148,13 @@ view (w,h) {state,badGuy,player1} =
             |> move (0, 40 - gameHeight/2)
         ]
 
+backgroundColor = rgb 178 8 1
 elmGrey = rgb 71 80 102
+elmOrange = rgb 237 149 0
 elmBlue = rgb 76 166 195
 elmGreen = rgb 127 209 17
 textColor = white
 txt f = Text.fromString >> Text.color textColor >> 
-		Text.monospace >> f >> Text.leftAligned
+          Text.monospace >> f >> Text.leftAligned
 msg = "SPACE to start, &larr;&uarr;&darr;&rarr; to move"
  
