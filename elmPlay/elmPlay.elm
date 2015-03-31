@@ -71,7 +71,7 @@ wayfinderFuture =
   circle 15
     |> outlined ( solid elmOrange)
 
-dashpast =
+dashPast =
   rect 20 5
     |> filled elmOrange
     |> alpha 0.5
@@ -168,20 +168,46 @@ This section has all of the code for explaining the IMPORT section of the game
 importsWelcome : (Int, Int) -> Int -> Element
 importsWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
-    [ importsWelcomeContainer (width, height)
+    [ wayfindingImports
+    , importsWelcomeContainer (width, height)
     , spacer 1 6
     , flow right
-      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
-      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
-    , spacer 1 6
-    , color grey (container containerWidth bottomHeight middle (Text.plainText ""))
     ]))
+
+wayfindingImports : Element
+wayfindingImports =
+  color grey <| container 400 50 middle <| (flow right
+    [ collage 33 50
+        [ wayfinderPast ]
+    , collage 33 50
+        [ dashPast ]
+    , collage 33 50
+        [ wayfinderPresent ]
+    , collage 33 50
+        [ dashPresent ]
+    , collage 33 50
+        [ wayfinderFuture ]
+    , collage 33 50
+        [ dashPresent ]
+    , collage 33 50
+        [ wayfinderFuture ]
+    , collage 33 50
+        [ dashPresent ]
+    , collage 33 50
+        [ wayfinderFuture ]
+    , collage 33 50
+        [ dashPresent ]
+    , collage 33 50
+        [ wayfinderFuture ]
+    ])
 
 importsWelcomeContainer : (Int, Int) -> Element
 importsWelcomeContainer (width, height) =
-  color grey (container containerWidth topHeight middle (flow down
+  color grey (container containerWidth containerHeight middle (flow down
   [ container containerWidth 100 middle <| title importsWelcomeMsg1
   , spacer 1 20
   , container containerWidth 50 middle <| subTitle importsWelcomeMsg2
@@ -193,32 +219,35 @@ importsWelcomeMsg1 =
 
 importsWelcomeMsg2 : String
 importsWelcomeMsg2 =
-  "The Imports Section loads all of the packages needed \nfor the game."
+  "The Imports Section loads all of the\n" ++
+  "packages needed for the game."
 
 -- Imports Message
 displayImports : (Int, Int) -> Int -> String -> Element
 displayImports (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
-    [ importsContainer (width, height)
+    [ wayfindingImports
+    , importsContainer (width, height) sig hoveredOn
     , spacer 1 6
     , flow right
-      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
-      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
-    , spacer 1 6
-    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
+    
     ]))
     
-importsContainer : (Int, Int) -> Element
-importsContainer (width, height) =
-  color grey (container containerWidth topHeight middle (flow down
+importsContainer : (Int, Int) -> Int -> String -> Element
+importsContainer (width, height) sig hoveredOn =
+  color grey (container containerWidth containerHeight middle (flow down
     [ container containerWidth codeHeight midLeft (importGraphicsInput)
     , container containerWidth codeHeight midLeft (importGraphicsElement)
     , container containerWidth codeHeight midLeft (importGraphicsCollage)
     , container containerWidth codeHeight midLeft (importText)
     , container containerWidth codeHeight midLeft (importSignal)
     , container containerWidth codeHeight midLeft (importMouse)
+    , spacer 1 6
+    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
     ]))
   
 graphicsInputMsg = " Import everything from the Graphics.Input library."
@@ -270,17 +299,15 @@ signalsWelcome (width, height) sig =
     [ signalsWelcomeContainer (width, height)
     , spacer 1 6
     , flow right
-      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
-      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
-    , spacer 1 6
-    , color grey (container containerWidth bottomHeight middle (Text.plainText ""))
     ]))
 
 signalsWelcomeContainer : (Int, Int) -> Element
 signalsWelcomeContainer (width, height) =
-  color grey (container containerWidth topHeight midLeft (flow down
+  color grey (container containerWidth containerHeight midLeft (flow down
   [ container containerWidth 100 middle <| title signalsWelcomeMsg1
   , spacer 1 20
   , container containerWidth 50 middle <| subTitle signalsWelcomeMsg2
@@ -301,9 +328,9 @@ displaySignals (width, height) sig hoveredOn =
     [ signalsContainer (width, height)
     , spacer 1 6
     , flow right
-      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
-      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 6
     , color grey (container containerWidth bottomHeight middle (body hoveredOn))
@@ -435,9 +462,9 @@ modelWelcome (width, height) sig =
     [ modelWelcomeContainer (width, height)
     , spacer 1 6
     , flow right
-      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
-      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 6
     , color grey (container containerWidth bottomHeight middle (Text.plainText ""))
@@ -467,9 +494,9 @@ displayModel1 (width, height) sig hoveredOn =
     [ modelContainer1 (width, height)
     , spacer 1 6
     , flow right
-      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
-      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 6
     , color grey (container containerWidth bottomHeight middle (body hoveredOn))
@@ -559,9 +586,9 @@ displayModel2 (width, height) sig hoveredOn =
     [ modelContainer2 (width, height)
     , spacer 1 6
     , flow right
-      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
-      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 6
     , color grey (container containerWidth bottomHeight middle (body hoveredOn))
@@ -677,9 +704,9 @@ updateWelcome (width, height) sig =
     [ updateWelcomeContainer (width, height)
     , spacer 1 6
     , flow right
-      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
-      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 6
     , color grey (container containerWidth bottomHeight middle (Text.plainText""))
@@ -708,9 +735,9 @@ displayUpdate1 (width, height) sig hoveredOn =
     [ updateContainer1 (width, height)
     , spacer 1 6
     , flow right
-      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
-      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 6
     , color grey (container containerWidth bottomHeight middle (body hoveredOn))
@@ -858,9 +885,9 @@ displayUpdate2 (width, height) sig hoveredOn =
     [ updateContainer2 (width, height)
     , spacer 1 6
     , flow right
-      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
-      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 6
     , color grey (container containerWidth bottomHeight middle (body hoveredOn))
@@ -978,9 +1005,9 @@ displayUpdate3 (width, height) sig hoveredOn =
     [ updateContainer3 (width, height)
     , spacer 1 6
     , flow right
-      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
-      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 6
     , color grey (container containerWidth bottomHeight middle (body hoveredOn))
@@ -1103,9 +1130,9 @@ displayUpdate4 (width, height) sig hoveredOn=
     [ updateContainer4 (width, height)
     , spacer 1 6
     , flow right
-      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
-      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 6
     , color grey (container containerWidth bottomHeight middle (body hoveredOn))
@@ -1232,9 +1259,9 @@ viewWelcome (width, height) sig =
     [ viewWelcomeContainer (width, height)
     , spacer 1 6
     , flow right
-      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
-      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 6
     , color grey (container containerWidth bottomHeight middle (Text.plainText ""))
@@ -1263,9 +1290,9 @@ displayView1 (width, height) sig hoveredOn =
     [ viewContainer1 (width, height)
     , spacer 1 6
     , flow right
-      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
-      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 6
     , color grey (container containerWidth bottomHeight middle (body hoveredOn))
@@ -1401,9 +1428,9 @@ displayView2 (width, height) sig hoveredOn =
     [ viewContainer2 (width, height)
     , spacer 1 6
     , flow right
-      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
-      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     , spacer 1 6
     , color grey (container containerWidth bottomHeight middle (body hoveredOn))
@@ -1527,9 +1554,9 @@ congrats (width, height) sig =
     [ viewCongrats (width, height)
     , spacer 1 6
     , flow right
-      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
-      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     ]))
 
@@ -1558,9 +1585,9 @@ idea1 (width, height) sig =
     [ viewIdea1 (width, height)
     , spacer 1 6
     , flow right
-      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
-      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     ]))
 
@@ -1592,9 +1619,9 @@ idea2 (width, height) sig =
     [ viewIdea2 (width, height)
     , spacer 1 6
     , flow right
-      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
-      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     ]))
 
@@ -1625,9 +1652,9 @@ idea3 (width, height) sig =
     [ viewIdea3 (width, height)
     , spacer 1 6
     , flow right
-      [ size 297 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
+      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
       , spacer 6 1
-      , size 297 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
+      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
       ]
     ]))
 
