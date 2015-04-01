@@ -80,6 +80,19 @@ dashPresent =
   rect 20 5
     |> filled elmBlue
 
+-- Buttons
+letsGo : Int -> Element
+letsGo sig =
+  size 100 40 <| color elmGreen <| button (send chan (sig + 1)) "Let's go!"
+
+rightButton : Int -> Element
+rightButton sig =
+  size 50 40 <| color elmGreen <| button (send chan (sig + 1)) ">"
+
+leftButton : Int -> Element
+leftButton sig =
+  size 50 40 <| color elmGreen <| button (send chan (sig - 1)) "<"
+
 -- Custom colors based on the Elm logo
 elmGrey = rgb 71 80 102
 elmOrange = rgb 237 149 0
@@ -103,13 +116,7 @@ displayWelcome : (Int, Int) -> Int -> Element
 displayWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
     [ wayfindingWelcome
-    , welcomeContainer
-    , spacer 1 6
-    , flow right
-      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "<"
-      , spacer 6 1
-      , size 197 40 <| color grey <| button (send chan (sig + 1)) ">"
-      ]
+    , welcomeContainer sig
     ]))
 
 wayfindingWelcome : Element
@@ -143,12 +150,17 @@ wayfindingWelcome =
         [ wayfinderFuture ] --Congrats section
     ])
 
-welcomeContainer : Element
-welcomeContainer =
+welcomeContainer : Int -> Element
+welcomeContainer sig =
   color grey (container containerWidth containerHeight midLeft (flow down
     [ container containerWidth 100 middle <| title welcomeMsg1
     , spacer 1 20 -- video game animation will go here
     , container containerWidth 300 middle <| subTitle welcomeMsg2
+    , flow right
+        [ spacer 150 1
+        , letsGo sig
+        , spacer 150 1
+        ]
     ]))
 
 welcomeMsg1 : String
@@ -173,13 +185,7 @@ importsWelcome : (Int, Int) -> Int -> Element
 importsWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
     [ wayfindingImports
-    , importsWelcomeContainer (width, height)
-    , spacer 1 6
-    , flow right
-      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
-      , spacer 6 1
-      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
-      ]
+    , importsWelcomeContainer (width, height) sig
     ]))
 
 wayfindingImports : Element
@@ -213,12 +219,19 @@ wayfindingImports =
         [ wayfinderFuture ] --Congrats section
     ])
 
-importsWelcomeContainer : (Int, Int) -> Element
-importsWelcomeContainer (width, height) =
+importsWelcomeContainer : (Int, Int) -> Int -> Element
+importsWelcomeContainer (width, height) sig =
   color grey (container containerWidth containerHeight middle (flow down
   [ container containerWidth 100 middle <| title importsWelcomeMsg1
   , spacer 1 20
   , container containerWidth 50 middle <| subTitle importsWelcomeMsg2
+  , spacer 1 5
+  , flow right
+      [ spacer 290 1
+      , leftButton sig
+      , spacer 5 1
+      , rightButton sig
+      ]
   ]))
   
 importsWelcomeMsg1 : String
