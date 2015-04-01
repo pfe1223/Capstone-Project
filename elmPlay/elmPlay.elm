@@ -52,9 +52,10 @@ view (width, height) sig hoveredOn =
 indent = 5
 containerWidth = 400
 containerHeight = 700
-topHeight = 550
+subtitleHeight = 500
 extraLine = 15
 codeHeight = 30
+gameHeight = 450
 bottomHeight = 150
 
 -- Wayfinding tools
@@ -91,7 +92,15 @@ titleElement strg =
 
 subtitleElement : String -> Element
 subtitleElement strg =
-  color grey <| container containerWidth 500 middle <| subTitle strg
+  color grey <| container containerWidth subtitleHeight middle <| subTitle strg
+
+codeElement : Element -> Element
+codeElement gameCode =
+  color elmGreen <| container containerWidth gameHeight midLeft gameCode
+
+helpElement : String -> Element
+helpElement hoveredOn =
+  color elmOrange <| container containerWidth bottomHeight middle <| body hoveredOn
 
 buttonGoElement : Int -> Element
 buttonGoElement sig =
@@ -238,22 +247,7 @@ wayfindingImports =
     , collage 30 50
         [ wayfinderFuture ] --Congrats section
     ])
-
-importsWelcomeContainer : (Int, Int) -> Int -> Element
-importsWelcomeContainer (width, height) sig =
-  color grey (container containerWidth containerHeight middle (flow down
-  [ container containerWidth 100 middle <| title importsWelcomeMsg1
-  , spacer 1 20
-  , container containerWidth 50 middle <| subTitle importsWelcomeMsg2
-  , spacer 1 5
-  , flow right
-      [ spacer 290 1
-      , leftButton sig
-      , spacer 5 1
-      , rightButton sig
-      ]
-  ]))
-  
+ 
 importsWelcomeMsg1 : String
 importsWelcomeMsg1 =
   "Imports Section"
@@ -267,33 +261,27 @@ importsWelcomeMsg2 =
 displayImports : (Int, Int) -> Int -> String -> Element
 displayImports (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
-    [ wayfindingImports
-    , importsContainer (width, height) sig hoveredOn
-    , spacer 1 6
-    , flow right
-      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
-      , spacer 6 1
-      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
-      ]  
+    [ wayfindingElement wayfindingImports
+    , codeElement <| importsContainer sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
     ]))
     
-importsContainer : (Int, Int) -> Int -> String -> Element
-importsContainer (width, height) sig hoveredOn =
-  color grey (container containerWidth containerHeight middle (flow down
-    [ container containerWidth codeHeight midLeft (importGraphicsInput)
-    , container containerWidth codeHeight midLeft (importGraphicsElement)
-    , container containerWidth codeHeight midLeft (importGraphicsCollage)
-    , container containerWidth codeHeight midLeft (importText)
-    , container containerWidth codeHeight midLeft (importSignal)
-    , container containerWidth codeHeight midLeft (importMouse)
-    , spacer 1 6
-    , color grey (container containerWidth bottomHeight middle (body hoveredOn))
-    ]))
+importsContainer : Int -> String -> Element
+importsContainer sig hoveredOn =
+  flow down
+    [ importGraphicsInput
+    , importGraphicsElement
+    , importGraphicsCollage
+    , importText
+    , importSignal
+    , importMouse
+    ]
   
 graphicsInputMsg = " Import everything from the Graphics.Input library."
 importGraphicsInput : Element
 importGraphicsInput =
-  body " import Graphics.Input (..)"
+  body " import Graphics.Input (..)\n"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn graphicsInputMsg) else (Signal.send hoveredOn ""))
 
 graphicsElementMsg = " Import everything from the Graphics.Element library."
@@ -336,14 +324,10 @@ This section has all of the code for explaining the SIGNALS section of the game
 signalsWelcome : (Int, Int) -> Int -> Element
 signalsWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
-    [ wayfindingSignals
-    , signalsWelcomeContainer (width, height)
-    , spacer 1 6
-    , flow right
-      [ size 197 40 <| color grey <| button (send chan (sig - 1)) "&larr;"
-      , spacer 6 1
-      , size 197 40 <| color grey <| button (send chan (sig + 1)) "&rarr;"
-      ]
+    [ wayfindingElement wayfindingSignals
+    , titleElement signalsWelcomeMsg1
+    , subtitleElement signalsWelcomeMsg2
+    , buttonsLRElement sig
     ]))
 
 wayfindingSignals : Element
@@ -376,14 +360,6 @@ wayfindingSignals =
     , collage 30 50
         [ wayfinderFuture ] --Congrats section
     ])
-
-signalsWelcomeContainer : (Int, Int) -> Element
-signalsWelcomeContainer (width, height) =
-  color grey (container containerWidth containerHeight midLeft (flow down
-  [ container containerWidth 100 middle <| title signalsWelcomeMsg1
-  , spacer 1 20
-  , container containerWidth 50 middle <| subTitle signalsWelcomeMsg2
-  ]))
   
 signalsWelcomeMsg1 : String
 signalsWelcomeMsg1 =
@@ -1766,7 +1742,7 @@ wayfindingCongrats =
 
 viewCongrats : (Int, Int) -> Element
 viewCongrats (width, height) =
-  color grey (container containerWidth (topHeight + bottomHeight) midLeft (flow down
+  color grey (container containerWidth 700 midLeft (flow down
   [ container containerWidth 60 middle <| title viewCongratsMsg1
   , spacer 1 20
   , container containerWidth 100 middle <| subTitle viewCongratsMsg2
@@ -1798,7 +1774,7 @@ idea1 (width, height) sig =
 
 viewIdea1 : (Int, Int) -> Element
 viewIdea1 (width, height) =
-  color grey (container containerWidth (topHeight + bottomHeight) midLeft (flow down
+  color grey (container containerWidth 700 midLeft (flow down
   [ container containerWidth 60 middle <| title viewIdea1Msg1
   , spacer 1 20
   , container containerWidth 350 middle <| subTitle viewIdea1Msg2
@@ -1833,7 +1809,7 @@ idea2 (width, height) sig =
 
 viewIdea2 : (Int, Int) -> Element
 viewIdea2 (width, height) =
-  color grey (container containerWidth (topHeight + bottomHeight) midLeft (flow down
+  color grey (container containerWidth 700 midLeft (flow down
   [ container containerWidth 60 middle <| title viewIdea2Msg1
   , spacer 1 20
   , container containerWidth 150 middle <| subTitle viewIdea2Msg2
@@ -1867,7 +1843,7 @@ idea3 (width, height) sig =
 
 viewIdea3 : (Int, Int) -> Element
 viewIdea3 (width, height) =
-  color grey (container containerWidth (topHeight + bottomHeight) midLeft (flow down
+  color grey (container containerWidth 700 midLeft (flow down
   [ container containerWidth 60 middle <| title viewIdea3Msg1
   , spacer 1 20
   , container containerWidth 150 middle <| subTitle viewIdea3Msg2
