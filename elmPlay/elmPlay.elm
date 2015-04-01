@@ -255,7 +255,18 @@ importsWelcomeMsg1 =
 importsWelcomeMsg2 : String
 importsWelcomeMsg2 =
   "The Imports Section loads all of the\n" ++
-  "packages needed for the game."
+  "packages needed for the game.\n" ++
+  "Without these packages, the Elm\n" ++
+  "language is very limited. You will\n" ++
+  "add ability to:\n\n" ++
+  "&diams; Use colors\n" ++
+  "&diams; Draw the circle & hexagon\n" ++
+  "&diams; Create elements for text\n" ++
+  "&diams; Get input from the keyboard\n" ++
+  "&diams; Recieve and map signals as input\n" ++
+  "&diams; Modify text on the screen\n" ++
+  "&diams; Keep track of time as it passes\n" ++
+  "&diams; Resize the game."
 
 -- Imports Message
 displayImports : (Int, Int) -> Int -> String -> Element
@@ -367,7 +378,19 @@ signalsWelcomeMsg1 =
 
 signalsWelcomeMsg2 : String
 signalsWelcomeMsg2 =
-  "Signals are values that change over time."
+  "Signals are values that change over\n" ++ 
+  "time. Signals tell you if the mouse is\n" ++
+  "being clicked, if it is hovering over an\n" ++
+  "element, or if a button is clicked. Time\n" ++
+  "can be a signal. Without signals, there\n" ++
+  "can be no nteraction in the game. If the\n" ++
+  "user moves, changes, or interacts with\n" ++
+  "the program in any way, then you need\n" ++
+  "a signal. Signals in this game are:\n\n" ++
+  "&diams; The size of the window.\n" ++
+  "&diams; If the game is play or paused.\n" ++
+  "&diams; Time.\n" ++
+  "&diams; Arrow keys on the keyboard.\n"
 
 -- Signals Message
 displaySignals : (Int, Int) -> Int -> String -> Element
@@ -545,8 +568,23 @@ modelWelcomeMsg1 =
 
 modelWelcomeMsg2 : String
 modelWelcomeMsg2 =
-  "The Model Section sets up the characteristics for each\n"
-  ++ "object used in the game."
+  "The Elm language does not understand\n" ++ 
+  "what an enemy is in your video game.\n" ++
+  "The Model Section is used to create the\n" ++ 
+  "objects and their characteristics to be\n" ++ 
+  "used in the game. You will create:\n\n" ++ 
+  "&diams; The state of the game which is\n" ++
+  "   either Play or Pause.\n" ++
+  "&diams; An enemy with a position and a\n" ++
+  "   velocity.\n" ++
+  "&diams; A player with a position, a velocity\n" ++
+  "   velocity, and three lives.\n" ++
+  "&diams; A game with a good guy, a bad\n" ++
+  "   guy, and a state (play or pause).\n" ++
+  "&diams; Initialize the game with parameter\n" ++
+  "   for when you begin playing.\n" ++
+  "&diams; Input that has direction, time, and if\n" ++
+  "   spacebar is pressed."
 
 -- Model Message 1
 displayModel1 : (Int, Int) -> Int -> String -> Element
@@ -795,7 +833,19 @@ updateWelcomeMsg1 =
 
 updateWelcomeMsg2 : String
 updateWelcomeMsg2 =
-  "The Update Section changes the values for each object \nif the user has provided input."
+  "The Update Section is where the magic\n" ++
+  "happens. You created the signals which\n" ++
+  "send commands to the computer. The\n" ++
+  "models describe the objects used in the\n" ++
+  "game. The Update Section takes those\n" ++
+  "signals and changes the model for the\n" ++
+  "appropriate object. You will create\n" ++
+  "updates for:\n\n" ++
+  "&diams; The state of the game (play or pause).\n" ++
+  "&diams; The position of the bad guy.\n" ++
+  "&diams; The position and lives of the good guy.\n" ++
+  "&diams; Are the bad guy and good guy\n" ++
+  "   touching?"
 
 -- Update Message 1
 displayUpdate1 : (Int, Int) -> Int -> String -> Element
@@ -1348,7 +1398,20 @@ viewWelcomeMsg1 =
 
 viewWelcomeMsg2 : String
 viewWelcomeMsg2 =
-  "The View Section displays the game to the computer screen."
+  "Up until this point, there has been\n" ++
+  "no graphical representation of the\n" ++
+  "game. The position and lives of the\n" ++
+  "characters existed only as numbers.\n" ++
+  "The View Section displays the game\n" ++
+  "to the computer screen. You will:\n\n" ++
+  "&diams; Create specific colors and text\n" ++
+  "   formatting.\n" ++
+  "&diams; Draw the playing surface and\n" ++ 
+  "   characters.\n" ++
+  "&diams; Color the playing surface and \n" ++
+  "   characters.\n" ++
+  "&diams; Put the lives on the top of the screen\n" ++
+  "   and a message on the bottom."
 
 -- View Message 1
 displayView1 : (Int, Int) -> Int -> String -> Element
