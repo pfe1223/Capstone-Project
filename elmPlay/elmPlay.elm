@@ -80,6 +80,35 @@ dashPresent =
   rect 20 5
     |> filled elmBlue
 
+-- Display elements
+wayfindingElement : Element -> Element
+wayfindingElement wayfinding =
+  color grey <| container containerWidth 50 middle <| wayfinding
+
+titleElement : String -> Element
+titleElement strg =
+  color grey <| container containerWidth 100 middle <| title strg
+
+subtitleElement : String -> Element
+subtitleElement strg =
+  color grey <| container containerWidth 500 middle <| subTitle strg
+
+buttonGoElement : Int -> Element
+buttonGoElement sig =
+  color grey <| container containerWidth 50 midRight <| flow left
+    [ spacer 5 1
+    , letsGo sig
+    ]
+
+buttonsLRElement : Int -> Element
+buttonsLRElement sig =
+  color grey <| container containerWidth 50 midRight <| flow left
+    [ spacer 5 1
+    , rightButton sig
+    , spacer 5 1
+    , leftButton sig
+    ]
+
 -- Buttons
 letsGo : Int -> Element
 letsGo sig =
@@ -115,8 +144,10 @@ body f = Text.fromString(f)
 displayWelcome : (Int, Int) -> Int -> Element
 displayWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
-    [ wayfindingWelcome
-    , welcomeContainer sig
+    [ wayfindingElement wayfindingWelcome
+    , titleElement welcomeMsg1
+    , subtitleElement welcomeMsg2
+    , buttonGoElement sig
     ]))
 
 wayfindingWelcome : Element
@@ -150,19 +181,6 @@ wayfindingWelcome =
         [ wayfinderFuture ] --Congrats section
     ])
 
-welcomeContainer : Int -> Element
-welcomeContainer sig =
-  color grey (container containerWidth containerHeight midLeft (flow down
-    [ container containerWidth 100 middle <| title welcomeMsg1
-    , spacer 1 20 -- video game animation will go here
-    , container containerWidth 300 middle <| subTitle welcomeMsg2
-    , flow right
-        [ spacer 150 1
-        , letsGo sig
-        , spacer 150 1
-        ]
-    ]))
-
 welcomeMsg1 : String
 welcomeMsg1 = "Elm Play"
 
@@ -184,8 +202,10 @@ This section has all of the code for explaining the IMPORT section of the game
 importsWelcome : (Int, Int) -> Int -> Element
 importsWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
-    [ wayfindingImports
-    , importsWelcomeContainer (width, height) sig
+    [ wayfindingElement wayfindingImports
+    , titleElement importsWelcomeMsg1
+    , subtitleElement importsWelcomeMsg2
+    , buttonsLRElement sig
     ]))
 
 wayfindingImports : Element
