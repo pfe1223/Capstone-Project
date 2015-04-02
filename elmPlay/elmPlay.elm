@@ -121,7 +121,7 @@ buttonsLRElement sig =
 -- Buttons
 letsGo : Int -> Element
 letsGo sig =
-  size 100 40 <| color grey <| button (send chan (sig + 1)) "Let's go!"
+  size 100 40 <| color grey <| button (send chan (sig + 1)) "Let's get started"
 
 rightButton : Int -> Element
 rightButton sig =
@@ -292,37 +292,37 @@ importsContainer sig hoveredOn =
 graphicsInputMsg = " Import everything from the Graphics.Input library."
 importGraphicsInput : Element
 importGraphicsInput =
-  body " import Graphics.Input (..)\n"
+  body " 1. import Graphics.Input (..)\n"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn graphicsInputMsg) else (Signal.send hoveredOn ""))
 
 graphicsElementMsg = " Import everything from the Graphics.Element library."
 importGraphicsElement : Element
 importGraphicsElement =
-  body " import Graphics.Element (..)"
+  body " 2. import Graphics.Element (..)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn graphicsElementMsg) else (Signal.send hoveredOn ""))
 
 graphicsCollageMsg = " Import everything from the Graphics.Collage library."
 importGraphicsCollage : Element
 importGraphicsCollage =
-  body " import Graphics.Collage (..)"
+  body " 3. import Graphics.Collage (..)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn graphicsCollageMsg) else (Signal.send hoveredOn ""))
 
 textMsg = " Import everything from the Text library."
 importText : Element
 importText =
-  body " import Text (..)"
+  body " 4. import Text (..)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn textMsg) else (Signal.send hoveredOn ""))
 
 signalMsg = " Import the Signal library."
 importSignal : Element
 importSignal =
-  body " import Signal"
+  body " 5. import Signal"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalMsg) else (Signal.send hoveredOn ""))
 
 mouseMsg = " Import everything from the Mouse library."
 importMouse : Element
 importMouse =
-  body " import Mouse (..)"
+  body (" 6. import Mouse (..)\n" ++ " 7.")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn mouseMsg) else (Signal.send hoveredOn ""))
 
 {-- 
@@ -428,7 +428,7 @@ signalsContainer sig hoveredOn =
 signalMain1Msg = "Define the main function Every Elm program must have a main."
 signalMain1 : Element
 signalMain1 =
-  body " main ="
+  body " 8. main ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalMain1Msg) else (Signal.send hoveredOn ""))
 
 signalMain2Msg = "Map the signals Window.dimensions and gameState to the function view."
@@ -1714,9 +1714,16 @@ viewCongratsMsg1 =
 
 viewCongratsMsg2 : String
 viewCongratsMsg2 =
-  "You have made the basis for a game. Now it is time\n" 
-  ++ "to make it better. Advance through the next few\n"
-  ++ "pages for some ideas on what you can do."
+  "You made the foundation of a game.\n" ++ 
+  "Advance through the next few pages\n" ++ 
+  "for some ideas on what you can do to\n" ++
+  "make the game better. Possible ideas\n" ++
+  "include:\n\n" ++
+  "&diams; Adding additional levels.\n" ++
+  "&diams; Adding another enemy.\n" ++
+  "&diams; Changing the layout.\n\n" ++
+  "This tutorial ends with some links to\n" ++
+  "more resources for learning Elm."
 
 -- Idea 1
 idea1 : (Int, Int) -> Int -> Element
@@ -1730,16 +1737,21 @@ idea1 (width, height) sig =
   
 viewIdea1Msg1 : String
 viewIdea1Msg1 =
-  "Advance to Next Level"
+  "Next Level"
 
 viewIdea1Msg2 : String
 viewIdea1Msg2 =
-  "Add a way to advance to the next level. Possible ways\n" 
-  ++ "to beat a level could include:\n\n"
-  ++ " &diams; Have a timer. When it gets to 0, you advance.\n"
-  ++ " &diams; Have the player collect a certain number of shapes\n"
-  ++ "    before advancing. Each shape randomly appears one at\n"
-  ++ "    a time."
+  "Good video games hold the attention\n" ++
+  "of the player. To do this, you will need\n" ++
+  "to add some more levels. Some\n" ++
+  "suggestions include:\n\n" ++
+  " &diams; Stay alive for a certain amount of\n" ++
+  "    time. The amount of time required\n" ++
+  "    to stay alive will increase with each\n" ++
+  "    level.\n" ++
+  " &diams; Collect a certain number of objects\n" ++
+  "    before advancing. Each object will\n" ++
+  "    randomly appears one at a time."
   
 -- Idea 2
 idea2 : (Int, Int) -> Int -> Element
@@ -1753,15 +1765,20 @@ idea2 (width, height) sig =
   
 viewIdea2Msg1 : String
 viewIdea2Msg1 =
-  "Add Another Enemy"
+  "Another Enemy"
 
 viewIdea2Msg2 : String
 viewIdea2Msg2 =
-  "To increase the difficulty, add another enemy to the game.\n\n" 
-  ++ " &diams; Have them move at different speeds.\n" 
-  ++ " &diams; Use a different size and shape.\n"
-  ++ " &diams; Use a different color. Try the orange from\n"
-  ++ "    the Elm logo - rgb 237 149 0."
+  "To differentiate the levels and increase\n" ++
+  "the difficulty, add another enemy to the\n" ++ 
+  "game.\n\n" ++
+  "&diams; Have them move at different speeds.\n" ++
+  "&diams; Use a different size and shape.\n" ++
+  "&diams; Use a different color. Try the orange\n" ++
+  "   from the Elm logo - rgb 237 149 0.\n" ++
+  "&diams; Increase the number of enemies on a\n" ++
+  "   set interval, i.e. every five levels adds\n" ++
+  "   another enemy."
 
 -- Idea 3
 idea3 : (Int, Int) -> Int -> Element
@@ -1775,11 +1792,19 @@ idea3 (width, height) sig =
 
 viewIdea3Msg1 : String
 viewIdea3Msg1 =
-  "Change the Layout"
+  "New Layouts"
 
 viewIdea3Msg2 : String
 viewIdea3Msg2 =
-  "When the change levels, have the background change.\n\n" 
-  ++ " &diams; Use different colors to designate areas that will take\n"
-  ++ "    a life if the circle touches it.\n"
-  ++ " &diams; Create obstacles that they player cannot go through."
+  "Aviod boring the player by using a\n" ++
+  "rectangle layout for every level.\n" ++
+  "Think of ways to modify or enhance\n" ++
+  "the layout to make the game fun\n" ++
+  "and interesting. Some suggestions\n" ++
+  "include:\n\n" ++
+  "&diams; Have obstacles through which\n" ++
+  "   the player cannot pass.\n" ++
+  "&diams; Change the color of certain parts\n" ++
+  "   of the layout. The colored regions\n" ++
+  "   take a life of the player when\n" ++
+  "   touched."
