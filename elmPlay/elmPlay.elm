@@ -76,7 +76,7 @@ view (width, height) sig hoveredOn =
      | otherwise -> displayWelcome (width, height) sig
 
 -- These numbers are used to create the containers that hold the code examples and explinations
-indent = 5
+indent = 20
 containerWidth = 400
 containerHeight = 700
 subtitleHeight = 500
@@ -439,7 +439,16 @@ signalsContainer1 : Int -> String -> Element
 signalsContainer1 sig hoveredOn =
   flow down
     [ signalMain1
-    , signalMain2
+    , flow right
+        [ body " 9."
+        , spacer indent 1
+        , signalMain2
+        ]
+    , flow right
+        [ spacer (indent *4) 1
+        , signalMain3
+        ]
+    , body " 10."
     ]
   
 signalMain1Msg = "Define the main function Every Elm program must have a main."
@@ -451,7 +460,12 @@ signalMain1 =
 signalMain2Msg = "Map the signals Window.dimensions and gameState to the function view."
 signalMain2 : Element
 signalMain2 =
-  body (padLeft 49 ' ' " Signal.map2 view Window.dimensions gameState")
+  body " Signal.map2 view Window.dimensions"
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn signalMain2Msg) else (Signal.send hoveredOn ""))
+
+signalMain3 : Element
+signalMain3 =
+  body " gameState"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalMain2Msg) else (Signal.send hoveredOn ""))
 
 displaySignals2 : (Int, Int) -> Int -> String -> Element
@@ -469,25 +483,30 @@ signalsContainer2 sig hoveredOn =
   flow down
     [ signalGameState1
     , signalGameState2
-    , signalGameState3
+    , flow right
+        [ body " 13."
+        , spacer indent 1
+        , signalGameState3
+        ]
+    , body " 14."
     ]
 
 signalGameState1Msg = " Define gameState as a signal of type Game."
 signalGameState1 : Element
 signalGameState1 =
-  body " gameState : Signal Game"
+  body " 11. gameState : Signal Game"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalGameState1Msg) else (Signal.send hoveredOn ""))
     
 signalGameState2Msg = " Define the specifics of gameState."
 signalGameState2 : Element
 signalGameState2 =
-  body " gameState ="
+  body " 12. gameState ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalGameState2Msg) else (Signal.send hoveredOn ""))
 
 signalGameState3Msg = " gameState is past dependent on defaultGame and input."
 signalGameState3 : Element
 signalGameState3 =
-  body (padLeft 42 ' ' " Signal.foldp update defaultGame input")
+  body" Signal.foldp update defaultGame input"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalGameState3Msg) else (Signal.send hoveredOn ""))
 
 displaySignals3 : (Int, Int) -> Int -> String -> Element
@@ -504,19 +523,24 @@ signalsContainer3 : Int -> String -> Element
 signalsContainer3 sig hoveredOn =
   flow down
     [ signalDelta1
-    , signalDelta2
+    , flow right
+        [ body " 16."
+        , spacer indent 1
+        , signalDelta2
+        ]
+    , body " 17."
     ]
 
 signalDelta1Msg = " Define specific characteristics of the delta signal."
 signalDelta1 : Element
 signalDelta1 =
-  body " delta ="
+  body " 15. delta ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalDelta1Msg) else (Signal.send hoveredOn ""))
     
 signalDelta2Msg = "Notes the change in time 35 times a second, \nand then converts this to seconds."
 signalDelta2 : Element
 signalDelta2 =
-  body (padLeft 34 ' ' " Signal.map inSeconds (fps 35)")
+  body " Signal.map inSeconds (fps 35)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalDelta2Msg) else (Signal.send hoveredOn ""))
 
 displaySignals4 : (Int, Int) -> Int -> String -> Element
@@ -534,60 +558,85 @@ signalsContainer4 sig hoveredOn =
   flow down
     [ signalInput1
     , signalInput2
-    , signalInput3
-    , signalInput4
-    , signalInput5
-    , signalInput6
-    , signalInput7
-    , signalInput8
+    , flow right
+        [ body " 20."
+        , spacer indent 1
+        , signalInput3
+        ]
+    , flow right
+        [ body " 21."
+        , spacer (indent*2) 1
+        , signalInput4
+        ]
+    , flow right
+        [ body " 22."
+        , spacer (indent*3) 1
+        , signalInput5
+        ]
+    , flow right
+        [ body " 23."
+        , spacer (indent*3) 1
+        , signalInput6
+        ]
+    , flow right
+        [ body " 24."
+        , spacer (indent*3) 1
+        , signalInput7
+        ]
+    , flow right
+        [ body " 25."
+        , spacer (indent*3) 1
+        , signalInput8
+        ]
+    , body " 26."
     ]
 
 signalInput1Msg = "Defines input as a signal of type Input."
 signalInput1 : Element
 signalInput1 =
-  body " input : Signal Input"
+  body " 18. input : Signal Input"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput1Msg) else (Signal.send hoveredOn ""))
 
 signalInput2Msg = "Defines the specifics of input."
 signalInput2 : Element
 signalInput2 =
-  body " input ="
+  body " 19. input ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput2Msg) else (Signal.send hoveredOn ""))
     
 signalInput3Msg = "For every delta, the specific attributes of input are updated."
 signalInput3 : Element
 signalInput3 =
-  body (padLeft 29 ' ' " Signal.sampleOn delta <|")
+  body "Signal.sampleOn delta <|"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput3Msg) else (Signal.send hoveredOn ""))
     
 signalInput4Msg = "Maps all four attributes of Input to the update that happens every delta."
 signalInput4 : Element
 signalInput4 =
-  body (padLeft 27 ' ' " Signal.map4 Input")
+  body "Signal.map4 Input"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput4Msg) else (Signal.send hoveredOn ""))
 
 signalInput5Msg = "Gives a true or false based upon the space bar being pressed."
 signalInput5 : Element
 signalInput5 =
-  body (padLeft 29 ' ' " Keyboard.space")
+  body "Keyboard.space"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput5Msg) else (Signal.send hoveredOn ""))
 
 signalInput6Msg = "Updates the x attribute based upon left/right arrow being pressed."
 signalInput6 : Element
 signalInput6 =
-  body (padLeft 46 ' ' " (Signal.map .x Keyboard.arrows)")
+  body "(Signal.map .x Keyboard.arrows)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput6Msg) else (Signal.send hoveredOn ""))
 
 signalInput7Msg = "Updates the y attribute based upon up/down arrow being pressed."
 signalInput7 : Element
 signalInput7 =
-  body (padLeft 46 ' ' " (Signal.map .y Keyboard.arrows)")
+  body "(Signal.map .y Keyboard.arrows)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput7Msg) else (Signal.send hoveredOn ""))
 
 signalInput8Msg = "Updates delta with the new time."
 signalInput8 : Element
 signalInput8 =
-  body (padLeft 20 ' ' " delta")
+  body "delta"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput8Msg) else (Signal.send hoveredOn ""))
 
 {-- 
@@ -677,18 +726,19 @@ modelContainer1 sig hoveredOn =
   flow down
     [ gameSize
     , playingSize
+    , body " 29."
     ]
   
 gameSizeMsg = "Set the variable gameWidth to 600 and variable gameHeight to 400."
 gameSize : Element
 gameSize =
-  body " (gameWidth, gameHeight) = (600, 400)"
+  body " 27. (gameWidth, gameHeight) = (600, 400)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn gameSizeMsg) else (Signal.send hoveredOn ""))
 
 playingSizeMsg = " Set variable halfWidth to 300 and variable halfHeight to 200."
 playingSize : Element
 playingSize =
-  body " (halfWidth, halfHeight) = (300, 200)"
+  body " 28. (halfWidth, halfHeight) = (300, 200)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn playingSizeMsg) else (Signal.send hoveredOn ""))
 
 displayModel2 : (Int, Int) -> Int -> String -> Element
@@ -705,12 +755,13 @@ modelContainer2 : Int -> String -> Element
 modelContainer2 sig hoveredOn =
   flow down
     [ typeState
+    , body " 31."
     ]
 
 typeStateMsg = " Create type State and indicate it can have either the value Play or Pause."
 typeState : Element
 typeState =
-  body " type State = Play | Pause"
+  body " 30. type State = Play | Pause"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn typeStateMsg) else (Signal.send hoveredOn ""))
 
 displayModel3 : (Int, Int) -> Int -> String -> Element
@@ -727,13 +778,18 @@ modelContainer3 : Int -> String -> Element
 modelContainer3 sig hoveredOn =
   flow down
     [ aliasBadGuy1
-    , aliasBadGuy2
+    , flow right
+        [ body " 33."
+        , spacer indent 1
+        , aliasBadGuy2
+        ]
+    , body " 34."
     ]
 
 aliasBadGuy1Msg = " Create a type alias BadGuy with the following characteristics."
 aliasBadGuy1 : Element
 aliasBadGuy1 =
-  body " type alias BadGuy ="
+  body " 32. type alias BadGuy ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasBadGuy1Msg) else (Signal.send hoveredOn ""))
     
 aliasBadGuy2Msg = "Objects of type BadGuy have an x value of type float, a y value of \ntype float,"
@@ -741,7 +797,7 @@ aliasBadGuy2Msg = "Objects of type BadGuy have an x value of type float, a y val
                               ++ "Floats are numbers with a decimal."
 aliasBadGuy2 : Element
 aliasBadGuy2 =
-  body (padLeft 45 ' ' " { x:Float, y:Float, vx:Float, vy:Float }")
+  body "{ x:Float, y:Float, vx:Float, vy:Float }"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasBadGuy2Msg) else (Signal.send hoveredOn ""))
 
 displayModel4 : (Int, Int) -> Int -> String -> Element
@@ -758,13 +814,18 @@ modelContainer4 : Int -> String -> Element
 modelContainer4 sig hoveredOn =
   flow down
     [ aliasPlayer1
-    , aliasPlayer2
+    , flow right
+        [ body " 36."
+        , spacer indent 1
+        , aliasPlayer2
+        ] 
+    , body " 37."
     ]
 
 aliasPlayer1Msg = " Create a type alias Player with the following characteristics."
 aliasPlayer1 : Element
 aliasPlayer1 =
-  body " type alias Player ="
+  body " 35. type alias Player ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasPlayer1Msg) else (Signal.send hoveredOn ""))
 
 aliasPlayer2Msg = "Objects of type Player have an x value of type float, a y value of type \nfloat,"
@@ -772,7 +833,7 @@ aliasPlayer2Msg = "Objects of type Player have an x value of type float, a y val
                               ++ "Floats are numbers with a decimal, and integers are \nnumber without decimals."
 aliasPlayer2 : Element
 aliasPlayer2 =
-  body (padLeft 56 ' ' " { x:Float, y:Float, vx:Float, vy:Float, lives:Int }")
+  body "{ x:Float, y:Float, vx:Float, vy:Float, lives:Int }"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasPlayer2Msg) else (Signal.send hoveredOn ""))
 
 displayModel5 : (Int, Int) -> Int -> String -> Element
@@ -789,20 +850,34 @@ modelContainer5 : Int -> String -> Element
 modelContainer5 sig hoveredOn =
   flow down
     [ aliasGame1
-    , aliasGame2
+    , flow right
+        [ body " 39."
+        , spacer indent 1
+        , aliasGame2
+        ]
+    flow right
+      [ spacer (indent*4) 1
+      , aliasGame3
+      ]
+    , body " 40."
     ]
 
 aliasGame1Msg = " Create a type alias Game with the following characteristics."
 aliasGame1 : Element
 aliasGame1 =
-  body " type alias Game ="
+  body " 38. type alias Game ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasGame1Msg) else (Signal.send hoveredOn ""))
 
 aliasGame2Msg = "Objects of type Game have a value state of type State,"
                            ++ "a value \nbadGuy of type BadGuy, and a value of player1 of type Player."
 aliasGame2 : Element
 aliasGame2 =
-  body (padLeft 51 ' ' " { state:State, badGuy:BadGuy, player1:Player }")
+  body "{ state:State, badGuy:BadGuy, "
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasGame2Msg) else (Signal.send hoveredOn ""))
+
+aliasGame3 : Element
+aliasGame3 =
+  body " player1:Player }"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasGame2Msg) else (Signal.send hoveredOn ""))
 
 -- Model Message 2
@@ -858,7 +933,7 @@ defaultGame5Msg = "The player1 attributes have an x value of 15-halfWidth (or -2
                               ++ "and the vx and vy values are the velocity \n(think speed) of the player1. player1 also has 3 lives."
 defaultGame5 : Element
 defaultGame5 =
-  body (padLeft 71 ' ' " , player1 = { x = 15-halfWidth, y = 0, vx = 0, vy = 0, lives = 3 }")
+  body (padLeft 71 ' ' " , player1 = { x = 15-halfWidth, y = 0, vx = 0\n, vy = 0, lives = 3 }")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame5Msg) else (Signal.send hoveredOn ""))
 
 defaultGame6Msg = " End the list of attributes for defaultGame."
