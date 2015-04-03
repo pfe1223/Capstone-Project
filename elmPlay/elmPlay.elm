@@ -30,22 +30,49 @@ view (width, height) sig hoveredOn =
      | sig == 1 -> importsWelcome(width, height) sig
      | sig == 2 -> displayImports (width, height) sig hoveredOn
      | sig == 3 -> signalsWelcome (width, height) sig
-     | sig == 4 -> displaySignals (width, height) sig hoveredOn
-     | sig == 5 -> modelWelcome (width, height) sig
-     | sig == 6 -> displayModel1 (width, height) sig hoveredOn
-     | sig == 7 -> displayModel2 (width, height) sig hoveredOn
-     | sig == 8 -> updateWelcome (width, height) sig
-     | sig == 9 -> displayUpdate1 (width, height) sig hoveredOn
-     | sig == 10 -> displayUpdate2 (width, height) sig hoveredOn
-     | sig == 11 -> displayUpdate3 (width, height) sig hoveredOn
-     | sig == 12 -> displayUpdate4 (width, height) sig hoveredOn
-     | sig == 13 -> viewWelcome (width, height) sig
-     | sig == 14 -> displayView1 (width, height) sig hoveredOn
-     | sig == 15 -> displayView2 (width, height) sig hoveredOn
-     | sig == 16 -> congrats (width, height) sig
-     | sig == 17 -> idea1 (width, height) sig
-     | sig == 18 -> idea2 (width, height) sig
-     | sig == 19 -> idea3 (width, height) sig
+     | sig == 4 -> displaySignals1 (width, height) sig hoveredOn
+     | sig == 5 -> displaySignals2 (width, height) sig hoveredOn
+     | sig == 6 -> displaySignals3 (width, height) sig hoveredOn
+     | sig == 7 -> displaySignals4 (width, height) sig hoveredOn
+     | sig == 8 -> modelWelcome (width, height) sig
+     | sig == 9 -> displayModel1 (width, height) sig hoveredOn
+     | sig == 10 -> displayModel2 (width, height) sig hoveredOn
+     | sig == 11 -> displayModel3 (width, height) sig hoveredOn
+     | sig == 12 -> displayModel4 (width, height) sig hoveredOn
+     | sig == 13 -> displayModel5 (width, height) sig hoveredOn
+     | sig == 14 -> displayModel6 (width, height) sig hoveredOn
+     | sig == 15 -> displayModel7 (width, height) sig hoveredOn
+     | sig == 16 -> updateWelcome (width, height) sig
+     | sig == 17 -> displayUpdate1 (width, height) sig hoveredOn
+     | sig == 18 -> displayUpdate2 (width, height) sig hoveredOn
+     | sig == 19 -> displayUpdate3 (width, height) sig hoveredOn
+     | sig == 20 -> displayUpdate4 (width, height) sig hoveredOn
+     | sig == 21 -> displayUpdate5 (width, height) sig hoveredOn
+     | sig == 22 -> displayUpdate6 (width, height) sig hoveredOn
+     | sig == 23 -> displayUpdate7 (width, height) sig hoveredOn
+     | sig == 24 -> displayUpdate8 (width, height) sig hoveredOn
+     | sig == 25 -> displayUpdate9 (width, height) sig hoveredOn
+     | sig == 26 -> displayUpdate10 (width, height) sig hoveredOn
+     | sig == 27 -> displayUpdate11 (width, height) sig hoveredOn
+     | sig == 28 -> displayUpdate12 (width, height) sig hoveredOn
+     | sig == 29 -> displayUpdate13 (width, height) sig hoveredOn
+     | sig == 30 -> displayUpdate14 (width, height) sig hoveredOn
+     | sig == 31 -> viewWelcome (width, height) sig
+     | sig == 32 -> displayView1 (width, height) sig hoveredOn
+     | sig == 33 -> displayView2 (width, height) sig hoveredOn
+     | sig == 34 -> displayView3 (width, height) sig hoveredOn
+     | sig == 35 -> displayView4 (width, height) sig hoveredOn
+     | sig == 36 -> displayView5 (width, height) sig hoveredOn
+     | sig == 37 -> displayView6 (width, height) sig hoveredOn
+     | sig == 38 -> displayView7 (width, height) sig hoveredOn
+     | sig == 39 -> displayView8 (width, height) sig hoveredOn
+     | sig == 40 -> displayView9 (width, height) sig hoveredOn
+     | sig == 41 -> displayView10 (width, height) sig hoveredOn
+     | sig == 42 -> displayView11 (width, height) sig hoveredOn
+     | sig == 43 -> congrats (width, height) sig
+     | sig == 44 -> idea1 (width, height) sig
+     | sig == 45 -> idea2 (width, height) sig
+     | sig == 46 -> idea3 (width, height) sig
      | otherwise -> displayWelcome (width, height) sig
 
 -- These numbers are used to create the containers that hold the code examples and explinations
@@ -55,7 +82,7 @@ containerHeight = 700
 subtitleHeight = 500
 extraLine = 15
 codeHeight = 30
-gameHeight = 450
+gameHeight = 400
 bottomHeight = 150
 
 -- Wayfinding tools
@@ -93,6 +120,10 @@ titleElement strg =
 subtitleElement : String -> Element
 subtitleElement strg =
   color grey <| container containerWidth subtitleHeight middle <| subTitle strg
+
+codeTitleElement : String -> Element
+codeTitleElement strg =
+  color grey <| container containerWidth 50 middle <| subTitle strg
 
 codeElement : Element -> Element
 codeElement gameCode =
@@ -273,6 +304,7 @@ displayImports : (Int, Int) -> Int -> String -> Element
 displayImports (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingImports
+    , codeTitleElement "Imports"
     , codeElement <| importsContainer sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -393,36 +425,21 @@ signalsWelcomeMsg2 =
   "&diams; Arrow keys on the keyboard.\n"
 
 -- Signals Message
-displaySignals : (Int, Int) -> Int -> String -> Element
-displaySignals (width, height) sig hoveredOn =
+displaySignals1 : (Int, Int) -> Int -> String -> Element
+displaySignals1 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingSignals
-    , codeElement <| signalsContainer sig hoveredOn
+    , codeTitleElement "Signals"
+    , codeElement <| signalsContainer1 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
     
-signalsContainer : Int -> String -> Element
-signalsContainer sig hoveredOn =
+signalsContainer1 : Int -> String -> Element
+signalsContainer1 sig hoveredOn =
   flow down
     [ signalMain1
     , signalMain2
-    , spacer 1 extraLine
-    , signalGameState1
-    , signalGameState2
-    , signalGameState3
-    , spacer 1 extraLine
-    , signalDelta1
-    , signalDelta2
-    , spacer 1 extraLine
-    , signalInput1
-    , signalInput2
-    , signalInput3
-    , signalInput4
-    , signalInput5
-    , signalInput6
-    , signalInput7
-    , signalInput8
     ]
   
 signalMain1Msg = "Define the main function Every Elm program must have a main."
@@ -436,6 +453,24 @@ signalMain2 : Element
 signalMain2 =
   body (padLeft 49 ' ' " Signal.map2 view Window.dimensions gameState")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalMain2Msg) else (Signal.send hoveredOn ""))
+
+displaySignals2 : (Int, Int) -> Int -> String -> Element
+displaySignals2 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingSignals
+    , codeTitleElement "Signals"
+    , codeElement <| signalsContainer2 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+
+signalsContainer2 : Int -> String -> Element
+signalsContainer2 sig hoveredOn =
+  flow down
+    [ signalGameState1
+    , signalGameState2
+    , signalGameState3
+    ]
 
 signalGameState1Msg = " Define gameState as a signal of type Game."
 signalGameState1 : Element
@@ -455,6 +490,23 @@ signalGameState3 =
   body (padLeft 42 ' ' " Signal.foldp update defaultGame input")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalGameState3Msg) else (Signal.send hoveredOn ""))
 
+displaySignals3 : (Int, Int) -> Int -> String -> Element
+displaySignals3 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingSignals
+    , codeTitleElement "Signals"
+    , codeElement <| signalsContainer3 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+
+signalsContainer3 : Int -> String -> Element
+signalsContainer3 sig hoveredOn =
+  flow down
+    [ signalDelta1
+    , signalDelta2
+    ]
+
 signalDelta1Msg = " Define specific characteristics of the delta signal."
 signalDelta1 : Element
 signalDelta1 =
@@ -466,6 +518,29 @@ signalDelta2 : Element
 signalDelta2 =
   body (padLeft 34 ' ' " Signal.map inSeconds (fps 35)")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalDelta2Msg) else (Signal.send hoveredOn ""))
+
+displaySignals4 : (Int, Int) -> Int -> String -> Element
+displaySignals4 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingSignals
+    , codeTitleElement "Signals"
+    , codeElement <| signalsContainer4 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+
+signalsContainer4 : Int -> String -> Element
+signalsContainer4 sig hoveredOn =
+  flow down
+    [ signalInput1
+    , signalInput2
+    , signalInput3
+    , signalInput4
+    , signalInput5
+    , signalInput6
+    , signalInput7
+    , signalInput8
+    ]
 
 signalInput1Msg = "Defines input as a signal of type Input."
 signalInput1 : Element
@@ -591,6 +666,7 @@ displayModel1 : (Int, Int) -> Int -> String -> Element
 displayModel1 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingModel
+    , codeTitleElement "Model"
     , codeElement <| modelContainer1 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -601,17 +677,6 @@ modelContainer1 sig hoveredOn =
   flow down
     [ gameSize
     , playingSize
-    , spacer 1 extraLine
-    , typeState
-    , spacer 1 extraLine
-    , aliasBadGuy1
-    , aliasBadGuy2
-    , spacer 1 extraLine
-    , aliasPlayer1
-    , aliasPlayer2
-    , spacer 1 extraLine
-    , aliasGame1
-    , aliasGame2
     ]
   
 gameSizeMsg = "Set the variable gameWidth to 600 and variable gameHeight to 400."
@@ -625,12 +690,45 @@ playingSize : Element
 playingSize =
   body " (halfWidth, halfHeight) = (300, 200)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn playingSizeMsg) else (Signal.send hoveredOn ""))
+
+displayModel2 : (Int, Int) -> Int -> String -> Element
+displayModel2 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingModel
+    , codeTitleElement "Model"
+    , codeElement <| modelContainer2 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
     
+modelContainer2 : Int -> String -> Element
+modelContainer2 sig hoveredOn =
+  flow down
+    [ typeState
+    ]
+
 typeStateMsg = " Create type State and indicate it can have either the value Play or Pause."
 typeState : Element
 typeState =
   body " type State = Play | Pause"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn typeStateMsg) else (Signal.send hoveredOn ""))
+
+displayModel3 : (Int, Int) -> Int -> String -> Element
+displayModel3 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingModel
+    , codeTitleElement "Model"
+    , codeElement <| modelContainer3 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+    
+modelContainer3 : Int -> String -> Element
+modelContainer3 sig hoveredOn =
+  flow down
+    [ aliasBadGuy1
+    , aliasBadGuy2
+    ]
 
 aliasBadGuy1Msg = " Create a type alias BadGuy with the following characteristics."
 aliasBadGuy1 : Element
@@ -646,6 +744,23 @@ aliasBadGuy2 =
   body (padLeft 45 ' ' " { x:Float, y:Float, vx:Float, vy:Float }")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasBadGuy2Msg) else (Signal.send hoveredOn ""))
 
+displayModel4 : (Int, Int) -> Int -> String -> Element
+displayModel4 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingModel
+    , codeTitleElement "Model"
+    , codeElement <| modelContainer4 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+    
+modelContainer4 : Int -> String -> Element
+modelContainer4 sig hoveredOn =
+  flow down
+    [ aliasPlayer1
+    , aliasPlayer2
+    ]
+
 aliasPlayer1Msg = " Create a type alias Player with the following characteristics."
 aliasPlayer1 : Element
 aliasPlayer1 =
@@ -659,6 +774,23 @@ aliasPlayer2 : Element
 aliasPlayer2 =
   body (padLeft 56 ' ' " { x:Float, y:Float, vx:Float, vy:Float, lives:Int }")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasPlayer2Msg) else (Signal.send hoveredOn ""))
+
+displayModel5 : (Int, Int) -> Int -> String -> Element
+displayModel5 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingModel
+    , codeTitleElement "Model"
+    , codeElement <| modelContainer5 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+    
+modelContainer5 : Int -> String -> Element
+modelContainer5 sig hoveredOn =
+  flow down
+    [ aliasGame1
+    , aliasGame2
+    ]
 
 aliasGame1Msg = " Create a type alias Game with the following characteristics."
 aliasGame1 : Element
@@ -674,17 +806,18 @@ aliasGame2 =
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasGame2Msg) else (Signal.send hoveredOn ""))
 
 -- Model Message 2
-displayModel2 : (Int, Int) -> Int -> String -> Element
-displayModel2 (width, height) sig hoveredOn =
+displayModel6 : (Int, Int) -> Int -> String -> Element
+displayModel6 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingModel
-    , codeElement <| modelContainer2 sig hoveredOn
+    , codeTitleElement "Model"
+    , codeElement <| modelContainer6 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
 
-modelContainer2 : Int -> String -> Element
-modelContainer2 sig hoveredOn =
+modelContainer6 : Int -> String -> Element
+modelContainer6 sig hoveredOn =
   flow down
     [ defaultGame1
     , defaultGame2
@@ -692,13 +825,6 @@ modelContainer2 sig hoveredOn =
     , defaultGame4
     , defaultGame5
     , defaultGame6
-    , spacer 1 extraLine
-    , aliasInput1
-    , aliasInput2
-    , aliasInput3
-    , aliasInput4
-    , aliasInput5
-    , aliasInput6
     ]
 
 defaultGame1Msg = " Create an object defaultGame of type Game."
@@ -740,6 +866,27 @@ defaultGame6 : Element
 defaultGame6 =
   body (padLeft 6 ' ' " }")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame6Msg) else (Signal.send hoveredOn ""))
+
+displayModel7 : (Int, Int) -> Int -> String -> Element
+displayModel7 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingModel
+    , codeTitleElement "Model"
+    , codeElement <| modelContainer7 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+
+modelContainer7 : Int -> String -> Element
+modelContainer7 sig hoveredOn =
+  flow down
+    [ aliasInput1
+    , aliasInput2
+    , aliasInput3
+    , aliasInput4
+    , aliasInput5
+    , aliasInput6
+    ]
 
 aliasInput1Msg = " Create a type alias Input with the following characteristics."
 aliasInput1 : Element
@@ -852,6 +999,7 @@ displayUpdate1 : (Int, Int) -> Int -> String -> Element
 displayUpdate1 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
+    , codeTitleElement "Update"
     , codeElement <| updateContainer1 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -863,23 +1011,6 @@ updateContainer1 sig hoveredOn =
     [ updateFunc1
     , updateFunc2
     , updateFunc3
-    , spacer 1 extraLine
-    , updateFunc4
-    , updateFunc5
-    , updateFunc6
-    , updateFunc7
-    , spacer 1 extraLine
-    , updateFunc8
-    , updateFunc9
-    , updateFunc10
-    , updateFunc11
-    , spacer 1 extraLine
-    , updateFunc12
-    , updateFunc13
-    , updateFunc14
-    , updateFunc15
-    , updateFunc16
-    , updateFunc17
     ]
   
 updateFunc1Msg = "Update is a function that takes an object of type Input, an object of type\n"
@@ -902,6 +1033,25 @@ updateFunc3 : Element
 updateFunc3 =
   body (padLeft 60 ' ' " let lives = if (badGuy `within` player1) then 1 else 0")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc3Msg) else (Signal.send hoveredOn ""))
+
+displayUpdate2 : (Int, Int) -> Int -> String -> Element
+displayUpdate2 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingUpdate
+    , codeTitleElement "Update"
+    , codeElement <| updateContainer2 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+    
+updateContainer2 : Int -> String -> Element
+updateContainer2 sig hoveredOn =
+  flow down
+    [ updateFunc4
+    , updateFunc5
+    , updateFunc6
+    , updateFunc7
+    ]
 
 updateFunc4Msg = "The function newState assumes a value dependent upon the cases below:"
 updateFunc4 : Element
@@ -927,6 +1077,25 @@ updateFunc7 : Element
 updateFunc7 =
   body (padLeft 52 ' ' " | otherwise              -> state")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc7Msg) else (Signal.send hoveredOn ""))
+
+displayUpdate3 : (Int, Int) -> Int -> String -> Element
+displayUpdate3 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingUpdate
+    , codeTitleElement "Update"
+    , codeElement <| updateContainer3 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+    
+updateContainer3 : Int -> String -> Element
+updateContainer3 sig hoveredOn =
+  flow down
+    [ updateFunc8
+    , updateFunc9
+    , updateFunc10
+    , updateFunc11
+    ]
 
 updateFunc8Msg = "The function newBadGuy assumes the value dependent \nupon the following cases:"
 updateFunc8 : Element
@@ -954,6 +1123,27 @@ updateFunc11 : Element
 updateFunc11 =
   body (padLeft 59 ' ' " else updateBadGuy delta badGuy player1")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc11Msg) else (Signal.send hoveredOn ""))
+
+displayUpdate4 : (Int, Int) -> Int -> String -> Element
+displayUpdate4 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingUpdate
+    , codeTitleElement "Update"
+    , codeElement <| updateContainer4 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+    
+updateContainer4 : Int -> String -> Element
+updateContainer4 sig hoveredOn =
+  flow down
+    [ updateFunc12
+    , updateFunc13
+    , updateFunc14
+    , updateFunc15
+    , updateFunc16
+    , updateFunc17
+    ]
 
 updateFunc12Msg = "The in part of the let expression tells us how the \nabove information will be used."
 updateFunc12 : Element
@@ -993,31 +1183,21 @@ updateFunc17 =
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc17Msg) else (Signal.send hoveredOn ""))
 
 -- Update Message 2
-displayUpdate2 : (Int, Int) -> Int -> String -> Element
-displayUpdate2 (width, height) sig hoveredOn =
+displayUpdate5 : (Int, Int) -> Int -> String -> Element
+displayUpdate5 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
-    , codeElement <| updateContainer2 sig hoveredOn
+    , codeTitleElement "Update"
+    , codeElement <| updateContainer5 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
     
-updateContainer2 : Int -> String -> Element
-updateContainer2 sig hoveredOn=
+updateContainer5 : Int -> String -> Element
+updateContainer5 sig hoveredOn=
   flow down
     [ updateBadGuy1
     , updateBadGuy2
-    , updateBadGuy3
-    , updateBadGuy4
-    , updateBadGuy5
-    , updateBadGuy6
-    , updateBadGuy7
-    , updateBadGuy8
-    , updateBadGuy9
-    , updateBadGuy10
-    , updateBadGuy11
-    , updateBadGuy12
-    , updateBadGuy13
     ]
   
 updateBadGuy1Msg = "The function updateBadGuy takes a Time, a BadGuy, and a Player.\n"
@@ -1033,6 +1213,27 @@ updateBadGuy2 : Element
 updateBadGuy2 =
   body " updateBadGuy t ({x,y,vx,vy} as badGuy) ({x,y,vx,vy,lives} as player1) ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy2Msg) else (Signal.send hoveredOn ""))
+
+displayUpdate6 : (Int, Int) -> Int -> String -> Element
+displayUpdate6 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingUpdate
+    , codeTitleElement "Update"
+    , codeElement <| updateContainer6 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+    
+updateContainer6 : Int -> String -> Element
+updateContainer6 sig hoveredOn=
+  flow down
+    [ updateBadGuy3
+    , updateBadGuy4
+    , updateBadGuy5
+    , updateBadGuy6
+    , updateBadGuy7
+    , updateBadGuy8
+    ]
 
 updateBadGuy3Msg = "If player1 has no more lives, then the x and y values of badGuy are set to 0."
 updateBadGuy3 : Element
@@ -1073,6 +1274,26 @@ updateBadGuy8 =
   body (padLeft 16 ' ' " }")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy8Msg) else (Signal.send hoveredOn ""))
 
+displayUpdate7 : (Int, Int) -> Int -> String -> Element
+displayUpdate7 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingUpdate
+    , codeTitleElement "Update"
+    , codeElement <| updateContainer7 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+    
+updateContainer7 : Int -> String -> Element
+updateContainer7 sig hoveredOn=
+  flow down
+    [ updateBadGuy9
+    , updateBadGuy10
+    , updateBadGuy11
+    , updateBadGuy12
+    , updateBadGuy13
+    ]
+
 updateBadGuy9Msg = "In all other cases, the function physicsUpdate will be \ncalled with different arguments."
 updateBadGuy9 : Element
 updateBadGuy9 =
@@ -1108,31 +1329,21 @@ updateBadGuy13 =
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy3Msg) else (Signal.send hoveredOn ""))
 
 -- Update Message 3
-displayUpdate3 : (Int, Int) -> Int -> String -> Element
-displayUpdate3 (width, height) sig hoveredOn =
+displayUpdate8 : (Int, Int) -> Int -> String -> Element
+displayUpdate8 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
-    , codeElement <| updateContainer3 sig hoveredOn
+    , codeTitleElement "Update"
+    , codeElement <| updateContainer8 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
     
-updateContainer3 : Int -> String -> Element
-updateContainer3 sig hoveredOn=
+updateContainer8 : Int -> String -> Element
+updateContainer8 sig hoveredOn=
   flow down
     [ updatePlayer1
     , updatePlayer2
-    , updatePlayer3
-    , updatePlayer4
-    , updatePlayer5
-    , updatePlayer6
-    , updatePlayer7
-    , updatePlayer8
-    , updatePlayer9
-    , updatePlayer10
-    , updatePlayer11
-    , updatePlayer12
-    , updatePlayer13
     ]
   
 updatePlayer1Msg = "This defines the function updatePlayer, which takes a time, an integer, \nanother "
@@ -1147,6 +1358,26 @@ updatePlayer2 : Element
 updatePlayer2 =
   body " updatePlayer t dir1 dir2 lives player ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer2Msg) else (Signal.send hoveredOn ""))
+
+displayUpdate9 : (Int, Int) -> Int -> String -> Element
+displayUpdate9 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingUpdate
+    , codeTitleElement "Update"
+    , codeElement <| updateContainer9 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+    
+updateContainer9 : Int -> String -> Element
+updateContainer9 sig hoveredOn=
+  flow down
+    [ updatePlayer3
+    , updatePlayer4
+    , updatePlayer5
+    , updatePlayer6
+    , updatePlayer7
+    ]
 
 updatePlayer3Msg = "An object player1 is created. Its attributes of vx and vy are set to the values \ncreated "
                               ++ "by the function physicsUpdate, which takes time t. and player.\n"
@@ -1185,6 +1416,27 @@ updatePlayer7 : Element
 updatePlayer7 =
   body (padLeft 43 ' ' " else (player.lives - lives)")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer7Msg) else (Signal.send hoveredOn ""))
+
+displayUpdate10 : (Int, Int) -> Int -> String -> Element
+displayUpdate10 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingUpdate
+    , codeTitleElement "Update"
+    , codeElement <| updateContainer10 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+    
+updateContainer10 : Int -> String -> Element
+updateContainer10 sig hoveredOn=
+  flow down
+    [ updatePlayer8
+    , updatePlayer9
+    , updatePlayer10
+    , updatePlayer11
+    , updatePlayer12
+    , updatePlayer13
+    ]
 
 updatePlayer8Msg = "This is the second part of the let statement. The newly introduced alive will be\n"
                                ++ "used below."
@@ -1228,34 +1480,24 @@ updatePlayer13 =
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer3Msg) else (Signal.send hoveredOn ""))
 
 -- Update Message 4
-displayUpdate4 : (Int, Int) -> Int -> String -> Element
-displayUpdate4 (width, height) sig hoveredOn=
+displayUpdate11 : (Int, Int) -> Int -> String -> Element
+displayUpdate11 (width, height) sig hoveredOn=
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
-    , codeElement <| updateContainer4 sig hoveredOn
+    , codeTitleElement "Update"
+    , codeElement <| updateContainer11 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
     
-updateContainer4 : Int -> String -> Element
-updateContainer4 sig hoveredOn =
+updateContainer11 : Int -> String -> Element
+updateContainer11 sig hoveredOn =
   flow down
     [ updatePhysics1
     , updatePhysics2
     , updatePhysics3
     , updatePhysics4
     , updatePhysics5
-    , spacer 1 extraLine
-    , updateNear1
-    , updateNear2
-    , spacer 1 extraLine
-    , updateWithin1
-    , updateWithin2
-    , spacer 1 extraLine
-    , updateStepV1
-    , updateStepV2
-    , updateStepV3
-    , updateStepV4
     ]
   
 updatePhysics1Msg = "The function updatePhysics takes t (time) and the values of x, y, vx, and vy\n"
@@ -1289,6 +1531,23 @@ updatePhysics5 =
   body (padLeft 7 ' ' " }")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePhysics5Msg) else (Signal.send hoveredOn ""))
 
+displayUpdate12 : (Int, Int) -> Int -> String -> Element
+displayUpdate12 (width, height) sig hoveredOn=
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingUpdate
+    , codeTitleElement "Update"
+    , codeElement <| updateContainer12 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+    
+updateContainer12 : Int -> String -> Element
+updateContainer12 sig hoveredOn =
+  flow down
+    [ updateNear1
+    , updateNear2
+    ]
+
 updateNear1Msg = "The function near takes three arguments: k, c, and n. It determines if two \nobjects "
                             ++ "(k and n) are near one another based upon a third number (c)."
 updateNear1 : Element
@@ -1301,6 +1560,23 @@ updateNear2 : Element
 updateNear2 =
   body (padLeft 26 ' ' " n >= k-c && n <= k+c")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateNear2Msg) else (Signal.send hoveredOn ""))
+
+displayUpdate13 : (Int, Int) -> Int -> String -> Element
+displayUpdate13 (width, height) sig hoveredOn=
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingUpdate
+    , codeTitleElement "Update"
+    , codeElement <| updateContainer13 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+    
+updateContainer13 : Int -> String -> Element
+updateContainer13 sig hoveredOn =
+  flow down
+    [ updateWithin1
+    , updateWithin2
+    ]
 
 updateWithin1Msg = "The function within takes badGuy and player1 and determines if they \nare touching."
 updateWithin1 : Element
@@ -1315,6 +1591,25 @@ updateWithin2 : Element
 updateWithin2 =
   body (padLeft 61 ' ' " near player1.x 25 badGuy.x && near player1.y 25 badGuy.y")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateWithin2Msg) else (Signal.send hoveredOn ""))
+
+displayUpdate14 : (Int, Int) -> Int -> String -> Element
+displayUpdate14 (width, height) sig hoveredOn=
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingUpdate
+    , codeTitleElement "Update"
+    , codeElement <| updateContainer14 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+    
+updateContainer14 : Int -> String -> Element
+updateContainer14 sig hoveredOn =
+  flow down
+    [ updateStepV1
+    , updateStepV2
+    , updateStepV3
+    , updateStepV4
+    ]
 
 updateStepV1Msg = "The defines what the function stepV does. It takes two conditions (true \nor false) "
                               ++ "and a third term, v. StepV is used to bounce badGuy off of the \nedges of the "
@@ -1418,6 +1713,7 @@ displayView1 : (Int, Int) -> Int -> String -> Element
 displayView1 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingView
+    , codeTitleElement "View"
     , codeElement <| viewContainer1 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1428,19 +1724,6 @@ viewContainer1 sig hoveredOn =
   flow down
     [ viewFunc1
     , viewFunc2
-    , viewFunc3
-    , viewFunc4
-    , viewFunc5
-    , viewFunc6
-    , viewFunc7
-    , viewFunc8
-    , viewFunc9
-    , viewFunc10
-    , viewFunc11
-    , viewFunc12
-    , viewFunc13
-    , viewFunc14
-    , viewFunc15
     ]
   
 viewFunc1Msg = "The function view takes a tupple of integers and a game, and the function \nreturns "
@@ -1459,6 +1742,23 @@ viewFunc2 =
   body " view (w, h) {state, badGuy, player1} ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc2Msg) else (Signal.send hoveredOn ""))
 
+displayView2 : (Int, Int) -> Int -> String -> Element
+displayView2 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingView
+    , codeTitleElement "View"
+    , codeElement <| viewContainer2 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+    
+viewContainer2 : Int -> String -> Element
+viewContainer2 sig hoveredOn =
+  flow down
+    [ viewFunc3
+    , viewFunc4
+    ]
+
 viewFunc3Msg = "The let expression creates an object lives, which is of type element."
 viewFunc3 : Element
 viewFunc3 =
@@ -1472,6 +1772,24 @@ viewFunc4 : Element
 viewFunc4 =
   body (padLeft 62 ' ' " lives = txt(Text.height 50) (toString player1.lives)")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc4Msg) else (Signal.send hoveredOn ""))
+
+displayView3 : (Int, Int) -> Int -> String -> Element
+displayView3 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingView
+    , codeTitleElement "View"
+    , codeElement <| viewContainer3 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+    
+viewContainer3 : Int -> String -> Element
+viewContainer3 sig hoveredOn =
+  flow down
+    [ viewFunc5
+    , viewFunc6
+    , viewFunc7
+    ]
 
 viewFunc5Msg = "In is part of the let expression, and indicates where the newly defined\n"
                           ++ "will be used."
@@ -1496,6 +1814,23 @@ viewFunc7 =
   body (padLeft 38 ' ' " collage gameWidth gameHeight")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc7Msg) else (Signal.send hoveredOn ""))
 
+displayView4 : (Int, Int) -> Int -> String -> Element
+displayView4 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingView
+    , codeTitleElement "View"
+    , codeElement <| viewContainer4 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+    
+viewContainer4 : Int -> String -> Element
+viewContainer4 sig hoveredOn =
+  flow down
+    [ viewFunc8
+    , viewFunc9
+    ]
+
 viewFunc8Msg = "Inside of the collage is a rectangle with the same dimensions as the collage."
 viewFunc8 : Element
 viewFunc8 =
@@ -1507,6 +1842,24 @@ viewFunc9 : Element
 viewFunc9 =
   body (padLeft 37 ' ' " |> filled elmGrey")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc9Msg) else (Signal.send hoveredOn ""))
+
+displayView5 : (Int, Int) -> Int -> String -> Element
+displayView5 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingView
+    , codeTitleElement "View"
+    , codeElement <| viewContainer5 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+    
+viewContainer5 : Int -> String -> Element
+viewContainer5 sig hoveredOn =
+  flow down
+    [ viewFunc10
+    , viewFunc11
+    , viewFunc12
+    ]
 
 viewFunc10Msg = "Also in the collage is a six-sided shape with a radius fo 25."
 viewFunc10 : Element
@@ -1526,6 +1879,24 @@ viewFunc12 : Element
 viewFunc12 =
   body (padLeft 48 ' ' " |> move (badGuy.x, badGuy.y)")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc12Msg) else (Signal.send hoveredOn ""))
+
+displayView6 : (Int, Int) -> Int -> String -> Element
+displayView6 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingView
+    , codeTitleElement "View"
+    , codeElement <| viewContainer6 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+    
+viewContainer6 : Int -> String -> Element
+viewContainer6 sig hoveredOn =
+  flow down
+    [ viewFunc13
+    , viewFunc14
+    , viewFunc15
+    ]
 
 viewFunc13Msg = "A circle with a radius of 20 is also in the collage."
 viewFunc13 : Element
@@ -1547,31 +1918,21 @@ viewFunc15 =
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc15Msg) else (Signal.send hoveredOn ""))
 
 -- View Message 2
-displayView2 : (Int, Int) -> Int -> String -> Element
-displayView2 (width, height) sig hoveredOn =
+displayView7 : (Int, Int) -> Int -> String -> Element
+displayView7 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingView
-    , codeElement <| viewContainer2 sig hoveredOn
+    , codeTitleElement "View"
+    , codeElement <| viewContainer7 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
     
-viewContainer2 :  Int -> String -> Element
-viewContainer2 sig hoveredOn =
+viewContainer7 :  Int -> String -> Element
+viewContainer7 sig hoveredOn =
   flow down
     [ viewFunc16
     , viewFunc17
-    , viewFunc18
-    , viewFunc19
-    , viewFunc20
-    , spacer 1 extraLine
-    , elmGreyColor
-    , elmBlueColor
-    , elmGreenColor
-    , textColor
-    , txtFunc1
-    , txtFunc2
-    , msgFunc
     ]
 
 viewFunc16Msg = "The lives is also in the collage. Since only forms can exist in a\n"
@@ -1587,6 +1948,24 @@ viewFunc17 : Element
 viewFunc17 =
   body (padLeft 50 ' ' " |> move (0, gameHeight/2 - 40)")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc17Msg) else (Signal.send hoveredOn ""))
+
+displayView8 : (Int, Int) -> Int -> String -> Element
+displayView8 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingView
+    , codeTitleElement "View"
+    , codeElement <| viewContainer8 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+    
+viewContainer8 :  Int -> String -> Element
+viewContainer8 sig hoveredOn =
+  flow down
+    [ viewFunc18
+    , viewFunc19
+    , viewFunc20
+    ]
 
 viewFunc18Msg = "There is one last form in the collage. The state of the game is Play,\n"
                            ++ "then there is a spacer with the width of 1 and the height of 1.\n"
@@ -1609,6 +1988,25 @@ viewFunc20 : Element
 viewFunc20 =
   body (padLeft 16 ' ' " ]")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc20Msg) else (Signal.send hoveredOn ""))
+
+displayView9 : (Int, Int) -> Int -> String -> Element
+displayView9 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingView
+    , codeTitleElement "View"
+    , codeElement <| viewContainer9 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+    
+viewContainer9 :  Int -> String -> Element
+viewContainer9 sig hoveredOn =
+  flow down
+    [ elmGreyColor
+    , elmBlueColor
+    , elmGreenColor
+    , textColor
+    ]
 
 elmGreyColorMsg = "The variable elmGrey is set to color with the red value of 71,\n"
                                   ++ "the green value of 80, and the blue value of 102."
@@ -1637,7 +2035,24 @@ textColor : Element
 textColor =
   body " textColor = white"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn textColorMsg) else (Signal.send hoveredOn ""))
+ 
+displayView10 : (Int, Int) -> Int -> String -> Element
+displayView10 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingView
+    , codeTitleElement "View"
+    , codeElement <| viewContainer10 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
     
+viewContainer10 :  Int -> String -> Element
+viewContainer10 sig hoveredOn =
+  flow down
+    [ txtFunc1
+    , txtFunc2
+    ] 
+ 
 txtFunc1Msg = "This function sets up the characteristics for the text used in the game. The \ntext "
                     ++ "is converted from a string, has the color textColor (or white)."
 txtFunc1 : Element
@@ -1645,12 +2060,27 @@ txtFunc1 =
   body " txt f = Text.fromString >> Text.color textColor >> "
     |> hoverable (\ r -> if r then (Signal.send hoveredOn txtFunc1Msg) else (Signal.send hoveredOn ""))
 
-txtFunc2Msg = "The text also has the font monospace, and is left aligned."
-                    
+txtFunc2Msg = "The text also has the font monospace, and is left aligned."                  
 txtFunc2 : Element
 txtFunc2 =
   body (padLeft 51 ' ' " Text.monospace >> f >> Text.leftAligned")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn txtFunc2Msg) else (Signal.send hoveredOn ""))
+
+displayView11 : (Int, Int) -> Int -> String -> Element
+displayView11 (width, height) sig hoveredOn =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingView
+    , codeTitleElement "View"
+    , codeElement <| viewContainer11 sig hoveredOn
+    , helpElement hoveredOn
+    , buttonsLRElement sig
+    ]))
+    
+viewContainer11 :  Int -> String -> Element
+viewContainer11 sig hoveredOn =
+  flow down
+    [ msgFunc
+    ]
 
 msgFuncMsg = "This string is converted to text and placed at the bottom of the game when\n"
                       ++ "the state is Pause. These are the instructions on how to play the game. &larr\n"
