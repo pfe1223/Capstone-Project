@@ -18,7 +18,7 @@ chan = channel 0
 
 sig : Signal Int
 sig = subscribe chan
-  
+
 hoveredOn : Signal.Channel String
 hoveredOn = Signal.channel ""
 
@@ -230,9 +230,9 @@ welcomeMsg2 =
   "walk you through creatinga video game\n" ++
   "with line-by-line help explaining how\n" ++
   "the game is made."
-   
 
-{-- 
+
+{--
 *************************************************************
 This section has all of the code for explaining the IMPORT section of the game
 *************************************************************
@@ -278,7 +278,7 @@ wayfindingImports =
     , collage 30 50
         [ wayfinderFuture ] --Congrats section
     ])
- 
+
 importsWelcomeMsg1 : String
 importsWelcomeMsg1 =
   "Imports Section"
@@ -309,7 +309,7 @@ displayImports (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 importsContainer : Int -> String -> Element
 importsContainer sig hoveredOn =
   flow down
@@ -320,7 +320,7 @@ importsContainer sig hoveredOn =
     , importSignal
     , importMouse
     ]
-  
+
 graphicsInputMsg = " Import everything from the Graphics.Input library."
 importGraphicsInput : Element
 importGraphicsInput =
@@ -357,7 +357,7 @@ importMouse =
   body (" 6. import Mouse (..)\n" ++ " 7.")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn mouseMsg) else (Signal.send hoveredOn ""))
 
-{-- 
+{--
 *************************************************************
 This section has all of the code for explaining the SIGNALS section of the game
 *************************************************************
@@ -403,14 +403,14 @@ wayfindingSignals =
     , collage 30 50
         [ wayfinderFuture ] --Congrats section
     ])
-  
+
 signalsWelcomeMsg1 : String
 signalsWelcomeMsg1 =
   "Signals Section"
 
 signalsWelcomeMsg2 : String
 signalsWelcomeMsg2 =
-  "Signals are values that change over\n" ++ 
+  "Signals are values that change over\n" ++
   "time. Signals tell you if the mouse is\n" ++
   "being clicked, if it is hovering over an\n" ++
   "element, or if a button is clicked. Time\n" ++
@@ -434,7 +434,7 @@ displaySignals1 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 signalsContainer1 : Int -> String -> Element
 signalsContainer1 sig hoveredOn =
   flow down
@@ -450,7 +450,7 @@ signalsContainer1 sig hoveredOn =
         ]
     , body " 10."
     ]
-  
+
 signalMain1Msg = "Define the main function Every Elm program must have a main."
 signalMain1 : Element
 signalMain1 =
@@ -496,7 +496,7 @@ signalGameState1 : Element
 signalGameState1 =
   body " 11. gameState : Signal Game"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalGameState1Msg) else (Signal.send hoveredOn ""))
-    
+
 signalGameState2Msg = " Define the specifics of gameState."
 signalGameState2 : Element
 signalGameState2 =
@@ -536,7 +536,7 @@ signalDelta1 : Element
 signalDelta1 =
   body " 15. delta ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalDelta1Msg) else (Signal.send hoveredOn ""))
-    
+
 signalDelta2Msg = "Notes the change in time 35 times a second, \nand then converts this to seconds."
 signalDelta2 : Element
 signalDelta2 =
@@ -602,13 +602,13 @@ signalInput2 : Element
 signalInput2 =
   body " 19. input ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput2Msg) else (Signal.send hoveredOn ""))
-    
+
 signalInput3Msg = "For every delta, the specific attributes of input are updated."
 signalInput3 : Element
 signalInput3 =
   body "Signal.sampleOn delta <|"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput3Msg) else (Signal.send hoveredOn ""))
-    
+
 signalInput4Msg = "Maps all four attributes of Input to the update that happens every delta."
 signalInput4 : Element
 signalInput4 =
@@ -639,7 +639,7 @@ signalInput8 =
   body "delta"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput8Msg) else (Signal.send hoveredOn ""))
 
-{-- 
+{--
 *************************************************************
 This section has all of the code for explaining the MODEL section of the game
 *************************************************************
@@ -685,18 +685,18 @@ wayfindingModel =
     , collage 30 50
         [ wayfinderFuture ] --Congrats section
     ])
-  
+
 modelWelcomeMsg1 : String
 modelWelcomeMsg1 =
   "Model Section"
 
 modelWelcomeMsg2 : String
 modelWelcomeMsg2 =
-  "The Elm language does not understand\n" ++ 
+  "The Elm language does not understand\n" ++
   "what an enemy is in your video game.\n" ++
-  "The Model Section is used to create the\n" ++ 
-  "objects and their characteristics to be\n" ++ 
-  "used in the game. You will create:\n\n" ++ 
+  "The Model Section is used to create the\n" ++
+  "objects and their characteristics to be\n" ++
+  "used in the game. You will create:\n\n" ++
   "&diams; The state of the game which is\n" ++
   "   either Play or Pause.\n" ++
   "&diams; An enemy with a position and a\n" ++
@@ -720,7 +720,7 @@ displayModel1 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 modelContainer1 : Int -> String -> Element
 modelContainer1 sig hoveredOn =
   flow down
@@ -728,7 +728,7 @@ modelContainer1 sig hoveredOn =
     , playingSize
     , body " 29."
     ]
-  
+
 gameSizeMsg = "Set the variable gameWidth to 600 and variable gameHeight to 400."
 gameSize : Element
 gameSize =
@@ -750,7 +750,7 @@ displayModel2 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 modelContainer2 : Int -> String -> Element
 modelContainer2 sig hoveredOn =
   flow down
@@ -773,7 +773,7 @@ displayModel3 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 modelContainer3 : Int -> String -> Element
 modelContainer3 sig hoveredOn =
   flow down
@@ -791,7 +791,7 @@ aliasBadGuy1 : Element
 aliasBadGuy1 =
   body " 32. type alias BadGuy ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasBadGuy1Msg) else (Signal.send hoveredOn ""))
-    
+
 aliasBadGuy2Msg = "Objects of type BadGuy have an x value of type float, a y value of \ntype float,"
                               ++ "a vx value of type Float, and a vy value of type float.\n"
                               ++ "Floats are numbers with a decimal."
@@ -809,7 +809,7 @@ displayModel4 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 modelContainer4 : Int -> String -> Element
 modelContainer4 sig hoveredOn =
   flow down
@@ -818,7 +818,7 @@ modelContainer4 sig hoveredOn =
         [ body " 36."
         , spacer indent 1
         , aliasPlayer2
-        ] 
+        ]
     , body " 37."
     ]
 
@@ -845,7 +845,7 @@ displayModel5 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 modelContainer5 : Int -> String -> Element
 modelContainer5 sig hoveredOn =
   flow down
@@ -855,7 +855,7 @@ modelContainer5 sig hoveredOn =
         , spacer indent 1
         , aliasGame2
         ]
-    flow right
+    , flow right
       [ spacer (indent*4) 1
       , aliasGame3
       ]
@@ -896,28 +896,49 @@ modelContainer6 sig hoveredOn =
   flow down
     [ defaultGame1
     , defaultGame2
-    , defaultGame3
-    , defaultGame4
-    , defaultGame5
-    , defaultGame6
+    , flow right
+        [ body " 43."
+        , spacer indent 1
+        , defaultGame3
+        ]
+    , flow right
+        [ body " 44."
+        , spacer indent 1
+        , defaultGame4
+        ]
+    , flow right
+        [ body " 45."
+        , spacer indent 1
+        , defaultGame5
+        ]
+    , flow right
+        [ spacer (indent*7) 1
+        , defaultGame6
+        ]
+    , flow right
+        [ body " 46."
+        , spacer indent 1
+        , defaultGame7
+        ]
+    , body " 47."
     ]
 
 defaultGame1Msg = " Create an object defaultGame of type Game."
 defaultGame1 : Element
 defaultGame1 =
-  body " defaultGame : Game"
+  body " 41. defaultGame : Game"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame1Msg) else (Signal.send hoveredOn ""))
 
 defaultGame2Msg = " Assign each attribute of defaultGame with the following values."
 defaultGame2 : Element
 defaultGame2 =
-  body " defaultGame ="
+  body " 42. defaultGame ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame2Msg) else (Signal.send hoveredOn ""))
 
 defaultGame3Msg = " The state attribute has a value of Pause."
 defaultGame3 : Element
 defaultGame3 =
-  body (padLeft 20 ' ' " { state = Pause")
+  body "{ state = Pause"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame3Msg) else (Signal.send hoveredOn ""))
 
 defaultGame4Msg = "The badGuy attributes have an x value of 0, a y value of 0, a vx value \nof 300,"
@@ -925,7 +946,7 @@ defaultGame4Msg = "The badGuy attributes have an x value of 0, a y value of 0, a
                               ++ "and the vx and vy values are the velocity (think speed) \nof the badGuy."
 defaultGame4 : Element
 defaultGame4 =
-  body (padLeft 44 ' ' " , badGuy = { x=0, y=0, vx=300, vy=300 }")
+  body ", badGuy = { x=0, y=0, vx=300, vy=300 }"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame4Msg) else (Signal.send hoveredOn ""))
 
 defaultGame5Msg = "The player1 attributes have an x value of 15-halfWidth (or -285), a \ny value of 0,"
@@ -933,14 +954,20 @@ defaultGame5Msg = "The player1 attributes have an x value of 15-halfWidth (or -2
                               ++ "and the vx and vy values are the velocity \n(think speed) of the player1. player1 also has 3 lives."
 defaultGame5 : Element
 defaultGame5 =
-  body (padLeft 71 ' ' " , player1 = { x = 15-halfWidth, y = 0, vx = 0\n, vy = 0, lives = 3 }")
+  body ", player1 = { x = 15-halfWidth, y = 0"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame5Msg) else (Signal.send hoveredOn ""))
 
-defaultGame6Msg = " End the list of attributes for defaultGame."
 defaultGame6 : Element
 defaultGame6 =
-  body (padLeft 6 ' ' " }")
-    |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame6Msg) else (Signal.send hoveredOn ""))
+  body ", vx = 0, vy = 0, lives = 3 }"
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame5Msg) else (Signal.send hoveredOn ""))
+
+
+defaultGame7Msg = " End the list of attributes for defaultGame."
+defaultGame7 : Element
+defaultGame7 =
+  body "}"
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame7Msg) else (Signal.send hoveredOn ""))
 
 displayModel7 : (Int, Int) -> Int -> String -> Element
 displayModel7 (width, height) sig hoveredOn =
@@ -956,17 +983,38 @@ modelContainer7 : Int -> String -> Element
 modelContainer7 sig hoveredOn =
   flow down
     [ aliasInput1
-    , aliasInput2
-    , aliasInput3
-    , aliasInput4
-    , aliasInput5
-    , aliasInput6
+    , flow right
+        [ body " 49."
+        , spacer indent 1
+        , aliasInput2
+        ]
+    , flow right
+        [ body " 50."
+        , spacer indent 1
+        , aliasInput3
+        ]
+    , flow right
+        [ body " 51."
+        , spacer indent 1
+        , aliasInput4
+        ]
+    , flow right
+        [ body " 52."
+        , spacer indent 1
+        , aliasInput5
+        ]
+    , flow right
+        [ body " 53."
+        , spacer indent 1
+        , aliasInput6
+        ]
+    , body " 54."
     ]
 
 aliasInput1Msg = " Create a type alias Input with the following characteristics."
 aliasInput1 : Element
 aliasInput1 =
-  body " type alias Input ="
+  body " 48. type alias Input ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasInput1Msg) else (Signal.send hoveredOn ""))
 
 aliasInput2Msg = "Objects of type Input has an attribute called space with a boolean value.\n"
@@ -1002,7 +1050,7 @@ aliasInput6 =
   body (padLeft 6 ' ' " }")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasInput6Msg) else (Signal.send hoveredOn ""))
 
-{-- 
+{--
 *************************************************************
 This section has all of the code for explaining the UPDATE section of the game
 *************************************************************
@@ -1048,7 +1096,7 @@ wayfindingUpdate =
     , collage 30 50
         [ wayfinderFuture ] --Congrats section
     ])
-  
+
 updateWelcomeMsg1 : String
 updateWelcomeMsg1 =
   "Update Section\n"
@@ -1079,35 +1127,60 @@ displayUpdate1 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 updateContainer1 : Int -> String -> Element
 updateContainer1 sig hoveredOn =
   flow down
     [ updateFunc1
     , updateFunc2
-    , updateFunc3
+    , flow right
+        [ spacer (indent*4) 1
+        , updateFunc3
+        ]
+    , flow right
+        [ body " 57."
+        , spacer indent 1
+        , updateFunc4
+        ]
+    , flow right
+        [ spacer (indent*4) 1
+        , updateFunc4a
+        ]
+    , body " 58."
     ]
-  
+
 updateFunc1Msg = "Update is a function that takes an object of type Input, an object of type\n"
                           ++ "Game, and returns a Game."
 updateFunc1 : Element
 updateFunc1 =
-  body " update : Input -> Game -> Game"
+  body " 55. update : Input -> Game -> Game"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc1Msg) else (Signal.send hoveredOn ""))
 
 updateFunc2Msg = "Specifically, update takes Input in the form of space, dir1, dir2, and delta.\n"
                           ++ "The Game is defined as state, badGuy, and player1."
 updateFunc2 : Element
 updateFunc2 =
-  body " update {space,dir1,dir2,delta} ({state,badGuy,player1} as game) ="
+  body " 56. update {space,dir1,dir2,delta} "
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc2Msg) else (Signal.send hoveredOn ""))
 
-updateFunc3Msg = "The let expression assigns the value of 1 to lives if badGuy is within \nplayer1."
-                          ++ "If not, the value of 0 is assigned to lives. The function within is \ndefined below."
 updateFunc3 : Element
 updateFunc3 =
-  body (padLeft 60 ' ' " let lives = if (badGuy `within` player1) then 1 else 0")
-    |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc3Msg) else (Signal.send hoveredOn ""))
+  body " ({state,badGuy,player1} as game) ="
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc2Msg) else (Signal.send hoveredOn ""))
+
+
+updateFunc4Msg = "The let expression assigns the value of 1 to lives if badGuy is within \nplayer1."
+                          ++ "If not, the value of 0 is assigned to lives. The function within is \ndefined below."
+updateFunc4 : Element
+updateFunc4 =
+  body "let lives = if (badGuy `within` player1) "
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc4Msg) else (Signal.send hoveredOn ""))
+
+updateFunc4a : Element
+updateFunc4a =
+  body " then 1 else 0"
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc4Msg) else (Signal.send hoveredOn ""))
+
 
 displayUpdate2 : (Int, Int) -> Int -> String -> Element
 displayUpdate2 (width, height) sig hoveredOn =
@@ -1118,40 +1191,57 @@ displayUpdate2 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 updateContainer2 : Int -> String -> Element
 updateContainer2 sig hoveredOn =
   flow down
-    [ updateFunc4
-    , updateFunc5
-    , updateFunc6
-    , updateFunc7
+    [ flow right
+        [ body " 59."
+        , spacer (indent*2) 1
+        , updateFunc5
+        ]
+    , flow right
+        [ body " 60."
+        , spacer (indent*3) 1
+        , updateFunc6
+        ]
+    , flow right
+        [ body " 61."
+        , spacer (indent*3 + 15) 1
+        , updateFunc7
+        ]
+    , flow right
+        [ body " 62."
+        , spacer (indent*3 + 15) 1
+        , updateFunc8
+        ]
+    , body " 63."
     ]
 
-updateFunc4Msg = "The function newState assumes a value dependent upon the cases below:"
-updateFunc4 : Element
-updateFunc4 =
-  body (padLeft 21 ' ' " newState =")
-    |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc4Msg) else (Signal.send hoveredOn ""))
-
-updateFunc5Msg = "If the space bar is pressed, then newState takes the value Play."
+updateFunc5Msg = "The function newState assumes a value dependent upon the cases below:"
 updateFunc5 : Element
 updateFunc5 =
-  body (padLeft 53 ' ' " if | space                    -> Play")
+  body "newState ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc5Msg) else (Signal.send hoveredOn ""))
 
-updateFunc6Msg = "NewState assumes the value of Pause if player1.lives is 0. That is, the game\n"
-                          ++ "stops when the player runs out of lives."
+updateFunc6Msg = "If the space bar is pressed, then newState takes the value Play."
 updateFunc6 : Element
 updateFunc6 =
-  body (padLeft 48 ' ' " | player1.lives == 0 -> Pause")
+  body "if | space                    -> Play"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc6Msg) else (Signal.send hoveredOn ""))
 
-updateFunc7Msg = "In all other cases, newState assumes the value of state. \nThat is, nothing changes."
+updateFunc7Msg = "NewState assumes the value of Pause if player1.lives is 0. That is, the game\n"
+                          ++ "stops when the player runs out of lives."
 updateFunc7 : Element
 updateFunc7 =
-  body (padLeft 52 ' ' " | otherwise              -> state")
+  body "| player1.lives == 0 -> Pause"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc7Msg) else (Signal.send hoveredOn ""))
+
+updateFunc8Msg = "In all other cases, newState assumes the value of state. \nThat is, nothing changes."
+updateFunc8 : Element
+updateFunc8 =
+  body "| otherwise              -> state"
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc8Msg) else (Signal.send hoveredOn ""))
 
 displayUpdate3 : (Int, Int) -> Int -> String -> Element
 displayUpdate3 (width, height) sig hoveredOn =
@@ -1162,42 +1252,42 @@ displayUpdate3 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 updateContainer3 : Int -> String -> Element
 updateContainer3 sig hoveredOn =
   flow down
-    [ updateFunc8
-    , updateFunc9
+    [ updateFunc9
     , updateFunc10
-    , updateFunc11
+    , updateFunc12
+    , updateFunc13
     ]
 
-updateFunc8Msg = "The function newBadGuy assumes the value dependent \nupon the following cases:"
-updateFunc8 : Element
-updateFunc8 =
-  body (padLeft 22 ' ' " newBadGuy =")
-    |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc8Msg) else (Signal.send hoveredOn ""))
-
-updateFunc9Msg = "If the value of state is equal to Pause, the do the following thing.\n"
-                          ++ "an element. A tupple is two numbers grouped together by parentheses.\n"
-                          ++ "An integer is a number without a decimal."
+updateFunc9Msg = "The function newBadGuy assumes the value dependent \nupon the following cases:"
 updateFunc9 : Element
 updateFunc9 =
-  body (padLeft 33 ' ' " if state == Pause")
+  body (padLeft 22 ' ' " newBadGuy =")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc9Msg) else (Signal.send hoveredOn ""))
 
-updateFunc10Msg = "The function newBadGuy takes the value badGuy. That is, nothing changes."
+updateFunc10Msg = "If the value of state is equal to Pause, the do the following thing.\n"
+                          ++ "an element. A tupple is two numbers grouped together by parentheses.\n"
+                          ++ "An integer is a number without a decimal."
 updateFunc10 : Element
 updateFunc10 =
-  body (padLeft 32 ' ' " then badGuy")
+  body (padLeft 33 ' ' " if state == Pause")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc10Msg) else (Signal.send hoveredOn ""))
 
-updateFunc11Msg = "When state equals Play, then call the function updateBadGuy, which is \ndefined below."
-                              ++ "updateBadGuy takes delta, badGuy, and player1."
+updateFunc11Msg = "The function newBadGuy takes the value badGuy. That is, nothing changes."
 updateFunc11 : Element
 updateFunc11 =
-  body (padLeft 59 ' ' " else updateBadGuy delta badGuy player1")
+  body (padLeft 32 ' ' " then badGuy")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc11Msg) else (Signal.send hoveredOn ""))
+
+updateFunc12Msg = "When state equals Play, then call the function updateBadGuy, which is \ndefined below."
+                              ++ "updateBadGuy takes delta, badGuy, and player1."
+updateFunc12 : Element
+updateFunc12 =
+  body (padLeft 59 ' ' " else updateBadGuy delta badGuy player1")
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc12Msg) else (Signal.send hoveredOn ""))
 
 displayUpdate4 : (Int, Int) -> Int -> String -> Element
 displayUpdate4 (width, height) sig hoveredOn =
@@ -1208,54 +1298,54 @@ displayUpdate4 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 updateContainer4 : Int -> String -> Element
 updateContainer4 sig hoveredOn =
   flow down
-    [ updateFunc12
-    , updateFunc13
+    [ updateFunc13
     , updateFunc14
     , updateFunc15
     , updateFunc16
     , updateFunc17
+    , updateFunc18
     ]
 
-updateFunc12Msg = "The in part of the let expression tells us how the \nabove information will be used."
-updateFunc12 : Element
-updateFunc12 =
-  body (padLeft 8 ' ' " in")
-    |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc12Msg) else (Signal.send hoveredOn ""))
-
-updateFunc13Msg = "Game will have its attributes updated."
+updateFunc13Msg = "The in part of the let expression tells us how the \nabove information will be used."
 updateFunc13 : Element
 updateFunc13 =
-  body (padLeft 19 ' ' " { game |")
+  body (padLeft 8 ' ' " in")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc13Msg) else (Signal.send hoveredOn ""))
 
-updateFunc14Msg = "State will assume the value of newState."
+updateFunc14Msg = "Game will have its attributes updated."
 updateFunc14 : Element
 updateFunc14 =
-  body (padLeft 36 ' ' " state   <- newState,")
+  body (padLeft 19 ' ' " { game |")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc14Msg) else (Signal.send hoveredOn ""))
 
-updateFunc15Msg = "BadGuy assumes the value of newBadGuy."
+updateFunc15Msg = "State will assume the value of newState."
 updateFunc15 : Element
 updateFunc15 =
-  body (padLeft 37 ' ' " badGuy  <- newBadGuy,")
+  body (padLeft 36 ' ' " state   <- newState,")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc15Msg) else (Signal.send hoveredOn ""))
 
-updateFunc16Msg = "Player1 assumes the value of updatePlayer which needs delta, dir1, dir2,\n"
-                                ++ "lives, and player1. The function updatePlayer is defined below."
+updateFunc16Msg = "BadGuy assumes the value of newBadGuy."
 updateFunc16 : Element
 updateFunc16 =
-  body (padLeft 69 ' ' " player1 <- updatePlayer delta dir1 dir2 lives player1")
+  body (padLeft 37 ' ' " badGuy  <- newBadGuy,")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc16Msg) else (Signal.send hoveredOn ""))
 
-updateFunc17Msg = "This bracket closes the update function."
+updateFunc17Msg = "Player1 assumes the value of updatePlayer which needs delta, dir1, dir2,\n"
+                                ++ "lives, and player1. The function updatePlayer is defined below."
 updateFunc17 : Element
 updateFunc17 =
-  body (padLeft 12 ' ' " }")
+  body (padLeft 69 ' ' " player1 <- updatePlayer delta dir1 dir2 lives player1")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc17Msg) else (Signal.send hoveredOn ""))
+
+updateFunc18Msg = "This bracket closes the update function."
+updateFunc18 : Element
+updateFunc18 =
+  body (padLeft 12 ' ' " }")
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc18Msg) else (Signal.send hoveredOn ""))
 
 -- Update Message 2
 displayUpdate5 : (Int, Int) -> Int -> String -> Element
@@ -1267,14 +1357,14 @@ displayUpdate5 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 updateContainer5 : Int -> String -> Element
 updateContainer5 sig hoveredOn=
   flow down
     [ updateBadGuy1
     , updateBadGuy2
     ]
-  
+
 updateBadGuy1Msg = "The function updateBadGuy takes a Time, a BadGuy, and a Player.\n"
                           ++ "The function returns a type of BadGuy."
 updateBadGuy1 : Element
@@ -1298,7 +1388,7 @@ displayUpdate6 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 updateContainer6 : Int -> String -> Element
 updateContainer6 sig hoveredOn=
   flow down
@@ -1358,7 +1448,7 @@ displayUpdate7 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 updateContainer7 : Int -> String -> Element
 updateContainer7 sig hoveredOn=
   flow down
@@ -1413,14 +1503,14 @@ displayUpdate8 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 updateContainer8 : Int -> String -> Element
 updateContainer8 sig hoveredOn=
   flow down
     [ updatePlayer1
     , updatePlayer2
     ]
-  
+
 updatePlayer1Msg = "This defines the function updatePlayer, which takes a time, an integer, \nanother "
                           ++ "integer, another integer, a player, and returns a player."
 updatePlayer1 : Element
@@ -1443,7 +1533,7 @@ displayUpdate9 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 updateContainer9 : Int -> String -> Element
 updateContainer9 sig hoveredOn=
   flow down
@@ -1501,7 +1591,7 @@ displayUpdate10 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 updateContainer10 : Int -> String -> Element
 updateContainer10 sig hoveredOn=
   flow down
@@ -1564,7 +1654,7 @@ displayUpdate11 (width, height) sig hoveredOn=
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 updateContainer11 : Int -> String -> Element
 updateContainer11 sig hoveredOn =
   flow down
@@ -1574,7 +1664,7 @@ updateContainer11 sig hoveredOn =
     , updatePhysics4
     , updatePhysics5
     ]
-  
+
 updatePhysics1Msg = "The function updatePhysics takes t (time) and the values of x, y, vx, and vy\n"
                           ++ "which are treated as one object."
 updatePhysics1 : Element
@@ -1615,7 +1705,7 @@ displayUpdate12 (width, height) sig hoveredOn=
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 updateContainer12 : Int -> String -> Element
 updateContainer12 sig hoveredOn =
   flow down
@@ -1645,7 +1735,7 @@ displayUpdate13 (width, height) sig hoveredOn=
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 updateContainer13 : Int -> String -> Element
 updateContainer13 sig hoveredOn =
   flow down
@@ -1676,7 +1766,7 @@ displayUpdate14 (width, height) sig hoveredOn=
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 updateContainer14 : Int -> String -> Element
 updateContainer14 sig hoveredOn =
   flow down
@@ -1715,7 +1805,7 @@ updateStepV4 =
   body(padLeft 26 ' '  " | otherwise  -> v")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateStepV4Msg) else (Signal.send hoveredOn ""))
 
-{-- 
+{--
 *************************************************************
 This section has all of the code for explaining the VIEW section of the game
 *************************************************************
@@ -1761,7 +1851,7 @@ wayfindingView =
     , collage 30 50
         [ wayfinderFuture ] --Congrats section
     ])
-  
+
 viewWelcomeMsg1 : String
 viewWelcomeMsg1 =
   "View Section\n"
@@ -1776,7 +1866,7 @@ viewWelcomeMsg2 =
   "to the computer screen. You will:\n\n" ++
   "&diams; Create specific colors and text\n" ++
   "   formatting.\n" ++
-  "&diams; Draw the playing surface and\n" ++ 
+  "&diams; Draw the playing surface and\n" ++
   "   characters.\n" ++
   "&diams; Color the playing surface and \n" ++
   "   characters.\n" ++
@@ -1793,14 +1883,14 @@ displayView1 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 viewContainer1 : Int -> String -> Element
 viewContainer1 sig hoveredOn =
   flow down
     [ viewFunc1
     , viewFunc2
     ]
-  
+
 viewFunc1Msg = "The function view takes a tupple of integers and a game, and the function \nreturns "
                           ++ "an element. A tupple is two numbers grouped together by \nparentheses. An "
                           ++ "integer is a number without a decimal."
@@ -1826,7 +1916,7 @@ displayView2 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 viewContainer2 : Int -> String -> Element
 viewContainer2 sig hoveredOn =
   flow down
@@ -1857,7 +1947,7 @@ displayView3 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 viewContainer3 : Int -> String -> Element
 viewContainer3 sig hoveredOn =
   flow down
@@ -1898,7 +1988,7 @@ displayView4 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 viewContainer4 : Int -> String -> Element
 viewContainer4 sig hoveredOn =
   flow down
@@ -1927,7 +2017,7 @@ displayView5 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 viewContainer5 : Int -> String -> Element
 viewContainer5 sig hoveredOn =
   flow down
@@ -1964,7 +2054,7 @@ displayView6 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 viewContainer6 : Int -> String -> Element
 viewContainer6 sig hoveredOn =
   flow down
@@ -2002,7 +2092,7 @@ displayView7 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 viewContainer7 :  Int -> String -> Element
 viewContainer7 sig hoveredOn =
   flow down
@@ -2033,7 +2123,7 @@ displayView8 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 viewContainer8 :  Int -> String -> Element
 viewContainer8 sig hoveredOn =
   flow down
@@ -2073,7 +2163,7 @@ displayView9 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 viewContainer9 :  Int -> String -> Element
 viewContainer9 sig hoveredOn =
   flow down
@@ -2110,7 +2200,7 @@ textColor : Element
 textColor =
   body " textColor = white"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn textColorMsg) else (Signal.send hoveredOn ""))
- 
+
 displayView10 : (Int, Int) -> Int -> String -> Element
 displayView10 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
@@ -2120,14 +2210,14 @@ displayView10 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 viewContainer10 :  Int -> String -> Element
 viewContainer10 sig hoveredOn =
   flow down
     [ txtFunc1
     , txtFunc2
-    ] 
- 
+    ]
+
 txtFunc1Msg = "This function sets up the characteristics for the text used in the game. The \ntext "
                     ++ "is converted from a string, has the color textColor (or white)."
 txtFunc1 : Element
@@ -2135,7 +2225,7 @@ txtFunc1 =
   body " txt f = Text.fromString >> Text.color textColor >> "
     |> hoverable (\ r -> if r then (Signal.send hoveredOn txtFunc1Msg) else (Signal.send hoveredOn ""))
 
-txtFunc2Msg = "The text also has the font monospace, and is left aligned."                  
+txtFunc2Msg = "The text also has the font monospace, and is left aligned."
 txtFunc2 : Element
 txtFunc2 =
   body (padLeft 51 ' ' " Text.monospace >> f >> Text.leftAligned")
@@ -2150,7 +2240,7 @@ displayView11 (width, height) sig hoveredOn =
     , helpElement hoveredOn
     , buttonsLRElement sig
     ]))
-    
+
 viewContainer11 :  Int -> String -> Element
 viewContainer11 sig hoveredOn =
   flow down
@@ -2166,7 +2256,7 @@ msgFunc =
   body " msg = 'SPACE to start, &larr ;&uarr ;&darr ;&rarr ; to move'"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn msgFuncMsg) else (Signal.send hoveredOn ""))
 
-{-- 
+{--
 *************************************************************
 This section encourages the user to expand the game and make it better
 *************************************************************
@@ -2219,8 +2309,8 @@ viewCongratsMsg1 =
 
 viewCongratsMsg2 : String
 viewCongratsMsg2 =
-  "You made the foundation of a game.\n" ++ 
-  "Advance through the next few pages\n" ++ 
+  "You made the foundation of a game.\n" ++
+  "Advance through the next few pages\n" ++
   "for some ideas on what you can do to\n" ++
   "make the game better. Possible ideas\n" ++
   "include:\n\n" ++
@@ -2239,7 +2329,7 @@ idea1 (width, height) sig =
     , subtitleElement viewIdea1Msg2
     , buttonsLRElement sig
     ]))
-  
+
 viewIdea1Msg1 : String
 viewIdea1Msg1 =
   "Next Level"
@@ -2257,7 +2347,7 @@ viewIdea1Msg2 =
   " &diams; Collect a certain number of objects\n" ++
   "    before advancing. Each object will\n" ++
   "    randomly appears one at a time."
-  
+
 -- Idea 2
 idea2 : (Int, Int) -> Int -> Element
 idea2 (width, height) sig =
@@ -2267,7 +2357,7 @@ idea2 (width, height) sig =
     , subtitleElement viewIdea2Msg2
     , buttonsLRElement sig
     ]))
-  
+
 viewIdea2Msg1 : String
 viewIdea2Msg1 =
   "Another Enemy"
@@ -2275,7 +2365,7 @@ viewIdea2Msg1 =
 viewIdea2Msg2 : String
 viewIdea2Msg2 =
   "To differentiate the levels and increase\n" ++
-  "the difficulty, add another enemy to the\n" ++ 
+  "the difficulty, add another enemy to the\n" ++
   "game.\n\n" ++
   "&diams; Have them move at different speeds.\n" ++
   "&diams; Use a different size and shape.\n" ++
