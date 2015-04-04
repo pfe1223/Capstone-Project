@@ -131,7 +131,7 @@ codeElement gameCode =
 
 helpElement : String -> Element
 helpElement hoveredOn =
-  color grey <| container containerWidth bottomHeight middle <| body hoveredOn
+  color elmOrange <| container containerWidth bottomHeight middle <| body hoveredOn
 
 buttonGoElement : Int -> Element
 buttonGoElement sig =
@@ -1256,16 +1256,37 @@ displayUpdate3 (width, height) sig hoveredOn =
 updateContainer3 : Int -> String -> Element
 updateContainer3 sig hoveredOn =
   flow down
-    [ updateFunc9
-    , updateFunc10
-    , updateFunc12
-    , updateFunc13
+    [ flow right
+        [ body " 64."
+        , spacer (indent*2) 1
+        , updateFunc9
+        ]
+    , flow right
+        [ body " 65."
+        , spacer (indent*3) 1
+        , updateFunc10
+        ]
+    , flow right
+        [ body " 66."
+        , spacer (indent*4) 1
+        , updateFunc11
+        ]
+    , flow right
+        [ body " 67."
+        , spacer (indent*4) 1
+        , updateFunc12
+        ]
+    , flow right
+        [ spacer (indent*6 + 4) 1
+        , updateFunc12a
+        ]
+    , body " 68."
     ]
 
 updateFunc9Msg = "The function newBadGuy assumes the value dependent \nupon the following cases:"
 updateFunc9 : Element
 updateFunc9 =
-  body (padLeft 22 ' ' " newBadGuy =")
+  body "newBadGuy ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc9Msg) else (Signal.send hoveredOn ""))
 
 updateFunc10Msg = "If the value of state is equal to Pause, the do the following thing.\n"
@@ -1273,20 +1294,25 @@ updateFunc10Msg = "If the value of state is equal to Pause, the do the following
                           ++ "An integer is a number without a decimal."
 updateFunc10 : Element
 updateFunc10 =
-  body (padLeft 33 ' ' " if state == Pause")
+  body "if state == Pause"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc10Msg) else (Signal.send hoveredOn ""))
 
 updateFunc11Msg = "The function newBadGuy takes the value badGuy. That is, nothing changes."
 updateFunc11 : Element
 updateFunc11 =
-  body (padLeft 32 ' ' " then badGuy")
+  body "then badGuy"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc11Msg) else (Signal.send hoveredOn ""))
 
 updateFunc12Msg = "When state equals Play, then call the function updateBadGuy, which is \ndefined below."
                               ++ "updateBadGuy takes delta, badGuy, and player1."
 updateFunc12 : Element
 updateFunc12 =
-  body (padLeft 59 ' ' " else updateBadGuy delta badGuy player1")
+  body "else updateBadGuy delta badGuy"
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc12Msg) else (Signal.send hoveredOn ""))
+
+updateFunc12a : Element
+updateFunc12a =
+  body "player1"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc12Msg) else (Signal.send hoveredOn ""))
 
 displayUpdate4 : (Int, Int) -> Int -> String -> Element
@@ -1302,49 +1328,83 @@ displayUpdate4 (width, height) sig hoveredOn =
 updateContainer4 : Int -> String -> Element
 updateContainer4 sig hoveredOn =
   flow down
-    [ updateFunc13
-    , updateFunc14
-    , updateFunc15
-    , updateFunc16
-    , updateFunc17
-    , updateFunc18
+    [ flow right
+        [ body " 69."
+        , spacer indent 1
+        , updateFunc13
+        ]
+    , flow right
+        [ body " 70."
+        , spacer (indent*2) 1
+        , updateFunc14
+        ]
+    , flow right
+        [ body " 71."
+        , spacer (indent*3) 1
+        , updateFunc15
+        ]
+    , flow right
+        [ body " 72."
+        , spacer (indent*3) 1
+        , updateFunc16
+        ]
+    , flow right
+        [ body " 73."
+        , spacer (indent*3) 1
+        , updateFunc17
+        ]
+    , flow right
+        [ spacer (indent*5) 1
+        , updateFunc17a
+        ]
+    , flow right
+        [ body " 74."
+        , spacer (indent*2) 1
+        , updateFunc18
+        ]
+    , body " 75."
     ]
 
 updateFunc13Msg = "The in part of the let expression tells us how the \nabove information will be used."
 updateFunc13 : Element
 updateFunc13 =
-  body (padLeft 8 ' ' " in")
+  body "in"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc13Msg) else (Signal.send hoveredOn ""))
 
 updateFunc14Msg = "Game will have its attributes updated."
 updateFunc14 : Element
 updateFunc14 =
-  body (padLeft 19 ' ' " { game |")
+  body "{ game |"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc14Msg) else (Signal.send hoveredOn ""))
 
 updateFunc15Msg = "State will assume the value of newState."
 updateFunc15 : Element
 updateFunc15 =
-  body (padLeft 36 ' ' " state   <- newState,")
+  body "state   <- newState,"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc15Msg) else (Signal.send hoveredOn ""))
 
 updateFunc16Msg = "BadGuy assumes the value of newBadGuy."
 updateFunc16 : Element
 updateFunc16 =
-  body (padLeft 37 ' ' " badGuy  <- newBadGuy,")
+  body "badGuy  <- newBadGuy,"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc16Msg) else (Signal.send hoveredOn ""))
 
 updateFunc17Msg = "Player1 assumes the value of updatePlayer which needs delta, dir1, dir2,\n"
                                 ++ "lives, and player1. The function updatePlayer is defined below."
 updateFunc17 : Element
 updateFunc17 =
-  body (padLeft 69 ' ' " player1 <- updatePlayer delta dir1 dir2 lives player1")
+  body "player1 <- updatePlayer delta dir1 dir2"
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc17Msg) else (Signal.send hoveredOn ""))
+
+updateFunc17a : Element
+updateFunc17a =
+  body "lives player1"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc17Msg) else (Signal.send hoveredOn ""))
 
 updateFunc18Msg = "This bracket closes the update function."
 updateFunc18 : Element
 updateFunc18 =
-  body (padLeft 12 ' ' " }")
+  body "}"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc18Msg) else (Signal.send hoveredOn ""))
 
 -- Update Message 2
@@ -1362,21 +1422,40 @@ updateContainer5 : Int -> String -> Element
 updateContainer5 sig hoveredOn=
   flow down
     [ updateBadGuy1
+    , flow right
+        [ spacer indent 1
+        , updateBadGuy1a
+        ]
     , updateBadGuy2
+    , flow right
+        [ spacer indent 1
+        , updateBadGuy2a
+        ]
     ]
 
 updateBadGuy1Msg = "The function updateBadGuy takes a Time, a BadGuy, and a Player.\n"
                           ++ "The function returns a type of BadGuy."
 updateBadGuy1 : Element
 updateBadGuy1 =
-  body " updateBadGuy : Time -> BadGuy -> Player -> BadGuy"
+  body " 76. updateBadGuy : Time -> BadGuy -> Player ->"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy1Msg) else (Signal.send hoveredOn ""))
+
+updateBadGuy1a : Element
+updateBadGuy1a =
+  body " BadGuy"
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy1Msg) else (Signal.send hoveredOn ""))
+
 
 updateBadGuy2Msg = "UpdateBadGuy takes t as time; the x, y, vx, and vy values of badGuy;\n"
                           ++ "and the x, y, vx, and vy values of player1."
 updateBadGuy2 : Element
 updateBadGuy2 =
-  body " updateBadGuy t ({x,y,vx,vy} as badGuy) ({x,y,vx,vy,lives} as player1) ="
+  body " 77. updateBadGuy t ({x,y,vx,vy} as badGuy)"
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy2Msg) else (Signal.send hoveredOn ""))
+
+updateBadGuy2a : Element
+updateBadGuy2a =
+  body " ({x,y,vx,vy,lives} as player1) ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy2Msg) else (Signal.send hoveredOn ""))
 
 displayUpdate6 : (Int, Int) -> Int -> String -> Element
@@ -1392,51 +1471,111 @@ displayUpdate6 (width, height) sig hoveredOn =
 updateContainer6 : Int -> String -> Element
 updateContainer6 sig hoveredOn=
   flow down
-    [ updateBadGuy3
-    , updateBadGuy4
-    , updateBadGuy5
-    , updateBadGuy6
-    , updateBadGuy7
-    , updateBadGuy8
+    [ flow right
+        [ body " 78."
+        , spacer indent 1
+        , updateBadGuy3
+        ]
+    , flow right
+        [ spacer (indent*4) 1
+        , updateBadGuy3a
+        ]
+    , flow right
+        [ body " 79."
+        , spacer (indent + 15) 1
+        , updateBadGuy4
+        ]
+    , flow right
+        [ spacer (indent*4) 1
+        , updateBadGuy4a
+        ]
+    , flow right
+        [ body " 80."
+        , spacer (indent*2+5) 1
+        , updateBadGuy5
+        ]
+    , flow right
+        [ body " 81."
+        , spacer (indent*3+5) 1
+        , updateBadGuy6
+        ]
+    , flow right
+        [ spacer (indent*5) 1
+        , updateBadGuy6a
+        ]
+    , flow right
+        [ body " 82."
+        , spacer (indent*3+5) 1
+        , updateBadGuy7
+        ]
+    , flow right
+        [ spacer (indent*5) 1
+        , updateBadGuy7a
+        ]
+    , flow right
+        [ body " 83."
+        , spacer (indent*2+5) 1
+        , updateBadGuy8
+        ]
     ]
 
 updateBadGuy3Msg = "If player1 has no more lives, then the x and y values of badGuy are set to 0."
 updateBadGuy3 : Element
 updateBadGuy3 =
-  body (padLeft 60 ' ' " if | (player1.lives == 0) -> { badGuy | x <- 0, y <- 0}")
+  body "if | (player1.lives == 0) -> { badGuy |"
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy3Msg) else (Signal.send hoveredOn ""))
+
+updateBadGuy3a : Element
+updateBadGuy3a =
+  body " x <- 0, y <- 0}"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy3Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy4Msg = "If badGuy is touching player1, then the function physicsUpdate is called\n"
                           ++ "with t (time)."
 updateBadGuy4 : Element
 updateBadGuy4 =
-  body (padLeft 54 ' ' " | (badGuy `within` player1) -> physicsUpdate t")
+  body "| (badGuy `within` player1) -> "
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy4Msg) else (Signal.send hoveredOn ""))
+
+updateBadGuy4a : Element
+updateBadGuy4a =
+  body " physicsUpdate t"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy4Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy5Msg = "This bit of code is setting forth attributes of badGuy that will be modified."
 updateBadGuy5 : Element
 updateBadGuy5 =
-  body (padLeft 25 ' ' " { badGuy |")
+  body "{ badGuy |"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy5Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy6Msg = "The vx value of badGuy takes the result of the stepV funtion which takes the\n"
                                   ++ "the true or false value for the conditional statements."
 updateBadGuy6 : Element
 updateBadGuy6 =
-  body (padLeft 65 ' ' " vx <- stepV vx (badGuy.vx < 0) (badGuy.vx > 0),")
+  body "vx <- stepV vx (badGuy.vx < 0)"
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy6Msg) else (Signal.send hoveredOn ""))
+
+updateBadGuy6a : Element
+updateBadGuy6a =
+  body " (badGuy.vx > 0),"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy6Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy7Msg = "The vx value of badGuy takes the result of the stepV funtion which takes the\n"
                                   ++ "the true or false value for the conditional statements."
 updateBadGuy7 : Element
 updateBadGuy7 =
-  body (padLeft 65 ' ' " vy <- stepV vy (badGuy.vy < 0 ) (badGuy.vy > 0)")
+  body "vy <- stepV vy (badGuy.vy < 0 ) "
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy7Msg) else (Signal.send hoveredOn ""))
+
+updateBadGuy7a : Element
+updateBadGuy7a =
+  body " (badGuy.vy > 0)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy7Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy8Msg = "The bracket ends the attributes of badGuy which are modified."
 updateBadGuy8 : Element
 updateBadGuy8 =
-  body (padLeft 16 ' ' " }")
+  body "}"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy8Msg) else (Signal.send hoveredOn ""))
 
 displayUpdate7 : (Int, Int) -> Int -> String -> Element
