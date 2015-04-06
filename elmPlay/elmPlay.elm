@@ -82,8 +82,9 @@ containerHeight = 700
 subtitleHeight = 500
 extraLine = 15
 codeHeight = 30
-gameHeight = 350
+gameHeight = 225
 bottomHeight = 150
+iconHeight = 125
 
 -- Wayfinding tools
 wayfinderPast =
@@ -133,6 +134,10 @@ helpElement : String -> Element
 helpElement hoveredOn =
   color elmOrange <| container containerWidth bottomHeight middle <| body hoveredOn
 
+iconElement : Element -> Element
+iconElement iconType =
+  color grey <| container containerWidth iconHeight middle iconType
+
 buttonGoElement : Int -> Element
 buttonGoElement sig =
   color grey <| container containerWidth 50 midRight <| flow left
@@ -167,6 +172,9 @@ elmGrey = rgb 71 80 102
 elmOrange = rgb 237 149 0
 elmBlue = rgb 76 166 195
 elmGreen = rgb 127 209 17
+
+-- Icons
+elmLogo = image 100 100 "http://elm-lang.org/logo.svg"
 
 -- Text formatting
 title f = Text.fromString(f)
@@ -302,6 +310,7 @@ displayImports (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingImports
     , titleElement importsWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| importsContainer sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -459,7 +468,8 @@ displaySignals1 : (Int, Int) -> Int -> String -> Element
 displaySignals1 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingSignals
-    ,  titleElement signalsWelcomeMsg1
+    , titleElement signalsWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| signalsContainer1 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -481,13 +491,19 @@ signalsContainer1 sig hoveredOn =
     , body " 12."
     ]
 
-signalMain1Msg = "Define the main function Every Elm program must have a main."
+signalMain1Msg = "Define the main function. Every Elm\n" ++
+                 "program must have a main. Main functions\n" ++
+                 "often combine signals with the function\n" ++
+                 "that writes the output to the screen."
 signalMain1 : Element
 signalMain1 =
   body " 10. main ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalMain1Msg) else (Signal.send hoveredOn ""))
 
-signalMain2Msg = "Map the signals Window.dimensions and gameState to the function view."
+signalMain2Msg = "This function maps (or combines) the view\n" ++
+                 "function (writes the game to the screen)\n" ++
+                 "with the windo dimensions signal and the\n" ++
+                 "gameState signal."
 signalMain2 : Element
 signalMain2 =
   body " Signal.map2 view Window.dimensions"
@@ -503,6 +519,7 @@ displaySignals2 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| signalsContainer2 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -521,19 +538,23 @@ signalsContainer2 sig hoveredOn =
     , body " 16."
     ]
 
-signalGameState1Msg = " Define gameState as a signal of type Game."
+signalGameState1Msg = "Define gameState as a signal of type Game.\n" ++
+                      "The data type Game will be discussed in the\n" ++
+                      "Model section."
 signalGameState1 : Element
 signalGameState1 =
   body " 13. gameState : Signal Game"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalGameState1Msg) else (Signal.send hoveredOn ""))
 
-signalGameState2Msg = " Define the specifics of gameState."
+signalGameState2Msg = "Define the specifics of gameState."
 signalGameState2 : Element
 signalGameState2 =
   body " 14. gameState ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalGameState2Msg) else (Signal.send hoveredOn ""))
 
-signalGameState3Msg = " gameState is past dependent on defaultGame and input."
+signalGameState3Msg = "gameState is a past dependent function, which\n" ++
+                      "means it remembers the past values of update,\n" ++
+                      "defaultGame, and input.\n"
 signalGameState3 : Element
 signalGameState3 =
   body" Signal.foldp update defaultGame input"
@@ -544,6 +565,7 @@ displaySignals3 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| signalsContainer3 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -567,7 +589,12 @@ signalDelta1 =
   body " 17. delta ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalDelta1Msg) else (Signal.send hoveredOn ""))
 
-signalDelta2Msg = "Notes the change in time 35 times a second, \nand then converts this to seconds."
+signalDelta2Msg = "inSeconds marks the current time in seconds. fps\n" ++
+                  "marks the change in time every one-thrity-fifth\n" ++
+                  "of a second. This signal maps (or combines) the\n" ++
+                  "above together so that the change in time is in\n." ++
+                  "seconds."
+
 signalDelta2 : Element
 signalDelta2 =
   body " Signal.map inSeconds (fps 35)"
@@ -578,6 +605,7 @@ displaySignals4 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| signalsContainer4 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -621,7 +649,9 @@ signalsContainer4 sig hoveredOn =
     , body " 28."
     ]
 
-signalInput1Msg = "Defines input as a signal of type Input."
+signalInput1Msg = "Defines input as a signal of type Input.\n" ++
+                  "The data type Input will be discussed in\n" ++
+                  "Model section."
 signalInput1 : Element
 signalInput1 =
   body " 20. input : Signal Input"
@@ -633,37 +663,47 @@ signalInput2 =
   body " 21. input ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput2Msg) else (Signal.send hoveredOn ""))
 
-signalInput3Msg = "For every delta, the specific attributes of input are updated."
+signalInput3Msg = "This function records some data on every delta,\n" ++
+                  "which is every 1/35 of a second."
 signalInput3 : Element
 signalInput3 =
   body "Signal.sampleOn delta <|"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput3Msg) else (Signal.send hoveredOn ""))
 
-signalInput4Msg = "Maps all four attributes of Input to the update that happens every delta."
+signalInput4Msg = "The data recorded is a signal that combines the\n" ++
+                  "four attributes of type Indput."
 signalInput4 : Element
 signalInput4 =
   body "Signal.map4 Input"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput4Msg) else (Signal.send hoveredOn ""))
 
-signalInput5Msg = "Gives a true or false based upon the space bar being pressed."
+signalInput5Msg = "The first piece of data recorded is the space bar.\n" ++
+                  "The result is a true or false based upon the space\n" ++
+                  "bar being pressed."
 signalInput5 : Element
 signalInput5 =
   body "Keyboard.space"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput5Msg) else (Signal.send hoveredOn ""))
 
-signalInput6Msg = "Updates the x attribute based upon left/right arrow being pressed."
+signalInput6Msg = "The next pieceof data recorded is the left/right\n" ++
+                  "keys. If left arrow is pressed then, the x-value\n" ++
+                  "decreases. If the right arrow is pressed, then the\n" ++
+                  "x-value increases."
 signalInput6 : Element
 signalInput6 =
   body "(Signal.map .x Keyboard.arrows)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput6Msg) else (Signal.send hoveredOn ""))
 
-signalInput7Msg = "Updates the y attribute based upon up/down arrow being pressed."
+signalInput7Msg = "The next pieceof data recorded is the up/down\n" ++
+                  "keys. If down arrow is pressed then, the y-value\n" ++
+                  "decreases. If the up arrow is pressed, then the\n" ++
+                  "y-value increases."
 signalInput7 : Element
 signalInput7 =
   body "(Signal.map .y Keyboard.arrows)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput7Msg) else (Signal.send hoveredOn ""))
 
-signalInput8Msg = "Updates delta with the new time."
+signalInput8Msg = "Finally, the change in time is recorded in seconds."
 signalInput8 : Element
 signalInput8 =
   body "delta"
@@ -746,6 +786,7 @@ displayModel1 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| modelContainer1 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -759,13 +800,17 @@ modelContainer1 sig hoveredOn =
     , body " 31."
     ]
 
-gameSizeMsg = "Set the variable gameWidth to 600 and variable gameHeight to 400."
+gameSizeMsg = "Set gameWidth to 600 and gameHeight to 400.\n" ++
+              "gameWidth and gameHeight are also grouped\n" ++
+              "together as a tuple.\n"
 gameSize : Element
 gameSize =
   body " 29. (gameWidth, gameHeight) = (600, 400)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn gameSizeMsg) else (Signal.send hoveredOn ""))
 
-playingSizeMsg = " Set variable halfWidth to 300 and variable halfHeight to 200."
+playingSizeMsg = "Set halfWidth to 300 and halfHeight to 200.\n" ++
+                 "halfWidth and halfHeight are also grouped\n" ++
+                 "together as a tuple.\n"
 playingSize : Element
 playingSize =
   body " 30. (halfWidth, halfHeight) = (300, 200)"
@@ -776,6 +821,7 @@ displayModel2 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| modelContainer2 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -788,7 +834,8 @@ modelContainer2 sig hoveredOn =
     , body " 33."
     ]
 
-typeStateMsg = " Create type State and indicate it can have either the value Play or Pause."
+typeStateMsg = "The data type State is created. It has\n" ++
+               "the value of either Play or Pause."
 typeState : Element
 typeState =
   body " 32. type State = Play | Pause"
@@ -799,6 +846,7 @@ displayModel3 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| modelContainer3 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -835,6 +883,7 @@ displayModel4 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| modelContainer4 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -871,6 +920,7 @@ displayModel5 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| modelContainer5 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -916,6 +966,7 @@ displayModel6 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| modelContainer6 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1004,6 +1055,7 @@ displayModel7 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| modelContainer7 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1153,6 +1205,7 @@ displayUpdate1 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| updateContainer1 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1217,6 +1270,7 @@ displayUpdate2 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| updateContainer2 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1278,6 +1332,7 @@ displayUpdate3 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| updateContainer3 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1350,6 +1405,7 @@ displayUpdate4 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| updateContainer4 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1443,6 +1499,7 @@ displayUpdate5 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| updateContainer5 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1493,6 +1550,7 @@ displayUpdate6 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| updateContainer6 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1613,6 +1671,7 @@ displayUpdate7 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| updateContainer7 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1707,6 +1766,7 @@ displayUpdate8 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| updateContainer8 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1746,6 +1806,7 @@ displayUpdate9 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| updateContainer9 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1834,6 +1895,7 @@ displayUpdate10 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| updateContainer10 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1940,6 +2002,7 @@ displayUpdate11 (width, height) sig hoveredOn=
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| updateContainer11 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2008,6 +2071,7 @@ displayUpdate12 (width, height) sig hoveredOn=
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| updateContainer12 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2043,6 +2107,7 @@ displayUpdate13 (width, height) sig hoveredOn=
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| updateContainer13 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2088,6 +2153,7 @@ displayUpdate14 (width, height) sig hoveredOn=
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| updateContainer14 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2218,6 +2284,7 @@ displayView1 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| viewContainer1 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2251,6 +2318,7 @@ displayView2 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| viewContainer2 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2299,6 +2367,7 @@ displayView3 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| viewContainer3 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2352,6 +2421,7 @@ displayView4 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| viewContainer4 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2389,6 +2459,7 @@ displayView5 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| viewContainer5 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2438,6 +2509,7 @@ displayView6 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| viewContainer6 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2488,6 +2560,7 @@ displayView7 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| viewContainer7 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2527,6 +2600,7 @@ displayView8 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| viewContainer8 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2589,6 +2663,7 @@ displayView9 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| viewContainer9 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2636,6 +2711,7 @@ displayView10 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| viewContainer10 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2679,6 +2755,7 @@ displayView11 (width, height) sig hoveredOn =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
+    , iconElement elmLogo
     , codeElement <| viewContainer11 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
