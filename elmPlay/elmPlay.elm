@@ -324,19 +324,24 @@ importsContainer sig hoveredOn =
     , body " 9."
     ]
 
-colorMsg = " Import everything from the Color library."
+colorMsg = "Import the Color library. This allows you\n" ++
+           "setting the colors for the game area and\n" ++
+           "the shapes."
 importColor : Element
 importColor =
   body " 1. import Color (..)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn colorMsg) else (Signal.send hoveredOn ""))
 
-graphicsElementMsg = " Import everything from the Graphics.Element library."
+graphicsElementMsg = "Import everything from the Graphics.Element\n" ++
+                     "library."
 importGraphicsElement : Element
 importGraphicsElement =
   body " 3. import Graphics.Element (..)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn graphicsElementMsg) else (Signal.send hoveredOn ""))
 
-graphicsCollageMsg = " Import everything from the Graphics.Collage library."
+graphicsCollageMsg = "Import everything from the Graphics.Collage\n" ++
+                     "library. Collages are freeform graphics. This is\n" ++
+                     "the game area with the shapes that move around."
 importGraphicsCollage : Element
 importGraphicsCollage =
   body " 2. import Graphics.Collage (..)"
