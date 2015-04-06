@@ -948,14 +948,17 @@ modelContainer5 sig hoveredOn =
     , body " 42."
     ]
 
-aliasGame1Msg = " Create a type alias Game with the following characteristics."
+aliasGame1Msg = "Create the type Game as an alias. An alias\n" ++
+                "means that you can define attributes individually.\n"
 aliasGame1 : Element
 aliasGame1 =
   body " 40. type alias Game ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasGame1Msg) else (Signal.send hoveredOn ""))
 
-aliasGame2Msg = "Objects of type Game have a value state of type State,"
-                           ++ "a value \nbadGuy of type BadGuy, and a value of player1 of type Player."
+aliasGame2Msg = "The data type Game has the following attributes:\n" ++
+                "a state of type State (either Play or Pause), a \n" ++
+                "badGuy of type BadGuy including all its attributes,\n" ++
+                "and a player of type Player with all of its attributes.\n"
 aliasGame2 : Element
 aliasGame2 =
   body "{ state:State, badGuy:BadGuy, "
@@ -1010,35 +1013,39 @@ modelContainer6 sig hoveredOn =
     , body " 49."
     ]
 
-defaultGame1Msg = " Create an object defaultGame of type Game."
+defaultGame1Msg = "Create an object defaultGame of type Game."
 defaultGame1 : Element
 defaultGame1 =
   body " 43. defaultGame : Game"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame1Msg) else (Signal.send hoveredOn ""))
 
-defaultGame2Msg = " Assign each attribute of defaultGame with the following values."
+defaultGame2Msg = "Describe specific values for defaultGame."
 defaultGame2 : Element
 defaultGame2 =
   body " 44. defaultGame ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame2Msg) else (Signal.send hoveredOn ""))
 
-defaultGame3Msg = " The state attribute has a value of Pause."
+defaultGame3Msg = "The state is set to the value of Pause."
 defaultGame3 : Element
 defaultGame3 =
   body "{ state = Pause"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame3Msg) else (Signal.send hoveredOn ""))
 
-defaultGame4Msg = "The badGuy attributes have an x value of 0, a y value of 0, a vx value \nof 300,"
-                              ++ "and a vy value of 300. The x and y values are used for the \nbadGuy's postion,"
-                              ++ "and the vx and vy values are the velocity (think speed) \nof the badGuy."
+defaultGame4Msg = "The badGuy attribute has the values of:\n" ++
+                  "x = 0 and y = 0, its starting position\n" ++
+                  "vx = 300 and vy = 300, its velocity (speed)."
 defaultGame4 : Element
 defaultGame4 =
   body ", badGuy = { x=0, y=0, vx=300, vy=300 }"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame4Msg) else (Signal.send hoveredOn ""))
 
-defaultGame5Msg = "The player1 attributes have an x value of 15-halfWidth (or -285), a \ny value of 0,"
-                              ++ " a vx value of 300, and a vy value of 300. The x and y values \nare used for the player1's postion,"
-                              ++ "and the vx and vy values are the velocity \n(think speed) of the player1. player1 also has 3 lives."
+defaultGame5Msg = "The player1 attribute has the values of:\n" ++
+                  "x = 15-halfWidth and y = 0, its starting position\n" ++
+                  "15 is the radius of player1, so 15-halfWidth keeps\n" ++
+                  "all of player1 on the game area. vx = 0 and vy = 0,\n" ++
+                  "its velocity (speed). The velocity is set to 0 as\n" ++
+                  "you have to use arrow keys to make player1 move.\n" ++
+                  "It does not move automatically. lives are set to 3."
 defaultGame5 : Element
 defaultGame5 =
   body ", player1 = { x = 15-halfWidth, y = 0"
@@ -1050,7 +1057,7 @@ defaultGame6 =
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame5Msg) else (Signal.send hoveredOn ""))
 
 
-defaultGame7Msg = " End the list of attributes for defaultGame."
+defaultGame7Msg = "Ends the list of attributes for defaultGame."
 defaultGame7 : Element
 defaultGame7 =
   body "}"
@@ -1099,40 +1106,41 @@ modelContainer7 sig hoveredOn =
     , body " 56."
     ]
 
-aliasInput1Msg = " Create a type alias Input with the following characteristics."
+aliasInput1Msg = "Create data type Input wich is an alias."
 aliasInput1 : Element
 aliasInput1 =
   body " 50. type alias Input ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasInput1Msg) else (Signal.send hoveredOn ""))
 
-aliasInput2Msg = "Objects of type Input has an attribute called space with a boolean value.\n"
-                          ++ "Boolean means either true or false."
+aliasInput2Msg = "There is an attribute called space, which is a\n" ++
+                 "boolean value. That is, it is either true or false.\n" ++
+                 "space is mapped to the space bar in gameState."
 aliasInput2 : Element
 aliasInput2 =
   body (padLeft 19 ' ' " { space : Bool")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasInput2Msg) else (Signal.send hoveredOn ""))
 
-aliasInput3Msg = "Objects of type Input has an attribute called dir2 with a integer value.\n"
-                          ++ "Integer means a number without a decimal."
+aliasInput3Msg = "There is an attribute called dir1, of type integer.\n" ++
+                 "Integer means a number without a decimal."
 aliasInput3 : Element
 aliasInput3 =
   body (padLeft 17 ' ' " , dir1 : Int")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasInput3Msg) else (Signal.send hoveredOn ""))
 
-aliasInput4Msg = "Objects of type Input has an attribute called dir2 with a integer value.\n"
-                          ++ "Integer means a number without a decimal."
+aliasInput4Msg = "There is an attribute called dir2, of type integer.\n" ++
+                 "Integer means a number without a decimal."
 aliasInput4 : Element
 aliasInput4 =
   body (padLeft 17 ' ' " , dir2 : Int")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasInput4Msg) else (Signal.send hoveredOn ""))
 
-aliasInput5Msg = "Objects fo type Input have an attribute called delta with a Time value."
+aliasInput5Msg = "There is an attribute called delta with a Time value."
 aliasInput5 : Element
 aliasInput5 =
   body (padLeft 19 ' ' " , delta : Time")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasInput5Msg) else (Signal.send hoveredOn ""))
 
-aliasInput6Msg = "End the list of attributes for Input."
+aliasInput6Msg = "Ends the list of attributes for Input."
 aliasInput6 : Element
 aliasInput6 =
   body (padLeft 6 ' ' " }")
