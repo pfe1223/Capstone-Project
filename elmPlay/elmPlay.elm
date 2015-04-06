@@ -313,36 +313,39 @@ displayImports (width, height) sig hoveredOn =
 importsContainer : Int -> String -> Element
 importsContainer sig hoveredOn =
   flow down
-    [ importGraphicsInput
-    , importGraphicsElement
+    [ importColor
     , importGraphicsCollage
-    , importText
+    , importGraphicsElement
+    , importKeyboard
     , importSignal
-    , importMouse
+    , importText
+    , importTime
+    , importWindow
+    , body " 9."
     ]
 
-graphicsInputMsg = " Import everything from the Graphics.Input library."
-importGraphicsInput : Element
-importGraphicsInput =
-  body " 1. import Graphics.Input (..)\n"
-    |> hoverable (\ r -> if r then (Signal.send hoveredOn graphicsInputMsg) else (Signal.send hoveredOn ""))
+colorMsg = " Import everything from the Color library."
+importColor : Element
+importColor =
+  body " 1. import Color (..)"
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn colorMsg) else (Signal.send hoveredOn ""))
 
 graphicsElementMsg = " Import everything from the Graphics.Element library."
 importGraphicsElement : Element
 importGraphicsElement =
-  body " 2. import Graphics.Element (..)"
+  body " 3. import Graphics.Element (..)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn graphicsElementMsg) else (Signal.send hoveredOn ""))
 
 graphicsCollageMsg = " Import everything from the Graphics.Collage library."
 importGraphicsCollage : Element
 importGraphicsCollage =
-  body " 3. import Graphics.Collage (..)"
+  body " 2. import Graphics.Collage (..)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn graphicsCollageMsg) else (Signal.send hoveredOn ""))
 
 textMsg = " Import everything from the Text library."
 importText : Element
 importText =
-  body " 4. import Text (..)"
+  body " 6. import Text (..)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn textMsg) else (Signal.send hoveredOn ""))
 
 signalMsg = " Import the Signal library."
@@ -351,11 +354,23 @@ importSignal =
   body " 5. import Signal"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalMsg) else (Signal.send hoveredOn ""))
 
-mouseMsg = " Import everything from the Mouse library."
-importMouse : Element
-importMouse =
-  body (" 6. import Mouse (..)\n" ++ " 7.")
-    |> hoverable (\ r -> if r then (Signal.send hoveredOn mouseMsg) else (Signal.send hoveredOn ""))
+keyboardMsg = " Import everything from the Keyboard library."
+importKeyboard : Element
+importKeyboard =
+  body (" 4. import Keyboard")
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn keyboardMsg) else (Signal.send hoveredOn ""))
+
+timeMsg = " Import everything from the Time library."
+importTime : Element
+importTime =
+  body (" 7. import Time")
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn timeMsg) else (Signal.send hoveredOn ""))
+
+windowMsg = " Import everything from the Keyboard library."
+importWindow : Element
+importWindow =
+  body (" 8. import Window")
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn windowMsg) else (Signal.send hoveredOn ""))
 
 {--
 *************************************************************
@@ -440,7 +455,7 @@ signalsContainer1 sig hoveredOn =
   flow down
     [ signalMain1
     , flow right
-        [ body " 9."
+        [ body " 11."
         , spacer indent 1
         , signalMain2
         ]
@@ -448,13 +463,13 @@ signalsContainer1 sig hoveredOn =
         [ spacer (indent *4) 1
         , signalMain3
         ]
-    , body " 10."
+    , body " 12."
     ]
 
 signalMain1Msg = "Define the main function Every Elm program must have a main."
 signalMain1 : Element
 signalMain1 =
-  body " 8. main ="
+  body " 10. main ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalMain1Msg) else (Signal.send hoveredOn ""))
 
 signalMain2Msg = "Map the signals Window.dimensions and gameState to the function view."
@@ -484,23 +499,23 @@ signalsContainer2 sig hoveredOn =
     [ signalGameState1
     , signalGameState2
     , flow right
-        [ body " 13."
+        [ body " 15."
         , spacer indent 1
         , signalGameState3
         ]
-    , body " 14."
+    , body " 16."
     ]
 
 signalGameState1Msg = " Define gameState as a signal of type Game."
 signalGameState1 : Element
 signalGameState1 =
-  body " 11. gameState : Signal Game"
+  body " 13. gameState : Signal Game"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalGameState1Msg) else (Signal.send hoveredOn ""))
 
 signalGameState2Msg = " Define the specifics of gameState."
 signalGameState2 : Element
 signalGameState2 =
-  body " 12. gameState ="
+  body " 14. gameState ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalGameState2Msg) else (Signal.send hoveredOn ""))
 
 signalGameState3Msg = " gameState is past dependent on defaultGame and input."
@@ -524,17 +539,17 @@ signalsContainer3 sig hoveredOn =
   flow down
     [ signalDelta1
     , flow right
-        [ body " 16."
+        [ body " 18."
         , spacer indent 1
         , signalDelta2
         ]
-    , body " 17."
+    , body " 19."
     ]
 
 signalDelta1Msg = " Define specific characteristics of the delta signal."
 signalDelta1 : Element
 signalDelta1 =
-  body " 15. delta ="
+  body " 17. delta ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalDelta1Msg) else (Signal.send hoveredOn ""))
 
 signalDelta2Msg = "Notes the change in time 35 times a second, \nand then converts this to seconds."
@@ -559,48 +574,48 @@ signalsContainer4 sig hoveredOn =
     [ signalInput1
     , signalInput2
     , flow right
-        [ body " 20."
+        [ body " 22."
         , spacer indent 1
         , signalInput3
         ]
     , flow right
-        [ body " 21."
+        [ body " 23."
         , spacer (indent*2) 1
         , signalInput4
         ]
     , flow right
-        [ body " 22."
+        [ body " 24."
         , spacer (indent*3) 1
         , signalInput5
         ]
     , flow right
-        [ body " 23."
+        [ body " 25."
         , spacer (indent*3) 1
         , signalInput6
         ]
     , flow right
-        [ body " 24."
+        [ body " 26."
         , spacer (indent*3) 1
         , signalInput7
         ]
     , flow right
-        [ body " 25."
+        [ body " 27."
         , spacer (indent*3) 1
         , signalInput8
         ]
-    , body " 26."
+    , body " 28."
     ]
 
 signalInput1Msg = "Defines input as a signal of type Input."
 signalInput1 : Element
 signalInput1 =
-  body " 18. input : Signal Input"
+  body " 20. input : Signal Input"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput1Msg) else (Signal.send hoveredOn ""))
 
 signalInput2Msg = "Defines the specifics of input."
 signalInput2 : Element
 signalInput2 =
-  body " 19. input ="
+  body " 21. input ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput2Msg) else (Signal.send hoveredOn ""))
 
 signalInput3Msg = "For every delta, the specific attributes of input are updated."
@@ -726,19 +741,19 @@ modelContainer1 sig hoveredOn =
   flow down
     [ gameSize
     , playingSize
-    , body " 29."
+    , body " 31."
     ]
 
 gameSizeMsg = "Set the variable gameWidth to 600 and variable gameHeight to 400."
 gameSize : Element
 gameSize =
-  body " 27. (gameWidth, gameHeight) = (600, 400)"
+  body " 29. (gameWidth, gameHeight) = (600, 400)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn gameSizeMsg) else (Signal.send hoveredOn ""))
 
 playingSizeMsg = " Set variable halfWidth to 300 and variable halfHeight to 200."
 playingSize : Element
 playingSize =
-  body " 28. (halfWidth, halfHeight) = (300, 200)"
+  body " 30. (halfWidth, halfHeight) = (300, 200)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn playingSizeMsg) else (Signal.send hoveredOn ""))
 
 displayModel2 : (Int, Int) -> Int -> String -> Element
@@ -755,13 +770,13 @@ modelContainer2 : Int -> String -> Element
 modelContainer2 sig hoveredOn =
   flow down
     [ typeState
-    , body " 31."
+    , body " 33."
     ]
 
 typeStateMsg = " Create type State and indicate it can have either the value Play or Pause."
 typeState : Element
 typeState =
-  body " 30. type State = Play | Pause"
+  body " 32. type State = Play | Pause"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn typeStateMsg) else (Signal.send hoveredOn ""))
 
 displayModel3 : (Int, Int) -> Int -> String -> Element
@@ -779,17 +794,17 @@ modelContainer3 sig hoveredOn =
   flow down
     [ aliasBadGuy1
     , flow right
-        [ body " 33."
+        [ body " 35."
         , spacer indent 1
         , aliasBadGuy2
         ]
-    , body " 34."
+    , body " 36."
     ]
 
 aliasBadGuy1Msg = " Create a type alias BadGuy with the following characteristics."
 aliasBadGuy1 : Element
 aliasBadGuy1 =
-  body " 32. type alias BadGuy ="
+  body " 34. type alias BadGuy ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasBadGuy1Msg) else (Signal.send hoveredOn ""))
 
 aliasBadGuy2Msg = "Objects of type BadGuy have an x value of type float, a y value of \ntype float,"
@@ -815,17 +830,17 @@ modelContainer4 sig hoveredOn =
   flow down
     [ aliasPlayer1
     , flow right
-        [ body " 36."
+        [ body " 38."
         , spacer indent 1
         , aliasPlayer2
         ]
-    , body " 37."
+    , body " 39."
     ]
 
 aliasPlayer1Msg = " Create a type alias Player with the following characteristics."
 aliasPlayer1 : Element
 aliasPlayer1 =
-  body " 35. type alias Player ="
+  body " 37. type alias Player ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasPlayer1Msg) else (Signal.send hoveredOn ""))
 
 aliasPlayer2Msg = "Objects of type Player have an x value of type float, a y value of type \nfloat,"
@@ -851,7 +866,7 @@ modelContainer5 sig hoveredOn =
   flow down
     [ aliasGame1
     , flow right
-        [ body " 39."
+        [ body " 41."
         , spacer indent 1
         , aliasGame2
         ]
@@ -859,13 +874,13 @@ modelContainer5 sig hoveredOn =
       [ spacer (indent*4) 1
       , aliasGame3
       ]
-    , body " 40."
+    , body " 42."
     ]
 
 aliasGame1Msg = " Create a type alias Game with the following characteristics."
 aliasGame1 : Element
 aliasGame1 =
-  body " 38. type alias Game ="
+  body " 40. type alias Game ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasGame1Msg) else (Signal.send hoveredOn ""))
 
 aliasGame2Msg = "Objects of type Game have a value state of type State,"
@@ -897,17 +912,17 @@ modelContainer6 sig hoveredOn =
     [ defaultGame1
     , defaultGame2
     , flow right
-        [ body " 43."
+        [ body " 45."
         , spacer indent 1
         , defaultGame3
         ]
     , flow right
-        [ body " 44."
+        [ body " 46."
         , spacer indent 1
         , defaultGame4
         ]
     , flow right
-        [ body " 45."
+        [ body " 47."
         , spacer indent 1
         , defaultGame5
         ]
@@ -916,23 +931,23 @@ modelContainer6 sig hoveredOn =
         , defaultGame6
         ]
     , flow right
-        [ body " 46."
+        [ body " 48."
         , spacer indent 1
         , defaultGame7
         ]
-    , body " 47."
+    , body " 49."
     ]
 
 defaultGame1Msg = " Create an object defaultGame of type Game."
 defaultGame1 : Element
 defaultGame1 =
-  body " 41. defaultGame : Game"
+  body " 43. defaultGame : Game"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame1Msg) else (Signal.send hoveredOn ""))
 
 defaultGame2Msg = " Assign each attribute of defaultGame with the following values."
 defaultGame2 : Element
 defaultGame2 =
-  body " 42. defaultGame ="
+  body " 44. defaultGame ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame2Msg) else (Signal.send hoveredOn ""))
 
 defaultGame3Msg = " The state attribute has a value of Pause."
@@ -984,37 +999,37 @@ modelContainer7 sig hoveredOn =
   flow down
     [ aliasInput1
     , flow right
-        [ body " 49."
+        [ body " 51."
         , spacer indent 1
         , aliasInput2
         ]
     , flow right
-        [ body " 50."
+        [ body " 52."
         , spacer indent 1
         , aliasInput3
         ]
     , flow right
-        [ body " 51."
+        [ body " 53."
         , spacer indent 1
         , aliasInput4
         ]
     , flow right
-        [ body " 52."
+        [ body " 54."
         , spacer indent 1
         , aliasInput5
         ]
     , flow right
-        [ body " 53."
+        [ body " 55."
         , spacer indent 1
         , aliasInput6
         ]
-    , body " 54."
+    , body " 56."
     ]
 
 aliasInput1Msg = " Create a type alias Input with the following characteristics."
 aliasInput1 : Element
 aliasInput1 =
-  body " 48. type alias Input ="
+  body " 50. type alias Input ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasInput1Msg) else (Signal.send hoveredOn ""))
 
 aliasInput2Msg = "Objects of type Input has an attribute called space with a boolean value.\n"
@@ -1138,7 +1153,7 @@ updateContainer1 sig hoveredOn =
         , updateFunc3
         ]
     , flow right
-        [ body " 57."
+        [ body " 59."
         , spacer indent 1
         , updateFunc4
         ]
@@ -1146,21 +1161,21 @@ updateContainer1 sig hoveredOn =
         [ spacer (indent*4) 1
         , updateFunc4a
         ]
-    , body " 58."
+    , body " 60."
     ]
 
 updateFunc1Msg = "Update is a function that takes an object of type Input, an object of type\n"
                           ++ "Game, and returns a Game."
 updateFunc1 : Element
 updateFunc1 =
-  body " 55. update : Input -> Game -> Game"
+  body " 57. update : Input -> Game -> Game"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc1Msg) else (Signal.send hoveredOn ""))
 
 updateFunc2Msg = "Specifically, update takes Input in the form of space, dir1, dir2, and delta.\n"
                           ++ "The Game is defined as state, badGuy, and player1."
 updateFunc2 : Element
 updateFunc2 =
-  body " 56. update {space,dir1,dir2,delta} "
+  body " 58. update {space,dir1,dir2,delta} "
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc2Msg) else (Signal.send hoveredOn ""))
 
 updateFunc3 : Element
@@ -1196,26 +1211,26 @@ updateContainer2 : Int -> String -> Element
 updateContainer2 sig hoveredOn =
   flow down
     [ flow right
-        [ body " 59."
+        [ body " 61."
         , spacer (indent*2) 1
         , updateFunc5
         ]
     , flow right
-        [ body " 60."
+        [ body " 62."
         , spacer (indent*3) 1
         , updateFunc6
         ]
     , flow right
-        [ body " 61."
+        [ body " 63."
         , spacer (indent*3 + 15) 1
         , updateFunc7
         ]
     , flow right
-        [ body " 62."
+        [ body " 64."
         , spacer (indent*3 + 15) 1
         , updateFunc8
         ]
-    , body " 63."
+    , body " 65."
     ]
 
 updateFunc5Msg = "The function newState assumes a value dependent upon the cases below:"
@@ -1257,22 +1272,22 @@ updateContainer3 : Int -> String -> Element
 updateContainer3 sig hoveredOn =
   flow down
     [ flow right
-        [ body " 64."
+        [ body " 66."
         , spacer (indent*2) 1
         , updateFunc9
         ]
     , flow right
-        [ body " 65."
+        [ body " 67."
         , spacer (indent*3) 1
         , updateFunc10
         ]
     , flow right
-        [ body " 66."
+        [ body " 68."
         , spacer (indent*4) 1
         , updateFunc11
         ]
     , flow right
-        [ body " 67."
+        [ body " 69."
         , spacer (indent*4) 1
         , updateFunc12
         ]
@@ -1280,7 +1295,7 @@ updateContainer3 sig hoveredOn =
         [ spacer (indent*6 + 4) 1
         , updateFunc12a
         ]
-    , body " 68."
+    , body " 70."
     ]
 
 updateFunc9Msg = "The function newBadGuy assumes the value dependent \nupon the following cases:"
@@ -1329,27 +1344,27 @@ updateContainer4 : Int -> String -> Element
 updateContainer4 sig hoveredOn =
   flow down
     [ flow right
-        [ body " 69."
+        [ body " 71."
         , spacer indent 1
         , updateFunc13
         ]
     , flow right
-        [ body " 70."
+        [ body " 72."
         , spacer (indent*2) 1
         , updateFunc14
         ]
     , flow right
-        [ body " 71."
+        [ body " 73."
         , spacer (indent*3) 1
         , updateFunc15
         ]
     , flow right
-        [ body " 72."
+        [ body " 74."
         , spacer (indent*3) 1
         , updateFunc16
         ]
     , flow right
-        [ body " 73."
+        [ body " 75."
         , spacer (indent*3) 1
         , updateFunc17
         ]
@@ -1358,11 +1373,11 @@ updateContainer4 sig hoveredOn =
         , updateFunc17a
         ]
     , flow right
-        [ body " 74."
+        [ body " 76."
         , spacer (indent*2) 1
         , updateFunc18
         ]
-    , body " 75."
+    , body " 77."
     ]
 
 updateFunc13Msg = "The in part of the let expression tells us how the \nabove information will be used."
@@ -1437,7 +1452,7 @@ updateBadGuy1Msg = "The function updateBadGuy takes a Time, a BadGuy, and a Play
                           ++ "The function returns a type of BadGuy."
 updateBadGuy1 : Element
 updateBadGuy1 =
-  body " 76. updateBadGuy : Time -> BadGuy -> Player ->"
+  body " 78. updateBadGuy : Time -> BadGuy -> Player ->"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy1Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy1a : Element
@@ -1450,7 +1465,7 @@ updateBadGuy2Msg = "UpdateBadGuy takes t as time; the x, y, vx, and vy values of
                           ++ "and the x, y, vx, and vy values of player1."
 updateBadGuy2 : Element
 updateBadGuy2 =
-  body " 77. updateBadGuy t ({x,y,vx,vy} as badGuy)"
+  body " 79. updateBadGuy t ({x,y,vx,vy} as badGuy)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy2Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy2a : Element
@@ -1472,7 +1487,7 @@ updateContainer6 : Int -> String -> Element
 updateContainer6 sig hoveredOn=
   flow down
     [ flow right
-        [ body " 78."
+        [ body " 80."
         , spacer indent 1
         , updateBadGuy3
         ]
@@ -1481,7 +1496,7 @@ updateContainer6 sig hoveredOn=
         , updateBadGuy3a
         ]
     , flow right
-        [ body " 79."
+        [ body " 81."
         , spacer (indent + 15) 1
         , updateBadGuy4
         ]
@@ -1490,12 +1505,12 @@ updateContainer6 sig hoveredOn=
         , updateBadGuy4a
         ]
     , flow right
-        [ body " 80."
+        [ body " 82."
         , spacer (indent*2+5) 1
         , updateBadGuy5
         ]
     , flow right
-        [ body " 81."
+        [ body " 83."
         , spacer (indent*3+5) 1
         , updateBadGuy6
         ]
@@ -1504,7 +1519,7 @@ updateContainer6 sig hoveredOn=
         , updateBadGuy6a
         ]
     , flow right
-        [ body " 82."
+        [ body " 84."
         , spacer (indent*3+5) 1
         , updateBadGuy7
         ]
@@ -1513,7 +1528,7 @@ updateContainer6 sig hoveredOn=
         , updateBadGuy7a
         ]
     , flow right
-        [ body " 83."
+        [ body " 85."
         , spacer (indent*2+5) 1
         , updateBadGuy8
         ]
@@ -1592,17 +1607,17 @@ updateContainer7 : Int -> String -> Element
 updateContainer7 sig hoveredOn=
   flow down
     [ flow right
-        [ body " 84."
+        [ body " 86."
         , spacer indent 1
         , updateBadGuy9
         ]
     , flow right
-        [ body " 85."
+        [ body " 87."
         , spacer (indent*2) 1
         , updateBadGuy10
         ]
     , flow right
-        [ body " 86."
+        [ body " 88."
         , spacer (indent*3) 1
         , updateBadGuy11
         ]
@@ -1611,7 +1626,7 @@ updateContainer7 sig hoveredOn=
         , updateBadGuy11a
         ]
     , flow right
-        [ body " 87."
+        [ body " 89."
         , spacer (indent*3) 1
         , updateBadGuy12
         ]
@@ -1620,11 +1635,11 @@ updateContainer7 sig hoveredOn=
         , updateBadGuy12a
         ]
     , flow right
-        [ body " 88."
+        [ body " 90."
         , spacer (indent*2) 1
         , updateBadGuy13
         ]
-    , body " 89."
+    , body " 91."
     ]
 
 updateBadGuy9Msg = "In all other cases, the function physicsUpdate will be \ncalled with different arguments."
@@ -1697,7 +1712,7 @@ updatePlayer1Msg = "This defines the function updatePlayer, which takes a time, 
                           ++ "integer, another integer, a player, and returns a player."
 updatePlayer1 : Element
 updatePlayer1 =
-  body " 90. updatePlayer : Time -> Int -> Int -> Int -> "
+  body " 92. updatePlayer : Time -> Int -> Int -> Int -> "
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer1Msg) else (Signal.send hoveredOn ""))
 
 updatePlayer1a : Element
@@ -1708,7 +1723,7 @@ updatePlayer1a =
 updatePlayer2Msg = "The function updatePlayer is called with t, dir1, dir2, lives, and player."
 updatePlayer2 : Element
 updatePlayer2 =
-  body " 91. updatePlayer t dir1 dir2 lives player ="
+  body " 93. updatePlayer t dir1 dir2 lives player ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer2Msg) else (Signal.send hoveredOn ""))
 
 displayUpdate9 : (Int, Int) -> Int -> String -> Element
@@ -1725,7 +1740,7 @@ updateContainer9 : Int -> String -> Element
 updateContainer9 sig hoveredOn=
   flow down
     [ flow right
-        [ body " 92."
+        [ body " 94."
         , spacer indent 1
         , updatePlayer3
         ]
@@ -1734,26 +1749,26 @@ updateContainer9 sig hoveredOn=
         , updatePlayer3a
         ]
     , flow right
-        [ body " 93."
+        [ body " 95."
         , spacer (indent*4) 1
         , updatePlayer4
         ]
     , flow right
-        [ body " 94."
+        [ body " 96."
         , spacer (indent*2) 1
         , updatePlayer5
         ]
     , flow right
-        [ body " 95."
+        [ body " 97."
         , spacer (indent*3) 1
         , updatePlayer6
         ]
     , flow right
-        [ body " 96."
+        [ body " 98."
         , spacer (indent*3) 1
         , updatePlayer7
         ]
-    , body " 97."
+    , body " 99."
     ]
 
 updatePlayer3Msg = "An object player1 is created. Its attributes of vx and vy are set to the values \ncreated "
@@ -1813,17 +1828,17 @@ updateContainer10 : Int -> String -> Element
 updateContainer10 sig hoveredOn=
   flow down
     [ flow right
-        [ body " 98."
+        [ body " 100."
         , spacer indent 1
         , updatePlayer8
         ]
     , flow right
-        [ body " 99."
+        [ body " 101."
         , spacer (indent*2) 1
         , updatePlayer9
         ]
     , flow right
-        [ body " 100."
+        [ body " 102."
         , spacer (indent*3) 1
         , updatePlayer10
         ]
@@ -1832,7 +1847,7 @@ updateContainer10 sig hoveredOn=
         , updatePlayer10a
         ]
     , flow right
-        [ body " 101."
+        [ body " 103."
         , spacer (indent*3) 1
         , updatePlayer11
         ]
@@ -1841,16 +1856,16 @@ updateContainer10 sig hoveredOn=
         , updatePlayer11a
         ]
     , flow right
-        [ body " 102."
+        [ body " 104."
         , spacer (indent*3) 1
         , updatePlayer12
         ]
     , flow right
-        [ body " 103."
+        [ body " 105."
         , spacer (indent+8) 1
         , updatePlayer13
         ]
-    , body " 104."
+    , body " 106."
     ]
 
 updatePlayer8Msg = "This is the second part of the let statement. The newly introduced alive will be\n"
@@ -1920,33 +1935,33 @@ updateContainer11 sig hoveredOn =
   flow down
     [ updatePhysics1
     , flow right
-        [ body " 106."
+        [ body " 108."
         , spacer indent 1
         , updatePhysics2
         ]
     , flow right
-        [ body " 107."
+        [ body " 109."
         , spacer (indent*2) 1
         , updatePhysics3
         ]
     , flow right
-        [ body " 108."
+        [ body " 110."
         , spacer (indent*2) 1
         , updatePhysics4
         ]
     , flow right
-        [ body " 109."
+        [ body " 111."
         , spacer indent 1
         , updatePhysics5
         ]
-    , body " 110."
+    , body " 112."
     ]
 
 updatePhysics1Msg = "The function updatePhysics takes t (time) and the values of x, y, vx, and vy\n"
                           ++ "which are treated as one object."
 updatePhysics1 : Element
 updatePhysics1 =
-  body " 105. physicsUpdate t ({x,y,vx,vy} as obj) ="
+  body " 107. physicsUpdate t ({x,y,vx,vy} as obj) ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePhysics1Msg) else (Signal.send hoveredOn ""))
 
 updatePhysics2Msg = "This line of code means that the object will have its attribures modified."
@@ -1988,18 +2003,18 @@ updateContainer12 sig hoveredOn =
   flow down
     [ updateNear1
     , flow right
-        [ body " 112."
+        [ body " 114."
         , spacer indent 1
         , updateNear2
         ]
-    , body " 113."
+    , body " 115."
     ]
 
 updateNear1Msg = "The function near takes three arguments: k, c, and n. It determines if two \nobjects "
                             ++ "(k and n) are near one another based upon a third number (c)."
 updateNear1 : Element
 updateNear1 =
-  body " 111. near k c n ="
+  body " 113. near k c n ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateNear1Msg) else (Signal.send hoveredOn ""))
 
 updateNear2Msg = "This is the logic equation to determine if two objects are touching."
@@ -2023,7 +2038,7 @@ updateContainer13 sig hoveredOn =
   flow down
     [ updateWithin1
     , flow right
-        [ body " 115."
+        [ body " 117."
         , spacer indent 1
         , updateWithin2
         ]
@@ -2031,13 +2046,13 @@ updateContainer13 sig hoveredOn =
         [ spacer (indent*4) 1
         , updateWithin2a
         ]
-    , body " 116."
+    , body " 118."
     ]
 
 updateWithin1Msg = "The function within takes badGuy and player1 and determines if they \nare touching."
 updateWithin1 : Element
 updateWithin1 =
-  body " 114. within badGuy player1 ="
+  body " 116. within badGuy player1 ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateWithin1Msg) else (Signal.send hoveredOn ""))
 
 updateWithin2Msg = "The function within calls the function near, and passes it the x positions \nof player1 "
@@ -2068,21 +2083,21 @@ updateContainer14 sig hoveredOn =
   flow down
     [ updateStepV1
     , flow right
-        [ body " 118."
+        [ body " 120."
         , spacer indent 1
         , updateStepV2
         ]
     , flow right
-        [ body " 119."
+        [ body " 121."
         , spacer (indent + 1) 1
         , updateStepV3
         ]
     , flow right
-        [ body " 120."
+        [ body " 122."
         , spacer (indent + 1) 1
         , updateStepV4
         ]
-    , body " 121."
+    , body " 123."
     ]
 
 updateStepV1Msg = "The defines what the function stepV does. It takes two conditions (true \nor false) "
@@ -2090,7 +2105,7 @@ updateStepV1Msg = "The defines what the function stepV does. It takes two condit
                               ++ "game area."
 updateStepV1 : Element
 updateStepV1 =
-  body " 117. stepV v condition1 condition2 ="
+  body " 119. stepV v condition1 condition2 ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateStepV1Msg) else (Signal.send hoveredOn ""))
 
 updateStepV2Msg = "If condition1 is true, then stepV returns the absolute value of v. This \nbounces "
@@ -2205,7 +2220,7 @@ viewFunc1Msg = "The function view takes a tupple of integers and a game, and the
                           ++ "integer is a number without a decimal."
 viewFunc1 : Element
 viewFunc1 =
-  body " 122. view : (Int, Int) -> Game -> Element"
+  body " 124. view : (Int, Int) -> Game -> Element"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc1Msg) else (Signal.send hoveredOn ""))
 
 viewFunc2Msg = "The function view is passed the width and height of the window, as well as\n"
@@ -2213,7 +2228,7 @@ viewFunc2Msg = "The function view is passed the width and height of the window, 
                           ++ "the \ndata type Game."
 viewFunc2 : Element
 viewFunc2 =
-  body " 123. view (w, h) {state, badGuy, player1} ="
+  body " 125. view (w, h) {state, badGuy, player1} ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc2Msg) else (Signal.send hoveredOn ""))
 
 displayView2 : (Int, Int) -> Int -> String -> Element
@@ -2230,12 +2245,12 @@ viewContainer2 : Int -> String -> Element
 viewContainer2 sig hoveredOn =
   flow down
     [ flow right
-        [ body " 124."
+        [ body " 126."
         , spacer indent 1
         , viewFunc3
         ]
     , flow right
-        [ body " 125."
+        [ body " 127."
         , spacer (indent*2) 1
         , viewFunc4
         ]
@@ -2278,17 +2293,17 @@ viewContainer3 : Int -> String -> Element
 viewContainer3 sig hoveredOn =
   flow down
     [ flow right
-        [ body " 126."
+        [ body " 128."
         , spacer indent 1
         , viewFunc5
         ]
     , flow right
-        [ body " 127."
+        [ body " 129."
         , spacer (indent*2) 1
         , viewFunc6
         ]
     , flow right
-        [ body " 128."
+        [ body " 130."
         , spacer (indent*2) 1
         , viewFunc7
         ]
@@ -2331,12 +2346,12 @@ viewContainer4 : Int -> String -> Element
 viewContainer4 sig hoveredOn =
   flow down
     [ flow right
-        [ body " 129."
+        [ body " 131."
         , spacer (indent*3) 1
         , viewFunc8
         ]
     , flow right
-        [ body " 130."
+        [ body " 132."
         , spacer (indent*4) 1
         , viewFunc9
         ]
@@ -2368,17 +2383,17 @@ viewContainer5 : Int -> String -> Element
 viewContainer5 sig hoveredOn =
   flow down
     [ flow right
-        [ body " 131."
+        [ body " 133."
         , spacer (indent*3) 1
         , viewFunc10
         ]
     , flow right
-        [ body " 132."
+        [ body " 134."
         , spacer (indent*4) 1
         , viewFunc11
         ]
     , flow right
-        [ body " 133."
+        [ body " 135."
         , spacer (indent*4) 1
         , viewFunc12
         ]
@@ -2417,17 +2432,17 @@ viewContainer6 : Int -> String -> Element
 viewContainer6 sig hoveredOn =
   flow down
     [ flow right
-        [ body " 134."
+        [ body " 136."
         , spacer (indent*3) 1
         , viewFunc13
         ]
     , flow right
-        [ body " 135."
+        [ body " 137."
         , spacer (indent*4) 1
         , viewFunc14
         ]
     , flow right
-        [ body " 136."
+        [ body " 138."
         , spacer (indent*4) 1
         , viewFunc15
         ]
@@ -2467,12 +2482,12 @@ viewContainer7 :  Int -> String -> Element
 viewContainer7 sig hoveredOn =
   flow down
     [ flow right
-        [ body " 137."
+        [ body " 139."
         , spacer (indent*3) 1
         , viewFunc16
         ]
     , flow right
-        [ body " 138."
+        [ body " 140."
         , spacer (indent*4) 1
         , viewFunc17
         ]
@@ -2506,7 +2521,7 @@ viewContainer8 :  Int -> String -> Element
 viewContainer8 sig hoveredOn =
   flow down
     [ flow right
-        [ body " 139."
+        [ body " 141."
         , spacer (indent*3) 1
         , viewFunc18
         ]
@@ -2515,16 +2530,16 @@ viewContainer8 sig hoveredOn =
         , viewFunc18a
         ]
     , flow right
-        [ body " 140."
+        [ body " 142."
         , spacer (indent*4) 1
         , viewFunc19
         ]
     , flow right
-        [ body " 141."
+        [ body " 143."
         , spacer (indent*3) 1
         , viewFunc20
         ]
-    , body " 142."
+    , body " 144."
     ]
 
 viewFunc18Msg = "There is one last form in the collage. The state of the game is Play,\n"
@@ -2577,28 +2592,28 @@ elmGreyColorMsg = "The variable elmGrey is set to color with the red value of 71
                                   ++ "the green value of 80, and the blue value of 102."
 elmGreyColor : Element
 elmGreyColor =
-  body " 143. elmGrey = rgb 71 80 102"
+  body " 145. elmGrey = rgb 71 80 102"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn elmGreyColorMsg) else (Signal.send hoveredOn ""))
 
 elmBlueColorMsg = "The variable elmBlue is set to color with the red value of 76,\n"
                                   ++ "the green value of 166, and the blue value of 195."
 elmBlueColor : Element
 elmBlueColor =
-  body " 144. elmBlue = rgb 71 80 102"
+  body " 146. elmBlue = rgb 71 80 102"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn elmBlueColorMsg) else (Signal.send hoveredOn ""))
 
 elmGreenColorMsg = "The variable elmGreen is set to color with the red value of 127,\n"
                                   ++ "the green value of 209, and the blue value of 17."
 elmGreenColor : Element
 elmGreenColor =
-  body " 145. elmGreen = rgb 71 80 102"
+  body " 147. elmGreen = rgb 71 80 102"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn elmGreenColorMsg) else (Signal.send hoveredOn ""))
 
 textColorMsg = "The variable textColor is set to the value of white. This will be the color\n"
                         ++ "used for any text prefaced with txt."
 textColor : Element
 textColor =
-  body " 146. textColor = white"
+  body " 148. textColor = white"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn textColorMsg) else (Signal.send hoveredOn ""))
 
 displayView10 : (Int, Int) -> Int -> String -> Element
@@ -2629,7 +2644,7 @@ txtFunc1Msg = "This function sets up the characteristics for the text used in th
                     ++ "is converted from a string, has the color textColor (or white)."
 txtFunc1 : Element
 txtFunc1 =
-  body " 147. txt f = Text.fromString >> Text.color "
+  body " 149. txt f = Text.fromString >> Text.color "
     |> hoverable (\ r -> if r then (Signal.send hoveredOn txtFunc1Msg) else (Signal.send hoveredOn ""))
 
 txtFunc2Msg = "The text also has the font monospace."
@@ -2670,7 +2685,7 @@ msgFuncMsg = "This string is converted to text and placed at the bottom of the g
                       ++ "will appear. With a space &larr ;. Without a space &larr;."
 msgFunc1 : Element
 msgFunc1 =
-  body " 148. msg = 'SPACE to start, &larr ;&uarr ;"
+  body " 150. msg = 'SPACE to start, &larr ;&uarr ;"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn msgFuncMsg) else (Signal.send hoveredOn ""))
 
 msgFunc2 : Element
