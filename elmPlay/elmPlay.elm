@@ -1,5 +1,3 @@
---my first comment
-
 import Signal (Signal, map3, foldp, subscribe, channel, Channel, send)
 import Signal
 import Color (..)
@@ -228,10 +226,7 @@ welcomeMsg1 = "Elm Play"
 
 welcomeMsg2 : String
 welcomeMsg2 =
-  "Welcome to Elm Play. This tutorial will\n" ++
-  "walk you through creatinga video game\n" ++
-  "with line-by-line help explaining how\n" ++
-  "the game is made."
+  "Welcome Message goes here."
 
 
 {--
@@ -335,7 +330,9 @@ importColor =
     |> hoverable (\ r -> if r then (Signal.send hoveredOn colorMsg) else (Signal.send hoveredOn ""))
 
 graphicsElementMsg = "Import everything from the Graphics.Element\n" ++
-                     "library."
+                     "library. Elements help with the layoutof the\n" ++
+                     "game. This program uses an element to center\n" ++
+                     "the game in the middle of the page."
 importGraphicsElement : Element
 importGraphicsElement =
   body " 3. import Graphics.Element (..)"
@@ -349,31 +346,42 @@ importGraphicsCollage =
   body " 2. import Graphics.Collage (..)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn graphicsCollageMsg) else (Signal.send hoveredOn ""))
 
-textMsg = " Import everything from the Text library."
+textMsg = "Import everything from the Text library. This library\n" ++
+          "allows you to change the size, color, and position of\n" ++
+          "the text used in this game."
 importText : Element
 importText =
   body " 6. import Text (..)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn textMsg) else (Signal.send hoveredOn ""))
 
-signalMsg = " Import the Signal library."
+signalMsg = "Import the Signal library. Signals are values\n" ++
+            "that change over time. Signals often are input\n" ++
+            "from the user. Signals can also be time or the\n" ++
+            "size of a window."
 importSignal : Element
 importSignal =
   body " 5. import Signal"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalMsg) else (Signal.send hoveredOn ""))
 
-keyboardMsg = " Import everything from the Keyboard library."
+keyboardMsg = "Import the Keyboard library. This allows the\n" ++
+              "game to register the key presses when moveing\n" ++
+              "the circle."
 importKeyboard : Element
 importKeyboard =
   body (" 4. import Keyboard")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn keyboardMsg) else (Signal.send hoveredOn ""))
 
-timeMsg = " Import everything from the Time library."
+timeMsg = "Import the Time library. Specifically, you\n" ++
+          "need the frames per second function, which\n" ++
+          "notes the changes in time."
 importTime : Element
 importTime =
   body (" 7. import Time")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn timeMsg) else (Signal.send hoveredOn ""))
 
-windowMsg = " Import everything from the Keyboard library."
+windowMsg = "Import the Window library. This allows you to\n" ++
+            "access the width and height of the window, which\n" ++
+            "is used when centering the game on the page."
 importWindow : Element
 importWindow =
   body (" 8. import Window")
