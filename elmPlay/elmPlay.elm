@@ -864,15 +864,18 @@ modelContainer3 sig hoveredOn =
     , body " 36."
     ]
 
-aliasBadGuy1Msg = " Create a type alias BadGuy with the following characteristics."
+aliasBadGuy1Msg = "Create the type BadGuy as an alias. An alias\n" ++
+                  "means that you can define attributes individually.\n"
+
 aliasBadGuy1 : Element
 aliasBadGuy1 =
   body " 34. type alias BadGuy ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasBadGuy1Msg) else (Signal.send hoveredOn ""))
 
-aliasBadGuy2Msg = "Objects of type BadGuy have an x value of type float, a y value of \ntype float,"
-                              ++ "a vx value of type Float, and a vy value of type float.\n"
-                              ++ "Floats are numbers with a decimal."
+aliasBadGuy2Msg = "The data type BadGuy has the following attributes:\n" ++
+                  "an x-value of type float, a y-value of type float,\n" ++
+                  "a vx-value of type Float, and a vy-value of type\n" ++
+                  "float. Floats are numbers with a decimal."
 aliasBadGuy2 : Element
 aliasBadGuy2 =
   body "{ x:Float, y:Float, vx:Float, vy:Float }"
@@ -901,15 +904,18 @@ modelContainer4 sig hoveredOn =
     , body " 39."
     ]
 
-aliasPlayer1Msg = " Create a type alias Player with the following characteristics."
+aliasPlayer1Msg = "Create the type BadGuy as an alias. An alias\n" ++
+                  "means that you can define attributes individually.\n"
 aliasPlayer1 : Element
 aliasPlayer1 =
   body " 37. type alias Player ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasPlayer1Msg) else (Signal.send hoveredOn ""))
 
-aliasPlayer2Msg = "Objects of type Player have an x value of type float, a y value of type \nfloat,"
-                              ++ "a vx value of type Float, a vy value of type float, and a lives value \nof type integer."
-                              ++ "Floats are numbers with a decimal, and integers are \nnumber without decimals."
+aliasPlayer2Msg = "The data type Player has the following attributes:\n" ++
+                  "an x-value of type float, a y-value of type float,\n" ++
+                  "a vx-value of type Float, and a vy-value of type\n" ++
+                  "float. Floats are numbers with a decimal. Player\n" ++
+                  "also has an integer that represents its lives."
 aliasPlayer2 : Element
 aliasPlayer2 =
   body "{ x:Float, y:Float, vx:Float, vy:Float, lives:Int }"
