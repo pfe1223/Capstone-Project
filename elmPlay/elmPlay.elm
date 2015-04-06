@@ -2311,17 +2311,18 @@ viewContainer1 sig hoveredOn =
     , viewFunc2
     ]
 
-viewFunc1Msg = "The function view takes a tupple of integers and a game, and the function \nreturns "
-                          ++ "an element. A tupple is two numbers grouped together by \nparentheses. An "
-                          ++ "integer is a number without a decimal."
+viewFunc1Msg = "The view function is what outputs the game\n" ++
+               "to the computer screen. The view function\n" ++
+               "takes a pair of integers and a game, and it\n" ++
+               "returns an element."
 viewFunc1 : Element
 viewFunc1 =
   body " 124. view : (Int, Int) -> Game -> Element"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc1Msg) else (Signal.send hoveredOn ""))
 
-viewFunc2Msg = "The function view is passed the width and height of the window, as well as\n"
-                          ++ "the attributes state, badGuy, and player1 all of which are a part of "
-                          ++ "the \ndata type Game."
+viewFunc2Msg = "The function view is passed the width and\n" ++
+               "height of the window, as well as state, badGuy\n" ++
+               "and player1 which make up defaultGame."
 viewFunc2 : Element
 viewFunc2 =
   body " 125. view (w, h) {state, badGuy, player1} ="
@@ -2357,15 +2358,17 @@ viewContainer2 sig hoveredOn =
         ]
     ]
 
-viewFunc3Msg = "The let expression creates an object lives, which is of type element."
+viewFunc3Msg = "The let expression creates an object lives,\n" ++
+               "which is of type element."
 viewFunc3 : Element
 viewFunc3 =
   body "let lives : Element"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc3Msg) else (Signal.send hoveredOn ""))
 
-viewFunc4Msg = "The objecct lives is assigned the value of player1.lives, which is the\n"
-                          ++ "remaining lives of player1. The object lives is converted to a string,\n"
-                          ++ "and has a size of 50."
+viewFunc4Msg = "The objecct lives is assigned the value of\n" ++
+               "player1.lives, which is the remaining lives\n" ++
+               "of player1. The object lives is converted to\n" ++
+               "a string, and has a size of 50."
 viewFunc4 : Element
 viewFunc4 =
   body "lives = txt(Text.height 50) "
@@ -2407,24 +2410,26 @@ viewContainer3 sig hoveredOn =
         ]
     ]
 
-viewFunc5Msg = "In is part of the let expression, and indicates where the newly defined\n"
-                          ++ "will be used."
+viewFunc5Msg = "In is part of the let expression, and indicates\n" ++
+               "where the newly defined lives will be used."
 viewFunc5 : Element
 viewFunc5 =
   body "in"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc5Msg) else (Signal.send hoveredOn ""))
 
-viewFunc6Msg = "A container is an object that holds elements. This container has the\n"
-                          ++ "same width and height as the window. In the middle of this\n"
-                          ++ "container is the following:"
+viewFunc6Msg = "A container is an object that holds elements. It\n" ++
+               "width and a height. Whatever it is holding will be\n" ++
+               "placed in the middle of the element."
 viewFunc6 : Element
 viewFunc6 =
   body "container w h middle <|"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc6Msg) else (Signal.send hoveredOn ""))
 
-viewFunc7Msg = "A collage is collection of 2D forms. The forms can be placed anywhere\n"
-                        ++ "inside the collage. This collage has a width of gameWidth and a\n"
-                        ++ "height of gameHeight. That is, the collage is a 600 by 400 rectangle."
+viewFunc7Msg = "The container holds a collage, which is a\n" ++
+               "collection of 2D forms. The forms can be\n" ++
+               "placed anywhere inside the collage. This\n" ++
+               "collage has a width of gameWidth (600) and\n" ++
+               "a height of gameHeight (400)."
 viewFunc7 : Element
 viewFunc7 =
   body "collage gameWidth gameHeight"
@@ -2456,13 +2461,16 @@ viewContainer4 sig hoveredOn =
         ]
     ]
 
-viewFunc8Msg = "Inside of the collage is a rectangle with the same dimensions as the collage."
+viewFunc8Msg = "Inside of the collage is a rectangle with\n" ++
+               "the same dimensions as the collage."
 viewFunc8 : Element
 viewFunc8 =
   body "[ rect gameWidth gameHeight"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc8Msg) else (Signal.send hoveredOn ""))
 
-viewFunc9Msg = "The rectangle is filled with the purple/grey from the Elm logo."
+viewFunc9Msg = "The rectangle is filled with the custom color\n" ++
+               "elmGrey, which is defined below. The color comes\n" ++
+               "from the Elm logo."
 viewFunc9 : Element
 viewFunc9 =
   body "|> filled elmGrey"
@@ -2499,20 +2507,24 @@ viewContainer5 sig hoveredOn =
         ]
     ]
 
-viewFunc10Msg = "Also in the collage is a six-sided shape with a radius fo 25."
+viewFunc10Msg = "Also in the collage is a six-sided polygon\n" ++
+                "with a radius of 25."
 viewFunc10 : Element
 viewFunc10 =
   body ", ngon 6 25 "
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc10Msg) else (Signal.send hoveredOn ""))
 
-viewFunc11Msg = "The hexagon is filled with the orange from the Elm logo."
+viewFunc11Msg = "The hexagon is filled with the custom color\n" ++
+                "elmOrange, which is defined below. The color\n" ++
+                "comes from the Elm logo."
 viewFunc11 : Element
 viewFunc11 =
   body "|> filled elmOrange"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc11Msg) else (Signal.send hoveredOn ""))
 
-viewFunc12Msg = "The hexagon is moved to the x and y coordinates of badGuy.\n"
-                            ++ "Thus the hexagon represents the antagonist in the game."
+viewFunc12Msg = "The hexagon is moved to the x and y\n" ++
+                "coordinates of badGuy. The hexagon\n" ++
+                "represents the antagonist in the game."
 viewFunc12 : Element
 viewFunc12 =
   body "|> move (badGuy.x, badGuy.y)"
@@ -2555,14 +2567,17 @@ viewFunc13 =
   body ", circle 20"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc13Msg) else (Signal.send hoveredOn ""))
 
-viewFunc14Msg = "The circle is filled with the blue from the Elm logo."
+viewFunc14Msg = "The circle is filled with the custom color\n" ++
+                "elmBue, which is defined below. The color\n" ++
+                "comes from the Elm logo."
 viewFunc14 : Element
 viewFunc14 =
   body "|> filled elmBlue"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc14Msg) else (Signal.send hoveredOn ""))
 
-viewFunc15Msg = "The circle is moved to the x and y coordinates of player1.\n"
-                            ++ "Thus the circle represents the proagonist in the game."
+viewFunc15Msg = "The circle is moved to the x and y\n" ++
+                "coordinates of player1. The circle\n" ++
+                "represents the protagonist in the game."
 viewFunc15 : Element
 viewFunc15 =
   body "|> move (player1.x, player1.y)"
@@ -2595,12 +2610,14 @@ viewContainer7 sig hoveredOn =
         ]
     ]
 
-viewFunc16Msg = "The lives is also in the collage. Since only forms can exist in a\n"
-                            ++ "collage, lives is transformed into a form."
+viewFunc16Msg = "The object lives (created 5 pages ago)\n" ++
+                "is also in the collage. Since only forms\n" ++
+                "can exist in a collage, lives is transformed\n" ++
+                "into a form."
 viewFunc16 : Element
 viewFunc16 =
   body ", toForm lives"
-    |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc15Msg) else (Signal.send hoveredOn ""))
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc16Msg) else (Signal.send hoveredOn ""))
 
 viewFunc17Msg = "The form lives is moved to the location 0, gameHeight/2 - 40.\n"
                             ++ "That is to say, 40 pixels from the top of the game, or 0, 160."
