@@ -2049,8 +2049,11 @@ updateContainer11 sig hoveredOn =
     , body " 112."
     ]
 
-updatePhysics1Msg = "The function updatePhysics takes t (time) and the values of x, y, vx, and vy\n"
-                          ++ "which are treated as one object."
+updatePhysics1Msg = "The function updatePhysics takes t (time) and\n" ++
+                    "the values of x, y, vx, and vy which are\n" ++
+                    "treated as one object. This function determins\n" ++
+                    "the location of badGuy and player1 on the game\n" ++
+                    "area."
 updatePhysics1 : Element
 updatePhysics1 =
   body " 107. physicsUpdate t ({x,y,vx,vy} as obj) ="
@@ -2103,14 +2106,23 @@ updateContainer12 sig hoveredOn =
     , body " 115."
     ]
 
-updateNear1Msg = "The function near takes three arguments: k, c, and n. It determines if two \nobjects "
-                            ++ "(k and n) are near one another based upon a third number (c)."
+updateNear1Msg = "The function near takes three arguments: k, c,\n" ++
+                 "and n.It determines if two objects (k and n) are\n" ++
+                 "near one another based upon a third number (c).\n" ++
+                 "c represents the radius of badGuy. k and n are the\n" ++
+                 "x- or y-values of badGuy and player1."
 updateNear1 : Element
 updateNear1 =
   body " 113. near k c n ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateNear1Msg) else (Signal.send hoveredOn ""))
 
-updateNear2Msg = "This is the logic equation to determine if two objects are touching."
+updateNear2Msg = "This is the logic equation to determine if two\n" ++
+                 "objects are touching. If the x-value of badGuy\n" ++
+                 "is greater than or equal to its radius minus the\n" ++
+                 "x-value of player1 and the x-value of badGuy is\n" ++
+                 "less than or equal to its radius plus the x-value\n" ++
+                 "of player1, then the function returns true. In all\n" ++
+                 "other cases, it returns false."
 updateNear2 : Element
 updateNear2 =
   body "n >= k-c && n <= k+c"
