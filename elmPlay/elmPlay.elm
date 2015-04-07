@@ -128,7 +128,7 @@ codeTitleElement strg =
 
 codeElement : Element -> Element
 codeElement gameCode =
-  color elmBlue <| container containerWidth gameHeight midLeft gameCode
+  color grey <| container containerWidth gameHeight midLeft gameCode
 
 helpElement : String -> Element
 helpElement hoveredOn =
@@ -1246,15 +1246,17 @@ updateContainer1 sig hoveredOn =
     , body " 60."
     ]
 
-updateFunc1Msg = "Update is a function that takes an object of type Input, an object of type\n"
-                          ++ "Game, and returns a Game."
+updateFunc1Msg = "Update is a function that takes an object of type\n" ++
+                 "Input, an object of type Game, and returns\n" ++
+                 "a Game."
 updateFunc1 : Element
 updateFunc1 =
   body " 57. update : Input -> Game -> Game"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc1Msg) else (Signal.send hoveredOn ""))
 
-updateFunc2Msg = "Specifically, update takes Input in the form of space, dir1, dir2, and delta.\n"
-                          ++ "The Game is defined as state, badGuy, and player1."
+updateFunc2Msg = "Specifically, update takes Input in the form of\n" ++
+                 "space, dir1, dir2, and delta. The Game is defined\n" ++
+                 "as state, badGuy, and player1."
 updateFunc2 : Element
 updateFunc2 =
   body " 58. update {space,dir1,dir2,delta} "
@@ -1266,8 +1268,11 @@ updateFunc3 =
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc2Msg) else (Signal.send hoveredOn ""))
 
 
-updateFunc4Msg = "The let expression assigns the value of 1 to lives if badGuy is within \nplayer1."
-                          ++ "If not, the value of 0 is assigned to lives. The function within is \ndefined below."
+updateFunc4Msg = "The let expression assigns the value of 1 to\n" ++
+                 "lives if badGuy is within player1. within is a\n" ++
+                 "that will be discussed later in this section. If\n" ++
+                 "If badGuy is not within player1, the value of 0\n" ++
+                 "is assigned to lives."
 updateFunc4 : Element
 updateFunc4 =
   body "let lives = if (badGuy `within` player1) "
@@ -1316,26 +1321,30 @@ updateContainer2 sig hoveredOn =
     , body " 65."
     ]
 
-updateFunc5Msg = "The function newState assumes a value dependent upon the cases below:"
+updateFunc5Msg = "The function newState assumes a value\n" ++
+                 "dependent upon the cases below:"
 updateFunc5 : Element
 updateFunc5 =
   body "newState ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc5Msg) else (Signal.send hoveredOn ""))
 
-updateFunc6Msg = "If the space bar is pressed, then newState takes the value Play."
+updateFunc6Msg = "If the space bar is pressed, then newState takes\n" ++
+                 "the value Play."
 updateFunc6 : Element
 updateFunc6 =
   body "if | space                    -> Play"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc6Msg) else (Signal.send hoveredOn ""))
 
-updateFunc7Msg = "NewState assumes the value of Pause if player1.lives is 0. That is, the game\n"
-                          ++ "stops when the player runs out of lives."
+updateFunc7Msg = "newState assumes the value of Pause if\n" ++
+                 "player1.lives is 0. That is, the game stops\n" ++
+                 "when player1 runs out of lives."
 updateFunc7 : Element
 updateFunc7 =
   body "| player1.lives == 0 -> Pause"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc7Msg) else (Signal.send hoveredOn ""))
 
-updateFunc8Msg = "In all other cases, newState assumes the value of state. \nThat is, nothing changes."
+updateFunc8Msg = "In all other cases, newState assumes the value\n" ++
+                 "of state. That is, nothing changes."
 updateFunc8 : Element
 updateFunc8 =
   body "| otherwise              -> state"
@@ -2059,19 +2068,22 @@ updatePhysics1 =
   body " 107. physicsUpdate t ({x,y,vx,vy} as obj) ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePhysics1Msg) else (Signal.send hoveredOn ""))
 
-updatePhysics2Msg = "This line of code means that the object will have its attribures modified."
+updatePhysics2Msg = "This code means that the object will have its\n" ++
+                    "attribures modified."
 updatePhysics2 : Element
 updatePhysics2 =
   body "{ obj |"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePhysics2Msg) else (Signal.send hoveredOn ""))
 
-updatePhysics3Msg = "The x attribute becomes x plus vx multiplied by t."
+updatePhysics3Msg = "The x attribute takes the value of x plus vx\n" ++
+                    "multiplied by t."
 updatePhysics3 : Element
 updatePhysics3 =
   body "x <- x + vx * t,"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePhysics3Msg) else (Signal.send hoveredOn ""))
 
-updatePhysics4Msg = "The y attribute becomes y plus vy multiplied by t."
+updatePhysics4Msg = "The y attribute takes the value y plus vy\n" ++
+                    "multiplied by t."
 updatePhysics4 : Element
 updatePhysics4 =
   body "y <- y + vy * t"
