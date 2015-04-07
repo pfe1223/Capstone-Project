@@ -2619,8 +2619,9 @@ viewFunc16 =
   body ", toForm lives"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc16Msg) else (Signal.send hoveredOn ""))
 
-viewFunc17Msg = "The form lives is moved to the location 0, gameHeight/2 - 40.\n"
-                            ++ "That is to say, 40 pixels from the top of the game, or 0, 160."
+viewFunc17Msg = "The form lives is moved to the location 0\n" ++
+                "(centered), gameHeight/2 - 40 (40 pixels\n" ++
+                "from the top of the game area)."
 viewFunc17 : Element
 viewFunc17 =
   body "|> move (0, gameHeight/2 - 40)"
@@ -2662,10 +2663,13 @@ viewContainer8 sig hoveredOn =
     , body " 144."
     ]
 
-viewFunc18Msg = "There is one last form in the collage. The state of the game is Play,\n"
-                           ++ "then there is a spacer with the width of 1 and the height of 1.\n"
-                           ++ "A spacer is a place holder. If the state is Pause, then the contents\n"
-                           ++ "of the variable msg appear as text."
+viewFunc18Msg = "There is one last form in the collage. If the\n" ++
+                "state of the game is Play, then there is a\n" ++
+                "spacer with the width of 1 and the height of 1.\n" ++
+                "A spacer is an empty place holder. If the state\n" ++
+                "is Pause, then the contents of the variable msg\n" ++
+                "are modified by the function txt. Both msg and\n" ++
+                "txt are defined over the next few pages."
 viewFunc18 : Element
 viewFunc18 =
   body ", toForm (if state == Play then "
@@ -2676,14 +2680,16 @@ viewFunc18a =
   body " spacer 1 1 else txt identity msg"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc18Msg) else (Signal.send hoveredOn ""))
 
-viewFunc19Msg = "This last form is moved to the location 0, gameHeight/2 - 40.\n"
-                            ++ "That is to say, 40 pixels from the bottom of the game, or 0, -160."
+viewFunc19Msg = "The form is moved to the location 0 (centered),\n" ++
+                "gameHeight/2 - 40 (40 pixels from the bottom\n" ++
+                "of the game area)."
 viewFunc19 : Element
 viewFunc19 =
   body "|> move (0, 40 - gameHeight/2)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc19Msg) else (Signal.send hoveredOn ""))
 
-viewFunc20Msg = "This bracket closes the list of forms found in the collage."
+viewFunc20Msg = "This bracket closes the list of forms\n" ++
+                "found in the collage."
 viewFunc20 : Element
 viewFunc20 =
   body "]"
@@ -2709,29 +2715,31 @@ viewContainer9 sig hoveredOn =
     , textColor
     ]
 
-elmGreyColorMsg = "The variable elmGrey is set to color with the red value of 71,\n"
-                                  ++ "the green value of 80, and the blue value of 102."
+elmGreyColorMsg = "elmGrey is a custom color with a red value\n" ++
+                  "of 71, a green value of 80, and a blue value\n" ++
+                  "of 102. This color was taken from the Elm logo."
 elmGreyColor : Element
 elmGreyColor =
   body " 145. elmGrey = rgb 71 80 102"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn elmGreyColorMsg) else (Signal.send hoveredOn ""))
 
-elmBlueColorMsg = "The variable elmBlue is set to color with the red value of 76,\n"
-                                  ++ "the green value of 166, and the blue value of 195."
-elmBlueColor : Element
+elmBlueColorMsg = "elmBlue is a custom color with a red value\n" ++
+                  "of 76, a green value of 166, and a blue value\n" ++
+                  "of 195. This color was taken from the Elm logo."
 elmBlueColor =
-  body " 146. elmBlue = rgb 71 80 102"
+  body " 146. elmBlue = rgb 76 166 195"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn elmBlueColorMsg) else (Signal.send hoveredOn ""))
 
-elmGreenColorMsg = "The variable elmGreen is set to color with the red value of 127,\n"
-                                  ++ "the green value of 209, and the blue value of 17."
+elmGreenColorMsg = "elmGreen is a custom color with a red value\n" ++
+                   "of 127, a green value of 209, and a blue value\n" ++
+                   "of 17. This color was taken from the Elm logo."
 elmGreenColor : Element
 elmGreenColor =
-  body " 147. elmGreen = rgb 71 80 102"
+  body " 147. elmGreen = rgb 127 209 17"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn elmGreenColorMsg) else (Signal.send hoveredOn ""))
 
-textColorMsg = "The variable textColor is set to the value of white. This will be the color\n"
-                        ++ "used for any text prefaced with txt."
+textColorMsg = "textColor is set to white. This is the color\n" ++
+               "used for any text prefaced with txt."
 textColor : Element
 textColor =
   body " 148. textColor = white"
@@ -2762,20 +2770,21 @@ viewContainer10 sig hoveredOn =
         ]
     ]
 
-txtFunc1Msg = "This function sets up the characteristics for the text used in the game. The \ntext "
-                    ++ "is converted from a string, has the color textColor (or white)."
+txtFunc1Msg = "The txt function sets up the characteristics for\n" ++
+              "the text used in the game. The text is converted\n" ++
+              "from a string, has the color textColor (white)."
 txtFunc1 : Element
 txtFunc1 =
   body " 149. txt f = Text.fromString >> Text.color "
     |> hoverable (\ r -> if r then (Signal.send hoveredOn txtFunc1Msg) else (Signal.send hoveredOn ""))
 
-txtFunc2Msg = "The text also has the font monospace."
+txtFunc2Msg = "The text function also sets the font to monospace."
 txtFunc2 : Element
 txtFunc2 =
   body " textColor >> Text.monospace "
     |> hoverable (\ r -> if r then (Signal.send hoveredOn txtFunc2Msg) else (Signal.send hoveredOn ""))
 
-txtFunc3Msg = "The text is left aligned."
+txtFunc3Msg = "Lastly, the text is left aligned."
 txtFunc3 : Element
 txtFunc3 =
   body " >> f >> Text.leftAligned"
@@ -2802,10 +2811,13 @@ viewContainer11 sig hoveredOn =
         ]
     ]
 
-msgFuncMsg = "This string is converted to text and placed at the bottom of the game when\n"
-                      ++ "the state is Pause. These are the instructions on how to play the game. &larr\n"
-                      ++ "inserts a left arrow symbol. Remove the space before the semi-colon so the \nsymbol "
-                      ++ "will appear. With a space &larr ;. Without a space &larr;."
+msgFuncMsg = "When the state of the game is Pause, you\n" ++
+             "will see this message at the bottom of the\n" ++
+             "game. These are the instructions. &larr ;\n" ++
+             "inserts a left arrow symbol. Remove the\n" ++
+             "space before the semi-colon so the symbol\n" ++
+             "will appear. With a space &larr ;. Without\n" ++
+             "a space &larr;."
 msgFunc1 : Element
 msgFunc1 =
   body " 150. msg = 'SPACE to start, &larr ;&uarr ;"
