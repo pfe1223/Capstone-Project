@@ -2195,30 +2195,34 @@ updateContainer14 sig hoveredOn =
     , body " 123."
     ]
 
-updateStepV1Msg = "The defines what the function stepV does. It takes two conditions (true \nor false) "
-                              ++ "and a third term, v. StepV is used to bounce badGuy off of the \nedges of the "
-                              ++ "game area."
+updateStepV1Msg = "The function stepV takes two conditions (true\n" ++
+                  "or false) and a thrid term v. stepV is used to\n" ++
+                  "bounce badGuy off of the edges of the game area."
 updateStepV1 : Element
 updateStepV1 =
   body " 119. stepV v condition1 condition2 ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateStepV1Msg) else (Signal.send hoveredOn ""))
 
-updateStepV2Msg = "If condition1 is true, then stepV returns the absolute value of v. This \nbounces "
-                              ++ "badGuy off of the left and bottom edges of the game area."
+updateStepV2Msg = "If condition1 is true, then stepV returns the\n" ++
+                  "absolute value of v. This bounces badGuy off\n" ++
+                  "of the left and bottom edges of the game area."
 updateStepV2 : Element
 updateStepV2 =
   body (padLeft 30 ' ' " if | condition1 -> abs v")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateStepV2Msg) else (Signal.send hoveredOn ""))
 
-updateStepV3Msg = "If condition2 is true, then stepV returns 0 - the absolute value of v. This \nbounces "
-                              ++ "badGuy off of the right and top edges of the game area."
+updateStepV3Msg = "If condition2 is true, then stepV returns 0 -\n" ++
+                  "absolute value of v. This bounces badGuy off\n" ++
+                  "of the right and top edges of the game area."
 updateStepV3 : Element
 updateStepV3 =
   body (padLeft 34 ' ' " | condition2 -> 0 - abs v")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateStepV3Msg) else (Signal.send hoveredOn ""))
 
-updateStepV4Msg = "In all other cases, stepV returns the value of v. If badGuy is not touching \nany "
-                              ++ "edges, then do not change the direction; keep going in the same \ndirection."
+updateStepV4Msg = "In all other cases, stepV returns the value\n" ++
+                  "of v. If badGuy is not touching any edges, then\n" ++
+                  "do not change the direction; keep going in the\n" ++
+                  "same direction."
 updateStepV4 : Element
 updateStepV4 =
   body(padLeft 26 ' '  " | otherwise  -> v")
