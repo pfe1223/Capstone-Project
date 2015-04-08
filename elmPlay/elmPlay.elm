@@ -73,6 +73,7 @@ view (width, height) sig hoveredOn =
      | sig == 44 -> idea1 (width, height) sig
      | sig == 45 -> idea2 (width, height) sig
      | sig == 46 -> idea3 (width, height) sig
+     | sig == 47 -> elmResources (width, height) sig
      | otherwise -> displayWelcome (width, height) sig
 
 -- These numbers are used to create the containers that hold the code examples and explinations
@@ -113,6 +114,14 @@ dashPresent =
 gifElement : String -> Element
 gifElement gif =
   color elmBlue <| container containerWidth 175 middle <| body gif
+
+resourcesElement : String -> Element
+resourcesElement strg =
+  color elmGreen <| container containerWidth 90 middle <| subTitle strg
+
+{--linksElement : Element
+linksElement =
+  color elmOrange <| container containerWidth 200 middle <| elmLinks --}
 
 welcomeElement : String -> Element
 welcomeElement strg =
@@ -162,6 +171,13 @@ buttonsLRElement sig =
     , leftButton sig
     ]
 
+buttonSOElement : Int -> Element
+buttonSOElement sig =
+  color grey <| container containerWidth 50 midLeft <| flow right
+    [ spacer 5 1
+    , startOver sig
+    ]
+
 -- Buttons
 letsGo : Int -> Element
 letsGo sig =
@@ -174,6 +190,10 @@ rightButton sig =
 leftButton : Int -> Element
 leftButton sig =
   size 50 40 <| color grey <| button (send chan (sig - 1)) "<"
+
+startOver : Int -> Element
+startOver sig =
+  size 100 40 <| color grey <| button (send chan (0)) "Start Over"
 
 -- Custom colors based on the Elm logo
 elmGrey = rgb 71 80 102
@@ -190,11 +210,17 @@ title f = Text.fromString(f)
             |> Text.centered
 
 subTitle f = Text.fromString(f)
-                  |> Text.height 20
-                  |> Text.leftAligned
+               |> Text.height 20
+               |> Text.leftAligned
 
 body f = Text.fromString(f)
              |> Text.leftAligned
+
+linkText msg address = Text.fromString(msg)
+                        |> Text.link address
+                        |> Text.height 20
+                        |> Text.color elmBlue
+                        |> Text.leftAligned
 
 -- Welcome Message
 displayWelcome : (Int, Int) -> Int -> Element
@@ -251,7 +277,7 @@ welcomeMsg2 =
   "Elm language. The pages that follow\n" ++
   "give you code to copy into the editor.\n" ++
   "Put the mouse over the code to get an \n" ++
-  "explination of what the code does. Pay\n" ++
+  "explanation of what the code does. Pay\n" ++
   "attention to the line numbers. Some\n" ++
   "lines are left blank to separate blocks\n" ++
   "of code. Some code does not have a\n" ++
@@ -3073,3 +3099,29 @@ viewIdea3Msg2 =
   "   of the layout. The colored regions\n" ++
   "   take a life of the player when\n" ++
   "   touched."
+
+-- Elm Resources
+elmResources : (Int, Int) -> Int -> Element
+elmResources (width, height) sig =
+  color elmGrey (container width height middle (flow down
+    [ wayfindingElement wayfindingCongrats
+    , titleElement resourcesTitle
+    , iconElement elmLogo
+    , resourcesElement resourcesMsg
+    , color elmOrange <| container containerWidth 285 middle (flow down
+      [ Text.leftAligned <| Text.link "http://http://package.elm-lang.org/" (Text.fromString "Elm Package Catalog")
+      , Text.leftAligned <| Text.link "http://http://elm-lang.org/Examples.elm" (Text.fromString "Elm Examples")
+      , Text.leftAligned <| Text.link "http://http://elm-lang.org/learn/Syntax.elm" (Text.fromString "Elm Syntax")
+      ])
+    , buttonSOElement sig
+    ]))
+
+resourcesTitle : String
+resourcesTitle =
+  "Elm Resources"
+
+resourcesMsg : String
+resourcesMsg =
+  "For more information on the Elm\n" ++
+  "language, check out the following\n" ++
+  "resources:"
