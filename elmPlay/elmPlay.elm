@@ -1391,28 +1391,32 @@ updateContainer3 sig hoveredOn =
     , body " 70."
     ]
 
-updateFunc9Msg = "The function newBadGuy assumes the value dependent \nupon the following cases:"
+updateFunc9Msg = "The value of the function newBadGuy is\n" ++
+                 "dependent upon the following cases:"
 updateFunc9 : Element
 updateFunc9 =
   body "newBadGuy ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc9Msg) else (Signal.send hoveredOn ""))
 
-updateFunc10Msg = "If the value of state is equal to Pause, the do the following thing.\n"
-                          ++ "an element. A tupple is two numbers grouped together by parentheses.\n"
-                          ++ "An integer is a number without a decimal."
+updateFunc10Msg = "The function checks to see if the value\n" ++
+                  "of state is equal to Pause."
 updateFunc10 : Element
 updateFunc10 =
   body "if state == Pause"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc10Msg) else (Signal.send hoveredOn ""))
 
-updateFunc11Msg = "The function newBadGuy takes the value badGuy. That is, nothing changes."
+updateFunc11Msg = "If the value of state is Pause, then\n" ++
+                  "the function newBadGuy takes the value\n" ++
+                  "badGuy. That is, nothing changes."
 updateFunc11 : Element
 updateFunc11 =
   body "then badGuy"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc11Msg) else (Signal.send hoveredOn ""))
 
-updateFunc12Msg = "When state equals Play, then call the function updateBadGuy, which is \ndefined below."
-                              ++ "updateBadGuy takes delta, badGuy, and player1."
+updateFunc12Msg = "When state is not equal to Pause, then\n" ++
+                  "newBadGuy takes the value of the function\n" ++
+                  "updateBadGuy, which is defined later. This\n" ++
+                  "function takes delta, badGuy, and player1."
 updateFunc12 : Element
 updateFunc12 =
   body "else updateBadGuy delta badGuy"
@@ -1474,7 +1478,8 @@ updateContainer4 sig hoveredOn =
     , body " 77."
     ]
 
-updateFunc13Msg = "The in part of the let expression tells us how the \nabove information will be used."
+updateFunc13Msg = "The in part of the let expression tells us how\n" ++
+                  "the newBadGuy function will be used."
 updateFunc13 : Element
 updateFunc13 =
   body "in"
@@ -1486,20 +1491,25 @@ updateFunc14 =
   body "{ game |"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc14Msg) else (Signal.send hoveredOn ""))
 
-updateFunc15Msg = "State will assume the value of newState."
+updateFunc15Msg = "State will assume the value of the\n" ++
+                  "function newState."
 updateFunc15 : Element
 updateFunc15 =
   body "state   <- newState,"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc15Msg) else (Signal.send hoveredOn ""))
 
-updateFunc16Msg = "BadGuy assumes the value of newBadGuy."
+updateFunc16Msg = "BadGuy assumes the value of the\n" ++
+                  "function newBadGuy from the previous\n" ++
+                  "page."
 updateFunc16 : Element
 updateFunc16 =
   body "badGuy  <- newBadGuy,"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc16Msg) else (Signal.send hoveredOn ""))
 
-updateFunc17Msg = "Player1 assumes the value of updatePlayer which needs delta, dir1, dir2,\n"
-                                ++ "lives, and player1. The function updatePlayer is defined below."
+updateFunc17Msg = "Player1 assumes the value of the function\n" ++
+                  "updatePlayer which needs delta, dir1, dir2,\n" ++
+                  "lives, and player1. The function updatePlayer\n" ++
+                  "is defined later."
 updateFunc17 : Element
 updateFunc17 =
   body "player1 <- updatePlayer delta dir1 dir2"
@@ -2059,10 +2069,9 @@ updateContainer11 sig hoveredOn =
     ]
 
 updatePhysics1Msg = "The function updatePhysics takes t (time) and\n" ++
-                    "the values of x, y, vx, and vy which are\n" ++
-                    "treated as one object. This function determins\n" ++
-                    "the location of badGuy and player1 on the game\n" ++
-                    "area."
+                    "the values of x, y, vx, and vy which are treated\n" ++
+                    "as one object. This function determines the\n" ++
+                    "location of badGuy and player1 in the game area.\n"
 updatePhysics1 : Element
 updatePhysics1 =
   body " 107. physicsUpdate t ({x,y,vx,vy} as obj) ="
@@ -2167,15 +2176,18 @@ updateContainer13 sig hoveredOn =
     , body " 118."
     ]
 
-updateWithin1Msg = "The function within takes badGuy and player1 and determines if they \nare touching."
+updateWithin1Msg = "The function within takes badGuy and player1\n" ++
+                   "and determines if they are touching."
 updateWithin1 : Element
 updateWithin1 =
   body " 116. within badGuy player1 ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateWithin1Msg) else (Signal.send hoveredOn ""))
 
-updateWithin2Msg = "The function within calls the function near, and passes it the x positions \nof player1 "
-                                ++ "and badGuy, as well as the number 25. 25 is used because that \nis the radius of "
-                                ++ "badGuy. This also checks to see if the y positions are \ntouching as well."
+updateWithin2Msg = "The function within calls the function near,\n" ++
+                   "and passes it the x positions of player1 and\n" ++
+                   "badGuy, as well as the number 25. 25 is used\n" ++
+                   "because that is the radius of badGuy. This also\n" ++
+                   "checks to see if the y positions are touching."
 updateWithin2 : Element
 updateWithin2 =
   body "near player1.x 25 badGuy.x && "
