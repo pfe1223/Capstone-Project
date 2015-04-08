@@ -110,6 +110,14 @@ dashPresent =
     |> filled elmBlue
 
 -- Display elements
+gifElement : String -> Element
+gifElement gif =
+  color elmBlue <| container containerWidth 175 middle <| body gif
+
+welcomeElement : String -> Element
+welcomeElement strg =
+  color elmGreen <| container containerWidth 325 middle <| subTitle strg
+
 wayfindingElement : Element -> Element
 wayfindingElement wayfinding =
   color grey <| container containerWidth 50 middle <| wayfinding
@@ -132,7 +140,7 @@ codeElement gameCode =
 
 helpElement : String -> Element
 helpElement hoveredOn =
-  color elmOrange <| container containerWidth bottomHeight middle <| body hoveredOn
+  color grey <| container containerWidth bottomHeight middle <| body hoveredOn
 
 iconElement : Element -> Element
 iconElement iconType =
@@ -194,7 +202,8 @@ displayWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingWelcome
     , titleElement welcomeMsg1
-    , subtitleElement welcomeMsg2
+    , gifElement gifImage
+    , welcomeElement welcomeMsg2
     , buttonGoElement sig
     ]))
 
@@ -229,12 +238,26 @@ wayfindingWelcome =
         [ wayfinderFuture ] --Congrats section
     ])
 
+gifImage : String
+gifImage = "Gif goes here"
+
 welcomeMsg1 : String
 welcomeMsg1 = "Elm Play"
 
 welcomeMsg2 : String
 welcomeMsg2 =
-  "Welcome Message goes here."
+  "Welcome to Elm Play, where you will\n" ++
+  "learn how to make a game with the\n" ++
+  "Elm language. The pages that follow\n" ++
+  "give you code to copy into the editor.\n" ++
+  "Put the mouse over the code to get an \n" ++
+  "explination of what the code does. Pay\n" ++
+  "attention to the line numbers. Some\n" ++
+  "lines are left blank to separate blocks\n" ++
+  "of code. Some code does not have a\n" ++
+  "line number as it goes with the line of\n" ++
+  "code above. Click on the button below\n" ++
+  "to begin."
 
 
 {--
@@ -355,9 +378,9 @@ importGraphicsCollage =
   body " 2. import Graphics.Collage (..)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn graphicsCollageMsg) else (Signal.send hoveredOn ""))
 
-textMsg = "Import everything from the Text library. This library\n" ++
-          "allows you to change the size, color, and position of\n" ++
-          "the text used in this game."
+textMsg = "Import everything from the Text library. This\n" ++
+          "library allows you to change the size, color,\n" ++
+          "and position of the text used in this game."
 importText : Element
 importText =
   body " 6. import Text (..)"
@@ -2009,22 +2032,24 @@ updateContainer10 sig hoveredOn=
     , body " 106."
     ]
 
-updatePlayer8Msg = "This is the second part of the let statement. The newly introduced alive will be\n"
-                               ++ "used below."
+updatePlayer8Msg = "This is the second part of the let statement.\n" ++
+                   "The newly introduced alive will be used below."
 updatePlayer8 : Element
 updatePlayer8 =
   body "in"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer8Msg) else (Signal.send hoveredOn ""))
 
-updatePlayer9Msg = "This says that within player1, the following attributes will be updated."
+updatePlayer9Msg = "This says that within player1, the following\n" ++
+                   "attributes will be updated."
 updatePlayer9 : Element
 updatePlayer9 =
   body "{ player1 |"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer9Msg) else (Signal.send hoveredOn ""))
 
-updatePlayer10Msg = "The updated attribute y takes the value of player1.y. However, the value is\n"
-                                ++ "limited (or clamped) to any number between 35 - halfHeight (-165) and\n"
-                                ++ "halfHeight - 35 (165)."
+updatePlayer10Msg = "The updated attribute y takes the value of\n" ++
+                    "player1.y. However, the value is limited (or\n" ++
+                    "clamped) to any number between 35 -\n" ++
+                    "halfHeight (-165) and halfHeight - 35 (165)."
 updatePlayer10 : Element
 updatePlayer10 =
   body "y <- clamp (35-halfHeight) "
@@ -2035,9 +2060,10 @@ updatePlayer10a =
   body " (halfHeight-35) player1.y,"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer10Msg) else (Signal.send hoveredOn ""))
 
-updatePlayer11Msg = "The updated attribute x takes the value of player1.x. However, the value is\n"
-                                ++ "limited (or clamped) to any number between 35 - halfWidth (-265) and\n"
-                                ++ "halfWidth-35 (265)."
+updatePlayer11Msg = "The updated attribute x takes the value of\n" ++
+                    "player1.x. However, the value is limited (or\n" ++
+                    "clamped) to any number between 35 -\n" ++
+                    "halfWidth (-265) and halfWidth - 35 (265)."
 updatePlayer11 : Element
 updatePlayer11 =
   body "x <- clamp (35-halfWidth) "
@@ -2048,17 +2074,18 @@ updatePlayer11a =
   body " (halfWidth-35) player1.x,"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer11Msg) else (Signal.send hoveredOn ""))
 
-updatePlayer12Msg = "The updated attribute lives takes the value of alive."
+updatePlayer12Msg = "The updated attribute lives takes the\n" ++
+                    "value of alive."
 updatePlayer12 : Element
 updatePlayer12 =
   body "lives <- alive"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer12Msg) else (Signal.send hoveredOn ""))
 
-updatePlayer13Msg = "This bracket the update for player1."
+updatePlayer13Msg = "This bracket ends the update for player1."
 updatePlayer13 : Element
 updatePlayer13 =
   body "}"
-    |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer3Msg) else (Signal.send hoveredOn ""))
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer13Msg) else (Signal.send hoveredOn ""))
 
 -- Update Message 4
 displayUpdate11 : (Int, Int) -> Int -> String -> Element
