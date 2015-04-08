@@ -1553,8 +1553,9 @@ updateContainer5 sig hoveredOn=
         ]
     ]
 
-updateBadGuy1Msg = "The function updateBadGuy takes a Time, a BadGuy, and a Player.\n"
-                          ++ "The function returns a type of BadGuy."
+updateBadGuy1Msg = "The function updateBadGuy takes a Time, a\n" ++
+                   "BadGuy, and a Player. The function returns\n" ++
+                   "a type of BadGuy."
 updateBadGuy1 : Element
 updateBadGuy1 =
   body " 78. updateBadGuy : Time -> BadGuy -> Player ->"
@@ -1566,8 +1567,9 @@ updateBadGuy1a =
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy1Msg) else (Signal.send hoveredOn ""))
 
 
-updateBadGuy2Msg = "UpdateBadGuy takes t as time; the x, y, vx, and vy values of badGuy;\n"
-                          ++ "and the x, y, vx, and vy values of player1."
+updateBadGuy2Msg = "UpdateBadGuy takes t as time; the x, y,\n" ++
+                   "vx, and vy values of badGuy; and the x,\n" ++
+                   "y, vx, vy, and lives values of player1."
 updateBadGuy2 : Element
 updateBadGuy2 =
   body " 79. updateBadGuy t ({x,y,vx,vy} as badGuy)"
@@ -1640,7 +1642,10 @@ updateContainer6 sig hoveredOn=
         ]
     ]
 
-updateBadGuy3Msg = "If player1 has no more lives, then the x and y values of badGuy are set to 0."
+updateBadGuy3Msg = "If player1 has no more lives, then\n" ++
+                   "the x- and y-values of badGuy are set\n" ++
+                   "to 0. That is, badGuy moves to the\n" ++
+                   "middle of the game area."
 updateBadGuy3 : Element
 updateBadGuy3 =
   body "if | (player1.lives == 0) -> { badGuy |"
@@ -1651,8 +1656,9 @@ updateBadGuy3a =
   body " x <- 0, y <- 0}"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy3Msg) else (Signal.send hoveredOn ""))
 
-updateBadGuy4Msg = "If badGuy is touching player1, then the function physicsUpdate is called\n"
-                          ++ "with t (time)."
+updateBadGuy4Msg = "If badGuy is touching player1, then the\n" ++
+                   "function physicsUpdate is called with t\n" ++
+                   "(time)."
 updateBadGuy4 : Element
 updateBadGuy4 =
   body "| (badGuy `within` player1) -> "
@@ -1663,14 +1669,18 @@ updateBadGuy4a =
   body " physicsUpdate t"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy4Msg) else (Signal.send hoveredOn ""))
 
-updateBadGuy5Msg = "This bit of code is setting forth attributes of badGuy that will be modified."
+updateBadGuy5Msg = "This bit of code is setting up the\n" ++
+                   "attributes of badGuy that will be\n" ++
+                   "modified."
 updateBadGuy5 : Element
 updateBadGuy5 =
   body "{ badGuy |"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy5Msg) else (Signal.send hoveredOn ""))
 
-updateBadGuy6Msg = "The vx value of badGuy takes the result of the stepV funtion which takes the\n"
-                                  ++ "the true or false value for the conditional statements."
+updateBadGuy6Msg = "The vx-value of badGuy takes the\n" ++
+                   "result of the stepV funtion which\n" ++
+                   "takes the true or false value for\n" ++
+                   "the conditional statements."
 updateBadGuy6 : Element
 updateBadGuy6 =
   body "vx <- stepV vx (badGuy.vx < 0)"
@@ -1681,8 +1691,10 @@ updateBadGuy6a =
   body " (badGuy.vx > 0),"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy6Msg) else (Signal.send hoveredOn ""))
 
-updateBadGuy7Msg = "The vx value of badGuy takes the result of the stepV funtion which takes the\n"
-                                  ++ "the true or false value for the conditional statements."
+updateBadGuy7Msg = "The vy-value of badGuy takes the\n" ++
+                   "result of the stepV funtion which\n" ++
+                   "takes the true or false value for\n" ++
+                   "the conditional statements."
 updateBadGuy7 : Element
 updateBadGuy7 =
   body "vy <- stepV vy (badGuy.vy < 0 ) "
@@ -1693,7 +1705,8 @@ updateBadGuy7a =
   body " (badGuy.vy > 0)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy7Msg) else (Signal.send hoveredOn ""))
 
-updateBadGuy8Msg = "The bracket ends the attributes of badGuy which are modified."
+updateBadGuy8Msg = "The bracket ends the attributes of\n" ++
+                   "badGuy which are modified."
 updateBadGuy8 : Element
 updateBadGuy8 =
   body "}"
@@ -1749,21 +1762,25 @@ updateContainer7 sig hoveredOn=
     , body " 91."
     ]
 
-updateBadGuy9Msg = "In all other cases, the function physicsUpdate will be \ncalled with different arguments."
+updateBadGuy9Msg = "In all other cases, the function physicsUpdate\n" ++
+                   "will be called with different arguments."
 updateBadGuy9 : Element
 updateBadGuy9 =
   body "| otherwise -> physicsUpdate t"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy9Msg) else (Signal.send hoveredOn ""))
 
-updateBadGuy10Msg = "Once again, some of the attributes of badGuy will be modified."
+updateBadGuy10Msg = "Some of the attributes of the object badGuy\n" ++
+                    "will be modified."
 updateBadGuy10 : Element
 updateBadGuy10 =
   body "{ badGuy |"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy10Msg) else (Signal.send hoveredOn ""))
 
-updateBadGuy11Msg = "The value vx takes the result of the function stepV. This is checking to \nsee if "
-                                    ++ "the badGuy is going outside the game area. The number 25 is used\n"
-                                    ++ "that is the radius of badGuy. This will keep it in the game area."
+updateBadGuy11Msg = "The value vx takes the result of the function\n" ++
+                    "stepV. This is checking to see if badGuy is\n" ++
+                    "going outside the game area. The number 25 is\n" ++
+                    "the radius of badGuy. This will keep it in the\n" ++
+                    "game area."
 updateBadGuy11 : Element
 updateBadGuy11 =
   body "vx <- stepV vx (x < 25-halfWidth) "
@@ -1774,9 +1791,11 @@ updateBadGuy11a =
   body " (x > halfWidth-25),"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy11Msg) else (Signal.send hoveredOn ""))
 
-updateBadGuy12Msg = "The value vx takes the result of the function stepV. This is checking to \nsee if "
-                                    ++ "the badGuy is going outside the game area. The number 25 is used\n"
-                                    ++ "that is the radius of badGuy. This will keep it in the game area."
+updateBadGuy12Msg = "The value vy takes the result of the function\n" ++
+                    "stepV. This is checking to see if badGuy is\n" ++
+                    "going outside the game area. The number 25 is\n" ++
+                    "the radius of badGuy. This will keep it in the\n" ++
+                    "game area."
 updateBadGuy12 : Element
 updateBadGuy12 =
   body "vy <- stepV vy (y < 25-halfHeight) "
@@ -1787,11 +1806,12 @@ updateBadGuy12a =
   body " (y > halfHeight-25)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy12Msg) else (Signal.send hoveredOn ""))
 
-updateBadGuy13Msg = "The bracket ends the attributes of badGuy which are modified."
+updateBadGuy13Msg = "The bracket ends the attributes of badGuy which\n" ++
+                    "are modified."
 updateBadGuy13 : Element
 updateBadGuy13 =
   body "}"
-    |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy3Msg) else (Signal.send hoveredOn ""))
+    |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy13Msg) else (Signal.send hoveredOn ""))
 
 -- Update Message 3
 displayUpdate8 : (Int, Int) -> Int -> String -> Element
@@ -1816,8 +1836,10 @@ updateContainer8 sig hoveredOn=
     , updatePlayer2
     ]
 
-updatePlayer1Msg = "This defines the function updatePlayer, which takes a time, an integer, \nanother "
-                          ++ "integer, another integer, a player, and returns a player."
+updatePlayer1Msg = "This defines the function updatePlayer,\n" ++
+                   "which takes a time, an integer, another\n" ++
+                   "integer, another integer, a player, and\n" ++
+                   "returns a player."
 updatePlayer1 : Element
 updatePlayer1 =
   body " 92. updatePlayer : Time -> Int -> Int -> Int -> "
@@ -1828,7 +1850,8 @@ updatePlayer1a =
   body " Player -> Player"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer1Msg) else (Signal.send hoveredOn ""))
 
-updatePlayer2Msg = "The function updatePlayer is called with t, dir1, dir2, lives, and player."
+updatePlayer2Msg = "The function updatePlayer is called with\n" ++
+                   "t, dir1, dir2, lives, and player."
 updatePlayer2 : Element
 updatePlayer2 =
   body " 93. updatePlayer t dir1 dir2 lives player ="
@@ -1880,11 +1903,13 @@ updateContainer9 sig hoveredOn=
     , body " 99."
     ]
 
-updatePlayer3Msg = "An object player1 is created. Its attributes of vx and vy are set to the values \ncreated "
-                              ++ "by the function physicsUpdate, which takes time t. and player.\n"
-                              ++ "The updated vy attribute takes the value of dir2 multiplied by 200. However,\ndir2 "
-                              ++ "multiplied by 200 is an integer. The value vy is a float. The toFloat \nfunction converts "
-                              ++ "an integer into a float."
+updatePlayer3Msg = "An object player1 is created. Its attributes\n" ++
+                   "of vx and vy are set to the values created by\n" ++
+                   "the function physicsUpdate, which takes time t.\n" ++
+                   "The updated vx attribute takes the value of dir1\n" ++
+                   "multiplied by 200. However, dir1 multiplied by\n" ++
+                   "200 is an integer. The value vy is a float. The\n" ++
+                   "toFloat function converts an integer into a float."
 updatePlayer3 : Element
 updatePlayer3 =
   body "let player1 = physicsUpdate  t { player | "
@@ -1895,29 +1920,35 @@ updatePlayer3a =
   body " vx <- toFloat dir1 * 200"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer3Msg) else (Signal.send hoveredOn ""))
 
-updatePlayer4Msg = "The updated vy attribute takes the value of dir2 multiplied by 200. \nHowever, dir2 "
-                              ++ "multiplied by 200 is an integer. The value vy is a float. \nThe toFloat function converts "
-                              ++ "an integer into a float."
+updatePlayer4Msg = "The updated vy attribute takes the value of dir2\n" ++
+                   "multiplied by 200. However, dir2 multiplied by\n" ++
+                   "200 is an integer. The value vy is a float. The\n" ++
+                   "toFloat function converts an integer into a float."
 updatePlayer4 : Element
 updatePlayer4 =
   body "vy <- toFloat dir2 * 200}"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer4Msg) else (Signal.send hoveredOn ""))
 
-updatePlayer5Msg = "This is a conditional statement tha wants to know if player.lives minus lives is\n"
-                               ++ "is greater than 0. Conditinals return true or false."
+updatePlayer5Msg = "The value of alive depends upon the conditional\n" ++
+                   "statement tha wants to know if player.lives minus\n" ++
+                   "lives is greater than 0. Conditionals return either\n" ++
+                   "true or false."
 updatePlayer5 : Element
 updatePlayer5 =
   body "alive = if (player.lives - lives < 0)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer5Msg) else (Signal.send hoveredOn ""))
 
-updatePlayer6Msg = "If the previous conditional statement is true, then alives takes the value of 0."
+updatePlayer6Msg = "If the previous conditional statement is true,\n" ++
+                   "then alives takes the value of 0. This keeps the\n" ++
+                   "lives from becoming a negative number."
 updatePlayer6 : Element
 updatePlayer6 =
   body "then 0"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer6Msg) else (Signal.send hoveredOn ""))
 
-updatePlayer7Msg = "If the previous conditional statement is not true, then alive will equal player.lives\n"
-                              ++ "minus the value of lives."
+updatePlayer7Msg = "If the previous conditional statement is not\n" ++
+                   "true, then alive will equal player.lives minus\n" ++
+                   "the value of lives."
 updatePlayer7 : Element
 updatePlayer7 =
   body "else (player.lives - lives)"
