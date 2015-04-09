@@ -3109,9 +3109,16 @@ elmResources (width, height) sig =
     , iconElement elmLogo
     , resourcesElement resourcesMsg
     , color elmOrange <| container containerWidth 285 middle (flow down
-      [ Text.leftAligned <| Text.link "http://http://package.elm-lang.org/" (Text.fromString "Elm Package Catalog")
-      , Text.leftAligned <| Text.link "http://http://elm-lang.org/Examples.elm" (Text.fromString "Elm Examples")
-      , Text.leftAligned <| Text.link "http://http://elm-lang.org/learn/Syntax.elm" (Text.fromString "Elm Syntax")
+      [ subTitle "Elm Websites"
+      , Text.leftAligned <| Text.link "http://package.elm-lang.org/" <| Text.fromString "Elm Package Catalog"
+      , Text.leftAligned <| Text.link "http://elm-lang.org/Examples.elm" <| Text.fromString "Elm Examples"
+      , Text.leftAligned <| Text.link "http://elm-lang.org/learn/Syntax.elm" <| Text.fromString "Elm Syntax"
+      , subTitle "Elm Community"
+      , Text.leftAligned <| Text.link "https://groups.google.com/forum/?fromgroups#!forum/elm-discuss" <| Text.fromString "Elm Mailing List"
+      , subTitle "Elm Videos"
+      , Text.leftAligned <| Text.link "http://elm-lang.org/learn/courses/beginner/Programming.elm" <| Text.fromString "Intro to Elm Video"
+      , Text.leftAligned <| Text.link "http://elm-lang.org/learn/courses/beginner/Graphics.elm" <| Text.fromString "Intro to Elm Graphics"
+      , Text.leftAligned <| Text.link "http://elm-lang.org/learn/courses/beginner/Lists-and-Records.elm" <| Text.fromString "Intro to Lists and Records"
       ])
     , buttonSOElement sig
     ]))
