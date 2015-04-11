@@ -111,9 +111,8 @@ dashPresent =
     |> filled elmBlue
 
 -- Display elements
-gifElement : String -> Element
 gifElement gif =
-  color elmBlue <| container containerWidth 175 middle <| body gif
+  color grey <| collage containerWidth 125 [ toForm gifImage ]
 
 resourcesElement : String -> Element
 resourcesElement strg =
@@ -125,7 +124,7 @@ linksElement =
 
 welcomeElement : String -> Element
 welcomeElement strg =
-  color elmGreen <| container containerWidth 325 middle <| subTitle strg
+  color grey <| container containerWidth 375 middle <| subTitle strg
 
 wayfindingElement : Element -> Element
 wayfindingElement wayfinding =
@@ -264,8 +263,8 @@ wayfindingWelcome =
         [ wayfinderFuture ] --Congrats section
     ])
 
-gifImage : String
-gifImage = "Gif goes here"
+gifImage : Element
+gifImage = image 180 119 "https://lh3.googleusercontent.com/28BVVXoP-CyRrnjbKYbho4iEbCmKh5gUfNN0dAEG4Kr3txtGRHdQlh6Zy5YDmL_edYK_7ai8ee2p8mQ=w1720-h857"
 
 welcomeMsg1 : String
 welcomeMsg1 = "Elm Play"
