@@ -80,7 +80,7 @@ view (width, height) sig hoveredOn =
 indent = 20
 containerWidth = 400
 containerHeight = 700
-subtitleHeight = 500
+subtitleHeight = 375
 extraLine = 15
 codeHeight = 30
 gameHeight = 225
@@ -137,7 +137,7 @@ titleElement strg =
 
 subtitleElement : String -> Element
 subtitleElement strg =
-  color grey <| container containerWidth subtitleHeight middle <| subTitle strg
+  color elmBlue <| container containerWidth subtitleHeight middle <| subTitle strg
 
 codeTitleElement : String -> Element
 codeTitleElement strg =
@@ -298,6 +298,7 @@ importsWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingImports
     , titleElement importsWelcomeMsg1
+    , iconElement elmLogo
     , subtitleElement importsWelcomeMsg2
     , buttonsLRElement sig
     ]))
@@ -457,6 +458,7 @@ signalsWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
+    , iconElement elmLogo
     , subtitleElement signalsWelcomeMsg2
     , buttonsLRElement sig
     ]))
@@ -770,6 +772,7 @@ modelWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
+    , iconElement elmLogo
     , subtitleElement modelWelcomeMsg2
     , buttonsLRElement sig
     ]))
@@ -811,8 +814,6 @@ modelWelcomeMsg1 =
 
 modelWelcomeMsg2 : String
 modelWelcomeMsg2 =
-  "The Elm language does not understand\n" ++
-  "what an enemy is in your video game.\n" ++
   "The Model Section is used to create the\n" ++
   "objects and their characteristics to be\n" ++
   "used in the game. You will create:\n\n" ++
@@ -1207,6 +1208,7 @@ updateWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
     [ wayfindingUpdate
     , titleElement updateWelcomeMsg1
+    , iconElement elmLogo
     , subtitleElement updateWelcomeMsg2
     , buttonsLRElement sig
     ]))
@@ -2360,6 +2362,7 @@ viewWelcome (width, height) sig =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
+    , iconElement elmLogo
     , subtitleElement viewWelcomeMsg2
     , buttonsLRElement sig
     ]))
@@ -2964,6 +2967,7 @@ congrats (width, height) sig =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement viewCongratsMsg1
+    , iconElement elmLogo
     , subtitleElement viewCongratsMsg2
     , buttonsLRElement sig
     ]))
@@ -3022,6 +3026,7 @@ idea1 (width, height) sig =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement viewIdea1Msg1
+    , iconElement elmLogo
     , subtitleElement viewIdea1Msg2
     , buttonsLRElement sig
     ]))
@@ -3050,6 +3055,7 @@ idea2 (width, height) sig =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement viewIdea2Msg1
+    , iconElement elmLogo
     , subtitleElement viewIdea2Msg2
     , buttonsLRElement sig
     ]))
@@ -3077,6 +3083,7 @@ idea3 (width, height) sig =
   color elmGrey (container width height middle (flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement viewIdea3Msg1
+    , iconElement elmLogo
     , subtitleElement viewIdea3Msg2
     , buttonsLRElement sig
     ]))
@@ -3087,7 +3094,7 @@ viewIdea3Msg1 =
 
 viewIdea3Msg2 : String
 viewIdea3Msg2 =
-  "Aviod boring the player by using a\n" ++
+  "Avoid boring the player by using a\n" ++
   "rectangle layout for every level.\n" ++
   "Think of ways to modify or enhance\n" ++
   "the layout to make the game fun\n" ++
@@ -3113,8 +3120,12 @@ elmResources (width, height) sig =
       , Text.leftAligned <| Text.link "http://package.elm-lang.org/" <| Text.fromString "Elm Package Catalog"
       , Text.leftAligned <| Text.link "http://elm-lang.org/Examples.elm" <| Text.fromString "Elm Examples"
       , Text.leftAligned <| Text.link "http://elm-lang.org/learn/Syntax.elm" <| Text.fromString "Elm Syntax"
+      , spacer 1 5
       , subTitle "Elm Community"
       , Text.leftAligned <| Text.link "https://groups.google.com/forum/?fromgroups#!forum/elm-discuss" <| Text.fromString "Elm Mailing List"
+      , Text.leftAligned <| Text.link "https://twitter.com/elmlang" <| Text.fromString "Elm on Twitter"
+      , Text.leftAligned <| Text.link "http://webchat.freenode.net/?channels=elm" <| Text.fromString "Elm on IRC"
+      , spacer 1 5
       , subTitle "Elm Videos"
       , Text.leftAligned <| Text.link "http://elm-lang.org/learn/courses/beginner/Programming.elm" <| Text.fromString "Intro to Elm Video"
       , Text.leftAligned <| Text.link "http://elm-lang.org/learn/courses/beginner/Graphics.elm" <| Text.fromString "Intro to Elm Graphics"
