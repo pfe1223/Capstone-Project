@@ -116,11 +116,7 @@ gifElement gif =
 
 resourcesElement : String -> Element
 resourcesElement strg =
-  color elmGreen <| container containerWidth 90 middle <| subTitle strg
-
-{--linksElement : Element
-linksElement =
-  color elmOrange <| container containerWidth 200 middle <| elmLinks --}
+  color grey <| container containerWidth 90 middle <| subTitle strg
 
 welcomeElement : String -> Element
 welcomeElement strg =
@@ -136,7 +132,7 @@ titleElement strg =
 
 subtitleElement : String -> Element
 subtitleElement strg =
-  color elmBlue <| container containerWidth subtitleHeight middle <| subTitle strg
+  color grey <| container containerWidth subtitleHeight middle <| subTitle strg
 
 codeTitleElement : String -> Element
 codeTitleElement strg =
@@ -3114,7 +3110,7 @@ elmResources (width, height) sig =
     , titleElement resourcesTitle
     , iconElement elmLogo
     , resourcesElement resourcesMsg
-    , color elmOrange <| container containerWidth 285 middle (flow down
+    , color grey <| container containerWidth 285 middle (flow down
       [ subTitle "Elm Websites"
       , Text.leftAligned <| Text.link "http://package.elm-lang.org/" <| Text.fromString "Elm Package Catalog"
       , Text.leftAligned <| Text.link "http://elm-lang.org/Examples.elm" <| Text.fromString "Elm Examples"
