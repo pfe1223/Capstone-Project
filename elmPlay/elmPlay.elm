@@ -8,6 +8,8 @@ import Window
 import Mouse
 import String (padLeft)
 import Graphics.Collage (..)
+import Html (a, text, toElement)
+import Html.Attributes (href, target)
 
 main : Signal Element
 main =
@@ -3110,24 +3112,29 @@ elmResources (width, height) sig =
     , titleElement resourcesTitle
     , iconElement elmLogo
     , resourcesElement resourcesMsg
-    , color grey <| container containerWidth 285 middle (flow down
+    , color grey <| container containerWidth 285 midLeft (flow down
       [ subTitle "Elm Websites"
-      , Text.leftAligned <| Text.link "http://package.elm-lang.org/" <| Text.fromString "Elm Package Catalog"
-      , Text.leftAligned <| Text.link "http://elm-lang.org/Examples.elm" <| Text.fromString "Elm Examples"
-      , Text.leftAligned <| Text.link "http://elm-lang.org/learn/Syntax.elm" <| Text.fromString "Elm Syntax"
+      , toElement 200 20 packageLink
+      , toElement 200 20 exampleLink
+      , toElement 200 20 syntaxLink
       , spacer 1 5
       , subTitle "Elm Community"
-      , Text.leftAligned <| Text.link "https://groups.google.com/forum/?fromgroups#!forum/elm-discuss" <| Text.fromString "Elm Mailing List"
+      , toElement 200 20 mailingLink
       , Text.leftAligned <| Text.link "https://twitter.com/elmlang" <| Text.fromString "Elm on Twitter"
       , Text.leftAligned <| Text.link "http://webchat.freenode.net/?channels=elm" <| Text.fromString "Elm on IRC"
       , spacer 1 5
       , subTitle "Elm Videos"
-      , Text.leftAligned <| Text.link "http://elm-lang.org/learn/courses/beginner/Programming.elm" <| Text.fromString "Intro to Elm Video"
-      , Text.leftAligned <| Text.link "http://elm-lang.org/learn/courses/beginner/Graphics.elm" <| Text.fromString "Intro to Elm Graphics"
-      , Text.leftAligned <| Text.link "http://elm-lang.org/learn/courses/beginner/Lists-and-Records.elm" <| Text.fromString "Intro to Lists and Records"
+      -- , Text.leftAligned <| Text.link "http://elm-lang.org/learn/courses/beginner/Programming.elm" <| Text.fromString "Intro to Elm Video"
+      -- , Text.leftAligned <| Text.link "http://elm-lang.org/learn/courses/beginner/Graphics.elm" <| Text.fromString "Intro to Elm Graphics"
+      -- , Text.leftAligned <| Text.link "http://elm-lang.org/learn/courses/beginner/Lists-and-Records.elm" <| Text.fromString "Intro to Lists and Records"
       ])
     , buttonSOElement sig
     ]))
+
+packageLink = a [href "http://package.elm-lang.org/", target "_blank"] [text "Elm Package Catalog"]
+exampleLink = a [href "http://elm-lang.org/Examples.elm", target "_blank"] [text "Elm Examples"]
+syntaxLink = a [href "http://elm-lang.org/learn/Syntax.elm", target "_blank"] [text "Elm Syntax"]
+mailingLink = a [href "https://groups.google.com/forum/?fromgroups#!forum/elm-discuss", target "_blank"] [text "Elm Mailing List"]
 
 resourcesTitle : String
 resourcesTitle =
