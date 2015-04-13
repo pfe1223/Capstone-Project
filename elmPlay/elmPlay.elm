@@ -88,6 +88,7 @@ codeHeight = 30
 gameHeight = 225
 bottomHeight = 150
 iconHeight = 125
+linkWidth = 200
 
 -- Wayfinding tools
 wayfinderPast =
@@ -262,8 +263,7 @@ wayfindingWelcome =
     ])
 
 gifImage : Element
-gifImage = image 180 119 "https://lh3.googleusercontent.com/28BVVXoP-CyRrnjbKYbho4iEbCmKh5gUfNN0dAEG4Kr3txtGRHdQlh6Zy5YDmL_edYK_7ai8ee2p8mQ=w1720-h857"
-
+gifImage = image 180 119 "/demoGif1.gif"
 welcomeMsg1 : String
 welcomeMsg1 = "Elm Play"
 
@@ -3112,21 +3112,21 @@ elmResources (width, height) sig =
     , titleElement resourcesTitle
     , iconElement elmLogo
     , resourcesElement resourcesMsg
-    , color grey <| container containerWidth 285 midLeft (flow down
+    , color grey <| container containerWidth 285 middle (flow down
       [ subTitle "Elm Websites"
-      , toElement 200 20 packageLink
-      , toElement 200 20 exampleLink
-      , toElement 200 20 syntaxLink
+      , toElement linkWidth 20 packageLink
+      , toElement linkWidth 20 exampleLink
+      , toElement linkWidth 20 syntaxLink
       , spacer 1 5
       , subTitle "Elm Community"
-      , toElement 200 20 mailingLink
-      , Text.leftAligned <| Text.link "https://twitter.com/elmlang" <| Text.fromString "Elm on Twitter"
-      , Text.leftAligned <| Text.link "http://webchat.freenode.net/?channels=elm" <| Text.fromString "Elm on IRC"
+      , toElement linkWidth 20 mailingLink
+      , toElement linkWidth 20 twitterLink
+      , toElement linkWidth 20 ircLink
       , spacer 1 5
       , subTitle "Elm Videos"
-      -- , Text.leftAligned <| Text.link "http://elm-lang.org/learn/courses/beginner/Programming.elm" <| Text.fromString "Intro to Elm Video"
-      -- , Text.leftAligned <| Text.link "http://elm-lang.org/learn/courses/beginner/Graphics.elm" <| Text.fromString "Intro to Elm Graphics"
-      -- , Text.leftAligned <| Text.link "http://elm-lang.org/learn/courses/beginner/Lists-and-Records.elm" <| Text.fromString "Intro to Lists and Records"
+      , toElement linkWidth 20 videoLink1
+      , toElement linkWidth 20 videoLink2
+      , toElement linkWidth 20 videoLink3
       ])
     , buttonSOElement sig
     ]))
@@ -3135,6 +3135,11 @@ packageLink = a [href "http://package.elm-lang.org/", target "_blank"] [text "El
 exampleLink = a [href "http://elm-lang.org/Examples.elm", target "_blank"] [text "Elm Examples"]
 syntaxLink = a [href "http://elm-lang.org/learn/Syntax.elm", target "_blank"] [text "Elm Syntax"]
 mailingLink = a [href "https://groups.google.com/forum/?fromgroups#!forum/elm-discuss", target "_blank"] [text "Elm Mailing List"]
+twitterLink = a [href "https://twitter.com/elmlang", target "_blank"] [text "Elm on Twitter"]
+ircLink = a [href "http://webchat.freenode.net/?channels=elm", target "_black"] [text "Elm on IRC"]
+videoLink1 = a [href "http://elm-lang.org/learn/courses/beginner/Programming.elm", target "_blank"] [text "Intro to Elm Video"]
+videoLink2 = a [href "http://elm-lang.org/learn/courses/beginner/Graphics.elm", target "_blank"] [text "Intro to Elm Graphics"]
+videoLink3 = a [href "http://elm-lang.org/learn/courses/beginner/Lists-and-Records.elm", target "_blank"] [text "Intro to Lists and Records"]
 
 resourcesTitle : String
 resourcesTitle =
