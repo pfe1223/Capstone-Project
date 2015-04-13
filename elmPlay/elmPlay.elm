@@ -208,7 +208,7 @@ elmBlue = rgb 76 166 195
 elmGreen = rgb 127 209 17
 
 -- Icons
-elmLogo = image 100 100 "/elmLogo.svg"
+elmLogo = image 100 100 "/images/elmLogo.svg"
 
 -- Text formatting
 title f = Text.fromString(f)
@@ -266,7 +266,7 @@ wayfindingWelcome =
     ])
 
 gifImage : Element
-gifImage = image 180 119 "/demoGif1.gif"
+gifImage = image 180 119 "/images/demoGif1.gif"
 welcomeMsg1 : String
 welcomeMsg1 = "Elm Play"
 
