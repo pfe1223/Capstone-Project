@@ -227,12 +227,6 @@ subTitle f = Text.fromString(f)
 body f = Text.fromString(f)
              |> Text.leftAligned
 
-linkText msg address = Text.fromString(msg)
-                        |> Text.link address
-                        |> Text.height 20
-                        |> Text.color elmBlue
-                        |> Text.leftAligned
-
 -- Welcome Message
 displayWelcome : (Int, Int) -> Int -> Element
 displayWelcome (width, height) sig =

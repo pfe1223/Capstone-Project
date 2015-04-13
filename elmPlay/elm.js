@@ -4859,7 +4859,7 @@ Elm.Main.make = function (_elm) {
    var elmLogo = A3($Graphics$Element.image,
    100,
    100,
-   "http://elm-lang.org/logo.svg");
+   "/elmLogo.svg");
    var elmGreen = A3($Color.rgb,
    127,
    209,
@@ -4880,21 +4880,33 @@ Elm.Main.make = function (_elm) {
    71,
    80,
    102);
+   var darkerOrange = A3($Color.rgb,
+   166,
+   105,
+   10);
+   var darkerBlue = A3($Color.rgb,
+   42,
+   105,
+   129);
+   var darkerGreen = A3($Color.rgb,
+   90,
+   146,
+   15);
    var title = function (f) {
-      return $Text.centered($Text.height(50)($Text.color(elmGrey)($Text.fromString(f))));
+      return $Text.centered($Text.height(50)($Text.color(darkerGreen)($Text.fromString(f))));
    };
    var backgroundColor = A3($Color.rgb,
    39,
    45,
    60);
-   var dashPresent = $Graphics$Collage.filled(elmBlue)(A2($Graphics$Collage.rect,
+   var dashPresent = $Graphics$Collage.filled(darkerBlue)(A2($Graphics$Collage.rect,
    20,
    5));
-   var dashPast = $Graphics$Collage.alpha(0.5)($Graphics$Collage.filled(elmBlue)(A2($Graphics$Collage.rect,
+   var dashPast = $Graphics$Collage.alpha(0.5)($Graphics$Collage.filled(darkerBlue)(A2($Graphics$Collage.rect,
    20,
    5)));
-   var wayfinderFuture = $Graphics$Collage.outlined($Graphics$Collage.solid(elmBlue))($Graphics$Collage.circle(15));
-   var wayfinderPresent = $Graphics$Collage.filled(elmBlue)($Graphics$Collage.circle(15));
+   var wayfinderFuture = $Graphics$Collage.outlined($Graphics$Collage.solid(darkerBlue))($Graphics$Collage.circle(15));
+   var wayfinderPresent = $Graphics$Collage.filled(darkerBlue)($Graphics$Collage.circle(15));
    var wayfindingWelcome = $Graphics$Element.color($Color.grey)(A3($Graphics$Element.container,
    400,
    50,
@@ -4952,7 +4964,7 @@ Elm.Main.make = function (_elm) {
                 30,
                 50,
                 _L.fromArray([wayfinderFuture]))]))));
-   var wayfinderPast = $Graphics$Collage.alpha(0.5)($Graphics$Collage.filled(elmBlue)($Graphics$Collage.circle(15)));
+   var wayfinderPast = $Graphics$Collage.alpha(0.5)($Graphics$Collage.filled(darkerBlue)($Graphics$Collage.circle(15)));
    var wayfindingImports = $Graphics$Element.color($Color.grey)(A3($Graphics$Element.container,
    400,
    50,
@@ -7491,7 +7503,7 @@ Elm.Main.make = function (_elm) {
                            ,welcomeElement(welcomeMsg2)
                            ,buttonGoElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 236 and 242");
+         "between lines 239 and 245");
       }();
    });
    var rightButton = function (sig) {
@@ -7542,7 +7554,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(importsWelcomeMsg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 305 and 311");
+         "between lines 308 and 314");
       }();
    });
    var displayImports = F3(function (_v8,
@@ -7568,7 +7580,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 367 and 374");
+         "between lines 370 and 377");
       }();
    });
    var signalsWelcome = F2(function (_v12,
@@ -7590,7 +7602,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(signalsWelcomeMsg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 466 and 472");
+         "between lines 469 and 475");
       }();
    });
    var displaySignals1 = F3(function (_v16,
@@ -7616,7 +7628,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 528 and 535");
+         "between lines 531 and 538");
       }();
    });
    var displaySignals2 = F3(function (_v20,
@@ -7642,7 +7654,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 578 and 585");
+         "between lines 581 and 588");
       }();
    });
    var displaySignals3 = F3(function (_v24,
@@ -7668,7 +7680,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 624 and 631");
+         "between lines 627 and 634");
       }();
    });
    var displaySignals4 = F3(function (_v28,
@@ -7694,7 +7706,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 664 and 671");
+         "between lines 667 and 674");
       }();
    });
    var modelWelcome = F2(function (_v32,
@@ -7716,7 +7728,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(modelWelcomeMsg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 780 and 786");
+         "between lines 783 and 789");
       }();
    });
    var displayModel1 = F3(function (_v36,
@@ -7742,7 +7754,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 844 and 851");
+         "between lines 847 and 854");
       }();
    });
    var displayModel2 = F3(function (_v40,
@@ -7768,7 +7780,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 879 and 886");
+         "between lines 882 and 889");
       }();
    });
    var displayModel3 = F3(function (_v44,
@@ -7794,7 +7806,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 904 and 911");
+         "between lines 907 and 914");
       }();
    });
    var displayModel4 = F3(function (_v48,
@@ -7820,7 +7832,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 944 and 951");
+         "between lines 947 and 954");
       }();
    });
    var displayModel5 = F3(function (_v52,
@@ -7846,7 +7858,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 984 and 991");
+         "between lines 987 and 994");
       }();
    });
    var displayModel6 = F3(function (_v56,
@@ -7872,7 +7884,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1033 and 1040");
+         "between lines 1036 and 1043");
       }();
    });
    var displayModel7 = F3(function (_v60,
@@ -7898,7 +7910,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1126 and 1133");
+         "between lines 1129 and 1136");
       }();
    });
    var updateWelcome = F2(function (_v64,
@@ -7920,7 +7932,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(updateWelcomeMsg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1216 and 1222");
+         "between lines 1219 and 1225");
       }();
    });
    var displayUpdate1 = F3(function (_v68,
@@ -7946,7 +7958,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1278 and 1285");
+         "between lines 1281 and 1288");
       }();
    });
    var displayUpdate2 = F3(function (_v72,
@@ -7972,7 +7984,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1348 and 1355");
+         "between lines 1351 and 1358");
       }();
    });
    var displayUpdate3 = F3(function (_v76,
@@ -7998,7 +8010,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1414 and 1421");
+         "between lines 1417 and 1424");
       }();
    });
    var displayUpdate4 = F3(function (_v80,
@@ -8024,7 +8036,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1491 and 1498");
+         "between lines 1494 and 1501");
       }();
    });
    var displayUpdate5 = F3(function (_v84,
@@ -8050,7 +8062,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1591 and 1598");
+         "between lines 1594 and 1601");
       }();
    });
    var displayUpdate6 = F3(function (_v88,
@@ -8076,7 +8088,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1644 and 1651");
+         "between lines 1647 and 1654");
       }();
    });
    var displayUpdate7 = F3(function (_v92,
@@ -8102,7 +8114,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1776 and 1783");
+         "between lines 1779 and 1786");
       }();
    });
    var displayUpdate8 = F3(function (_v96,
@@ -8128,7 +8140,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1878 and 1885");
+         "between lines 1881 and 1888");
       }();
    });
    var displayUpdate9 = F3(function (_v100,
@@ -8154,7 +8166,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1921 and 1928");
+         "between lines 1924 and 1931");
       }();
    });
    var displayUpdate10 = F3(function (_v104,
@@ -8180,7 +8192,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2018 and 2025");
+         "between lines 2021 and 2028");
       }();
    });
    var displayUpdate11 = F3(function (_v108,
@@ -8206,7 +8218,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2129 and 2136");
+         "between lines 2132 and 2139");
       }();
    });
    var displayUpdate12 = F3(function (_v112,
@@ -8232,7 +8244,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2203 and 2210");
+         "between lines 2206 and 2213");
       }();
    });
    var displayUpdate13 = F3(function (_v116,
@@ -8258,7 +8270,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2248 and 2255");
+         "between lines 2251 and 2258");
       }();
    });
    var displayUpdate14 = F3(function (_v120,
@@ -8284,7 +8296,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2297 and 2304");
+         "between lines 2300 and 2307");
       }();
    });
    var viewWelcome = F2(function (_v124,
@@ -8306,7 +8318,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(viewWelcomeMsg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2370 and 2376");
+         "between lines 2373 and 2379");
       }();
    });
    var displayView1 = F3(function (_v128,
@@ -8332,7 +8344,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2433 and 2440");
+         "between lines 2436 and 2443");
       }();
    });
    var displayView2 = F3(function (_v132,
@@ -8358,7 +8370,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2468 and 2475");
+         "between lines 2471 and 2478");
       }();
    });
    var displayView3 = F3(function (_v136,
@@ -8384,7 +8396,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2519 and 2526");
+         "between lines 2522 and 2529");
       }();
    });
    var displayView4 = F3(function (_v140,
@@ -8410,7 +8422,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2575 and 2582");
+         "between lines 2578 and 2585");
       }();
    });
    var displayView5 = F3(function (_v144,
@@ -8436,7 +8448,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2616 and 2623");
+         "between lines 2619 and 2626");
       }();
    });
    var displayView6 = F3(function (_v148,
@@ -8462,7 +8474,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2670 and 2677");
+         "between lines 2673 and 2680");
       }();
    });
    var displayView7 = F3(function (_v152,
@@ -8488,7 +8500,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2724 and 2731");
+         "between lines 2727 and 2734");
       }();
    });
    var displayView8 = F3(function (_v156,
@@ -8514,7 +8526,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2767 and 2774");
+         "between lines 2770 and 2777");
       }();
    });
    var displayView9 = F3(function (_v160,
@@ -8540,7 +8552,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2835 and 2842");
+         "between lines 2838 and 2845");
       }();
    });
    var displayView10 = F3(function (_v164,
@@ -8566,7 +8578,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2885 and 2892");
+         "between lines 2888 and 2895");
       }();
    });
    var displayView11 = F3(function (_v168,
@@ -8592,7 +8604,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2930 and 2937");
+         "between lines 2933 and 2940");
       }();
    });
    var congrats = F2(function (_v172,
@@ -8614,7 +8626,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(viewCongratsMsg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2975 and 2981");
+         "between lines 2978 and 2984");
       }();
    });
    var idea1 = F2(function (_v176,
@@ -8636,7 +8648,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(viewIdea1Msg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 3034 and 3040");
+         "between lines 3037 and 3043");
       }();
    });
    var idea2 = F2(function (_v180,
@@ -8658,7 +8670,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(viewIdea2Msg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 3063 and 3069");
+         "between lines 3066 and 3072");
       }();
    });
    var idea3 = F2(function (_v184,
@@ -8680,7 +8692,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(viewIdea3Msg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 3091 and 3097");
+         "between lines 3094 and 3100");
       }();
    });
    var startOver = function (sig) {
@@ -8771,7 +8783,7 @@ Elm.Main.make = function (_elm) {
                                         videoLink3)]))))
                            ,buttonSOElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 3121 and 3143");
+         "between lines 3124 and 3146");
       }();
    });
    var view = F3(function (_v192,
@@ -9120,6 +9132,9 @@ Elm.Main.make = function (_elm) {
                       ,leftButton: leftButton
                       ,startOver: startOver
                       ,backgroundColor: backgroundColor
+                      ,darkerGreen: darkerGreen
+                      ,darkerBlue: darkerBlue
+                      ,darkerOrange: darkerOrange
                       ,elmGrey: elmGrey
                       ,elmOrange: elmOrange
                       ,elmBlue: elmBlue
