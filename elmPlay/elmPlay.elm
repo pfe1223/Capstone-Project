@@ -157,7 +157,7 @@ buttonGoElement : Int -> Element
 buttonGoElement sig =
   color grey <| container containerWidth 50 midRight <| flow left
     [ spacer 5 1
-    , letsGo sig
+    , customGoButton sig
     ]
 
 buttonsLRElement : Int -> Element
@@ -211,6 +211,12 @@ customRButton sig =
  (image 40 40 "/images/rightButton.svg")
  (image 40 40 "/images/rightButton.svg")
 
+customGoButton : Int -> Element
+customGoButton sig =
+ customButton (send chan (sig + 1))
+ (image 100 40 "/images/goButton.svg")
+ (image 100 40 "/images/goButton.svg")
+ (image 100 40 "/images/goButton.svg")
 
 -- Custom colors based on the Elm logo
 backgroundColor = rgb 39 45 60
