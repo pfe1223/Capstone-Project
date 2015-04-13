@@ -271,7 +271,6 @@ wayfindingWelcome =
         [ wayfinderFuture ] --Congrats section
     ])
 
-gifImage : Element
 welcomeMsg1 : String
 welcomeMsg1 = "Elm Play"
 
@@ -464,7 +463,7 @@ signalsWelcome (width, height) sig =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement signalsIcon
     , subtitleElement signalsWelcomeMsg2
     , buttonsLRElement sig
     ]))
@@ -526,7 +525,7 @@ displaySignals1 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement signalsIcon
     , codeElement <| signalsContainer1 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -576,7 +575,7 @@ displaySignals2 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement signalsIcon
     , codeElement <| signalsContainer2 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -622,7 +621,7 @@ displaySignals3 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement signalsIcon
     , codeElement <| signalsContainer3 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -662,7 +661,7 @@ displaySignals4 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement signalsIcon
     , codeElement <| signalsContainer4 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -778,7 +777,7 @@ modelWelcome (width, height) sig =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement modelIcon
     , subtitleElement modelWelcomeMsg2
     , buttonsLRElement sig
     ]))
@@ -842,7 +841,7 @@ displayModel1 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement modelIcon
     , codeElement <| modelContainer1 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -877,7 +876,7 @@ displayModel2 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement modelIcon
     , codeElement <| modelContainer2 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -902,7 +901,7 @@ displayModel3 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement modelIcon
     , codeElement <| modelContainer3 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -942,7 +941,7 @@ displayModel4 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement modelIcon
     , codeElement <| modelContainer4 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -982,7 +981,7 @@ displayModel5 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement modelIcon
     , codeElement <| modelContainer5 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1031,7 +1030,7 @@ displayModel6 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement modelIcon
     , codeElement <| modelContainer6 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1124,7 +1123,7 @@ displayModel7 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement modelIcon
     , codeElement <| modelContainer7 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1214,7 +1213,7 @@ updateWelcome (width, height) sig =
   color backgroundColor (container width height middle (flow down
     [ wayfindingUpdate
     , titleElement updateWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement updateIcon
     , subtitleElement updateWelcomeMsg2
     , buttonsLRElement sig
     ]))
@@ -1276,7 +1275,7 @@ displayUpdate1 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement updateIcon
     , codeElement <| updateContainer1 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1346,7 +1345,7 @@ displayUpdate2 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement updateIcon
     , codeElement <| updateContainer2 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1412,7 +1411,7 @@ displayUpdate3 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement updateIcon
     , codeElement <| updateContainer3 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1489,7 +1488,7 @@ displayUpdate4 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement updateIcon
     , codeElement <| updateContainer4 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1589,7 +1588,7 @@ displayUpdate5 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement updateIcon
     , codeElement <| updateContainer5 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1642,7 +1641,7 @@ displayUpdate6 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement updateIcon
     , codeElement <| updateContainer6 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1774,7 +1773,7 @@ displayUpdate7 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement updateIcon
     , codeElement <| updateContainer7 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1876,7 +1875,7 @@ displayUpdate8 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement updateIcon
     , codeElement <| updateContainer8 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -1919,7 +1918,7 @@ displayUpdate9 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement updateIcon
     , codeElement <| updateContainer9 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2016,7 +2015,7 @@ displayUpdate10 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement updateIcon
     , codeElement <| updateContainer10 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2127,7 +2126,7 @@ displayUpdate11 (width, height) sig hoveredOn=
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement updateIcon
     , codeElement <| updateContainer11 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2201,7 +2200,7 @@ displayUpdate12 (width, height) sig hoveredOn=
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement updateIcon
     , codeElement <| updateContainer12 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2246,7 +2245,7 @@ displayUpdate13 (width, height) sig hoveredOn=
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement updateIcon
     , codeElement <| updateContainer13 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2295,7 +2294,7 @@ displayUpdate14 (width, height) sig hoveredOn=
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement updateIcon
     , codeElement <| updateContainer14 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2368,7 +2367,7 @@ viewWelcome (width, height) sig =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement viewIcon
     , subtitleElement viewWelcomeMsg2
     , buttonsLRElement sig
     ]))
@@ -2431,7 +2430,7 @@ displayView1 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement viewIcon
     , codeElement <| viewContainer1 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2466,7 +2465,7 @@ displayView2 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement viewIcon
     , codeElement <| viewContainer2 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2517,7 +2516,7 @@ displayView3 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement viewIcon
     , codeElement <| viewContainer3 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2573,7 +2572,7 @@ displayView4 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement viewIcon
     , codeElement <| viewContainer4 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2614,7 +2613,7 @@ displayView5 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement viewIcon
     , codeElement <| viewContainer5 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2668,7 +2667,7 @@ displayView6 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement viewIcon
     , codeElement <| viewContainer6 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2722,7 +2721,7 @@ displayView7 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement viewIcon
     , codeElement <| viewContainer7 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2765,7 +2764,7 @@ displayView8 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement viewIcon
     , codeElement <| viewContainer8 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2833,7 +2832,7 @@ displayView9 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement viewIcon
     , codeElement <| viewContainer9 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2883,7 +2882,7 @@ displayView10 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement viewIcon
     , codeElement <| viewContainer10 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
@@ -2928,7 +2927,7 @@ displayView11 (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement viewIcon
     , codeElement <| viewContainer11 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig

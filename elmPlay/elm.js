@@ -4846,20 +4846,40 @@ Elm.Main.make = function (_elm) {
    "code above. Click on the button below\n",
    "to begin.")))))))))));
    var welcomeMsg1 = "Elm Play";
-   var gifImage = A3($Graphics$Element.image,
-   180,
-   119,
-   "/images/demoGif1.gif");
    var body = function (f) {
       return $Text.leftAligned($Text.fromString(f));
    };
    var subTitle = function (f) {
       return $Text.leftAligned($Text.height(20)($Text.fromString(f)));
    };
+   var viewIcon = A3($Graphics$Element.image,
+   100,
+   100,
+   "images/viewIcon.svg");
+   var updateIcon = A3($Graphics$Element.image,
+   100,
+   100,
+   "images/updateIcon.svg");
+   var signalsIcon = A3($Graphics$Element.image,
+   100,
+   100,
+   "images/signalsIcon.svg");
+   var modelIcon = A3($Graphics$Element.image,
+   100,
+   100,
+   "images/modelIcon.svg");
+   var importsIcon = A3($Graphics$Element.image,
+   100,
+   100,
+   "images/importsIcon.svg");
    var elmLogo = A3($Graphics$Element.image,
    100,
    100,
    "/images/elmLogo.svg");
+   var gifImage = A3($Graphics$Element.image,
+   180,
+   119,
+   "/images/demoGif1.gif");
    var elmGreen = A3($Color.rgb,
    127,
    209,
@@ -7499,7 +7519,7 @@ Elm.Main.make = function (_elm) {
                            ,welcomeElement(welcomeMsg2)
                            ,buttonGoElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 229 and 235");
+         "between lines 235 and 241");
       }();
    });
    var rightButton = function (sig) {
@@ -7546,11 +7566,11 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingImports)
                            ,titleElement(importsWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(importsIcon)
                            ,subtitleElement(importsWelcomeMsg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 298 and 304");
+         "between lines 302 and 308");
       }();
    });
    var displayImports = F3(function (_v8,
@@ -7569,14 +7589,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingImports)
                            ,titleElement(importsWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(importsIcon)
                            ,codeElement(A2(importsContainer,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 360 and 367");
+         "between lines 364 and 371");
       }();
    });
    var signalsWelcome = F2(function (_v12,
@@ -7594,11 +7614,11 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingSignals)
                            ,titleElement(signalsWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(signalsIcon)
                            ,subtitleElement(signalsWelcomeMsg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 459 and 465");
+         "between lines 463 and 469");
       }();
    });
    var displaySignals1 = F3(function (_v16,
@@ -7617,14 +7637,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingSignals)
                            ,titleElement(signalsWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(signalsIcon)
                            ,codeElement(A2(signalsContainer1,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 521 and 528");
+         "between lines 525 and 532");
       }();
    });
    var displaySignals2 = F3(function (_v20,
@@ -7643,14 +7663,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingSignals)
                            ,titleElement(signalsWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(signalsIcon)
                            ,codeElement(A2(signalsContainer2,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 571 and 578");
+         "between lines 575 and 582");
       }();
    });
    var displaySignals3 = F3(function (_v24,
@@ -7669,14 +7689,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingSignals)
                            ,titleElement(signalsWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(signalsIcon)
                            ,codeElement(A2(signalsContainer3,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 617 and 624");
+         "between lines 621 and 628");
       }();
    });
    var displaySignals4 = F3(function (_v28,
@@ -7695,14 +7715,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingSignals)
                            ,titleElement(signalsWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(signalsIcon)
                            ,codeElement(A2(signalsContainer4,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 657 and 664");
+         "between lines 661 and 668");
       }();
    });
    var modelWelcome = F2(function (_v32,
@@ -7720,11 +7740,11 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingModel)
                            ,titleElement(modelWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(modelIcon)
                            ,subtitleElement(modelWelcomeMsg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 773 and 779");
+         "between lines 777 and 783");
       }();
    });
    var displayModel1 = F3(function (_v36,
@@ -7743,14 +7763,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingModel)
                            ,titleElement(modelWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(modelIcon)
                            ,codeElement(A2(modelContainer1,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 837 and 844");
+         "between lines 841 and 848");
       }();
    });
    var displayModel2 = F3(function (_v40,
@@ -7769,14 +7789,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingModel)
                            ,titleElement(modelWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(modelIcon)
                            ,codeElement(A2(modelContainer2,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 872 and 879");
+         "between lines 876 and 883");
       }();
    });
    var displayModel3 = F3(function (_v44,
@@ -7795,14 +7815,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingModel)
                            ,titleElement(modelWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(modelIcon)
                            ,codeElement(A2(modelContainer3,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 897 and 904");
+         "between lines 901 and 908");
       }();
    });
    var displayModel4 = F3(function (_v48,
@@ -7821,14 +7841,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingModel)
                            ,titleElement(modelWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(modelIcon)
                            ,codeElement(A2(modelContainer4,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 937 and 944");
+         "between lines 941 and 948");
       }();
    });
    var displayModel5 = F3(function (_v52,
@@ -7847,14 +7867,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingModel)
                            ,titleElement(modelWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(modelIcon)
                            ,codeElement(A2(modelContainer5,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 977 and 984");
+         "between lines 981 and 988");
       }();
    });
    var displayModel6 = F3(function (_v56,
@@ -7873,14 +7893,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingModel)
                            ,titleElement(modelWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(modelIcon)
                            ,codeElement(A2(modelContainer6,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1026 and 1033");
+         "between lines 1030 and 1037");
       }();
    });
    var displayModel7 = F3(function (_v60,
@@ -7899,14 +7919,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingModel)
                            ,titleElement(modelWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(modelIcon)
                            ,codeElement(A2(modelContainer7,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1119 and 1126");
+         "between lines 1123 and 1130");
       }();
    });
    var updateWelcome = F2(function (_v64,
@@ -7924,11 +7944,11 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingUpdate
                            ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(updateIcon)
                            ,subtitleElement(updateWelcomeMsg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1209 and 1215");
+         "between lines 1213 and 1219");
       }();
    });
    var displayUpdate1 = F3(function (_v68,
@@ -7947,14 +7967,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingUpdate)
                            ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(updateIcon)
                            ,codeElement(A2(updateContainer1,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1271 and 1278");
+         "between lines 1275 and 1282");
       }();
    });
    var displayUpdate2 = F3(function (_v72,
@@ -7973,14 +7993,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingUpdate)
                            ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(updateIcon)
                            ,codeElement(A2(updateContainer2,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1341 and 1348");
+         "between lines 1345 and 1352");
       }();
    });
    var displayUpdate3 = F3(function (_v76,
@@ -7999,14 +8019,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingUpdate)
                            ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(updateIcon)
                            ,codeElement(A2(updateContainer3,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1407 and 1414");
+         "between lines 1411 and 1418");
       }();
    });
    var displayUpdate4 = F3(function (_v80,
@@ -8025,14 +8045,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingUpdate)
                            ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(updateIcon)
                            ,codeElement(A2(updateContainer4,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1484 and 1491");
+         "between lines 1488 and 1495");
       }();
    });
    var displayUpdate5 = F3(function (_v84,
@@ -8051,14 +8071,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingUpdate)
                            ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(updateIcon)
                            ,codeElement(A2(updateContainer5,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1584 and 1591");
+         "between lines 1588 and 1595");
       }();
    });
    var displayUpdate6 = F3(function (_v88,
@@ -8084,7 +8104,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1637 and 1644");
+         "between lines 1641 and 1648");
       }();
    });
    var displayUpdate7 = F3(function (_v92,
@@ -8103,14 +8123,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingUpdate)
                            ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(updateIcon)
                            ,codeElement(A2(updateContainer7,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1769 and 1776");
+         "between lines 1773 and 1780");
       }();
    });
    var displayUpdate8 = F3(function (_v96,
@@ -8129,14 +8149,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingUpdate)
                            ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(updateIcon)
                            ,codeElement(A2(updateContainer8,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1871 and 1878");
+         "between lines 1875 and 1882");
       }();
    });
    var displayUpdate9 = F3(function (_v100,
@@ -8155,14 +8175,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingUpdate)
                            ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(updateIcon)
                            ,codeElement(A2(updateContainer9,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1914 and 1921");
+         "between lines 1918 and 1925");
       }();
    });
    var displayUpdate10 = F3(function (_v104,
@@ -8181,14 +8201,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingUpdate)
                            ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(updateIcon)
                            ,codeElement(A2(updateContainer10,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2011 and 2018");
+         "between lines 2015 and 2022");
       }();
    });
    var displayUpdate11 = F3(function (_v108,
@@ -8207,14 +8227,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingUpdate)
                            ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(updateIcon)
                            ,codeElement(A2(updateContainer11,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2122 and 2129");
+         "between lines 2126 and 2133");
       }();
    });
    var displayUpdate12 = F3(function (_v112,
@@ -8233,14 +8253,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingUpdate)
                            ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(updateIcon)
                            ,codeElement(A2(updateContainer12,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2196 and 2203");
+         "between lines 2200 and 2207");
       }();
    });
    var displayUpdate13 = F3(function (_v116,
@@ -8259,14 +8279,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingUpdate)
                            ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(updateIcon)
                            ,codeElement(A2(updateContainer13,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2241 and 2248");
+         "between lines 2245 and 2252");
       }();
    });
    var displayUpdate14 = F3(function (_v120,
@@ -8285,14 +8305,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingUpdate)
                            ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(updateIcon)
                            ,codeElement(A2(updateContainer14,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2290 and 2297");
+         "between lines 2294 and 2301");
       }();
    });
    var viewWelcome = F2(function (_v124,
@@ -8310,11 +8330,11 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingView)
                            ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(viewIcon)
                            ,subtitleElement(viewWelcomeMsg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2363 and 2369");
+         "between lines 2367 and 2373");
       }();
    });
    var displayView1 = F3(function (_v128,
@@ -8333,14 +8353,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingView)
                            ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(viewIcon)
                            ,codeElement(A2(viewContainer1,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2426 and 2433");
+         "between lines 2430 and 2437");
       }();
    });
    var displayView2 = F3(function (_v132,
@@ -8359,14 +8379,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingView)
                            ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(viewIcon)
                            ,codeElement(A2(viewContainer2,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2461 and 2468");
+         "between lines 2465 and 2472");
       }();
    });
    var displayView3 = F3(function (_v136,
@@ -8385,14 +8405,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingView)
                            ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(viewIcon)
                            ,codeElement(A2(viewContainer3,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2512 and 2519");
+         "between lines 2516 and 2523");
       }();
    });
    var displayView4 = F3(function (_v140,
@@ -8411,14 +8431,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingView)
                            ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(viewIcon)
                            ,codeElement(A2(viewContainer4,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2568 and 2575");
+         "between lines 2572 and 2579");
       }();
    });
    var displayView5 = F3(function (_v144,
@@ -8437,14 +8457,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingView)
                            ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(viewIcon)
                            ,codeElement(A2(viewContainer5,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2609 and 2616");
+         "between lines 2613 and 2620");
       }();
    });
    var displayView6 = F3(function (_v148,
@@ -8463,14 +8483,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingView)
                            ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(viewIcon)
                            ,codeElement(A2(viewContainer6,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2663 and 2670");
+         "between lines 2667 and 2674");
       }();
    });
    var displayView7 = F3(function (_v152,
@@ -8489,14 +8509,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingView)
                            ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(viewIcon)
                            ,codeElement(A2(viewContainer7,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2717 and 2724");
+         "between lines 2721 and 2728");
       }();
    });
    var displayView8 = F3(function (_v156,
@@ -8515,14 +8535,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingView)
                            ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(viewIcon)
                            ,codeElement(A2(viewContainer8,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2760 and 2767");
+         "between lines 2764 and 2771");
       }();
    });
    var displayView9 = F3(function (_v160,
@@ -8541,14 +8561,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingView)
                            ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(viewIcon)
                            ,codeElement(A2(viewContainer9,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2828 and 2835");
+         "between lines 2832 and 2839");
       }();
    });
    var displayView10 = F3(function (_v164,
@@ -8567,14 +8587,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingView)
                            ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(viewIcon)
                            ,codeElement(A2(viewContainer10,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2878 and 2885");
+         "between lines 2882 and 2889");
       }();
    });
    var displayView11 = F3(function (_v168,
@@ -8593,14 +8613,14 @@ Elm.Main.make = function (_elm) {
               $Graphics$Element.down,
               _L.fromArray([wayfindingElement(wayfindingView)
                            ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(elmLogo)
+                           ,iconElement(viewIcon)
                            ,codeElement(A2(viewContainer11,
                            sig,
                            hoveredOn))
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2923 and 2930");
+         "between lines 2927 and 2934");
       }();
    });
    var congrats = F2(function (_v172,
@@ -8622,7 +8642,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(viewCongratsMsg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2968 and 2974");
+         "between lines 2972 and 2978");
       }();
    });
    var idea1 = F2(function (_v176,
@@ -8644,7 +8664,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(viewIdea1Msg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 3027 and 3033");
+         "between lines 3031 and 3037");
       }();
    });
    var idea2 = F2(function (_v180,
@@ -8666,7 +8686,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(viewIdea2Msg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 3056 and 3062");
+         "between lines 3060 and 3066");
       }();
    });
    var idea3 = F2(function (_v184,
@@ -8688,7 +8708,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(viewIdea3Msg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 3084 and 3090");
+         "between lines 3088 and 3094");
       }();
    });
    var startOver = function (sig) {
@@ -8779,7 +8799,7 @@ Elm.Main.make = function (_elm) {
                                         videoLink3)]))))
                            ,buttonSOElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 3114 and 3136");
+         "between lines 3118 and 3140");
       }();
    });
    var view = F3(function (_v192,
@@ -9125,13 +9145,18 @@ Elm.Main.make = function (_elm) {
                       ,elmOrange: elmOrange
                       ,elmBlue: elmBlue
                       ,elmGreen: elmGreen
+                      ,gifImage: gifImage
                       ,elmLogo: elmLogo
+                      ,importsIcon: importsIcon
+                      ,modelIcon: modelIcon
+                      ,signalsIcon: signalsIcon
+                      ,updateIcon: updateIcon
+                      ,viewIcon: viewIcon
                       ,title: title
                       ,subTitle: subTitle
                       ,body: body
                       ,displayWelcome: displayWelcome
                       ,wayfindingWelcome: wayfindingWelcome
-                      ,gifImage: gifImage
                       ,welcomeMsg1: welcomeMsg1
                       ,welcomeMsg2: welcomeMsg2
                       ,importsWelcome: importsWelcome
