@@ -2,7 +2,7 @@ import Signal (Signal, map3, foldp, subscribe, channel, Channel, send)
 import Signal
 import Color (..)
 import Graphics.Element (..)
-import Graphics.Input (hoverable, button)
+import Graphics.Input (hoverable, button, checkbox)
 import Text
 import Window
 import Mouse
@@ -38,7 +38,7 @@ view (width, height) sig hoveredOn =
      | sig == 7 -> displaySignals4 (width, height) sig hoveredOn
      | sig == 8 -> modelWelcome (width, height) sig
      | sig == 9 -> displayModel1 (width, height) sig hoveredOn
-     | sig == 10 -> displayModel2 (width, height) sig hoveredOn
+     | sig == 10-> displayModel2 (width, height) sig hoveredOn
      | sig == 11 -> displayModel3 (width, height) sig hoveredOn
      | sig == 12 -> displayModel4 (width, height) sig hoveredOn
      | sig == 13 -> displayModel5 (width, height) sig hoveredOn
@@ -89,6 +89,8 @@ gameHeight = 225
 bottomHeight = 150
 iconHeight = 125
 linkWidth = 200
+questionHeight = 300
+dropdownHeight = 100
 
 -- Wayfinding tools
 wayfinderPast =
@@ -176,6 +178,12 @@ buttonSOElement sig =
     , startOver sig
     ]
 
+questionElement : String -> Element
+questionElement strg =
+  color grey <| container containerWidth questionHeight middle <| subTitle strg
+
+
+
 -- Buttons
 letsGo : Int -> Element
 letsGo sig =
@@ -194,6 +202,7 @@ startOver sig =
   size 100 40 <| color grey <| button (send chan (0)) "Start Over"
 
 -- Custom colors based on the Elm logo
+backgroundColor = rgb 39 45 60
 elmGrey = rgb 71 80 102
 elmOrange = rgb 237 149 0
 elmBlue = rgb 76 166 195
@@ -204,6 +213,7 @@ elmLogo = image 100 100 "http://elm-lang.org/logo.svg"
 
 -- Text formatting
 title f = Text.fromString(f)
+            |> Text.color elmGrey
             |> Text.height 50
             |> Text.centered
 
@@ -223,7 +233,7 @@ linkText msg address = Text.fromString(msg)
 -- Welcome Message
 displayWelcome : (Int, Int) -> Int -> Element
 displayWelcome (width, height) sig =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingWelcome
     , titleElement welcomeMsg1
     , gifElement gifImage
@@ -292,7 +302,7 @@ This section has all of the code for explaining the IMPORT section of the game
 -- Imports Welcome
 importsWelcome : (Int, Int) -> Int -> Element
 importsWelcome (width, height) sig =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingImports
     , titleElement importsWelcomeMsg1
     , iconElement elmLogo
@@ -354,7 +364,7 @@ importsWelcomeMsg2 =
 -- Imports Message
 displayImports : (Int, Int) -> Int -> String -> Element
 displayImports (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingImports
     , titleElement importsWelcomeMsg1
     , iconElement elmLogo
@@ -443,6 +453,7 @@ importWindow =
   body (" 8. import Window")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn windowMsg) else (Signal.send hoveredOn ""))
 
+
 {--
 *************************************************************
 This section has all of the code for explaining the SIGNALS section of the game
@@ -452,7 +463,7 @@ This section has all of the code for explaining the SIGNALS section of the game
 -- Signals Welcome
 signalsWelcome : (Int, Int) -> Int -> Element
 signalsWelcome (width, height) sig =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
     , iconElement elmLogo
@@ -514,7 +525,7 @@ signalsWelcomeMsg2 =
 -- Signals Message
 displaySignals1 : (Int, Int) -> Int -> String -> Element
 displaySignals1 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
     , iconElement elmLogo
@@ -564,7 +575,7 @@ signalMain3 =
 
 displaySignals2 : (Int, Int) -> Int -> String -> Element
 displaySignals2 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
     , iconElement elmLogo
@@ -610,7 +621,7 @@ signalGameState3 =
 
 displaySignals3 : (Int, Int) -> Int -> String -> Element
 displaySignals3 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
     , iconElement elmLogo
@@ -650,7 +661,7 @@ signalDelta2 =
 
 displaySignals4 : (Int, Int) -> Int -> String -> Element
 displaySignals4 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
     , iconElement elmLogo
@@ -766,7 +777,7 @@ This section has all of the code for explaining the MODEL section of the game
 -- Model Welcome
 modelWelcome : (Int, Int) -> Int -> Element
 modelWelcome (width, height) sig =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
     , iconElement elmLogo
@@ -830,7 +841,7 @@ modelWelcomeMsg2 =
 -- Model Message 1
 displayModel1 : (Int, Int) -> Int -> String -> Element
 displayModel1 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
     , iconElement elmLogo
@@ -865,7 +876,7 @@ playingSize =
 
 displayModel2 : (Int, Int) -> Int -> String -> Element
 displayModel2 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
     , iconElement elmLogo
@@ -890,7 +901,7 @@ typeState =
 
 displayModel3 : (Int, Int) -> Int -> String -> Element
 displayModel3 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
     , iconElement elmLogo
@@ -930,7 +941,7 @@ aliasBadGuy2 =
 
 displayModel4 : (Int, Int) -> Int -> String -> Element
 displayModel4 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
     , iconElement elmLogo
@@ -970,7 +981,7 @@ aliasPlayer2 =
 
 displayModel5 : (Int, Int) -> Int -> String -> Element
 displayModel5 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
     , iconElement elmLogo
@@ -1019,7 +1030,7 @@ aliasGame3 =
 -- Model Message 2
 displayModel6 : (Int, Int) -> Int -> String -> Element
 displayModel6 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
     , iconElement elmLogo
@@ -1112,7 +1123,7 @@ defaultGame7 =
 
 displayModel7 : (Int, Int) -> Int -> String -> Element
 displayModel7 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
     , iconElement elmLogo
@@ -1202,7 +1213,7 @@ This section has all of the code for explaining the UPDATE section of the game
 -- Update Welcome
 updateWelcome : (Int, Int) -> Int -> Element
 updateWelcome (width, height) sig =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement elmLogo
@@ -1264,7 +1275,7 @@ updateWelcomeMsg2 =
 -- Update Message 1
 displayUpdate1 : (Int, Int) -> Int -> String -> Element
 displayUpdate1 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement elmLogo
@@ -1334,7 +1345,7 @@ updateFunc4a =
 
 displayUpdate2 : (Int, Int) -> Int -> String -> Element
 displayUpdate2 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement elmLogo
@@ -1400,7 +1411,7 @@ updateFunc8 =
 
 displayUpdate3 : (Int, Int) -> Int -> String -> Element
 displayUpdate3 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement elmLogo
@@ -1477,7 +1488,7 @@ updateFunc12a =
 
 displayUpdate4 : (Int, Int) -> Int -> String -> Element
 displayUpdate4 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement elmLogo
@@ -1577,7 +1588,7 @@ updateFunc18 =
 -- Update Message 2
 displayUpdate5 : (Int, Int) -> Int -> String -> Element
 displayUpdate5 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement elmLogo
@@ -1630,7 +1641,7 @@ updateBadGuy2a =
 
 displayUpdate6 : (Int, Int) -> Int -> String -> Element
 displayUpdate6 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement elmLogo
@@ -1762,7 +1773,7 @@ updateBadGuy8 =
 
 displayUpdate7 : (Int, Int) -> Int -> String -> Element
 displayUpdate7 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement elmLogo
@@ -1864,7 +1875,7 @@ updateBadGuy13 =
 -- Update Message 3
 displayUpdate8 : (Int, Int) -> Int -> String -> Element
 displayUpdate8 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement elmLogo
@@ -1907,7 +1918,7 @@ updatePlayer2 =
 
 displayUpdate9 : (Int, Int) -> Int -> String -> Element
 displayUpdate9 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement elmLogo
@@ -2004,7 +2015,7 @@ updatePlayer7 =
 
 displayUpdate10 : (Int, Int) -> Int -> String -> Element
 displayUpdate10 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement elmLogo
@@ -2115,7 +2126,7 @@ updatePlayer13 =
 -- Update Message 4
 displayUpdate11 : (Int, Int) -> Int -> String -> Element
 displayUpdate11 (width, height) sig hoveredOn=
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement elmLogo
@@ -2189,7 +2200,7 @@ updatePhysics5 =
 
 displayUpdate12 : (Int, Int) -> Int -> String -> Element
 displayUpdate12 (width, height) sig hoveredOn=
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement elmLogo
@@ -2234,7 +2245,7 @@ updateNear2 =
 
 displayUpdate13 : (Int, Int) -> Int -> String -> Element
 displayUpdate13 (width, height) sig hoveredOn=
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement elmLogo
@@ -2283,7 +2294,7 @@ updateWithin2a =
 
 displayUpdate14 : (Int, Int) -> Int -> String -> Element
 displayUpdate14 (width, height) sig hoveredOn=
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement elmLogo
@@ -2356,7 +2367,7 @@ This section has all of the code for explaining the VIEW section of the game
 -- View Welcome
 viewWelcome : (Int, Int) -> Int -> Element
 viewWelcome (width, height) sig =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement elmLogo
@@ -2419,7 +2430,7 @@ viewWelcomeMsg2 =
 -- View Message 1
 displayView1 : (Int, Int) -> Int -> String -> Element
 displayView1 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement elmLogo
@@ -2454,7 +2465,7 @@ viewFunc2 =
 
 displayView2 : (Int, Int) -> Int -> String -> Element
 displayView2 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement elmLogo
@@ -2505,7 +2516,7 @@ viewFunc4a =
 
 displayView3 : (Int, Int) -> Int -> String -> Element
 displayView3 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement elmLogo
@@ -2561,7 +2572,7 @@ viewFunc7 =
 
 displayView4 : (Int, Int) -> Int -> String -> Element
 displayView4 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement elmLogo
@@ -2602,7 +2613,7 @@ viewFunc9 =
 
 displayView5 : (Int, Int) -> Int -> String -> Element
 displayView5 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement elmLogo
@@ -2656,7 +2667,7 @@ viewFunc12 =
 
 displayView6 : (Int, Int) -> Int -> String -> Element
 displayView6 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement elmLogo
@@ -2710,7 +2721,7 @@ viewFunc15 =
 -- View Message 2
 displayView7 : (Int, Int) -> Int -> String -> Element
 displayView7 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement elmLogo
@@ -2753,7 +2764,7 @@ viewFunc17 =
 
 displayView8 : (Int, Int) -> Int -> String -> Element
 displayView8 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement elmLogo
@@ -2821,7 +2832,7 @@ viewFunc20 =
 
 displayView9 : (Int, Int) -> Int -> String -> Element
 displayView9 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement elmLogo
@@ -2871,7 +2882,7 @@ textColor =
 
 displayView10 : (Int, Int) -> Int -> String -> Element
 displayView10 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement elmLogo
@@ -2916,7 +2927,7 @@ txtFunc3 =
 
 displayView11 : (Int, Int) -> Int -> String -> Element
 displayView11 (width, height) sig hoveredOn =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement elmLogo
@@ -2961,7 +2972,7 @@ This section encourages the user to expand the game and make it better
 -- Congrats
 congrats : (Int, Int) -> Int -> Element
 congrats (width, height) sig =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement viewCongratsMsg1
     , iconElement elmLogo
@@ -3020,7 +3031,7 @@ viewCongratsMsg2 =
 -- Idea 1
 idea1 : (Int, Int) -> Int -> Element
 idea1 (width, height) sig =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement viewIdea1Msg1
     , iconElement elmLogo
@@ -3049,7 +3060,7 @@ viewIdea1Msg2 =
 -- Idea 2
 idea2 : (Int, Int) -> Int -> Element
 idea2 (width, height) sig =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement viewIdea2Msg1
     , iconElement elmLogo
@@ -3077,7 +3088,7 @@ viewIdea2Msg2 =
 -- Idea 3
 idea3 : (Int, Int) -> Int -> Element
 idea3 (width, height) sig =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement viewIdea3Msg1
     , iconElement elmLogo
@@ -3107,7 +3118,7 @@ viewIdea3Msg2 =
 -- Elm Resources
 elmResources : (Int, Int) -> Int -> Element
 elmResources (width, height) sig =
-  color elmGrey (container width height middle (flow down
+  color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement resourcesTitle
     , iconElement elmLogo
