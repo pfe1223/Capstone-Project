@@ -1,4 +1,3 @@
--- IMPORT
 import Color (..)
 import Graphics.Collage (..)
 import Graphics.Element (..)
@@ -8,7 +7,6 @@ import Text
 import Time (..)
 import Window
 
--- SIGNALS
 main =
   Signal.map2 view Window.dimensions gameState
 
@@ -28,7 +26,6 @@ input =
       (Signal.map .y Keyboard.arrows)
       delta
 
--- MODEL
 (gameWidth,gameHeight) = (600,400)
 (halfWidth,halfHeight) = (300,200)
 
@@ -57,7 +54,6 @@ type alias Input =
     , delta : Time
     }
 
--- UPDATE
 update : Input -> Game -> Game
 update {space,dir1,dir2,delta} ({state,badGuy,player1} as game) =
   let lives = if (badGuy `within` player1) then 1 else 0
@@ -126,7 +122,6 @@ stepV v condition1 condition2 =
      | condition2 -> 0 - abs v
      | otherwise  -> v
 
--- VIEW
 view : (Int,Int) -> Game -> Element
 view (w,h) {state,badGuy,player1} =
   let lives : Element
@@ -140,7 +135,7 @@ view (w,h) {state,badGuy,player1} =
             |> filled elmGreen
             |> move(badGuy.x, badGuy.y)
         , circle 20 -- This is player1
-            |> filled elmBlue 
+            |> filled elmBlue
             |> move (player1.x, player1.y)
         , toForm lives
             |> move (0, gameHeight/2 - 40)
@@ -154,7 +149,6 @@ elmOrange = rgb 237 149 0
 elmBlue = rgb 76 166 195
 elmGreen = rgb 127 209 17
 textColor = white
-txt f = Text.fromString >> Text.color textColor >> 
+txt f = Text.fromString >> Text.color textColor >>
           Text.monospace >> f >> Text.leftAligned
 msg = "SPACE to start, &larr;&uarr;&darr;&rarr; to move"
- 
