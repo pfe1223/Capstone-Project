@@ -95,25 +95,25 @@ dropdownHeight = 100
 -- Wayfinding tools
 wayfinderPast =
   circle 15
-    |> filled elmBlue
+    |> filled darkerBlue
     |> alpha 0.5
 
 wayfinderPresent =
   circle 15
-    |> filled elmBlue
+    |> filled darkerBlue
 
 wayfinderFuture =
   circle 15
-    |> outlined ( solid elmBlue)
+    |> outlined (solid darkerBlue)
 
 dashPast =
   rect 20 5
-    |> filled elmBlue
+    |> filled darkerBlue
     |> alpha 0.5
 
 dashPresent =
   rect 20 5
-    |> filled elmBlue
+    |> filled darkerBlue
 
 -- Display elements
 gifElement gif =
@@ -203,17 +203,20 @@ startOver sig =
 
 -- Custom colors based on the Elm logo
 backgroundColor = rgb 39 45 60
+darkerGreen = rgb 90 146 15
+darkerBlue = rgb 42 105 129
+darkerOrange = rgb 166 105 10
 elmGrey = rgb 71 80 102
 elmOrange = rgb 237 149 0
 elmBlue = rgb 76 166 195
 elmGreen = rgb 127 209 17
 
 -- Icons
-elmLogo = image 100 100 "http://elm-lang.org/logo.svg"
+elmLogo = image 100 100 "/elmLogo.svg"
 
 -- Text formatting
 title f = Text.fromString(f)
-            |> Text.color elmGrey
+            |> Text.color darkerGreen
             |> Text.height 50
             |> Text.centered
 

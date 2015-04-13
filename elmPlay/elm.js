@@ -4856,9 +4856,6 @@ Elm.Main.make = function (_elm) {
    var subTitle = function (f) {
       return $Text.leftAligned($Text.height(20)($Text.fromString(f)));
    };
-   var title = function (f) {
-      return $Text.centered($Text.height(50)($Text.fromString(f)));
-   };
    var elmLogo = A3($Graphics$Element.image,
    100,
    100,
@@ -4883,6 +4880,13 @@ Elm.Main.make = function (_elm) {
    71,
    80,
    102);
+   var title = function (f) {
+      return $Text.centered($Text.height(50)($Text.color(elmGrey)($Text.fromString(f))));
+   };
+   var backgroundColor = A3($Color.rgb,
+   39,
+   45,
+   60);
    var dashPresent = $Graphics$Collage.filled(elmBlue)(A2($Graphics$Collage.rect,
    20,
    5));
@@ -5291,6 +5295,8 @@ Elm.Main.make = function (_elm) {
                 30,
                 50,
                 _L.fromArray([wayfinderPresent]))]))));
+   var dropdownHeight = 100;
+   var questionHeight = 300;
    var linkWidth = 200;
    var iconHeight = 125;
    var bottomHeight = 150;
@@ -5361,6 +5367,12 @@ Elm.Main.make = function (_elm) {
       iconHeight,
       $Graphics$Element.middle,
       iconType));
+   };
+   var questionElement = function (strg) {
+      return $Graphics$Element.color($Color.grey)(A3($Graphics$Element.container,
+      containerWidth,
+      questionHeight,
+      $Graphics$Element.middle)(subTitle(strg)));
    };
    var indent = 20;
    var hoveredOn = $Signal.channel("");
@@ -7466,7 +7478,7 @@ Elm.Main.make = function (_elm) {
          switch (_v0.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v0._0,
               _v0._1,
@@ -7479,7 +7491,7 @@ Elm.Main.make = function (_elm) {
                            ,welcomeElement(welcomeMsg2)
                            ,buttonGoElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 226 and 232");
+         "between lines 236 and 242");
       }();
    });
    var rightButton = function (sig) {
@@ -7517,7 +7529,7 @@ Elm.Main.make = function (_elm) {
          switch (_v4.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v4._0,
               _v4._1,
@@ -7530,7 +7542,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(importsWelcomeMsg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 295 and 301");
+         "between lines 305 and 311");
       }();
    });
    var displayImports = F3(function (_v8,
@@ -7540,7 +7552,7 @@ Elm.Main.make = function (_elm) {
          switch (_v8.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v8._0,
               _v8._1,
@@ -7556,7 +7568,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 357 and 364");
+         "between lines 367 and 374");
       }();
    });
    var signalsWelcome = F2(function (_v12,
@@ -7565,7 +7577,7 @@ Elm.Main.make = function (_elm) {
          switch (_v12.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v12._0,
               _v12._1,
@@ -7578,7 +7590,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(signalsWelcomeMsg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 455 and 461");
+         "between lines 466 and 472");
       }();
    });
    var displaySignals1 = F3(function (_v16,
@@ -7588,7 +7600,7 @@ Elm.Main.make = function (_elm) {
          switch (_v16.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v16._0,
               _v16._1,
@@ -7604,7 +7616,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 517 and 524");
+         "between lines 528 and 535");
       }();
    });
    var displaySignals2 = F3(function (_v20,
@@ -7614,7 +7626,7 @@ Elm.Main.make = function (_elm) {
          switch (_v20.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v20._0,
               _v20._1,
@@ -7630,7 +7642,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 567 and 574");
+         "between lines 578 and 585");
       }();
    });
    var displaySignals3 = F3(function (_v24,
@@ -7640,7 +7652,7 @@ Elm.Main.make = function (_elm) {
          switch (_v24.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v24._0,
               _v24._1,
@@ -7656,7 +7668,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 613 and 620");
+         "between lines 624 and 631");
       }();
    });
    var displaySignals4 = F3(function (_v28,
@@ -7666,7 +7678,7 @@ Elm.Main.make = function (_elm) {
          switch (_v28.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v28._0,
               _v28._1,
@@ -7682,7 +7694,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 653 and 660");
+         "between lines 664 and 671");
       }();
    });
    var modelWelcome = F2(function (_v32,
@@ -7691,7 +7703,7 @@ Elm.Main.make = function (_elm) {
          switch (_v32.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v32._0,
               _v32._1,
@@ -7704,7 +7716,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(modelWelcomeMsg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 769 and 775");
+         "between lines 780 and 786");
       }();
    });
    var displayModel1 = F3(function (_v36,
@@ -7714,7 +7726,7 @@ Elm.Main.make = function (_elm) {
          switch (_v36.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v36._0,
               _v36._1,
@@ -7730,7 +7742,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 833 and 840");
+         "between lines 844 and 851");
       }();
    });
    var displayModel2 = F3(function (_v40,
@@ -7740,7 +7752,7 @@ Elm.Main.make = function (_elm) {
          switch (_v40.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v40._0,
               _v40._1,
@@ -7756,7 +7768,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 868 and 875");
+         "between lines 879 and 886");
       }();
    });
    var displayModel3 = F3(function (_v44,
@@ -7766,7 +7778,7 @@ Elm.Main.make = function (_elm) {
          switch (_v44.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v44._0,
               _v44._1,
@@ -7782,7 +7794,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 893 and 900");
+         "between lines 904 and 911");
       }();
    });
    var displayModel4 = F3(function (_v48,
@@ -7792,7 +7804,7 @@ Elm.Main.make = function (_elm) {
          switch (_v48.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v48._0,
               _v48._1,
@@ -7808,7 +7820,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 933 and 940");
+         "between lines 944 and 951");
       }();
    });
    var displayModel5 = F3(function (_v52,
@@ -7818,7 +7830,7 @@ Elm.Main.make = function (_elm) {
          switch (_v52.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v52._0,
               _v52._1,
@@ -7834,7 +7846,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 973 and 980");
+         "between lines 984 and 991");
       }();
    });
    var displayModel6 = F3(function (_v56,
@@ -7844,7 +7856,7 @@ Elm.Main.make = function (_elm) {
          switch (_v56.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v56._0,
               _v56._1,
@@ -7860,7 +7872,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1022 and 1029");
+         "between lines 1033 and 1040");
       }();
    });
    var displayModel7 = F3(function (_v60,
@@ -7870,7 +7882,7 @@ Elm.Main.make = function (_elm) {
          switch (_v60.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v60._0,
               _v60._1,
@@ -7886,7 +7898,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1115 and 1122");
+         "between lines 1126 and 1133");
       }();
    });
    var updateWelcome = F2(function (_v64,
@@ -7895,7 +7907,7 @@ Elm.Main.make = function (_elm) {
          switch (_v64.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v64._0,
               _v64._1,
@@ -7908,7 +7920,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(updateWelcomeMsg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1205 and 1211");
+         "between lines 1216 and 1222");
       }();
    });
    var displayUpdate1 = F3(function (_v68,
@@ -7918,7 +7930,7 @@ Elm.Main.make = function (_elm) {
          switch (_v68.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v68._0,
               _v68._1,
@@ -7934,7 +7946,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1267 and 1274");
+         "between lines 1278 and 1285");
       }();
    });
    var displayUpdate2 = F3(function (_v72,
@@ -7944,7 +7956,7 @@ Elm.Main.make = function (_elm) {
          switch (_v72.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v72._0,
               _v72._1,
@@ -7960,7 +7972,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1337 and 1344");
+         "between lines 1348 and 1355");
       }();
    });
    var displayUpdate3 = F3(function (_v76,
@@ -7970,7 +7982,7 @@ Elm.Main.make = function (_elm) {
          switch (_v76.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v76._0,
               _v76._1,
@@ -7986,7 +7998,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1403 and 1410");
+         "between lines 1414 and 1421");
       }();
    });
    var displayUpdate4 = F3(function (_v80,
@@ -7996,7 +8008,7 @@ Elm.Main.make = function (_elm) {
          switch (_v80.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v80._0,
               _v80._1,
@@ -8012,7 +8024,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1480 and 1487");
+         "between lines 1491 and 1498");
       }();
    });
    var displayUpdate5 = F3(function (_v84,
@@ -8022,7 +8034,7 @@ Elm.Main.make = function (_elm) {
          switch (_v84.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v84._0,
               _v84._1,
@@ -8038,7 +8050,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1580 and 1587");
+         "between lines 1591 and 1598");
       }();
    });
    var displayUpdate6 = F3(function (_v88,
@@ -8048,7 +8060,7 @@ Elm.Main.make = function (_elm) {
          switch (_v88.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v88._0,
               _v88._1,
@@ -8064,7 +8076,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1633 and 1640");
+         "between lines 1644 and 1651");
       }();
    });
    var displayUpdate7 = F3(function (_v92,
@@ -8074,7 +8086,7 @@ Elm.Main.make = function (_elm) {
          switch (_v92.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v92._0,
               _v92._1,
@@ -8090,7 +8102,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1765 and 1772");
+         "between lines 1776 and 1783");
       }();
    });
    var displayUpdate8 = F3(function (_v96,
@@ -8100,7 +8112,7 @@ Elm.Main.make = function (_elm) {
          switch (_v96.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v96._0,
               _v96._1,
@@ -8116,7 +8128,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1867 and 1874");
+         "between lines 1878 and 1885");
       }();
    });
    var displayUpdate9 = F3(function (_v100,
@@ -8126,7 +8138,7 @@ Elm.Main.make = function (_elm) {
          switch (_v100.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v100._0,
               _v100._1,
@@ -8142,7 +8154,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 1910 and 1917");
+         "between lines 1921 and 1928");
       }();
    });
    var displayUpdate10 = F3(function (_v104,
@@ -8152,7 +8164,7 @@ Elm.Main.make = function (_elm) {
          switch (_v104.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v104._0,
               _v104._1,
@@ -8168,7 +8180,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2007 and 2014");
+         "between lines 2018 and 2025");
       }();
    });
    var displayUpdate11 = F3(function (_v108,
@@ -8178,7 +8190,7 @@ Elm.Main.make = function (_elm) {
          switch (_v108.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v108._0,
               _v108._1,
@@ -8194,7 +8206,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2118 and 2125");
+         "between lines 2129 and 2136");
       }();
    });
    var displayUpdate12 = F3(function (_v112,
@@ -8204,7 +8216,7 @@ Elm.Main.make = function (_elm) {
          switch (_v112.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v112._0,
               _v112._1,
@@ -8220,7 +8232,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2192 and 2199");
+         "between lines 2203 and 2210");
       }();
    });
    var displayUpdate13 = F3(function (_v116,
@@ -8230,7 +8242,7 @@ Elm.Main.make = function (_elm) {
          switch (_v116.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v116._0,
               _v116._1,
@@ -8246,7 +8258,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2237 and 2244");
+         "between lines 2248 and 2255");
       }();
    });
    var displayUpdate14 = F3(function (_v120,
@@ -8256,7 +8268,7 @@ Elm.Main.make = function (_elm) {
          switch (_v120.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v120._0,
               _v120._1,
@@ -8272,7 +8284,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2286 and 2293");
+         "between lines 2297 and 2304");
       }();
    });
    var viewWelcome = F2(function (_v124,
@@ -8281,7 +8293,7 @@ Elm.Main.make = function (_elm) {
          switch (_v124.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v124._0,
               _v124._1,
@@ -8294,7 +8306,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(viewWelcomeMsg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2359 and 2365");
+         "between lines 2370 and 2376");
       }();
    });
    var displayView1 = F3(function (_v128,
@@ -8304,7 +8316,7 @@ Elm.Main.make = function (_elm) {
          switch (_v128.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v128._0,
               _v128._1,
@@ -8320,7 +8332,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2422 and 2429");
+         "between lines 2433 and 2440");
       }();
    });
    var displayView2 = F3(function (_v132,
@@ -8330,7 +8342,7 @@ Elm.Main.make = function (_elm) {
          switch (_v132.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v132._0,
               _v132._1,
@@ -8346,7 +8358,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2457 and 2464");
+         "between lines 2468 and 2475");
       }();
    });
    var displayView3 = F3(function (_v136,
@@ -8356,7 +8368,7 @@ Elm.Main.make = function (_elm) {
          switch (_v136.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v136._0,
               _v136._1,
@@ -8372,7 +8384,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2508 and 2515");
+         "between lines 2519 and 2526");
       }();
    });
    var displayView4 = F3(function (_v140,
@@ -8382,7 +8394,7 @@ Elm.Main.make = function (_elm) {
          switch (_v140.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v140._0,
               _v140._1,
@@ -8398,7 +8410,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2564 and 2571");
+         "between lines 2575 and 2582");
       }();
    });
    var displayView5 = F3(function (_v144,
@@ -8408,7 +8420,7 @@ Elm.Main.make = function (_elm) {
          switch (_v144.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v144._0,
               _v144._1,
@@ -8424,7 +8436,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2605 and 2612");
+         "between lines 2616 and 2623");
       }();
    });
    var displayView6 = F3(function (_v148,
@@ -8434,7 +8446,7 @@ Elm.Main.make = function (_elm) {
          switch (_v148.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v148._0,
               _v148._1,
@@ -8450,7 +8462,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2659 and 2666");
+         "between lines 2670 and 2677");
       }();
    });
    var displayView7 = F3(function (_v152,
@@ -8460,7 +8472,7 @@ Elm.Main.make = function (_elm) {
          switch (_v152.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v152._0,
               _v152._1,
@@ -8476,7 +8488,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2713 and 2720");
+         "between lines 2724 and 2731");
       }();
    });
    var displayView8 = F3(function (_v156,
@@ -8486,7 +8498,7 @@ Elm.Main.make = function (_elm) {
          switch (_v156.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v156._0,
               _v156._1,
@@ -8502,7 +8514,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2756 and 2763");
+         "between lines 2767 and 2774");
       }();
    });
    var displayView9 = F3(function (_v160,
@@ -8512,7 +8524,7 @@ Elm.Main.make = function (_elm) {
          switch (_v160.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v160._0,
               _v160._1,
@@ -8528,7 +8540,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2824 and 2831");
+         "between lines 2835 and 2842");
       }();
    });
    var displayView10 = F3(function (_v164,
@@ -8538,7 +8550,7 @@ Elm.Main.make = function (_elm) {
          switch (_v164.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v164._0,
               _v164._1,
@@ -8554,7 +8566,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2874 and 2881");
+         "between lines 2885 and 2892");
       }();
    });
    var displayView11 = F3(function (_v168,
@@ -8564,7 +8576,7 @@ Elm.Main.make = function (_elm) {
          switch (_v168.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v168._0,
               _v168._1,
@@ -8580,7 +8592,7 @@ Elm.Main.make = function (_elm) {
                            ,helpElement(hoveredOn)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2919 and 2926");
+         "between lines 2930 and 2937");
       }();
    });
    var congrats = F2(function (_v172,
@@ -8589,7 +8601,7 @@ Elm.Main.make = function (_elm) {
          switch (_v172.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v172._0,
               _v172._1,
@@ -8602,7 +8614,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(viewCongratsMsg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 2964 and 2970");
+         "between lines 2975 and 2981");
       }();
    });
    var idea1 = F2(function (_v176,
@@ -8611,7 +8623,7 @@ Elm.Main.make = function (_elm) {
          switch (_v176.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v176._0,
               _v176._1,
@@ -8624,7 +8636,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(viewIdea1Msg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 3023 and 3029");
+         "between lines 3034 and 3040");
       }();
    });
    var idea2 = F2(function (_v180,
@@ -8633,7 +8645,7 @@ Elm.Main.make = function (_elm) {
          switch (_v180.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v180._0,
               _v180._1,
@@ -8646,7 +8658,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(viewIdea2Msg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 3052 and 3058");
+         "between lines 3063 and 3069");
       }();
    });
    var idea3 = F2(function (_v184,
@@ -8655,7 +8667,7 @@ Elm.Main.make = function (_elm) {
          switch (_v184.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v184._0,
               _v184._1,
@@ -8668,7 +8680,7 @@ Elm.Main.make = function (_elm) {
                            ,subtitleElement(viewIdea3Msg2)
                            ,buttonsLRElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 3080 and 3086");
+         "between lines 3091 and 3097");
       }();
    });
    var startOver = function (sig) {
@@ -8695,7 +8707,7 @@ Elm.Main.make = function (_elm) {
          switch (_v188.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
-              elmGrey,
+              backgroundColor,
               A4($Graphics$Element.container,
               _v188._0,
               _v188._1,
@@ -8759,7 +8771,7 @@ Elm.Main.make = function (_elm) {
                                         videoLink3)]))))
                            ,buttonSOElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 3110 and 3132");
+         "between lines 3121 and 3143");
       }();
    });
    var view = F3(function (_v192,
@@ -9082,6 +9094,8 @@ Elm.Main.make = function (_elm) {
                       ,bottomHeight: bottomHeight
                       ,iconHeight: iconHeight
                       ,linkWidth: linkWidth
+                      ,questionHeight: questionHeight
+                      ,dropdownHeight: dropdownHeight
                       ,wayfinderPast: wayfinderPast
                       ,wayfinderPresent: wayfinderPresent
                       ,wayfinderFuture: wayfinderFuture
@@ -9100,10 +9114,12 @@ Elm.Main.make = function (_elm) {
                       ,buttonGoElement: buttonGoElement
                       ,buttonsLRElement: buttonsLRElement
                       ,buttonSOElement: buttonSOElement
+                      ,questionElement: questionElement
                       ,letsGo: letsGo
                       ,rightButton: rightButton
                       ,leftButton: leftButton
                       ,startOver: startOver
+                      ,backgroundColor: backgroundColor
                       ,elmGrey: elmGrey
                       ,elmOrange: elmOrange
                       ,elmBlue: elmBlue
