@@ -2,7 +2,7 @@ import Signal (Signal, map3, foldp, subscribe, channel, Channel, send)
 import Signal
 import Color (..)
 import Graphics.Element (..)
-import Graphics.Input (hoverable, button, checkbox)
+import Graphics.Input (hoverable, button, customButton)
 import Text
 import Window
 import Mouse
@@ -164,9 +164,9 @@ buttonsLRElement : Int -> Element
 buttonsLRElement sig =
   color grey <| container containerWidth 50 midRight <| flow left
     [ spacer 5 1
-    , rightButton sig
+    , customRButton sig
     , spacer 5 1
-    , leftButton sig
+    , customLButton sig
     ]
 
 buttonSOElement : Int -> Element
@@ -196,6 +196,21 @@ leftButton sig =
 startOver : Int -> Element
 startOver sig =
   size 100 40 <| color grey <| button (send chan (0)) "Start Over"
+
+customLButton : Int -> Element
+customLButton sig =
+ customButton (send chan (sig - 1))
+ (image 40 40 "/images/leftButton.svg")
+ (image 40 40 "/images/leftButton.svg")
+ (image 40 40 "/images/leftButton.svg")
+
+customRButton : Int -> Element
+customRButton sig =
+ customButton (send chan (sig + 1))
+ (image 40 40 "/images/rightButton.svg")
+ (image 40 40 "/images/rightButton.svg")
+ (image 40 40 "/images/rightButton.svg")
+
 
 -- Custom colors based on the Elm logo
 backgroundColor = rgb 39 45 60

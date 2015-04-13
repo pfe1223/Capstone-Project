@@ -3602,7 +3602,7 @@ Elm.Main.make = function (_elm) {
                            ,welcomeElement(welcomeMsg2)
                            ,buttonGoElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 235 and 241");
+         "between lines 250 and 256");
       }();
    });
    var rightButton = function (sig) {
@@ -3619,1181 +3619,6 @@ Elm.Main.make = function (_elm) {
       A2($Signal.send,chan,sig - 1),
       "<")));
    };
-   var buttonsLRElement = function (sig) {
-      return $Graphics$Element.color($Color.grey)(A3($Graphics$Element.container,
-      containerWidth,
-      50,
-      $Graphics$Element.midRight)(A2($Graphics$Element.flow,
-      $Graphics$Element.left,
-      _L.fromArray([A2($Graphics$Element.spacer,
-                   5,
-                   1)
-                   ,rightButton(sig)
-                   ,A2($Graphics$Element.spacer,
-                   5,
-                   1)
-                   ,leftButton(sig)]))));
-   };
-   var importsWelcome = F2(function (_v4,
-   sig) {
-      return function () {
-         switch (_v4.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v4._0,
-              _v4._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingImports)
-                           ,titleElement(importsWelcomeMsg1)
-                           ,iconElement(importsIcon)
-                           ,subtitleElement(importsWelcomeMsg2)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 302 and 308");
-      }();
-   });
-   var displayImports = F3(function (_v8,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v8.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v8._0,
-              _v8._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingImports)
-                           ,titleElement(importsWelcomeMsg1)
-                           ,iconElement(importsIcon)
-                           ,codeElement(A2(importsContainer,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 364 and 371");
-      }();
-   });
-   var signalsWelcome = F2(function (_v12,
-   sig) {
-      return function () {
-         switch (_v12.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v12._0,
-              _v12._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingSignals)
-                           ,titleElement(signalsWelcomeMsg1)
-                           ,iconElement(signalsIcon)
-                           ,subtitleElement(signalsWelcomeMsg2)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 463 and 469");
-      }();
-   });
-   var displaySignals1 = F3(function (_v16,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v16.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v16._0,
-              _v16._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingSignals)
-                           ,titleElement(signalsWelcomeMsg1)
-                           ,iconElement(signalsIcon)
-                           ,codeElement(A2(signalsContainer1,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 525 and 532");
-      }();
-   });
-   var displaySignals2 = F3(function (_v20,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v20.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v20._0,
-              _v20._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingSignals)
-                           ,titleElement(signalsWelcomeMsg1)
-                           ,iconElement(signalsIcon)
-                           ,codeElement(A2(signalsContainer2,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 575 and 582");
-      }();
-   });
-   var displaySignals3 = F3(function (_v24,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v24.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v24._0,
-              _v24._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingSignals)
-                           ,titleElement(signalsWelcomeMsg1)
-                           ,iconElement(signalsIcon)
-                           ,codeElement(A2(signalsContainer3,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 621 and 628");
-      }();
-   });
-   var displaySignals4 = F3(function (_v28,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v28.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v28._0,
-              _v28._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingSignals)
-                           ,titleElement(signalsWelcomeMsg1)
-                           ,iconElement(signalsIcon)
-                           ,codeElement(A2(signalsContainer4,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 661 and 668");
-      }();
-   });
-   var modelWelcome = F2(function (_v32,
-   sig) {
-      return function () {
-         switch (_v32.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v32._0,
-              _v32._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingModel)
-                           ,titleElement(modelWelcomeMsg1)
-                           ,iconElement(modelIcon)
-                           ,subtitleElement(modelWelcomeMsg2)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 777 and 783");
-      }();
-   });
-   var displayModel1 = F3(function (_v36,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v36.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v36._0,
-              _v36._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingModel)
-                           ,titleElement(modelWelcomeMsg1)
-                           ,iconElement(modelIcon)
-                           ,codeElement(A2(modelContainer1,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 841 and 848");
-      }();
-   });
-   var displayModel2 = F3(function (_v40,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v40.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v40._0,
-              _v40._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingModel)
-                           ,titleElement(modelWelcomeMsg1)
-                           ,iconElement(modelIcon)
-                           ,codeElement(A2(modelContainer2,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 876 and 883");
-      }();
-   });
-   var displayModel3 = F3(function (_v44,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v44.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v44._0,
-              _v44._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingModel)
-                           ,titleElement(modelWelcomeMsg1)
-                           ,iconElement(modelIcon)
-                           ,codeElement(A2(modelContainer3,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 901 and 908");
-      }();
-   });
-   var displayModel4 = F3(function (_v48,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v48.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v48._0,
-              _v48._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingModel)
-                           ,titleElement(modelWelcomeMsg1)
-                           ,iconElement(modelIcon)
-                           ,codeElement(A2(modelContainer4,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 941 and 948");
-      }();
-   });
-   var displayModel5 = F3(function (_v52,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v52.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v52._0,
-              _v52._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingModel)
-                           ,titleElement(modelWelcomeMsg1)
-                           ,iconElement(modelIcon)
-                           ,codeElement(A2(modelContainer5,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 981 and 988");
-      }();
-   });
-   var displayModel6 = F3(function (_v56,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v56.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v56._0,
-              _v56._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingModel)
-                           ,titleElement(modelWelcomeMsg1)
-                           ,iconElement(modelIcon)
-                           ,codeElement(A2(modelContainer6,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 1030 and 1037");
-      }();
-   });
-   var displayModel7 = F3(function (_v60,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v60.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v60._0,
-              _v60._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingModel)
-                           ,titleElement(modelWelcomeMsg1)
-                           ,iconElement(modelIcon)
-                           ,codeElement(A2(modelContainer7,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 1123 and 1130");
-      }();
-   });
-   var updateWelcome = F2(function (_v64,
-   sig) {
-      return function () {
-         switch (_v64.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v64._0,
-              _v64._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingUpdate
-                           ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(updateIcon)
-                           ,subtitleElement(updateWelcomeMsg2)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 1213 and 1219");
-      }();
-   });
-   var displayUpdate1 = F3(function (_v68,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v68.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v68._0,
-              _v68._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingUpdate)
-                           ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(updateIcon)
-                           ,codeElement(A2(updateContainer1,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 1275 and 1282");
-      }();
-   });
-   var displayUpdate2 = F3(function (_v72,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v72.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v72._0,
-              _v72._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingUpdate)
-                           ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(updateIcon)
-                           ,codeElement(A2(updateContainer2,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 1345 and 1352");
-      }();
-   });
-   var displayUpdate3 = F3(function (_v76,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v76.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v76._0,
-              _v76._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingUpdate)
-                           ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(updateIcon)
-                           ,codeElement(A2(updateContainer3,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 1411 and 1418");
-      }();
-   });
-   var displayUpdate4 = F3(function (_v80,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v80.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v80._0,
-              _v80._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingUpdate)
-                           ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(updateIcon)
-                           ,codeElement(A2(updateContainer4,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 1488 and 1495");
-      }();
-   });
-   var displayUpdate5 = F3(function (_v84,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v84.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v84._0,
-              _v84._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingUpdate)
-                           ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(updateIcon)
-                           ,codeElement(A2(updateContainer5,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 1588 and 1595");
-      }();
-   });
-   var displayUpdate6 = F3(function (_v88,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v88.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v88._0,
-              _v88._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingUpdate)
-                           ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(elmLogo)
-                           ,codeElement(A2(updateContainer6,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 1641 and 1648");
-      }();
-   });
-   var displayUpdate7 = F3(function (_v92,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v92.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v92._0,
-              _v92._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingUpdate)
-                           ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(updateIcon)
-                           ,codeElement(A2(updateContainer7,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 1773 and 1780");
-      }();
-   });
-   var displayUpdate8 = F3(function (_v96,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v96.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v96._0,
-              _v96._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingUpdate)
-                           ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(updateIcon)
-                           ,codeElement(A2(updateContainer8,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 1875 and 1882");
-      }();
-   });
-   var displayUpdate9 = F3(function (_v100,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v100.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v100._0,
-              _v100._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingUpdate)
-                           ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(updateIcon)
-                           ,codeElement(A2(updateContainer9,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 1918 and 1925");
-      }();
-   });
-   var displayUpdate10 = F3(function (_v104,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v104.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v104._0,
-              _v104._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingUpdate)
-                           ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(updateIcon)
-                           ,codeElement(A2(updateContainer10,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 2015 and 2022");
-      }();
-   });
-   var displayUpdate11 = F3(function (_v108,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v108.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v108._0,
-              _v108._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingUpdate)
-                           ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(updateIcon)
-                           ,codeElement(A2(updateContainer11,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 2126 and 2133");
-      }();
-   });
-   var displayUpdate12 = F3(function (_v112,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v112.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v112._0,
-              _v112._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingUpdate)
-                           ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(updateIcon)
-                           ,codeElement(A2(updateContainer12,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 2200 and 2207");
-      }();
-   });
-   var displayUpdate13 = F3(function (_v116,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v116.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v116._0,
-              _v116._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingUpdate)
-                           ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(updateIcon)
-                           ,codeElement(A2(updateContainer13,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 2245 and 2252");
-      }();
-   });
-   var displayUpdate14 = F3(function (_v120,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v120.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v120._0,
-              _v120._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingUpdate)
-                           ,titleElement(updateWelcomeMsg1)
-                           ,iconElement(updateIcon)
-                           ,codeElement(A2(updateContainer14,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 2294 and 2301");
-      }();
-   });
-   var viewWelcome = F2(function (_v124,
-   sig) {
-      return function () {
-         switch (_v124.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v124._0,
-              _v124._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingView)
-                           ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(viewIcon)
-                           ,subtitleElement(viewWelcomeMsg2)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 2367 and 2373");
-      }();
-   });
-   var displayView1 = F3(function (_v128,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v128.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v128._0,
-              _v128._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingView)
-                           ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(viewIcon)
-                           ,codeElement(A2(viewContainer1,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 2430 and 2437");
-      }();
-   });
-   var displayView2 = F3(function (_v132,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v132.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v132._0,
-              _v132._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingView)
-                           ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(viewIcon)
-                           ,codeElement(A2(viewContainer2,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 2465 and 2472");
-      }();
-   });
-   var displayView3 = F3(function (_v136,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v136.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v136._0,
-              _v136._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingView)
-                           ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(viewIcon)
-                           ,codeElement(A2(viewContainer3,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 2516 and 2523");
-      }();
-   });
-   var displayView4 = F3(function (_v140,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v140.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v140._0,
-              _v140._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingView)
-                           ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(viewIcon)
-                           ,codeElement(A2(viewContainer4,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 2572 and 2579");
-      }();
-   });
-   var displayView5 = F3(function (_v144,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v144.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v144._0,
-              _v144._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingView)
-                           ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(viewIcon)
-                           ,codeElement(A2(viewContainer5,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 2613 and 2620");
-      }();
-   });
-   var displayView6 = F3(function (_v148,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v148.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v148._0,
-              _v148._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingView)
-                           ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(viewIcon)
-                           ,codeElement(A2(viewContainer6,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 2667 and 2674");
-      }();
-   });
-   var displayView7 = F3(function (_v152,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v152.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v152._0,
-              _v152._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingView)
-                           ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(viewIcon)
-                           ,codeElement(A2(viewContainer7,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 2721 and 2728");
-      }();
-   });
-   var displayView8 = F3(function (_v156,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v156.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v156._0,
-              _v156._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingView)
-                           ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(viewIcon)
-                           ,codeElement(A2(viewContainer8,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 2764 and 2771");
-      }();
-   });
-   var displayView9 = F3(function (_v160,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v160.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v160._0,
-              _v160._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingView)
-                           ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(viewIcon)
-                           ,codeElement(A2(viewContainer9,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 2832 and 2839");
-      }();
-   });
-   var displayView10 = F3(function (_v164,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v164.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v164._0,
-              _v164._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingView)
-                           ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(viewIcon)
-                           ,codeElement(A2(viewContainer10,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 2882 and 2889");
-      }();
-   });
-   var displayView11 = F3(function (_v168,
-   sig,
-   hoveredOn) {
-      return function () {
-         switch (_v168.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v168._0,
-              _v168._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingView)
-                           ,titleElement(viewWelcomeMsg1)
-                           ,iconElement(viewIcon)
-                           ,codeElement(A2(viewContainer11,
-                           sig,
-                           hoveredOn))
-                           ,helpElement(hoveredOn)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 2927 and 2934");
-      }();
-   });
-   var congrats = F2(function (_v172,
-   sig) {
-      return function () {
-         switch (_v172.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v172._0,
-              _v172._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingCongrats)
-                           ,titleElement(viewCongratsMsg1)
-                           ,iconElement(elmLogo)
-                           ,subtitleElement(viewCongratsMsg2)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 2972 and 2978");
-      }();
-   });
-   var idea1 = F2(function (_v176,
-   sig) {
-      return function () {
-         switch (_v176.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v176._0,
-              _v176._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingCongrats)
-                           ,titleElement(viewIdea1Msg1)
-                           ,iconElement(elmLogo)
-                           ,subtitleElement(viewIdea1Msg2)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 3031 and 3037");
-      }();
-   });
-   var idea2 = F2(function (_v180,
-   sig) {
-      return function () {
-         switch (_v180.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v180._0,
-              _v180._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingCongrats)
-                           ,titleElement(viewIdea2Msg1)
-                           ,iconElement(elmLogo)
-                           ,subtitleElement(viewIdea2Msg2)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 3060 and 3066");
-      }();
-   });
-   var idea3 = F2(function (_v184,
-   sig) {
-      return function () {
-         switch (_v184.ctor)
-         {case "_Tuple2":
-            return A2($Graphics$Element.color,
-              backgroundColor,
-              A4($Graphics$Element.container,
-              _v184._0,
-              _v184._1,
-              $Graphics$Element.middle,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _L.fromArray([wayfindingElement(wayfindingCongrats)
-                           ,titleElement(viewIdea3Msg1)
-                           ,iconElement(elmLogo)
-                           ,subtitleElement(viewIdea3Msg2)
-                           ,buttonsLRElement(sig)]))));}
-         _U.badCase($moduleName,
-         "between lines 3088 and 3094");
-      }();
-   });
    var startOver = function (sig) {
       return A2($Graphics$Element.size,
       100,
@@ -4812,16 +3637,16 @@ Elm.Main.make = function (_elm) {
                    1)
                    ,startOver(sig)]))));
    };
-   var elmResources = F2(function (_v188,
+   var elmResources = F2(function (_v4,
    sig) {
       return function () {
-         switch (_v188.ctor)
+         switch (_v4.ctor)
          {case "_Tuple2":
             return A2($Graphics$Element.color,
               backgroundColor,
               A4($Graphics$Element.container,
-              _v188._0,
-              _v188._1,
+              _v4._0,
+              _v4._1,
               $Graphics$Element.middle,
               A2($Graphics$Element.flow,
               $Graphics$Element.down,
@@ -4882,7 +3707,1214 @@ Elm.Main.make = function (_elm) {
                                         videoLink3)]))))
                            ,buttonSOElement(sig)]))));}
          _U.badCase($moduleName,
-         "between lines 3118 and 3140");
+         "between lines 3133 and 3155");
+      }();
+   });
+   var customLButton = function (sig) {
+      return A4($Graphics$Input.customButton,
+      A2($Signal.send,chan,sig - 1),
+      A3($Graphics$Element.image,
+      40,
+      40,
+      "/images/leftButton.svg"),
+      A3($Graphics$Element.image,
+      40,
+      40,
+      "/images/leftButton.svg"),
+      A3($Graphics$Element.image,
+      40,
+      40,
+      "/images/leftButton.svg"));
+   };
+   var customRButton = function (sig) {
+      return A4($Graphics$Input.customButton,
+      A2($Signal.send,chan,sig + 1),
+      A3($Graphics$Element.image,
+      40,
+      40,
+      "/images/rightButton.svg"),
+      A3($Graphics$Element.image,
+      40,
+      40,
+      "/images/rightButton.svg"),
+      A3($Graphics$Element.image,
+      40,
+      40,
+      "/images/rightButton.svg"));
+   };
+   var buttonsLRElement = function (sig) {
+      return $Graphics$Element.color($Color.grey)(A3($Graphics$Element.container,
+      containerWidth,
+      50,
+      $Graphics$Element.midRight)(A2($Graphics$Element.flow,
+      $Graphics$Element.left,
+      _L.fromArray([A2($Graphics$Element.spacer,
+                   5,
+                   1)
+                   ,customRButton(sig)
+                   ,A2($Graphics$Element.spacer,
+                   5,
+                   1)
+                   ,customLButton(sig)]))));
+   };
+   var importsWelcome = F2(function (_v8,
+   sig) {
+      return function () {
+         switch (_v8.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v8._0,
+              _v8._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingImports)
+                           ,titleElement(importsWelcomeMsg1)
+                           ,iconElement(importsIcon)
+                           ,subtitleElement(importsWelcomeMsg2)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 317 and 323");
+      }();
+   });
+   var displayImports = F3(function (_v12,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v12.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v12._0,
+              _v12._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingImports)
+                           ,titleElement(importsWelcomeMsg1)
+                           ,iconElement(importsIcon)
+                           ,codeElement(A2(importsContainer,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 379 and 386");
+      }();
+   });
+   var signalsWelcome = F2(function (_v16,
+   sig) {
+      return function () {
+         switch (_v16.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v16._0,
+              _v16._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingSignals)
+                           ,titleElement(signalsWelcomeMsg1)
+                           ,iconElement(signalsIcon)
+                           ,subtitleElement(signalsWelcomeMsg2)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 478 and 484");
+      }();
+   });
+   var displaySignals1 = F3(function (_v20,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v20.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v20._0,
+              _v20._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingSignals)
+                           ,titleElement(signalsWelcomeMsg1)
+                           ,iconElement(signalsIcon)
+                           ,codeElement(A2(signalsContainer1,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 540 and 547");
+      }();
+   });
+   var displaySignals2 = F3(function (_v24,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v24.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v24._0,
+              _v24._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingSignals)
+                           ,titleElement(signalsWelcomeMsg1)
+                           ,iconElement(signalsIcon)
+                           ,codeElement(A2(signalsContainer2,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 590 and 597");
+      }();
+   });
+   var displaySignals3 = F3(function (_v28,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v28.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v28._0,
+              _v28._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingSignals)
+                           ,titleElement(signalsWelcomeMsg1)
+                           ,iconElement(signalsIcon)
+                           ,codeElement(A2(signalsContainer3,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 636 and 643");
+      }();
+   });
+   var displaySignals4 = F3(function (_v32,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v32.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v32._0,
+              _v32._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingSignals)
+                           ,titleElement(signalsWelcomeMsg1)
+                           ,iconElement(signalsIcon)
+                           ,codeElement(A2(signalsContainer4,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 676 and 683");
+      }();
+   });
+   var modelWelcome = F2(function (_v36,
+   sig) {
+      return function () {
+         switch (_v36.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v36._0,
+              _v36._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingModel)
+                           ,titleElement(modelWelcomeMsg1)
+                           ,iconElement(modelIcon)
+                           ,subtitleElement(modelWelcomeMsg2)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 792 and 798");
+      }();
+   });
+   var displayModel1 = F3(function (_v40,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v40.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v40._0,
+              _v40._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingModel)
+                           ,titleElement(modelWelcomeMsg1)
+                           ,iconElement(modelIcon)
+                           ,codeElement(A2(modelContainer1,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 856 and 863");
+      }();
+   });
+   var displayModel2 = F3(function (_v44,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v44.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v44._0,
+              _v44._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingModel)
+                           ,titleElement(modelWelcomeMsg1)
+                           ,iconElement(modelIcon)
+                           ,codeElement(A2(modelContainer2,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 891 and 898");
+      }();
+   });
+   var displayModel3 = F3(function (_v48,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v48.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v48._0,
+              _v48._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingModel)
+                           ,titleElement(modelWelcomeMsg1)
+                           ,iconElement(modelIcon)
+                           ,codeElement(A2(modelContainer3,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 916 and 923");
+      }();
+   });
+   var displayModel4 = F3(function (_v52,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v52.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v52._0,
+              _v52._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingModel)
+                           ,titleElement(modelWelcomeMsg1)
+                           ,iconElement(modelIcon)
+                           ,codeElement(A2(modelContainer4,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 956 and 963");
+      }();
+   });
+   var displayModel5 = F3(function (_v56,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v56.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v56._0,
+              _v56._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingModel)
+                           ,titleElement(modelWelcomeMsg1)
+                           ,iconElement(modelIcon)
+                           ,codeElement(A2(modelContainer5,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 996 and 1003");
+      }();
+   });
+   var displayModel6 = F3(function (_v60,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v60.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v60._0,
+              _v60._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingModel)
+                           ,titleElement(modelWelcomeMsg1)
+                           ,iconElement(modelIcon)
+                           ,codeElement(A2(modelContainer6,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 1045 and 1052");
+      }();
+   });
+   var displayModel7 = F3(function (_v64,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v64.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v64._0,
+              _v64._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingModel)
+                           ,titleElement(modelWelcomeMsg1)
+                           ,iconElement(modelIcon)
+                           ,codeElement(A2(modelContainer7,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 1138 and 1145");
+      }();
+   });
+   var updateWelcome = F2(function (_v68,
+   sig) {
+      return function () {
+         switch (_v68.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v68._0,
+              _v68._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingUpdate
+                           ,titleElement(updateWelcomeMsg1)
+                           ,iconElement(updateIcon)
+                           ,subtitleElement(updateWelcomeMsg2)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 1228 and 1234");
+      }();
+   });
+   var displayUpdate1 = F3(function (_v72,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v72.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v72._0,
+              _v72._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingUpdate)
+                           ,titleElement(updateWelcomeMsg1)
+                           ,iconElement(updateIcon)
+                           ,codeElement(A2(updateContainer1,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 1290 and 1297");
+      }();
+   });
+   var displayUpdate2 = F3(function (_v76,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v76.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v76._0,
+              _v76._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingUpdate)
+                           ,titleElement(updateWelcomeMsg1)
+                           ,iconElement(updateIcon)
+                           ,codeElement(A2(updateContainer2,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 1360 and 1367");
+      }();
+   });
+   var displayUpdate3 = F3(function (_v80,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v80.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v80._0,
+              _v80._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingUpdate)
+                           ,titleElement(updateWelcomeMsg1)
+                           ,iconElement(updateIcon)
+                           ,codeElement(A2(updateContainer3,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 1426 and 1433");
+      }();
+   });
+   var displayUpdate4 = F3(function (_v84,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v84.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v84._0,
+              _v84._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingUpdate)
+                           ,titleElement(updateWelcomeMsg1)
+                           ,iconElement(updateIcon)
+                           ,codeElement(A2(updateContainer4,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 1503 and 1510");
+      }();
+   });
+   var displayUpdate5 = F3(function (_v88,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v88.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v88._0,
+              _v88._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingUpdate)
+                           ,titleElement(updateWelcomeMsg1)
+                           ,iconElement(updateIcon)
+                           ,codeElement(A2(updateContainer5,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 1603 and 1610");
+      }();
+   });
+   var displayUpdate6 = F3(function (_v92,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v92.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v92._0,
+              _v92._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingUpdate)
+                           ,titleElement(updateWelcomeMsg1)
+                           ,iconElement(updateIcon)
+                           ,codeElement(A2(updateContainer6,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 1656 and 1663");
+      }();
+   });
+   var displayUpdate7 = F3(function (_v96,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v96.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v96._0,
+              _v96._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingUpdate)
+                           ,titleElement(updateWelcomeMsg1)
+                           ,iconElement(updateIcon)
+                           ,codeElement(A2(updateContainer7,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 1788 and 1795");
+      }();
+   });
+   var displayUpdate8 = F3(function (_v100,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v100.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v100._0,
+              _v100._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingUpdate)
+                           ,titleElement(updateWelcomeMsg1)
+                           ,iconElement(updateIcon)
+                           ,codeElement(A2(updateContainer8,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 1890 and 1897");
+      }();
+   });
+   var displayUpdate9 = F3(function (_v104,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v104.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v104._0,
+              _v104._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingUpdate)
+                           ,titleElement(updateWelcomeMsg1)
+                           ,iconElement(updateIcon)
+                           ,codeElement(A2(updateContainer9,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 1933 and 1940");
+      }();
+   });
+   var displayUpdate10 = F3(function (_v108,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v108.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v108._0,
+              _v108._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingUpdate)
+                           ,titleElement(updateWelcomeMsg1)
+                           ,iconElement(updateIcon)
+                           ,codeElement(A2(updateContainer10,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 2030 and 2037");
+      }();
+   });
+   var displayUpdate11 = F3(function (_v112,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v112.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v112._0,
+              _v112._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingUpdate)
+                           ,titleElement(updateWelcomeMsg1)
+                           ,iconElement(updateIcon)
+                           ,codeElement(A2(updateContainer11,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 2141 and 2148");
+      }();
+   });
+   var displayUpdate12 = F3(function (_v116,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v116.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v116._0,
+              _v116._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingUpdate)
+                           ,titleElement(updateWelcomeMsg1)
+                           ,iconElement(updateIcon)
+                           ,codeElement(A2(updateContainer12,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 2215 and 2222");
+      }();
+   });
+   var displayUpdate13 = F3(function (_v120,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v120.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v120._0,
+              _v120._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingUpdate)
+                           ,titleElement(updateWelcomeMsg1)
+                           ,iconElement(updateIcon)
+                           ,codeElement(A2(updateContainer13,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 2260 and 2267");
+      }();
+   });
+   var displayUpdate14 = F3(function (_v124,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v124.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v124._0,
+              _v124._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingUpdate)
+                           ,titleElement(updateWelcomeMsg1)
+                           ,iconElement(updateIcon)
+                           ,codeElement(A2(updateContainer14,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 2309 and 2316");
+      }();
+   });
+   var viewWelcome = F2(function (_v128,
+   sig) {
+      return function () {
+         switch (_v128.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v128._0,
+              _v128._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingView)
+                           ,titleElement(viewWelcomeMsg1)
+                           ,iconElement(viewIcon)
+                           ,subtitleElement(viewWelcomeMsg2)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 2382 and 2388");
+      }();
+   });
+   var displayView1 = F3(function (_v132,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v132.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v132._0,
+              _v132._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingView)
+                           ,titleElement(viewWelcomeMsg1)
+                           ,iconElement(viewIcon)
+                           ,codeElement(A2(viewContainer1,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 2445 and 2452");
+      }();
+   });
+   var displayView2 = F3(function (_v136,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v136.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v136._0,
+              _v136._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingView)
+                           ,titleElement(viewWelcomeMsg1)
+                           ,iconElement(viewIcon)
+                           ,codeElement(A2(viewContainer2,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 2480 and 2487");
+      }();
+   });
+   var displayView3 = F3(function (_v140,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v140.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v140._0,
+              _v140._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingView)
+                           ,titleElement(viewWelcomeMsg1)
+                           ,iconElement(viewIcon)
+                           ,codeElement(A2(viewContainer3,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 2531 and 2538");
+      }();
+   });
+   var displayView4 = F3(function (_v144,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v144.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v144._0,
+              _v144._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingView)
+                           ,titleElement(viewWelcomeMsg1)
+                           ,iconElement(viewIcon)
+                           ,codeElement(A2(viewContainer4,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 2587 and 2594");
+      }();
+   });
+   var displayView5 = F3(function (_v148,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v148.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v148._0,
+              _v148._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingView)
+                           ,titleElement(viewWelcomeMsg1)
+                           ,iconElement(viewIcon)
+                           ,codeElement(A2(viewContainer5,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 2628 and 2635");
+      }();
+   });
+   var displayView6 = F3(function (_v152,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v152.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v152._0,
+              _v152._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingView)
+                           ,titleElement(viewWelcomeMsg1)
+                           ,iconElement(viewIcon)
+                           ,codeElement(A2(viewContainer6,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 2682 and 2689");
+      }();
+   });
+   var displayView7 = F3(function (_v156,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v156.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v156._0,
+              _v156._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingView)
+                           ,titleElement(viewWelcomeMsg1)
+                           ,iconElement(viewIcon)
+                           ,codeElement(A2(viewContainer7,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 2736 and 2743");
+      }();
+   });
+   var displayView8 = F3(function (_v160,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v160.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v160._0,
+              _v160._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingView)
+                           ,titleElement(viewWelcomeMsg1)
+                           ,iconElement(viewIcon)
+                           ,codeElement(A2(viewContainer8,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 2779 and 2786");
+      }();
+   });
+   var displayView9 = F3(function (_v164,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v164.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v164._0,
+              _v164._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingView)
+                           ,titleElement(viewWelcomeMsg1)
+                           ,iconElement(viewIcon)
+                           ,codeElement(A2(viewContainer9,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 2847 and 2854");
+      }();
+   });
+   var displayView10 = F3(function (_v168,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v168.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v168._0,
+              _v168._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingView)
+                           ,titleElement(viewWelcomeMsg1)
+                           ,iconElement(viewIcon)
+                           ,codeElement(A2(viewContainer10,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 2897 and 2904");
+      }();
+   });
+   var displayView11 = F3(function (_v172,
+   sig,
+   hoveredOn) {
+      return function () {
+         switch (_v172.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v172._0,
+              _v172._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingView)
+                           ,titleElement(viewWelcomeMsg1)
+                           ,iconElement(viewIcon)
+                           ,codeElement(A2(viewContainer11,
+                           sig,
+                           hoveredOn))
+                           ,helpElement(hoveredOn)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 2942 and 2949");
+      }();
+   });
+   var congrats = F2(function (_v176,
+   sig) {
+      return function () {
+         switch (_v176.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v176._0,
+              _v176._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingCongrats)
+                           ,titleElement(viewCongratsMsg1)
+                           ,iconElement(elmLogo)
+                           ,subtitleElement(viewCongratsMsg2)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 2987 and 2993");
+      }();
+   });
+   var idea1 = F2(function (_v180,
+   sig) {
+      return function () {
+         switch (_v180.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v180._0,
+              _v180._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingCongrats)
+                           ,titleElement(viewIdea1Msg1)
+                           ,iconElement(elmLogo)
+                           ,subtitleElement(viewIdea1Msg2)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 3046 and 3052");
+      }();
+   });
+   var idea2 = F2(function (_v184,
+   sig) {
+      return function () {
+         switch (_v184.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v184._0,
+              _v184._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingCongrats)
+                           ,titleElement(viewIdea2Msg1)
+                           ,iconElement(elmLogo)
+                           ,subtitleElement(viewIdea2Msg2)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 3075 and 3081");
+      }();
+   });
+   var idea3 = F2(function (_v188,
+   sig) {
+      return function () {
+         switch (_v188.ctor)
+         {case "_Tuple2":
+            return A2($Graphics$Element.color,
+              backgroundColor,
+              A4($Graphics$Element.container,
+              _v188._0,
+              _v188._1,
+              $Graphics$Element.middle,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _L.fromArray([wayfindingElement(wayfindingCongrats)
+                           ,titleElement(viewIdea3Msg1)
+                           ,iconElement(elmLogo)
+                           ,subtitleElement(viewIdea3Msg2)
+                           ,buttonsLRElement(sig)]))));}
+         _U.badCase($moduleName,
+         "between lines 3103 and 3109");
       }();
    });
    var view = F3(function (_v192,
@@ -5220,6 +5252,8 @@ Elm.Main.make = function (_elm) {
                       ,rightButton: rightButton
                       ,leftButton: leftButton
                       ,startOver: startOver
+                      ,customLButton: customLButton
+                      ,customRButton: customRButton
                       ,backgroundColor: backgroundColor
                       ,darkerGreen: darkerGreen
                       ,darkerBlue: darkerBlue
