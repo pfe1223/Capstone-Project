@@ -26,9 +26,7 @@ hoveredOn = Signal.channel ""
 
 view : (Int, Int) -> Int -> String -> Element
 view (width, height) sig hoveredOn =
-  if | sig < -1 -> displayWelcome (width, height) sig
-     | sig == -1 -> congrats (width, height) sig
-     | sig == 0 -> displayWelcome (width, height) sig
+  if | sig == 0 -> displayWelcome (width, height) sig
      | sig == 1 -> importsWelcome(width, height) sig
      | sig == 2 -> displayImports (width, height) sig hoveredOn
      | sig == 3 -> signalsWelcome (width, height) sig
@@ -181,8 +179,6 @@ buttonSOElement sig =
 questionElement : String -> Element
 questionElement strg =
   color grey <| container containerWidth questionHeight middle <| subTitle strg
-
-
 
 -- Buttons
 letsGo : Int -> Element
