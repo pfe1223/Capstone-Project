@@ -4849,7 +4849,7 @@ Elm.Main.make = function (_elm) {
    var gifImage = A3($Graphics$Element.image,
    180,
    119,
-   "/demoGif1.gif");
+   "/images/demoGif1.gif");
    var body = function (f) {
       return $Text.leftAligned($Text.fromString(f));
    };
@@ -4859,7 +4859,7 @@ Elm.Main.make = function (_elm) {
    var elmLogo = A3($Graphics$Element.image,
    100,
    100,
-   "/elmLogo.svg");
+   "/images/elmLogo.svg");
    var elmGreen = A3($Color.rgb,
    127,
    209,

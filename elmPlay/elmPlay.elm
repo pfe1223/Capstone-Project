@@ -207,8 +207,14 @@ elmOrange = rgb 237 149 0
 elmBlue = rgb 76 166 195
 elmGreen = rgb 127 209 17
 
--- Icons
+-- Images
+gifImage = image 180 119 "/images/demoGif1.gif"
 elmLogo = image 100 100 "/images/elmLogo.svg"
+importsIcon = image 100 100 "images/importsIcon.svg"
+modelIcon = image 100 100 "images/modelIcon.svg"
+signalsIcon = image 100 100 "images/signalsIcon.svg"
+updateIcon = image 100 100 "images/updateIcon.svg"
+viewIcon = image 100 100 "images/viewIcon.svg"
 
 -- Text formatting
 title f = Text.fromString(f)
@@ -266,7 +272,6 @@ wayfindingWelcome =
     ])
 
 gifImage : Element
-gifImage = image 180 119 "/images/demoGif1.gif"
 welcomeMsg1 : String
 welcomeMsg1 = "Elm Play"
 
@@ -298,7 +303,7 @@ importsWelcome (width, height) sig =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingImports
     , titleElement importsWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement importsIcon
     , subtitleElement importsWelcomeMsg2
     , buttonsLRElement sig
     ]))
@@ -360,7 +365,7 @@ displayImports (width, height) sig hoveredOn =
   color backgroundColor (container width height middle (flow down
     [ wayfindingElement wayfindingImports
     , titleElement importsWelcomeMsg1
-    , iconElement elmLogo
+    , iconElement importsIcon
     , codeElement <| importsContainer sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
