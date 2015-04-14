@@ -233,16 +233,19 @@ viewIcon = image 100 100 "images/viewIcon.svg"
 
 -- Text formatting
 title f = Text.fromString(f)
-            |> Text.color elmGreen
-            |> Text.height 50
-            |> Text.centered
+  |> Text.typeface ["futura", "sans-serif"]
+  |> Text.color elmGreen
+  |> Text.height 50
+  |> Text.centered
 
 subTitle f = Text.fromString(f)
-               |> Text.height 20
-               |> Text.leftAligned
+  |> Text.typeface ["futura", "sans-serif"]
+  |> Text.height 20
+  |> Text.leftAligned
 
 body f = Text.fromString(f)
-             |> Text.leftAligned
+  |> Text.typeface ["futura", "sans-serif"]
+  |> Text.leftAligned
 
 -- Welcome Message
 displayWelcome : Int -> Element
@@ -287,10 +290,15 @@ wayfindingWelcome =
     ]
 
 welcomeMsg1 : String
-welcomeMsg1 = "Elm Play"
+welcomeMsg1 = "elm play"
 
 welcomeMsg2 : String
 welcomeMsg2 =
+  "Let's make a game with elm play.\n" ++
+  "Here's how:"
+
+welcomeMsg3 : String
+welcomeMsg3 =
   "Welcome to Elm Play, where you will\n" ++
   "learn how to make a game with the\n" ++
   "Elm language. The pages that follow\n" ++
