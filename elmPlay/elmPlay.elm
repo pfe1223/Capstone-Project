@@ -26,55 +26,56 @@ hoveredOn = Signal.channel ""
 
 view : (Int, Int) -> Int -> String -> Element
 view (width, height) sig hoveredOn =
-  if | sig == 0 -> displayWelcome (width, height) sig
-     | sig == 1 -> importsWelcome(width, height) sig
-     | sig == 2 -> displayImports (width, height) sig hoveredOn
-     | sig == 3 -> signalsWelcome (width, height) sig
-     | sig == 4 -> displaySignals1 (width, height) sig hoveredOn
-     | sig == 5 -> displaySignals2 (width, height) sig hoveredOn
-     | sig == 6 -> displaySignals3 (width, height) sig hoveredOn
-     | sig == 7 -> displaySignals4 (width, height) sig hoveredOn
-     | sig == 8 -> modelWelcome (width, height) sig
-     | sig == 9 -> displayModel1 (width, height) sig hoveredOn
-     | sig == 10-> displayModel2 (width, height) sig hoveredOn
-     | sig == 11 -> displayModel3 (width, height) sig hoveredOn
-     | sig == 12 -> displayModel4 (width, height) sig hoveredOn
-     | sig == 13 -> displayModel5 (width, height) sig hoveredOn
-     | sig == 14 -> displayModel6 (width, height) sig hoveredOn
-     | sig == 15 -> displayModel7 (width, height) sig hoveredOn
-     | sig == 16 -> updateWelcome (width, height) sig
-     | sig == 17 -> displayUpdate1 (width, height) sig hoveredOn
-     | sig == 18 -> displayUpdate2 (width, height) sig hoveredOn
-     | sig == 19 -> displayUpdate3 (width, height) sig hoveredOn
-     | sig == 20 -> displayUpdate4 (width, height) sig hoveredOn
-     | sig == 21 -> displayUpdate5 (width, height) sig hoveredOn
-     | sig == 22 -> displayUpdate6 (width, height) sig hoveredOn
-     | sig == 23 -> displayUpdate7 (width, height) sig hoveredOn
-     | sig == 24 -> displayUpdate8 (width, height) sig hoveredOn
-     | sig == 25 -> displayUpdate9 (width, height) sig hoveredOn
-     | sig == 26 -> displayUpdate10 (width, height) sig hoveredOn
-     | sig == 27 -> displayUpdate11 (width, height) sig hoveredOn
-     | sig == 28 -> displayUpdate12 (width, height) sig hoveredOn
-     | sig == 29 -> displayUpdate13 (width, height) sig hoveredOn
-     | sig == 30 -> displayUpdate14 (width, height) sig hoveredOn
-     | sig == 31 -> viewWelcome (width, height) sig
-     | sig == 32 -> displayView1 (width, height) sig hoveredOn
-     | sig == 33 -> displayView2 (width, height) sig hoveredOn
-     | sig == 34 -> displayView3 (width, height) sig hoveredOn
-     | sig == 35 -> displayView4 (width, height) sig hoveredOn
-     | sig == 36 -> displayView5 (width, height) sig hoveredOn
-     | sig == 37 -> displayView6 (width, height) sig hoveredOn
-     | sig == 38 -> displayView7 (width, height) sig hoveredOn
-     | sig == 39 -> displayView8 (width, height) sig hoveredOn
-     | sig == 40 -> displayView9 (width, height) sig hoveredOn
-     | sig == 41 -> displayView10 (width, height) sig hoveredOn
-     | sig == 42 -> displayView11 (width, height) sig hoveredOn
-     | sig == 43 -> congrats (width, height) sig
-     | sig == 44 -> idea1 (width, height) sig
-     | sig == 45 -> idea2 (width, height) sig
-     | sig == 46 -> idea3 (width, height) sig
-     | sig == 47 -> elmResources (width, height) sig
-     | otherwise -> displayWelcome (width, height) sig
+  color backgroundColor <| container width height middle (
+    if | sig == 0 -> displayWelcome (width, height) sig
+       | sig == 1 -> importsWelcome(width, height) sig
+       | sig == 2 -> displayImports (width, height) sig hoveredOn
+       | sig == 3 -> signalsWelcome (width, height) sig
+       | sig == 4 -> displaySignals1 (width, height) sig hoveredOn
+       | sig == 5 -> displaySignals2 (width, height) sig hoveredOn
+       | sig == 6 -> displaySignals3 (width, height) sig hoveredOn
+       | sig == 7 -> displaySignals4 (width, height) sig hoveredOn
+       | sig == 8 -> modelWelcome (width, height) sig
+       | sig == 9 -> displayModel1 (width, height) sig hoveredOn
+       | sig == 10-> displayModel2 (width, height) sig hoveredOn
+       | sig == 11 -> displayModel3 (width, height) sig hoveredOn
+       | sig == 12 -> displayModel4 (width, height) sig hoveredOn
+       | sig == 13 -> displayModel5 (width, height) sig hoveredOn
+       | sig == 14 -> displayModel6 (width, height) sig hoveredOn
+       | sig == 15 -> displayModel7 (width, height) sig hoveredOn
+       | sig == 16 -> updateWelcome (width, height) sig
+       | sig == 17 -> displayUpdate1 (width, height) sig hoveredOn
+       | sig == 18 -> displayUpdate2 (width, height) sig hoveredOn
+       | sig == 19 -> displayUpdate3 (width, height) sig hoveredOn
+       | sig == 20 -> displayUpdate4 (width, height) sig hoveredOn
+       | sig == 21 -> displayUpdate5 (width, height) sig hoveredOn
+       | sig == 22 -> displayUpdate6 (width, height) sig hoveredOn
+       | sig == 23 -> displayUpdate7 (width, height) sig hoveredOn
+       | sig == 24 -> displayUpdate8 (width, height) sig hoveredOn
+       | sig == 25 -> displayUpdate9 (width, height) sig hoveredOn
+       | sig == 26 -> displayUpdate10 (width, height) sig hoveredOn
+       | sig == 27 -> displayUpdate11 (width, height) sig hoveredOn
+       | sig == 28 -> displayUpdate12 (width, height) sig hoveredOn
+       | sig == 29 -> displayUpdate13 (width, height) sig hoveredOn
+       | sig == 30 -> displayUpdate14 (width, height) sig hoveredOn
+       | sig == 31 -> viewWelcome (width, height) sig
+       | sig == 32 -> displayView1 (width, height) sig hoveredOn
+       | sig == 33 -> displayView2 (width, height) sig hoveredOn
+       | sig == 34 -> displayView3 (width, height) sig hoveredOn
+       | sig == 35 -> displayView4 (width, height) sig hoveredOn
+       | sig == 36 -> displayView5 (width, height) sig hoveredOn
+       | sig == 37 -> displayView6 (width, height) sig hoveredOn
+       | sig == 38 -> displayView7 (width, height) sig hoveredOn
+       | sig == 39 -> displayView8 (width, height) sig hoveredOn
+       | sig == 40 -> displayView9 (width, height) sig hoveredOn
+       | sig == 41 -> displayView10 (width, height) sig hoveredOn
+       | sig == 42 -> displayView11 (width, height) sig hoveredOn
+       | sig == 43 -> congrats (width, height) sig
+       | sig == 44 -> idea1 (width, height) sig
+       | sig == 45 -> idea2 (width, height) sig
+       | sig == 46 -> idea3 (width, height) sig
+       | sig == 47 -> elmResources (width, height) sig
+       | otherwise -> displayWelcome (width, height) sig)
 
 -- These numbers are used to create the containers that hold the code examples and explinations
 indent = 20
@@ -115,54 +116,54 @@ dashPresent =
 
 -- Display elements
 gifElement gif =
-  color grey <| collage containerWidth 125 [ toForm gifImage ]
+  color containerColor <| collage containerWidth 125 [ toForm gifImage ]
 
 resourcesElement : String -> Element
 resourcesElement strg =
-  color grey <| container containerWidth 90 middle <| subTitle strg
+  color containerColor <| container containerWidth 90 middle <| subTitle strg
 
 welcomeElement : String -> Element
 welcomeElement strg =
-  color grey <| container containerWidth 375 middle <| subTitle strg
+  color containerColor <| container containerWidth 375 middle <| subTitle strg
 
 wayfindingElement : Element -> Element
 wayfindingElement wayfinding =
-  color grey <| container containerWidth 50 middle <| wayfinding
+  color containerColor <| container containerWidth 50 middle <| wayfinding
 
 titleElement : String -> Element
 titleElement strg =
-  color grey <| container containerWidth 100 middle <| title strg
+  color containerColor <| container containerWidth 100 middle <| title strg
 
 subtitleElement : String -> Element
 subtitleElement strg =
-  color grey <| container containerWidth subtitleHeight middle <| subTitle strg
+  color containerColor <| container containerWidth subtitleHeight middle <| subTitle strg
 
 codeTitleElement : String -> Element
 codeTitleElement strg =
-  color grey <| container containerWidth 50 middle <| subTitle strg
+  color containerColor <| container containerWidth 50 middle <| subTitle strg
 
 codeElement : Element -> Element
 codeElement gameCode =
-  color grey <| container containerWidth gameHeight midLeft gameCode
+  color containerColor <| container containerWidth gameHeight midLeft gameCode
 
 helpElement : String -> Element
 helpElement hoveredOn =
-  color grey <| container containerWidth bottomHeight middle <| body hoveredOn
+  color containerColor <| container containerWidth bottomHeight middle <| body hoveredOn
 
 iconElement : Element -> Element
 iconElement iconType =
-  color grey <| container containerWidth iconHeight middle iconType
+  color containerColor <| container containerWidth iconHeight middle iconType
 
 buttonGoElement : Int -> Element
 buttonGoElement sig =
-  color grey <| container containerWidth 50 midRight <| flow left
+  color containerColor <| container containerWidth 50 midRight <| flow left
     [ spacer 5 1
     , customGoButton sig
     ]
 
 buttonsLRElement : Int -> Element
 buttonsLRElement sig =
-  color grey <| container containerWidth 50 midRight <| flow left
+  color containerColor <| container containerWidth 50 midRight <| flow left
     [ spacer 5 1
     , customRButton sig
     , spacer 5 1
@@ -171,14 +172,14 @@ buttonsLRElement sig =
 
 buttonSOElement : Int -> Element
 buttonSOElement sig =
-  color grey <| container containerWidth 50 midLeft <| flow right
+  color containerColor <| container containerWidth 50 midLeft <| flow right
     [ spacer 5 1
     , customRestartButton
     ]
 
 questionElement : String -> Element
 questionElement strg =
-  color grey <| container containerWidth questionHeight middle <| subTitle strg
+  color containerColor <| container containerWidth questionHeight middle <| subTitle strg
 
 -- Buttons
 customLButton : Int -> Element
@@ -210,7 +211,8 @@ customRestartButton =
  (image 100 40 "/images/restartButton.svg")
 
 -- Custom colors based on the Elm logo
-backgroundColor = rgb 39 45 60
+backgroundColor = darkerPurple
+containerColor = white
 darkerPurple = rgb 39 45 60
 darkerGreen = rgb 90 146 15
 darkerBlue = rgb 42 105 129
@@ -245,17 +247,17 @@ body f = Text.fromString(f)
 -- Welcome Message
 displayWelcome : (Int, Int) -> Int -> Element
 displayWelcome (width, height) sig =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingWelcome
     , titleElement welcomeMsg1
     , gifElement gifImage
     , welcomeElement welcomeMsg2
     , buttonGoElement sig
-    ]))
+    ]
 
 wayfindingWelcome : Element
 wayfindingWelcome =
-  color grey <| container 400 50 middle <| (flow right
+  flow right
     [ collage 30 50
         [ wayfinderPresent ] --Intro page
     , collage 30 50
@@ -282,7 +284,7 @@ wayfindingWelcome =
         [ dashPresent ]
     , collage 30 50
         [ wayfinderFuture ] --Congrats section
-    ])
+    ]
 
 welcomeMsg1 : String
 welcomeMsg1 = "Elm Play"
@@ -312,17 +314,17 @@ This section has all of the code for explaining the IMPORT section of the game
 -- Imports Welcome
 importsWelcome : (Int, Int) -> Int -> Element
 importsWelcome (width, height) sig =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingImports
     , titleElement importsWelcomeMsg1
     , iconElement importsIcon
     , subtitleElement importsWelcomeMsg2
     , buttonsLRElement sig
-    ]))
+    ]
 
 wayfindingImports : Element
 wayfindingImports =
-  color grey <| container 400 50 middle <| (flow right
+  flow right
     [ collage 30 50
         [ wayfinderPast ] --Intro page
     , collage 30 50
@@ -349,7 +351,7 @@ wayfindingImports =
         [ dashPresent ]
     , collage 30 50
         [ wayfinderFuture ] --Congrats section
-    ])
+    ]
 
 importsWelcomeMsg1 : String
 importsWelcomeMsg1 =
@@ -374,14 +376,14 @@ importsWelcomeMsg2 =
 -- Imports Message
 displayImports : (Int, Int) -> Int -> String -> Element
 displayImports (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingImports
     , titleElement importsWelcomeMsg1
     , iconElement importsIcon
     , codeElement <| importsContainer sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 importsContainer : Int -> String -> Element
 importsContainer sig hoveredOn =
@@ -473,17 +475,17 @@ This section has all of the code for explaining the SIGNALS section of the game
 -- Signals Welcome
 signalsWelcome : (Int, Int) -> Int -> Element
 signalsWelcome (width, height) sig =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
     , iconElement signalsIcon
     , subtitleElement signalsWelcomeMsg2
     , buttonsLRElement sig
-    ]))
+    ]
 
 wayfindingSignals : Element
 wayfindingSignals =
-  color grey <| container 400 50 middle <| (flow right
+  flow right
     [ collage 30 50
         [ wayfinderPast ] --Intro page
     , collage 30 50
@@ -510,7 +512,7 @@ wayfindingSignals =
         [ dashPresent ]
     , collage 30 50
         [ wayfinderFuture ] --Congrats section
-    ])
+    ]
 
 signalsWelcomeMsg1 : String
 signalsWelcomeMsg1 =
@@ -535,14 +537,14 @@ signalsWelcomeMsg2 =
 -- Signals Message
 displaySignals1 : (Int, Int) -> Int -> String -> Element
 displaySignals1 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
     , iconElement signalsIcon
     , codeElement <| signalsContainer1 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 signalsContainer1 : Int -> String -> Element
 signalsContainer1 sig hoveredOn =
@@ -585,14 +587,14 @@ signalMain3 =
 
 displaySignals2 : (Int, Int) -> Int -> String -> Element
 displaySignals2 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
     , iconElement signalsIcon
     , codeElement <| signalsContainer2 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 signalsContainer2 : Int -> String -> Element
 signalsContainer2 sig hoveredOn =
@@ -631,14 +633,14 @@ signalGameState3 =
 
 displaySignals3 : (Int, Int) -> Int -> String -> Element
 displaySignals3 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
     , iconElement signalsIcon
     , codeElement <| signalsContainer3 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 signalsContainer3 : Int -> String -> Element
 signalsContainer3 sig hoveredOn =
@@ -671,14 +673,14 @@ signalDelta2 =
 
 displaySignals4 : (Int, Int) -> Int -> String -> Element
 displaySignals4 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
     , iconElement signalsIcon
     , codeElement <| signalsContainer4 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 signalsContainer4 : Int -> String -> Element
 signalsContainer4 sig hoveredOn =
@@ -787,17 +789,17 @@ This section has all of the code for explaining the MODEL section of the game
 -- Model Welcome
 modelWelcome : (Int, Int) -> Int -> Element
 modelWelcome (width, height) sig =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
     , iconElement modelIcon
     , subtitleElement modelWelcomeMsg2
     , buttonsLRElement sig
-    ]))
+    ]
 
 wayfindingModel : Element
 wayfindingModel =
-  color grey <| container 400 50 middle <| (flow right
+  flow right
     [ collage 30 50
         [ wayfinderPast ] --Intro page
     , collage 30 50
@@ -824,7 +826,7 @@ wayfindingModel =
         [ dashPresent ]
     , collage 30 50
         [ wayfinderFuture ] --Congrats section
-    ])
+    ]
 
 modelWelcomeMsg1 : String
 modelWelcomeMsg1 =
@@ -851,14 +853,14 @@ modelWelcomeMsg2 =
 -- Model Message 1
 displayModel1 : (Int, Int) -> Int -> String -> Element
 displayModel1 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
     , iconElement modelIcon
     , codeElement <| modelContainer1 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 modelContainer1 : Int -> String -> Element
 modelContainer1 sig hoveredOn =
@@ -886,14 +888,14 @@ playingSize =
 
 displayModel2 : (Int, Int) -> Int -> String -> Element
 displayModel2 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
     , iconElement modelIcon
     , codeElement <| modelContainer2 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 modelContainer2 : Int -> String -> Element
 modelContainer2 sig hoveredOn =
@@ -911,14 +913,14 @@ typeState =
 
 displayModel3 : (Int, Int) -> Int -> String -> Element
 displayModel3 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
     , iconElement modelIcon
     , codeElement <| modelContainer3 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 modelContainer3 : Int -> String -> Element
 modelContainer3 sig hoveredOn =
@@ -951,14 +953,14 @@ aliasBadGuy2 =
 
 displayModel4 : (Int, Int) -> Int -> String -> Element
 displayModel4 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
     , iconElement modelIcon
     , codeElement <| modelContainer4 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 modelContainer4 : Int -> String -> Element
 modelContainer4 sig hoveredOn =
@@ -991,14 +993,14 @@ aliasPlayer2 =
 
 displayModel5 : (Int, Int) -> Int -> String -> Element
 displayModel5 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
     , iconElement modelIcon
     , codeElement <| modelContainer5 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 modelContainer5 : Int -> String -> Element
 modelContainer5 sig hoveredOn =
@@ -1040,14 +1042,14 @@ aliasGame3 =
 -- Model Message 2
 displayModel6 : (Int, Int) -> Int -> String -> Element
 displayModel6 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
     , iconElement modelIcon
     , codeElement <| modelContainer6 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 modelContainer6 : Int -> String -> Element
 modelContainer6 sig hoveredOn =
@@ -1133,14 +1135,14 @@ defaultGame7 =
 
 displayModel7 : (Int, Int) -> Int -> String -> Element
 displayModel7 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
     , iconElement modelIcon
     , codeElement <| modelContainer7 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 modelContainer7 : Int -> String -> Element
 modelContainer7 sig hoveredOn =
@@ -1223,17 +1225,17 @@ This section has all of the code for explaining the UPDATE section of the game
 -- Update Welcome
 updateWelcome : (Int, Int) -> Int -> Element
 updateWelcome (width, height) sig =
-  color backgroundColor (container width height middle (flow down
-    [ wayfindingUpdate
+  flow down
+    [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement updateIcon
     , subtitleElement updateWelcomeMsg2
     , buttonsLRElement sig
-    ]))
+    ]
 
 wayfindingUpdate : Element
 wayfindingUpdate =
-  color grey <| container 400 50 middle <| (flow right
+  flow right
     [ collage 30 50
         [ wayfinderPast ] --Intro page
     , collage 30 50
@@ -1260,7 +1262,7 @@ wayfindingUpdate =
         [ dashPresent ]
     , collage 30 50
         [ wayfinderFuture ] --Congrats section
-    ])
+    ]
 
 updateWelcomeMsg1 : String
 updateWelcomeMsg1 =
@@ -1285,14 +1287,14 @@ updateWelcomeMsg2 =
 -- Update Message 1
 displayUpdate1 : (Int, Int) -> Int -> String -> Element
 displayUpdate1 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement updateIcon
     , codeElement <| updateContainer1 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 updateContainer1 : Int -> String -> Element
 updateContainer1 sig hoveredOn =
@@ -1355,14 +1357,14 @@ updateFunc4a =
 
 displayUpdate2 : (Int, Int) -> Int -> String -> Element
 displayUpdate2 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement updateIcon
     , codeElement <| updateContainer2 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 updateContainer2 : Int -> String -> Element
 updateContainer2 sig hoveredOn =
@@ -1421,14 +1423,14 @@ updateFunc8 =
 
 displayUpdate3 : (Int, Int) -> Int -> String -> Element
 displayUpdate3 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement updateIcon
     , codeElement <| updateContainer3 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 updateContainer3 : Int -> String -> Element
 updateContainer3 sig hoveredOn =
@@ -1498,14 +1500,14 @@ updateFunc12a =
 
 displayUpdate4 : (Int, Int) -> Int -> String -> Element
 displayUpdate4 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement updateIcon
     , codeElement <| updateContainer4 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 updateContainer4 : Int -> String -> Element
 updateContainer4 sig hoveredOn =
@@ -1598,14 +1600,14 @@ updateFunc18 =
 -- Update Message 2
 displayUpdate5 : (Int, Int) -> Int -> String -> Element
 displayUpdate5 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement updateIcon
     , codeElement <| updateContainer5 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 updateContainer5 : Int -> String -> Element
 updateContainer5 sig hoveredOn=
@@ -1651,14 +1653,14 @@ updateBadGuy2a =
 
 displayUpdate6 : (Int, Int) -> Int -> String -> Element
 displayUpdate6 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement updateIcon
     , codeElement <| updateContainer6 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 updateContainer6 : Int -> String -> Element
 updateContainer6 sig hoveredOn=
@@ -1783,14 +1785,14 @@ updateBadGuy8 =
 
 displayUpdate7 : (Int, Int) -> Int -> String -> Element
 displayUpdate7 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement updateIcon
     , codeElement <| updateContainer7 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 updateContainer7 : Int -> String -> Element
 updateContainer7 sig hoveredOn=
@@ -1885,14 +1887,14 @@ updateBadGuy13 =
 -- Update Message 3
 displayUpdate8 : (Int, Int) -> Int -> String -> Element
 displayUpdate8 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement updateIcon
     , codeElement <| updateContainer8 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 updateContainer8 : Int -> String -> Element
 updateContainer8 sig hoveredOn=
@@ -1928,14 +1930,14 @@ updatePlayer2 =
 
 displayUpdate9 : (Int, Int) -> Int -> String -> Element
 displayUpdate9 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement updateIcon
     , codeElement <| updateContainer9 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 updateContainer9 : Int -> String -> Element
 updateContainer9 sig hoveredOn=
@@ -2025,14 +2027,14 @@ updatePlayer7 =
 
 displayUpdate10 : (Int, Int) -> Int -> String -> Element
 displayUpdate10 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement updateIcon
     , codeElement <| updateContainer10 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 updateContainer10 : Int -> String -> Element
 updateContainer10 sig hoveredOn=
@@ -2136,14 +2138,14 @@ updatePlayer13 =
 -- Update Message 4
 displayUpdate11 : (Int, Int) -> Int -> String -> Element
 displayUpdate11 (width, height) sig hoveredOn=
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement updateIcon
     , codeElement <| updateContainer11 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 updateContainer11 : Int -> String -> Element
 updateContainer11 sig hoveredOn =
@@ -2210,14 +2212,14 @@ updatePhysics5 =
 
 displayUpdate12 : (Int, Int) -> Int -> String -> Element
 displayUpdate12 (width, height) sig hoveredOn=
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement updateIcon
     , codeElement <| updateContainer12 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 updateContainer12 : Int -> String -> Element
 updateContainer12 sig hoveredOn =
@@ -2255,14 +2257,14 @@ updateNear2 =
 
 displayUpdate13 : (Int, Int) -> Int -> String -> Element
 displayUpdate13 (width, height) sig hoveredOn=
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement updateIcon
     , codeElement <| updateContainer13 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 updateContainer13 : Int -> String -> Element
 updateContainer13 sig hoveredOn =
@@ -2304,14 +2306,14 @@ updateWithin2a =
 
 displayUpdate14 : (Int, Int) -> Int -> String -> Element
 displayUpdate14 (width, height) sig hoveredOn=
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement updateIcon
     , codeElement <| updateContainer14 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 updateContainer14 : Int -> String -> Element
 updateContainer14 sig hoveredOn =
@@ -2377,17 +2379,17 @@ This section has all of the code for explaining the VIEW section of the game
 -- View Welcome
 viewWelcome : (Int, Int) -> Int -> Element
 viewWelcome (width, height) sig =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement viewIcon
     , subtitleElement viewWelcomeMsg2
     , buttonsLRElement sig
-    ]))
+    ]
 
 wayfindingView : Element
 wayfindingView =
-  color grey <| container 400 50 middle <| (flow right
+  flow right
     [ collage 30 50
         [ wayfinderPast ] --Intro page
     , collage 30 50
@@ -2414,7 +2416,7 @@ wayfindingView =
         [ dashPresent ]
     , collage 30 50
         [ wayfinderFuture ] --Congrats section
-    ])
+    ]
 
 viewWelcomeMsg1 : String
 viewWelcomeMsg1 =
@@ -2440,14 +2442,14 @@ viewWelcomeMsg2 =
 -- View Message 1
 displayView1 : (Int, Int) -> Int -> String -> Element
 displayView1 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement viewIcon
     , codeElement <| viewContainer1 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 viewContainer1 : Int -> String -> Element
 viewContainer1 sig hoveredOn =
@@ -2475,14 +2477,14 @@ viewFunc2 =
 
 displayView2 : (Int, Int) -> Int -> String -> Element
 displayView2 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement viewIcon
     , codeElement <| viewContainer2 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 viewContainer2 : Int -> String -> Element
 viewContainer2 sig hoveredOn =
@@ -2526,14 +2528,14 @@ viewFunc4a =
 
 displayView3 : (Int, Int) -> Int -> String -> Element
 displayView3 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement viewIcon
     , codeElement <| viewContainer3 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 viewContainer3 : Int -> String -> Element
 viewContainer3 sig hoveredOn =
@@ -2582,14 +2584,14 @@ viewFunc7 =
 
 displayView4 : (Int, Int) -> Int -> String -> Element
 displayView4 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement viewIcon
     , codeElement <| viewContainer4 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 viewContainer4 : Int -> String -> Element
 viewContainer4 sig hoveredOn =
@@ -2623,14 +2625,14 @@ viewFunc9 =
 
 displayView5 : (Int, Int) -> Int -> String -> Element
 displayView5 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement viewIcon
     , codeElement <| viewContainer5 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 viewContainer5 : Int -> String -> Element
 viewContainer5 sig hoveredOn =
@@ -2677,14 +2679,14 @@ viewFunc12 =
 
 displayView6 : (Int, Int) -> Int -> String -> Element
 displayView6 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement viewIcon
     , codeElement <| viewContainer6 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 viewContainer6 : Int -> String -> Element
 viewContainer6 sig hoveredOn =
@@ -2731,14 +2733,14 @@ viewFunc15 =
 -- View Message 2
 displayView7 : (Int, Int) -> Int -> String -> Element
 displayView7 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement viewIcon
     , codeElement <| viewContainer7 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 viewContainer7 :  Int -> String -> Element
 viewContainer7 sig hoveredOn =
@@ -2774,14 +2776,14 @@ viewFunc17 =
 
 displayView8 : (Int, Int) -> Int -> String -> Element
 displayView8 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement viewIcon
     , codeElement <| viewContainer8 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 viewContainer8 :  Int -> String -> Element
 viewContainer8 sig hoveredOn =
@@ -2842,14 +2844,14 @@ viewFunc20 =
 
 displayView9 : (Int, Int) -> Int -> String -> Element
 displayView9 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement viewIcon
     , codeElement <| viewContainer9 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 viewContainer9 :  Int -> String -> Element
 viewContainer9 sig hoveredOn =
@@ -2892,14 +2894,14 @@ textColor =
 
 displayView10 : (Int, Int) -> Int -> String -> Element
 displayView10 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement viewIcon
     , codeElement <| viewContainer10 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 viewContainer10 :  Int -> String -> Element
 viewContainer10 sig hoveredOn =
@@ -2937,14 +2939,14 @@ txtFunc3 =
 
 displayView11 : (Int, Int) -> Int -> String -> Element
 displayView11 (width, height) sig hoveredOn =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement viewIcon
     , codeElement <| viewContainer11 sig hoveredOn
     , helpElement hoveredOn
     , buttonsLRElement sig
-    ]))
+    ]
 
 viewContainer11 :  Int -> String -> Element
 viewContainer11 sig hoveredOn =
@@ -2982,17 +2984,17 @@ This section encourages the user to expand the game and make it better
 -- Congrats
 congrats : (Int, Int) -> Int -> Element
 congrats (width, height) sig =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement viewCongratsMsg1
     , iconElement elmLogo
     , subtitleElement viewCongratsMsg2
     , buttonsLRElement sig
-    ]))
+    ]
 
 wayfindingCongrats : Element
 wayfindingCongrats =
-  color grey <| container 400 50 middle <| (flow right
+  flow right
     [ collage 30 50
         [ wayfinderPast ] --Intro page
     , collage 30 50
@@ -3019,7 +3021,7 @@ wayfindingCongrats =
         [ dashPast ]
     , collage 30 50
         [ wayfinderPresent ] --Congrats section
-    ])
+    ]
 
 viewCongratsMsg1 : String
 viewCongratsMsg1 =
@@ -3041,13 +3043,13 @@ viewCongratsMsg2 =
 -- Idea 1
 idea1 : (Int, Int) -> Int -> Element
 idea1 (width, height) sig =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement viewIdea1Msg1
     , iconElement elmLogo
     , subtitleElement viewIdea1Msg2
     , buttonsLRElement sig
-    ]))
+    ]
 
 viewIdea1Msg1 : String
 viewIdea1Msg1 =
@@ -3070,13 +3072,13 @@ viewIdea1Msg2 =
 -- Idea 2
 idea2 : (Int, Int) -> Int -> Element
 idea2 (width, height) sig =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement viewIdea2Msg1
     , iconElement elmLogo
     , subtitleElement viewIdea2Msg2
     , buttonsLRElement sig
-    ]))
+    ]
 
 viewIdea2Msg1 : String
 viewIdea2Msg1 =
@@ -3098,13 +3100,13 @@ viewIdea2Msg2 =
 -- Idea 3
 idea3 : (Int, Int) -> Int -> Element
 idea3 (width, height) sig =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement viewIdea3Msg1
     , iconElement elmLogo
     , subtitleElement viewIdea3Msg2
     , buttonsLRElement sig
-    ]))
+    ]
 
 viewIdea3Msg1 : String
 viewIdea3Msg1 =
@@ -3128,12 +3130,12 @@ viewIdea3Msg2 =
 -- Elm Resources
 elmResources : (Int, Int) -> Int -> Element
 elmResources (width, height) sig =
-  color backgroundColor (container width height middle (flow down
+  flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement resourcesTitle
     , iconElement elmLogo
     , resourcesElement resourcesMsg
-    , color grey <| container containerWidth 285 middle (flow down
+    , color containerColor <| container containerWidth 285 middle (flow down
       [ subTitle "Elm Websites"
       , toElement linkWidth 20 packageLink
       , toElement linkWidth 20 exampleLink
@@ -3150,7 +3152,7 @@ elmResources (width, height) sig =
       , toElement linkWidth 20 videoLink3
       ])
     , buttonSOElement sig
-    ]))
+    ]
 
 packageLink = a [href "http://package.elm-lang.org/", target "_blank"] [text "Elm Package Catalog"]
 exampleLink = a [href "http://elm-lang.org/Examples.elm", target "_blank"] [text "Elm Examples"]
