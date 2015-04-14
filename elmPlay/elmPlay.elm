@@ -27,55 +27,55 @@ hoveredOn = Signal.channel ""
 view : (Int, Int) -> Int -> String -> Element
 view (width, height) sig hoveredOn =
   color backgroundColor <| container width height middle (
-    if | sig == 0 -> displayWelcome (width, height) sig
-       | sig == 1 -> importsWelcome(width, height) sig
-       | sig == 2 -> displayImports (width, height) sig hoveredOn
-       | sig == 3 -> signalsWelcome (width, height) sig
-       | sig == 4 -> displaySignals1 (width, height) sig hoveredOn
-       | sig == 5 -> displaySignals2 (width, height) sig hoveredOn
-       | sig == 6 -> displaySignals3 (width, height) sig hoveredOn
-       | sig == 7 -> displaySignals4 (width, height) sig hoveredOn
-       | sig == 8 -> modelWelcome (width, height) sig
-       | sig == 9 -> displayModel1 (width, height) sig hoveredOn
-       | sig == 10-> displayModel2 (width, height) sig hoveredOn
-       | sig == 11 -> displayModel3 (width, height) sig hoveredOn
-       | sig == 12 -> displayModel4 (width, height) sig hoveredOn
-       | sig == 13 -> displayModel5 (width, height) sig hoveredOn
-       | sig == 14 -> displayModel6 (width, height) sig hoveredOn
-       | sig == 15 -> displayModel7 (width, height) sig hoveredOn
-       | sig == 16 -> updateWelcome (width, height) sig
-       | sig == 17 -> displayUpdate1 (width, height) sig hoveredOn
-       | sig == 18 -> displayUpdate2 (width, height) sig hoveredOn
-       | sig == 19 -> displayUpdate3 (width, height) sig hoveredOn
-       | sig == 20 -> displayUpdate4 (width, height) sig hoveredOn
-       | sig == 21 -> displayUpdate5 (width, height) sig hoveredOn
-       | sig == 22 -> displayUpdate6 (width, height) sig hoveredOn
-       | sig == 23 -> displayUpdate7 (width, height) sig hoveredOn
-       | sig == 24 -> displayUpdate8 (width, height) sig hoveredOn
-       | sig == 25 -> displayUpdate9 (width, height) sig hoveredOn
-       | sig == 26 -> displayUpdate10 (width, height) sig hoveredOn
-       | sig == 27 -> displayUpdate11 (width, height) sig hoveredOn
-       | sig == 28 -> displayUpdate12 (width, height) sig hoveredOn
-       | sig == 29 -> displayUpdate13 (width, height) sig hoveredOn
-       | sig == 30 -> displayUpdate14 (width, height) sig hoveredOn
-       | sig == 31 -> viewWelcome (width, height) sig
-       | sig == 32 -> displayView1 (width, height) sig hoveredOn
-       | sig == 33 -> displayView2 (width, height) sig hoveredOn
-       | sig == 34 -> displayView3 (width, height) sig hoveredOn
-       | sig == 35 -> displayView4 (width, height) sig hoveredOn
-       | sig == 36 -> displayView5 (width, height) sig hoveredOn
-       | sig == 37 -> displayView6 (width, height) sig hoveredOn
-       | sig == 38 -> displayView7 (width, height) sig hoveredOn
-       | sig == 39 -> displayView8 (width, height) sig hoveredOn
-       | sig == 40 -> displayView9 (width, height) sig hoveredOn
-       | sig == 41 -> displayView10 (width, height) sig hoveredOn
-       | sig == 42 -> displayView11 (width, height) sig hoveredOn
-       | sig == 43 -> congrats (width, height) sig
-       | sig == 44 -> idea1 (width, height) sig
-       | sig == 45 -> idea2 (width, height) sig
-       | sig == 46 -> idea3 (width, height) sig
-       | sig == 47 -> elmResources (width, height) sig
-       | otherwise -> displayWelcome (width, height) sig)
+    if | sig == 0 -> displayWelcome sig
+       | sig == 1 -> importsWelcome sig
+       | sig == 2 -> displayImports sig hoveredOn
+       | sig == 3 -> signalsWelcome sig
+       | sig == 4 -> displaySignals1 sig hoveredOn
+       | sig == 5 -> displaySignals2 sig hoveredOn
+       | sig == 6 -> displaySignals3 sig hoveredOn
+       | sig == 7 -> displaySignals4 sig hoveredOn
+       | sig == 8 -> modelWelcome sig
+       | sig == 9 -> displayModel1 sig hoveredOn
+       | sig == 10-> displayModel2 sig hoveredOn
+       | sig == 11 -> displayModel3 sig hoveredOn
+       | sig == 12 -> displayModel4 sig hoveredOn
+       | sig == 13 -> displayModel5 sig hoveredOn
+       | sig == 14 -> displayModel6 sig hoveredOn
+       | sig == 15 -> displayModel7 sig hoveredOn
+       | sig == 16 -> updateWelcome sig
+       | sig == 17 -> displayUpdate1 sig hoveredOn
+       | sig == 18 -> displayUpdate2 sig hoveredOn
+       | sig == 19 -> displayUpdate3 sig hoveredOn
+       | sig == 20 -> displayUpdate4 sig hoveredOn
+       | sig == 21 -> displayUpdate5 sig hoveredOn
+       | sig == 22 -> displayUpdate6 sig hoveredOn
+       | sig == 23 -> displayUpdate7 sig hoveredOn
+       | sig == 24 -> displayUpdate8 sig hoveredOn
+       | sig == 25 -> displayUpdate9 sig hoveredOn
+       | sig == 26 -> displayUpdate10 sig hoveredOn
+       | sig == 27 -> displayUpdate11 sig hoveredOn
+       | sig == 28 -> displayUpdate12 sig hoveredOn
+       | sig == 29 -> displayUpdate13 sig hoveredOn
+       | sig == 30 -> displayUpdate14 sig hoveredOn
+       | sig == 31 -> viewWelcome sig
+       | sig == 32 -> displayView1 sig hoveredOn
+       | sig == 33 -> displayView2 sig hoveredOn
+       | sig == 34 -> displayView3 sig hoveredOn
+       | sig == 35 -> displayView4 sig hoveredOn
+       | sig == 36 -> displayView5 sig hoveredOn
+       | sig == 37 -> displayView6 sig hoveredOn
+       | sig == 38 -> displayView7 sig hoveredOn
+       | sig == 39 -> displayView8 sig hoveredOn
+       | sig == 40 -> displayView9 sig hoveredOn
+       | sig == 41 -> displayView10 sig hoveredOn
+       | sig == 42 -> displayView11 sig hoveredOn
+       | sig == 43 -> congrats sig
+       | sig == 44 -> idea1 sig
+       | sig == 45 -> idea2 sig
+       | sig == 46 -> idea3 sig
+       | sig == 47 -> elmResources sig
+       | otherwise -> displayWelcome sig)
 
 -- These numbers are used to create the containers that hold the code examples and explinations
 indent = 20
@@ -245,8 +245,8 @@ body f = Text.fromString(f)
              |> Text.leftAligned
 
 -- Welcome Message
-displayWelcome : (Int, Int) -> Int -> Element
-displayWelcome (width, height) sig =
+displayWelcome : Int -> Element
+displayWelcome sig =
   flow down
     [ wayfindingElement wayfindingWelcome
     , titleElement welcomeMsg1
@@ -312,8 +312,8 @@ This section has all of the code for explaining the IMPORT section of the game
 --}
 
 -- Imports Welcome
-importsWelcome : (Int, Int) -> Int -> Element
-importsWelcome (width, height) sig =
+importsWelcome : Int -> Element
+importsWelcome sig =
   flow down
     [ wayfindingElement wayfindingImports
     , titleElement importsWelcomeMsg1
@@ -374,8 +374,8 @@ importsWelcomeMsg2 =
   "&diams; Resize the game."
 
 -- Imports Message
-displayImports : (Int, Int) -> Int -> String -> Element
-displayImports (width, height) sig hoveredOn =
+displayImports : Int -> String -> Element
+displayImports sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingImports
     , titleElement importsWelcomeMsg1
@@ -473,8 +473,8 @@ This section has all of the code for explaining the SIGNALS section of the game
 --}
 
 -- Signals Welcome
-signalsWelcome : (Int, Int) -> Int -> Element
-signalsWelcome (width, height) sig =
+signalsWelcome : Int -> Element
+signalsWelcome sig =
   flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
@@ -535,8 +535,8 @@ signalsWelcomeMsg2 =
   "&diams; Arrow keys on the keyboard.\n"
 
 -- Signals Message
-displaySignals1 : (Int, Int) -> Int -> String -> Element
-displaySignals1 (width, height) sig hoveredOn =
+displaySignals1 : Int -> String -> Element
+displaySignals1 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
@@ -585,8 +585,8 @@ signalMain3 =
   body " gameState"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalMain2Msg) else (Signal.send hoveredOn ""))
 
-displaySignals2 : (Int, Int) -> Int -> String -> Element
-displaySignals2 (width, height) sig hoveredOn =
+displaySignals2 : Int -> String -> Element
+displaySignals2 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
@@ -631,8 +631,8 @@ signalGameState3 =
   body" Signal.foldp update defaultGame input"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalGameState3Msg) else (Signal.send hoveredOn ""))
 
-displaySignals3 : (Int, Int) -> Int -> String -> Element
-displaySignals3 (width, height) sig hoveredOn =
+displaySignals3 : Int -> String -> Element
+displaySignals3 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
@@ -671,8 +671,8 @@ signalDelta2 =
   body " Signal.map inSeconds (fps 35)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalDelta2Msg) else (Signal.send hoveredOn ""))
 
-displaySignals4 : (Int, Int) -> Int -> String -> Element
-displaySignals4 (width, height) sig hoveredOn =
+displaySignals4 : Int -> String -> Element
+displaySignals4 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
@@ -787,8 +787,8 @@ This section has all of the code for explaining the MODEL section of the game
 --}
 
 -- Model Welcome
-modelWelcome : (Int, Int) -> Int -> Element
-modelWelcome (width, height) sig =
+modelWelcome : Int -> Element
+modelWelcome sig =
   flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
@@ -851,8 +851,8 @@ modelWelcomeMsg2 =
   "   spacebar is pressed."
 
 -- Model Message 1
-displayModel1 : (Int, Int) -> Int -> String -> Element
-displayModel1 (width, height) sig hoveredOn =
+displayModel1 : Int -> String -> Element
+displayModel1 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
@@ -886,8 +886,8 @@ playingSize =
   body " 30. (halfWidth, halfHeight) = (300, 200)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn playingSizeMsg) else (Signal.send hoveredOn ""))
 
-displayModel2 : (Int, Int) -> Int -> String -> Element
-displayModel2 (width, height) sig hoveredOn =
+displayModel2 : Int -> String -> Element
+displayModel2 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
@@ -911,8 +911,8 @@ typeState =
   body " 32. type State = Play | Pause"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn typeStateMsg) else (Signal.send hoveredOn ""))
 
-displayModel3 : (Int, Int) -> Int -> String -> Element
-displayModel3 (width, height) sig hoveredOn =
+displayModel3 : Int -> String -> Element
+displayModel3 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
@@ -951,8 +951,8 @@ aliasBadGuy2 =
   body "{ x:Float, y:Float, vx:Float, vy:Float }"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasBadGuy2Msg) else (Signal.send hoveredOn ""))
 
-displayModel4 : (Int, Int) -> Int -> String -> Element
-displayModel4 (width, height) sig hoveredOn =
+displayModel4 : Int -> String -> Element
+displayModel4 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
@@ -991,8 +991,8 @@ aliasPlayer2 =
   body "{ x:Float, y:Float, vx:Float, vy:Float, lives:Int }"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasPlayer2Msg) else (Signal.send hoveredOn ""))
 
-displayModel5 : (Int, Int) -> Int -> String -> Element
-displayModel5 (width, height) sig hoveredOn =
+displayModel5 : Int -> String -> Element
+displayModel5 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
@@ -1040,8 +1040,8 @@ aliasGame3 =
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasGame2Msg) else (Signal.send hoveredOn ""))
 
 -- Model Message 2
-displayModel6 : (Int, Int) -> Int -> String -> Element
-displayModel6 (width, height) sig hoveredOn =
+displayModel6 : Int -> String -> Element
+displayModel6 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
@@ -1133,8 +1133,8 @@ defaultGame7 =
   body "}"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame7Msg) else (Signal.send hoveredOn ""))
 
-displayModel7 : (Int, Int) -> Int -> String -> Element
-displayModel7 (width, height) sig hoveredOn =
+displayModel7 : Int -> String -> Element
+displayModel7 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
@@ -1223,8 +1223,8 @@ This section has all of the code for explaining the UPDATE section of the game
 --}
 
 -- Update Welcome
-updateWelcome : (Int, Int) -> Int -> Element
-updateWelcome (width, height) sig =
+updateWelcome : Int -> Element
+updateWelcome sig =
   flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
@@ -1285,8 +1285,8 @@ updateWelcomeMsg2 =
   "   touching?"
 
 -- Update Message 1
-displayUpdate1 : (Int, Int) -> Int -> String -> Element
-displayUpdate1 (width, height) sig hoveredOn =
+displayUpdate1 : Int -> String -> Element
+displayUpdate1 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
@@ -1355,8 +1355,8 @@ updateFunc4a =
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc4Msg) else (Signal.send hoveredOn ""))
 
 
-displayUpdate2 : (Int, Int) -> Int -> String -> Element
-displayUpdate2 (width, height) sig hoveredOn =
+displayUpdate2 : Int -> String -> Element
+displayUpdate2 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
@@ -1421,8 +1421,8 @@ updateFunc8 =
   body "| otherwise              -> state"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc8Msg) else (Signal.send hoveredOn ""))
 
-displayUpdate3 : (Int, Int) -> Int -> String -> Element
-displayUpdate3 (width, height) sig hoveredOn =
+displayUpdate3 : Int -> String -> Element
+displayUpdate3 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
@@ -1498,8 +1498,8 @@ updateFunc12a =
   body "player1"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc12Msg) else (Signal.send hoveredOn ""))
 
-displayUpdate4 : (Int, Int) -> Int -> String -> Element
-displayUpdate4 (width, height) sig hoveredOn =
+displayUpdate4 : Int -> String -> Element
+displayUpdate4 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
@@ -1598,8 +1598,8 @@ updateFunc18 =
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc18Msg) else (Signal.send hoveredOn ""))
 
 -- Update Message 2
-displayUpdate5 : (Int, Int) -> Int -> String -> Element
-displayUpdate5 (width, height) sig hoveredOn =
+displayUpdate5 : Int -> String -> Element
+displayUpdate5 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
@@ -1651,8 +1651,8 @@ updateBadGuy2a =
   body " ({x,y,vx,vy,lives} as player1) ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy2Msg) else (Signal.send hoveredOn ""))
 
-displayUpdate6 : (Int, Int) -> Int -> String -> Element
-displayUpdate6 (width, height) sig hoveredOn =
+displayUpdate6 : Int -> String -> Element
+displayUpdate6 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
@@ -1783,8 +1783,8 @@ updateBadGuy8 =
   body "}"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy8Msg) else (Signal.send hoveredOn ""))
 
-displayUpdate7 : (Int, Int) -> Int -> String -> Element
-displayUpdate7 (width, height) sig hoveredOn =
+displayUpdate7 : Int -> String -> Element
+displayUpdate7 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
@@ -1885,8 +1885,8 @@ updateBadGuy13 =
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy13Msg) else (Signal.send hoveredOn ""))
 
 -- Update Message 3
-displayUpdate8 : (Int, Int) -> Int -> String -> Element
-displayUpdate8 (width, height) sig hoveredOn =
+displayUpdate8 : Int -> String -> Element
+displayUpdate8 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
@@ -1928,8 +1928,8 @@ updatePlayer2 =
   body " 93. updatePlayer t dir1 dir2 lives player ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer2Msg) else (Signal.send hoveredOn ""))
 
-displayUpdate9 : (Int, Int) -> Int -> String -> Element
-displayUpdate9 (width, height) sig hoveredOn =
+displayUpdate9 : Int -> String -> Element
+displayUpdate9 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
@@ -2025,8 +2025,8 @@ updatePlayer7 =
   body "else (player.lives - lives)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer7Msg) else (Signal.send hoveredOn ""))
 
-displayUpdate10 : (Int, Int) -> Int -> String -> Element
-displayUpdate10 (width, height) sig hoveredOn =
+displayUpdate10 : Int -> String -> Element
+displayUpdate10 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
@@ -2136,8 +2136,8 @@ updatePlayer13 =
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer13Msg) else (Signal.send hoveredOn ""))
 
 -- Update Message 4
-displayUpdate11 : (Int, Int) -> Int -> String -> Element
-displayUpdate11 (width, height) sig hoveredOn=
+displayUpdate11 : Int -> String -> Element
+displayUpdate11 sig hoveredOn=
   flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
@@ -2210,8 +2210,8 @@ updatePhysics5 =
   body "}"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePhysics5Msg) else (Signal.send hoveredOn ""))
 
-displayUpdate12 : (Int, Int) -> Int -> String -> Element
-displayUpdate12 (width, height) sig hoveredOn=
+displayUpdate12 : Int -> String -> Element
+displayUpdate12 sig hoveredOn=
   flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
@@ -2255,8 +2255,8 @@ updateNear2 =
   body "n >= k-c && n <= k+c"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateNear2Msg) else (Signal.send hoveredOn ""))
 
-displayUpdate13 : (Int, Int) -> Int -> String -> Element
-displayUpdate13 (width, height) sig hoveredOn=
+displayUpdate13 : Int -> String -> Element
+displayUpdate13 sig hoveredOn=
   flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
@@ -2304,8 +2304,8 @@ updateWithin2a =
   body " near player1.y 25 badGuy.y"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateWithin2Msg) else (Signal.send hoveredOn ""))
 
-displayUpdate14 : (Int, Int) -> Int -> String -> Element
-displayUpdate14 (width, height) sig hoveredOn=
+displayUpdate14 : Int -> String -> Element
+displayUpdate14 sig hoveredOn=
   flow down
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
@@ -2377,8 +2377,8 @@ This section has all of the code for explaining the VIEW section of the game
 --}
 
 -- View Welcome
-viewWelcome : (Int, Int) -> Int -> Element
-viewWelcome (width, height) sig =
+viewWelcome : Int -> Element
+viewWelcome sig =
   flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
@@ -2440,8 +2440,8 @@ viewWelcomeMsg2 =
   "   and a message on the bottom."
 
 -- View Message 1
-displayView1 : (Int, Int) -> Int -> String -> Element
-displayView1 (width, height) sig hoveredOn =
+displayView1 : Int -> String -> Element
+displayView1 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
@@ -2475,8 +2475,8 @@ viewFunc2 =
   body " 125. view (w, h) {state, badGuy, player1} ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc2Msg) else (Signal.send hoveredOn ""))
 
-displayView2 : (Int, Int) -> Int -> String -> Element
-displayView2 (width, height) sig hoveredOn =
+displayView2 : Int -> String -> Element
+displayView2 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
@@ -2526,8 +2526,8 @@ viewFunc4a =
   body " (toString player1.lives)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc4Msg) else (Signal.send hoveredOn ""))
 
-displayView3 : (Int, Int) -> Int -> String -> Element
-displayView3 (width, height) sig hoveredOn =
+displayView3 : Int -> String -> Element
+displayView3 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
@@ -2582,8 +2582,8 @@ viewFunc7 =
   body "collage gameWidth gameHeight"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc7Msg) else (Signal.send hoveredOn ""))
 
-displayView4 : (Int, Int) -> Int -> String -> Element
-displayView4 (width, height) sig hoveredOn =
+displayView4 : Int -> String -> Element
+displayView4 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
@@ -2623,8 +2623,8 @@ viewFunc9 =
   body "|> filled elmGrey"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc9Msg) else (Signal.send hoveredOn ""))
 
-displayView5 : (Int, Int) -> Int -> String -> Element
-displayView5 (width, height) sig hoveredOn =
+displayView5 : Int -> String -> Element
+displayView5 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
@@ -2677,8 +2677,8 @@ viewFunc12 =
   body "|> move (badGuy.x, badGuy.y)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc12Msg) else (Signal.send hoveredOn ""))
 
-displayView6 : (Int, Int) -> Int -> String -> Element
-displayView6 (width, height) sig hoveredOn =
+displayView6 : Int -> String -> Element
+displayView6 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
@@ -2731,8 +2731,8 @@ viewFunc15 =
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc15Msg) else (Signal.send hoveredOn ""))
 
 -- View Message 2
-displayView7 : (Int, Int) -> Int -> String -> Element
-displayView7 (width, height) sig hoveredOn =
+displayView7 : Int -> String -> Element
+displayView7 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
@@ -2774,8 +2774,8 @@ viewFunc17 =
   body "|> move (0, gameHeight/2 - 40)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc17Msg) else (Signal.send hoveredOn ""))
 
-displayView8 : (Int, Int) -> Int -> String -> Element
-displayView8 (width, height) sig hoveredOn =
+displayView8 : Int -> String -> Element
+displayView8 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
@@ -2842,8 +2842,8 @@ viewFunc20 =
   body "]"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc20Msg) else (Signal.send hoveredOn ""))
 
-displayView9 : (Int, Int) -> Int -> String -> Element
-displayView9 (width, height) sig hoveredOn =
+displayView9 : Int -> String -> Element
+displayView9 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
@@ -2892,8 +2892,8 @@ textColor =
   body " 148. textColor = white"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn textColorMsg) else (Signal.send hoveredOn ""))
 
-displayView10 : (Int, Int) -> Int -> String -> Element
-displayView10 (width, height) sig hoveredOn =
+displayView10 : Int -> String -> Element
+displayView10 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
@@ -2937,8 +2937,8 @@ txtFunc3 =
   body " >> f >> Text.leftAligned"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn txtFunc3Msg) else (Signal.send hoveredOn ""))
 
-displayView11 : (Int, Int) -> Int -> String -> Element
-displayView11 (width, height) sig hoveredOn =
+displayView11 : Int -> String -> Element
+displayView11 sig hoveredOn =
   flow down
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
@@ -2982,8 +2982,8 @@ This section encourages the user to expand the game and make it better
 --}
 
 -- Congrats
-congrats : (Int, Int) -> Int -> Element
-congrats (width, height) sig =
+congrats : Int -> Element
+congrats sig =
   flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement viewCongratsMsg1
@@ -3041,8 +3041,8 @@ viewCongratsMsg2 =
   "more resources for learning Elm."
 
 -- Idea 1
-idea1 : (Int, Int) -> Int -> Element
-idea1 (width, height) sig =
+idea1 : Int -> Element
+idea1 sig =
   flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement viewIdea1Msg1
@@ -3070,8 +3070,8 @@ viewIdea1Msg2 =
   "    randomly appears one at a time."
 
 -- Idea 2
-idea2 : (Int, Int) -> Int -> Element
-idea2 (width, height) sig =
+idea2 : Int -> Element
+idea2 sig =
   flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement viewIdea2Msg1
@@ -3098,8 +3098,8 @@ viewIdea2Msg2 =
   "   another enemy."
 
 -- Idea 3
-idea3 : (Int, Int) -> Int -> Element
-idea3 (width, height) sig =
+idea3 : Int -> Element
+idea3 sig =
   flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement viewIdea3Msg1
@@ -3128,8 +3128,8 @@ viewIdea3Msg2 =
   "   touched."
 
 -- Elm Resources
-elmResources : (Int, Int) -> Int -> Element
-elmResources (width, height) sig =
+elmResources : Int -> Element
+elmResources sig =
   flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement resourcesTitle
