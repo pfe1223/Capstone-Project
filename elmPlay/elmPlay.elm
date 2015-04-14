@@ -173,7 +173,7 @@ buttonSOElement : Int -> Element
 buttonSOElement sig =
   color grey <| container containerWidth 50 midLeft <| flow right
     [ spacer 5 1
-    , startOver sig
+    , customRestartButton
     ]
 
 questionElement : String -> Element
@@ -217,6 +217,13 @@ customGoButton sig =
  (image 100 40 "/images/goButton.svg")
  (image 100 40 "/images/goButton.svg")
  (image 100 40 "/images/goButton.svg")
+
+customRestartButton : Element
+customRestartButton =
+ customButton (send chan (0))
+ (image 100 40 "/images/restartButton.svg")
+ (image 100 40 "/images/restartButton.svg")
+ (image 100 40 "/images/restartButton.svg")
 
 -- Custom colors based on the Elm logo
 backgroundColor = rgb 39 45 60
