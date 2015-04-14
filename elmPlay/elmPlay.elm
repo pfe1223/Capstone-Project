@@ -93,25 +93,25 @@ dropdownHeight = 100
 -- Wayfinding tools
 wayfinderPast =
   circle 15
-    |> filled darkerBlue
+    |> filled elmBlue
     |> alpha 0.5
 
 wayfinderPresent =
   circle 15
-    |> filled darkerBlue
+    |> filled elmBlue
 
 wayfinderFuture =
   circle 15
-    |> outlined (solid darkerBlue)
+    |> outlined (solid elmBlue)
 
 dashPast =
   rect 20 5
-    |> filled darkerBlue
+    |> filled elmBlue
     |> alpha 0.5
 
 dashPresent =
   rect 20 5
-    |> filled darkerBlue
+    |> filled elmBlue
 
 -- Display elements
 gifElement gif =
@@ -181,22 +181,6 @@ questionElement strg =
   color grey <| container containerWidth questionHeight middle <| subTitle strg
 
 -- Buttons
-letsGo : Int -> Element
-letsGo sig =
-  size 100 40 <| color grey <| button (send chan (sig + 1)) "Let's get started"
-
-rightButton : Int -> Element
-rightButton sig =
-  size 50 40 <| color grey <| button (send chan (sig + 1)) ">"
-
-leftButton : Int -> Element
-leftButton sig =
-  size 50 40 <| color grey <| button (send chan (sig - 1)) "<"
-
-startOver : Int -> Element
-startOver sig =
-  size 100 40 <| color grey <| button (send chan (0)) "Start Over"
-
 customLButton : Int -> Element
 customLButton sig =
  customButton (send chan (sig - 1))
@@ -227,6 +211,7 @@ customRestartButton =
 
 -- Custom colors based on the Elm logo
 backgroundColor = rgb 39 45 60
+darkerPurple = rgb 39 45 60
 darkerGreen = rgb 90 146 15
 darkerBlue = rgb 42 105 129
 darkerOrange = rgb 166 105 10
@@ -246,7 +231,7 @@ viewIcon = image 100 100 "images/viewIcon.svg"
 
 -- Text formatting
 title f = Text.fromString(f)
-            |> Text.color darkerGreen
+            |> Text.color elmGreen
             |> Text.height 50
             |> Text.centered
 
