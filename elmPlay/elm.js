@@ -4923,6 +4923,17 @@ Elm.Main.make = function (_elm) {
    60);
    var containerColor = $Color.white;
    var backgroundColor = darkerPurple;
+   var lineNumElement = function (strg) {
+      return A2($Graphics$Element.flow,
+      $Graphics$Element.right,
+      _L.fromArray([A2($Graphics$Element.spacer,
+                   5,
+                   2)
+                   ,body(strg)
+                   ,A2($Graphics$Element.spacer,
+                   5,
+                   2)]));
+   };
    var dashPresent = $Graphics$Collage.filled(elmBlue)(A2($Graphics$Collage.rect,
    20,
    5));
@@ -5336,8 +5347,14 @@ Elm.Main.make = function (_elm) {
    var welcomeElement = function (strg) {
       return $Graphics$Element.color(containerColor)(A3($Graphics$Element.container,
       containerWidth,
-      375,
+      150,
       $Graphics$Element.middle)(subTitle(strg)));
+   };
+   var welcomeCollage = function (form) {
+      return $Graphics$Element.color(containerColor)(A3($Graphics$Collage.collage,
+      containerWidth,
+      225,
+      _L.fromArray([form])));
    };
    var wayfindingElement = function (wayfinding) {
       return $Graphics$Element.color(containerColor)(A3($Graphics$Element.container,
@@ -5397,69 +5414,93 @@ Elm.Main.make = function (_elm) {
       colorMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 1. import Color (..)"));
+   })(body("import Color (..)"));
    var importGraphicsElement = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       graphicsElementMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 3. import Graphics.Element (..)"));
+   })(body("import Graphics.Element (..)"));
    var importGraphicsCollage = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       graphicsCollageMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 2. import Graphics.Collage (..)"));
+   })(body("import Graphics.Collage (..)"));
    var importText = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       textMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 6. import Text (..)"));
+   })(body("import Text (..)"));
    var importSignal = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       signalMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 5. import Signal"));
+   })(body("import Signal"));
    var importKeyboard = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       keyboardMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 4. import Keyboard"));
+   })(body("import Keyboard"));
    var importTime = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       timeMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 7. import Time"));
+   })(body("import Time"));
    var importWindow = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       windowMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 8. import Window"));
+   })(body("import Window"));
    var importsContainer = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([importColor
-                   ,importGraphicsCollage
-                   ,importGraphicsElement
-                   ,importKeyboard
-                   ,importSignal
-                   ,importText
-                   ,importTime
-                   ,importWindow
-                   ,body(" 9.")]));
+      _L.fromArray([A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([lineNumElement("1.")
+                                ,importColor]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([lineNumElement("2.")
+                                ,importGraphicsCollage]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([lineNumElement("3.")
+                                ,importGraphicsElement]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([lineNumElement("4.")
+                                ,importKeyboard]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([lineNumElement("5.")
+                                ,importSignal]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([lineNumElement("6.")
+                                ,importText]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([lineNumElement("7.")
+                                ,importTime]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([lineNumElement("8.")
+                                ,importWindow]))
+                   ,lineNumElement("9.")]));
    });
    var signalMain1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -8367,6 +8408,7 @@ Elm.Main.make = function (_elm) {
                       ,gifElement: gifElement
                       ,resourcesElement: resourcesElement
                       ,welcomeElement: welcomeElement
+                      ,welcomeCollage: welcomeCollage
                       ,wayfindingElement: wayfindingElement
                       ,titleElement: titleElement
                       ,subtitleElement: subtitleElement
@@ -8378,6 +8420,7 @@ Elm.Main.make = function (_elm) {
                       ,buttonsLRElement: buttonsLRElement
                       ,buttonSOElement: buttonSOElement
                       ,questionElement: questionElement
+                      ,lineNumElement: lineNumElement
                       ,customLButton: customLButton
                       ,customRButton: customRButton
                       ,customGoButton: customGoButton

@@ -27,55 +27,56 @@ hoveredOn = Signal.channel ""
 view : (Int, Int) -> Int -> String -> Element
 view (width, height) sig hoveredOn =
   color backgroundColor <| container width height middle (
-    if | sig == 0 -> displayWelcome sig
-       | sig == 1 -> importsWelcome sig
-       | sig == 2 -> displayImports sig hoveredOn
-       | sig == 3 -> signalsWelcome sig
-       | sig == 4 -> displaySignals1 sig hoveredOn
-       | sig == 5 -> displaySignals2 sig hoveredOn
-       | sig == 6 -> displaySignals3 sig hoveredOn
-       | sig == 7 -> displaySignals4 sig hoveredOn
-       | sig == 8 -> modelWelcome sig
-       | sig == 9 -> displayModel1 sig hoveredOn
-       | sig == 10-> displayModel2 sig hoveredOn
-       | sig == 11 -> displayModel3 sig hoveredOn
-       | sig == 12 -> displayModel4 sig hoveredOn
-       | sig == 13 -> displayModel5 sig hoveredOn
-       | sig == 14 -> displayModel6 sig hoveredOn
-       | sig == 15 -> displayModel7 sig hoveredOn
-       | sig == 16 -> updateWelcome sig
-       | sig == 17 -> displayUpdate1 sig hoveredOn
-       | sig == 18 -> displayUpdate2 sig hoveredOn
-       | sig == 19 -> displayUpdate3 sig hoveredOn
-       | sig == 20 -> displayUpdate4 sig hoveredOn
-       | sig == 21 -> displayUpdate5 sig hoveredOn
-       | sig == 22 -> displayUpdate6 sig hoveredOn
-       | sig == 23 -> displayUpdate7 sig hoveredOn
-       | sig == 24 -> displayUpdate8 sig hoveredOn
-       | sig == 25 -> displayUpdate9 sig hoveredOn
-       | sig == 26 -> displayUpdate10 sig hoveredOn
-       | sig == 27 -> displayUpdate11 sig hoveredOn
-       | sig == 28 -> displayUpdate12 sig hoveredOn
-       | sig == 29 -> displayUpdate13 sig hoveredOn
-       | sig == 30 -> displayUpdate14 sig hoveredOn
-       | sig == 31 -> viewWelcome sig
-       | sig == 32 -> displayView1 sig hoveredOn
-       | sig == 33 -> displayView2 sig hoveredOn
-       | sig == 34 -> displayView3 sig hoveredOn
-       | sig == 35 -> displayView4 sig hoveredOn
-       | sig == 36 -> displayView5 sig hoveredOn
-       | sig == 37 -> displayView6 sig hoveredOn
-       | sig == 38 -> displayView7 sig hoveredOn
-       | sig == 39 -> displayView8 sig hoveredOn
-       | sig == 40 -> displayView9 sig hoveredOn
-       | sig == 41 -> displayView10 sig hoveredOn
-       | sig == 42 -> displayView11 sig hoveredOn
-       | sig == 43 -> congrats sig
-       | sig == 44 -> idea1 sig
-       | sig == 45 -> idea2 sig
-       | sig == 46 -> idea3 sig
-       | sig == 47 -> elmResources sig
-       | otherwise -> displayWelcome sig)
+    if | sig == 0 -> displayWelcome1 sig
+       | sig == 1 -> displayWelcome2 sig
+       | sig == 2 -> importsWelcome sig
+       | sig == 3 -> displayImports sig hoveredOn
+       | sig == 4 -> signalsWelcome sig
+       | sig == 5 -> displaySignals1 sig hoveredOn
+       | sig == 6 -> displaySignals2 sig hoveredOn
+       | sig == 7 -> displaySignals3 sig hoveredOn
+       | sig == 8 -> displaySignals4 sig hoveredOn
+       | sig == 9 -> modelWelcome sig
+       | sig == 10 -> displayModel1 sig hoveredOn
+       | sig == 11-> displayModel2 sig hoveredOn
+       | sig == 12 -> displayModel3 sig hoveredOn
+       | sig == 13 -> displayModel4 sig hoveredOn
+       | sig == 14 -> displayModel5 sig hoveredOn
+       | sig == 15 -> displayModel6 sig hoveredOn
+       | sig == 16 -> displayModel7 sig hoveredOn
+       | sig == 17 -> updateWelcome sig
+       | sig == 18 -> displayUpdate1 sig hoveredOn
+       | sig == 19 -> displayUpdate2 sig hoveredOn
+       | sig == 20 -> displayUpdate3 sig hoveredOn
+       | sig == 21 -> displayUpdate4 sig hoveredOn
+       | sig == 22 -> displayUpdate5 sig hoveredOn
+       | sig == 23 -> displayUpdate6 sig hoveredOn
+       | sig == 24 -> displayUpdate7 sig hoveredOn
+       | sig == 25 -> displayUpdate8 sig hoveredOn
+       | sig == 26 -> displayUpdate9 sig hoveredOn
+       | sig == 27 -> displayUpdate10 sig hoveredOn
+       | sig == 28 -> displayUpdate11 sig hoveredOn
+       | sig == 29 -> displayUpdate12 sig hoveredOn
+       | sig == 30 -> displayUpdate13 sig hoveredOn
+       | sig == 31 -> displayUpdate14 sig hoveredOn
+       | sig == 32 -> viewWelcome sig
+       | sig == 33 -> displayView1 sig hoveredOn
+       | sig == 34 -> displayView2 sig hoveredOn
+       | sig == 35 -> displayView3 sig hoveredOn
+       | sig == 36 -> displayView4 sig hoveredOn
+       | sig == 37 -> displayView5 sig hoveredOn
+       | sig == 38 -> displayView6 sig hoveredOn
+       | sig == 39 -> displayView7 sig hoveredOn
+       | sig == 40 -> displayView8 sig hoveredOn
+       | sig == 41 -> displayView9 sig hoveredOn
+       | sig == 42 -> displayView10 sig hoveredOn
+       | sig == 43 -> displayView11 sig hoveredOn
+       | sig == 44 -> congrats sig
+       | sig == 45 -> idea1 sig
+       | sig == 46 -> idea2 sig
+       | sig == 47 -> idea3 sig
+       | sig == 48 -> elmResources sig
+       | otherwise -> displayWelcome1 sig)
 
 -- These numbers are used to create the containers that hold the code examples and explinations
 indent = 20
@@ -93,25 +94,25 @@ dropdownHeight = 100
 
 -- Wayfinding tools
 wayfinderPast =
-  circle 15
+  circle 13
     |> filled elmBlue
     |> alpha 0.5
 
 wayfinderPresent =
-  circle 15
+  circle 13
     |> filled elmBlue
 
 wayfinderFuture =
-  circle 15
+  circle 13
     |> outlined (solid elmBlue)
 
 dashPast =
-  rect 20 5
+  rect 22 5
     |> filled elmBlue
     |> alpha 0.5
 
 dashPresent =
-  rect 20 5
+  rect 25 5
     |> filled elmBlue
 
 -- Display elements
@@ -124,7 +125,15 @@ resourcesElement strg =
 
 welcomeElement : String -> Element
 welcomeElement strg =
-  color containerColor <| container containerWidth 375 middle <| subTitle strg
+  color containerColor <| container containerWidth 115 middle <| subTitle strg
+
+animationElement : Element -> String -> String -> Element
+animationElement form stepNumber stepDescription =
+  flow down
+    [ color containerColor <| container containerWidth 35 middle <| subTitle stepNumber
+    , color containerColor <| container containerWidth 35 middle <| subTitle stepDescription
+    , color containerColor <| container containerWidth 190 middle form
+    ]
 
 wayfindingElement : Element -> Element
 wayfindingElement wayfinding =
@@ -180,6 +189,14 @@ buttonSOElement sig =
 questionElement : String -> Element
 questionElement strg =
   color containerColor <| container containerWidth questionHeight middle <| subTitle strg
+
+lineNumElement : String -> Element
+lineNumElement strg =
+  flow right
+    [ spacer 5 2
+    , body strg
+    , spacer 5 2
+    ]
 
 -- Buttons
 customLButton : Int -> Element
@@ -247,14 +264,21 @@ body f = Text.fromString(f)
   |> Text.typeface ["futura", "sans-serif"]
   |> Text.leftAligned
 
--- Welcome Message
-displayWelcome : Int -> Element
-displayWelcome sig =
+middleText f = Text.fromString(f)
+  |> Text.typeface ["futura", "sans-serif"]
+  |> Text.height 20
+  |> Text.centered
+
+-- Welcome Message 1
+-- `````````````````
+displayWelcome1 : Int -> Element
+displayWelcome1 sig =
   flow down
     [ wayfindingElement wayfindingWelcome
     , titleElement welcomeMsg1
     , gifElement gifImage
     , welcomeElement welcomeMsg2
+    , animationElement welcomeAnimation1 stepNumber1 stepDescription1
     , buttonGoElement sig
     ]
 
@@ -297,6 +321,19 @@ welcomeMsg2 =
   "Let's make a game with elm play.\n" ++
   "Here's how:"
 
+stepNumber1 : String
+stepNumber1 = "Step One"
+
+stepDescription1 : String
+stepDescription1 = "Copy the code to the editor"
+
+welcomeAnimation1 : Element
+welcomeAnimation1 =
+  collage 400 190
+    [ rect 200 150
+        |> filled red
+    ]
+
 welcomeMsg3 : String
 welcomeMsg3 =
   "Welcome to Elm Play, where you will\n" ++
@@ -311,6 +348,33 @@ welcomeMsg3 =
   "line number as it goes with the line of\n" ++
   "code above. Click on the button below\n" ++
   "to begin."
+
+
+-- Welcome Message 2
+-- `````````````````
+displayWelcome2 : Int -> Element
+displayWelcome2 sig =
+  flow down
+    [ wayfindingElement wayfindingWelcome
+    , titleElement welcomeMsg1
+    , gifElement gifImage
+    , welcomeElement welcomeMsg2
+    , animationElement welcomeAnimation2 stepNumber2 stepDescription2
+    , buttonsLRElement sig
+    ]
+
+stepNumber2 : String
+stepNumber2 = "Step Two"
+
+stepDescription2 : String
+stepDescription2 = "Mouse over the code for an explanation"
+
+welcomeAnimation2 : Element
+welcomeAnimation2 =
+  collage 400 190
+    [ rect 200 150
+        |> filled blue
+    ]
 
 
 {--
@@ -396,15 +460,14 @@ displayImports sig hoveredOn =
 importsContainer : Int -> String -> Element
 importsContainer sig hoveredOn =
   flow down
-    [ importColor
-    , importGraphicsCollage
-    , importGraphicsElement
-    , importKeyboard
-    , importSignal
-    , importText
-    , importTime
-    , importWindow
-    , body " 9."
+    [ flow right [spacer 10 5, importColor]
+    , flow right [spacer 10 5, importGraphicsCollage] 
+    , flow right [spacer 10 5, importGraphicsElement]
+    , flow right [spacer 10 5, importKeyboard]
+    , flow right [spacer 10 5, importSignal]
+    , flow right [spacer 10 5, importText]
+    , flow right [spacer 10 5, importTime]
+    , flow right [spacer 10 5, importWindow]
     ]
 
 colorMsg = "Import the Color library. This allows you\n" ++
@@ -412,7 +475,7 @@ colorMsg = "Import the Color library. This allows you\n" ++
            "the shapes."
 importColor : Element
 importColor =
-  body " 1. import Color (..)"
+  body "import Color (..)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn colorMsg) else (Signal.send hoveredOn ""))
 
 graphicsElementMsg = "Import everything from the Graphics.Element\n" ++
@@ -421,7 +484,7 @@ graphicsElementMsg = "Import everything from the Graphics.Element\n" ++
                      "the game in the middle of the page."
 importGraphicsElement : Element
 importGraphicsElement =
-  body " 3. import Graphics.Element (..)"
+  body "import Graphics.Element (..)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn graphicsElementMsg) else (Signal.send hoveredOn ""))
 
 graphicsCollageMsg = "Import everything from the Graphics.Collage\n" ++
@@ -429,7 +492,7 @@ graphicsCollageMsg = "Import everything from the Graphics.Collage\n" ++
                      "the game area with the shapes that move around."
 importGraphicsCollage : Element
 importGraphicsCollage =
-  body " 2. import Graphics.Collage (..)"
+  body "import Graphics.Collage (..)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn graphicsCollageMsg) else (Signal.send hoveredOn ""))
 
 textMsg = "Import everything from the Text library. This\n" ++
@@ -437,7 +500,7 @@ textMsg = "Import everything from the Text library. This\n" ++
           "and position of the text used in this game."
 importText : Element
 importText =
-  body " 6. import Text (..)"
+  body "import Text (..)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn textMsg) else (Signal.send hoveredOn ""))
 
 signalMsg = "Import the Signal library. Signals are values\n" ++
@@ -446,7 +509,7 @@ signalMsg = "Import the Signal library. Signals are values\n" ++
             "size of a window."
 importSignal : Element
 importSignal =
-  body " 5. import Signal"
+  body "import Signal"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalMsg) else (Signal.send hoveredOn ""))
 
 keyboardMsg = "Import the Keyboard library. This allows the\n" ++
@@ -454,7 +517,7 @@ keyboardMsg = "Import the Keyboard library. This allows the\n" ++
               "the circle."
 importKeyboard : Element
 importKeyboard =
-  body (" 4. import Keyboard")
+  body ("import Keyboard")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn keyboardMsg) else (Signal.send hoveredOn ""))
 
 timeMsg = "Import the Time library. Specifically, you\n" ++
@@ -462,7 +525,7 @@ timeMsg = "Import the Time library. Specifically, you\n" ++
           "notes the changes in time."
 importTime : Element
 importTime =
-  body (" 7. import Time")
+  body ("import Time")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn timeMsg) else (Signal.send hoveredOn ""))
 
 windowMsg = "Import the Window library. This allows you to\n" ++
@@ -470,7 +533,7 @@ windowMsg = "Import the Window library. This allows you to\n" ++
             "is used when centering the game on the page."
 importWindow : Element
 importWindow =
-  body (" 8. import Window")
+  body ("import Window")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn windowMsg) else (Signal.send hoveredOn ""))
 
 
@@ -557,17 +620,8 @@ displaySignals1 sig hoveredOn =
 signalsContainer1 : Int -> String -> Element
 signalsContainer1 sig hoveredOn =
   flow down
-    [ signalMain1
-    , flow right
-        [ body " 11."
-        , spacer indent 1
-        , signalMain2
-        ]
-    , flow right
-        [ spacer (indent *4) 1
-        , signalMain3
-        ]
-    , body " 12."
+    [ flow right [spacer 10 5, signalMain1]
+    , flow right [spacer 25 5, signalMain2]
     ]
 
 signalMain1Msg = "Define the main function. Every Elm\n" ++
@@ -576,7 +630,7 @@ signalMain1Msg = "Define the main function. Every Elm\n" ++
                  "that writes the output to the screen."
 signalMain1 : Element
 signalMain1 =
-  body " 10. main ="
+  body "main ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalMain1Msg) else (Signal.send hoveredOn ""))
 
 signalMain2Msg = "This function maps (or combines) the view\n" ++
@@ -585,12 +639,7 @@ signalMain2Msg = "This function maps (or combines) the view\n" ++
                  "gameState signal."
 signalMain2 : Element
 signalMain2 =
-  body " Signal.map2 view Window.dimensions"
-    |> hoverable (\ r -> if r then (Signal.send hoveredOn signalMain2Msg) else (Signal.send hoveredOn ""))
-
-signalMain3 : Element
-signalMain3 =
-  body " gameState"
+  body "Signal.map2 view Window.dimensions gameState"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalMain2Msg) else (Signal.send hoveredOn ""))
 
 displaySignals2 : Int -> String -> Element
@@ -607,14 +656,9 @@ displaySignals2 sig hoveredOn =
 signalsContainer2 : Int -> String -> Element
 signalsContainer2 sig hoveredOn =
   flow down
-    [ signalGameState1
-    , signalGameState2
-    , flow right
-        [ body " 15."
-        , spacer indent 1
-        , signalGameState3
-        ]
-    , body " 16."
+    [ flow right [spacer 10 5, signalGameState1]
+    , flow right [spacer 10 5, signalGameState2]
+    , flow right [spacer 25 5, signalGameState3]
     ]
 
 signalGameState1Msg = "Define gameState as a signal of type Game.\n" ++
@@ -622,13 +666,13 @@ signalGameState1Msg = "Define gameState as a signal of type Game.\n" ++
                       "Model section."
 signalGameState1 : Element
 signalGameState1 =
-  body " 13. gameState : Signal Game"
+  body "gameState : Signal Game"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalGameState1Msg) else (Signal.send hoveredOn ""))
 
 signalGameState2Msg = "Define the specifics of gameState."
 signalGameState2 : Element
 signalGameState2 =
-  body " 14. gameState ="
+  body "gameState ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalGameState2Msg) else (Signal.send hoveredOn ""))
 
 signalGameState3Msg = "gameState is a past dependent function, which\n" ++
@@ -636,7 +680,7 @@ signalGameState3Msg = "gameState is a past dependent function, which\n" ++
                       "defaultGame, and input.\n"
 signalGameState3 : Element
 signalGameState3 =
-  body" Signal.foldp update defaultGame input"
+  body"Signal.foldp update defaultGame input"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalGameState3Msg) else (Signal.send hoveredOn ""))
 
 displaySignals3 : Int -> String -> Element
@@ -653,19 +697,14 @@ displaySignals3 sig hoveredOn =
 signalsContainer3 : Int -> String -> Element
 signalsContainer3 sig hoveredOn =
   flow down
-    [ signalDelta1
-    , flow right
-        [ body " 18."
-        , spacer indent 1
-        , signalDelta2
-        ]
-    , body " 19."
+    [ flow right [spacer 10 5, signalDelta1]
+    , flow right [spacer 25 5, signalDelta2]
     ]
 
 signalDelta1Msg = " Define specific characteristics of the delta signal."
 signalDelta1 : Element
 signalDelta1 =
-  body " 17. delta ="
+  body "delta ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalDelta1Msg) else (Signal.send hoveredOn ""))
 
 signalDelta2Msg = "inSeconds marks the current time in seconds. fps\n" ++
@@ -676,7 +715,7 @@ signalDelta2Msg = "inSeconds marks the current time in seconds. fps\n" ++
 
 signalDelta2 : Element
 signalDelta2 =
-  body " Signal.map inSeconds (fps 35)"
+  body "Signal.map inSeconds (fps 35)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalDelta2Msg) else (Signal.send hoveredOn ""))
 
 displaySignals4 : Int -> String -> Element
@@ -693,39 +732,14 @@ displaySignals4 sig hoveredOn =
 signalsContainer4 : Int -> String -> Element
 signalsContainer4 sig hoveredOn =
   flow down
-    [ signalInput1
-    , signalInput2
-    , flow right
-        [ body " 22."
-        , spacer indent 1
-        , signalInput3
-        ]
-    , flow right
-        [ body " 23."
-        , spacer (indent*2) 1
-        , signalInput4
-        ]
-    , flow right
-        [ body " 24."
-        , spacer (indent*3) 1
-        , signalInput5
-        ]
-    , flow right
-        [ body " 25."
-        , spacer (indent*3) 1
-        , signalInput6
-        ]
-    , flow right
-        [ body " 26."
-        , spacer (indent*3) 1
-        , signalInput7
-        ]
-    , flow right
-        [ body " 27."
-        , spacer (indent*3) 1
-        , signalInput8
-        ]
-    , body " 28."
+    [ flow right [spacer 10 5, signalInput1]
+    , flow right [spacer 10 5, signalInput2]
+    , flow right [spacer 25 5, signalInput3]
+    , flow right [spacer 40 5, signalInput4]
+    , flow right [spacer 55 5, signalInput5]
+    , flow right [spacer 55 5, signalInput6]
+    , flow right [spacer 55 5, signalInput7]
+    , flow right [spacer 55 5, signalInput8]
     ]
 
 signalInput1Msg = "Defines input as a signal of type Input.\n" ++
@@ -733,13 +747,13 @@ signalInput1Msg = "Defines input as a signal of type Input.\n" ++
                   "Model section."
 signalInput1 : Element
 signalInput1 =
-  body " 20. input : Signal Input"
+  body "input : Signal Input"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput1Msg) else (Signal.send hoveredOn ""))
 
 signalInput2Msg = "Defines the specifics of input."
 signalInput2 : Element
 signalInput2 =
-  body " 21. input ="
+  body "input ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput2Msg) else (Signal.send hoveredOn ""))
 
 signalInput3Msg = "This function records some data on every delta,\n" ++
@@ -873,9 +887,8 @@ displayModel1 sig hoveredOn =
 modelContainer1 : Int -> String -> Element
 modelContainer1 sig hoveredOn =
   flow down
-    [ gameSize
-    , playingSize
-    , body " 31."
+    [ flow right [spacer 10 5, gameSize]
+    , flow right [spacer 10 5, playingSize]
     ]
 
 gameSizeMsg = "Set gameWidth to 600 and gameHeight to 400.\n" ++
@@ -883,7 +896,7 @@ gameSizeMsg = "Set gameWidth to 600 and gameHeight to 400.\n" ++
               "together as a tuple.\n"
 gameSize : Element
 gameSize =
-  body " 29. (gameWidth, gameHeight) = (600, 400)"
+  body "(gameWidth, gameHeight) = (600, 400)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn gameSizeMsg) else (Signal.send hoveredOn ""))
 
 playingSizeMsg = "Set halfWidth to 300 and halfHeight to 200.\n" ++
@@ -891,7 +904,7 @@ playingSizeMsg = "Set halfWidth to 300 and halfHeight to 200.\n" ++
                  "together as a tuple.\n"
 playingSize : Element
 playingSize =
-  body " 30. (halfWidth, halfHeight) = (300, 200)"
+  body "(halfWidth, halfHeight) = (300, 200)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn playingSizeMsg) else (Signal.send hoveredOn ""))
 
 displayModel2 : Int -> String -> Element
@@ -908,15 +921,14 @@ displayModel2 sig hoveredOn =
 modelContainer2 : Int -> String -> Element
 modelContainer2 sig hoveredOn =
   flow down
-    [ typeState
-    , body " 33."
+    [ flow right [spacer 10 5, typeState]
     ]
 
 typeStateMsg = "The data type State is created. It has\n" ++
                "the value of either Play or Pause."
 typeState : Element
 typeState =
-  body " 32. type State = Play | Pause"
+  body "type State = Play | Pause"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn typeStateMsg) else (Signal.send hoveredOn ""))
 
 displayModel3 : Int -> String -> Element
@@ -933,13 +945,8 @@ displayModel3 sig hoveredOn =
 modelContainer3 : Int -> String -> Element
 modelContainer3 sig hoveredOn =
   flow down
-    [ aliasBadGuy1
-    , flow right
-        [ body " 35."
-        , spacer indent 1
-        , aliasBadGuy2
-        ]
-    , body " 36."
+    [ flow right [spacer 10 5, aliasBadGuy1]
+    , flow right [spacer 25 5, aliasBadGuy2]
     ]
 
 aliasBadGuy1Msg = "Create the type BadGuy as an alias. An alias\n" ++
@@ -947,7 +954,7 @@ aliasBadGuy1Msg = "Create the type BadGuy as an alias. An alias\n" ++
 
 aliasBadGuy1 : Element
 aliasBadGuy1 =
-  body " 34. type alias BadGuy ="
+  body "type alias BadGuy ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasBadGuy1Msg) else (Signal.send hoveredOn ""))
 
 aliasBadGuy2Msg = "The data type BadGuy has the following attributes:\n" ++
@@ -973,20 +980,15 @@ displayModel4 sig hoveredOn =
 modelContainer4 : Int -> String -> Element
 modelContainer4 sig hoveredOn =
   flow down
-    [ aliasPlayer1
-    , flow right
-        [ body " 38."
-        , spacer indent 1
-        , aliasPlayer2
-        ]
-    , body " 39."
+    [ flow right [spacer 10 5, aliasPlayer1]
+    , flow right [spacer 25 5, aliasPlayer2]
     ]
 
 aliasPlayer1Msg = "Create the type BadGuy as an alias. An alias\n" ++
                   "means that you can define attributes individually.\n"
 aliasPlayer1 : Element
 aliasPlayer1 =
-  body " 37. type alias Player ="
+  body "type alias Player ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasPlayer1Msg) else (Signal.send hoveredOn ""))
 
 aliasPlayer2Msg = "The data type Player has the following attributes:\n" ++
@@ -1013,24 +1015,15 @@ displayModel5 sig hoveredOn =
 modelContainer5 : Int -> String -> Element
 modelContainer5 sig hoveredOn =
   flow down
-    [ aliasGame1
-    , flow right
-        [ body " 41."
-        , spacer indent 1
-        , aliasGame2
-        ]
-    , flow right
-      [ spacer (indent*4) 1
-      , aliasGame3
-      ]
-    , body " 42."
+    [ flow right [spacer 10 5, aliasGame1]
+    , flow right [spacer 25 5, aliasGame2]
     ]
 
 aliasGame1Msg = "Create the type Game as an alias. An alias\n" ++
                 "means that you can define attributes individually.\n"
 aliasGame1 : Element
 aliasGame1 =
-  body " 40. type alias Game ="
+  body "type alias Game ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasGame1Msg) else (Signal.send hoveredOn ""))
 
 aliasGame2Msg = "The data type Game has the following attributes:\n" ++
@@ -1039,12 +1032,7 @@ aliasGame2Msg = "The data type Game has the following attributes:\n" ++
                 "and a player of type Player with all of its attributes.\n"
 aliasGame2 : Element
 aliasGame2 =
-  body "{ state:State, badGuy:BadGuy, "
-    |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasGame2Msg) else (Signal.send hoveredOn ""))
-
-aliasGame3 : Element
-aliasGame3 =
-  body " player1:Player }"
+  body "{ state:State, badGuy:BadGuy, player1:Player }"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasGame2Msg) else (Signal.send hoveredOn ""))
 
 -- Model Message 2
@@ -1062,45 +1050,25 @@ displayModel6 sig hoveredOn =
 modelContainer6 : Int -> String -> Element
 modelContainer6 sig hoveredOn =
   flow down
-    [ defaultGame1
-    , defaultGame2
-    , flow right
-        [ body " 45."
-        , spacer indent 1
-        , defaultGame3
-        ]
-    , flow right
-        [ body " 46."
-        , spacer indent 1
-        , defaultGame4
-        ]
-    , flow right
-        [ body " 47."
-        , spacer indent 1
-        , defaultGame5
-        ]
-    , flow right
-        [ spacer (indent*7) 1
-        , defaultGame6
-        ]
-    , flow right
-        [ body " 48."
-        , spacer indent 1
-        , defaultGame7
-        ]
-    , body " 49."
+    [ flow right [spacer 10 5, defaultGame1]
+    , flow right [spacer 10 5, defaultGame2]
+    , flow right [spacer 25 5, defaultGame3]
+    , flow right [spacer 25 5, defaultGame4]
+    , flow right [spacer 25 5, defaultGame5]
+    , flow right [spacer 55 5, defaultGame6]
+    , flow right [spacer 25 5, defaultGame7]
     ]
 
 defaultGame1Msg = "Create an object defaultGame of type Game."
 defaultGame1 : Element
 defaultGame1 =
-  body " 43. defaultGame : Game"
+  body "defaultGame : Game"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame1Msg) else (Signal.send hoveredOn ""))
 
 defaultGame2Msg = "Describe specific values for defaultGame."
 defaultGame2 : Element
 defaultGame2 =
-  body " 44. defaultGame ="
+  body "defaultGame ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame2Msg) else (Signal.send hoveredOn ""))
 
 defaultGame3Msg = "The state is set to the value of Pause."
@@ -1126,12 +1094,12 @@ defaultGame5Msg = "The player1 attribute has the values of:\n" ++
                   "It does not move automatically. lives are set to 3."
 defaultGame5 : Element
 defaultGame5 =
-  body ", player1 = { x = 15-halfWidth, y = 0"
+  body ", player1 = { x = 15-halfWidth, y = 0, vx = 0,"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame5Msg) else (Signal.send hoveredOn ""))
 
 defaultGame6 : Element
 defaultGame6 =
-  body ", vx = 0, vy = 0, lives = 3 }"
+  body "vy = 0, lives = 3 }"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame5Msg) else (Signal.send hoveredOn ""))
 
 
@@ -1155,39 +1123,18 @@ displayModel7 sig hoveredOn =
 modelContainer7 : Int -> String -> Element
 modelContainer7 sig hoveredOn =
   flow down
-    [ aliasInput1
-    , flow right
-        [ body " 51."
-        , spacer indent 1
-        , aliasInput2
-        ]
-    , flow right
-        [ body " 52."
-        , spacer indent 1
-        , aliasInput3
-        ]
-    , flow right
-        [ body " 53."
-        , spacer indent 1
-        , aliasInput4
-        ]
-    , flow right
-        [ body " 54."
-        , spacer indent 1
-        , aliasInput5
-        ]
-    , flow right
-        [ body " 55."
-        , spacer indent 1
-        , aliasInput6
-        ]
-    , body " 56."
+    [ flow right [spacer 10 5, aliasInput1]
+    , flow right [spacer 25 5, aliasInput2]
+    , flow right [spacer 25 5, aliasInput3]
+    , flow right [spacer 25 5, aliasInput4]
+    , flow right [spacer 25 5, aliasInput5]
+    , flow right [spacer 25 5, aliasInput6]
     ]
 
 aliasInput1Msg = "Create data type Input wich is an alias."
 aliasInput1 : Element
 aliasInput1 =
-  body " 50. type alias Input ="
+  body "type alias Input ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasInput1Msg) else (Signal.send hoveredOn ""))
 
 aliasInput2Msg = "There is an attribute called space, which is a\n" ++
