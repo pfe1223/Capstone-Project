@@ -95,20 +95,20 @@ dropdownHeight = 100
 
 -- Wayfinding tools
 wayfinderPast =
-  circle 13
+  circle 15
     |> filled elmBlue
     |> alpha 0.5
 
 wayfinderPresent =
-  circle 13
+  circle 15
     |> filled elmBlue
 
 wayfinderFuture =
   circle 13
-    |> outlined (solid elmBlue)
+    |> outlined {defaultLine | color <- elmBlue, width <- 4}
 
 dashPast =
-  rect 22 5
+  rect 35 5
     |> filled elmBlue
     |> alpha 0.5
 
@@ -132,8 +132,8 @@ animationElement : Form -> String -> String -> Element
 animationElement form stepNumber stepDescription =
   flow down
     [ color containerColor <| container containerWidth 305 middle <| (collage 400 305
-      [ rect 390 260
-          |> outlined (solid elmBlue)
+      [ rect 380 260
+          |> outlined {defaultLine | color <- elmBlue, width <- 4}
       , toForm (subTitle stepDescription)
           |> move (0, 100)
       , circle 15
@@ -357,7 +357,7 @@ displayWelcome2 sig =
     ]
 
 stepNumber2 : String
-stepNumber2 = "Step Two"
+stepNumber2 = "2"
 
 stepDescription2 : String
 stepDescription2 = "Mouse over the code for an explanation"
@@ -379,7 +379,7 @@ displayWelcome3 sig =
     ]
 
 stepNumber3 : String
-stepNumber3 = "Step Three"
+stepNumber3 = "3"
 
 stepDescription3: String
 stepDescription3 = "Move code with &uArr; to the line above"
