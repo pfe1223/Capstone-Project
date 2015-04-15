@@ -241,6 +241,8 @@ elmGreen = rgb 127 209 17
 
 -- Images
 gifImage = image 180 119 "/images/demoGif1.gif"
+copyCode = image 180 103 "/images/copyCodeGIF.gif"
+hoverCode = image 226 190 "/images/hoverCodeGIF.gif"
 elmLogo = image 100 100 "/images/elmLogo.svg"
 importsIcon = image 100 100 "images/importsIcon.svg"
 modelIcon = image 100 100 "images/modelIcon.svg"
@@ -330,8 +332,7 @@ stepDescription1 = "Copy the code to the editor"
 welcomeAnimation1 : Element
 welcomeAnimation1 =
   collage 400 190
-    [ rect 200 150
-        |> filled red
+    [ toForm(copyCode)
     ]
 
 welcomeMsg3 : String
@@ -372,10 +373,33 @@ stepDescription2 = "Mouse over the code for an explanation"
 welcomeAnimation2 : Element
 welcomeAnimation2 =
   collage 400 190
-    [ rect 200 150
-        |> filled blue
+    [ toForm(hoverCode)
     ]
 
+-- Welcome Message 3
+-- `````````````````
+displayWelcome3 : Int -> Element
+displayWelcome3 sig =
+  flow down
+    [ wayfindingElement wayfindingWelcome
+    , titleElement welcomeMsg1
+    , gifElement gifImage
+    , welcomeElement welcomeMsg2
+    , animationElement welcomeAnimation2 stepNumber2 stepDescription2
+    , buttonsLRElement sig
+    ]
+
+stepNumber3 : String
+stepNumber3 = "Step Three"
+
+stepDescription3: String
+stepDescription3 = "Mouse over the code for an explanation"
+
+welcomeAnimation3 : Element
+welcomeAnimation3 =
+  collage 400 190
+    [ toForm(copyCode)
+    ]
 
 {--
 *************************************************************
@@ -436,14 +460,14 @@ importsWelcomeMsg2 =
   "Without these packages, the Elm\n" ++
   "language is very limited. You will\n" ++
   "add ability to:\n\n" ++
-  "&diams; Use colors\n" ++
-  "&diams; Draw the circle & hexagon\n" ++
-  "&diams; Create elements for text\n" ++
-  "&diams; Get input from the keyboard\n" ++
-  "&diams; Recieve and map signals as input\n" ++
-  "&diams; Modify text on the screen\n" ++
-  "&diams; Keep track of time as it passes\n" ++
-  "&diams; Resize the game."
+  "&bull; Use colors\n" ++
+  "&bull; Draw the circle & hexagon\n" ++
+  "&bull; Create elements for text\n" ++
+  "&bull; Get input from the keyboard\n" ++
+  "&bull; Recieve and map signals as input\n" ++
+  "&bull; Modify text on the screen\n" ++
+  "&bull; Keep track of time as it passes\n" ++
+  "&bull; Resize the game."
 
 -- Imports Message
 displayImports : Int -> String -> Element
@@ -600,10 +624,10 @@ signalsWelcomeMsg2 =
   "user moves, changes, or interacts with\n" ++
   "the program in any way, then you need\n" ++
   "a signal. Signals in this game are:\n\n" ++
-  "&diams; The size of the window.\n" ++
-  "&diams; If the game is play or paused.\n" ++
-  "&diams; Time.\n" ++
-  "&diams; Arrow keys on the keyboard.\n"
+  "&bull; The size of the window.\n" ++
+  "&bull; If the game is play or paused.\n" ++
+  "&bull; Time.\n" ++
+  "&bull; Arrow keys on the keyboard.\n"
 
 -- Signals Message
 displaySignals1 : Int -> String -> Element
@@ -859,17 +883,17 @@ modelWelcomeMsg2 =
   "The Model Section is used to create the\n" ++
   "objects and their characteristics to be\n" ++
   "used in the game. You will create:\n\n" ++
-  "&diams; The state of the game which is\n" ++
+  "&bull; The state of the game which is\n" ++
   "   either Play or Pause.\n" ++
-  "&diams; An enemy with a position and a\n" ++
+  "&bull; An enemy with a position and a\n" ++
   "   velocity.\n" ++
-  "&diams; A player with a position, a velocity\n" ++
+  "&bull; A player with a position, a velocity\n" ++
   "   velocity, and three lives.\n" ++
-  "&diams; A game with a good guy, a bad\n" ++
+  "&bull; A game with a good guy, a bad\n" ++
   "   guy, and a state (play or pause).\n" ++
-  "&diams; Initialize the game with parameter\n" ++
+  "&bull; Initialize the game with parameter\n" ++
   "   for when you begin playing.\n" ++
-  "&diams; Input that has direction, time, and if\n" ++
+  "&bull; Input that has direction, time, and if\n" ++
   "   spacebar is pressed."
 
 -- Model Message 1
@@ -1099,7 +1123,7 @@ defaultGame5 =
 
 defaultGame6 : Element
 defaultGame6 =
-  body "vy = 0, lives = 3 }"
+  body "&uArr; vy = 0, lives = 3 }"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame5Msg) else (Signal.send hoveredOn ""))
 
 
@@ -1233,10 +1257,10 @@ updateWelcomeMsg2 =
   "signals and changes the model for the\n" ++
   "appropriate object. You will create\n" ++
   "updates for:\n\n" ++
-  "&diams; The state of the game (play or pause).\n" ++
-  "&diams; The position of the bad guy.\n" ++
-  "&diams; The position and lives of the good guy.\n" ++
-  "&diams; Are the bad guy and good guy\n" ++
+  "&bull; The state of the game (play or pause).\n" ++
+  "&bull; The position of the bad guy.\n" ++
+  "&bull; The position and lives of the good guy.\n" ++
+  "&bull; Are the bad guy and good guy\n" ++
   "   touching?"
 
 -- Update Message 1
@@ -1279,7 +1303,7 @@ updateFunc2 =
 
 updateFunc3 : Element
 updateFunc3 =
-  body "player1} as game) ="
+  body "&uArr; player1} as game) ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc2Msg) else (Signal.send hoveredOn ""))
 
 
@@ -1295,7 +1319,7 @@ updateFunc4 =
 
 updateFunc4a : Element
 updateFunc4a =
-  body "else 0"
+  body "&uArr; else 0"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc4Msg) else (Signal.send hoveredOn ""))
 
 
@@ -1461,7 +1485,7 @@ updateFunc17 =
 
 updateFunc17a : Element
 updateFunc17a =
-  body "lives player1"
+  body "&uArr; lives player1"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateFunc17Msg) else (Signal.send hoveredOn ""))
 
 updateFunc18Msg = "This bracket closes the update function."
@@ -1501,7 +1525,7 @@ updateBadGuy1 =
 
 updateBadGuy1a : Element
 updateBadGuy1a =
-  body " BadGuy"
+  body "&uArr; BadGuy"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy1Msg) else (Signal.send hoveredOn ""))
 
 
@@ -1515,7 +1539,7 @@ updateBadGuy2 =
 
 updateBadGuy2a : Element
 updateBadGuy2a =
-  body " ({x,y,vx,vy,lives} as player1) ="
+  body "&uArr; ({x,y,vx,vy,lives} as player1) ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy2Msg) else (Signal.send hoveredOn ""))
 
 displayUpdate6 : Int -> String -> Element
@@ -1554,7 +1578,7 @@ updateBadGuy3 =
 
 updateBadGuy3a : Element
 updateBadGuy3a =
-  body "y <- 0}"
+  body "&uArr; y <- 0}"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy3Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy4Msg = "If badGuy is touching player1, then the\n" ++
@@ -1584,7 +1608,7 @@ updateBadGuy6 =
 
 updateBadGuy6a : Element
 updateBadGuy6a =
-  body " (badGuy.vx > 0),"
+  body "&uArr; (badGuy.vx > 0),"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy6Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy7Msg = "The vy-value of badGuy takes the\n" ++
@@ -1598,7 +1622,7 @@ updateBadGuy7 =
 
 updateBadGuy7a : Element
 updateBadGuy7a =
-  body " (badGuy.vy > 0)"
+  body "&uArr; (badGuy.vy > 0)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy7Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy8Msg = "The bracket ends the attributes of\n" ++
@@ -1657,7 +1681,7 @@ updateBadGuy11 =
 
 updateBadGuy11a : Element
 updateBadGuy11a =
-  body " (x > halfWidth-25),"
+  body "&uArr; (x > halfWidth-25),"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy11Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy12Msg = "The value vy takes the result of the function\n" ++
@@ -1672,7 +1696,7 @@ updateBadGuy12 =
 
 updateBadGuy12a : Element
 updateBadGuy12a =
-  body " (y > halfHeight-25)"
+  body "uArr; (y > halfHeight-25)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy12Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy13Msg = "The bracket ends the attributes of badGuy which\n" ++
@@ -1713,7 +1737,7 @@ updatePlayer1 =
 
 updatePlayer1a : Element
 updatePlayer1a =
-  body " Player -> Player"
+  body "&uArr; Player -> Player"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer1Msg) else (Signal.send hoveredOn ""))
 
 updatePlayer2Msg = "The function updatePlayer is called with\n" ++
@@ -1759,7 +1783,7 @@ updatePlayer3 =
 
 updatePlayer3a : Element
 updatePlayer3a =
-  body "vx <- toFloat dir1 * 200"
+  body "&uArr; vx <- toFloat dir1 * 200"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer3Msg) else (Signal.send hoveredOn ""))
 
 updatePlayer4Msg = "The updated vy attribute takes the value of dir2\n" ++
@@ -1845,7 +1869,7 @@ updatePlayer10 =
 
 updatePlayer10a : Element
 updatePlayer10a =
-  body "player1.y,"
+  body "&uArr; player1.y,"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer10Msg) else (Signal.send hoveredOn ""))
 
 updatePlayer11Msg = "The updated attribute x takes the value of\n" ++
@@ -1859,7 +1883,7 @@ updatePlayer11 =
 
 updatePlayer11a : Element
 updatePlayer11a =
-  body "player1.x,"
+  body "&uArr; player1.x,"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer11Msg) else (Signal.send hoveredOn ""))
 
 updatePlayer12Msg = "The updated attribute lives takes the\n" ++
@@ -2011,7 +2035,7 @@ updateWithin2 =
 
 updateWithin2a : Element
 updateWithin2a =
-  body " near player1.y 25 badGuy.y"
+  body "&uArr; near player1.y 25 badGuy.y"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateWithin2Msg) else (Signal.send hoveredOn ""))
 
 displayUpdate14 : Int -> String -> Element
@@ -2127,13 +2151,13 @@ viewWelcomeMsg2 =
   "characters existed only as numbers.\n" ++
   "The View Section displays the game\n" ++
   "to the computer screen. You will:\n\n" ++
-  "&diams; Create specific colors and text\n" ++
+  "&bull; Create specific colors and text\n" ++
   "   formatting.\n" ++
-  "&diams; Draw the playing surface and\n" ++
+  "&bull; Draw the playing surface and\n" ++
   "   characters.\n" ++
-  "&diams; Color the playing surface and \n" ++
+  "&bull; Color the playing surface and \n" ++
   "   characters.\n" ++
-  "&diams; Put the lives on the top of the screen\n" ++
+  "&bull; Put the lives on the top of the screen\n" ++
   "   and a message on the bottom."
 
 -- View Message 1
@@ -2436,7 +2460,7 @@ viewFunc18 =
 
 viewFunc18a : Element
 viewFunc18a =
-  body "else txt identity msg"
+  body "&uArr; else txt identity msg"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc18Msg) else (Signal.send hoveredOn ""))
 
 viewFunc19Msg = "The form is moved to the location 0 (centered),\n" ++
@@ -2533,7 +2557,7 @@ txtFunc1 =
 txtFunc2Msg = "The text function also sets the font to monospace."
 txtFunc2 : Element
 txtFunc2 =
-  body "Text.monospace >> f >> Text.leftAligned"
+  body "&uArr; Text.monospace >> f >> Text.leftAligned"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn txtFunc2Msg) else (Signal.send hoveredOn ""))
 
 displayView11 : Int -> String -> Element
@@ -2568,7 +2592,7 @@ msgFunc1 =
 
 msgFunc2 : Element
 msgFunc2 =
-  body "&rarr ; to move'"
+  body "&uArr; &rarr ; to move'"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn msgFuncMsg) else (Signal.send hoveredOn ""))
 
 {--
@@ -2630,9 +2654,9 @@ viewCongratsMsg2 =
   "for some ideas on what you can do to\n" ++
   "make the game better. Possible ideas\n" ++
   "include:\n\n" ++
-  "&diams; Adding additional levels.\n" ++
-  "&diams; Adding another enemy.\n" ++
-  "&diams; Changing the layout.\n\n" ++
+  "&bull; Adding additional levels.\n" ++
+  "&bull; Adding another enemy.\n" ++
+  "&bull; Changing the layout.\n\n" ++
   "This tutorial ends with some links to\n" ++
   "more resources for learning Elm."
 
@@ -2657,13 +2681,13 @@ viewIdea1Msg2 =
   "of the player. To do this, you will need\n" ++
   "to add some more levels. Some\n" ++
   "suggestions include:\n\n" ++
-  " &diams; Stay alive for a certain amount of\n" ++
-  "    time. The amount of time required\n" ++
-  "    to stay alive will increase with each\n" ++
-  "    level.\n" ++
-  " &diams; Collect a certain number of objects\n" ++
-  "    before advancing. Each object will\n" ++
-  "    randomly appears one at a time."
+  " &bull; Stay alive for a certain amount of\n" ++
+  "     time. The amount of time required\n" ++
+  "     to stay alive will increase with each\n" ++
+  "     level.\n" ++
+  " &bull; Collect a certain number of objects\n" ++
+  "     before advancing. Each object will\n" ++
+  "     randomly appears one at a time."
 
 -- Idea 2
 idea2 : Int -> Element
@@ -2685,13 +2709,13 @@ viewIdea2Msg2 =
   "To differentiate the levels and increase\n" ++
   "the difficulty, add another enemy to the\n" ++
   "game.\n\n" ++
-  "&diams; Have them move at different speeds.\n" ++
-  "&diams; Use a different size and shape.\n" ++
-  "&diams; Use a different color. Try the orange\n" ++
-  "   from the Elm logo - rgb 237 149 0.\n" ++
-  "&diams; Increase the number of enemies on a\n" ++
-  "   set interval, i.e. every five levels adds\n" ++
-  "   another enemy."
+  "&bull; Have them move at different speeds.\n" ++
+  "&bull; Use a different size and shape.\n" ++
+  "&bull; Use a different color. Try the orange\n" ++
+  "    from the Elm logo - rgb 237 149 0.\n" ++
+  "&bull; Increase the number of enemies on a\n" ++
+  "    set interval, i.e. every five levels adds\n" ++
+  "    another enemy."
 
 -- Idea 3
 idea3 : Int -> Element
@@ -2716,12 +2740,12 @@ viewIdea3Msg2 =
   "the layout to make the game fun\n" ++
   "and interesting. Some suggestions\n" ++
   "include:\n\n" ++
-  "&diams; Have obstacles through which\n" ++
-  "   the player cannot pass.\n" ++
-  "&diams; Change the color of certain parts\n" ++
-  "   of the layout. The colored regions\n" ++
-  "   take a life of the player when\n" ++
-  "   touched."
+  "&bull; Have obstacles through which\n" ++
+  "    the player cannot pass.\n" ++
+  "&bull; Change the color of certain parts\n" ++
+  "    of the layout. The colored regions\n" ++
+  "    take a life of the player when\n" ++
+  "    touched."
 
 -- Elm Resources
 elmResources : Int -> Element

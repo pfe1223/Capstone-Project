@@ -3993,16 +3993,16 @@ Elm.Main.make = function (_elm) {
    A2($Basics._op["++"],
    "include:\n\n",
    A2($Basics._op["++"],
-   "&diams; Have obstacles through which\n",
+   "&bull; Have obstacles through which\n",
    A2($Basics._op["++"],
-   "   the player cannot pass.\n",
+   "    the player cannot pass.\n",
    A2($Basics._op["++"],
-   "&diams; Change the color of certain parts\n",
+   "&bull; Change the color of certain parts\n",
    A2($Basics._op["++"],
-   "   of the layout. The colored regions\n",
+   "    of the layout. The colored regions\n",
    A2($Basics._op["++"],
-   "   take a life of the player when\n",
-   "   touched.")))))))))));
+   "    take a life of the player when\n",
+   "    touched.")))))))))));
    var viewIdea3Msg1 = "New Layouts";
    var viewIdea2Msg2 = A2($Basics._op["++"],
    "To differentiate the levels and increase\n",
@@ -4011,18 +4011,18 @@ Elm.Main.make = function (_elm) {
    A2($Basics._op["++"],
    "game.\n\n",
    A2($Basics._op["++"],
-   "&diams; Have them move at different speeds.\n",
+   "&bull; Have them move at different speeds.\n",
    A2($Basics._op["++"],
-   "&diams; Use a different size and shape.\n",
+   "&bull; Use a different size and shape.\n",
    A2($Basics._op["++"],
-   "&diams; Use a different color. Try the orange\n",
+   "&bull; Use a different color. Try the orange\n",
    A2($Basics._op["++"],
-   "   from the Elm logo - rgb 237 149 0.\n",
+   "    from the Elm logo - rgb 237 149 0.\n",
    A2($Basics._op["++"],
-   "&diams; Increase the number of enemies on a\n",
+   "&bull; Increase the number of enemies on a\n",
    A2($Basics._op["++"],
-   "   set interval, i.e. every five levels adds\n",
-   "   another enemy.")))))))));
+   "    set interval, i.e. every five levels adds\n",
+   "    another enemy.")))))))));
    var viewIdea2Msg1 = "Another Enemy";
    var viewIdea1Msg2 = A2($Basics._op["++"],
    "Good video games hold the attention\n",
@@ -4033,18 +4033,18 @@ Elm.Main.make = function (_elm) {
    A2($Basics._op["++"],
    "suggestions include:\n\n",
    A2($Basics._op["++"],
-   " &diams; Stay alive for a certain amount of\n",
+   " &bull; Stay alive for a certain amount of\n",
    A2($Basics._op["++"],
-   "    time. The amount of time required\n",
+   "     time. The amount of time required\n",
    A2($Basics._op["++"],
-   "    to stay alive will increase with each\n",
+   "     to stay alive will increase with each\n",
    A2($Basics._op["++"],
-   "    level.\n",
+   "     level.\n",
    A2($Basics._op["++"],
-   " &diams; Collect a certain number of objects\n",
+   " &bull; Collect a certain number of objects\n",
    A2($Basics._op["++"],
-   "    before advancing. Each object will\n",
-   "    randomly appears one at a time."))))))))));
+   "     before advancing. Each object will\n",
+   "     randomly appears one at a time."))))))))));
    var viewIdea1Msg1 = "Next Level";
    var viewCongratsMsg2 = A2($Basics._op["++"],
    "You made the foundation of a game.\n",
@@ -4057,11 +4057,11 @@ Elm.Main.make = function (_elm) {
    A2($Basics._op["++"],
    "include:\n\n",
    A2($Basics._op["++"],
-   "&diams; Adding additional levels.\n",
+   "&bull; Adding additional levels.\n",
    A2($Basics._op["++"],
-   "&diams; Adding another enemy.\n",
+   "&bull; Adding another enemy.\n",
    A2($Basics._op["++"],
-   "&diams; Changing the layout.\n\n",
+   "&bull; Changing the layout.\n\n",
    A2($Basics._op["++"],
    "This tutorial ends with some links to\n",
    "more resources for learning Elm.")))))))));
@@ -4079,7 +4079,6 @@ Elm.Main.make = function (_elm) {
    A2($Basics._op["++"],
    "will appear. With a space &larr ;. Without\n",
    "a space &larr;."))))));
-   var txtFunc3Msg = "Lastly, the text is left aligned.";
    var txtFunc2Msg = "The text function also sets the font to monospace.";
    var txtFunc1Msg = A2($Basics._op["++"],
    "The txt function sets up the characteristics for\n",
@@ -4221,19 +4220,19 @@ Elm.Main.make = function (_elm) {
    A2($Basics._op["++"],
    "to the computer screen. You will:\n\n",
    A2($Basics._op["++"],
-   "&diams; Create specific colors and text\n",
+   "&bull; Create specific colors and text\n",
    A2($Basics._op["++"],
    "   formatting.\n",
    A2($Basics._op["++"],
-   "&diams; Draw the playing surface and\n",
+   "&bull; Draw the playing surface and\n",
    A2($Basics._op["++"],
    "   characters.\n",
    A2($Basics._op["++"],
-   "&diams; Color the playing surface and \n",
+   "&bull; Color the playing surface and \n",
    A2($Basics._op["++"],
    "   characters.\n",
    A2($Basics._op["++"],
-   "&diams; Put the lives on the top of the screen\n",
+   "&bull; Put the lives on the top of the screen\n",
    "   and a message on the bottom.")))))))))))));
    var viewWelcomeMsg1 = "View Section\n";
    var updateStepV4Msg = A2($Basics._op["++"],
@@ -4539,13 +4538,13 @@ Elm.Main.make = function (_elm) {
    A2($Basics._op["++"],
    "updates for:\n\n",
    A2($Basics._op["++"],
-   "&diams; The state of the game (play or pause).\n",
+   "&bull; The state of the game (play or pause).\n",
    A2($Basics._op["++"],
-   "&diams; The position of the bad guy.\n",
+   "&bull; The position of the bad guy.\n",
    A2($Basics._op["++"],
-   "&diams; The position and lives of the good guy.\n",
+   "&bull; The position and lives of the good guy.\n",
    A2($Basics._op["++"],
-   "&diams; Are the bad guy and good guy\n",
+   "&bull; Are the bad guy and good guy\n",
    "   touching?"))))))))))));
    var updateWelcomeMsg1 = "Update Section\n";
    var aliasInput6Msg = "Ends the list of attributes for Input.";
@@ -4636,27 +4635,27 @@ Elm.Main.make = function (_elm) {
    A2($Basics._op["++"],
    "used in the game. You will create:\n\n",
    A2($Basics._op["++"],
-   "&diams; The state of the game which is\n",
+   "&bull; The state of the game which is\n",
    A2($Basics._op["++"],
    "   either Play or Pause.\n",
    A2($Basics._op["++"],
-   "&diams; An enemy with a position and a\n",
+   "&bull; An enemy with a position and a\n",
    A2($Basics._op["++"],
    "   velocity.\n",
    A2($Basics._op["++"],
-   "&diams; A player with a position, a velocity\n",
+   "&bull; A player with a position, a velocity\n",
    A2($Basics._op["++"],
    "   velocity, and three lives.\n",
    A2($Basics._op["++"],
-   "&diams; A game with a good guy, a bad\n",
+   "&bull; A game with a good guy, a bad\n",
    A2($Basics._op["++"],
    "   guy, and a state (play or pause).\n",
    A2($Basics._op["++"],
-   "&diams; Initialize the game with parameter\n",
+   "&bull; Initialize the game with parameter\n",
    A2($Basics._op["++"],
    "   for when you begin playing.\n",
    A2($Basics._op["++"],
-   "&diams; Input that has direction, time, and if\n",
+   "&bull; Input that has direction, time, and if\n",
    "   spacebar is pressed."))))))))))))));
    var modelWelcomeMsg1 = "Model Section";
    var signalInput8Msg = "Finally, the change in time is recorded in seconds.";
@@ -4745,12 +4744,12 @@ Elm.Main.make = function (_elm) {
    A2($Basics._op["++"],
    "a signal. Signals in this game are:\n\n",
    A2($Basics._op["++"],
-   "&diams; The size of the window.\n",
+   "&bull; The size of the window.\n",
    A2($Basics._op["++"],
-   "&diams; If the game is play or paused.\n",
+   "&bull; If the game is play or paused.\n",
    A2($Basics._op["++"],
-   "&diams; Time.\n",
-   "&diams; Arrow keys on the keyboard.\n"))))))))))));
+   "&bull; Time.\n",
+   "&bull; Arrow keys on the keyboard.\n"))))))))))));
    var signalsWelcomeMsg1 = "Signals Section";
    var windowMsg = A2($Basics._op["++"],
    "Import the Window library. This allows you to\n",
@@ -4807,21 +4806,25 @@ Elm.Main.make = function (_elm) {
    A2($Basics._op["++"],
    "add ability to:\n\n",
    A2($Basics._op["++"],
-   "&diams; Use colors\n",
+   "&bull; Use colors\n",
    A2($Basics._op["++"],
-   "&diams; Draw the circle & hexagon\n",
+   "&bull; Draw the circle & hexagon\n",
    A2($Basics._op["++"],
-   "&diams; Create elements for text\n",
+   "&bull; Create elements for text\n",
    A2($Basics._op["++"],
-   "&diams; Get input from the keyboard\n",
+   "&bull; Get input from the keyboard\n",
    A2($Basics._op["++"],
-   "&diams; Recieve and map signals as input\n",
+   "&bull; Recieve and map signals as input\n",
    A2($Basics._op["++"],
-   "&diams; Modify text on the screen\n",
+   "&bull; Modify text on the screen\n",
    A2($Basics._op["++"],
-   "&diams; Keep track of time as it passes\n",
-   "&diams; Resize the game."))))))))))));
+   "&bull; Keep track of time as it passes\n",
+   "&bull; Resize the game."))))))))))));
    var importsWelcomeMsg1 = "Imports Section";
+   var stepDescription3 = "Mouse over the code for an explanation";
+   var stepNumber3 = "Step Three";
+   var stepDescription2 = "Mouse over the code for an explanation";
+   var stepNumber2 = "Step Two";
    var welcomeMsg3 = A2($Basics._op["++"],
    "Welcome to Elm Play, where you will\n",
    A2($Basics._op["++"],
@@ -4845,10 +4848,16 @@ Elm.Main.make = function (_elm) {
    A2($Basics._op["++"],
    "code above. Click on the button below\n",
    "to begin.")))))))))));
+   var stepDescription1 = "Copy the code to the editor";
+   var stepNumber1 = "Step One";
    var welcomeMsg2 = A2($Basics._op["++"],
    "Let\'s make a game with elm play.\n",
    "Here\'s how:");
    var welcomeMsg1 = "elm play";
+   var middleText = function (f) {
+      return $Text.centered($Text.height(20)($Text.typeface(_L.fromArray(["futura"
+                                                                         ,"sans-serif"]))($Text.fromString(f))));
+   };
    var body = function (f) {
       return $Text.leftAligned($Text.typeface(_L.fromArray(["futura"
                                                            ,"sans-serif"]))($Text.fromString(f)));
@@ -4881,6 +4890,26 @@ Elm.Main.make = function (_elm) {
    100,
    100,
    "/images/elmLogo.svg");
+   var hoverCode = A3($Graphics$Element.image,
+   226,
+   190,
+   "/images/hoverCodeGIF.gif");
+   var welcomeAnimation2 = A3($Graphics$Collage.collage,
+   400,
+   190,
+   _L.fromArray([$Graphics$Collage.toForm(hoverCode)]));
+   var copyCode = A3($Graphics$Element.image,
+   180,
+   103,
+   "/images/copyCodeGIF.gif");
+   var welcomeAnimation1 = A3($Graphics$Collage.collage,
+   400,
+   190,
+   _L.fromArray([$Graphics$Collage.toForm(copyCode)]));
+   var welcomeAnimation3 = A3($Graphics$Collage.collage,
+   400,
+   190,
+   _L.fromArray([$Graphics$Collage.toForm(copyCode)]));
    var gifImage = A3($Graphics$Element.image,
    180,
    119,
@@ -4935,13 +4964,13 @@ Elm.Main.make = function (_elm) {
                    2)]));
    };
    var dashPresent = $Graphics$Collage.filled(elmBlue)(A2($Graphics$Collage.rect,
-   20,
+   25,
    5));
    var dashPast = $Graphics$Collage.alpha(0.5)($Graphics$Collage.filled(elmBlue)(A2($Graphics$Collage.rect,
-   20,
+   22,
    5)));
-   var wayfinderFuture = $Graphics$Collage.outlined($Graphics$Collage.solid(elmBlue))($Graphics$Collage.circle(15));
-   var wayfinderPresent = $Graphics$Collage.filled(elmBlue)($Graphics$Collage.circle(15));
+   var wayfinderFuture = $Graphics$Collage.outlined($Graphics$Collage.solid(elmBlue))($Graphics$Collage.circle(13));
+   var wayfinderPresent = $Graphics$Collage.filled(elmBlue)($Graphics$Collage.circle(13));
    var wayfindingWelcome = A2($Graphics$Element.flow,
    $Graphics$Element.right,
    _L.fromArray([A3($Graphics$Collage.collage,
@@ -4996,7 +5025,7 @@ Elm.Main.make = function (_elm) {
                 30,
                 50,
                 _L.fromArray([wayfinderFuture]))]));
-   var wayfinderPast = $Graphics$Collage.alpha(0.5)($Graphics$Collage.filled(elmBlue)($Graphics$Collage.circle(15)));
+   var wayfinderPast = $Graphics$Collage.alpha(0.5)($Graphics$Collage.filled(elmBlue)($Graphics$Collage.circle(13)));
    var wayfindingImports = A2($Graphics$Element.flow,
    $Graphics$Element.right,
    _L.fromArray([A3($Graphics$Collage.collage,
@@ -5347,15 +5376,28 @@ Elm.Main.make = function (_elm) {
    var welcomeElement = function (strg) {
       return $Graphics$Element.color(containerColor)(A3($Graphics$Element.container,
       containerWidth,
-      150,
+      115,
       $Graphics$Element.middle)(subTitle(strg)));
    };
-   var welcomeCollage = function (form) {
-      return $Graphics$Element.color(containerColor)(A3($Graphics$Collage.collage,
-      containerWidth,
-      225,
-      _L.fromArray([form])));
-   };
+   var animationElement = F3(function (form,
+   stepNumber,
+   stepDescription) {
+      return A2($Graphics$Element.flow,
+      $Graphics$Element.down,
+      _L.fromArray([$Graphics$Element.color(containerColor)(A3($Graphics$Element.container,
+                   containerWidth,
+                   35,
+                   $Graphics$Element.middle)(subTitle(stepNumber)))
+                   ,$Graphics$Element.color(containerColor)(A3($Graphics$Element.container,
+                   containerWidth,
+                   35,
+                   $Graphics$Element.middle)(subTitle(stepDescription)))
+                   ,$Graphics$Element.color(containerColor)(A4($Graphics$Element.container,
+                   containerWidth,
+                   190,
+                   $Graphics$Element.middle,
+                   form))]));
+   });
    var wayfindingElement = function (wayfinding) {
       return $Graphics$Element.color(containerColor)(A3($Graphics$Element.container,
       containerWidth,
@@ -5470,37 +5512,52 @@ Elm.Main.make = function (_elm) {
       $Graphics$Element.down,
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([lineNumElement("1.")
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
                                 ,importColor]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([lineNumElement("2.")
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
                                 ,importGraphicsCollage]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([lineNumElement("3.")
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
                                 ,importGraphicsElement]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([lineNumElement("4.")
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
                                 ,importKeyboard]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([lineNumElement("5.")
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
                                 ,importSignal]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([lineNumElement("6.")
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
                                 ,importText]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([lineNumElement("7.")
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
                                 ,importTime]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([lineNumElement("8.")
-                                ,importWindow]))
-                   ,lineNumElement("9.")]));
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,importWindow]))]));
    });
    var signalMain1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -5508,40 +5565,30 @@ Elm.Main.make = function (_elm) {
       signalMain1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 10. main ="));
+   })(body("main ="));
    var signalMain2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       signalMain2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" Signal.map2 view Window.dimensions"));
-   var signalMain3 = $Graphics$Input.hoverable(function (r) {
-      return r ? A2($Signal.send,
-      hoveredOn,
-      signalMain2Msg) : A2($Signal.send,
-      hoveredOn,
-      "");
-   })(body(" gameState"));
+   })(body("Signal.map2 view Window.dimensions gameState"));
    var signalsContainer1 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([signalMain1
-                   ,A2($Graphics$Element.flow,
+      _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 11.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
-                                ,signalMain2]))
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,signalMain1]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 4,
-                                1)
-                                ,signalMain3]))
-                   ,body(" 12.")]));
+                                25,
+                                5)
+                                ,signalMain2]))]));
    });
    var signalGameState1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -5549,35 +5596,43 @@ Elm.Main.make = function (_elm) {
       signalGameState1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 13. gameState : Signal Game"));
+   })(body("gameState : Signal Game"));
    var signalGameState2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       signalGameState2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 14. gameState ="));
+   })(body("gameState ="));
    var signalGameState3 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       signalGameState3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" Signal.foldp update defaultGame input"));
+   })(body("Signal.foldp update defaultGame input"));
    var signalsContainer2 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([signalGameState1
-                   ,signalGameState2
+      _L.fromArray([A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,signalGameState1]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 15.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
-                                ,signalGameState3]))
-                   ,body(" 16.")]));
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,signalGameState2]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
+                                ,signalGameState3]))]));
    });
    var signalDelta1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -5585,27 +5640,30 @@ Elm.Main.make = function (_elm) {
       signalDelta1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 17. delta ="));
+   })(body("delta ="));
    var signalDelta2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       signalDelta2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" Signal.map inSeconds (fps 35)"));
+   })(body("Signal.map inSeconds (fps 35)"));
    var signalsContainer3 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([signalDelta1
+      _L.fromArray([A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,signalDelta1]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 18.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
-                                ,signalDelta2]))
-                   ,body(" 19.")]));
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
+                                ,signalDelta2]))]));
    });
    var signalInput1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -5613,14 +5671,14 @@ Elm.Main.make = function (_elm) {
       signalInput1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 20. input : Signal Input"));
+   })(body("input : Signal Input"));
    var signalInput2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       signalInput2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 21. input ="));
+   })(body("input ="));
    var signalInput3 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -5667,51 +5725,54 @@ Elm.Main.make = function (_elm) {
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([signalInput1
-                   ,signalInput2
+      _L.fromArray([A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,signalInput1]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 22.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,signalInput2]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
                                 ,signalInput3]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 23.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 2,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                40,
+                                5)
                                 ,signalInput4]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 24.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
                                 ,signalInput5]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 25.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
                                 ,signalInput6]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 26.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
                                 ,signalInput7]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 27.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
-                                ,signalInput8]))
-                   ,body(" 28.")]));
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
+                                ,signalInput8]))]));
    });
    var gameSize = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -5719,21 +5780,30 @@ Elm.Main.make = function (_elm) {
       gameSizeMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 29. (gameWidth, gameHeight) = (600, 400)"));
+   })(body("(gameWidth, gameHeight) = (600, 400)"));
    var playingSize = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       playingSizeMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 30. (halfWidth, halfHeight) = (300, 200)"));
+   })(body("(halfWidth, halfHeight) = (300, 200)"));
    var modelContainer1 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([gameSize
-                   ,playingSize
-                   ,body(" 31.")]));
+      _L.fromArray([A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,gameSize]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,playingSize]))]));
    });
    var typeState = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -5741,13 +5811,17 @@ Elm.Main.make = function (_elm) {
       typeStateMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 32. type State = Play | Pause"));
+   })(body("type State = Play | Pause"));
    var modelContainer2 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([typeState
-                   ,body(" 33.")]));
+      _L.fromArray([A2($Graphics$Element.flow,
+      $Graphics$Element.right,
+      _L.fromArray([A2($Graphics$Element.spacer,
+                   10,
+                   5)
+                   ,typeState]))]));
    });
    var aliasBadGuy1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -5755,7 +5829,7 @@ Elm.Main.make = function (_elm) {
       aliasBadGuy1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 34. type alias BadGuy ="));
+   })(body("type alias BadGuy ="));
    var aliasBadGuy2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -5767,15 +5841,18 @@ Elm.Main.make = function (_elm) {
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([aliasBadGuy1
+      _L.fromArray([A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,aliasBadGuy1]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 35.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
-                                ,aliasBadGuy2]))
-                   ,body(" 36.")]));
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
+                                ,aliasBadGuy2]))]));
    });
    var aliasPlayer1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -5783,7 +5860,7 @@ Elm.Main.make = function (_elm) {
       aliasPlayer1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 37. type alias Player ="));
+   })(body("type alias Player ="));
    var aliasPlayer2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -5795,15 +5872,18 @@ Elm.Main.make = function (_elm) {
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([aliasPlayer1
+      _L.fromArray([A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,aliasPlayer1]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 38.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
-                                ,aliasPlayer2]))
-                   ,body(" 39.")]));
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
+                                ,aliasPlayer2]))]));
    });
    var aliasGame1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -5811,40 +5891,30 @@ Elm.Main.make = function (_elm) {
       aliasGame1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 40. type alias Game ="));
+   })(body("type alias Game ="));
    var aliasGame2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       aliasGame2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("{ state:State, badGuy:BadGuy, "));
-   var aliasGame3 = $Graphics$Input.hoverable(function (r) {
-      return r ? A2($Signal.send,
-      hoveredOn,
-      aliasGame2Msg) : A2($Signal.send,
-      hoveredOn,
-      "");
-   })(body(" player1:Player }"));
+   })(body("{ state:State, badGuy:BadGuy, player1:Player }"));
    var modelContainer5 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([aliasGame1
-                   ,A2($Graphics$Element.flow,
+      _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 41.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
-                                ,aliasGame2]))
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,aliasGame1]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 4,
-                                1)
-                                ,aliasGame3]))
-                   ,body(" 42.")]));
+                                25,
+                                5)
+                                ,aliasGame2]))]));
    });
    var defaultGame1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -5852,14 +5922,14 @@ Elm.Main.make = function (_elm) {
       defaultGame1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 43. defaultGame : Game"));
+   })(body("defaultGame : Game"));
    var defaultGame2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       defaultGame2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 44. defaultGame ="));
+   })(body("defaultGame ="));
    var defaultGame3 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -5880,14 +5950,14 @@ Elm.Main.make = function (_elm) {
       defaultGame5Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(", player1 = { x = 15-halfWidth, y = 0"));
+   })(body(", player1 = { x = 15-halfWidth, y = 0, vx = 0,"));
    var defaultGame6 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       defaultGame5Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(", vx = 0, vy = 0, lives = 3 }"));
+   })(body("&uArr; vy = 0, lives = 3 }"));
    var defaultGame7 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -5899,43 +5969,48 @@ Elm.Main.make = function (_elm) {
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([defaultGame1
-                   ,defaultGame2
+      _L.fromArray([A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,defaultGame1]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 45.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,defaultGame2]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
                                 ,defaultGame3]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 46.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
                                 ,defaultGame4]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 47.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
                                 ,defaultGame5]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 7,
-                                1)
+                                55,
+                                5)
                                 ,defaultGame6]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 48.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
-                                ,defaultGame7]))
-                   ,body(" 49.")]));
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
+                                ,defaultGame7]))]));
    });
    var aliasInput1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -5943,7 +6018,7 @@ Elm.Main.make = function (_elm) {
       aliasInput1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 50. type alias Input ="));
+   })(body("type alias Input ="));
    var aliasInput2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -5998,43 +6073,42 @@ Elm.Main.make = function (_elm) {
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([aliasInput1
+      _L.fromArray([A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,aliasInput1]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 51.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
                                 ,aliasInput2]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 52.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
                                 ,aliasInput3]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 53.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
                                 ,aliasInput4]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 54.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
                                 ,aliasInput5]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 55.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
-                                ,aliasInput6]))
-                   ,body(" 56.")]));
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
+                                ,aliasInput6]))]));
    });
    var updateFunc1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6042,61 +6116,69 @@ Elm.Main.make = function (_elm) {
       updateFunc1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 57. update : Input -> Game -> Game"));
+   })(body("update : Input -> Game -> Game"));
    var updateFunc2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 58. update {space,dir1,dir2,delta} "));
+   })(body("update {space,dir1,dir2,delta} ({state,badGuy,"));
    var updateFunc3 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" ({state,badGuy,player1} as game) ="));
+   })(body("player1} as game) ="));
    var updateFunc4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("let lives = if (badGuy `within` player1) "));
+   })(body("let lives = if (badGuy `within` player1) then 1"));
    var updateFunc4a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" then 1 else 0"));
+   })(body("else 0"));
    var updateContainer1 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([updateFunc1
-                   ,updateFunc2
+      _L.fromArray([A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,updateFunc1]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 4,
-                                1)
+                                10,
+                                5)
+                                ,updateFunc2]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                40,
+                                5)
                                 ,updateFunc3]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 59.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
                                 ,updateFunc4]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 4,
-                                1)
-                                ,updateFunc4a]))
-                   ,body(" 60.")]));
+                                40,
+                                5)
+                                ,updateFunc4a]))]));
    });
    var updateFunc5 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6132,33 +6214,28 @@ Elm.Main.make = function (_elm) {
       $Graphics$Element.down,
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 61.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 2,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                40,
+                                5)
                                 ,updateFunc5]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 62.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
                                 ,updateFunc6]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 63.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3 + 15,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                70,
+                                5)
                                 ,updateFunc7]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 64.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3 + 15,
-                                1)
-                                ,updateFunc8]))
-                   ,body(" 65.")]));
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                70,
+                                5)
+                                ,updateFunc8]))]));
    });
    var updateFunc9 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6187,53 +6264,35 @@ Elm.Main.make = function (_elm) {
       updateFunc12Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("else updateBadGuy delta badGuy"));
-   var updateFunc12a = $Graphics$Input.hoverable(function (r) {
-      return r ? A2($Signal.send,
-      hoveredOn,
-      updateFunc12Msg) : A2($Signal.send,
-      hoveredOn,
-      "");
-   })(body("player1"));
+   })(body("else updateBadGuy delta badGuy player1"));
    var updateContainer3 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 66.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 2,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                40,
+                                5)
                                 ,updateFunc9]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 67.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
                                 ,updateFunc10]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 68.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 4,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                70,
+                                5)
                                 ,updateFunc11]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 69.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 4,
-                                1)
-                                ,updateFunc12]))
-                   ,A2($Graphics$Element.flow,
-                   $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 6 + 4,
-                                1)
-                                ,updateFunc12a]))
-                   ,body(" 70.")]));
+                                70,
+                                5)
+                                ,updateFunc12]))]));
    });
    var updateFunc13 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6290,53 +6349,46 @@ Elm.Main.make = function (_elm) {
       $Graphics$Element.down,
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 71.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
                                 ,updateFunc13]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 72.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 2,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                40,
+                                5)
                                 ,updateFunc14]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 73.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
                                 ,updateFunc15]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 74.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
                                 ,updateFunc16]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 75.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
                                 ,updateFunc17]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 5,
-                                1)
+                                70,
+                                5)
                                 ,updateFunc17a]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 76.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 2,
-                                1)
-                                ,updateFunc18]))
-                   ,body(" 77.")]));
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                40,
+                                5)
+                                ,updateFunc18]))]));
    });
    var updateBadGuy1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6344,7 +6396,7 @@ Elm.Main.make = function (_elm) {
       updateBadGuy1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 78. updateBadGuy : Time -> BadGuy -> Player ->"));
+   })(body("updateBadGuy : Time -> BadGuy -> Player ->"));
    var updateBadGuy1a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6358,7 +6410,7 @@ Elm.Main.make = function (_elm) {
       updateBadGuy2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 79. updateBadGuy t ({x,y,vx,vy} as badGuy)"));
+   })(body("updateBadGuy t ({x,y,vx,vy} as badGuy)"));
    var updateBadGuy2a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6370,19 +6422,29 @@ Elm.Main.make = function (_elm) {
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([updateBadGuy1
+      _L.fromArray([A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,updateBadGuy1]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 2,
-                                1)
+                                25,
+                                5)
                                 ,updateBadGuy1a]))
-                   ,updateBadGuy2
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 2,
-                                1)
+                                10,
+                                5)
+                                ,updateBadGuy2]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
                                 ,updateBadGuy2a]))]));
    });
    var updateBadGuy3 = $Graphics$Input.hoverable(function (r) {
@@ -6391,28 +6453,21 @@ Elm.Main.make = function (_elm) {
       updateBadGuy3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("if | (player1.lives == 0) -> { badGuy |"));
+   })(body("if | (player1.lives == 0) -> { badGuy | x <- 0,"));
    var updateBadGuy3a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" x <- 0, y <- 0}"));
+   })(body("y <- 0}"));
    var updateBadGuy4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("| (badGuy `within` player1) -> "));
-   var updateBadGuy4a = $Graphics$Input.hoverable(function (r) {
-      return r ? A2($Signal.send,
-      hoveredOn,
-      updateBadGuy4Msg) : A2($Signal.send,
-      hoveredOn,
-      "");
-   })(body(" physicsUpdate t"));
+   })(body("| (badGuy `within` player1) -> physicsUpdate t"));
    var updateBadGuy5 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6461,69 +6516,57 @@ Elm.Main.make = function (_elm) {
       $Graphics$Element.down,
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 80.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
                                 ,updateBadGuy3]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 4,
-                                1)
+                                70,
+                                5)
                                 ,updateBadGuy3a]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 81.")
-                                ,A2($Graphics$Element.spacer,
-                                indent + 15,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                40,
+                                5)
                                 ,updateBadGuy4]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 4,
-                                1)
-                                ,updateBadGuy4a]))
-                   ,A2($Graphics$Element.flow,
-                   $Graphics$Element.right,
-                   _L.fromArray([body(" 82.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 2 + 5,
-                                1)
+                                55,
+                                5)
                                 ,updateBadGuy5]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 83.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3 + 5,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                70,
+                                5)
                                 ,updateBadGuy6]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 5,
-                                1)
+                                85,
+                                5)
                                 ,updateBadGuy6a]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 84.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3 + 5,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                70,
+                                5)
                                 ,updateBadGuy7]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 5,
-                                1)
+                                85,
+                                5)
                                 ,updateBadGuy7a]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 85.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 2 + 5,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
                                 ,updateBadGuy8]))]));
    });
    var updateBadGuy9 = $Graphics$Input.hoverable(function (r) {
@@ -6581,52 +6624,46 @@ Elm.Main.make = function (_elm) {
       $Graphics$Element.down,
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 86.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                40,
+                                5)
                                 ,updateBadGuy9]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 87.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 2,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
                                 ,updateBadGuy10]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 88.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                70,
+                                5)
                                 ,updateBadGuy11]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 5,
-                                1)
+                                85,
+                                5)
                                 ,updateBadGuy11a]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 89.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                70,
+                                5)
                                 ,updateBadGuy12]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 5,
-                                1)
+                                85,
+                                5)
                                 ,updateBadGuy12a]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 90.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 2,
-                                1)
-                                ,updateBadGuy13]))
-                   ,body(" 91.")]));
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
+                                ,updateBadGuy13]))]));
    });
    var updatePlayer1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6634,7 +6671,7 @@ Elm.Main.make = function (_elm) {
       updatePlayer1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 92. updatePlayer : Time -> Int -> Int -> Int -> "));
+   })(body("updatePlayer : Time -> Int -> Int -> Int -> "));
    var updatePlayer1a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6648,19 +6685,29 @@ Elm.Main.make = function (_elm) {
       updatePlayer2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 93. updatePlayer t dir1 dir2 lives player ="));
+   })(body("updatePlayer t dir1 dir2 lives player ="));
    var updateContainer8 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([updatePlayer1
+      _L.fromArray([A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,updatePlayer1]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 2,
-                                1)
+                                25,
+                                5)
                                 ,updatePlayer1a]))
-                   ,updatePlayer2]));
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,updatePlayer2]))]));
    });
    var updatePlayer3 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6675,7 +6722,7 @@ Elm.Main.make = function (_elm) {
       updatePlayer3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" vx <- toFloat dir1 * 200"));
+   })(body("vx <- toFloat dir1 * 200"));
    var updatePlayer4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6710,46 +6757,40 @@ Elm.Main.make = function (_elm) {
       $Graphics$Element.down,
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 94.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
                                 ,updatePlayer3]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 5 + 5,
-                                1)
+                                130,
+                                5)
                                 ,updatePlayer3a]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 95.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 4,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                130,
+                                5)
                                 ,updatePlayer4]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 96.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 2,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                40,
+                                5)
                                 ,updatePlayer5]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 97.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
                                 ,updatePlayer6]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 98.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
-                                ,updatePlayer7]))
-                   ,body(" 99.")]));
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
+                                ,updatePlayer7]))]));
    });
    var updatePlayer8 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6771,28 +6812,28 @@ Elm.Main.make = function (_elm) {
       updatePlayer10Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("y <- clamp (35-halfHeight) "));
+   })(body("y <- clamp (35-halfHeight) (halfHeight-35)"));
    var updatePlayer10a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer10Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" (halfHeight-35) player1.y,"));
+   })(body("player1.y,"));
    var updatePlayer11 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer11Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("x <- clamp (35-halfWidth) "));
+   })(body("x <- clamp (35-halfWidth) (halfWidth-35)"));
    var updatePlayer11a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer11Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" (halfWidth-35) player1.x,"));
+   })(body("player1.x,"));
    var updatePlayer12 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6813,59 +6854,52 @@ Elm.Main.make = function (_elm) {
       $Graphics$Element.down,
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 100.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
                                 ,updatePlayer8]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 101.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 2,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                40,
+                                5)
                                 ,updatePlayer9]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 102.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
                                 ,updatePlayer10]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 7,
-                                1)
+                                85,
+                                5)
                                 ,updatePlayer10a]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 103.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
                                 ,updatePlayer11]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 7,
-                                1)
+                                85,
+                                5)
                                 ,updatePlayer11a]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 104.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
                                 ,updatePlayer12]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 105.")
-                                ,A2($Graphics$Element.spacer,
-                                indent + 8,
-                                1)
-                                ,updatePlayer13]))
-                   ,body(" 106.")]));
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                40,
+                                5)
+                                ,updatePlayer13]))]));
    });
    var updatePhysics1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6873,7 +6907,7 @@ Elm.Main.make = function (_elm) {
       updatePhysics1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 107. physicsUpdate t ({x,y,vx,vy} as obj) ="));
+   })(body("physicsUpdate t ({x,y,vx,vy} as obj) ="));
    var updatePhysics2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6906,36 +6940,36 @@ Elm.Main.make = function (_elm) {
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([updatePhysics1
+      _L.fromArray([A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,updatePhysics1]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 108.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
                                 ,updatePhysics2]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 109.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 2,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                40,
+                                5)
                                 ,updatePhysics3]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 110.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 2,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                40,
+                                5)
                                 ,updatePhysics4]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 111.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
-                                ,updatePhysics5]))
-                   ,body(" 112.")]));
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
+                                ,updatePhysics5]))]));
    });
    var updateNear1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6943,7 +6977,7 @@ Elm.Main.make = function (_elm) {
       updateNear1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 113. near k c n ="));
+   })(body("near k c n ="));
    var updateNear2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6955,15 +6989,18 @@ Elm.Main.make = function (_elm) {
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([updateNear1
+      _L.fromArray([A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,updateNear1]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 114.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
-                                ,updateNear2]))
-                   ,body(" 115.")]));
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
+                                ,updateNear2]))]));
    });
    var updateWithin1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6971,7 +7008,7 @@ Elm.Main.make = function (_elm) {
       updateWithin1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 116. within badGuy player1 ="));
+   })(body("within badGuy player1 ="));
    var updateWithin2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6990,21 +7027,24 @@ Elm.Main.make = function (_elm) {
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([updateWithin1
+      _L.fromArray([A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,updateWithin1]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 117.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
                                 ,updateWithin2]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 4,
-                                1)
-                                ,updateWithin2a]))
-                   ,body(" 118.")]));
+                                40,
+                                5)
+                                ,updateWithin2a]))]));
    });
    var updateStepV1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -7012,64 +7052,56 @@ Elm.Main.make = function (_elm) {
       updateStepV1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 119. stepV v condition1 condition2 ="));
+   })(body("stepV v condition1 condition2 ="));
    var updateStepV2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateStepV2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(A3($String.padLeft,
-   30,
-   _U.chr(" "),
-   " if | condition1 -> abs v")));
+   })(body("if | condition1 -> abs v"));
    var updateStepV3 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateStepV3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(A3($String.padLeft,
-   34,
-   _U.chr(" "),
-   " | condition2 -> 0 - abs v")));
+   })(body("| condition2 -> 0 - abs v"));
    var updateStepV4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateStepV4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(A3($String.padLeft,
-   26,
-   _U.chr(" "),
-   " | otherwise  -> v")));
+   })(body("| otherwise  -> v"));
    var updateContainer14 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([updateStepV1
+      _L.fromArray([A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,updateStepV1]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 120.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
                                 ,updateStepV2]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 121.")
-                                ,A2($Graphics$Element.spacer,
-                                indent + 1,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                40,
+                                5)
                                 ,updateStepV3]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 122.")
-                                ,A2($Graphics$Element.spacer,
-                                indent + 1,
-                                1)
-                                ,updateStepV4]))
-                   ,body(" 123.")]));
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                40,
+                                5)
+                                ,updateStepV4]))]));
    });
    var viewFunc1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -7077,20 +7109,30 @@ Elm.Main.make = function (_elm) {
       viewFunc1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 124. view : (Int, Int) -> Game -> Element"));
+   })(body("view : (Int, Int) -> Game -> Element"));
    var viewFunc2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 125. view (w, h) {state, badGuy, player1} ="));
+   })(body("view (w, h) {state, badGuy, player1} ="));
    var viewContainer1 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([viewFunc1
-                   ,viewFunc2]));
+      _L.fromArray([A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,viewFunc1]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,viewFunc2]))]));
    });
    var viewFunc3 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -7105,38 +7147,23 @@ Elm.Main.make = function (_elm) {
       viewFunc4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("lives = txt(Text.height 50) "));
-   var viewFunc4a = $Graphics$Input.hoverable(function (r) {
-      return r ? A2($Signal.send,
-      hoveredOn,
-      viewFunc4Msg) : A2($Signal.send,
-      hoveredOn,
-      "");
-   })(body(" (toString player1.lives)"));
+   })(body("lives = txt(Text.height 50) (toString player1.lives)"));
    var viewContainer2 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 126.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
                                 ,viewFunc3]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 127.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 2,
-                                1)
-                                ,viewFunc4]))
-                   ,A2($Graphics$Element.flow,
-                   $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 5,
-                                1)
-                                ,viewFunc4a]))]));
+                                40,
+                                5)
+                                ,viewFunc4]))]));
    });
    var viewFunc5 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -7165,24 +7192,21 @@ Elm.Main.make = function (_elm) {
       $Graphics$Element.down,
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 128.")
-                                ,A2($Graphics$Element.spacer,
-                                indent,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                25,
+                                5)
                                 ,viewFunc5]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 129.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 2,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                40,
+                                5)
                                 ,viewFunc6]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 130.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 2,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                40,
+                                5)
                                 ,viewFunc7]))]));
    });
    var viewFunc8 = $Graphics$Input.hoverable(function (r) {
@@ -7205,17 +7229,15 @@ Elm.Main.make = function (_elm) {
       $Graphics$Element.down,
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 131.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
                                 ,viewFunc8]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 132.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 4,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                70,
+                                5)
                                 ,viewFunc9]))]));
    });
    var viewFunc10 = $Graphics$Input.hoverable(function (r) {
@@ -7245,24 +7267,21 @@ Elm.Main.make = function (_elm) {
       $Graphics$Element.down,
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 133.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
                                 ,viewFunc10]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 134.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 4,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                70,
+                                5)
                                 ,viewFunc11]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 135.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 4,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                70,
+                                5)
                                 ,viewFunc12]))]));
    });
    var viewFunc13 = $Graphics$Input.hoverable(function (r) {
@@ -7292,24 +7311,21 @@ Elm.Main.make = function (_elm) {
       $Graphics$Element.down,
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 136.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
                                 ,viewFunc13]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 137.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 4,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                70,
+                                5)
                                 ,viewFunc14]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 138.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 4,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                70,
+                                5)
                                 ,viewFunc15]))]));
    });
    var viewFunc16 = $Graphics$Input.hoverable(function (r) {
@@ -7332,17 +7348,15 @@ Elm.Main.make = function (_elm) {
       $Graphics$Element.down,
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 139.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
                                 ,viewFunc16]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 140.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 4,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                70,
+                                5)
                                 ,viewFunc17]))]));
    });
    var viewFunc18 = $Graphics$Input.hoverable(function (r) {
@@ -7351,14 +7365,14 @@ Elm.Main.make = function (_elm) {
       viewFunc18Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(", toForm (if state == Play then "));
+   })(body(", toForm (if state == Play then spacer 1 1"));
    var viewFunc18a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc18Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" spacer 1 1 else txt identity msg"));
+   })(body("else txt identity msg"));
    var viewFunc19 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -7379,32 +7393,28 @@ Elm.Main.make = function (_elm) {
       $Graphics$Element.down,
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 141.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
                                 ,viewFunc18]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 6,
-                                1)
+                                85,
+                                5)
                                 ,viewFunc18a]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 142.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 4,
-                                1)
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                70,
+                                5)
                                 ,viewFunc19]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
-                   _L.fromArray([body(" 143.")
-                                ,A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
-                                ,viewFunc20]))
-                   ,body(" 144.")]));
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                55,
+                                5)
+                                ,viewFunc20]))]));
    });
    var elmGreyColor = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -7412,36 +7422,56 @@ Elm.Main.make = function (_elm) {
       elmGreyColorMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 145. elmGrey = rgb 71 80 102"));
+   })(body("elmGrey = rgb 71 80 102"));
    var elmBlueColor = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       elmBlueColorMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 146. elmBlue = rgb 76 166 195"));
+   })(body("elmBlue = rgb 76 166 195"));
    var elmGreenColor = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       elmGreenColorMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 147. elmGreen = rgb 127 209 17"));
+   })(body("elmGreen = rgb 127 209 17"));
    var textColor = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       textColorMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 148. textColor = white"));
+   })(body("textColor = white"));
    var viewContainer9 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([elmGreyColor
-                   ,elmBlueColor
-                   ,elmGreenColor
-                   ,textColor]));
+      _L.fromArray([A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,elmGreyColor]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,elmBlueColor]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,elmGreenColor]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,textColor]))]));
    });
    var txtFunc1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -7449,38 +7479,30 @@ Elm.Main.make = function (_elm) {
       txtFunc1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 149. txt f = Text.fromString >> Text.color "));
+   })(body("txt f = Text.fromString >> Text.color textColor >>"));
    var txtFunc2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       txtFunc2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" textColor >> Text.monospace "));
-   var txtFunc3 = $Graphics$Input.hoverable(function (r) {
-      return r ? A2($Signal.send,
-      hoveredOn,
-      txtFunc3Msg) : A2($Signal.send,
-      hoveredOn,
-      "");
-   })(body(" >> f >> Text.leftAligned"));
+   })(body("Text.monospace >> f >> Text.leftAligned"));
    var viewContainer10 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([txtFunc1
+      _L.fromArray([A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,txtFunc1]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
-                                ,txtFunc2]))
-                   ,A2($Graphics$Element.flow,
-                   $Graphics$Element.right,
-                   _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
-                                ,txtFunc3]))]));
+                                25,
+                                5)
+                                ,txtFunc2]))]));
    });
    var msgFunc1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -7488,24 +7510,29 @@ Elm.Main.make = function (_elm) {
       msgFuncMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" 150. msg = \'SPACE to start, &larr ;&uarr ;"));
+   })(body("msg = \'SPACE to start, &larr ;&uarr ;&darr ;"));
    var msgFunc2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       msgFuncMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" &darr ;&rarr ; to move\'"));
+   })(body("&rarr ; to move\'"));
    var viewContainer11 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _L.fromArray([msgFunc1
+      _L.fromArray([A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,msgFunc1]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                indent * 3,
-                                1)
+                                25,
+                                5)
                                 ,msgFunc2]))]));
    });
    var chan = $Signal.channel(0);
@@ -7556,6 +7583,32 @@ Elm.Main.make = function (_elm) {
                    5,
                    1)
                    ,customLButton(sig)]))));
+   };
+   var displayWelcome2 = function (sig) {
+      return A2($Graphics$Element.flow,
+      $Graphics$Element.down,
+      _L.fromArray([wayfindingElement(wayfindingWelcome)
+                   ,titleElement(welcomeMsg1)
+                   ,gifElement(gifImage)
+                   ,welcomeElement(welcomeMsg2)
+                   ,A3(animationElement,
+                   welcomeAnimation2,
+                   stepNumber2,
+                   stepDescription2)
+                   ,buttonsLRElement(sig)]));
+   };
+   var displayWelcome3 = function (sig) {
+      return A2($Graphics$Element.flow,
+      $Graphics$Element.down,
+      _L.fromArray([wayfindingElement(wayfindingWelcome)
+                   ,titleElement(welcomeMsg1)
+                   ,gifElement(gifImage)
+                   ,welcomeElement(welcomeMsg2)
+                   ,A3(animationElement,
+                   welcomeAnimation2,
+                   stepNumber2,
+                   stepDescription2)
+                   ,buttonsLRElement(sig)]));
    };
    var importsWelcome = function (sig) {
       return A2($Graphics$Element.flow,
@@ -8146,13 +8199,17 @@ Elm.Main.make = function (_elm) {
                    1)
                    ,customGoButton(sig)]))));
    };
-   var displayWelcome = function (sig) {
+   var displayWelcome1 = function (sig) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
       _L.fromArray([wayfindingElement(wayfindingWelcome)
                    ,titleElement(welcomeMsg1)
                    ,gifElement(gifImage)
                    ,welcomeElement(welcomeMsg2)
+                   ,A3(animationElement,
+                   welcomeAnimation1,
+                   stepNumber1,
+                   stepDescription1)
                    ,buttonGoElement(sig)]));
    };
    var customRestartButton = A4($Graphics$Input.customButton,
@@ -8251,130 +8308,131 @@ Elm.Main.make = function (_elm) {
               _v0._1,
               $Graphics$Element.middle,
               _U.eq(sig,
-              0) ? displayWelcome(sig) : _U.eq(sig,
-              1) ? importsWelcome(sig) : _U.eq(sig,
-              2) ? A2(displayImports,
+              0) ? displayWelcome1(sig) : _U.eq(sig,
+              1) ? displayWelcome2(sig) : _U.eq(sig,
+              2) ? importsWelcome(sig) : _U.eq(sig,
+              3) ? A2(displayImports,
               sig,
               hoveredOn) : _U.eq(sig,
-              3) ? signalsWelcome(sig) : _U.eq(sig,
-              4) ? A2(displaySignals1,
+              4) ? signalsWelcome(sig) : _U.eq(sig,
+              5) ? A2(displaySignals1,
               sig,
               hoveredOn) : _U.eq(sig,
-              5) ? A2(displaySignals2,
+              6) ? A2(displaySignals2,
               sig,
               hoveredOn) : _U.eq(sig,
-              6) ? A2(displaySignals3,
+              7) ? A2(displaySignals3,
               sig,
               hoveredOn) : _U.eq(sig,
-              7) ? A2(displaySignals4,
+              8) ? A2(displaySignals4,
               sig,
               hoveredOn) : _U.eq(sig,
-              8) ? modelWelcome(sig) : _U.eq(sig,
-              9) ? A2(displayModel1,
+              9) ? modelWelcome(sig) : _U.eq(sig,
+              10) ? A2(displayModel1,
               sig,
               hoveredOn) : _U.eq(sig,
-              10) ? A2(displayModel2,
+              11) ? A2(displayModel2,
               sig,
               hoveredOn) : _U.eq(sig,
-              11) ? A2(displayModel3,
+              12) ? A2(displayModel3,
               sig,
               hoveredOn) : _U.eq(sig,
-              12) ? A2(displayModel4,
+              13) ? A2(displayModel4,
               sig,
               hoveredOn) : _U.eq(sig,
-              13) ? A2(displayModel5,
+              14) ? A2(displayModel5,
               sig,
               hoveredOn) : _U.eq(sig,
-              14) ? A2(displayModel6,
+              15) ? A2(displayModel6,
               sig,
               hoveredOn) : _U.eq(sig,
-              15) ? A2(displayModel7,
+              16) ? A2(displayModel7,
               sig,
               hoveredOn) : _U.eq(sig,
-              16) ? updateWelcome(sig) : _U.eq(sig,
-              17) ? A2(displayUpdate1,
+              17) ? updateWelcome(sig) : _U.eq(sig,
+              18) ? A2(displayUpdate1,
               sig,
               hoveredOn) : _U.eq(sig,
-              18) ? A2(displayUpdate2,
+              19) ? A2(displayUpdate2,
               sig,
               hoveredOn) : _U.eq(sig,
-              19) ? A2(displayUpdate3,
+              20) ? A2(displayUpdate3,
               sig,
               hoveredOn) : _U.eq(sig,
-              20) ? A2(displayUpdate4,
+              21) ? A2(displayUpdate4,
               sig,
               hoveredOn) : _U.eq(sig,
-              21) ? A2(displayUpdate5,
+              22) ? A2(displayUpdate5,
               sig,
               hoveredOn) : _U.eq(sig,
-              22) ? A2(displayUpdate6,
+              23) ? A2(displayUpdate6,
               sig,
               hoveredOn) : _U.eq(sig,
-              23) ? A2(displayUpdate7,
+              24) ? A2(displayUpdate7,
               sig,
               hoveredOn) : _U.eq(sig,
-              24) ? A2(displayUpdate8,
+              25) ? A2(displayUpdate8,
               sig,
               hoveredOn) : _U.eq(sig,
-              25) ? A2(displayUpdate9,
+              26) ? A2(displayUpdate9,
               sig,
               hoveredOn) : _U.eq(sig,
-              26) ? A2(displayUpdate10,
+              27) ? A2(displayUpdate10,
               sig,
               hoveredOn) : _U.eq(sig,
-              27) ? A2(displayUpdate11,
+              28) ? A2(displayUpdate11,
               sig,
               hoveredOn) : _U.eq(sig,
-              28) ? A2(displayUpdate12,
+              29) ? A2(displayUpdate12,
               sig,
               hoveredOn) : _U.eq(sig,
-              29) ? A2(displayUpdate13,
+              30) ? A2(displayUpdate13,
               sig,
               hoveredOn) : _U.eq(sig,
-              30) ? A2(displayUpdate14,
+              31) ? A2(displayUpdate14,
               sig,
               hoveredOn) : _U.eq(sig,
-              31) ? viewWelcome(sig) : _U.eq(sig,
-              32) ? A2(displayView1,
+              32) ? viewWelcome(sig) : _U.eq(sig,
+              33) ? A2(displayView1,
               sig,
               hoveredOn) : _U.eq(sig,
-              33) ? A2(displayView2,
+              34) ? A2(displayView2,
               sig,
               hoveredOn) : _U.eq(sig,
-              34) ? A2(displayView3,
+              35) ? A2(displayView3,
               sig,
               hoveredOn) : _U.eq(sig,
-              35) ? A2(displayView4,
+              36) ? A2(displayView4,
               sig,
               hoveredOn) : _U.eq(sig,
-              36) ? A2(displayView5,
+              37) ? A2(displayView5,
               sig,
               hoveredOn) : _U.eq(sig,
-              37) ? A2(displayView6,
+              38) ? A2(displayView6,
               sig,
               hoveredOn) : _U.eq(sig,
-              38) ? A2(displayView7,
+              39) ? A2(displayView7,
               sig,
               hoveredOn) : _U.eq(sig,
-              39) ? A2(displayView8,
+              40) ? A2(displayView8,
               sig,
               hoveredOn) : _U.eq(sig,
-              40) ? A2(displayView9,
+              41) ? A2(displayView9,
               sig,
               hoveredOn) : _U.eq(sig,
-              41) ? A2(displayView10,
+              42) ? A2(displayView10,
               sig,
               hoveredOn) : _U.eq(sig,
-              42) ? A2(displayView11,
+              43) ? A2(displayView11,
               sig,
               hoveredOn) : _U.eq(sig,
-              43) ? congrats(sig) : _U.eq(sig,
-              44) ? idea1(sig) : _U.eq(sig,
-              45) ? idea2(sig) : _U.eq(sig,
-              46) ? idea3(sig) : _U.eq(sig,
-              47) ? elmResources(sig) : displayWelcome(sig)));}
+              44) ? congrats(sig) : _U.eq(sig,
+              45) ? idea1(sig) : _U.eq(sig,
+              46) ? idea2(sig) : _U.eq(sig,
+              47) ? idea3(sig) : _U.eq(sig,
+              48) ? elmResources(sig) : displayWelcome1(sig)));}
          _U.badCase($moduleName,
-         "between lines 29 and 78");
+         "between lines 29 and 79");
       }();
    });
    var main = A4($Signal.map3,
@@ -8408,7 +8466,7 @@ Elm.Main.make = function (_elm) {
                       ,gifElement: gifElement
                       ,resourcesElement: resourcesElement
                       ,welcomeElement: welcomeElement
-                      ,welcomeCollage: welcomeCollage
+                      ,animationElement: animationElement
                       ,wayfindingElement: wayfindingElement
                       ,titleElement: titleElement
                       ,subtitleElement: subtitleElement
@@ -8436,6 +8494,8 @@ Elm.Main.make = function (_elm) {
                       ,elmBlue: elmBlue
                       ,elmGreen: elmGreen
                       ,gifImage: gifImage
+                      ,copyCode: copyCode
+                      ,hoverCode: hoverCode
                       ,elmLogo: elmLogo
                       ,importsIcon: importsIcon
                       ,modelIcon: modelIcon
@@ -8445,11 +8505,23 @@ Elm.Main.make = function (_elm) {
                       ,title: title
                       ,subTitle: subTitle
                       ,body: body
-                      ,displayWelcome: displayWelcome
+                      ,middleText: middleText
+                      ,displayWelcome1: displayWelcome1
                       ,wayfindingWelcome: wayfindingWelcome
                       ,welcomeMsg1: welcomeMsg1
                       ,welcomeMsg2: welcomeMsg2
+                      ,stepNumber1: stepNumber1
+                      ,stepDescription1: stepDescription1
+                      ,welcomeAnimation1: welcomeAnimation1
                       ,welcomeMsg3: welcomeMsg3
+                      ,displayWelcome2: displayWelcome2
+                      ,stepNumber2: stepNumber2
+                      ,stepDescription2: stepDescription2
+                      ,welcomeAnimation2: welcomeAnimation2
+                      ,displayWelcome3: displayWelcome3
+                      ,stepNumber3: stepNumber3
+                      ,stepDescription3: stepDescription3
+                      ,welcomeAnimation3: welcomeAnimation3
                       ,importsWelcome: importsWelcome
                       ,wayfindingImports: wayfindingImports
                       ,importsWelcomeMsg1: importsWelcomeMsg1
@@ -8482,7 +8554,6 @@ Elm.Main.make = function (_elm) {
                       ,signalMain1: signalMain1
                       ,signalMain2Msg: signalMain2Msg
                       ,signalMain2: signalMain2
-                      ,signalMain3: signalMain3
                       ,displaySignals2: displaySignals2
                       ,signalsContainer2: signalsContainer2
                       ,signalGameState1Msg: signalGameState1Msg
@@ -8547,7 +8618,6 @@ Elm.Main.make = function (_elm) {
                       ,aliasGame1: aliasGame1
                       ,aliasGame2Msg: aliasGame2Msg
                       ,aliasGame2: aliasGame2
-                      ,aliasGame3: aliasGame3
                       ,displayModel6: displayModel6
                       ,modelContainer6: modelContainer6
                       ,defaultGame1Msg: defaultGame1Msg
@@ -8611,7 +8681,6 @@ Elm.Main.make = function (_elm) {
                       ,updateFunc11: updateFunc11
                       ,updateFunc12Msg: updateFunc12Msg
                       ,updateFunc12: updateFunc12
-                      ,updateFunc12a: updateFunc12a
                       ,displayUpdate4: displayUpdate4
                       ,updateContainer4: updateContainer4
                       ,updateFunc13Msg: updateFunc13Msg
@@ -8642,7 +8711,6 @@ Elm.Main.make = function (_elm) {
                       ,updateBadGuy3a: updateBadGuy3a
                       ,updateBadGuy4Msg: updateBadGuy4Msg
                       ,updateBadGuy4: updateBadGuy4
-                      ,updateBadGuy4a: updateBadGuy4a
                       ,updateBadGuy5Msg: updateBadGuy5Msg
                       ,updateBadGuy5: updateBadGuy5
                       ,updateBadGuy6Msg: updateBadGuy6Msg
@@ -8754,7 +8822,6 @@ Elm.Main.make = function (_elm) {
                       ,viewFunc3: viewFunc3
                       ,viewFunc4Msg: viewFunc4Msg
                       ,viewFunc4: viewFunc4
-                      ,viewFunc4a: viewFunc4a
                       ,displayView3: displayView3
                       ,viewContainer3: viewContainer3
                       ,viewFunc5Msg: viewFunc5Msg
@@ -8816,8 +8883,6 @@ Elm.Main.make = function (_elm) {
                       ,txtFunc1: txtFunc1
                       ,txtFunc2Msg: txtFunc2Msg
                       ,txtFunc2: txtFunc2
-                      ,txtFunc3Msg: txtFunc3Msg
-                      ,txtFunc3: txtFunc3
                       ,displayView11: displayView11
                       ,viewContainer11: viewContainer11
                       ,msgFuncMsg: msgFuncMsg
