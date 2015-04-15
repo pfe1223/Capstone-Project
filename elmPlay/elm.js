@@ -4736,7 +4736,7 @@ Elm.Main.make = function (_elm) {
    A2($Basics._op["++"],
    "can be a signal. Without signals, there\n",
    A2($Basics._op["++"],
-   "can be no nteraction in the game. If the\n",
+   "can be no interaction in the game. If the\n",
    A2($Basics._op["++"],
    "user moves, changes, or interacts with\n",
    A2($Basics._op["++"],
@@ -4821,33 +4821,10 @@ Elm.Main.make = function (_elm) {
    "&bull; Keep track of time as it passes\n",
    "&bull; Resize the game."))))))))))));
    var importsWelcomeMsg1 = "Imports Section";
-   var stepDescription3 = "Mouse over the code for an explanation";
+   var stepDescription3 = "Move code with &uArr; to the line above";
    var stepNumber3 = "Step Three";
    var stepDescription2 = "Mouse over the code for an explanation";
    var stepNumber2 = "Step Two";
-   var welcomeMsg3 = A2($Basics._op["++"],
-   "Welcome to Elm Play, where you will\n",
-   A2($Basics._op["++"],
-   "learn how to make a game with the\n",
-   A2($Basics._op["++"],
-   "Elm language. The pages that follow\n",
-   A2($Basics._op["++"],
-   "give you code to copy into the editor.\n",
-   A2($Basics._op["++"],
-   "Put the mouse over the code to get an \n",
-   A2($Basics._op["++"],
-   "explanation of what the code does. Pay\n",
-   A2($Basics._op["++"],
-   "attention to the line numbers. Some\n",
-   A2($Basics._op["++"],
-   "lines are left blank to separate blocks\n",
-   A2($Basics._op["++"],
-   "of code. Some code does not have a\n",
-   A2($Basics._op["++"],
-   "line number as it goes with the line of\n",
-   A2($Basics._op["++"],
-   "code above. Click on the button below\n",
-   "to begin.")))))))))));
    var stepDescription1 = "Copy the code to the editor";
    var stepNumber1 = "Step One";
    var welcomeMsg2 = A2($Basics._op["++"],
@@ -4890,6 +4867,14 @@ Elm.Main.make = function (_elm) {
    100,
    100,
    "/images/elmLogo.svg");
+   var multiLine = A3($Graphics$Element.image,
+   400,
+   27,
+   "/images/multiLineGIF.gif");
+   var welcomeAnimation3 = A3($Graphics$Collage.collage,
+   400,
+   190,
+   _L.fromArray([$Graphics$Collage.toForm(multiLine)]));
    var hoverCode = A3($Graphics$Element.image,
    226,
    190,
@@ -4903,10 +4888,6 @@ Elm.Main.make = function (_elm) {
    103,
    "/images/copyCodeGIF.gif");
    var welcomeAnimation1 = A3($Graphics$Collage.collage,
-   400,
-   190,
-   _L.fromArray([$Graphics$Collage.toForm(copyCode)]));
-   var welcomeAnimation3 = A3($Graphics$Collage.collage,
    400,
    190,
    _L.fromArray([$Graphics$Collage.toForm(copyCode)]));
@@ -4964,7 +4945,7 @@ Elm.Main.make = function (_elm) {
                    2)]));
    };
    var dashPresent = $Graphics$Collage.filled(elmBlue)(A2($Graphics$Collage.rect,
-   25,
+   35,
    5));
    var dashPast = $Graphics$Collage.alpha(0.5)($Graphics$Collage.filled(elmBlue)(A2($Graphics$Collage.rect,
    22,
@@ -6130,7 +6111,7 @@ Elm.Main.make = function (_elm) {
       updateFunc2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("player1} as game) ="));
+   })(body("&uArr; player1} as game) ="));
    var updateFunc4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6144,7 +6125,7 @@ Elm.Main.make = function (_elm) {
       updateFunc4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("else 0"));
+   })(body("&uArr; else 0"));
    var updateContainer1 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6335,7 +6316,7 @@ Elm.Main.make = function (_elm) {
       updateFunc17Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("lives player1"));
+   })(body("&uArr; lives player1"));
    var updateFunc18 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6403,7 +6384,7 @@ Elm.Main.make = function (_elm) {
       updateBadGuy1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" BadGuy"));
+   })(body("&uArr; BadGuy"));
    var updateBadGuy2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6417,7 +6398,7 @@ Elm.Main.make = function (_elm) {
       updateBadGuy2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" ({x,y,vx,vy,lives} as player1) ="));
+   })(body("&uArr; ({x,y,vx,vy,lives} as player1) ="));
    var updateContainer5 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6460,7 +6441,7 @@ Elm.Main.make = function (_elm) {
       updateBadGuy3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("y <- 0}"));
+   })(body("&uArr; y <- 0}"));
    var updateBadGuy4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6488,7 +6469,7 @@ Elm.Main.make = function (_elm) {
       updateBadGuy6Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" (badGuy.vx > 0),"));
+   })(body("&uArr; (badGuy.vx > 0),"));
    var updateBadGuy7 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6502,7 +6483,7 @@ Elm.Main.make = function (_elm) {
       updateBadGuy7Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" (badGuy.vy > 0)"));
+   })(body("&uArr; (badGuy.vy > 0)"));
    var updateBadGuy8 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6596,7 +6577,7 @@ Elm.Main.make = function (_elm) {
       updateBadGuy11Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" (x > halfWidth-25),"));
+   })(body("&uArr; (x > halfWidth-25),"));
    var updateBadGuy12 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6610,7 +6591,7 @@ Elm.Main.make = function (_elm) {
       updateBadGuy12Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" (y > halfHeight-25)"));
+   })(body("uArr; (y > halfHeight-25)"));
    var updateBadGuy13 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6678,7 +6659,7 @@ Elm.Main.make = function (_elm) {
       updatePlayer1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" Player -> Player"));
+   })(body("&uArr; Player -> Player"));
    var updatePlayer2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6722,7 +6703,7 @@ Elm.Main.make = function (_elm) {
       updatePlayer3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("vx <- toFloat dir1 * 200"));
+   })(body("&uArr; vx <- toFloat dir1 * 200"));
    var updatePlayer4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6819,7 +6800,7 @@ Elm.Main.make = function (_elm) {
       updatePlayer10Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("player1.y,"));
+   })(body("&uArr; player1.y,"));
    var updatePlayer11 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6833,7 +6814,7 @@ Elm.Main.make = function (_elm) {
       updatePlayer11Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("player1.x,"));
+   })(body("&uArr; player1.x,"));
    var updatePlayer12 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -7022,7 +7003,7 @@ Elm.Main.make = function (_elm) {
       updateWithin2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(" near player1.y 25 badGuy.y"));
+   })(body("&uArr; near player1.y 25 badGuy.y"));
    var updateContainer13 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7372,7 +7353,7 @@ Elm.Main.make = function (_elm) {
       viewFunc18Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("else txt identity msg"));
+   })(body("&uArr; else txt identity msg"));
    var viewFunc19 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -7486,7 +7467,7 @@ Elm.Main.make = function (_elm) {
       txtFunc2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("Text.monospace >> f >> Text.leftAligned"));
+   })(body("&uArr; Text.monospace >> f >> Text.leftAligned"));
    var viewContainer10 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7517,7 +7498,7 @@ Elm.Main.make = function (_elm) {
       msgFuncMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("&rarr ; to move\'"));
+   })(body("&uArr; &rarr ; to move\'"));
    var viewContainer11 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7605,9 +7586,9 @@ Elm.Main.make = function (_elm) {
                    ,gifElement(gifImage)
                    ,welcomeElement(welcomeMsg2)
                    ,A3(animationElement,
-                   welcomeAnimation2,
-                   stepNumber2,
-                   stepDescription2)
+                   welcomeAnimation3,
+                   stepNumber3,
+                   stepDescription3)
                    ,buttonsLRElement(sig)]));
    };
    var importsWelcome = function (sig) {
@@ -8310,129 +8291,130 @@ Elm.Main.make = function (_elm) {
               _U.eq(sig,
               0) ? displayWelcome1(sig) : _U.eq(sig,
               1) ? displayWelcome2(sig) : _U.eq(sig,
-              2) ? importsWelcome(sig) : _U.eq(sig,
-              3) ? A2(displayImports,
+              2) ? displayWelcome3(sig) : _U.eq(sig,
+              3) ? importsWelcome(sig) : _U.eq(sig,
+              4) ? A2(displayImports,
               sig,
               hoveredOn) : _U.eq(sig,
-              4) ? signalsWelcome(sig) : _U.eq(sig,
-              5) ? A2(displaySignals1,
+              5) ? signalsWelcome(sig) : _U.eq(sig,
+              6) ? A2(displaySignals1,
               sig,
               hoveredOn) : _U.eq(sig,
-              6) ? A2(displaySignals2,
+              7) ? A2(displaySignals2,
               sig,
               hoveredOn) : _U.eq(sig,
-              7) ? A2(displaySignals3,
+              8) ? A2(displaySignals3,
               sig,
               hoveredOn) : _U.eq(sig,
-              8) ? A2(displaySignals4,
+              9) ? A2(displaySignals4,
               sig,
               hoveredOn) : _U.eq(sig,
-              9) ? modelWelcome(sig) : _U.eq(sig,
-              10) ? A2(displayModel1,
+              10) ? modelWelcome(sig) : _U.eq(sig,
+              11) ? A2(displayModel1,
               sig,
               hoveredOn) : _U.eq(sig,
-              11) ? A2(displayModel2,
+              12) ? A2(displayModel2,
               sig,
               hoveredOn) : _U.eq(sig,
-              12) ? A2(displayModel3,
+              13) ? A2(displayModel3,
               sig,
               hoveredOn) : _U.eq(sig,
-              13) ? A2(displayModel4,
+              14) ? A2(displayModel4,
               sig,
               hoveredOn) : _U.eq(sig,
-              14) ? A2(displayModel5,
+              15) ? A2(displayModel5,
               sig,
               hoveredOn) : _U.eq(sig,
-              15) ? A2(displayModel6,
+              16) ? A2(displayModel6,
               sig,
               hoveredOn) : _U.eq(sig,
-              16) ? A2(displayModel7,
+              17) ? A2(displayModel7,
               sig,
               hoveredOn) : _U.eq(sig,
-              17) ? updateWelcome(sig) : _U.eq(sig,
-              18) ? A2(displayUpdate1,
+              18) ? updateWelcome(sig) : _U.eq(sig,
+              19) ? A2(displayUpdate1,
               sig,
               hoveredOn) : _U.eq(sig,
-              19) ? A2(displayUpdate2,
+              20) ? A2(displayUpdate2,
               sig,
               hoveredOn) : _U.eq(sig,
-              20) ? A2(displayUpdate3,
+              21) ? A2(displayUpdate3,
               sig,
               hoveredOn) : _U.eq(sig,
-              21) ? A2(displayUpdate4,
+              22) ? A2(displayUpdate4,
               sig,
               hoveredOn) : _U.eq(sig,
-              22) ? A2(displayUpdate5,
+              23) ? A2(displayUpdate5,
               sig,
               hoveredOn) : _U.eq(sig,
-              23) ? A2(displayUpdate6,
+              24) ? A2(displayUpdate6,
               sig,
               hoveredOn) : _U.eq(sig,
-              24) ? A2(displayUpdate7,
+              25) ? A2(displayUpdate7,
               sig,
               hoveredOn) : _U.eq(sig,
-              25) ? A2(displayUpdate8,
+              26) ? A2(displayUpdate8,
               sig,
               hoveredOn) : _U.eq(sig,
-              26) ? A2(displayUpdate9,
+              27) ? A2(displayUpdate9,
               sig,
               hoveredOn) : _U.eq(sig,
-              27) ? A2(displayUpdate10,
+              28) ? A2(displayUpdate10,
               sig,
               hoveredOn) : _U.eq(sig,
-              28) ? A2(displayUpdate11,
+              29) ? A2(displayUpdate11,
               sig,
               hoveredOn) : _U.eq(sig,
-              29) ? A2(displayUpdate12,
+              30) ? A2(displayUpdate12,
               sig,
               hoveredOn) : _U.eq(sig,
-              30) ? A2(displayUpdate13,
+              31) ? A2(displayUpdate13,
               sig,
               hoveredOn) : _U.eq(sig,
-              31) ? A2(displayUpdate14,
+              32) ? A2(displayUpdate14,
               sig,
               hoveredOn) : _U.eq(sig,
-              32) ? viewWelcome(sig) : _U.eq(sig,
-              33) ? A2(displayView1,
+              33) ? viewWelcome(sig) : _U.eq(sig,
+              34) ? A2(displayView1,
               sig,
               hoveredOn) : _U.eq(sig,
-              34) ? A2(displayView2,
+              35) ? A2(displayView2,
               sig,
               hoveredOn) : _U.eq(sig,
-              35) ? A2(displayView3,
+              36) ? A2(displayView3,
               sig,
               hoveredOn) : _U.eq(sig,
-              36) ? A2(displayView4,
+              37) ? A2(displayView4,
               sig,
               hoveredOn) : _U.eq(sig,
-              37) ? A2(displayView5,
+              38) ? A2(displayView5,
               sig,
               hoveredOn) : _U.eq(sig,
-              38) ? A2(displayView6,
+              39) ? A2(displayView6,
               sig,
               hoveredOn) : _U.eq(sig,
-              39) ? A2(displayView7,
+              40) ? A2(displayView7,
               sig,
               hoveredOn) : _U.eq(sig,
-              40) ? A2(displayView8,
+              41) ? A2(displayView8,
               sig,
               hoveredOn) : _U.eq(sig,
-              41) ? A2(displayView9,
+              42) ? A2(displayView9,
               sig,
               hoveredOn) : _U.eq(sig,
-              42) ? A2(displayView10,
+              43) ? A2(displayView10,
               sig,
               hoveredOn) : _U.eq(sig,
-              43) ? A2(displayView11,
+              44) ? A2(displayView11,
               sig,
               hoveredOn) : _U.eq(sig,
-              44) ? congrats(sig) : _U.eq(sig,
-              45) ? idea1(sig) : _U.eq(sig,
-              46) ? idea2(sig) : _U.eq(sig,
-              47) ? idea3(sig) : _U.eq(sig,
-              48) ? elmResources(sig) : displayWelcome1(sig)));}
+              45) ? congrats(sig) : _U.eq(sig,
+              46) ? idea1(sig) : _U.eq(sig,
+              47) ? idea2(sig) : _U.eq(sig,
+              48) ? idea3(sig) : _U.eq(sig,
+              49) ? elmResources(sig) : displayWelcome1(sig)));}
          _U.badCase($moduleName,
-         "between lines 29 and 79");
+         "between lines 29 and 80");
       }();
    });
    var main = A4($Signal.map3,
@@ -8496,6 +8478,7 @@ Elm.Main.make = function (_elm) {
                       ,gifImage: gifImage
                       ,copyCode: copyCode
                       ,hoverCode: hoverCode
+                      ,multiLine: multiLine
                       ,elmLogo: elmLogo
                       ,importsIcon: importsIcon
                       ,modelIcon: modelIcon
@@ -8513,7 +8496,6 @@ Elm.Main.make = function (_elm) {
                       ,stepNumber1: stepNumber1
                       ,stepDescription1: stepDescription1
                       ,welcomeAnimation1: welcomeAnimation1
-                      ,welcomeMsg3: welcomeMsg3
                       ,displayWelcome2: displayWelcome2
                       ,stepNumber2: stepNumber2
                       ,stepDescription2: stepDescription2

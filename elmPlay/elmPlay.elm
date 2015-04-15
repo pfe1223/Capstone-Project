@@ -29,53 +29,54 @@ view (width, height) sig hoveredOn =
   color backgroundColor <| container width height middle (
     if | sig == 0 -> displayWelcome1 sig
        | sig == 1 -> displayWelcome2 sig
-       | sig == 2 -> importsWelcome sig
-       | sig == 3 -> displayImports sig hoveredOn
-       | sig == 4 -> signalsWelcome sig
-       | sig == 5 -> displaySignals1 sig hoveredOn
-       | sig == 6 -> displaySignals2 sig hoveredOn
-       | sig == 7 -> displaySignals3 sig hoveredOn
-       | sig == 8 -> displaySignals4 sig hoveredOn
-       | sig == 9 -> modelWelcome sig
-       | sig == 10 -> displayModel1 sig hoveredOn
-       | sig == 11-> displayModel2 sig hoveredOn
-       | sig == 12 -> displayModel3 sig hoveredOn
-       | sig == 13 -> displayModel4 sig hoveredOn
-       | sig == 14 -> displayModel5 sig hoveredOn
-       | sig == 15 -> displayModel6 sig hoveredOn
-       | sig == 16 -> displayModel7 sig hoveredOn
-       | sig == 17 -> updateWelcome sig
-       | sig == 18 -> displayUpdate1 sig hoveredOn
-       | sig == 19 -> displayUpdate2 sig hoveredOn
-       | sig == 20 -> displayUpdate3 sig hoveredOn
-       | sig == 21 -> displayUpdate4 sig hoveredOn
-       | sig == 22 -> displayUpdate5 sig hoveredOn
-       | sig == 23 -> displayUpdate6 sig hoveredOn
-       | sig == 24 -> displayUpdate7 sig hoveredOn
-       | sig == 25 -> displayUpdate8 sig hoveredOn
-       | sig == 26 -> displayUpdate9 sig hoveredOn
-       | sig == 27 -> displayUpdate10 sig hoveredOn
-       | sig == 28 -> displayUpdate11 sig hoveredOn
-       | sig == 29 -> displayUpdate12 sig hoveredOn
-       | sig == 30 -> displayUpdate13 sig hoveredOn
-       | sig == 31 -> displayUpdate14 sig hoveredOn
-       | sig == 32 -> viewWelcome sig
-       | sig == 33 -> displayView1 sig hoveredOn
-       | sig == 34 -> displayView2 sig hoveredOn
-       | sig == 35 -> displayView3 sig hoveredOn
-       | sig == 36 -> displayView4 sig hoveredOn
-       | sig == 37 -> displayView5 sig hoveredOn
-       | sig == 38 -> displayView6 sig hoveredOn
-       | sig == 39 -> displayView7 sig hoveredOn
-       | sig == 40 -> displayView8 sig hoveredOn
-       | sig == 41 -> displayView9 sig hoveredOn
-       | sig == 42 -> displayView10 sig hoveredOn
-       | sig == 43 -> displayView11 sig hoveredOn
-       | sig == 44 -> congrats sig
-       | sig == 45 -> idea1 sig
-       | sig == 46 -> idea2 sig
-       | sig == 47 -> idea3 sig
-       | sig == 48 -> elmResources sig
+       | sig == 2 -> displayWelcome3 sig
+       | sig == 3 -> importsWelcome sig
+       | sig == 4 -> displayImports sig hoveredOn
+       | sig == 5 -> signalsWelcome sig
+       | sig == 6 -> displaySignals1 sig hoveredOn
+       | sig == 7 -> displaySignals2 sig hoveredOn
+       | sig == 8 -> displaySignals3 sig hoveredOn
+       | sig == 9 -> displaySignals4 sig hoveredOn
+       | sig == 10 -> modelWelcome sig
+       | sig == 11 -> displayModel1 sig hoveredOn
+       | sig == 12-> displayModel2 sig hoveredOn
+       | sig == 13 -> displayModel3 sig hoveredOn
+       | sig == 14 -> displayModel4 sig hoveredOn
+       | sig == 15 -> displayModel5 sig hoveredOn
+       | sig == 16 -> displayModel6 sig hoveredOn
+       | sig == 17 -> displayModel7 sig hoveredOn
+       | sig == 18 -> updateWelcome sig
+       | sig == 19 -> displayUpdate1 sig hoveredOn
+       | sig == 20 -> displayUpdate2 sig hoveredOn
+       | sig == 21 -> displayUpdate3 sig hoveredOn
+       | sig == 22 -> displayUpdate4 sig hoveredOn
+       | sig == 23 -> displayUpdate5 sig hoveredOn
+       | sig == 24 -> displayUpdate6 sig hoveredOn
+       | sig == 25 -> displayUpdate7 sig hoveredOn
+       | sig == 26 -> displayUpdate8 sig hoveredOn
+       | sig == 27 -> displayUpdate9 sig hoveredOn
+       | sig == 28 -> displayUpdate10 sig hoveredOn
+       | sig == 29 -> displayUpdate11 sig hoveredOn
+       | sig == 30 -> displayUpdate12 sig hoveredOn
+       | sig == 31 -> displayUpdate13 sig hoveredOn
+       | sig == 32 -> displayUpdate14 sig hoveredOn
+       | sig == 33 -> viewWelcome sig
+       | sig == 34 -> displayView1 sig hoveredOn
+       | sig == 35 -> displayView2 sig hoveredOn
+       | sig == 36 -> displayView3 sig hoveredOn
+       | sig == 37 -> displayView4 sig hoveredOn
+       | sig == 38 -> displayView5 sig hoveredOn
+       | sig == 39 -> displayView6 sig hoveredOn
+       | sig == 40 -> displayView7 sig hoveredOn
+       | sig == 41 -> displayView8 sig hoveredOn
+       | sig == 42 -> displayView9 sig hoveredOn
+       | sig == 43 -> displayView10 sig hoveredOn
+       | sig == 44 -> displayView11 sig hoveredOn
+       | sig == 45 -> congrats sig
+       | sig == 46 -> idea1 sig
+       | sig == 47 -> idea2 sig
+       | sig == 48 -> idea3 sig
+       | sig == 49 -> elmResources sig
        | otherwise -> displayWelcome1 sig)
 
 -- These numbers are used to create the containers that hold the code examples and explinations
@@ -112,7 +113,7 @@ dashPast =
     |> alpha 0.5
 
 dashPresent =
-  rect 25 5
+  rect 35 5
     |> filled elmBlue
 
 -- Display elements
@@ -243,6 +244,7 @@ elmGreen = rgb 127 209 17
 gifImage = image 180 119 "/images/demoGif1.gif"
 copyCode = image 180 103 "/images/copyCodeGIF.gif"
 hoverCode = image 226 190 "/images/hoverCodeGIF.gif"
+multiLine = image 400 27 "/images/multiLineGIF.gif"
 elmLogo = image 100 100 "/images/elmLogo.svg"
 importsIcon = image 100 100 "images/importsIcon.svg"
 modelIcon = image 100 100 "images/modelIcon.svg"
@@ -335,22 +337,6 @@ welcomeAnimation1 =
     [ toForm(copyCode)
     ]
 
-welcomeMsg3 : String
-welcomeMsg3 =
-  "Welcome to Elm Play, where you will\n" ++
-  "learn how to make a game with the\n" ++
-  "Elm language. The pages that follow\n" ++
-  "give you code to copy into the editor.\n" ++
-  "Put the mouse over the code to get an \n" ++
-  "explanation of what the code does. Pay\n" ++
-  "attention to the line numbers. Some\n" ++
-  "lines are left blank to separate blocks\n" ++
-  "of code. Some code does not have a\n" ++
-  "line number as it goes with the line of\n" ++
-  "code above. Click on the button below\n" ++
-  "to begin."
-
-
 -- Welcome Message 2
 -- `````````````````
 displayWelcome2 : Int -> Element
@@ -385,7 +371,7 @@ displayWelcome3 sig =
     , titleElement welcomeMsg1
     , gifElement gifImage
     , welcomeElement welcomeMsg2
-    , animationElement welcomeAnimation2 stepNumber2 stepDescription2
+    , animationElement welcomeAnimation3 stepNumber3 stepDescription3
     , buttonsLRElement sig
     ]
 
@@ -393,12 +379,12 @@ stepNumber3 : String
 stepNumber3 = "Step Three"
 
 stepDescription3: String
-stepDescription3 = "Mouse over the code for an explanation"
+stepDescription3 = "Move code with &uArr; to the line above"
 
 welcomeAnimation3 : Element
 welcomeAnimation3 =
   collage 400 190
-    [ toForm(copyCode)
+    [ toForm(multiLine)
     ]
 
 {--
@@ -620,7 +606,7 @@ signalsWelcomeMsg2 =
   "being clicked, if it is hovering over an\n" ++
   "element, or if a button is clicked. Time\n" ++
   "can be a signal. Without signals, there\n" ++
-  "can be no nteraction in the game. If the\n" ++
+  "can be no interaction in the game. If the\n" ++
   "user moves, changes, or interacts with\n" ++
   "the program in any way, then you need\n" ++
   "a signal. Signals in this game are:\n\n" ++
