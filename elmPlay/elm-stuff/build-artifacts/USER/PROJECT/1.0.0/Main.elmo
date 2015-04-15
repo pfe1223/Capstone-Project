@@ -809,30 +809,12 @@ Elm.Main.make = function (_elm) {
    "often combine signals with the function\n",
    "that writes the output to the screen.")));
    var signalsWelcomeMsg2 = A2($Basics._op["++"],
-   "Signals are values that change over\n",
+   "Signals are the interactions in the game.\n",
    A2($Basics._op["++"],
-   "time. Signals tell you if the mouse is\n",
+   "Some signals, like clicks, come from the\n",
    A2($Basics._op["++"],
-   "being clicked, if it is hovering over an\n",
-   A2($Basics._op["++"],
-   "element, or if a button is clicked. Time\n",
-   A2($Basics._op["++"],
-   "can be a signal. Without signals, there\n",
-   A2($Basics._op["++"],
-   "can be no interaction in the game. If the\n",
-   A2($Basics._op["++"],
-   "user moves, changes, or interacts with\n",
-   A2($Basics._op["++"],
-   "the program in any way, then you need\n",
-   A2($Basics._op["++"],
-   "a signal. Signals in this game are:\n\n",
-   A2($Basics._op["++"],
-   "&bull; The size of the window.\n",
-   A2($Basics._op["++"],
-   "&bull; If the game is play or paused.\n",
-   A2($Basics._op["++"],
-   "&bull; Time.\n",
-   "&bull; Arrow keys on the keyboard.\n"))))))))))));
+   "user. Other signals, like time, happen all\n",
+   "by themselves.")));
    var signalsWelcomeMsg1 = "Signals Section";
    var windowMsg = A2($Basics._op["++"],
    "Import the Window library. This allows you to\n",
@@ -905,9 +887,9 @@ Elm.Main.make = function (_elm) {
    "&bull; Resize the game."))))))))))));
    var importsWelcomeMsg1 = "Imports Section";
    var stepDescription3 = "Move code with &uArr; to the line above";
-   var stepNumber3 = "Step Three";
+   var stepNumber3 = "3";
    var stepDescription2 = "Mouse over the code for an explanation";
-   var stepNumber2 = "Step Two";
+   var stepNumber2 = "2";
    var stepDescription1 = "Copy the code to the editor";
    var stepNumber1 = "1";
    var welcomeMsg2 = A2($Basics._op["++"],
@@ -959,7 +941,9 @@ Elm.Main.make = function (_elm) {
    226,
    190,
    "/images/hoverCodeGIF.gif");
-   var welcomeAnimation2 = $Graphics$Collage.toForm(hoverCode);
+   var welcomeAnimation2 = $Graphics$Collage.move({ctor: "_Tuple2"
+                                                  ,_0: 0
+                                                  ,_1: -20})($Graphics$Collage.toForm(hoverCode));
    var copyCode = A3($Graphics$Element.image,
    180,
    103,
@@ -1007,25 +991,17 @@ Elm.Main.make = function (_elm) {
    60);
    var containerColor = $Color.white;
    var backgroundColor = darkerPurple;
-   var lineNumElement = function (strg) {
-      return A2($Graphics$Element.flow,
-      $Graphics$Element.right,
-      _L.fromArray([A2($Graphics$Element.spacer,
-                   5,
-                   2)
-                   ,body(strg)
-                   ,A2($Graphics$Element.spacer,
-                   5,
-                   2)]));
-   };
    var dashPresent = $Graphics$Collage.filled(elmBlue)(A2($Graphics$Collage.rect,
    35,
    5));
    var dashPast = $Graphics$Collage.alpha(0.5)($Graphics$Collage.filled(elmBlue)(A2($Graphics$Collage.rect,
-   22,
+   35,
    5)));
-   var wayfinderFuture = $Graphics$Collage.outlined($Graphics$Collage.solid(elmBlue))($Graphics$Collage.circle(13));
-   var wayfinderPresent = $Graphics$Collage.filled(elmBlue)($Graphics$Collage.circle(13));
+   var wayfinderFuture = $Graphics$Collage.outlined(_U.replace([["color"
+                                                                ,elmBlue]
+                                                               ,["width",4]],
+   $Graphics$Collage.defaultLine))($Graphics$Collage.circle(13));
+   var wayfinderPresent = $Graphics$Collage.filled(elmBlue)($Graphics$Collage.circle(15));
    var wayfindingWelcome = A2($Graphics$Element.flow,
    $Graphics$Element.right,
    _L.fromArray([A3($Graphics$Collage.collage,
@@ -1080,7 +1056,7 @@ Elm.Main.make = function (_elm) {
                 30,
                 50,
                 _L.fromArray([wayfinderFuture]))]));
-   var wayfinderPast = $Graphics$Collage.alpha(0.5)($Graphics$Collage.filled(elmBlue)($Graphics$Collage.circle(13)));
+   var wayfinderPast = $Graphics$Collage.alpha(0.5)($Graphics$Collage.filled(elmBlue)($Graphics$Collage.circle(15)));
    var wayfindingImports = A2($Graphics$Element.flow,
    $Graphics$Element.right,
    _L.fromArray([A3($Graphics$Collage.collage,
@@ -1445,8 +1421,15 @@ Elm.Main.make = function (_elm) {
       $Graphics$Element.middle)(A3($Graphics$Collage.collage,
       400,
       305,
-      _L.fromArray([$Graphics$Collage.outlined($Graphics$Collage.solid(elmBlue))(A2($Graphics$Collage.rect,
-                   390,
+      _L.fromArray([$Graphics$Collage.outlined(_U.replace([["color"
+                                                           ,elmBlue]
+                                                          ,["width",4]
+                                                          ,["join"
+                                                           ,$Graphics$Collage.Sharp(10)]
+                                                          ,["cap"
+                                                           ,$Graphics$Collage.Padded]],
+                   $Graphics$Collage.defaultLine))(A2($Graphics$Collage.rect,
+                   380,
                    260))
                    ,$Graphics$Collage.move({ctor: "_Tuple2"
                                            ,_0: 0
@@ -4540,7 +4523,6 @@ Elm.Main.make = function (_elm) {
                       ,buttonsLRElement: buttonsLRElement
                       ,buttonSOElement: buttonSOElement
                       ,questionElement: questionElement
-                      ,lineNumElement: lineNumElement
                       ,customLButton: customLButton
                       ,customRButton: customRButton
                       ,customGoButton: customGoButton

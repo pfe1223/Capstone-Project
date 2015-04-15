@@ -133,7 +133,7 @@ animationElement form stepNumber stepDescription =
   flow down
     [ color containerColor <| container containerWidth 305 middle <| (collage 400 305
       [ rect 380 260
-          |> outlined {defaultLine | color <- elmBlue, width <- 4}
+          |> outlined {defaultLine | color <- elmBlue, width <- 4, join <- Sharp 10, cap <- Padded}
       , toForm (subTitle stepDescription)
           |> move (0, 100)
       , circle 15
@@ -199,14 +199,6 @@ buttonSOElement sig =
 questionElement : String -> Element
 questionElement strg =
   color containerColor <| container containerWidth questionHeight middle <| subTitle strg
-
-lineNumElement : String -> Element
-lineNumElement strg =
-  flow right
-    [ spacer 5 2
-    , body strg
-    , spacer 5 2
-    ]
 
 -- Buttons
 customLButton : Int -> Element
@@ -363,7 +355,7 @@ stepDescription2 : String
 stepDescription2 = "Mouse over the code for an explanation"
 
 welcomeAnimation2 : Form
-welcomeAnimation2 = toForm(hoverCode)
+welcomeAnimation2 = toForm(hoverCode) |> move (0, -20)
 
 -- Welcome Message 3
 -- `````````````````
@@ -601,19 +593,10 @@ signalsWelcomeMsg1 =
 
 signalsWelcomeMsg2 : String
 signalsWelcomeMsg2 =
-  "Signals are values that change over\n" ++
-  "time. Signals tell you if the mouse is\n" ++
-  "being clicked, if it is hovering over an\n" ++
-  "element, or if a button is clicked. Time\n" ++
-  "can be a signal. Without signals, there\n" ++
-  "can be no interaction in the game. If the\n" ++
-  "user moves, changes, or interacts with\n" ++
-  "the program in any way, then you need\n" ++
-  "a signal. Signals in this game are:\n\n" ++
-  "&bull; The size of the window.\n" ++
-  "&bull; If the game is play or paused.\n" ++
-  "&bull; Time.\n" ++
-  "&bull; Arrow keys on the keyboard.\n"
+  "Signals are the interactions in the game.\n" ++
+  "Some signals, like clicks, come from the\n" ++
+  "user. Other signals, like time, happen all\n" ++
+  "by themselves."
 
 -- Signals Message
 displaySignals1 : Int -> String -> Element
