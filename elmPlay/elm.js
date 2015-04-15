@@ -4826,7 +4826,7 @@ Elm.Main.make = function (_elm) {
    var stepDescription2 = "Mouse over the code for an explanation";
    var stepNumber2 = "Step Two";
    var stepDescription1 = "Copy the code to the editor";
-   var stepNumber1 = "Step One";
+   var stepNumber1 = "1";
    var welcomeMsg2 = A2($Basics._op["++"],
    "Let\'s make a game with elm play.\n",
    "Here\'s how:");
@@ -4871,26 +4871,17 @@ Elm.Main.make = function (_elm) {
    400,
    27,
    "/images/multiLineGIF.gif");
-   var welcomeAnimation3 = A3($Graphics$Collage.collage,
-   400,
-   190,
-   _L.fromArray([$Graphics$Collage.toForm(multiLine)]));
+   var welcomeAnimation3 = $Graphics$Collage.toForm(multiLine);
    var hoverCode = A3($Graphics$Element.image,
    226,
    190,
    "/images/hoverCodeGIF.gif");
-   var welcomeAnimation2 = A3($Graphics$Collage.collage,
-   400,
-   190,
-   _L.fromArray([$Graphics$Collage.toForm(hoverCode)]));
+   var welcomeAnimation2 = $Graphics$Collage.toForm(hoverCode);
    var copyCode = A3($Graphics$Element.image,
    180,
    103,
    "/images/copyCodeGIF.gif");
-   var welcomeAnimation1 = A3($Graphics$Collage.collage,
-   400,
-   190,
-   _L.fromArray([$Graphics$Collage.toForm(copyCode)]));
+   var welcomeAnimation1 = $Graphics$Collage.toForm(copyCode);
    var gifImage = A3($Graphics$Element.image,
    180,
    119,
@@ -5355,9 +5346,9 @@ Elm.Main.make = function (_elm) {
       $Graphics$Element.middle)(subTitle(strg)));
    };
    var welcomeElement = function (strg) {
-      return $Graphics$Element.color(containerColor)(A3($Graphics$Element.container,
+      return $Graphics$Element.color(elmOrange)(A3($Graphics$Element.container,
       containerWidth,
-      115,
+      70,
       $Graphics$Element.middle)(subTitle(strg)));
    };
    var animationElement = F3(function (form,
@@ -5366,18 +5357,24 @@ Elm.Main.make = function (_elm) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
       _L.fromArray([$Graphics$Element.color(containerColor)(A3($Graphics$Element.container,
-                   containerWidth,
-                   35,
-                   $Graphics$Element.middle)(subTitle(stepNumber)))
-                   ,$Graphics$Element.color(containerColor)(A3($Graphics$Element.container,
-                   containerWidth,
-                   35,
-                   $Graphics$Element.middle)(subTitle(stepDescription)))
-                   ,$Graphics$Element.color(containerColor)(A4($Graphics$Element.container,
-                   containerWidth,
-                   190,
-                   $Graphics$Element.middle,
-                   form))]));
+      containerWidth,
+      305,
+      $Graphics$Element.middle)(A3($Graphics$Collage.collage,
+      400,
+      305,
+      _L.fromArray([$Graphics$Collage.outlined($Graphics$Collage.solid(elmBlue))(A2($Graphics$Collage.rect,
+                   390,
+                   260))
+                   ,$Graphics$Collage.move({ctor: "_Tuple2"
+                                           ,_0: 0
+                                           ,_1: 100})($Graphics$Collage.toForm(subTitle(stepDescription)))
+                   ,$Graphics$Collage.move({ctor: "_Tuple2"
+                                           ,_0: 0
+                                           ,_1: 130})($Graphics$Collage.filled(elmBlue)($Graphics$Collage.circle(15)))
+                   ,$Graphics$Collage.move({ctor: "_Tuple2"
+                                           ,_0: 0
+                                           ,_1: 130})($Graphics$Collage.toForm(subTitle(stepNumber)))
+                   ,form]))))]));
    });
    var wayfindingElement = function (wayfinding) {
       return $Graphics$Element.color(containerColor)(A3($Graphics$Element.container,

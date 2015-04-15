@@ -126,14 +126,23 @@ resourcesElement strg =
 
 welcomeElement : String -> Element
 welcomeElement strg =
-  color containerColor <| container containerWidth 115 middle <| subTitle strg
+  color elmOrange <| container containerWidth 70 middle <| subTitle strg
 
-animationElement : Element -> String -> String -> Element
+animationElement : Form -> String -> String -> Element
 animationElement form stepNumber stepDescription =
   flow down
-    [ color containerColor <| container containerWidth 35 middle <| subTitle stepNumber
-    , color containerColor <| container containerWidth 35 middle <| subTitle stepDescription
-    , color containerColor <| container containerWidth 190 middle form
+    [ color containerColor <| container containerWidth 305 middle <| (collage 400 305
+      [ rect 390 260
+          |> outlined (solid elmBlue)
+      , toForm (subTitle stepDescription)
+          |> move (0, 100)
+      , circle 15
+          |> filled elmBlue
+          |> move (0, 130)
+      , toForm (subTitle stepNumber)
+          |> move (0, 130)
+      , form
+      ])
     ]
 
 wayfindingElement : Element -> Element
@@ -326,16 +335,13 @@ welcomeMsg2 =
   "Here's how:"
 
 stepNumber1 : String
-stepNumber1 = "Step One"
+stepNumber1 = "1"
 
 stepDescription1 : String
 stepDescription1 = "Copy the code to the editor"
 
-welcomeAnimation1 : Element
-welcomeAnimation1 =
-  collage 400 190
-    [ toForm(copyCode)
-    ]
+welcomeAnimation1 : Form
+welcomeAnimation1 = toForm(copyCode)
 
 -- Welcome Message 2
 -- `````````````````
@@ -356,11 +362,8 @@ stepNumber2 = "Step Two"
 stepDescription2 : String
 stepDescription2 = "Mouse over the code for an explanation"
 
-welcomeAnimation2 : Element
-welcomeAnimation2 =
-  collage 400 190
-    [ toForm(hoverCode)
-    ]
+welcomeAnimation2 : Form
+welcomeAnimation2 = toForm(hoverCode)
 
 -- Welcome Message 3
 -- `````````````````
@@ -381,11 +384,8 @@ stepNumber3 = "Step Three"
 stepDescription3: String
 stepDescription3 = "Move code with &uArr; to the line above"
 
-welcomeAnimation3 : Element
-welcomeAnimation3 =
-  collage 400 190
-    [ toForm(multiLine)
-    ]
+welcomeAnimation3 : Form
+welcomeAnimation3 = toForm(multiLine)
 
 {--
 *************************************************************
