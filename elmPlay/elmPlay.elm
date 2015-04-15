@@ -1624,11 +1624,11 @@ updateContainer7 sig hoveredOn=
   flow down
     [ flow right [spacer 40 5, updateBadGuy9]
     , flow right [spacer 55 5, updateBadGuy10]
-    , flow right [spacer 10 5, updateBadGuy11]
-    , flow right [spacer 10 5, updateBadGuy11a]
-    , flow right [spacer 10 5, updateBadGuy12]
-    , flow right [spacer 10 5, updateBadGuy12a]
-    , flow right [spacer 10 5, updateBadGuy13]
+    , flow right [spacer 70 5, updateBadGuy11]
+    , flow right [spacer 85 5, updateBadGuy11a]
+    , flow right [spacer 70 5, updateBadGuy12]
+    , flow right [spacer 85 5, updateBadGuy12a]
+    , flow right [spacer 55 5, updateBadGuy13]
     ]
 
 updateBadGuy9Msg = "In all other cases, the function physicsUpdate\n" ++
@@ -1697,12 +1697,9 @@ displayUpdate8 sig hoveredOn =
 updateContainer8 : Int -> String -> Element
 updateContainer8 sig hoveredOn=
   flow down
-    [ updatePlayer1
-    , flow right
-        [ spacer (indent*2) 1
-        , updatePlayer1a
-        ]
-    , updatePlayer2
+    [ flow right [spacer 10 5, updatePlayer1]
+    , flow right [spacer 25 5, updatePlayer1a]
+    , flow right [spacer 10 5, updatePlayer2]
     ]
 
 updatePlayer1Msg = "This defines the function updatePlayer,\n" ++
@@ -1711,7 +1708,7 @@ updatePlayer1Msg = "This defines the function updatePlayer,\n" ++
                    "returns a player."
 updatePlayer1 : Element
 updatePlayer1 =
-  body " 92. updatePlayer : Time -> Int -> Int -> Int -> "
+  body "updatePlayer : Time -> Int -> Int -> Int -> "
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer1Msg) else (Signal.send hoveredOn ""))
 
 updatePlayer1a : Element
@@ -1723,7 +1720,7 @@ updatePlayer2Msg = "The function updatePlayer is called with\n" ++
                    "t, dir1, dir2, lives, and player."
 updatePlayer2 : Element
 updatePlayer2 =
-  body " 93. updatePlayer t dir1 dir2 lives player ="
+  body "updatePlayer t dir1 dir2 lives player ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer2Msg) else (Signal.send hoveredOn ""))
 
 displayUpdate9 : Int -> String -> Element
@@ -1740,36 +1737,12 @@ displayUpdate9 sig hoveredOn =
 updateContainer9 : Int -> String -> Element
 updateContainer9 sig hoveredOn=
   flow down
-    [ flow right
-        [ body " 94."
-        , spacer indent 1
-        , updatePlayer3
-        ]
-    , flow right
-        [ spacer (indent*5+5) 1
-        , updatePlayer3a
-        ]
-    , flow right
-        [ body " 95."
-        , spacer (indent*4) 1
-        , updatePlayer4
-        ]
-    , flow right
-        [ body " 96."
-        , spacer (indent*2) 1
-        , updatePlayer5
-        ]
-    , flow right
-        [ body " 97."
-        , spacer (indent*3) 1
-        , updatePlayer6
-        ]
-    , flow right
-        [ body " 98."
-        , spacer (indent*3) 1
-        , updatePlayer7
-        ]
-    , body " 99."
+    [ flow right [spacer 25 5, updatePlayer3]
+    , flow right [spacer 130 5, updatePlayer3a]
+    , flow right [spacer 130 5, updatePlayer4]
+    , flow right [spacer 40 5, updatePlayer5]
+    , flow right [spacer 55 5, updatePlayer6]
+    , flow right [spacer 55 5, updatePlayer7]
     ]
 
 updatePlayer3Msg = "An object player1 is created. Its attributes\n" ++
@@ -1786,7 +1759,7 @@ updatePlayer3 =
 
 updatePlayer3a : Element
 updatePlayer3a =
-  body " vx <- toFloat dir1 * 200"
+  body "vx <- toFloat dir1 * 200"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer3Msg) else (Signal.send hoveredOn ""))
 
 updatePlayer4Msg = "The updated vy attribute takes the value of dir2\n" ++
@@ -1837,45 +1810,14 @@ displayUpdate10 sig hoveredOn =
 updateContainer10 : Int -> String -> Element
 updateContainer10 sig hoveredOn=
   flow down
-    [ flow right
-        [ body " 100."
-        , spacer indent 1
-        , updatePlayer8
-        ]
-    , flow right
-        [ body " 101."
-        , spacer (indent*2) 1
-        , updatePlayer9
-        ]
-    , flow right
-        [ body " 102."
-        , spacer (indent*3) 1
-        , updatePlayer10
-        ]
-    , flow right
-        [ spacer (indent*7) 1
-        , updatePlayer10a
-        ]
-    , flow right
-        [ body " 103."
-        , spacer (indent*3) 1
-        , updatePlayer11
-        ]
-    , flow right
-        [ spacer (indent*7) 1
-        , updatePlayer11a
-        ]
-    , flow right
-        [ body " 104."
-        , spacer (indent*3) 1
-        , updatePlayer12
-        ]
-    , flow right
-        [ body " 105."
-        , spacer (indent+8) 1
-        , updatePlayer13
-        ]
-    , body " 106."
+    [ flow right [spacer 25 5, updatePlayer8]
+    , flow right [spacer 40 5, updatePlayer9]
+    , flow right [spacer 55 5, updatePlayer10]
+    , flow right [spacer 85 5, updatePlayer10a]
+    , flow right [spacer 55 5, updatePlayer11]
+    , flow right [spacer 85 5 , updatePlayer11a]
+    , flow right [spacer 55 5, updatePlayer12]
+    , flow right [spacer 40 5, updatePlayer13]
     ]
 
 updatePlayer8Msg = "This is the second part of the let statement.\n" ++
@@ -1898,12 +1840,12 @@ updatePlayer10Msg = "The updated attribute y takes the value of\n" ++
                     "halfHeight (-165) and halfHeight - 35 (165)."
 updatePlayer10 : Element
 updatePlayer10 =
-  body "y <- clamp (35-halfHeight) "
+  body "y <- clamp (35-halfHeight) (halfHeight-35)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer10Msg) else (Signal.send hoveredOn ""))
 
 updatePlayer10a : Element
 updatePlayer10a =
-  body " (halfHeight-35) player1.y,"
+  body "player1.y,"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer10Msg) else (Signal.send hoveredOn ""))
 
 updatePlayer11Msg = "The updated attribute x takes the value of\n" ++
@@ -1912,12 +1854,12 @@ updatePlayer11Msg = "The updated attribute x takes the value of\n" ++
                     "halfWidth (-265) and halfWidth - 35 (265)."
 updatePlayer11 : Element
 updatePlayer11 =
-  body "x <- clamp (35-halfWidth) "
+  body "x <- clamp (35-halfWidth) (halfWidth-35)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer11Msg) else (Signal.send hoveredOn ""))
 
 updatePlayer11a : Element
 updatePlayer11a =
-  body " (halfWidth-35) player1.x,"
+  body "player1.x,"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePlayer11Msg) else (Signal.send hoveredOn ""))
 
 updatePlayer12Msg = "The updated attribute lives takes the\n" ++
@@ -1948,28 +1890,11 @@ displayUpdate11 sig hoveredOn=
 updateContainer11 : Int -> String -> Element
 updateContainer11 sig hoveredOn =
   flow down
-    [ updatePhysics1
-    , flow right
-        [ body " 108."
-        , spacer indent 1
-        , updatePhysics2
-        ]
-    , flow right
-        [ body " 109."
-        , spacer (indent*2) 1
-        , updatePhysics3
-        ]
-    , flow right
-        [ body " 110."
-        , spacer (indent*2) 1
-        , updatePhysics4
-        ]
-    , flow right
-        [ body " 111."
-        , spacer indent 1
-        , updatePhysics5
-        ]
-    , body " 112."
+    [ flow right [spacer 10 5, updatePhysics1]
+    , flow right [spacer 25 5, updatePhysics2]
+    , flow right [spacer 40 5, updatePhysics3]
+    , flow right [spacer 40 5, updatePhysics4]
+    , flow right [spacer 25 5, updatePhysics5]
     ]
 
 updatePhysics1Msg = "The function updatePhysics takes t (time) and\n" ++
@@ -1978,7 +1903,7 @@ updatePhysics1Msg = "The function updatePhysics takes t (time) and\n" ++
                     "location of badGuy and player1 in the game area.\n"
 updatePhysics1 : Element
 updatePhysics1 =
-  body " 107. physicsUpdate t ({x,y,vx,vy} as obj) ="
+  body "physicsUpdate t ({x,y,vx,vy} as obj) ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updatePhysics1Msg) else (Signal.send hoveredOn ""))
 
 updatePhysics2Msg = "This code means that the object will have its\n" ++
@@ -2022,13 +1947,8 @@ displayUpdate12 sig hoveredOn=
 updateContainer12 : Int -> String -> Element
 updateContainer12 sig hoveredOn =
   flow down
-    [ updateNear1
-    , flow right
-        [ body " 114."
-        , spacer indent 1
-        , updateNear2
-        ]
-    , body " 115."
+    [ flow right [spacer 10 5, updateNear1]
+    , flow right [spacer 25 5, updateNear2]
     ]
 
 updateNear1Msg = "The function near takes three arguments: k, c,\n" ++
@@ -2038,7 +1958,7 @@ updateNear1Msg = "The function near takes three arguments: k, c,\n" ++
                  "x- or y-values of badGuy and player1."
 updateNear1 : Element
 updateNear1 =
-  body " 113. near k c n ="
+  body "near k c n ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateNear1Msg) else (Signal.send hoveredOn ""))
 
 updateNear2Msg = "This is the logic equation to determine if two\n" ++
@@ -2067,24 +1987,16 @@ displayUpdate13 sig hoveredOn=
 updateContainer13 : Int -> String -> Element
 updateContainer13 sig hoveredOn =
   flow down
-    [ updateWithin1
-    , flow right
-        [ body " 117."
-        , spacer indent 1
-        , updateWithin2
-        ]
-    , flow right
-        [ spacer (indent*4) 1
-        , updateWithin2a
-        ]
-    , body " 118."
+    [ flow right [spacer 10 5, updateWithin1]
+    , flow right [spacer 25 5, updateWithin2]
+    , flow right [spacer 40 5, updateWithin2a]
     ]
 
 updateWithin1Msg = "The function within takes badGuy and player1\n" ++
                    "and determines if they are touching."
 updateWithin1 : Element
 updateWithin1 =
-  body " 116. within badGuy player1 ="
+  body "within badGuy player1 ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateWithin1Msg) else (Signal.send hoveredOn ""))
 
 updateWithin2Msg = "The function within calls the function near,\n" ++
@@ -2116,23 +2028,10 @@ displayUpdate14 sig hoveredOn=
 updateContainer14 : Int -> String -> Element
 updateContainer14 sig hoveredOn =
   flow down
-    [ updateStepV1
-    , flow right
-        [ body " 120."
-        , spacer indent 1
-        , updateStepV2
-        ]
-    , flow right
-        [ body " 121."
-        , spacer (indent + 1) 1
-        , updateStepV3
-        ]
-    , flow right
-        [ body " 122."
-        , spacer (indent + 1) 1
-        , updateStepV4
-        ]
-    , body " 123."
+    [ flow right [spacer 10 5, updateStepV1]
+    , flow right [spacer 25 5, updateStepV2]
+    , flow right [spacer 40 5, updateStepV3]
+    , flow right [spacer 40 5, updateStepV4]
     ]
 
 updateStepV1Msg = "The function stepV takes two conditions (true\n" ++
@@ -2140,7 +2039,7 @@ updateStepV1Msg = "The function stepV takes two conditions (true\n" ++
                   "bounce badGuy off of the edges of the game area."
 updateStepV1 : Element
 updateStepV1 =
-  body " 119. stepV v condition1 condition2 ="
+  body "stepV v condition1 condition2 ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateStepV1Msg) else (Signal.send hoveredOn ""))
 
 updateStepV2Msg = "If condition1 is true, then stepV returns the\n" ++
@@ -2148,7 +2047,7 @@ updateStepV2Msg = "If condition1 is true, then stepV returns the\n" ++
                   "of the left and bottom edges of the game area."
 updateStepV2 : Element
 updateStepV2 =
-  body (padLeft 30 ' ' " if | condition1 -> abs v")
+  body ("if | condition1 -> abs v")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateStepV2Msg) else (Signal.send hoveredOn ""))
 
 updateStepV3Msg = "If condition2 is true, then stepV returns 0 -\n" ++
@@ -2156,7 +2055,7 @@ updateStepV3Msg = "If condition2 is true, then stepV returns 0 -\n" ++
                   "of the right and top edges of the game area."
 updateStepV3 : Element
 updateStepV3 =
-  body (padLeft 34 ' ' " | condition2 -> 0 - abs v")
+  body ("| condition2 -> 0 - abs v")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateStepV3Msg) else (Signal.send hoveredOn ""))
 
 updateStepV4Msg = "In all other cases, stepV returns the value\n" ++
@@ -2165,7 +2064,7 @@ updateStepV4Msg = "In all other cases, stepV returns the value\n" ++
                   "same direction."
 updateStepV4 : Element
 updateStepV4 =
-  body(padLeft 26 ' '  " | otherwise  -> v")
+  body("| otherwise  -> v")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateStepV4Msg) else (Signal.send hoveredOn ""))
 
 {--
@@ -2252,8 +2151,8 @@ displayView1 sig hoveredOn =
 viewContainer1 : Int -> String -> Element
 viewContainer1 sig hoveredOn =
   flow down
-    [ viewFunc1
-    , viewFunc2
+    [ flow right [spacer 10 5, viewFunc1]
+    , flow right [spacer 10 5, viewFunc2]
     ]
 
 viewFunc1Msg = "The view function is what outputs the game\n" ++
@@ -2262,7 +2161,7 @@ viewFunc1Msg = "The view function is what outputs the game\n" ++
                "returns an element."
 viewFunc1 : Element
 viewFunc1 =
-  body " 124. view : (Int, Int) -> Game -> Element"
+  body "view : (Int, Int) -> Game -> Element"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc1Msg) else (Signal.send hoveredOn ""))
 
 viewFunc2Msg = "The function view is passed the width and\n" ++
@@ -2270,7 +2169,7 @@ viewFunc2Msg = "The function view is passed the width and\n" ++
                "and player1 which make up defaultGame."
 viewFunc2 : Element
 viewFunc2 =
-  body " 125. view (w, h) {state, badGuy, player1} ="
+  body "view (w, h) {state, badGuy, player1} ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc2Msg) else (Signal.send hoveredOn ""))
 
 displayView2 : Int -> String -> Element
@@ -2287,20 +2186,8 @@ displayView2 sig hoveredOn =
 viewContainer2 : Int -> String -> Element
 viewContainer2 sig hoveredOn =
   flow down
-    [ flow right
-        [ body " 126."
-        , spacer indent 1
-        , viewFunc3
-        ]
-    , flow right
-        [ body " 127."
-        , spacer (indent*2) 1
-        , viewFunc4
-        ]
-    , flow right
-        [ spacer (indent*5) 1
-        , viewFunc4a
-        ]
+    [ flow right [spacer 25 5, viewFunc3]
+    , flow right [spacer 40 5, viewFunc4]
     ]
 
 viewFunc3Msg = "The let expression creates an object lives,\n" ++
@@ -2316,12 +2203,7 @@ viewFunc4Msg = "The objecct lives is assigned the value of\n" ++
                "a string, and has a size of 50."
 viewFunc4 : Element
 viewFunc4 =
-  body "lives = txt(Text.height 50) "
-    |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc4Msg) else (Signal.send hoveredOn ""))
-
-viewFunc4a : Element
-viewFunc4a =
-  body " (toString player1.lives)"
+  body "lives = txt(Text.height 50) (toString player1.lives)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc4Msg) else (Signal.send hoveredOn ""))
 
 displayView3 : Int -> String -> Element
@@ -2338,21 +2220,9 @@ displayView3 sig hoveredOn =
 viewContainer3 : Int -> String -> Element
 viewContainer3 sig hoveredOn =
   flow down
-    [ flow right
-        [ body " 128."
-        , spacer indent 1
-        , viewFunc5
-        ]
-    , flow right
-        [ body " 129."
-        , spacer (indent*2) 1
-        , viewFunc6
-        ]
-    , flow right
-        [ body " 130."
-        , spacer (indent*2) 1
-        , viewFunc7
-        ]
+    [ flow right [spacer 25 5, viewFunc5]
+    , flow right [spacer 40 5, viewFunc6]
+    , flow right [spacer 40 5, viewFunc7]
     ]
 
 viewFunc5Msg = "In is part of the let expression, and indicates\n" ++
@@ -2394,16 +2264,8 @@ displayView4 sig hoveredOn =
 viewContainer4 : Int -> String -> Element
 viewContainer4 sig hoveredOn =
   flow down
-    [ flow right
-        [ body " 131."
-        , spacer (indent*3) 1
-        , viewFunc8
-        ]
-    , flow right
-        [ body " 132."
-        , spacer (indent*4) 1
-        , viewFunc9
-        ]
+    [ flow right [spacer 55 5, viewFunc8]
+    , flow right [spacer 70 5, viewFunc9]
     ]
 
 viewFunc8Msg = "Inside of the collage is a rectangle with\n" ++
@@ -2435,21 +2297,9 @@ displayView5 sig hoveredOn =
 viewContainer5 : Int -> String -> Element
 viewContainer5 sig hoveredOn =
   flow down
-    [ flow right
-        [ body " 133."
-        , spacer (indent*3) 1
-        , viewFunc10
-        ]
-    , flow right
-        [ body " 134."
-        , spacer (indent*4) 1
-        , viewFunc11
-        ]
-    , flow right
-        [ body " 135."
-        , spacer (indent*4) 1
-        , viewFunc12
-        ]
+    [ flow right [spacer 55 5, viewFunc10]
+    , flow right [spacer 70 5, viewFunc11]
+    , flow right [spacer 70 5, viewFunc12]
     ]
 
 viewFunc10Msg = "Also in the collage is a six-sided polygon\n" ++
@@ -2489,21 +2339,9 @@ displayView6 sig hoveredOn =
 viewContainer6 : Int -> String -> Element
 viewContainer6 sig hoveredOn =
   flow down
-    [ flow right
-        [ body " 136."
-        , spacer (indent*3) 1
-        , viewFunc13
-        ]
-    , flow right
-        [ body " 137."
-        , spacer (indent*4) 1
-        , viewFunc14
-        ]
-    , flow right
-        [ body " 138."
-        , spacer (indent*4) 1
-        , viewFunc15
-        ]
+    [ flow right [spacer 55 5, viewFunc13]
+    , flow right [spacer 70 5, viewFunc14]
+    , flow right [spacer 70 5, viewFunc15]
     ]
 
 viewFunc13Msg = "A circle with a radius of 20 is also in the collage."
@@ -2543,16 +2381,8 @@ displayView7 sig hoveredOn =
 viewContainer7 :  Int -> String -> Element
 viewContainer7 sig hoveredOn =
   flow down
-    [ flow right
-        [ body " 139."
-        , spacer (indent*3) 1
-        , viewFunc16
-        ]
-    , flow right
-        [ body " 140."
-        , spacer (indent*4) 1
-        , viewFunc17
-        ]
+    [ flow right [spacer 55 5, viewFunc16]
+    , flow right [spacer 70 5, viewFunc17]
     ]
 
 viewFunc16Msg = "The object lives (created 5 pages ago)\n" ++
@@ -2586,26 +2416,10 @@ displayView8 sig hoveredOn =
 viewContainer8 :  Int -> String -> Element
 viewContainer8 sig hoveredOn =
   flow down
-    [ flow right
-        [ body " 141."
-        , spacer (indent*3) 1
-        , viewFunc18
-        ]
-    , flow right
-        [ spacer (indent*6) 1
-        , viewFunc18a
-        ]
-    , flow right
-        [ body " 142."
-        , spacer (indent*4) 1
-        , viewFunc19
-        ]
-    , flow right
-        [ body " 143."
-        , spacer (indent*3) 1
-        , viewFunc20
-        ]
-    , body " 144."
+    [ flow right [spacer 55 5, viewFunc18]
+    , flow right [spacer 85 5, viewFunc18a]
+    , flow right [spacer 70 5, viewFunc19]
+    , flow right [spacer 55 5, viewFunc20]
     ]
 
 viewFunc18Msg = "There is one last form in the collage. If the\n" ++
@@ -2617,12 +2431,12 @@ viewFunc18Msg = "There is one last form in the collage. If the\n" ++
                 "txt are defined over the next few pages."
 viewFunc18 : Element
 viewFunc18 =
-  body ", toForm (if state == Play then "
+  body ", toForm (if state == Play then spacer 1 1"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc18Msg) else (Signal.send hoveredOn ""))
 
 viewFunc18a : Element
 viewFunc18a =
-  body " spacer 1 1 else txt identity msg"
+  body "else txt identity msg"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc18Msg) else (Signal.send hoveredOn ""))
 
 viewFunc19Msg = "The form is moved to the location 0 (centered),\n" ++
@@ -2654,10 +2468,10 @@ displayView9 sig hoveredOn =
 viewContainer9 :  Int -> String -> Element
 viewContainer9 sig hoveredOn =
   flow down
-    [ elmGreyColor
-    , elmBlueColor
-    , elmGreenColor
-    , textColor
+    [ flow right [spacer 10 5, elmGreyColor]
+    , flow right [spacer 10 5, elmBlueColor]
+    , flow right [spacer 10 5, elmGreenColor]
+    , flow right [spacer 10 5, textColor]
     ]
 
 elmGreyColorMsg = "elmGrey is a custom color with a red value\n" ++
@@ -2665,14 +2479,14 @@ elmGreyColorMsg = "elmGrey is a custom color with a red value\n" ++
                   "of 102. This color was taken from the Elm logo."
 elmGreyColor : Element
 elmGreyColor =
-  body " 145. elmGrey = rgb 71 80 102"
+  body "elmGrey = rgb 71 80 102"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn elmGreyColorMsg) else (Signal.send hoveredOn ""))
 
 elmBlueColorMsg = "elmBlue is a custom color with a red value\n" ++
                   "of 76, a green value of 166, and a blue value\n" ++
                   "of 195. This color was taken from the Elm logo."
 elmBlueColor =
-  body " 146. elmBlue = rgb 76 166 195"
+  body "elmBlue = rgb 76 166 195"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn elmBlueColorMsg) else (Signal.send hoveredOn ""))
 
 elmGreenColorMsg = "elmGreen is a custom color with a red value\n" ++
@@ -2680,14 +2494,14 @@ elmGreenColorMsg = "elmGreen is a custom color with a red value\n" ++
                    "of 17. This color was taken from the Elm logo."
 elmGreenColor : Element
 elmGreenColor =
-  body " 147. elmGreen = rgb 127 209 17"
+  body "elmGreen = rgb 127 209 17"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn elmGreenColorMsg) else (Signal.send hoveredOn ""))
 
 textColorMsg = "textColor is set to white. This is the color\n" ++
                "used for any text prefaced with txt."
 textColor : Element
 textColor =
-  body " 148. textColor = white"
+  body "textColor = white"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn textColorMsg) else (Signal.send hoveredOn ""))
 
 displayView10 : Int -> String -> Element
@@ -2704,15 +2518,8 @@ displayView10 sig hoveredOn =
 viewContainer10 :  Int -> String -> Element
 viewContainer10 sig hoveredOn =
   flow down
-    [ txtFunc1
-    , flow right
-        [ spacer (indent*3) 1
-        , txtFunc2
-        ]
-    , flow right
-        [ spacer (indent*3) 1
-        , txtFunc3
-        ]
+    [ flow right [spacer 10 5, txtFunc1]
+    , flow right [spacer 25 5, txtFunc2]
     ]
 
 txtFunc1Msg = "The txt function sets up the characteristics for\n" ++
@@ -2720,20 +2527,14 @@ txtFunc1Msg = "The txt function sets up the characteristics for\n" ++
               "from a string, has the color textColor (white)."
 txtFunc1 : Element
 txtFunc1 =
-  body " 149. txt f = Text.fromString >> Text.color "
+  body "txt f = Text.fromString >> Text.color textColor >>"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn txtFunc1Msg) else (Signal.send hoveredOn ""))
 
 txtFunc2Msg = "The text function also sets the font to monospace."
 txtFunc2 : Element
 txtFunc2 =
-  body " textColor >> Text.monospace "
+  body "Text.monospace >> f >> Text.leftAligned"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn txtFunc2Msg) else (Signal.send hoveredOn ""))
-
-txtFunc3Msg = "Lastly, the text is left aligned."
-txtFunc3 : Element
-txtFunc3 =
-  body " >> f >> Text.leftAligned"
-    |> hoverable (\ r -> if r then (Signal.send hoveredOn txtFunc3Msg) else (Signal.send hoveredOn ""))
 
 displayView11 : Int -> String -> Element
 displayView11 sig hoveredOn =
@@ -2749,11 +2550,8 @@ displayView11 sig hoveredOn =
 viewContainer11 :  Int -> String -> Element
 viewContainer11 sig hoveredOn =
   flow down
-    [ msgFunc1
-    , flow right
-        [ spacer (indent*3) 1
-        , msgFunc2
-        ]
+    [ flow right [spacer 10 5, msgFunc1]
+    , flow right [spacer 25 5, msgFunc2]
     ]
 
 msgFuncMsg = "When the state of the game is Pause, you\n" ++
@@ -2765,12 +2563,12 @@ msgFuncMsg = "When the state of the game is Pause, you\n" ++
              "a space &larr;."
 msgFunc1 : Element
 msgFunc1 =
-  body " 150. msg = 'SPACE to start, &larr ;&uarr ;"
+  body "msg = 'SPACE to start, &larr ;&uarr ;&darr ;"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn msgFuncMsg) else (Signal.send hoveredOn ""))
 
 msgFunc2 : Element
 msgFunc2 =
-  body " &darr ;&rarr ; to move'"
+  body "&rarr ; to move'"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn msgFuncMsg) else (Signal.send hoveredOn ""))
 
 {--
