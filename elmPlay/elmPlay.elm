@@ -126,7 +126,7 @@ resourcesElement strg =
 
 welcomeElement : String -> Element
 welcomeElement strg =
-  color elmOrange <| container containerWidth 70 middle <| subTitle strg
+  color containerColor <| container containerWidth 70 middle <| subTitle strg
 
 animationElement : Form -> String -> String -> Element
 animationElement form stepNumber stepDescription =
@@ -246,6 +246,8 @@ gifImage = image 180 119 "/images/demoGif1.gif"
 copyCode = image 180 103 "/images/copyCodeGIF.gif"
 hoverCode = image 226 190 "/images/hoverCodeGIF.gif"
 multiLine = image 400 27 "/images/multiLineGIF.gif"
+importsGIF = image 350 96 "/images/importsGIF.gif"
+buttonGIF = image 116 64 "/images/buttonGIF.gif"
 elmLogo = image 100 100 "/images/elmLogo.svg"
 importsIcon = image 100 100 "images/importsIcon.svg"
 modelIcon = image 100 100 "images/modelIcon.svg"
@@ -392,7 +394,9 @@ importsWelcome sig =
     [ wayfindingElement wayfindingImports
     , titleElement importsWelcomeMsg1
     , iconElement importsIcon
-    , subtitleElement importsWelcomeMsg2
+    , color containerColor <| container containerWidth 100 middle <| subTitle importsWelcomeMsg2
+    , color containerColor <| collage containerWidth 275
+      [ toForm(importsGIF)]
     , buttonsLRElement sig
     ]
 
@@ -433,19 +437,9 @@ importsWelcomeMsg1 =
 
 importsWelcomeMsg2 : String
 importsWelcomeMsg2 =
-  "The Imports Section loads all of the\n" ++
-  "packages needed for the game.\n" ++
-  "Without these packages, the Elm\n" ++
-  "language is very limited. You will\n" ++
-  "add ability to:\n\n" ++
-  "&bull; Use colors\n" ++
-  "&bull; Draw the circle & hexagon\n" ++
-  "&bull; Create elements for text\n" ++
-  "&bull; Get input from the keyboard\n" ++
-  "&bull; Recieve and map signals as input\n" ++
-  "&bull; Modify text on the screen\n" ++
-  "&bull; Keep track of time as it passes\n" ++
-  "&bull; Resize the game."
+  "Imports allow us to add features\n" ++
+  "to the game. Here's what we can\n" ++
+  "now use:" 
 
 -- Imports Message
 displayImports : Int -> String -> Element
@@ -552,7 +546,9 @@ signalsWelcome sig =
     [ wayfindingElement wayfindingSignals
     , titleElement signalsWelcomeMsg1
     , iconElement signalsIcon
-    , subtitleElement signalsWelcomeMsg2
+    , color containerColor <| container containerWidth 100 middle <| subTitle signalsWelcomeMsg2
+    , color containerColor <| collage containerWidth 275
+      [ toForm(buttonGIF)]
     , buttonsLRElement sig
     ]
 

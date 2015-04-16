@@ -861,30 +861,10 @@ Elm.Main.make = function (_elm) {
    "setting the colors for the game area and\n",
    "the shapes."));
    var importsWelcomeMsg2 = A2($Basics._op["++"],
-   "The Imports Section loads all of the\n",
+   "Imports allow us to add features\n",
    A2($Basics._op["++"],
-   "packages needed for the game.\n",
-   A2($Basics._op["++"],
-   "Without these packages, the Elm\n",
-   A2($Basics._op["++"],
-   "language is very limited. You will\n",
-   A2($Basics._op["++"],
-   "add ability to:\n\n",
-   A2($Basics._op["++"],
-   "&bull; Use colors\n",
-   A2($Basics._op["++"],
-   "&bull; Draw the circle & hexagon\n",
-   A2($Basics._op["++"],
-   "&bull; Create elements for text\n",
-   A2($Basics._op["++"],
-   "&bull; Get input from the keyboard\n",
-   A2($Basics._op["++"],
-   "&bull; Recieve and map signals as input\n",
-   A2($Basics._op["++"],
-   "&bull; Modify text on the screen\n",
-   A2($Basics._op["++"],
-   "&bull; Keep track of time as it passes\n",
-   "&bull; Resize the game."))))))))))));
+   "to the game. Here\'s what we can\n",
+   "now use:"));
    var importsWelcomeMsg1 = "Imports Section";
    var stepDescription3 = "Move code with &uArr; to the line above";
    var stepNumber3 = "3";
@@ -932,6 +912,14 @@ Elm.Main.make = function (_elm) {
    100,
    100,
    "/images/elmLogo.svg");
+   var buttonGIF = A3($Graphics$Element.image,
+   116,
+   64,
+   "/images/buttonGIF.gif");
+   var importsGIF = A3($Graphics$Element.image,
+   350,
+   96,
+   "/images/importsGIF.gif");
    var multiLine = A3($Graphics$Element.image,
    400,
    27,
@@ -1405,7 +1393,7 @@ Elm.Main.make = function (_elm) {
       $Graphics$Element.middle)(subTitle(strg)));
    };
    var welcomeElement = function (strg) {
-      return $Graphics$Element.color(elmOrange)(A3($Graphics$Element.container,
+      return $Graphics$Element.color(containerColor)(A3($Graphics$Element.container,
       containerWidth,
       70,
       $Graphics$Element.middle)(subTitle(strg)));
@@ -3660,7 +3648,14 @@ Elm.Main.make = function (_elm) {
       _L.fromArray([wayfindingElement(wayfindingImports)
                    ,titleElement(importsWelcomeMsg1)
                    ,iconElement(importsIcon)
-                   ,subtitleElement(importsWelcomeMsg2)
+                   ,$Graphics$Element.color(containerColor)(A3($Graphics$Element.container,
+                   containerWidth,
+                   100,
+                   $Graphics$Element.middle)(subTitle(importsWelcomeMsg2)))
+                   ,$Graphics$Element.color(containerColor)(A3($Graphics$Collage.collage,
+                   containerWidth,
+                   275,
+                   _L.fromArray([$Graphics$Collage.toForm(importsGIF)])))
                    ,buttonsLRElement(sig)]));
    };
    var displayImports = F2(function (sig,
@@ -3682,7 +3677,14 @@ Elm.Main.make = function (_elm) {
       _L.fromArray([wayfindingElement(wayfindingSignals)
                    ,titleElement(signalsWelcomeMsg1)
                    ,iconElement(signalsIcon)
-                   ,subtitleElement(signalsWelcomeMsg2)
+                   ,$Graphics$Element.color(containerColor)(A3($Graphics$Element.container,
+                   containerWidth,
+                   100,
+                   $Graphics$Element.middle)(subTitle(signalsWelcomeMsg2)))
+                   ,$Graphics$Element.color(containerColor)(A3($Graphics$Collage.collage,
+                   containerWidth,
+                   275,
+                   _L.fromArray([$Graphics$Collage.toForm(buttonGIF)])))
                    ,buttonsLRElement(sig)]));
    };
    var displaySignals1 = F2(function (sig,
@@ -4541,6 +4543,8 @@ Elm.Main.make = function (_elm) {
                       ,copyCode: copyCode
                       ,hoverCode: hoverCode
                       ,multiLine: multiLine
+                      ,importsGIF: importsGIF
+                      ,buttonGIF: buttonGIF
                       ,elmLogo: elmLogo
                       ,importsIcon: importsIcon
                       ,modelIcon: modelIcon
