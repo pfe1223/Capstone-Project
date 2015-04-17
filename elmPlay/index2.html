@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>elm play - Create a Game Using elm</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<!-- Patrick's Stuff -->
+	<menu>
+		<iframe src="http://localhost:8000/elmPlay.elm" border="0"></iframe>
+	</menu>
+	<!-- Try it using Elm -->
+	<section>
+		<p id="code">Type the code in here! <span class="close">x</span></p>
+		<p id="run">See it here!<span class="close">x</span></p>
+		<iframe src="http://elm-lang.org/try" border="0"></iframe>
+	</section>
+	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script>
+		var width = $(window).width();
+		width = width - 420;
+		// on click, close instructional paragraphs
+		$( ".close" ).click(function() {
+		  $(this).parent().remove();
+		});
+		// set widths 
+		$('section').css( "width", width);
+		$(window).resize(function() {
+			$('section').css( "width", width);
+		});
+	</script>
+</body>
+</html>

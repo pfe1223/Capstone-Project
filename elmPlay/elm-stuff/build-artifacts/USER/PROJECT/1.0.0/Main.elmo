@@ -291,32 +291,10 @@ Elm.Main.make = function (_elm) {
    "takes a pair of integers and a game, and it\n",
    "returns an element.")));
    var viewWelcomeMsg2 = A2($Basics._op["++"],
-   "Up until this point, there has been\n",
+   "This is our final section of the\n",
    A2($Basics._op["++"],
-   "no graphical representation of the\n",
-   A2($Basics._op["++"],
-   "game. The position and lives of the\n",
-   A2($Basics._op["++"],
-   "characters existed only as numbers.\n",
-   A2($Basics._op["++"],
-   "The View Section displays the game\n",
-   A2($Basics._op["++"],
-   "to the computer screen. You will:\n\n",
-   A2($Basics._op["++"],
-   "&bull; Create specific colors and text\n",
-   A2($Basics._op["++"],
-   "   formatting.\n",
-   A2($Basics._op["++"],
-   "&bull; Draw the playing surface and\n",
-   A2($Basics._op["++"],
-   "   characters.\n",
-   A2($Basics._op["++"],
-   "&bull; Color the playing surface and \n",
-   A2($Basics._op["++"],
-   "   characters.\n",
-   A2($Basics._op["++"],
-   "&bull; Put the lives on the top of the screen\n",
-   "   and a message on the bottom.")))))))))))));
+   "game. We\'re going to draw the models\n",
+   "to the screen."));
    var viewWelcomeMsg1 = "View Section\n";
    var updateStepV4Msg = A2($Basics._op["++"],
    "In all other cases, stepV returns the value\n",
@@ -607,28 +585,8 @@ Elm.Main.make = function (_elm) {
    var updateWelcomeMsg2 = A2($Basics._op["++"],
    "The Update Section is where the magic\n",
    A2($Basics._op["++"],
-   "happens. You created the signals which\n",
-   A2($Basics._op["++"],
-   "send commands to the computer. The\n",
-   A2($Basics._op["++"],
-   "models describe the objects used in the\n",
-   A2($Basics._op["++"],
-   "game. The Update Section takes those\n",
-   A2($Basics._op["++"],
-   "signals and changes the model for the\n",
-   A2($Basics._op["++"],
-   "appropriate object. You will create\n",
-   A2($Basics._op["++"],
-   "updates for:\n\n",
-   A2($Basics._op["++"],
-   "&bull; The state of the game (play or pause).\n",
-   A2($Basics._op["++"],
-   "&bull; The position of the bad guy.\n",
-   A2($Basics._op["++"],
-   "&bull; The position and lives of the good guy.\n",
-   A2($Basics._op["++"],
-   "&bull; Are the bad guy and good guy\n",
-   "   touching?"))))))))))));
+   "happens. We\'re going to take the signals\n",
+   "and have them modify the models."));
    var updateWelcomeMsg1 = "Update Section\n";
    var aliasInput6Msg = "Ends the list of attributes for Input.";
    var aliasInput5Msg = "There is an attribute called delta with a Time value.";
@@ -712,34 +670,10 @@ Elm.Main.make = function (_elm) {
    "gameWidth and gameHeight are also grouped\n",
    "together as a tuple.\n"));
    var modelWelcomeMsg2 = A2($Basics._op["++"],
-   "The Model Section is used to create the\n",
+   "In the Model Section we\'ll create the\n",
    A2($Basics._op["++"],
    "objects and their characteristics to be\n",
-   A2($Basics._op["++"],
-   "used in the game. You will create:\n\n",
-   A2($Basics._op["++"],
-   "&bull; The state of the game which is\n",
-   A2($Basics._op["++"],
-   "   either Play or Pause.\n",
-   A2($Basics._op["++"],
-   "&bull; An enemy with a position and a\n",
-   A2($Basics._op["++"],
-   "   velocity.\n",
-   A2($Basics._op["++"],
-   "&bull; A player with a position, a velocity\n",
-   A2($Basics._op["++"],
-   "   velocity, and three lives.\n",
-   A2($Basics._op["++"],
-   "&bull; A game with a good guy, a bad\n",
-   A2($Basics._op["++"],
-   "   guy, and a state (play or pause).\n",
-   A2($Basics._op["++"],
-   "&bull; Initialize the game with parameter\n",
-   A2($Basics._op["++"],
-   "   for when you begin playing.\n",
-   A2($Basics._op["++"],
-   "&bull; Input that has direction, time, and if\n",
-   "   spacebar is pressed."))))))))))))));
+   "used in the game."));
    var modelWelcomeMsg1 = "Model Section";
    var signalInput8Msg = "Finally, the change in time is recorded in seconds.";
    var signalInput7Msg = A2($Basics._op["++"],
@@ -912,6 +846,18 @@ Elm.Main.make = function (_elm) {
    100,
    100,
    "/images/elmLogo.svg");
+   var viewGIF = A3($Graphics$Element.image,
+   388,
+   260,
+   "/images/viewGIF.gif");
+   var updateGIF = A3($Graphics$Element.image,
+   218,
+   112,
+   "/images/updateGIF.gif");
+   var modelGIF = A3($Graphics$Element.image,
+   326,
+   260,
+   "/images/modelGIF.gif");
    var buttonGIF = A3($Graphics$Element.image,
    116,
    64,
@@ -921,7 +867,7 @@ Elm.Main.make = function (_elm) {
    96,
    "/images/importsGIF.gif");
    var multiLine = A3($Graphics$Element.image,
-   400,
+   344,
    27,
    "/images/multiLineGIF.gif");
    var welcomeAnimation3 = $Graphics$Collage.toForm(multiLine);
@@ -3745,7 +3691,14 @@ Elm.Main.make = function (_elm) {
       _L.fromArray([wayfindingElement(wayfindingModel)
                    ,titleElement(modelWelcomeMsg1)
                    ,iconElement(modelIcon)
-                   ,subtitleElement(modelWelcomeMsg2)
+                   ,$Graphics$Element.color(containerColor)(A3($Graphics$Element.container,
+                   containerWidth,
+                   100,
+                   $Graphics$Element.middle)(subTitle(modelWelcomeMsg2)))
+                   ,$Graphics$Element.color(containerColor)(A3($Graphics$Collage.collage,
+                   containerWidth,
+                   275,
+                   _L.fromArray([$Graphics$Collage.toForm(modelGIF)])))
                    ,buttonsLRElement(sig)]));
    };
    var displayModel1 = F2(function (sig,
@@ -3845,7 +3798,14 @@ Elm.Main.make = function (_elm) {
       _L.fromArray([wayfindingElement(wayfindingUpdate)
                    ,titleElement(updateWelcomeMsg1)
                    ,iconElement(updateIcon)
-                   ,subtitleElement(updateWelcomeMsg2)
+                   ,$Graphics$Element.color(containerColor)(A3($Graphics$Element.container,
+                   containerWidth,
+                   100,
+                   $Graphics$Element.middle)(subTitle(updateWelcomeMsg2)))
+                   ,$Graphics$Element.color(containerColor)(A3($Graphics$Collage.collage,
+                   containerWidth,
+                   275,
+                   _L.fromArray([$Graphics$Collage.toForm(updateGIF)])))
                    ,buttonsLRElement(sig)]));
    };
    var displayUpdate1 = F2(function (sig,
@@ -4036,7 +3996,14 @@ Elm.Main.make = function (_elm) {
       _L.fromArray([wayfindingElement(wayfindingView)
                    ,titleElement(viewWelcomeMsg1)
                    ,iconElement(viewIcon)
-                   ,subtitleElement(viewWelcomeMsg2)
+                   ,$Graphics$Element.color(containerColor)(A3($Graphics$Element.container,
+                   containerWidth,
+                   100,
+                   $Graphics$Element.middle)(subTitle(viewWelcomeMsg2)))
+                   ,$Graphics$Element.color(containerColor)(A3($Graphics$Collage.collage,
+                   containerWidth,
+                   275,
+                   _L.fromArray([$Graphics$Collage.toForm(viewGIF)])))
                    ,buttonsLRElement(sig)]));
    };
    var displayView1 = F2(function (sig,
@@ -4350,8 +4317,8 @@ Elm.Main.make = function (_elm) {
          switch (_v0.ctor)
          {case "_Tuple2":
             return $Graphics$Element.color(backgroundColor)(A4($Graphics$Element.container,
-              _v0._0,
-              _v0._1,
+              420,
+              720,
               $Graphics$Element.middle,
               _U.eq(sig,
               0) ? displayWelcome1(sig) : _U.eq(sig,
@@ -4545,6 +4512,9 @@ Elm.Main.make = function (_elm) {
                       ,multiLine: multiLine
                       ,importsGIF: importsGIF
                       ,buttonGIF: buttonGIF
+                      ,modelGIF: modelGIF
+                      ,updateGIF: updateGIF
+                      ,viewGIF: viewGIF
                       ,elmLogo: elmLogo
                       ,importsIcon: importsIcon
                       ,modelIcon: modelIcon

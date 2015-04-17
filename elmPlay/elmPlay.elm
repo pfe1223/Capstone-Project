@@ -26,7 +26,7 @@ hoveredOn = Signal.channel ""
 
 view : (Int, Int) -> Int -> String -> Element
 view (width, height) sig hoveredOn =
-  color backgroundColor <| container width height middle (
+  color backgroundColor <| container 420 720 middle (
     if | sig == 0 -> displayWelcome1 sig
        | sig == 1 -> displayWelcome2 sig
        | sig == 2 -> displayWelcome3 sig
@@ -245,9 +245,12 @@ elmGreen = rgb 127 209 17
 gifImage = image 180 119 "/images/demoGif1.gif"
 copyCode = image 180 103 "/images/copyCodeGIF.gif"
 hoverCode = image 226 190 "/images/hoverCodeGIF.gif"
-multiLine = image 400 27 "/images/multiLineGIF.gif"
+multiLine = image 344 27 "/images/multiLineGIF.gif"
 importsGIF = image 350 96 "/images/importsGIF.gif"
 buttonGIF = image 116 64 "/images/buttonGIF.gif"
+modelGIF = image 326 260 "/images/modelGIF.gif"
+updateGIF = image 218 112 "/images/updateGIF.gif"
+viewGIF = image 388 260 "/images/viewGIF.gif"
 elmLogo = image 100 100 "/images/elmLogo.svg"
 importsIcon = image 100 100 "images/importsIcon.svg"
 modelIcon = image 100 100 "images/modelIcon.svg"
@@ -804,7 +807,9 @@ modelWelcome sig =
     [ wayfindingElement wayfindingModel
     , titleElement modelWelcomeMsg1
     , iconElement modelIcon
-    , subtitleElement modelWelcomeMsg2
+    , color containerColor <| container containerWidth 100 middle <| subTitle modelWelcomeMsg2
+    , color containerColor <| collage containerWidth 275
+      [ toForm(modelGIF)]
     , buttonsLRElement sig
     ]
 
@@ -845,21 +850,9 @@ modelWelcomeMsg1 =
 
 modelWelcomeMsg2 : String
 modelWelcomeMsg2 =
-  "The Model Section is used to create the\n" ++
+  "In the Model Section we'll create the\n" ++
   "objects and their characteristics to be\n" ++
-  "used in the game. You will create:\n\n" ++
-  "&bull; The state of the game which is\n" ++
-  "   either Play or Pause.\n" ++
-  "&bull; An enemy with a position and a\n" ++
-  "   velocity.\n" ++
-  "&bull; A player with a position, a velocity\n" ++
-  "   velocity, and three lives.\n" ++
-  "&bull; A game with a good guy, a bad\n" ++
-  "   guy, and a state (play or pause).\n" ++
-  "&bull; Initialize the game with parameter\n" ++
-  "   for when you begin playing.\n" ++
-  "&bull; Input that has direction, time, and if\n" ++
-  "   spacebar is pressed."
+  "used in the game."
 
 -- Model Message 1
 displayModel1 : Int -> String -> Element
@@ -1173,7 +1166,9 @@ updateWelcome sig =
     [ wayfindingElement wayfindingUpdate
     , titleElement updateWelcomeMsg1
     , iconElement updateIcon
-    , subtitleElement updateWelcomeMsg2
+    , color containerColor <| container containerWidth 100 middle <| subTitle updateWelcomeMsg2
+    , color containerColor <| collage containerWidth 275
+      [ toForm(updateGIF)]
     , buttonsLRElement sig
     ]
 
@@ -1215,18 +1210,8 @@ updateWelcomeMsg1 =
 updateWelcomeMsg2 : String
 updateWelcomeMsg2 =
   "The Update Section is where the magic\n" ++
-  "happens. You created the signals which\n" ++
-  "send commands to the computer. The\n" ++
-  "models describe the objects used in the\n" ++
-  "game. The Update Section takes those\n" ++
-  "signals and changes the model for the\n" ++
-  "appropriate object. You will create\n" ++
-  "updates for:\n\n" ++
-  "&bull; The state of the game (play or pause).\n" ++
-  "&bull; The position of the bad guy.\n" ++
-  "&bull; The position and lives of the good guy.\n" ++
-  "&bull; Are the bad guy and good guy\n" ++
-  "   touching?"
+  "happens. We're going to take the signals\n" ++
+  "and have them modify the models."
 
 -- Update Message 1
 displayUpdate1 : Int -> String -> Element
@@ -2069,7 +2054,9 @@ viewWelcome sig =
     [ wayfindingElement wayfindingView
     , titleElement viewWelcomeMsg1
     , iconElement viewIcon
-    , subtitleElement viewWelcomeMsg2
+    , color containerColor <| container containerWidth 100 middle <| subTitle viewWelcomeMsg2
+    , color containerColor <| collage containerWidth 275
+      [ toForm(viewGIF)]
     , buttonsLRElement sig
     ]
 
@@ -2110,20 +2097,9 @@ viewWelcomeMsg1 =
 
 viewWelcomeMsg2 : String
 viewWelcomeMsg2 =
-  "Up until this point, there has been\n" ++
-  "no graphical representation of the\n" ++
-  "game. The position and lives of the\n" ++
-  "characters existed only as numbers.\n" ++
-  "The View Section displays the game\n" ++
-  "to the computer screen. You will:\n\n" ++
-  "&bull; Create specific colors and text\n" ++
-  "   formatting.\n" ++
-  "&bull; Draw the playing surface and\n" ++
-  "   characters.\n" ++
-  "&bull; Color the playing surface and \n" ++
-  "   characters.\n" ++
-  "&bull; Put the lives on the top of the screen\n" ++
-  "   and a message on the bottom."
+  "This is our final section of the\n" ++
+  "game. We're going to draw the models\n" ++
+  "to the screen."
 
 -- View Message 1
 displayView1 : Int -> String -> Element
