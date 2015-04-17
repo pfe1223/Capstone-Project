@@ -250,8 +250,12 @@ importsGIF = image 350 96 "/images/importsGIF.gif"
 buttonGIF = image 116 64 "/images/buttonGIF.gif"
 modelGIF = image 326 260 "/images/modelGIF.gif"
 updateGIF = image 218 112 "/images/updateGIF.gif"
-viewGIF = image 388 260 "/images/viewGIF.gif"
-elmLogo = image 100 100 "/images/elmLogo.svg"
+viewGIF = image 388 260 "/images/view2GIF.gif"
+elmLogoGIF1 = image 145 125 "/images/multiLogoGIF1.gif"
+elmLogoGIF2 = image 145 125 "/images/multiLogoGIF2.gif"
+elmLogoGIF3 = image 145 125 "/images/multiLogoGIF3.gif"
+elmLogoGIF4 = image 145 125 "/images/multiLogoGIF4.gif"
+elmLogoGIF5 = image 145 125 "/images/multiLogoGIF5.gif"
 importsIcon = image 100 100 "images/importsIcon.svg"
 modelIcon = image 100 100 "images/modelIcon.svg"
 signalsIcon = image 100 100 "images/signalsIcon.svg"
@@ -2548,7 +2552,7 @@ congrats sig =
   flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement viewCongratsMsg1
-    , iconElement elmLogo
+    , iconElement elmLogoGIF1
     , subtitleElement viewCongratsMsg2
     , buttonsLRElement sig
     ]
@@ -2607,7 +2611,7 @@ idea1 sig =
   flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement viewIdea1Msg1
-    , iconElement elmLogo
+    , iconElement elmLogoGIF2
     , subtitleElement viewIdea1Msg2
     , buttonsLRElement sig
     ]
@@ -2636,7 +2640,7 @@ idea2 sig =
   flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement viewIdea2Msg1
-    , iconElement elmLogo
+    , iconElement elmLogoGIF3
     , subtitleElement viewIdea2Msg2
     , buttonsLRElement sig
     ]
@@ -2664,7 +2668,7 @@ idea3 sig =
   flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement viewIdea3Msg1
-    , iconElement elmLogo
+    , iconElement elmLogoGIF4
     , subtitleElement viewIdea3Msg2
     , buttonsLRElement sig
     ]
@@ -2694,7 +2698,7 @@ elmResources sig =
   flow down
     [ wayfindingElement wayfindingCongrats
     , titleElement resourcesTitle
-    , iconElement elmLogo
+    , iconElement elmLogoGIF5
     , resourcesElement resourcesMsg
     , color containerColor <| container containerWidth 285 middle (flow down
       [ subTitle "Elm Websites"

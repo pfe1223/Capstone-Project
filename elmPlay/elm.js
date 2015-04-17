@@ -4759,14 +4759,30 @@ Elm.Main.make = function (_elm) {
    100,
    100,
    "images/importsIcon.svg");
-   var elmLogo = A3($Graphics$Element.image,
-   100,
-   100,
-   "/images/elmLogo.svg");
+   var elmLogoGIF5 = A3($Graphics$Element.image,
+   145,
+   125,
+   "/images/multiLogoGIF5.gif");
+   var elmLogoGIF4 = A3($Graphics$Element.image,
+   145,
+   125,
+   "/images/multiLogoGIF4.gif");
+   var elmLogoGIF3 = A3($Graphics$Element.image,
+   145,
+   125,
+   "/images/multiLogoGIF3.gif");
+   var elmLogoGIF2 = A3($Graphics$Element.image,
+   145,
+   125,
+   "/images/multiLogoGIF2.gif");
+   var elmLogoGIF1 = A3($Graphics$Element.image,
+   145,
+   125,
+   "/images/multiLogoGIF1.gif");
    var viewGIF = A3($Graphics$Element.image,
    388,
    260,
-   "/images/viewGIF.gif");
+   "/images/view2GIF.gif");
    var updateGIF = A3($Graphics$Element.image,
    218,
    112,
@@ -8071,7 +8087,7 @@ Elm.Main.make = function (_elm) {
       $Graphics$Element.down,
       _L.fromArray([wayfindingElement(wayfindingCongrats)
                    ,titleElement(viewCongratsMsg1)
-                   ,iconElement(elmLogo)
+                   ,iconElement(elmLogoGIF1)
                    ,subtitleElement(viewCongratsMsg2)
                    ,buttonsLRElement(sig)]));
    };
@@ -8080,7 +8096,7 @@ Elm.Main.make = function (_elm) {
       $Graphics$Element.down,
       _L.fromArray([wayfindingElement(wayfindingCongrats)
                    ,titleElement(viewIdea1Msg1)
-                   ,iconElement(elmLogo)
+                   ,iconElement(elmLogoGIF2)
                    ,subtitleElement(viewIdea1Msg2)
                    ,buttonsLRElement(sig)]));
    };
@@ -8089,7 +8105,7 @@ Elm.Main.make = function (_elm) {
       $Graphics$Element.down,
       _L.fromArray([wayfindingElement(wayfindingCongrats)
                    ,titleElement(viewIdea2Msg1)
-                   ,iconElement(elmLogo)
+                   ,iconElement(elmLogoGIF3)
                    ,subtitleElement(viewIdea2Msg2)
                    ,buttonsLRElement(sig)]));
    };
@@ -8098,7 +8114,7 @@ Elm.Main.make = function (_elm) {
       $Graphics$Element.down,
       _L.fromArray([wayfindingElement(wayfindingCongrats)
                    ,titleElement(viewIdea3Msg1)
-                   ,iconElement(elmLogo)
+                   ,iconElement(elmLogoGIF4)
                    ,subtitleElement(viewIdea3Msg2)
                    ,buttonsLRElement(sig)]));
    };
@@ -8172,7 +8188,7 @@ Elm.Main.make = function (_elm) {
       $Graphics$Element.down,
       _L.fromArray([wayfindingElement(wayfindingCongrats)
                    ,titleElement(resourcesTitle)
-                   ,iconElement(elmLogo)
+                   ,iconElement(elmLogoGIF5)
                    ,resourcesElement(resourcesMsg)
                    ,$Graphics$Element.color(containerColor)(A4($Graphics$Element.container,
                    containerWidth,
@@ -8432,7 +8448,11 @@ Elm.Main.make = function (_elm) {
                       ,modelGIF: modelGIF
                       ,updateGIF: updateGIF
                       ,viewGIF: viewGIF
-                      ,elmLogo: elmLogo
+                      ,elmLogoGIF1: elmLogoGIF1
+                      ,elmLogoGIF2: elmLogoGIF2
+                      ,elmLogoGIF3: elmLogoGIF3
+                      ,elmLogoGIF4: elmLogoGIF4
+                      ,elmLogoGIF5: elmLogoGIF5
                       ,importsIcon: importsIcon
                       ,modelIcon: modelIcon
                       ,signalsIcon: signalsIcon
