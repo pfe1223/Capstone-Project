@@ -1,4 +1,4 @@
-import Signal (Signal, map3, foldp, subscribe, channel, Channel, send)
+import Signal (Signal, map2, foldp, subscribe, channel, Channel, send)
 import Signal
 import Color (..)
 import Graphics.Element (..)
@@ -13,7 +13,7 @@ import Html.Attributes (href, target)
 
 main : Signal Element
 main =
-  map3 view Window.dimensions sig (Signal.subscribe hoveredOn)
+  map2 view sig (Signal.subscribe hoveredOn)
 
 chan : Channel Int
 chan = channel 0
@@ -24,8 +24,8 @@ sig = subscribe chan
 hoveredOn : Signal.Channel String
 hoveredOn = Signal.channel ""
 
-view : (Int, Int) -> Int -> String -> Element
-view (width, height) sig hoveredOn =
+view : Int -> String -> Element
+view sig hoveredOn =
   color backgroundColor <| container 420 720 middle (
     if | sig == 0 -> displayWelcome1 sig
        | sig == 1 -> displayWelcome2 sig
