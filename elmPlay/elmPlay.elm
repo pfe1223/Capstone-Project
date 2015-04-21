@@ -93,6 +93,9 @@ linkWidth = 200
 questionHeight = 300
 dropdownHeight = 100
 
+extraLine : String
+extraLine = "-- Copy this line too"
+
 -- Wayfinding tools
 wayfinderPast =
   circle 15
