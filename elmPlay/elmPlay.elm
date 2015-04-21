@@ -478,7 +478,7 @@ colorMsg = "Import the Color library. This allows you\n" ++
            "the shapes."
 importColor : Element
 importColor =
-  body "import Color (..)"
+  body "import Color exposing (..)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn colorMsg) else (Signal.send hoveredOn ""))
 
 graphicsElementMsg = "Import everything from the Graphics.Element\n" ++
@@ -495,15 +495,15 @@ graphicsCollageMsg = "Import everything from the Graphics.Collage\n" ++
                      "the game area with the shapes that move around."
 importGraphicsCollage : Element
 importGraphicsCollage =
-  body "import Graphics.Collage (..)"
+  body "import Graphics.Collage exposing (..)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn graphicsCollageMsg) else (Signal.send hoveredOn ""))
 
-textMsg = "Import everything from the Text library. This\n" ++
-          "library allows you to change the size, color,\n" ++
-          "and position of the text used in this game."
+textMsg = "Import the Text library. This library allows\n" ++
+          "you to change the size, color, and position\n" ++
+          "of the text used in this game."
 importText : Element
 importText =
-  body "import Text (..)"
+  body "import Text"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn textMsg) else (Signal.send hoveredOn ""))
 
 signalMsg = "Import the Signal library. Signals are values\n" ++
@@ -2502,7 +2502,7 @@ txtFunc1 =
 txtFunc2Msg = "The text function also sets the font to monospace."
 txtFunc2 : Element
 txtFunc2 =
-  body "&uArr; Text.monospace >> f >> Text.leftAligned"
+  body "&uArr; Text.monospace >> f >> leftAligned"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn txtFunc2Msg) else (Signal.send hoveredOn ""))
 
 displayView11 : Int -> String -> Element
