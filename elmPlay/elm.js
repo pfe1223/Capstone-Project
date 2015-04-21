@@ -4831,6 +4831,10 @@ Elm.Main.make = function (_elm) {
    76,
    166,
    195);
+   var codeText = function (f) {
+      return $Text.leftAligned($Text.color(elmBlue)($Text.typeface(_L.fromArray(["futura"
+                                                                                ,"sans-serif"]))($Text.fromString(f))));
+   };
    var elmOrange = A3($Color.rgb,
    237,
    149,
@@ -5247,6 +5251,9 @@ Elm.Main.make = function (_elm) {
                 30,
                 50,
                 _L.fromArray([wayfinderPresent]))]));
+   var extraLine = A2($Basics._op["++"],
+   "\n",
+   "-- Copy this line too");
    var dropdownHeight = 100;
    var questionHeight = 300;
    var linkWidth = 200;
@@ -5254,7 +5261,6 @@ Elm.Main.make = function (_elm) {
    var bottomHeight = 150;
    var gameHeight = 225;
    var codeHeight = 30;
-   var extraLine = 15;
    var subtitleHeight = 375;
    var containerHeight = 700;
    var containerWidth = 400;
@@ -5366,56 +5372,56 @@ Elm.Main.make = function (_elm) {
       colorMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("import Color exposing (..)"));
+   })(codeText("import Color exposing (..)"));
    var importGraphicsElement = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       graphicsElementMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("import Graphics.Element (..)"));
+   })(codeText("import Graphics.Element exposing (..)"));
    var importGraphicsCollage = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       graphicsCollageMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("import Graphics.Collage exposing (..)"));
+   })(codeText("import Graphics.Collage exposing (..)"));
    var importText = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       textMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("import Text"));
+   })(codeText("import Text"));
    var importSignal = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       signalMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("import Signal"));
+   })(codeText("import Signal"));
    var importKeyboard = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       keyboardMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("import Keyboard"));
+   })(codeText("import Keyboard"));
    var importTime = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       timeMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("import Time"));
+   })(codeText("import Time"));
    var importWindow = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       windowMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("import Window"));
+   })(codeText("import Window"));
    var importsContainer = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -5467,7 +5473,13 @@ Elm.Main.make = function (_elm) {
                    _L.fromArray([A2($Graphics$Element.spacer,
                                 10,
                                 5)
-                                ,importWindow]))]));
+                                ,importWindow]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var signalMain1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6520,7 +6532,7 @@ Elm.Main.make = function (_elm) {
       updateBadGuy12Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("uArr; (y > halfHeight-25)"));
+   })(body("&uArr; (y > halfHeight-25)"));
    var updateBadGuy13 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -8388,7 +8400,6 @@ Elm.Main.make = function (_elm) {
                       ,containerWidth: containerWidth
                       ,containerHeight: containerHeight
                       ,subtitleHeight: subtitleHeight
-                      ,extraLine: extraLine
                       ,codeHeight: codeHeight
                       ,gameHeight: gameHeight
                       ,bottomHeight: bottomHeight
@@ -8396,6 +8407,7 @@ Elm.Main.make = function (_elm) {
                       ,linkWidth: linkWidth
                       ,questionHeight: questionHeight
                       ,dropdownHeight: dropdownHeight
+                      ,extraLine: extraLine
                       ,wayfinderPast: wayfinderPast
                       ,wayfinderPresent: wayfinderPresent
                       ,wayfinderFuture: wayfinderFuture
@@ -8453,6 +8465,7 @@ Elm.Main.make = function (_elm) {
                       ,subTitle: subTitle
                       ,body: body
                       ,middleText: middleText
+                      ,codeText: codeText
                       ,displayWelcome1: displayWelcome1
                       ,wayfindingWelcome: wayfindingWelcome
                       ,welcomeMsg1: welcomeMsg1

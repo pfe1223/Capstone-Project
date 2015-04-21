@@ -84,7 +84,6 @@ indent = 20
 containerWidth = 400
 containerHeight = 700
 subtitleHeight = 375
-extraLine = 15
 codeHeight = 30
 gameHeight = 225
 bottomHeight = 150
@@ -94,7 +93,7 @@ questionHeight = 300
 dropdownHeight = 100
 
 extraLine : String
-extraLine = "-- Copy this line too"
+extraLine = "\n" ++ "-- Copy this line too"
 
 -- Wayfinding tools
 wayfinderPast =
@@ -286,6 +285,11 @@ middleText f = Text.fromString(f)
   |> Text.height 20
   |> Text.centered
 
+codeText f = Text.fromString(f)
+  |> Text.typeface ["futura", "sans-serif"]
+  |> Text.color elmBlue
+  |> Text.leftAligned
+
 -- Welcome Message 1
 -- `````````````````
 displayWelcome1 : Int -> Element
@@ -474,6 +478,7 @@ importsContainer sig hoveredOn =
     , flow right [spacer 10 5, importText]
     , flow right [spacer 10 5, importTime]
     , flow right [spacer 10 5, importWindow]
+    , flow right [spacer 10 5, codeText extraLine]
     ]
 
 colorMsg = "Import the Color library. This allows you\n" ++
@@ -481,7 +486,7 @@ colorMsg = "Import the Color library. This allows you\n" ++
            "the shapes."
 importColor : Element
 importColor =
-  body "import Color exposing (..)"
+  codeText "import Color exposing (..)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn colorMsg) else (Signal.send hoveredOn ""))
 
 graphicsElementMsg = "Import everything from the Graphics.Element\n" ++
@@ -490,7 +495,7 @@ graphicsElementMsg = "Import everything from the Graphics.Element\n" ++
                      "the game in the middle of the page."
 importGraphicsElement : Element
 importGraphicsElement =
-  body "import Graphics.Element exposing (..)"
+  codeText "import Graphics.Element exposing (..)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn graphicsElementMsg) else (Signal.send hoveredOn ""))
 
 graphicsCollageMsg = "Import everything from the Graphics.Collage\n" ++
@@ -498,7 +503,7 @@ graphicsCollageMsg = "Import everything from the Graphics.Collage\n" ++
                      "the game area with the shapes that move around."
 importGraphicsCollage : Element
 importGraphicsCollage =
-  body "import Graphics.Collage exposing (..)"
+  codeText "import Graphics.Collage exposing (..)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn graphicsCollageMsg) else (Signal.send hoveredOn ""))
 
 textMsg = "Import the Text library. This library allows\n" ++
@@ -506,7 +511,7 @@ textMsg = "Import the Text library. This library allows\n" ++
           "of the text used in this game."
 importText : Element
 importText =
-  body "import Text"
+  codeText "import Text"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn textMsg) else (Signal.send hoveredOn ""))
 
 signalMsg = "Import the Signal library. Signals are values\n" ++
@@ -515,7 +520,7 @@ signalMsg = "Import the Signal library. Signals are values\n" ++
             "size of a window."
 importSignal : Element
 importSignal =
-  body "import Signal"
+  codeText "import Signal"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalMsg) else (Signal.send hoveredOn ""))
 
 keyboardMsg = "Import the Keyboard library. This allows the\n" ++
@@ -523,7 +528,7 @@ keyboardMsg = "Import the Keyboard library. This allows the\n" ++
               "the circle."
 importKeyboard : Element
 importKeyboard =
-  body ("import Keyboard")
+  codeText ("import Keyboard")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn keyboardMsg) else (Signal.send hoveredOn ""))
 
 timeMsg = "Import the Time library. Specifically, you\n" ++
@@ -531,7 +536,7 @@ timeMsg = "Import the Time library. Specifically, you\n" ++
           "notes the changes in time."
 importTime : Element
 importTime =
-  body ("import Time")
+  codeText ("import Time")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn timeMsg) else (Signal.send hoveredOn ""))
 
 windowMsg = "Import the Window library. This allows you to\n" ++
@@ -539,7 +544,7 @@ windowMsg = "Import the Window library. This allows you to\n" ++
             "is used when centering the game on the page."
 importWindow : Element
 importWindow =
-  body ("import Window")
+  codeText ("import Window")
     |> hoverable (\ r -> if r then (Signal.send hoveredOn windowMsg) else (Signal.send hoveredOn ""))
 
 
