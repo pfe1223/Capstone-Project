@@ -5574,14 +5574,14 @@ Elm.Main.make = function (_elm) {
       signalDelta1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("delta ="));
+   })(codeText("delta ="));
    var signalDelta2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       signalDelta2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("Signal.map inSeconds (fps 35)"));
+   })(codeText("  Signal.map inSeconds (fps 35)"));
    var signalsContainer3 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -5595,9 +5595,15 @@ Elm.Main.make = function (_elm) {
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
-                                ,signalDelta2]))]));
+                                ,signalDelta2]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var signalInput1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -5605,56 +5611,56 @@ Elm.Main.make = function (_elm) {
       signalInput1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("input : Signal Input"));
+   })(codeText("input : Signal Input"));
    var signalInput2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       signalInput2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("input ="));
+   })(codeText("input ="));
    var signalInput3 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       signalInput3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("Signal.sampleOn delta <|"));
+   })(codeText("  Signal.sampleOn delta <|"));
    var signalInput4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       signalInput4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("Signal.map4 Input"));
+   })(codeText("    Signal.map4 Input"));
    var signalInput5 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       signalInput5Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("Keyboard.space"));
+   })(codeText("      Keyboard.space"));
    var signalInput6 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       signalInput6Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("(Signal.map .x Keyboard.arrows)"));
+   })(codeText("      (Signal.map .x Keyboard.arrows)"));
    var signalInput7 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       signalInput7Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("(Signal.map .y Keyboard.arrows)"));
+   })(codeText("      (Signal.map .y Keyboard.arrows)"));
    var signalInput8 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       signalInput8Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("delta"));
+   })(codeText("      delta"));
    var signalsContainer4 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -5674,39 +5680,45 @@ Elm.Main.make = function (_elm) {
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
                                 ,signalInput3]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                40,
+                                10,
                                 5)
                                 ,signalInput4]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
                                 ,signalInput5]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
                                 ,signalInput6]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
                                 ,signalInput7]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
-                                ,signalInput8]))]));
+                                ,signalInput8]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var gameSize = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -5714,14 +5726,14 @@ Elm.Main.make = function (_elm) {
       gameSizeMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("(gameWidth, gameHeight) = (600, 400)"));
+   })(codeText("(gameWidth, gameHeight) = (600, 400)"));
    var playingSize = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       playingSizeMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("(halfWidth, halfHeight) = (300, 200)"));
+   })(codeText("(halfWidth, halfHeight) = (300, 200)"));
    var modelContainer1 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -5745,7 +5757,7 @@ Elm.Main.make = function (_elm) {
       typeStateMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("type State = Play | Pause"));
+   })(codeText("type State = Play | Pause"));
    var modelContainer2 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -5763,14 +5775,14 @@ Elm.Main.make = function (_elm) {
       aliasBadGuy1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("type alias BadGuy ="));
+   })(codeText("type alias BadGuy ="));
    var aliasBadGuy2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       aliasBadGuy2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("{ x:Float, y:Float, vx:Float, vy:Float }"));
+   })(codeText("{ x:Float, y:Float, vx:Float, vy:Float }"));
    var modelContainer3 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -5794,14 +5806,14 @@ Elm.Main.make = function (_elm) {
       aliasPlayer1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("type alias Player ="));
+   })(codeText("type alias Player ="));
    var aliasPlayer2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       aliasPlayer2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("{ x:Float, y:Float, vx:Float, vy:Float, lives:Int }"));
+   })(codeText("{ x:Float, y:Float, vx:Float, vy:Float, lives:Int }"));
    var modelContainer4 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -5825,14 +5837,14 @@ Elm.Main.make = function (_elm) {
       aliasGame1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("type alias Game ="));
+   })(codeText("type alias Game ="));
    var aliasGame2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       aliasGame2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("{ state:State, badGuy:BadGuy, player1:Player }"));
+   })(codeText("{ state:State, badGuy:BadGuy, player1:Player }"));
    var modelContainer5 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -5856,49 +5868,49 @@ Elm.Main.make = function (_elm) {
       defaultGame1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("defaultGame : Game"));
+   })(codeText("defaultGame : Game"));
    var defaultGame2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       defaultGame2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("defaultGame ="));
+   })(codeText("defaultGame ="));
    var defaultGame3 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       defaultGame3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("{ state = Pause"));
+   })(codeText("{ state = Pause"));
    var defaultGame4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       defaultGame4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(", badGuy = { x=0, y=0, vx=300, vy=300 }"));
+   })(codeText(", badGuy = { x=0, y=0, vx=300, vy=300 }"));
    var defaultGame5 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       defaultGame5Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(", player1 = { x = 15-halfWidth, y = 0, vx = 0,"));
+   })(codeText(", player1 = { x = 15-halfWidth, y = 0, vx = 0,"));
    var defaultGame6 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       defaultGame5Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("&uArr; vy = 0, lives = 3 }"));
+   })(codeText("&uArr; vy = 0, lives = 3 }"));
    var defaultGame7 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       defaultGame7Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("}"));
+   })(codeText("}"));
    var modelContainer6 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -5952,14 +5964,14 @@ Elm.Main.make = function (_elm) {
       aliasInput1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("type alias Input ="));
+   })(codeText("type alias Input ="));
    var aliasInput2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       aliasInput2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(A3($String.padLeft,
+   })(codeText(A3($String.padLeft,
    19,
    _U.chr(" "),
    " { space : Bool")));
@@ -5969,7 +5981,7 @@ Elm.Main.make = function (_elm) {
       aliasInput3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(A3($String.padLeft,
+   })(codeText(A3($String.padLeft,
    17,
    _U.chr(" "),
    " , dir1 : Int")));
@@ -5979,7 +5991,7 @@ Elm.Main.make = function (_elm) {
       aliasInput4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(A3($String.padLeft,
+   })(codeText(A3($String.padLeft,
    17,
    _U.chr(" "),
    " , dir2 : Int")));
@@ -5989,7 +6001,7 @@ Elm.Main.make = function (_elm) {
       aliasInput5Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(A3($String.padLeft,
+   })(codeText(A3($String.padLeft,
    19,
    _U.chr(" "),
    " , delta : Time")));
@@ -5999,7 +6011,7 @@ Elm.Main.make = function (_elm) {
       aliasInput6Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(A3($String.padLeft,
+   })(codeText(A3($String.padLeft,
    6,
    _U.chr(" "),
    " }")));
@@ -6050,35 +6062,35 @@ Elm.Main.make = function (_elm) {
       updateFunc1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("update : Input -> Game -> Game"));
+   })(codeText("update : Input -> Game -> Game"));
    var updateFunc2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("update {space,dir1,dir2,delta} ({state,badGuy,"));
+   })(codeText("update {space,dir1,dir2,delta} ({state,badGuy,"));
    var updateFunc3 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("&uArr; player1} as game) ="));
+   })(codeText("&uArr; player1} as game) ="));
    var updateFunc4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("let lives = if (badGuy `within` player1) then 1"));
+   })(codeText("let lives = if (badGuy `within` player1) then 1"));
    var updateFunc4a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("&uArr; else 0"));
+   })(codeText("&uArr; else 0"));
    var updateContainer1 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6120,28 +6132,28 @@ Elm.Main.make = function (_elm) {
       updateFunc5Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("newState ="));
+   })(codeText("newState ="));
    var updateFunc6 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc6Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("if | space                    -> Play"));
+   })(codeText("if | space                    -> Play"));
    var updateFunc7 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc7Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("| player1.lives == 0 -> Pause"));
+   })(codeText("| player1.lives == 0 -> Pause"));
    var updateFunc8 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc8Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("| otherwise              -> state"));
+   })(codeText("| otherwise              -> state"));
    var updateContainer2 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6177,28 +6189,28 @@ Elm.Main.make = function (_elm) {
       updateFunc9Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("newBadGuy ="));
+   })(codeText("newBadGuy ="));
    var updateFunc10 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc10Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("if state == Pause"));
+   })(codeText("if state == Pause"));
    var updateFunc11 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc11Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("then badGuy"));
+   })(codeText("then badGuy"));
    var updateFunc12 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc12Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("else updateBadGuy delta badGuy player1"));
+   })(codeText("else updateBadGuy delta badGuy player1"));
    var updateContainer3 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6234,49 +6246,49 @@ Elm.Main.make = function (_elm) {
       updateFunc13Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("in"));
+   })(codeText("in"));
    var updateFunc14 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc14Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("{ game |"));
+   })(codeText("{ game |"));
    var updateFunc15 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc15Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("state   <- newState,"));
+   })(codeText("state   <- newState,"));
    var updateFunc16 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc16Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("badGuy  <- newBadGuy,"));
+   })(codeText("badGuy  <- newBadGuy,"));
    var updateFunc17 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc17Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("player1 <- updatePlayer delta dir1 dir2"));
+   })(codeText("player1 <- updatePlayer delta dir1 dir2"));
    var updateFunc17a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc17Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("&uArr; lives player1"));
+   })(codeText("&uArr; lives player1"));
    var updateFunc18 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc18Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("}"));
+   })(codeText("}"));
    var updateContainer4 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6330,28 +6342,28 @@ Elm.Main.make = function (_elm) {
       updateBadGuy1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("updateBadGuy : Time -> BadGuy -> Player ->"));
+   })(codeText("updateBadGuy : Time -> BadGuy -> Player ->"));
    var updateBadGuy1a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("&uArr; BadGuy"));
+   })(codeText("&uArr; BadGuy"));
    var updateBadGuy2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("updateBadGuy t ({x,y,vx,vy} as badGuy)"));
+   })(codeText("updateBadGuy t ({x,y,vx,vy} as badGuy)"));
    var updateBadGuy2a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("&uArr; ({x,y,vx,vy,lives} as player1) ="));
+   })(codeText("&uArr; ({x,y,vx,vy,lives} as player1) ="));
    var updateContainer5 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6387,63 +6399,63 @@ Elm.Main.make = function (_elm) {
       updateBadGuy3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("if | (player1.lives == 0) -> { badGuy | x <- 0,"));
+   })(codeText("if | (player1.lives == 0) -> { badGuy | x <- 0,"));
    var updateBadGuy3a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("&uArr; y <- 0}"));
+   })(codeText("&uArr; y <- 0}"));
    var updateBadGuy4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("| (badGuy `within` player1) -> physicsUpdate t"));
+   })(codeText("| (badGuy `within` player1) -> physicsUpdate t"));
    var updateBadGuy5 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy5Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("{ badGuy |"));
+   })(codeText("{ badGuy |"));
    var updateBadGuy6 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy6Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("vx <- stepV vx (badGuy.vx < 0)"));
+   })(codeText("vx <- stepV vx (badGuy.vx < 0)"));
    var updateBadGuy6a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy6Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("&uArr; (badGuy.vx > 0),"));
+   })(codeText("&uArr; (badGuy.vx > 0),"));
    var updateBadGuy7 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy7Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("vy <- stepV vy (badGuy.vy < 0 ) "));
+   })(codeText("vy <- stepV vy (badGuy.vy < 0 ) "));
    var updateBadGuy7a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy7Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("&uArr; (badGuy.vy > 0)"));
+   })(codeText("&uArr; (badGuy.vy > 0)"));
    var updateBadGuy8 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy8Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("}"));
+   })(codeText("}"));
    var updateContainer6 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6509,49 +6521,49 @@ Elm.Main.make = function (_elm) {
       updateBadGuy9Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("| otherwise -> physicsUpdate t"));
+   })(codeText("| otherwise -> physicsUpdate t"));
    var updateBadGuy10 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy10Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("{ badGuy |"));
+   })(codeText("{ badGuy |"));
    var updateBadGuy11 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy11Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("vx <- stepV vx (x < 25-halfWidth) "));
+   })(codeText("vx <- stepV vx (x < 25-halfWidth) "));
    var updateBadGuy11a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy11Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("&uArr; (x > halfWidth-25),"));
+   })(codeText("&uArr; (x > halfWidth-25),"));
    var updateBadGuy12 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy12Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("vy <- stepV vy (y < 25-halfHeight) "));
+   })(codeText("vy <- stepV vy (y < 25-halfHeight) "));
    var updateBadGuy12a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy12Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("&uArr; (y > halfHeight-25)"));
+   })(codeText("&uArr; (y > halfHeight-25)"));
    var updateBadGuy13 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy13Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("}"));
+   })(codeText("}"));
    var updateContainer7 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6605,21 +6617,21 @@ Elm.Main.make = function (_elm) {
       updatePlayer1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("updatePlayer : Time -> Int -> Int -> Int -> "));
+   })(codeText("updatePlayer : Time -> Int -> Int -> Int -> "));
    var updatePlayer1a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("&uArr; Player -> Player"));
+   })(codeText("&uArr; Player -> Player"));
    var updatePlayer2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("updatePlayer t dir1 dir2 lives player ="));
+   })(codeText("updatePlayer t dir1 dir2 lives player ="));
    var updateContainer8 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6649,42 +6661,42 @@ Elm.Main.make = function (_elm) {
       updatePlayer3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("let player1 = physicsUpdate  t { player | "));
+   })(codeText("let player1 = physicsUpdate  t { player | "));
    var updatePlayer3a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("&uArr; vx <- toFloat dir1 * 200"));
+   })(codeText("&uArr; vx <- toFloat dir1 * 200"));
    var updatePlayer4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("vy <- toFloat dir2 * 200}"));
+   })(codeText("vy <- toFloat dir2 * 200}"));
    var updatePlayer5 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer5Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("alive = if (player.lives - lives < 0)"));
+   })(codeText("alive = if (player.lives - lives < 0)"));
    var updatePlayer6 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer6Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("then 0"));
+   })(codeText("then 0"));
    var updatePlayer7 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer7Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("else (player.lives - lives)"));
+   })(codeText("else (player.lives - lives)"));
    var updateContainer9 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6732,56 +6744,56 @@ Elm.Main.make = function (_elm) {
       updatePlayer8Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("in"));
+   })(codeText("in"));
    var updatePlayer9 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer9Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("{ player1 |"));
+   })(codeText("{ player1 |"));
    var updatePlayer10 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer10Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("y <- clamp (35-halfHeight) (halfHeight-35)"));
+   })(codeText("y <- clamp (35-halfHeight) (halfHeight-35)"));
    var updatePlayer10a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer10Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("&uArr; player1.y,"));
+   })(codeText("&uArr; player1.y,"));
    var updatePlayer11 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer11Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("x <- clamp (35-halfWidth) (halfWidth-35)"));
+   })(codeText("x <- clamp (35-halfWidth) (halfWidth-35)"));
    var updatePlayer11a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer11Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("&uArr; player1.x,"));
+   })(codeText("&uArr; player1.x,"));
    var updatePlayer12 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer12Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("lives <- alive"));
+   })(codeText("lives <- alive"));
    var updatePlayer13 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer13Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("}"));
+   })(codeText("}"));
    var updateContainer10 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6841,35 +6853,35 @@ Elm.Main.make = function (_elm) {
       updatePhysics1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("physicsUpdate t ({x,y,vx,vy} as obj) ="));
+   })(codeText("physicsUpdate t ({x,y,vx,vy} as obj) ="));
    var updatePhysics2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePhysics2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("{ obj |"));
+   })(codeText("{ obj |"));
    var updatePhysics3 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePhysics3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("x <- x + vx * t,"));
+   })(codeText("x <- x + vx * t,"));
    var updatePhysics4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePhysics4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("y <- y + vy * t"));
+   })(codeText("y <- y + vy * t"));
    var updatePhysics5 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePhysics5Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("}"));
+   })(codeText("}"));
    var updateContainer11 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6911,14 +6923,14 @@ Elm.Main.make = function (_elm) {
       updateNear1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("near k c n ="));
+   })(codeText("near k c n ="));
    var updateNear2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateNear2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("n >= k-c && n <= k+c"));
+   })(codeText("n >= k-c && n <= k+c"));
    var updateContainer12 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6942,21 +6954,21 @@ Elm.Main.make = function (_elm) {
       updateWithin1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("within badGuy player1 ="));
+   })(codeText("within badGuy player1 ="));
    var updateWithin2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateWithin2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("near player1.x 25 badGuy.x && "));
+   })(codeText("near player1.x 25 badGuy.x && "));
    var updateWithin2a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateWithin2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("&uArr; near player1.y 25 badGuy.y"));
+   })(codeText("&uArr; near player1.y 25 badGuy.y"));
    var updateContainer13 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6986,28 +6998,28 @@ Elm.Main.make = function (_elm) {
       updateStepV1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("stepV v condition1 condition2 ="));
+   })(codeText("stepV v condition1 condition2 ="));
    var updateStepV2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateStepV2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("if | condition1 -> abs v"));
+   })(codeText("if | condition1 -> abs v"));
    var updateStepV3 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateStepV3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("| condition2 -> 0 - abs v"));
+   })(codeText("| condition2 -> 0 - abs v"));
    var updateStepV4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateStepV4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("| otherwise  -> v"));
+   })(codeText("| otherwise  -> v"));
    var updateContainer14 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7043,14 +7055,14 @@ Elm.Main.make = function (_elm) {
       viewFunc1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("view : (Int, Int) -> Game -> Element"));
+   })(codeText("view : (Int, Int) -> Game -> Element"));
    var viewFunc2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("view (w, h) {state, badGuy, player1} ="));
+   })(codeText("view (w, h) {state, badGuy, player1} ="));
    var viewContainer1 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7074,14 +7086,14 @@ Elm.Main.make = function (_elm) {
       viewFunc3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("let lives : Element"));
+   })(codeText("let lives : Element"));
    var viewFunc4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("lives = txt(Text.height 50) (toString player1.lives)"));
+   })(codeText("lives = txt(Text.height 50) (toString player1.lives)"));
    var viewContainer2 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7105,21 +7117,21 @@ Elm.Main.make = function (_elm) {
       viewFunc5Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("in"));
+   })(codeText("in"));
    var viewFunc6 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc6Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("container w h middle <|"));
+   })(codeText("container w h middle <|"));
    var viewFunc7 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc7Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("collage gameWidth gameHeight"));
+   })(codeText("collage gameWidth gameHeight"));
    var viewContainer3 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7149,14 +7161,14 @@ Elm.Main.make = function (_elm) {
       viewFunc8Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("[ rect gameWidth gameHeight"));
+   })(codeText("[ rect gameWidth gameHeight"));
    var viewFunc9 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc9Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("|> filled elmGrey"));
+   })(codeText("|> filled elmGrey"));
    var viewContainer4 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7180,21 +7192,21 @@ Elm.Main.make = function (_elm) {
       viewFunc10Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(", ngon 6 25 "));
+   })(codeText(", ngon 6 25 "));
    var viewFunc11 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc11Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("|> filled elmOrange"));
+   })(codeText("|> filled elmOrange"));
    var viewFunc12 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc12Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("|> move (badGuy.x, badGuy.y)"));
+   })(codeText("|> move (badGuy.x, badGuy.y)"));
    var viewContainer5 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7224,21 +7236,21 @@ Elm.Main.make = function (_elm) {
       viewFunc13Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(", circle 20"));
+   })(codeText(", circle 20"));
    var viewFunc14 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc14Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("|> filled elmBlue"));
+   })(codeText("|> filled elmBlue"));
    var viewFunc15 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc15Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("|> move (player1.x, player1.y)"));
+   })(codeText("|> move (player1.x, player1.y)"));
    var viewContainer6 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7268,14 +7280,14 @@ Elm.Main.make = function (_elm) {
       viewFunc16Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(", toForm lives"));
+   })(codeText(", toForm lives"));
    var viewFunc17 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc17Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("|> move (0, gameHeight/2 - 40)"));
+   })(codeText("|> move (0, gameHeight/2 - 40)"));
    var viewContainer7 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7299,28 +7311,28 @@ Elm.Main.make = function (_elm) {
       viewFunc18Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body(", toForm (if state == Play then spacer 1 1"));
+   })(codeText(", toForm (if state == Play then spacer 1 1"));
    var viewFunc18a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc18Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("&uArr; else txt identity msg"));
+   })(codeText("&uArr; else txt identity msg"));
    var viewFunc19 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc19Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("|> move (0, 40 - gameHeight/2)"));
+   })(codeText("|> move (0, 40 - gameHeight/2)"));
    var viewFunc20 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc20Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("]"));
+   })(codeText("]"));
    var viewContainer8 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7356,28 +7368,28 @@ Elm.Main.make = function (_elm) {
       elmGreyColorMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("elmGrey = rgb 71 80 102"));
+   })(codeText("elmGrey = rgb 71 80 102"));
    var elmBlueColor = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       elmBlueColorMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("elmBlue = rgb 76 166 195"));
+   })(codeText("elmBlue = rgb 76 166 195"));
    var elmGreenColor = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       elmGreenColorMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("elmGreen = rgb 127 209 17"));
+   })(codeText("elmGreen = rgb 127 209 17"));
    var textColor = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       textColorMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("textColor = white"));
+   })(codeText("textColor = white"));
    var viewContainer9 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7413,14 +7425,14 @@ Elm.Main.make = function (_elm) {
       txtFunc1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("txt f = Text.fromString >> Text.color textColor >>"));
+   })(codeText("txt f = Text.fromString >> Text.color textColor >>"));
    var txtFunc2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       txtFunc2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("&uArr; Text.monospace >> f >> leftAligned"));
+   })(codeText("&uArr; Text.monospace >> f >> leftAligned"));
    var viewContainer10 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7444,14 +7456,14 @@ Elm.Main.make = function (_elm) {
       msgFuncMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("msg = \'SPACE to start, &larr ;&uarr ;&darr ;"));
+   })(codeText("msg = \'SPACE to start, &larr ;&uarr ;&darr ;"));
    var msgFunc2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       msgFuncMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("&uArr; &rarr ; to move\'"));
+   })(codeText("&uArr; &rarr ; to move\'"));
    var viewContainer11 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,

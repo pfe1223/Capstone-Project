@@ -741,12 +741,13 @@ signalsContainer4 sig hoveredOn =
   flow down
     [ flow right [spacer 10 5, signalInput1]
     , flow right [spacer 10 5, signalInput2]
-    , flow right [spacer 25 5, signalInput3]
-    , flow right [spacer 40 5, signalInput4]
-    , flow right [spacer 55 5, signalInput5]
-    , flow right [spacer 55 5, signalInput6]
-    , flow right [spacer 55 5, signalInput7]
-    , flow right [spacer 55 5, signalInput8]
+    , flow right [spacer 10 5, signalInput3]
+    , flow right [spacer 10 5, signalInput4]
+    , flow right [spacer 10 5, signalInput5]
+    , flow right [spacer 10 5, signalInput6]
+    , flow right [spacer 10 5, signalInput7]
+    , flow right [spacer 10 5, signalInput8]
+    , flow right [spacer 10 5, codeText extraLine]
     ]
 
 signalInput1Msg = "Defines input as a signal of type Input.\n" ++
@@ -767,14 +768,14 @@ signalInput3Msg = "This function records some data on every delta,\n" ++
                   "which is every 1/35 of a second."
 signalInput3 : Element
 signalInput3 =
-  codeText "Signal.sampleOn delta <|"
+  codeText "  Signal.sampleOn delta <|"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput3Msg) else (Signal.send hoveredOn ""))
 
 signalInput4Msg = "The data recorded is a signal that combines the\n" ++
                   "four attributes of type Indput."
 signalInput4 : Element
 signalInput4 =
-  codeText "Signal.map4 Input"
+  codeText "    Signal.map4 Input"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput4Msg) else (Signal.send hoveredOn ""))
 
 signalInput5Msg = "The first piece of data recorded is the space bar.\n" ++
@@ -782,7 +783,7 @@ signalInput5Msg = "The first piece of data recorded is the space bar.\n" ++
                   "bar being pressed."
 signalInput5 : Element
 signalInput5 =
-  codeText "Keyboard.space"
+  codeText "      Keyboard.space"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput5Msg) else (Signal.send hoveredOn ""))
 
 signalInput6Msg = "The next pieceof data recorded is the left/right\n" ++
@@ -791,7 +792,7 @@ signalInput6Msg = "The next pieceof data recorded is the left/right\n" ++
                   "x-value increases."
 signalInput6 : Element
 signalInput6 =
-  codeText "(Signal.map .x Keyboard.arrows)"
+  codeText "      (Signal.map .x Keyboard.arrows)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput6Msg) else (Signal.send hoveredOn ""))
 
 signalInput7Msg = "The next pieceof data recorded is the up/down\n" ++
@@ -800,13 +801,13 @@ signalInput7Msg = "The next pieceof data recorded is the up/down\n" ++
                   "y-value increases."
 signalInput7 : Element
 signalInput7 =
-  codeText "(Signal.map .y Keyboard.arrows)"
+  codeText "      (Signal.map .y Keyboard.arrows)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput7Msg) else (Signal.send hoveredOn ""))
 
 signalInput8Msg = "Finally, the change in time is recorded in seconds."
 signalInput8 : Element
 signalInput8 =
-  codeText "delta"
+  codeText "      delta"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalInput8Msg) else (Signal.send hoveredOn ""))
 
 {--
@@ -886,6 +887,7 @@ modelContainer1 sig hoveredOn =
   flow down
     [ flow right [spacer 10 5, gameSize]
     , flow right [spacer 10 5, playingSize]
+    , flow right [spacer 10 5, codeText extraLine]
     ]
 
 gameSizeMsg = "Set gameWidth to 600 and gameHeight to 400.\n" ++
@@ -919,6 +921,7 @@ modelContainer2 : Int -> String -> Element
 modelContainer2 sig hoveredOn =
   flow down
     [ flow right [spacer 10 5, typeState]
+    , flow right [spacer 10 5, codeText extraLine]
     ]
 
 typeStateMsg = "The data type State is created. It has\n" ++
@@ -943,7 +946,8 @@ modelContainer3 : Int -> String -> Element
 modelContainer3 sig hoveredOn =
   flow down
     [ flow right [spacer 10 5, aliasBadGuy1]
-    , flow right [spacer 25 5, aliasBadGuy2]
+    , flow right [spacer 10 5, aliasBadGuy2]
+    , flow right [spacer 10 5, codeText extraLine]
     ]
 
 aliasBadGuy1Msg = "Create the type BadGuy as an alias. An alias\n" ++
@@ -960,7 +964,7 @@ aliasBadGuy2Msg = "The data type BadGuy has the following attributes:\n" ++
                   "float. Floats are numbers with a decimal."
 aliasBadGuy2 : Element
 aliasBadGuy2 =
-  codeText "{ x:Float, y:Float, vx:Float, vy:Float }"
+  codeText "  { x:Float, y:Float, vx:Float, vy:Float }"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasBadGuy2Msg) else (Signal.send hoveredOn ""))
 
 displayModel4 : Int -> String -> Element
@@ -978,7 +982,8 @@ modelContainer4 : Int -> String -> Element
 modelContainer4 sig hoveredOn =
   flow down
     [ flow right [spacer 10 5, aliasPlayer1]
-    , flow right [spacer 25 5, aliasPlayer2]
+    , flow right [spacer 10 5, aliasPlayer2]
+    , flow right [spacer 10 5, codeText extraLine]
     ]
 
 aliasPlayer1Msg = "Create the type BadGuy as an alias. An alias\n" ++
@@ -995,7 +1000,7 @@ aliasPlayer2Msg = "The data type Player has the following attributes:\n" ++
                   "also has an integer that represents its lives."
 aliasPlayer2 : Element
 aliasPlayer2 =
-  codeText "{ x:Float, y:Float, vx:Float, vy:Float, lives:Int }"
+  codeText "  { x:Float, y:Float, vx:Float, vy:Float, lives:Int }"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasPlayer2Msg) else (Signal.send hoveredOn ""))
 
 displayModel5 : Int -> String -> Element
@@ -1013,7 +1018,8 @@ modelContainer5 : Int -> String -> Element
 modelContainer5 sig hoveredOn =
   flow down
     [ flow right [spacer 10 5, aliasGame1]
-    , flow right [spacer 25 5, aliasGame2]
+    , flow right [spacer 10 5, aliasGame2]
+    , flow right [spacer 10 5, codeText extraLine]
     ]
 
 aliasGame1Msg = "Create the type Game as an alias. An alias\n" ++
@@ -1029,7 +1035,7 @@ aliasGame2Msg = "The data type Game has the following attributes:\n" ++
                 "and a player of type Player with all of its attributes.\n"
 aliasGame2 : Element
 aliasGame2 =
-  codeText "{ state:State, badGuy:BadGuy, player1:Player }"
+  codeText "  { state:State, badGuy:BadGuy, player1:Player }"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasGame2Msg) else (Signal.send hoveredOn ""))
 
 -- Model Message 2
@@ -1049,11 +1055,12 @@ modelContainer6 sig hoveredOn =
   flow down
     [ flow right [spacer 10 5, defaultGame1]
     , flow right [spacer 10 5, defaultGame2]
-    , flow right [spacer 25 5, defaultGame3]
-    , flow right [spacer 25 5, defaultGame4]
-    , flow right [spacer 25 5, defaultGame5]
-    , flow right [spacer 55 5, defaultGame6]
-    , flow right [spacer 25 5, defaultGame7]
+    , flow right [spacer 10 5, defaultGame3]
+    , flow right [spacer 10 5, defaultGame4]
+    , flow right [spacer 10 5, defaultGame5]
+    , flow right [spacer 10 5, defaultGame6]
+    , flow right [spacer 10 5, defaultGame7]
+    , flow right [spacer 10 5, codeText extraLine]
     ]
 
 defaultGame1Msg = "Create an object defaultGame of type Game."
@@ -1071,7 +1078,7 @@ defaultGame2 =
 defaultGame3Msg = "The state is set to the value of Pause."
 defaultGame3 : Element
 defaultGame3 =
-  codeText "{ state = Pause"
+  codeText "  { state = Pause"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame3Msg) else (Signal.send hoveredOn ""))
 
 defaultGame4Msg = "The badGuy attribute has the values of:\n" ++
@@ -1079,7 +1086,7 @@ defaultGame4Msg = "The badGuy attribute has the values of:\n" ++
                   "vx = 300 and vy = 300, its velocity (speed)."
 defaultGame4 : Element
 defaultGame4 =
-  codeText ", badGuy = { x=0, y=0, vx=300, vy=300 }"
+  codeText "  , badGuy = { x=0, y=0, vx=300, vy=300 }"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame4Msg) else (Signal.send hoveredOn ""))
 
 defaultGame5Msg = "The player1 attribute has the values of:\n" ++
@@ -1091,7 +1098,7 @@ defaultGame5Msg = "The player1 attribute has the values of:\n" ++
                   "It does not move automatically. lives are set to 3."
 defaultGame5 : Element
 defaultGame5 =
-  codeText ", player1 = { x = 15-halfWidth, y = 0, vx = 0,"
+  codeText "  , player1 = { x = 15-halfWidth, y = 0, vx = 0,"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame5Msg) else (Signal.send hoveredOn ""))
 
 defaultGame6 : Element
@@ -1103,7 +1110,7 @@ defaultGame6 =
 defaultGame7Msg = "Ends the list of attributes for defaultGame."
 defaultGame7 : Element
 defaultGame7 =
-  codeText "}"
+  codeText "  }"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn defaultGame7Msg) else (Signal.send hoveredOn ""))
 
 displayModel7 : Int -> String -> Element
@@ -1121,11 +1128,12 @@ modelContainer7 : Int -> String -> Element
 modelContainer7 sig hoveredOn =
   flow down
     [ flow right [spacer 10 5, aliasInput1]
-    , flow right [spacer 25 5, aliasInput2]
-    , flow right [spacer 25 5, aliasInput3]
-    , flow right [spacer 25 5, aliasInput4]
-    , flow right [spacer 25 5, aliasInput5]
-    , flow right [spacer 25 5, aliasInput6]
+    , flow right [spacer 10 5, aliasInput2]
+    , flow right [spacer 10 5, aliasInput3]
+    , flow right [spacer 10 5, aliasInput4]
+    , flow right [spacer 10 5, aliasInput5]
+    , flow right [spacer 10 5, aliasInput6]
+    , flow right [spacer 10 5, codeText extraLine]
     ]
 
 aliasInput1Msg = "Create data type Input wich is an alias."
@@ -1139,33 +1147,33 @@ aliasInput2Msg = "There is an attribute called space, which is a\n" ++
                  "space is mapped to the space bar in gameState."
 aliasInput2 : Element
 aliasInput2 =
-  codeText (padLeft 19 ' ' " { space : Bool")
+  codeText "  { space : Bool"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasInput2Msg) else (Signal.send hoveredOn ""))
 
 aliasInput3Msg = "There is an attribute called dir1, of type integer.\n" ++
                  "Integer means a number without a decimal."
 aliasInput3 : Element
 aliasInput3 =
-  codeText (padLeft 17 ' ' " , dir1 : Int")
+  codeText "  , dir1 : Int"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasInput3Msg) else (Signal.send hoveredOn ""))
 
 aliasInput4Msg = "There is an attribute called dir2, of type integer.\n" ++
                  "Integer means a number without a decimal."
 aliasInput4 : Element
 aliasInput4 =
-  codeText (padLeft 17 ' ' " , dir2 : Int")
+  codeText "  , dir2 : Int"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasInput4Msg) else (Signal.send hoveredOn ""))
 
 aliasInput5Msg = "There is an attribute called delta with a Time value."
 aliasInput5 : Element
 aliasInput5 =
-  codeText (padLeft 19 ' ' " , delta : Time")
+  codeText "  , delta : Time"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasInput5Msg) else (Signal.send hoveredOn ""))
 
 aliasInput6Msg = "Ends the list of attributes for Input."
 aliasInput6 : Element
 aliasInput6 =
-  codeText (padLeft 6 ' ' " }")
+  codeText "  }"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn aliasInput6Msg) else (Signal.send hoveredOn ""))
 
 {--
