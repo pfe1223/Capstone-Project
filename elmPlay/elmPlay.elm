@@ -1650,7 +1650,7 @@ updateBadGuy12 =
 
 updateBadGuy12a : Element
 updateBadGuy12a =
-  body "uArr; (y > halfHeight-25)"
+  body "&uArr; (y > halfHeight-25)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn updateBadGuy12Msg) else (Signal.send hoveredOn ""))
 
 updateBadGuy13Msg = "The bracket ends the attributes of badGuy which\n" ++
