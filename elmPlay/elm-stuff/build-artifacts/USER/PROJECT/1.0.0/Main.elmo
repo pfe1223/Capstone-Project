@@ -772,10 +772,10 @@ Elm.Main.make = function (_elm) {
    "from the user. Signals can also be time or the\n",
    "size of a window.")));
    var textMsg = A2($Basics._op["++"],
-   "Import everything from the Text library. This\n",
+   "Import the Text library. This library allows\n",
    A2($Basics._op["++"],
-   "library allows you to change the size, color,\n",
-   "and position of the text used in this game."));
+   "you to change the size, color, and position\n",
+   "of the text used in this game."));
    var graphicsCollageMsg = A2($Basics._op["++"],
    "Import everything from the Graphics.Collage\n",
    A2($Basics._op["++"],
@@ -1449,7 +1449,7 @@ Elm.Main.make = function (_elm) {
       colorMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("import Color (..)"));
+   })(body("import Color exposing (..)"));
    var importGraphicsElement = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -1463,14 +1463,14 @@ Elm.Main.make = function (_elm) {
       graphicsCollageMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("import Graphics.Collage (..)"));
+   })(body("import Graphics.Collage exposing (..)"));
    var importText = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       textMsg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("import Text (..)"));
+   })(body("import Text"));
    var importSignal = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -3479,7 +3479,7 @@ Elm.Main.make = function (_elm) {
       txtFunc2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("&uArr; Text.monospace >> f >> Text.leftAligned"));
+   })(body("&uArr; Text.monospace >> f >> leftAligned"));
    var viewContainer10 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
