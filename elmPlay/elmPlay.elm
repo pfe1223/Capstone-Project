@@ -487,7 +487,7 @@ graphicsElementMsg = "Import everything from the Graphics.Element\n" ++
                      "the game in the middle of the page."
 importGraphicsElement : Element
 importGraphicsElement =
-  body "import Graphics.Element (..)"
+  body "import Graphics.Element exposing (..)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn graphicsElementMsg) else (Signal.send hoveredOn ""))
 
 graphicsCollageMsg = "Import everything from the Graphics.Collage\n" ++
