@@ -5487,14 +5487,14 @@ Elm.Main.make = function (_elm) {
       signalMain1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("main ="));
+   })(codeText("main ="));
    var signalMain2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       signalMain2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("Signal.map2 view Window.dimensions gameState"));
+   })(codeText("  Signal.map2 view Window.dimensions gameState"));
    var signalsContainer1 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -5508,9 +5508,15 @@ Elm.Main.make = function (_elm) {
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
-                                ,signalMain2]))]));
+                                ,signalMain2]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var signalGameState1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -5518,21 +5524,21 @@ Elm.Main.make = function (_elm) {
       signalGameState1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("gameState : Signal Game"));
+   })(codeText("gameState : Signal Game"));
    var signalGameState2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       signalGameState2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("gameState ="));
+   })(codeText("gameState ="));
    var signalGameState3 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       signalGameState3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(body("Signal.foldp update defaultGame input"));
+   })(codeText("  Signal.foldp update defaultGame input"));
    var signalsContainer2 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -5552,9 +5558,15 @@ Elm.Main.make = function (_elm) {
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
-                                ,signalGameState3]))]));
+                                ,signalGameState3]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var signalDelta1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,

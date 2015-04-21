@@ -625,7 +625,8 @@ signalsContainer1 : Int -> String -> Element
 signalsContainer1 sig hoveredOn =
   flow down
     [ flow right [spacer 10 5, signalMain1]
-    , flow right [spacer 25 5, signalMain2]
+    , flow right [spacer 10 5, signalMain2]
+    , flow right [spacer 10 5, codeText extraLine]
     ]
 
 signalMain1Msg = "Define the main function. Every Elm\n" ++
@@ -634,7 +635,7 @@ signalMain1Msg = "Define the main function. Every Elm\n" ++
                  "that writes the output to the screen."
 signalMain1 : Element
 signalMain1 =
-  body "main ="
+  codeText "main ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalMain1Msg) else (Signal.send hoveredOn ""))
 
 signalMain2Msg = "This function maps (or combines) the view\n" ++
@@ -643,7 +644,7 @@ signalMain2Msg = "This function maps (or combines) the view\n" ++
                  "gameState signal."
 signalMain2 : Element
 signalMain2 =
-  body "Signal.map2 view Window.dimensions gameState"
+  codeText "  Signal.map2 view Window.dimensions gameState"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalMain2Msg) else (Signal.send hoveredOn ""))
 
 displaySignals2 : Int -> String -> Element
@@ -662,7 +663,8 @@ signalsContainer2 sig hoveredOn =
   flow down
     [ flow right [spacer 10 5, signalGameState1]
     , flow right [spacer 10 5, signalGameState2]
-    , flow right [spacer 25 5, signalGameState3]
+    , flow right [spacer 10 5, signalGameState3]
+    , flow right [spacer 10 5, codeText extraLine]
     ]
 
 signalGameState1Msg = "Define gameState as a signal of type Game.\n" ++
@@ -670,13 +672,13 @@ signalGameState1Msg = "Define gameState as a signal of type Game.\n" ++
                       "Model section."
 signalGameState1 : Element
 signalGameState1 =
-  body "gameState : Signal Game"
+  codeText "gameState : Signal Game"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalGameState1Msg) else (Signal.send hoveredOn ""))
 
 signalGameState2Msg = "Define the specifics of gameState."
 signalGameState2 : Element
 signalGameState2 =
-  body "gameState ="
+  codeText "gameState ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalGameState2Msg) else (Signal.send hoveredOn ""))
 
 signalGameState3Msg = "gameState is a past dependent function, which\n" ++
@@ -684,7 +686,7 @@ signalGameState3Msg = "gameState is a past dependent function, which\n" ++
                       "defaultGame, and input.\n"
 signalGameState3 : Element
 signalGameState3 =
-  body"Signal.foldp update defaultGame input"
+  codeText "  Signal.foldp update defaultGame input"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalGameState3Msg) else (Signal.send hoveredOn ""))
 
 displaySignals3 : Int -> String -> Element
@@ -702,13 +704,14 @@ signalsContainer3 : Int -> String -> Element
 signalsContainer3 sig hoveredOn =
   flow down
     [ flow right [spacer 10 5, signalDelta1]
-    , flow right [spacer 25 5, signalDelta2]
+    , flow right [spacer 10 5, signalDelta2]
+    , flow right [spacer 10 5, codeText extraLine]
     ]
 
 signalDelta1Msg = " Define specific characteristics of the delta signal."
 signalDelta1 : Element
 signalDelta1 =
-  body "delta ="
+  codeText "delta ="
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalDelta1Msg) else (Signal.send hoveredOn ""))
 
 signalDelta2Msg = "inSeconds marks the current time in seconds. fps\n" ++
@@ -719,7 +722,7 @@ signalDelta2Msg = "inSeconds marks the current time in seconds. fps\n" ++
 
 signalDelta2 : Element
 signalDelta2 =
-  body "Signal.map inSeconds (fps 35)"
+  codeText "  Signal.map inSeconds (fps 35)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn signalDelta2Msg) else (Signal.send hoveredOn ""))
 
 displaySignals4 : Int -> String -> Element
