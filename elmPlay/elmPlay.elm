@@ -2186,15 +2186,15 @@ displayView2 sig hoveredOn =
 viewContainer2 : Int -> String -> Element
 viewContainer2 sig hoveredOn =
   flow down
-    [ flow right [spacer 25 5, viewFunc3]
-    , flow right [spacer 40 5, viewFunc4]
+    [ flow right [spacer 10 5, viewFunc3]
+    , flow right [spacer 10 5, viewFunc4]
     ]
 
 viewFunc3Msg = "The let expression creates an object lives,\n" ++
                "which is of type element."
 viewFunc3 : Element
 viewFunc3 =
-  codeText "let lives : Element"
+  codeText "  let lives : Element"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc3Msg) else (Signal.send hoveredOn ""))
 
 viewFunc4Msg = "The objecct lives is assigned the value of\n" ++
@@ -2203,7 +2203,7 @@ viewFunc4Msg = "The objecct lives is assigned the value of\n" ++
                "a string, and has a size of 50."
 viewFunc4 : Element
 viewFunc4 =
-  codeText "lives = txt(Text.height 50) (toString player1.lives)"
+  codeText "    lives = txt(Text.height 50) (toString player1.lives)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc4Msg) else (Signal.send hoveredOn ""))
 
 displayView3 : Int -> String -> Element
@@ -2220,16 +2220,16 @@ displayView3 sig hoveredOn =
 viewContainer3 : Int -> String -> Element
 viewContainer3 sig hoveredOn =
   flow down
-    [ flow right [spacer 25 5, viewFunc5]
-    , flow right [spacer 40 5, viewFunc6]
-    , flow right [spacer 40 5, viewFunc7]
+    [ flow right [spacer 10 5, viewFunc5]
+    , flow right [spacer 10 5, viewFunc6]
+    , flow right [spacer 10 5, viewFunc7]
     ]
 
 viewFunc5Msg = "In is part of the let expression, and indicates\n" ++
                "where the newly defined lives will be used."
 viewFunc5 : Element
 viewFunc5 =
-  codeText "in"
+  codeText "  in"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc5Msg) else (Signal.send hoveredOn ""))
 
 viewFunc6Msg = "A container is an object that holds elements. It\n" ++
@@ -2237,7 +2237,7 @@ viewFunc6Msg = "A container is an object that holds elements. It\n" ++
                "placed in the middle of the element."
 viewFunc6 : Element
 viewFunc6 =
-  codeText "container w h middle <|"
+  codeText "    container w h middle <|"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc6Msg) else (Signal.send hoveredOn ""))
 
 viewFunc7Msg = "The container holds a collage, which is a\n" ++
@@ -2247,7 +2247,7 @@ viewFunc7Msg = "The container holds a collage, which is a\n" ++
                "a height of gameHeight (400)."
 viewFunc7 : Element
 viewFunc7 =
-  codeText "collage gameWidth gameHeight"
+  codeText "    collage gameWidth gameHeight"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc7Msg) else (Signal.send hoveredOn ""))
 
 displayView4 : Int -> String -> Element
@@ -2264,15 +2264,15 @@ displayView4 sig hoveredOn =
 viewContainer4 : Int -> String -> Element
 viewContainer4 sig hoveredOn =
   flow down
-    [ flow right [spacer 55 5, viewFunc8]
-    , flow right [spacer 70 5, viewFunc9]
+    [ flow right [spacer 10 5, viewFunc8]
+    , flow right [spacer 10 5, viewFunc9]
     ]
 
 viewFunc8Msg = "Inside of the collage is a rectangle with\n" ++
                "the same dimensions as the collage."
 viewFunc8 : Element
 viewFunc8 =
-  codeText "[ rect gameWidth gameHeight"
+  codeText "      [ rect gameWidth gameHeight"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc8Msg) else (Signal.send hoveredOn ""))
 
 viewFunc9Msg = "The rectangle is filled with the custom color\n" ++
@@ -2280,7 +2280,7 @@ viewFunc9Msg = "The rectangle is filled with the custom color\n" ++
                "from the Elm logo."
 viewFunc9 : Element
 viewFunc9 =
-  codeText "|> filled elmGrey"
+  codeText "        |> filled elmGrey"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc9Msg) else (Signal.send hoveredOn ""))
 
 displayView5 : Int -> String -> Element
@@ -2297,16 +2297,16 @@ displayView5 sig hoveredOn =
 viewContainer5 : Int -> String -> Element
 viewContainer5 sig hoveredOn =
   flow down
-    [ flow right [spacer 55 5, viewFunc10]
-    , flow right [spacer 70 5, viewFunc11]
-    , flow right [spacer 70 5, viewFunc12]
+    [ flow right [spacer 10 5, viewFunc10]
+    , flow right [spacer 10 5, viewFunc11]
+    , flow right [spacer 10 5, viewFunc12]
     ]
 
 viewFunc10Msg = "Also in the collage is a six-sided polygon\n" ++
                 "with a radius of 25."
 viewFunc10 : Element
 viewFunc10 =
-  codeText ", ngon 6 25 "
+  codeText "      , ngon 6 25 "
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc10Msg) else (Signal.send hoveredOn ""))
 
 viewFunc11Msg = "The hexagon is filled with the custom color\n" ++
@@ -2314,7 +2314,7 @@ viewFunc11Msg = "The hexagon is filled with the custom color\n" ++
                 "comes from the Elm logo."
 viewFunc11 : Element
 viewFunc11 =
-  codeText "|> filled elmOrange"
+  codeText "        |> filled elmOrange"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc11Msg) else (Signal.send hoveredOn ""))
 
 viewFunc12Msg = "The hexagon is moved to the x and y\n" ++
@@ -2322,7 +2322,7 @@ viewFunc12Msg = "The hexagon is moved to the x and y\n" ++
                 "represents the antagonist in the game."
 viewFunc12 : Element
 viewFunc12 =
-  codeText "|> move (badGuy.x, badGuy.y)"
+  codeText "        |> move (badGuy.x, badGuy.y)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc12Msg) else (Signal.send hoveredOn ""))
 
 displayView6 : Int -> String -> Element
@@ -2339,15 +2339,15 @@ displayView6 sig hoveredOn =
 viewContainer6 : Int -> String -> Element
 viewContainer6 sig hoveredOn =
   flow down
-    [ flow right [spacer 55 5, viewFunc13]
-    , flow right [spacer 70 5, viewFunc14]
-    , flow right [spacer 70 5, viewFunc15]
+    [ flow right [spacer 10 5, viewFunc13]
+    , flow right [spacer 10 5, viewFunc14]
+    , flow right [spacer 10 5, viewFunc15]
     ]
 
 viewFunc13Msg = "A circle with a radius of 20 is also in the collage."
 viewFunc13 : Element
 viewFunc13 =
-  codeText ", circle 20"
+  codeText "      , circle 20"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc13Msg) else (Signal.send hoveredOn ""))
 
 viewFunc14Msg = "The circle is filled with the custom color\n" ++
@@ -2355,7 +2355,7 @@ viewFunc14Msg = "The circle is filled with the custom color\n" ++
                 "comes from the Elm logo."
 viewFunc14 : Element
 viewFunc14 =
-  codeText "|> filled elmBlue"
+  codeText "        |> filled elmBlue"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc14Msg) else (Signal.send hoveredOn ""))
 
 viewFunc15Msg = "The circle is moved to the x and y\n" ++
@@ -2363,7 +2363,7 @@ viewFunc15Msg = "The circle is moved to the x and y\n" ++
                 "represents the protagonist in the game."
 viewFunc15 : Element
 viewFunc15 =
-  codeText "|> move (player1.x, player1.y)"
+  codeText "        |> move (player1.x, player1.y)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc15Msg) else (Signal.send hoveredOn ""))
 
 -- View Message 2
@@ -2381,8 +2381,8 @@ displayView7 sig hoveredOn =
 viewContainer7 :  Int -> String -> Element
 viewContainer7 sig hoveredOn =
   flow down
-    [ flow right [spacer 55 5, viewFunc16]
-    , flow right [spacer 70 5, viewFunc17]
+    [ flow right [spacer 10 5, viewFunc16]
+    , flow right [spacer 10 5, viewFunc17]
     ]
 
 viewFunc16Msg = "The object lives (created 5 pages ago)\n" ++
@@ -2391,7 +2391,7 @@ viewFunc16Msg = "The object lives (created 5 pages ago)\n" ++
                 "into a form."
 viewFunc16 : Element
 viewFunc16 =
-  codeText ", toForm lives"
+  codeText "      , toForm lives"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc16Msg) else (Signal.send hoveredOn ""))
 
 viewFunc17Msg = "The form lives is moved to the location 0\n" ++
@@ -2399,7 +2399,7 @@ viewFunc17Msg = "The form lives is moved to the location 0\n" ++
                 "from the top of the game area)."
 viewFunc17 : Element
 viewFunc17 =
-  codeText "|> move (0, gameHeight/2 - 40)"
+  codeText "        |> move (0, gameHeight/2 - 40)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc17Msg) else (Signal.send hoveredOn ""))
 
 displayView8 : Int -> String -> Element
@@ -2416,10 +2416,11 @@ displayView8 sig hoveredOn =
 viewContainer8 :  Int -> String -> Element
 viewContainer8 sig hoveredOn =
   flow down
-    [ flow right [spacer 55 5, viewFunc18]
-    , flow right [spacer 85 5, viewFunc18a]
-    , flow right [spacer 70 5, viewFunc19]
-    , flow right [spacer 55 5, viewFunc20]
+    [ flow right [spacer 10 5, viewFunc18]
+    , flow right [spacer 10 5, viewFunc18a]
+    , flow right [spacer 10 5, viewFunc19]
+    , flow right [spacer 10 5, viewFunc20]
+    , flow right [spacer 20 5, codeText extraLine]
     ]
 
 viewFunc18Msg = "There is one last form in the collage. If the\n" ++
@@ -2431,12 +2432,12 @@ viewFunc18Msg = "There is one last form in the collage. If the\n" ++
                 "txt are defined over the next few pages."
 viewFunc18 : Element
 viewFunc18 =
-  codeText ", toForm (if state == Play then spacer 1 1"
+  codeText "      , toForm (if state == Play then spacer 1 1"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc18Msg) else (Signal.send hoveredOn ""))
 
 viewFunc18a : Element
 viewFunc18a =
-  codeText "&uArr; else txt identity msg"
+  codeText "          &uArr; else txt identity msg"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc18Msg) else (Signal.send hoveredOn ""))
 
 viewFunc19Msg = "The form is moved to the location 0 (centered),\n" ++
@@ -2444,14 +2445,14 @@ viewFunc19Msg = "The form is moved to the location 0 (centered),\n" ++
                 "of the game area)."
 viewFunc19 : Element
 viewFunc19 =
-  codeText "|> move (0, 40 - gameHeight/2)"
+  codeText "        |> move (0, 40 - gameHeight/2)"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc19Msg) else (Signal.send hoveredOn ""))
 
 viewFunc20Msg = "This bracket closes the list of forms\n" ++
                 "found in the collage."
 viewFunc20 : Element
 viewFunc20 =
-  codeText "]"
+  codeText "      ]"
     |> hoverable (\ r -> if r then (Signal.send hoveredOn viewFunc20Msg) else (Signal.send hoveredOn ""))
 
 displayView9 : Int -> String -> Element
