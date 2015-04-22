@@ -5252,7 +5252,7 @@ Elm.Main.make = function (_elm) {
                 _L.fromArray([wayfinderPresent]))]));
    var extraLine = A2($Basics._op["++"],
    "\n",
-   "-- Copy this line too");
+   "-- ");
    var dropdownHeight = 100;
    var questionHeight = 300;
    var linkWidth = 200;
@@ -7179,14 +7179,14 @@ Elm.Main.make = function (_elm) {
       viewFunc3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("let lives : Element"));
+   })(codeText("  let lives : Element"));
    var viewFunc4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("lives = txt(Text.height 50) (toString player1.lives)"));
+   })(codeText("    lives = txt(Text.height 50) (toString player1.lives)"));
    var viewContainer2 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7194,13 +7194,13 @@ Elm.Main.make = function (_elm) {
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
                                 ,viewFunc3]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                40,
+                                10,
                                 5)
                                 ,viewFunc4]))]));
    });
@@ -7210,21 +7210,21 @@ Elm.Main.make = function (_elm) {
       viewFunc5Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("in"));
+   })(codeText("  in"));
    var viewFunc6 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc6Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("container w h middle <|"));
+   })(codeText("    container w h middle <|"));
    var viewFunc7 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc7Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("collage gameWidth gameHeight"));
+   })(codeText("    collage gameWidth gameHeight"));
    var viewContainer3 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7232,19 +7232,19 @@ Elm.Main.make = function (_elm) {
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
                                 ,viewFunc5]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                40,
+                                10,
                                 5)
                                 ,viewFunc6]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                40,
+                                10,
                                 5)
                                 ,viewFunc7]))]));
    });
@@ -7254,14 +7254,14 @@ Elm.Main.make = function (_elm) {
       viewFunc8Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("[ rect gameWidth gameHeight"));
+   })(codeText("      [ rect gameWidth gameHeight"));
    var viewFunc9 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc9Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("|> filled elmGrey"));
+   })(codeText("        |> filled elmGrey"));
    var viewContainer4 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7269,13 +7269,13 @@ Elm.Main.make = function (_elm) {
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
                                 ,viewFunc8]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                70,
+                                10,
                                 5)
                                 ,viewFunc9]))]));
    });
@@ -7285,21 +7285,21 @@ Elm.Main.make = function (_elm) {
       viewFunc10Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText(", ngon 6 25 "));
+   })(codeText("      , ngon 6 25 "));
    var viewFunc11 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc11Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("|> filled elmOrange"));
+   })(codeText("        |> filled elmOrange"));
    var viewFunc12 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc12Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("|> move (badGuy.x, badGuy.y)"));
+   })(codeText("        |> move (badGuy.x, badGuy.y)"));
    var viewContainer5 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7307,19 +7307,19 @@ Elm.Main.make = function (_elm) {
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
                                 ,viewFunc10]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                70,
+                                10,
                                 5)
                                 ,viewFunc11]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                70,
+                                10,
                                 5)
                                 ,viewFunc12]))]));
    });
@@ -7329,21 +7329,21 @@ Elm.Main.make = function (_elm) {
       viewFunc13Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText(", circle 20"));
+   })(codeText("      , circle 20"));
    var viewFunc14 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc14Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("|> filled elmBlue"));
+   })(codeText("        |> filled elmBlue"));
    var viewFunc15 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc15Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("|> move (player1.x, player1.y)"));
+   })(codeText("        |> move (player1.x, player1.y)"));
    var viewContainer6 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7351,19 +7351,19 @@ Elm.Main.make = function (_elm) {
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
                                 ,viewFunc13]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                70,
+                                10,
                                 5)
                                 ,viewFunc14]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                70,
+                                10,
                                 5)
                                 ,viewFunc15]))]));
    });
@@ -7373,14 +7373,14 @@ Elm.Main.make = function (_elm) {
       viewFunc16Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText(", toForm lives"));
+   })(codeText("      , toForm lives"));
    var viewFunc17 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc17Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("|> move (0, gameHeight/2 - 40)"));
+   })(codeText("        |> move (0, gameHeight/2 - 40)"));
    var viewContainer7 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7388,13 +7388,13 @@ Elm.Main.make = function (_elm) {
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
                                 ,viewFunc16]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                70,
+                                10,
                                 5)
                                 ,viewFunc17]))]));
    });
@@ -7404,28 +7404,28 @@ Elm.Main.make = function (_elm) {
       viewFunc18Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText(", toForm (if state == Play then spacer 1 1"));
+   })(codeText("      , toForm (if state == Play then spacer 1 1"));
    var viewFunc18a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc18Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("&uArr; else txt identity msg"));
+   })(codeText("          &uArr; else txt identity msg"));
    var viewFunc19 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc19Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("|> move (0, 40 - gameHeight/2)"));
+   })(codeText("        |> move (0, 40 - gameHeight/2)"));
    var viewFunc20 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       viewFunc20Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("]"));
+   })(codeText("      ]"));
    var viewContainer8 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7433,27 +7433,33 @@ Elm.Main.make = function (_elm) {
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
                                 ,viewFunc18]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                85,
+                                10,
                                 5)
                                 ,viewFunc18a]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                70,
+                                10,
                                 5)
                                 ,viewFunc19]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
-                                ,viewFunc20]))]));
+                                ,viewFunc20]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                20,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var elmGreyColor = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,

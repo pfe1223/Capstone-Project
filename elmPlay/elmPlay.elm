@@ -93,7 +93,7 @@ questionHeight = 300
 dropdownHeight = 100
 
 extraLine : String
-extraLine = "\n" ++ "-- Copy this line too"
+extraLine = "\n" ++ "-- "
 
 -- Wayfinding tools
 wayfinderPast =
