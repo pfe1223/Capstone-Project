@@ -3935,7 +3935,6 @@ Elm.Main.make = function (_elm) {
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $String = Elm.String.make(_elm),
    $Text = Elm.Text.make(_elm);
    var resourcesMsg = A2($Basics._op["++"],
    "For more information on the Elm\n",
@@ -5749,7 +5748,13 @@ Elm.Main.make = function (_elm) {
                    _L.fromArray([A2($Graphics$Element.spacer,
                                 10,
                                 5)
-                                ,playingSize]))]));
+                                ,playingSize]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var typeState = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -5763,11 +5768,17 @@ Elm.Main.make = function (_elm) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
       _L.fromArray([A2($Graphics$Element.flow,
-      $Graphics$Element.right,
-      _L.fromArray([A2($Graphics$Element.spacer,
-                   10,
-                   5)
-                   ,typeState]))]));
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,typeState]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var aliasBadGuy1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -5782,7 +5793,7 @@ Elm.Main.make = function (_elm) {
       aliasBadGuy2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("{ x:Float, y:Float, vx:Float, vy:Float }"));
+   })(codeText("  { x:Float, y:Float, vx:Float, vy:Float }"));
    var modelContainer3 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -5796,9 +5807,15 @@ Elm.Main.make = function (_elm) {
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
-                                ,aliasBadGuy2]))]));
+                                ,aliasBadGuy2]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var aliasPlayer1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -5813,7 +5830,7 @@ Elm.Main.make = function (_elm) {
       aliasPlayer2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("{ x:Float, y:Float, vx:Float, vy:Float, lives:Int }"));
+   })(codeText("  { x:Float, y:Float, vx:Float, vy:Float, lives:Int }"));
    var modelContainer4 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -5827,9 +5844,15 @@ Elm.Main.make = function (_elm) {
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
-                                ,aliasPlayer2]))]));
+                                ,aliasPlayer2]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var aliasGame1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -5844,7 +5867,7 @@ Elm.Main.make = function (_elm) {
       aliasGame2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("{ state:State, badGuy:BadGuy, player1:Player }"));
+   })(codeText("  { state:State, badGuy:BadGuy, player1:Player }"));
    var modelContainer5 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -5858,9 +5881,15 @@ Elm.Main.make = function (_elm) {
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
-                                ,aliasGame2]))]));
+                                ,aliasGame2]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var defaultGame1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -5882,21 +5911,21 @@ Elm.Main.make = function (_elm) {
       defaultGame3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("{ state = Pause"));
+   })(codeText("  { state = Pause"));
    var defaultGame4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       defaultGame4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText(", badGuy = { x=0, y=0, vx=300, vy=300 }"));
+   })(codeText("  , badGuy = { x=0, y=0, vx=300, vy=300 }"));
    var defaultGame5 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       defaultGame5Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText(", player1 = { x = 15-halfWidth, y = 0, vx = 0,"));
+   })(codeText("  , player1 = { x = 15-halfWidth, y = 0, vx = 0,"));
    var defaultGame6 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -5910,7 +5939,7 @@ Elm.Main.make = function (_elm) {
       defaultGame7Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("}"));
+   })(codeText("  }"));
    var modelContainer6 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -5930,33 +5959,39 @@ Elm.Main.make = function (_elm) {
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
                                 ,defaultGame3]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
                                 ,defaultGame4]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
                                 ,defaultGame5]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
                                 ,defaultGame6]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
-                                ,defaultGame7]))]));
+                                ,defaultGame7]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var aliasInput1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -5971,50 +6006,35 @@ Elm.Main.make = function (_elm) {
       aliasInput2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText(A3($String.padLeft,
-   19,
-   _U.chr(" "),
-   " { space : Bool")));
+   })(codeText("  { space : Bool"));
    var aliasInput3 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       aliasInput3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText(A3($String.padLeft,
-   17,
-   _U.chr(" "),
-   " , dir1 : Int")));
+   })(codeText("  , dir1 : Int"));
    var aliasInput4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       aliasInput4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText(A3($String.padLeft,
-   17,
-   _U.chr(" "),
-   " , dir2 : Int")));
+   })(codeText("  , dir2 : Int"));
    var aliasInput5 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       aliasInput5Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText(A3($String.padLeft,
-   19,
-   _U.chr(" "),
-   " , delta : Time")));
+   })(codeText("  , delta : Time"));
    var aliasInput6 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       aliasInput6Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText(A3($String.padLeft,
-   6,
-   _U.chr(" "),
-   " }")));
+   })(codeText("  }"));
    var modelContainer7 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6028,33 +6048,39 @@ Elm.Main.make = function (_elm) {
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
                                 ,aliasInput2]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
                                 ,aliasInput3]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
                                 ,aliasInput4]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
                                 ,aliasInput5]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
-                                ,aliasInput6]))]));
+                                ,aliasInput6]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var updateFunc1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6076,21 +6102,21 @@ Elm.Main.make = function (_elm) {
       updateFunc2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("&uArr; player1} as game) ="));
+   })(codeText("    &uArr; player1} as game) ="));
    var updateFunc4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("let lives = if (badGuy `within` player1) then 1"));
+   })(codeText("  let lives = if (badGuy `within` player1) then 1"));
    var updateFunc4a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("&uArr; else 0"));
+   })(codeText("    &uArr; else 0"));
    var updateContainer1 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6110,21 +6136,27 @@ Elm.Main.make = function (_elm) {
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                40,
+                                10,
                                 5)
                                 ,updateFunc3]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
                                 ,updateFunc4]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                40,
+                                10,
                                 5)
-                                ,updateFunc4a]))]));
+                                ,updateFunc4a]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var updateFunc5 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6132,28 +6164,28 @@ Elm.Main.make = function (_elm) {
       updateFunc5Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("newState ="));
+   })(codeText("    newState ="));
    var updateFunc6 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc6Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("if | space                    -> Play"));
+   })(codeText("      if | space                    -> Play"));
    var updateFunc7 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc7Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("| player1.lives == 0 -> Pause"));
+   })(codeText("         | player1.lives == 0 -> Pause"));
    var updateFunc8 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc8Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("| otherwise              -> state"));
+   })(codeText("         | otherwise              -> state"));
    var updateContainer2 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6161,27 +6193,33 @@ Elm.Main.make = function (_elm) {
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                40,
+                                10,
                                 5)
                                 ,updateFunc5]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
                                 ,updateFunc6]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                70,
+                                10,
                                 5)
                                 ,updateFunc7]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                70,
+                                10,
                                 5)
-                                ,updateFunc8]))]));
+                                ,updateFunc8]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var updateFunc9 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6189,28 +6227,28 @@ Elm.Main.make = function (_elm) {
       updateFunc9Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("newBadGuy ="));
+   })(codeText("    newBadGuy ="));
    var updateFunc10 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc10Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("if state == Pause"));
+   })(codeText("      if state == Pause"));
    var updateFunc11 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc11Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("then badGuy"));
+   })(codeText("         then badGuy"));
    var updateFunc12 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc12Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("else updateBadGuy delta badGuy player1"));
+   })(codeText("         else updateBadGuy delta badGuy player1"));
    var updateContainer3 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6218,27 +6256,33 @@ Elm.Main.make = function (_elm) {
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                40,
+                                10,
                                 5)
                                 ,updateFunc9]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
                                 ,updateFunc10]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                70,
+                                10,
                                 5)
                                 ,updateFunc11]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                70,
+                                10,
                                 5)
-                                ,updateFunc12]))]));
+                                ,updateFunc12]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var updateFunc13 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6246,49 +6290,49 @@ Elm.Main.make = function (_elm) {
       updateFunc13Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("in"));
+   })(codeText("  in"));
    var updateFunc14 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc14Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("{ game |"));
+   })(codeText("    { game |"));
    var updateFunc15 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc15Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("state   <- newState,"));
+   })(codeText("      state   <- newState,"));
    var updateFunc16 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc16Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("badGuy  <- newBadGuy,"));
+   })(codeText("      badGuy  <- newBadGuy,"));
    var updateFunc17 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc17Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("player1 <- updatePlayer delta dir1 dir2"));
+   })(codeText("      player1 <- updatePlayer delta dir1 dir2"));
    var updateFunc17a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc17Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("&uArr; lives player1"));
+   })(codeText("        &uArr; lives player1"));
    var updateFunc18 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateFunc18Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("}"));
+   })(codeText("    }"));
    var updateContainer4 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6296,45 +6340,51 @@ Elm.Main.make = function (_elm) {
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
                                 ,updateFunc13]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                40,
+                                10,
                                 5)
                                 ,updateFunc14]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
                                 ,updateFunc15]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
                                 ,updateFunc16]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
                                 ,updateFunc17]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                70,
+                                10,
                                 5)
                                 ,updateFunc17a]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                40,
+                                10,
                                 5)
-                                ,updateFunc18]))]));
+                                ,updateFunc18]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var updateBadGuy1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6349,7 +6399,7 @@ Elm.Main.make = function (_elm) {
       updateBadGuy1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("&uArr; BadGuy"));
+   })(codeText("  &uArr; BadGuy"));
    var updateBadGuy2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6363,7 +6413,7 @@ Elm.Main.make = function (_elm) {
       updateBadGuy2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("&uArr; ({x,y,vx,vy,lives} as player1) ="));
+   })(codeText("  &uArr; ({x,y,vx,vy,lives} as player1) ="));
    var updateContainer5 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6377,7 +6427,7 @@ Elm.Main.make = function (_elm) {
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
                                 ,updateBadGuy1a]))
                    ,A2($Graphics$Element.flow,
@@ -6389,7 +6439,7 @@ Elm.Main.make = function (_elm) {
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
                                 ,updateBadGuy2a]))]));
    });
@@ -6399,63 +6449,63 @@ Elm.Main.make = function (_elm) {
       updateBadGuy3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("if | (player1.lives == 0) -> { badGuy | x <- 0,"));
+   })(codeText("  if | (player1.lives == 0) -> { badGuy | x <- 0,"));
    var updateBadGuy3a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("&uArr; y <- 0}"));
+   })(codeText("      &uArr; y <- 0}"));
    var updateBadGuy4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("| (badGuy `within` player1) -> physicsUpdate t"));
+   })(codeText("     | (badGuy `within` player1) -> physicsUpdate t"));
    var updateBadGuy5 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy5Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("{ badGuy |"));
+   })(codeText("       { badGuy |"));
    var updateBadGuy6 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy6Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("vx <- stepV vx (badGuy.vx < 0)"));
+   })(codeText("        vx <- stepV vx (badGuy.vx < 0)"));
    var updateBadGuy6a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy6Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("&uArr; (badGuy.vx > 0),"));
+   })(codeText("          &uArr; (badGuy.vx > 0),"));
    var updateBadGuy7 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy7Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("vy <- stepV vy (badGuy.vy < 0 ) "));
+   })(codeText("        vy <- stepV vy (badGuy.vy < 0 ) "));
    var updateBadGuy7a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy7Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("&uArr; (badGuy.vy > 0)"));
+   })(codeText("          &uArr; (badGuy.vy > 0)"));
    var updateBadGuy8 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy8Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("}"));
+   })(codeText("       }"));
    var updateContainer6 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6463,55 +6513,55 @@ Elm.Main.make = function (_elm) {
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
                                 ,updateBadGuy3]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                70,
+                                10,
                                 5)
                                 ,updateBadGuy3a]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                40,
+                                10,
                                 5)
                                 ,updateBadGuy4]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
                                 ,updateBadGuy5]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                70,
+                                10,
                                 5)
                                 ,updateBadGuy6]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                85,
+                                10,
                                 5)
                                 ,updateBadGuy6a]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                70,
+                                10,
                                 5)
                                 ,updateBadGuy7]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                85,
+                                10,
                                 5)
                                 ,updateBadGuy7a]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
                                 ,updateBadGuy8]))]));
    });
@@ -6521,49 +6571,49 @@ Elm.Main.make = function (_elm) {
       updateBadGuy9Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("| otherwise -> physicsUpdate t"));
+   })(codeText("     | otherwise -> physicsUpdate t"));
    var updateBadGuy10 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy10Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("{ badGuy |"));
+   })(codeText("       { badGuy |"));
    var updateBadGuy11 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy11Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("vx <- stepV vx (x < 25-halfWidth) "));
+   })(codeText("         vx <- stepV vx (x < 25-halfWidth) "));
    var updateBadGuy11a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy11Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("&uArr; (x > halfWidth-25),"));
+   })(codeText("           &uArr; (x > halfWidth-25),"));
    var updateBadGuy12 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy12Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("vy <- stepV vy (y < 25-halfHeight) "));
+   })(codeText("         vy <- stepV vy (y < 25-halfHeight) "));
    var updateBadGuy12a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy12Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("&uArr; (y > halfHeight-25)"));
+   })(codeText("           &uArr; (y > halfHeight-25)"));
    var updateBadGuy13 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateBadGuy13Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("}"));
+   })(codeText("       }"));
    var updateContainer7 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6571,45 +6621,51 @@ Elm.Main.make = function (_elm) {
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                40,
+                                10,
                                 5)
                                 ,updateBadGuy9]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
                                 ,updateBadGuy10]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                70,
+                                10,
                                 5)
                                 ,updateBadGuy11]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                85,
+                                10,
                                 5)
                                 ,updateBadGuy11a]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                70,
+                                10,
                                 5)
                                 ,updateBadGuy12]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                85,
+                                10,
                                 5)
                                 ,updateBadGuy12a]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
-                                ,updateBadGuy13]))]));
+                                ,updateBadGuy13]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var updatePlayer1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6624,7 +6680,7 @@ Elm.Main.make = function (_elm) {
       updatePlayer1Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("&uArr; Player -> Player"));
+   })(codeText("  &uArr; Player -> Player"));
    var updatePlayer2 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
@@ -6645,7 +6701,7 @@ Elm.Main.make = function (_elm) {
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
                                 ,updatePlayer1a]))
                    ,A2($Graphics$Element.flow,
@@ -6661,42 +6717,42 @@ Elm.Main.make = function (_elm) {
       updatePlayer3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("let player1 = physicsUpdate  t { player | "));
+   })(codeText("  let player1 = physicsUpdate  t { player | "));
    var updatePlayer3a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("&uArr; vx <- toFloat dir1 * 200"));
+   })(codeText("    &uArr; vx <- toFloat dir1 * 200"));
    var updatePlayer4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("vy <- toFloat dir2 * 200}"));
+   })(codeText("     vy <- toFloat dir2 * 200}"));
    var updatePlayer5 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer5Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("alive = if (player.lives - lives < 0)"));
+   })(codeText("    alive = if (player.lives - lives < 0)"));
    var updatePlayer6 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer6Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("then 0"));
+   })(codeText("      then 0"));
    var updatePlayer7 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer7Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("else (player.lives - lives)"));
+   })(codeText("      else (player.lives - lives)"));
    var updateContainer9 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6704,39 +6760,46 @@ Elm.Main.make = function (_elm) {
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
                                 ,updatePlayer3]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                130,
+                                10,
                                 5)
                                 ,updatePlayer3a]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                130,
+                                10,
                                 5)
                                 ,updatePlayer4]))
+                   ,codeText("\n")
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                40,
+                                10,
                                 5)
                                 ,updatePlayer5]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
                                 ,updatePlayer6]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
-                                ,updatePlayer7]))]));
+                                ,updatePlayer7]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var updatePlayer8 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6744,56 +6807,56 @@ Elm.Main.make = function (_elm) {
       updatePlayer8Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("in"));
+   })(codeText("  in"));
    var updatePlayer9 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer9Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("{ player1 |"));
+   })(codeText("    { player1 |"));
    var updatePlayer10 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer10Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("y <- clamp (35-halfHeight) (halfHeight-35)"));
+   })(codeText("      y <- clamp (35-halfHeight) (halfHeight-35)"));
    var updatePlayer10a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer10Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("&uArr; player1.y,"));
+   })(codeText("        &uArr; player1.y,"));
    var updatePlayer11 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer11Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("x <- clamp (35-halfWidth) (halfWidth-35)"));
+   })(codeText("      x <- clamp (35-halfWidth) (halfWidth-35)"));
    var updatePlayer11a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer11Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("&uArr; player1.x,"));
+   })(codeText("        &uArr; player1.x,"));
    var updatePlayer12 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer12Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("lives <- alive"));
+   })(codeText("      lives <- alive"));
    var updatePlayer13 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePlayer13Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("}"));
+   })(codeText("    }"));
    var updateContainer10 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6801,51 +6864,57 @@ Elm.Main.make = function (_elm) {
       _L.fromArray([A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
                                 ,updatePlayer8]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                40,
+                                10,
                                 5)
                                 ,updatePlayer9]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
                                 ,updatePlayer10]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                85,
+                                10,
                                 5)
                                 ,updatePlayer10a]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
                                 ,updatePlayer11]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                85,
+                                10,
                                 5)
                                 ,updatePlayer11a]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                55,
+                                10,
                                 5)
                                 ,updatePlayer12]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                40,
+                                10,
                                 5)
-                                ,updatePlayer13]))]));
+                                ,updatePlayer13]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var updatePhysics1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6860,28 +6929,28 @@ Elm.Main.make = function (_elm) {
       updatePhysics2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("{ obj |"));
+   })(codeText("  { obj |"));
    var updatePhysics3 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePhysics3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("x <- x + vx * t,"));
+   })(codeText("    x <- x + vx * t,"));
    var updatePhysics4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePhysics4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("y <- y + vy * t"));
+   })(codeText("    y <- y + vy * t"));
    var updatePhysics5 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updatePhysics5Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("}"));
+   })(codeText("  }"));
    var updateContainer11 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6895,27 +6964,33 @@ Elm.Main.make = function (_elm) {
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
                                 ,updatePhysics2]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                40,
+                                10,
                                 5)
                                 ,updatePhysics3]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                40,
+                                10,
                                 5)
                                 ,updatePhysics4]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
-                                ,updatePhysics5]))]));
+                                ,updatePhysics5]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var updateNear1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6930,7 +7005,7 @@ Elm.Main.make = function (_elm) {
       updateNear2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("n >= k-c && n <= k+c"));
+   })(codeText("  n >= k-c && n <= k+c"));
    var updateContainer12 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6944,9 +7019,15 @@ Elm.Main.make = function (_elm) {
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
-                                ,updateNear2]))]));
+                                ,updateNear2]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var updateWithin1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -6961,14 +7042,14 @@ Elm.Main.make = function (_elm) {
       updateWithin2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("near player1.x 25 badGuy.x && "));
+   })(codeText("  near player1.x 25 badGuy.x && "));
    var updateWithin2a = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateWithin2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("&uArr; near player1.y 25 badGuy.y"));
+   })(codeText("    &uArr; near player1.y 25 badGuy.y"));
    var updateContainer13 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -6982,15 +7063,21 @@ Elm.Main.make = function (_elm) {
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
                                 ,updateWithin2]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                40,
+                                10,
                                 5)
-                                ,updateWithin2a]))]));
+                                ,updateWithin2a]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var updateStepV1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
@@ -7005,21 +7092,21 @@ Elm.Main.make = function (_elm) {
       updateStepV2Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("if | condition1 -> abs v"));
+   })(codeText("  if | condition1 -> abs v"));
    var updateStepV3 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateStepV3Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("| condition2 -> 0 - abs v"));
+   })(codeText("     | condition2 -> 0 - abs v"));
    var updateStepV4 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
       hoveredOn,
       updateStepV4Msg) : A2($Signal.send,
       hoveredOn,
       "");
-   })(codeText("| otherwise  -> v"));
+   })(codeText("     | otherwise  -> v"));
    var updateContainer14 = F2(function (sig,
    hoveredOn) {
       return A2($Graphics$Element.flow,
@@ -7033,21 +7120,27 @@ Elm.Main.make = function (_elm) {
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                25,
+                                10,
                                 5)
                                 ,updateStepV2]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                40,
+                                10,
                                 5)
                                 ,updateStepV3]))
                    ,A2($Graphics$Element.flow,
                    $Graphics$Element.right,
                    _L.fromArray([A2($Graphics$Element.spacer,
-                                40,
+                                10,
                                 5)
-                                ,updateStepV4]))]));
+                                ,updateStepV4]))
+                   ,A2($Graphics$Element.flow,
+                   $Graphics$Element.right,
+                   _L.fromArray([A2($Graphics$Element.spacer,
+                                10,
+                                5)
+                                ,codeText(extraLine)]))]));
    });
    var viewFunc1 = $Graphics$Input.hoverable(function (r) {
       return r ? A2($Signal.send,
