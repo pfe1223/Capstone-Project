@@ -196,6 +196,8 @@ buttonSOElement sig =
   color containerColor <| container containerWidth 50 midLeft <| flow right
     [ spacer 5 1
     , customRestartButton
+    , spacer 205 1
+    , customLButton sig
     ]
 
 questionElement : String -> Element

@@ -8315,7 +8315,11 @@ Elm.Main.make = function (_elm) {
       _L.fromArray([A2($Graphics$Element.spacer,
                    5,
                    1)
-                   ,customRestartButton]))));
+                   ,customRestartButton
+                   ,A2($Graphics$Element.spacer,
+                   205,
+                   1)
+                   ,customLButton(sig)]))));
    };
    var elmResources = function (sig) {
       return A2($Graphics$Element.flow,
