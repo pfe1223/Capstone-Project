@@ -1,10 +1,10 @@
-import Color (..)
-import Graphics.Collage (..)
-import Graphics.Element (..)
+import Color exposing (..)
+import Graphics.Collage exposing (..)
+import Graphics.Element exposing (..)
 import Keyboard
 import Signal
 import Text
-import Time (..)
+import Time exposing (..)
 import Window
 
 main =
